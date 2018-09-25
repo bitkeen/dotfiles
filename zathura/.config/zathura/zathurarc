@@ -1,0 +1,17 @@
+# Save document history at each page change instead of only
+# when closing a document.
+set continuous-hist-save true
+
+# Enable incremental search.
+#set incremental-search true
+
+# Copy selection to system clipboard.
+set selection-clipboard clipboard
+
+#set scroll-step 80
+
+unmap -
+unmap =
+map <C-0> zoom reset
+map <C--> zoom out
+map <C-=> zoom in
