@@ -119,6 +119,13 @@ nnoremap <C-k> <C-w>k
 nnoremap <C-h> <C-w>h
 nnoremap <C-l> <C-w>l
 
+" Tab operations.
+nnoremap tn :tabnew<Space>
+nnoremap th :tabprev<CR>
+nnoremap tj :tabfirst<CR>
+nnoremap tk :tablast<CR>
+nnoremap tl :tabnext<CR>
+
 if has("autocmd")
   " Compiling TeX.
   augroup tex
