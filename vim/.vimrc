@@ -183,3 +183,13 @@ filetype plugin indent on
 let g:vimwiki_list = [{'path': '~/Documents/vimwiki', 'ext': '.md'}]
 " vimwiki markdown support.
 let g:vimwiki_ext2syntax = {'.md': 'markdown', '.markdown': 'markdown', '.mdown': 'markdown'}
+
+
+" NERDTree - file system explorer
+" https://github.com/scrooloose/nerdtree
+map <C-k> :NERDTreeToggle<CR>
+" Remap from 't' so that it does not conflict with tab operation
+" mappings like 'tn', 'tj', etc.
+let g:NERDTreeMapOpenInTab = 'tt'
+" Close vim if the only window left open is a NERDTree.
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
