@@ -28,11 +28,13 @@ if has("autocmd")
   " Put these in an autocmd group, so that we can delete them easily.
   augroup widths
     au!
+    " Tabs.
     autocmd FileType * setlocal tabstop=4 shiftwidth=4 softtabstop=4 expandtab
     autocmd FileType go setlocal tabstop=4 shiftwidth=4 softtabstop=4 noexpandtab
     autocmd FileType vim setlocal tabstop=2 shiftwidth=2 softtabstop=2 expandtab
-    " For all text files set 'textwidth' to 80 characters.
-    autocmd FileType text setlocal textwidth=80
+    " Text widths.
+    autocmd FileType python setlocal textwidth=79
+    autocmd FileType text setlocal textwidth=79
   augroup END
 else
   " Always set autoindenting on.
