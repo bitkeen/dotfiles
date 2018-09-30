@@ -23,9 +23,22 @@ if &t_Co > 2 || has("gui_running")
   set hlsearch
 endif
 
+if exists('$TMUX')
+    " Wrap escape sequences for tmux.
+    let &t_SI = "\ePtmux;\e\e[5 q\e\\"
+    let &t_EI = "\ePtmux;\e\e[2 q\e\\"
+    let &t_SR = "\ePtmux;\e\e[3 q\e\\"
+else
+    " Blinking bar cursor in insert mode.
+    let &t_SI = "\e[5 q"
+    " Steady block cursor in normal mode.
+    let &t_EI = "\e[2 q"
+    " Blinking underscore cursor in replace mode.
+    let &t_SR = "\e[3 q"
+endif
+
 " Only do this part when compiled with support for autocommands.
 if has("autocmd")
-  " Put these in an autocmd group, so that we can delete them easily.
   augroup widths
     au!
     " Tabs.
