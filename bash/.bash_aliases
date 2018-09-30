@@ -21,6 +21,9 @@ alias v='vim'
 alias mkd='mkdir'
 
 alias ytdl='youtube-dl'
+# Download playlists using a separate config.
+# The config specifies different directory structure.
+alias ytdlpl='youtube-dl --config-location ~/.config/youtube-dl-playlist.conf'
 # There are options to download subtitles in the main config file,
 # the subtitles are not needed for audio-only downloads, and can't
 # be merged into an audio file, so a separate config file for audio
