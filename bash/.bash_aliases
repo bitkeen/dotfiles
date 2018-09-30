@@ -32,3 +32,7 @@ alias ytdlmp3='youtube-dl --config-location ~/.config/youtube-dl-audio.conf'
 
 # Get weather report.
 alias weather='curl wttr.in'
+
+# Tor start/stop.
+alias toron='sudo systemctl start tor.service'
+alias toroff='sudo systemctl stop tor.service'
