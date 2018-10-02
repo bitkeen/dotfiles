@@ -14,6 +14,9 @@ alias ll='ls -AlF'
 # Clear screen.
 alias c='clear'
 
+# Open ranger.
+alias r='ranger'
+
 # Open (with) vim
 alias v='vim'
 
