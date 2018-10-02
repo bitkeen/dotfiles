@@ -38,6 +38,10 @@ alias ka='killall'
 alias d='docker'
 alias c='docker-compose'
 
+# Pacman.
+alias p='pacman'
+alias sp='sudo pacman'
+
 # Open ranger.
 # The ranger-cd version switches the directory in bash on exit,
 # r.shell allows to expand shell aliases inside the :shell command.
