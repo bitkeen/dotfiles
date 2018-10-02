@@ -5,10 +5,6 @@ alias bup='source ~/.bashrc'
 # Reload .tmux.conf.
 alias tup='tmux source-file ~/.tmux.conf'
 
-# Update the packages.
-alias update='sudo pacman -Syu'
-
-alias ls='ls --color=auto'
 alias ll='ls -AlF'
 
 # Clear screen.
