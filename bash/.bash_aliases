@@ -8,7 +8,7 @@ alias tup='tmux source-file ~/.tmux.conf'
 # Reload Readline's .inputrc.
 alias rup='bind -f ~/.inputrc'
 
-alias ls='ls -p'
+alias ls='ls -p --color=auto'
 alias ll='ls -AlF'
 
 # -r - copy directories recursively
@@ -92,5 +92,9 @@ alias mycli='mycli --auto-vertical-output'
 
 alias dpl='dotfiles_pull'
 alias dps='dotfiles_push'
+
+# Tor start/stop.
+alias toron='sudo systemctl start tor.service'
+alias toroff='sudo systemctl stop tor.service'
 
 alias nb='newsboat'
