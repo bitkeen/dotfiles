@@ -10,6 +10,9 @@ alias ll='ls -AlF'
 # Clear screen.
 alias c='clear'
 
+# Git.
+alias g='git'
+
 # Kill processes by name.
 alias ka='killall'
 
@@ -20,7 +23,9 @@ alias r='ranger'
 alias v='vim'
 
 # Create directory.
-alias mkd='mkdir'
+# -p - no error if existing, make parent directories as needed.
+# -v - print a message for each created directory.
+alias mkd='mkdir -pv'
 
 alias ytdl='youtube-dl'
 # Download playlists using a separate config.
