@@ -1,0 +1,10 @@
+[alias]
+    br = branch
+	co = checkout
+    ci = commit
+    df = diff
+    dfc = diff --check
+    dfs = diff --staged
+	st = status
+[core]
+	editor = vim
