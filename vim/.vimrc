@@ -93,7 +93,8 @@ set viminfo+=n~/.vim/viminfo
 set path+=**
 
 " Set colorscheme.
-set background=dark
+set background=light
+" set background=dark
 colorscheme solarized
 
 " Open new split panes to right and bottom, which feels more
