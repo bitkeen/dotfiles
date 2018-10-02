@@ -10,6 +10,9 @@ alias ll='ls -AlF'
 # Clear screen.
 alias c='clear'
 
+# Kill processes by name.
+alias ka='killall'
+
 # Open ranger.
 alias r='ranger'
 
