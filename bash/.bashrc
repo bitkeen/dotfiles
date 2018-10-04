@@ -5,6 +5,9 @@ export HISTTIMEFORMAT="%Y-%m-%d %T "
 # still need to set it here for fzf default bindings to work.
 set -o vi
 
+# Enable autocd for bash versions greater than 4.
+[ "${BASH_VERSINFO[0]}" -ge 4 ] && shopt -s autocd
+
 # Source fzf-related files.
 fzf_bindings_file="/usr/share/fzf/key-bindings.bash"
 if [ -f "$fzf_bindings_file" ]; then
