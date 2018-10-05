@@ -8,7 +8,7 @@ alias tup='tmux source-file ~/.tmux.conf'
 # Reload Readline's .inputrc.
 alias rup='bind -f ~/.inputrc'
 
-alias ls='ls -p'
+alias ls='ls -p -G'
 alias ll='ls -AlF'
 
 # -r - copy directories recursively
