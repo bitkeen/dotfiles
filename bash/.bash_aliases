@@ -20,7 +20,9 @@ alias g='git'
 alias ka='killall'
 
 # Open ranger.
-alias r='ranger'
+# alias r='ranger'
+# The ranger-cd version switches the directory in bash on exit.
+alias r='ranger-cd'
 
 # Open (with) vim.
 alias v='vim'

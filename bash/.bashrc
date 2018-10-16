@@ -1,8 +1,10 @@
 export EDITOR=/usr/bin/vim
 
+
 ##################################################
 # Prompt
 ##################################################
+
 tan="\[$(tput setaf 180)\]"
 red3="\[$(tput setaf 124)\]"
 cornsilk1="\[$(tput setaf 230)\]"
@@ -52,10 +54,37 @@ fi
 
 export PS1="${ps1_left}${ps1_right}${ps1_arrow}"
 
+
 ##################################################
 # Aliases
 ##################################################
+
 # Add main bash aliases.
 if [ -f ~/.bash_aliases ]; then
     source ~/.bash_aliases
 fi
+
+
+##################################################
+# ranger
+##################################################
+
+# Automatically change the directory in bash after closing ranger.
+# Source:
+# https://github.com/ranger/ranger/blob/master/examples/bash_automatic_cd.sh
+# The same script can be found locally:
+# /usr/share/doc/ranger/examples/bash_automatic_cd.sh
+#
+# This is a function for automatically changing the directory to
+# the last visited one after ranger quits.
+# To undo the effect of this function, you can type "cd -" to return to the
+# original directory.
+function ranger-cd {
+    tempfile="$(mktemp -t tmp.XXXXXX)"
+    ranger --choosedir="$tempfile" "${@:-$(pwd)}"
+    test -f "$tempfile" &&
+    if [ "$(cat -- "$tempfile")" != "$(echo -n `pwd`)" ]; then
+        cd -- "$(cat "$tempfile")"
+    fi
+    rm -f -- "$tempfile"
+}
