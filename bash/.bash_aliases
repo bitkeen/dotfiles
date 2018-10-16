@@ -13,6 +13,10 @@ alias grep='grep --color=auto --ignore-case'
 # Clear screen.
 alias c='clear'
 
+# Docker.
+alias d='docker'
+alias dc='docker-compose'
+
 # Git.
 alias g='git'
 
