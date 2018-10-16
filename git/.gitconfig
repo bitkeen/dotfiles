@@ -9,6 +9,9 @@
     dfs = diff --staged
     lg = log
     lgg = log --all --oneline --graph
+    pl = pull
+    ps = push
+    rb = rebase
 	st = status
 [core]
 	editor = vim
