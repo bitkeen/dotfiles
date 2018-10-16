@@ -110,7 +110,7 @@ set clipboard=unnamedplus
 """"""""""""""""""""""""""""""""""""""""""""""""""
 let mapleader=","
 
-" toggle spell-check
+" Toggle spell-check.
 map <F2> :setlocal spell! spelllang=en_us<CR>
 
 " The first part clears the last used search. It will not set the pattern to
@@ -121,7 +121,7 @@ map <F2> :setlocal spell! spelllang=en_us<CR>
 " the cursor in place).
 noremap <silent> <leader>cl :let @/ = ""<cr> :nohls<cr><c-l>h
 
-" Copy to system clipboard
+" Copy to system clipboard.
 vnoremap <C-c> "+y
 nnoremap <C-p> "+P
 vnoremap <C-p> "+P
@@ -202,7 +202,7 @@ let g:NERDTreeMapOpenInTab = 'tt'
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 
-" Command-T
+" Command-T - file finder.
 " Set the underlying scanning implementation that should be used to explore
 " the filesystem. Default value is 'ruby'.
 let g:CommandTFileScanner = 'find'
