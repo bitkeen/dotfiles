@@ -5,17 +5,18 @@ export EDITOR=/usr/bin/vim
 # Prompt
 ##################################################
 
-tan="\[$(tput setaf 180)\]"
-red3="\[$(tput setaf 124)\]"
-cornsilk1="\[$(tput setaf 230)\]"
-grey30="\[$(tput setaf 239)\]"
 bold="\[$(tput bold)\]"
 reset="\[$(tput sgr0)\]"
 
+arrow_color="\[$(tput setaf 124)\]"
+ranger_color="\[$(tput setaf 96)\]"
+venv_color="\[$(tput setaf 66)\]"
+ssh_color="\[$(tput setaf 239)\]"
+git_color="\[$(tput setaf 75)\]"
+
 ps1_left="${reset}${bold}\w${reset}" # working directory
 ps1_right=""
-# ps1_arrow=" ${reset}${bold}${tan}>${reset} " # Tan
-ps1_arrow=" ${reset}${bold}${red3}>${reset} " # Red3
+ps1_arrow=" ${reset}${bold}${arrow_color}>${reset} "
 
 # Modify the prompt when using a shell from inside ranger.
 function ps1_ranger {
@@ -41,15 +42,19 @@ function ps1_venv {
 # Disable the default virtualenv prompt change.
 export VIRTUAL_ENV_DISABLE_PROMPT=1
 
-# ps1_right="${reset}${bold}${cornsilk1}\$(ps1_ranger)\$(ps1_venv)${reset}"
-ps1_right="${reset}${bold}${grey30}\$(ps1_ranger)\$(ps1_venv)${reset}"
+# git-prompt.sh provides __git_ps1 that is used to show current Git branch
+# in bash prompt.
+source /usr/share/git/completion/git-prompt.sh
+
+ps1_right="${reset}${bold}${ranger_color}\$(ps1_ranger)${reset}"
+ps1_right+="${reset}${bold}${venv_color}\$(ps1_venv)${reset}"
+ps1_right+="${reset}${bold}${git_color}\$(__git_ps1)${reset}"
 
 # Modify the prompt when using SSH.
 if [ -n "$SSH_CLIENT" ]; then
     ps1_u_at_h="${reset}${bold}\u@\h " # user@host
     ps1_left="${ps1_u_at_h}${ps1_left}"
-    # ps1_right+=" ${reset}${bold}${cornsilk1}(ssh)${reset}"
-    ps1_right+=" ${reset}${bold}${grey30}(ssh)${reset}"
+    ps1_right+=" ${reset}${bold}${ssh_color}(ssh)${reset}"
 fi
 
 export PS1="${ps1_left}${ps1_right}${ps1_arrow}"
