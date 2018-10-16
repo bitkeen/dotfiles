@@ -200,6 +200,8 @@ let g:vimwiki_ext2syntax = {'.md': 'markdown', '.markdown': 'markdown', '.mdown'
 " NERDTree - file system explorer
 " https://github.com/scrooloose/nerdtree
 map <leader>n :NERDTreeToggle<CR>
+" Find the current file in the tree.
+map <leader>f :NERDTreeFind<CR>
 " Remap from 't' so that it does not conflict with tab operation
 " mappings like 'tn', 'tj', etc.
 let g:NERDTreeMapOpenInTab = 'tt'
