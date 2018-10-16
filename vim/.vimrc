@@ -108,6 +108,8 @@ set clipboard=unnamedplus
 """"""""""""""""""""""""""""""""""""""""""""""""""
 " Mappings
 """"""""""""""""""""""""""""""""""""""""""""""""""
+let mapleader=","
+
 " toggle spell-check
 map <F2> :setlocal spell! spelllang=en_us<CR>
 
@@ -117,7 +119,7 @@ map <F2> :setlocal spell! spelllang=en_us<CR>
 " The second part disables highlighting, redraws the screen (default
 " behavior for C-l) and moves one character to the left with 'h' (to keep
 " the cursor in place).
-noremap <silent> ,cl :let @/ = ""<cr> :nohls<cr><c-l>h
+noremap <silent> <leader>cl :let @/ = ""<cr> :nohls<cr><c-l>h
 
 " Copy to system clipboard
 vnoremap <C-c> "+y
@@ -125,9 +127,9 @@ nnoremap <C-p> "+P
 vnoremap <C-p> "+P
 
 " Insert a new line after the current line (don't enter insert mode).
-nnoremap ,j o<Esc>
+nnoremap <leader>j o<Esc>
 " Insert a new line before the current line (don't enter insert mode).
-nnoremap ,k O<Esc>
+nnoremap <leader>k O<Esc>
 
 " Quicker window movement.
 nnoremap <C-j> <C-w>j
@@ -192,9 +194,18 @@ let g:vimwiki_ext2syntax = {'.md': 'markdown', '.markdown': 'markdown', '.mdown'
 
 " NERDTree - file system explorer
 " https://github.com/scrooloose/nerdtree
-map ,n :NERDTreeToggle<CR>
+map <leader>n :NERDTreeToggle<CR>
 " Remap from 't' so that it does not conflict with tab operation
 " mappings like 'tn', 'tj', etc.
 let g:NERDTreeMapOpenInTab = 'tt'
 " Close vim if the only window left open is a NERDTree.
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+
+
+" Command-T
+" Set the underlying scanning implementation that should be used to explore
+" the filesystem. Default value is 'ruby'.
+let g:CommandTFileScanner = 'find'
+" Always include matching dot-files in the match list regardless of whether
+" the search string contains a dot.
+let g:CommandTAlwaysShowDotFiles = 1
