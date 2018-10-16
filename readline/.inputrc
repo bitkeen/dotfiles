@@ -10,10 +10,17 @@ set keyseq-timeout 1
 set editing-mode vi
 # Add mode information to prompt.
 set show-mode-in-prompt on
-# A blinking bar cursor in insert mode.
-set vi-ins-mode-string \1\e[5 q\2
-# A steady block cursor in command mode.
-set vi-cmd-mode-string \1\e[2 q\2
+
+$if term=tmux-256color
+    set vi-ins-mode-string \1\ePtmux;\e\e[5 q\e\\\2
+    set vi-cmd-mode-string \1\ePtmux;\e\e[2 q\e\\\2
+$else
+    # A blinking bar cursor in insert mode.
+    set vi-ins-mode-string \1\e[5 q\2
+    # A steady block cursor in command mode.
+    set vi-cmd-mode-string \1\e[2 q\2
+$endif
+
 # Switch to block cursor before executing a command.
 # Without this, other programs like vim will use insert mode
 # cursor from bash.
