@@ -12,6 +12,8 @@
     pl = pull
     ps = push
     rb = rebase
+    sh = stash
+    shp = stash pop
 	st = status
 [core]
 	editor = vim
