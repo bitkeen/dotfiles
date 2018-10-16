@@ -179,17 +179,6 @@ map <F5> :InstantMarkdownPreview<CR>
 let g:instant_markdown_autostart = 0
 
 
-" vim-mucomplete - minimalist autocompletion plugin.
-" https://github.com/lifepillar/vim-mucomplete
-set completeopt+=menuone
-set completeopt-=preview
-set completeopt+=noinsert
-set shortmess+=c   " Shut off completion messages.
-set belloff+=ctrlg " If Vim beeps during completion.
-let g:mucomplete#enable_auto_at_startup = 1
-let g:mucomplete#delayed_completion = 1
-
-
 " vimwiki - personal wiki for Vim.
 " Prerequisites.
 " Avoid side effects if `nocp` already set.
