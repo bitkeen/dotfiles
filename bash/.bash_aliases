@@ -7,8 +7,8 @@ alias tup='tmux source-file ~/.tmux.conf'
 
 alias ll='ls -AlF'
 
-# Highlight matches.
-alias grep='grep --color=auto'
+# Highlight matches, ignore case distinctions.
+alias grep='grep --color=auto --ignore-case'
 
 # Clear screen.
 alias c='clear'
