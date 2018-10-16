@@ -42,13 +42,8 @@ function ps1_venv {
 # Disable the default virtualenv prompt change.
 export VIRTUAL_ENV_DISABLE_PROMPT=1
 
-# git-prompt.sh provides __git_ps1 that is used to show current Git branch
-# in bash prompt.
-source /usr/share/git/completion/git-prompt.sh
-
 ps1_right="${reset}${bold}${ranger_color}\$(ps1_ranger)${reset}"
 ps1_right+="${reset}${bold}${venv_color}\$(ps1_venv)${reset}"
-ps1_right+="${reset}${bold}${git_color}\$(__git_ps1)${reset}"
 
 # Modify the prompt when using SSH.
 if [ -n "$SSH_CLIENT" ]; then
