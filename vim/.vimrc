@@ -160,11 +160,11 @@ endif
 " indentLine - display vertical lines at each indentation level.
 " https://github.com/Yggdroot/indentLine
 let g:indentLine_fileType = ['python']
-" let g:indentLine_char = '>'
-" let g:indentLine_leadingSpaceChar = '·'
 let g:indentLine_char = '|'
-let g:indentLine_leadingSpaceChar = '_'
-let g:indentLine_leadingSpaceEnabled = 1
+" let g:indentLine_char = '>'
+" let g:indentLine_leadingSpaceEnabled = 1
+" let g:indentLine_leadingSpaceChar = '·'
+" let g:indentLine_leadingSpaceChar = '_'
 
 
 " vim-markdown - force .md files as markdown.
