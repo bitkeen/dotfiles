@@ -28,6 +28,8 @@ alias ka='killall'
 # The ranger-cd version switches the directory in bash on exit.
 alias r='ranger-cd'
 
+alias t='tmux'
+
 # Open (with) vim.
 alias v='vim'
 # Open vimwiki.
