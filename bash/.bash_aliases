@@ -15,7 +15,7 @@ alias c='clear'
 
 # Docker.
 alias d='docker'
-alias dc='docker-compose'
+alias dcmp='docker-compose'
 
 # Git.
 alias g='git'
