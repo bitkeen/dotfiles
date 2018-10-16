@@ -4,6 +4,7 @@
     br = branch
 	co = checkout
     ci = commit
+    cl = clone
     df = diff
     dfc = diff --check
     dfs = diff --staged
