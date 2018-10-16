@@ -278,7 +278,7 @@ set foldlevelstart=99
 set splitbelow
 set splitright
 
-set clipboard=unnamedplus
+set clipboard=unnamed
 
 " Don't show current mode on the last line, e.g. `-- INSERT --`.
 set noshowmode
