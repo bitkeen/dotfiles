@@ -7,6 +7,8 @@
     df = diff
     dfc = diff --check
     dfs = diff --staged
+    lg = log
+    lgg = log --all --oneline --graph
 	st = status
 [core]
 	editor = vim
