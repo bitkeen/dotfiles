@@ -144,6 +144,11 @@ nnoremap tj :tabfirst<CR>
 nnoremap tk :tablast<CR>
 nnoremap tl :tabnext<CR>
 
+" Save.
+nnoremap ,w :w<CR>
+" Save and quit.
+nnoremap ,x :x<CR>
+
 if has("autocmd")
   " Compiling TeX.
   augroup tex
