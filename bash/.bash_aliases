@@ -22,8 +22,10 @@ alias ka='killall'
 # Open ranger.
 alias r='ranger'
 
-# Open (with) vim
+# Open (with) vim.
 alias v='vim'
+# Open vimwiki.
+alias vw='vim -c "VimwikiIndex"'
 
 # Create directory.
 # -p - no error if existing, make parent directories as needed.
