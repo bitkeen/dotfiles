@@ -151,7 +151,7 @@ nnoremap tk :tablast<CR>
 nnoremap tl :tabnext<CR>
 
 " Save.
-nnoremap ,w :w<CR>
+nnoremap ,u :update<CR>
 " Save and quit.
 nnoremap ,x :x<CR>
 
