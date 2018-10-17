@@ -68,7 +68,7 @@ syntax enable
 
 " If you set the 'incsearch' option, Vim will show the first match
 " for the pattern, while you are still typing it. This quickly shows a
-" typo in the pattern. 
+" typo in the pattern.
 set incsearch
 
 " Make search case-insensitive.
@@ -103,6 +103,12 @@ set splitbelow
 set splitright
 
 set clipboard=unnamedplus
+
+" Put a string at the start of lines that have been wrapped.
+set showbreak=›\ " The backslash escapes the trailing space.
+" Indent wrapped lines at the same amount of space as the
+" beginning of that line.
+set breakindent
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""
