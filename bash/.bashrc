@@ -64,6 +64,11 @@ if [ -f ~/.bash_aliases ]; then
     source ~/.bash_aliases
 fi
 
+# Add local (untracked) bash aliases.
+if [ -f ~/.bash_aliases_local ]; then
+    source ~/.bash_aliases_local
+fi
+
 
 ##################################################
 # ranger
