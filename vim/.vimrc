@@ -119,23 +119,10 @@ let mapleader=","
 " Toggle spell-check.
 map <F2> :setlocal spell! spelllang=en_us<CR>
 
-" The first part clears the last used search. It will not set the pattern to
-" an empty string, because that would match everywhere. The pattern is really
-" cleared, like when starting Vim.
-" The second part disables highlighting, redraws the screen (default
-" behavior for C-l) and moves one character to the left with 'h' (to keep
-" the cursor in place).
-noremap <silent> <leader>cl :let @/ = ""<cr> :nohls<cr><c-l>h
-
 " Copy to system clipboard.
 vnoremap <C-c> "+y
 nnoremap <C-p> "+P
 vnoremap <C-p> "+P
-
-" Insert a new line after the current line (don't enter insert mode).
-nnoremap <leader>j o<Esc>
-" Insert a new line before the current line (don't enter insert mode).
-nnoremap <leader>k O<Esc>
 
 " Quicker window movement.
 nnoremap <C-j> <C-w>j
@@ -150,10 +137,23 @@ nnoremap tj :tabfirst<CR>
 nnoremap tk :tablast<CR>
 nnoremap tl :tabnext<CR>
 
+" The first part clears the last used search. It will not set the pattern to
+" an empty string, because that would match everywhere. The pattern is really
+" cleared, like when starting Vim.
+" The second part disables highlighting, redraws the screen (default
+" behavior for C-l) and moves one character to the left with 'h' (to keep
+" the cursor in place).
+noremap <silent> <leader>cl :let @/ = ""<cr> :nohls<cr><c-l>h
+
+" Insert a new line after the current line (don't enter insert mode).
+nnoremap <leader>j o<Esc>
+" Insert a new line before the current line (don't enter insert mode).
+nnoremap <leader>k O<Esc>
+
 " Save.
-nnoremap ,u :update<CR>
+nnoremap <leader>u :update<CR>
 " Save and quit.
-nnoremap ,x :x<CR>
+nnoremap <leader>x :x<CR>
 
 if has("autocmd")
   " Compiling TeX.
