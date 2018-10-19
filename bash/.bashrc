@@ -65,8 +65,8 @@ if [ -f ~/.bash_aliases ]; then
 fi
 
 # Add local (untracked) bash aliases.
-if [ -f ~/.bash_aliases_local ]; then
-    source ~/.bash_aliases_local
+if [ -f ~/.bash_aliases.local ]; then
+    source ~/.bash_aliases.local
 fi
 
 
