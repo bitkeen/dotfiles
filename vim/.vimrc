@@ -62,6 +62,8 @@ endif
 
 " Enable Pathogen package manager.
 execute pathogen#infect()
+" Generate documentation.
+call pathogen#helptags()
 
 " Enable syntax highlighting.
 syntax enable
