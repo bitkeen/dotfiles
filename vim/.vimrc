@@ -181,7 +181,7 @@ endif
 """"""""""""""""""""""""""""""""""""""""""""""""""
 " indentLine - display vertical lines at each indentation level.
 " https://github.com/Yggdroot/indentLine
-let g:indentLine_fileType = ['python']
+let g:indentLine_fileType = ['python', 'lua', 'vim', 'xquery']
 let g:indentLine_char = '|'
 " let g:indentLine_char = '>'
 " let g:indentLine_leadingSpaceEnabled = 1
