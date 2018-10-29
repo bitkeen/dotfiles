@@ -149,7 +149,10 @@ nnoremap tl :tabnext<CR>
 " The second part disables highlighting, redraws the screen (default
 " behavior for C-l) and moves one character to the left with 'h' (to keep
 " the cursor in place).
-noremap <silent> <leader>cl :let @/ = ""<cr> :nohls<cr><c-l>h
+nnoremap <silent> <leader>cl :let @/ = ""<CR> :nohls<CR><c-l>h
+
+" Reload .vimrc.
+nnoremap <leader>r :source $MYVIMRC<CR>
 
 " Insert a new line after the current line (don't enter insert mode).
 nnoremap <leader>j o<Esc>
