@@ -46,9 +46,6 @@ if has("autocmd")
     autocmd FileType go setlocal tabstop=4 shiftwidth=4 softtabstop=4 noexpandtab
     autocmd FileType vim setlocal tabstop=2 shiftwidth=2 softtabstop=2 expandtab
     autocmd FileType xquery setlocal tabstop=4 shiftwidth=4 softtabstop=4 noexpandtab
-    " Text widths.
-    autocmd FileType python setlocal textwidth=79
-    autocmd FileType text setlocal textwidth=79
   augroup END
 else
   " Always set autoindenting on.
