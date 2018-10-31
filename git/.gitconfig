@@ -2,7 +2,8 @@
     path = ~/.gitconfig.local
 [alias]
     br = branch
-	co = checkout
+    co = checkout
+    cob = checkout -b
     ci = commit
     cl = clone
     df = diff
@@ -11,10 +12,11 @@
     lg = log
     lgg = log --all --oneline --graph
     pl = pull
+    plrb = pull --rebase
     ps = push
     rb = rebase
     sh = stash
     shp = stash pop
-	st = status
+    st = status
 [core]
-	editor = vim
+    editor = vim
