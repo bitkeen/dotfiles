@@ -31,3 +31,6 @@
 [submodule "vim/.vim/bundle/vim-speeddating"]
 	path = vim/.vim/bundle/vim-speeddating
 	url = https://github.com/tpope/vim-speeddating.git
+[submodule "vim/.vim/bundle/vim-tmux-navigator"]
+	path = vim/.vim/bundle/vim-tmux-navigator
+	url = https://github.com/christoomey/vim-tmux-navigator
