@@ -7,6 +7,9 @@ alias tup='tmux source-file ~/.tmux.conf'
 
 alias ll='ls -AlF'
 
+# Prompt before overwriting.
+alias mv='mv -i'
+
 # Highlight matches, ignore case distinctions.
 alias grep='grep --color=auto --ignore-case'
 
