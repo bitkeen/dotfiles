@@ -115,6 +115,9 @@ colorscheme solarized
 set splitbelow
 set splitright
 
+" Make underscore a word separator.
+set iskeyword-=_
+
 set clipboard=unnamedplus
 
 " Put a string at the start of lines that have been wrapped.
