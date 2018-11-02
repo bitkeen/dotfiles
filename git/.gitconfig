@@ -20,3 +20,4 @@
     st = status
 [core]
     editor = vim
+    whitespace = true
