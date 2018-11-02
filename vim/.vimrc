@@ -52,6 +52,17 @@ else
   set autoindent
 endif " has("autocmd")
 
+" Automatically refresh current file on if it was changed
+" outside of Vim.
+set autoread
+if has("autocmd")
+  augroup refresh
+    au!
+    autocmd CursorHold,CursorHoldI * checktime
+    autocmd FocusGained,BufEnter * :checktime
+  augroup END
+endif
+
 " The matchit plugin makes the % command work better,
 " but it is not backwards compatible.
 if has('syntax') && has('eval')
