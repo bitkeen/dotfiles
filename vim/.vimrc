@@ -46,8 +46,6 @@ if has("autocmd")
     autocmd FileType go setlocal tabstop=4 shiftwidth=4 softtabstop=4 noexpandtab
     autocmd FileType vim setlocal tabstop=2 shiftwidth=2 softtabstop=2 expandtab
     autocmd FileType xquery setlocal tabstop=4 shiftwidth=4 softtabstop=4 noexpandtab
-    " Colorcolumn.
-    autocmd FileType python set colorcolumn=81
   augroup END
 else
   " Always set autoindenting on.
@@ -84,6 +82,9 @@ syntax enable
 " typo in the pattern.
 set incsearch
 
+" Colorcolumn.
+set colorcolumn=81
+
 " Make search case-insensitive.
 set ignorecase
 
@@ -109,6 +110,9 @@ set path+=**
 set background=light
 " set background=dark
 colorscheme solarized
+
+" Highlight the current line.
+set cursorline
 
 " Open new split panes to right and bottom, which feels more
 " natural than Vim’s default.
@@ -194,6 +198,7 @@ endif
 """"""""""""""""""""""""""""""""""""""""""""""""""
 " Plugins
 """"""""""""""""""""""""""""""""""""""""""""""""""
+
 " indentLine - display vertical lines at each indentation level.
 " https://github.com/Yggdroot/indentLine
 let g:indentLine_fileType = ['python', 'lua', 'vim', 'xquery']
