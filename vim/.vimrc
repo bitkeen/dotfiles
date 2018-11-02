@@ -173,6 +173,8 @@ nnoremap <leader>k O<Esc>
 nnoremap <leader>u :update<CR>
 " Save and quit.
 nnoremap <leader>x :x<CR>
+" Quit without saving.
+nnoremap <leader>zq ZQ
 
 if has("autocmd")
   " Compiling TeX.
