@@ -46,3 +46,6 @@
 [submodule "vim/.vim/bundle/vim-superman"]
 	path = vim/.vim/bundle/vim-superman
 	url = https://github.com/jez/vim-superman
+[submodule "vim/.vim/bundle/vim-eunuch"]
+	path = vim/.vim/bundle/vim-eunuch
+	url = https://github.com/tpope/vim-eunuch
