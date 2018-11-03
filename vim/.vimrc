@@ -255,3 +255,15 @@ let g:CommandTAlwaysShowDotFiles = 1
 
 " vim-xkbswitch - automatically switch keyboard layout based on mode.
 let g:XkbSwitchEnabled = 1
+
+
+" vim-gitgutter - show a git diff in the sign column
+" https://github.com/airblade/vim-gitgutter
+" let g:gitgutter_enabled = 0
+" Always show the sign column.
+if exists('&signcolumn')
+  set signcolumn=yes
+else
+  let g:gitgutter_sign_column_always = 1
+endif
+map <leader>gh :GitGutterLineHighlightsToggle<CR>
