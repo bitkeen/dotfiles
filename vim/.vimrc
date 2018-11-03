@@ -259,10 +259,11 @@ else
 endif
 map <leader>hh :GitGutterLineHighlightsToggle<CR>
 
-
 " jedi-vim - Python autocompletion
-" https://github.com/davidhalter/jedi-vim
 let g:jedi#use_tabs_not_buffers = 1
 " let g:jedi#use_splits_not_buffers = "right"
 " Disable docstring window popup during completion.
 autocmd FileType python setlocal completeopt-=preview
+
+" vim-better-whitespace - show and remove trailing whitespace.
+map <leader>sw :StripWhitespace<CR>
