@@ -271,4 +271,4 @@ if exists('&signcolumn')
 else
   let g:gitgutter_sign_column_always = 1
 endif
-map <leader>gh :GitGutterLineHighlightsToggle<CR>
+map <leader>hh :GitGutterLineHighlightsToggle<CR>
