@@ -130,10 +130,15 @@ set showbreak=›\ " The backslash escapes the trailing space.
 " beginning of that line.
 set breakindent
 
+" If this many milliseconds nothing is typed the swap file
+" will be written. Also used for the CursorHold event.
+set updatetime=100
+
 
 """"""""""""""""""""""""""""""""""""""""""""""""""
 " Mappings
 """"""""""""""""""""""""""""""""""""""""""""""""""
+
 let mapleader=","
 
 " Repeat the previous macro.
