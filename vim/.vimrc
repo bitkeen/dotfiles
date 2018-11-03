@@ -39,15 +39,19 @@ endif
 
 " Only do this part when compiled with support for autocommands.
 if has("autocmd")
+  au!
+  " Make underscore a word separator.
+  autocmd FileType * setlocal iskeyword-=_
   autocmd FileType python setlocal iskeyword+=_
-  augroup widths
-    au!
-    " Tabs.
-    autocmd FileType * setlocal tabstop=4 shiftwidth=4 softtabstop=4 expandtab
-    autocmd FileType go setlocal tabstop=4 shiftwidth=4 softtabstop=4 noexpandtab
-    autocmd FileType vim setlocal tabstop=2 shiftwidth=2 softtabstop=2 expandtab
-    autocmd FileType xquery setlocal tabstop=4 shiftwidth=4 softtabstop=4 noexpandtab
-  augroup END
+  " Colorcolumns.
+  autocmd FileType * setlocal colorcolumn=0
+  autocmd FileType python setlocal colorcolumn=81
+  autocmd FileType vim setlocal colorcolumn=81
+  " Tab widths.
+  autocmd FileType * setlocal tabstop=4 shiftwidth=4 softtabstop=4 expandtab
+  autocmd FileType go setlocal tabstop=4 shiftwidth=4 softtabstop=4 noexpandtab
+  autocmd FileType vim setlocal tabstop=2 shiftwidth=2 softtabstop=2 expandtab
+  autocmd FileType xquery setlocal tabstop=4 shiftwidth=4 softtabstop=4 noexpandtab
 else
   " Always set autoindenting on.
   set autoindent
@@ -83,9 +87,6 @@ syntax enable
 " typo in the pattern.
 set incsearch
 
-" Colorcolumn.
-set colorcolumn=81
-
 " Make search case-insensitive.
 set ignorecase
 
@@ -119,9 +120,6 @@ set cursorline
 " natural than Vim’s default.
 set splitbelow
 set splitright
-
-" Make underscore a word separator.
-set iskeyword-=_
 
 set clipboard=unnamedplus
 
