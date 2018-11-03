@@ -74,6 +74,10 @@ if has('syntax') && has('eval')
   packadd matchit
 endif
 
+" Avoid side effects if `nocp` already set.
+if &compatible | set nocompatible | endif
+filetype plugin indent on
+
 " Enable Pathogen package manager.
 execute pathogen#infect()
 " Generate documentation.
@@ -204,40 +208,27 @@ endif
 """"""""""""""""""""""""""""""""""""""""""""""""""
 
 " indentLine - display vertical lines at each indentation level.
-" https://github.com/Yggdroot/indentLine
 let g:indentLine_fileType = ['python', 'lua', 'vim', 'xquery']
 let g:indentLine_char = '|'
-" let g:indentLine_char = '>'
 " let g:indentLine_leadingSpaceEnabled = 1
 " let g:indentLine_leadingSpaceChar = '·'
 " let g:indentLine_leadingSpaceChar = '_'
 
-
 " vim-markdown - force .md files as markdown.
-" https://github.com/tpope/vim-markdown
 let g:markdown_fenced_languages = ['html', 'python', 'bash=sh']
 let g:markdown_minlines = 100
 
-
 " vim-instant-markdown - instant markdown previews.
-" https://github.com/suan/vim-instant-markdown
 map <F6> :InstantMarkdownPreview<CR>
 let g:instant_markdown_autostart = 0
 
-
 " vimwiki - personal wiki for Vim.
-" Prerequisites.
-" Avoid side effects if `nocp` already set.
-if &compatible | set nocompatible | endif
-filetype plugin indent on
 " vimwiki configuration.
 let g:vimwiki_list = [{'path': '~/Documents/vimwiki', 'ext': '.md'}]
 " vimwiki markdown support.
 let g:vimwiki_ext2syntax = {'.md': 'markdown', '.markdown': 'markdown', '.mdown': 'markdown'}
 
-
 " NERDTree - file system explorer
-" https://github.com/scrooloose/nerdtree
 map <leader>n :NERDTreeToggle<CR>
 " Find the current file in the tree.
 map <leader>f :NERDTreeFind<CR>
@@ -247,7 +238,6 @@ let g:NERDTreeMapOpenInTab = 'tt'
 " Close vim if the only window left open is a NERDTree.
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
-
 " Command-T - file finder.
 " Set the underlying scanning implementation that should be used to explore
 " the filesystem. Default value is 'ruby'.
@@ -256,13 +246,10 @@ let g:CommandTFileScanner = 'find'
 " the search string contains a dot.
 let g:CommandTAlwaysShowDotFiles = 1
 
-
 " vim-xkbswitch - automatically switch keyboard layout based on mode.
 let g:XkbSwitchEnabled = 1
 
-
 " vim-gitgutter - show a git diff in the sign column
-" https://github.com/airblade/vim-gitgutter
 " let g:gitgutter_enabled = 0
 " Always show the sign column.
 if exists('&signcolumn')
