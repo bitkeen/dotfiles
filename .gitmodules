@@ -37,3 +37,6 @@
 [submodule "vim/.vim/bundle/vim-tmux-focus-events"]
 	path = vim/.vim/bundle/vim-tmux-focus-events
 	url = https://github.com/tmux-plugins/vim-tmux-focus-events
+[submodule "vim/.vim/bundle/vim-gitgutter"]
+	path = vim/.vim/bundle/vim-gitgutter
+	url = https://github.com/airblade/vim-gitgutter
