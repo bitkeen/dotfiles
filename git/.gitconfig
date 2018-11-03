@@ -1,6 +1,7 @@
 [include]
     path = ~/.gitconfig.local
 [alias]
+    aip = add -i -p
     br = branch
     co = checkout
     cob = checkout -b
