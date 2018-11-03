@@ -49,3 +49,6 @@
 [submodule "vim/.vim/bundle/vim-eunuch"]
 	path = vim/.vim/bundle/vim-eunuch
 	url = https://github.com/tpope/vim-eunuch
+[submodule "vim/.vim/bundle/vim-better-whitespace"]
+	path = vim/.vim/bundle/vim-better-whitespace
+	url = https://github.com/ntpeters/vim-better-whitespace
