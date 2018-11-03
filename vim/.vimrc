@@ -191,6 +191,9 @@ nnoremap <leader>x :x<CR>
 " Quit without saving.
 nnoremap <leader>zq ZQ
 
+" Yank all lines.
+nnoremap <leader>ya :%y<CR>
+
 if has("autocmd")
   " Compiling TeX.
   augroup tex
