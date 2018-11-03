@@ -1,4 +1,5 @@
 export EDITOR=/usr/bin/vim
+export PATH="$PATH:$HOME/.vim/bundle/vim-superman/bin"
 
 
 ##################################################
