@@ -174,7 +174,7 @@ nnoremap tl :tabnext<CR>
 nnoremap <silent> <leader>cl :let @/ = ""<CR> :nohls<CR><c-l>h
 
 " Reload .vimrc.
-nnoremap <leader>r :source $MYVIMRC<CR>
+nnoremap <F5> :source $MYVIMRC<CR>
 
 " Insert a new line after the current line (don't enter insert mode).
 nnoremap <leader>j o<Esc>
@@ -222,7 +222,7 @@ let g:markdown_minlines = 100
 
 " vim-instant-markdown - instant markdown previews.
 " https://github.com/suan/vim-instant-markdown
-map <F5> :InstantMarkdownPreview<CR>
+map <F6> :InstantMarkdownPreview<CR>
 let g:instant_markdown_autostart = 0
 
 
