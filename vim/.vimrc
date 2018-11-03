@@ -248,6 +248,7 @@ let g:CommandTFileScanner = 'find'
 " Always include matching dot-files in the match list regardless of whether
 " the search string contains a dot.
 let g:CommandTAlwaysShowDotFiles = 1
+let g:CommandTAcceptSelectionSplitMap = '<C-b>'
 
 " vim-xkbswitch - automatically switch keyboard layout based on mode.
 let g:XkbSwitchEnabled = 1
