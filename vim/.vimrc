@@ -271,3 +271,6 @@ autocmd FileType python setlocal completeopt-=preview
 
 " vim-better-whitespace - show and remove trailing whitespace.
 map <leader>sw :StripWhitespace<CR>
+autocmd FileType * let g:better_whitespace_enabled=0
+autocmd FileType python let g:better_whitespace_enabled=1
+autocmd FileType python CurrentLineWhitespaceOff soft
