@@ -39,6 +39,7 @@ endif
 
 " Only do this part when compiled with support for autocommands.
 if has("autocmd")
+  autocmd FileType python setlocal iskeyword+=_
   augroup widths
     au!
     " Tabs.
