@@ -150,6 +150,10 @@ nnoremap <Enter> @@
 " Toggle spell-check.
 map <F2> :setlocal spell! spelllang=en_us<CR>
 
+" By default Y is synonym for yy. Remap it to yank from
+" the cursor to the end of the line, similar to C or D.
+noremap Y y$
+
 " Copy to system clipboard.
 vnoremap <C-c> "+y
 nnoremap <C-p> "+P
