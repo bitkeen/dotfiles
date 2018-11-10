@@ -5,6 +5,7 @@ alias bup='source ~/.bashrc'
 # Reload .tmux.conf.
 alias tup='tmux source-file ~/.tmux.conf'
 
+alias ls='ls -p'
 alias ll='ls -AlF'
 
 # Prompt before overwriting.
