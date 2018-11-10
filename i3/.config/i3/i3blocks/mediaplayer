@@ -26,10 +26,8 @@
 # Unnecessary parts were removed.
 # Playing/paused indicators were added.
 
-use Time::HiRes qw(usleep);
 use Env qw(BLOCK_INSTANCE);
 
-my @metadata = ();
 my $player_arg = "";
 
 if ($BLOCK_INSTANCE) {
@@ -41,17 +39,17 @@ sub buttons {
 
     if($method eq 'mpd') {
         if ($ENV{'BLOCK_BUTTON'} == 1) {
-            system("mpc prev");
-        } elsif ($ENV{'BLOCK_BUTTON'} == 2) {
             system("mpc toggle");
+        } elsif ($ENV{'BLOCK_BUTTON'} == 2) {
+            system("mpc prev");
         } elsif ($ENV{'BLOCK_BUTTON'} == 3) {
             system("mpc next");
         }
     } elsif ($method eq 'playerctl') {
         if ($ENV{'BLOCK_BUTTON'} == 1) {
-            system("playerctl $player_arg previous");
-        } elsif ($ENV{'BLOCK_BUTTON'} == 2) {
             system("playerctl $player_arg play-pause");
+        } elsif ($ENV{'BLOCK_BUTTON'} == 2) {
+            system("playerctl $player_arg previous");
         } elsif ($ENV{'BLOCK_BUTTON'} == 3) {
             system("playerctl $player_arg next");
         } elsif ($ENV{'BLOCK_BUTTON'} == 4) {
