@@ -421,9 +421,6 @@
 #def_key "I"
 #  show_artist_info
 #
-#def_key "g"
-#  jump_to_position_in_song
-#
 #def_key "l"
 #  show_lyrics
 #
@@ -548,6 +545,9 @@ def_key "n"
   next_found_item
 def_key "N"
   previous_found_item
+
+def_key "J"
+  jump_to_position_in_song
 
 def_key "q"
   quit
