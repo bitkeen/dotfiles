@@ -52,3 +52,6 @@
 [submodule "vim/.vim/bundle/vim-better-whitespace"]
 	path = vim/.vim/bundle/vim-better-whitespace
 	url = https://github.com/ntpeters/vim-better-whitespace
+[submodule "vim/.vim/bundle/vim-smooth-scroll"]
+	path = vim/.vim/bundle/vim-smooth-scroll
+	url = https://github.com/Bitkeen/vim-smooth-scroll
