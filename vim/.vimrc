@@ -1,8 +1,3 @@
-" When started as "evim", evim.vim will already have done these settings.
-if v:progname =~? "evim"
-  finish
-endif
-
 " Get the defaults that most users want.
 source $VIMRUNTIME/defaults.vim
 
@@ -167,10 +162,10 @@ nnoremap <C-l> <C-w>l
 
 " Tab operations.
 nnoremap tn :tabnew<Space>
-nnoremap th :tabprev<CR>
-nnoremap tj :tabfirst<CR>
-nnoremap tk :tablast<CR>
-nnoremap tl :tabnext<CR>
+nnoremap <silent> th :tabprev<CR>
+nnoremap <silent> tj :tabfirst<CR>
+nnoremap <silent> tk :tablast<CR>
+nnoremap <silent> tl :tabnext<CR>
 
 " The first part clears the last used search. It will not set the pattern to
 " an empty string, because that would match everywhere. The pattern is really
