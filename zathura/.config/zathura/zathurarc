@@ -10,6 +10,9 @@ set selection-clipboard clipboard
 
 #set scroll-step 80
 
+# Set scrolling via touchpad to be smooth.
+set smooth-scroll true
+
 unmap -
 unmap =
 map <C-0> zoom reset
