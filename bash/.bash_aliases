@@ -19,7 +19,27 @@ alias c='clear'
 
 # Docker.
 alias d='docker'
-alias dcmp='docker-compose'
+function dcmp {
+    key="$1"
+    case $key in
+        u)
+            cmd='up'
+            shift;;
+        d)
+            cmd='down'
+            shift;;
+        p)
+            cmd='pull'
+            shift;;
+        l)
+            cmd='logs -f'
+            shift;;
+        *)
+            cmd=$1
+            shift;;
+    esac
+    docker-compose $cmd $@
+}
 
 # Git.
 alias g='git'
