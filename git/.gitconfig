@@ -10,6 +10,7 @@
     df = diff
     dfc = diff --check
     dfs = diff --staged
+    dt = difftool
     lg = log
     lgg = log --all --oneline --graph
     pl = pull
@@ -22,3 +23,5 @@
 [core]
     editor = vim
     whitespace = true
+[diff]
+    tool = vimdiff
