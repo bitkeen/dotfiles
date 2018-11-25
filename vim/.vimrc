@@ -51,7 +51,7 @@ if has("autocmd")
   autocmd FileType vim setlocal tabstop=2 shiftwidth=2 softtabstop=2 expandtab
   autocmd FileType xquery setlocal tabstop=4 shiftwidth=4 softtabstop=4 noexpandtab
 else
-  " Always set autoindenting on.
+  " Maintain indent of current line.
   set autoindent
 endif
 
@@ -129,10 +129,15 @@ set splitright
 set clipboard=unnamedplus
 
 " Put a string at the start of lines that have been wrapped.
-set showbreak=›\ " The backslash escapes the trailing space.
+set showbreak=›
+" set showbreak=›\ " The backslash escapes the trailing space.
+
 " Indent wrapped lines at the same amount of space as the
 " beginning of that line.
 set breakindent
+if exists('&breakindentopt')
+  set breakindentopt=shift:1
+endif
 
 " If this many milliseconds nothing is typed the swap file
 " will be written. Also used for the CursorHold event.
