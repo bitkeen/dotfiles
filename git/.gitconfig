@@ -18,6 +18,7 @@
     ps = push
     rb = rebase
     sh = stash
+    shl = stash list
     shp = stash pop
     st = status
 [core]
