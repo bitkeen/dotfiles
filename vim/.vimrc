@@ -146,6 +146,9 @@ endif
 " will be written. Also used for the CursorHold event.
 set updatetime=100
 
+" Don't show intro message.
+set shortmess+=I
+
 
 """"""""""""""""""""""""""""""""""""""""""""""""""
 " Mappings
