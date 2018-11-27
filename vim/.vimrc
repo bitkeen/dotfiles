@@ -92,6 +92,9 @@ set incsearch
 " Make search case-insensitive.
 set ignorecase
 
+" Don't insert two spaces after '.', '?' and '!' for join command.
+set nojoinspaces
+
 " Enable line numbers.
 set number
 " Enable relative line numbers.
