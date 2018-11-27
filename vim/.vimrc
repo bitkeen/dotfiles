@@ -131,6 +131,9 @@ set splitright
 
 set clipboard=unnamedplus
 
+" Allow cursor to move where there is no text in visual block mode.
+set virtualedit=block
+
 " Put a string at the start of lines that have been wrapped.
 set showbreak=›
 " set showbreak=›\ " The backslash escapes the trailing space.
