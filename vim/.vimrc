@@ -213,6 +213,10 @@ nnoremap <leader>zq ZQ
 " Yank all lines.
 nnoremap <leader>ya :%y<CR>
 
+" Open empty splits.
+nnoremap <leader>- :new<CR>
+nnoremap <leader>\ :vnew<CR>
+
 if has("autocmd")
   " Compiling TeX.
   augroup tex
