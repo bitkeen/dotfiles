@@ -154,6 +154,14 @@ set updatetime=100
 " Don't show intro message.
 set shortmess+=I
 
+" Command-line completion mode.
+" Complete the next full m
+" atch, show wildmenu.
+set wildmode=full
+
+" Ignore case when completing file names and directories.
+set wildignorecase
+
 
 """"""""""""""""""""""""""""""""""""""""""""""""""
 " Mappings
