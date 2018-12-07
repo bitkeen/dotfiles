@@ -1,4 +1,17 @@
 export EDITOR=/usr/bin/vim
+
+# Enable completion for git.
+git_completion_file="/usr/share/bash-completion/completions/git"
+if [ -f "$git_completion_file" ]; then
+    source $git_completion_file
+
+    # Make git completion work with an alias if it exists.
+    git_alias=$(alias | awk '/git/ {print $2}' | cut -f 1 -d '=')
+    if [ -n "$git_alias" ]; then
+        complete -o default -o nospace -F _git $git_alias
+    fi
+fi
+
 export PATH="$PATH:$HOME/.vim/bundle/vim-superman/bin"
 
 
