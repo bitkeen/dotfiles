@@ -75,6 +75,12 @@ fi
 # ranger
 ##################################################
 
+# Avoid loading default config file for ranger if a custom one exists.
+ranger_config_file="$HOME/.config/ranger/rc.conf"
+if [ -f "$ranger_config_file" ]; then
+    export RANGER_LOAD_DEFAULT_RC=FALSE
+fi
+
 # Automatically change the directory in bash after closing ranger.
 # Source:
 # https://github.com/ranger/ranger/blob/master/examples/bash_automatic_cd.sh
