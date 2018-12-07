@@ -167,7 +167,7 @@ set wildignorecase
 " Mappings
 """"""""""""""""""""""""""""""""""""""""""""""""""
 
-let mapleader=","
+let mapleader=" "
 
 " Repeat the previous macro.
 nnoremap <Enter> @@
