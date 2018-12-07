@@ -206,7 +206,7 @@ nnoremap <silent> tl :tabnext<CR>
 nnoremap <silent> <leader>cl :let @/ = ""<CR> :nohls<CR><c-l>h
 
 " Reload .vimrc.
-nnoremap <F5> :source $MYVIMRC<CR>
+nnoremap <leader>rl :source $MYVIMRC<CR>
 
 " Insert a new line after the current line (don't enter insert mode).
 nnoremap <leader>j o<Esc>
