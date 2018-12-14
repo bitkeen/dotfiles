@@ -102,8 +102,11 @@ set number
 " Enable relative line numbers.
 set relativenumber
 
+" Set directory to save swap files in.
+set directory=~/.vim/backups/swap//
+
 " Save backup files in ~/.vim/backups.
-set backupdir=~/.vim/backups
+set backupdir=~/.vim/backups//
 
 " Save undo files in ~/.vim/backups/undo.
 set undodir=~/.vim/backups/undo
