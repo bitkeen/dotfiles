@@ -12,7 +12,8 @@ alias ll='ls -AlF'
 alias mv='mv -i'
 
 # Highlight matches, ignore case distinctions.
-alias grep='grep --color=auto --ignore-case'
+# Output line numbers with -n.
+alias gr='grep -n --color=auto --ignore-case'
 
 # Clear screen.
 alias c='clear'
