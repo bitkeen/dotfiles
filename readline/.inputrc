@@ -21,8 +21,12 @@ $else
     set vi-cmd-mode-string \1\e[2 q\2
 $endif
 
-# Switch to block cursor before executing a command.
-# Without this, other programs like vim will use insert mode
-# cursor from bash.
-set keymap vi-insert
-RETURN: "\e\n"
+$if mode=vi
+    set keymap vi-insert
+    Control-a: beginning-of-line
+    Control-e: end-of-line
+    # Switch to block cursor before executing a command.
+    # Without this, other programs like vim will use insert mode
+    # cursor from bash.
+    RETURN: "\e\n"
+$endif
