@@ -193,6 +193,11 @@ nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-h> <C-w>h
 nnoremap <C-l> <C-w>l
+" Also set up for visual mode.
+vnoremap <C-j> <C-w>j
+vnoremap <C-k> <C-w>k
+vnoremap <C-h> <C-w>h
+vnoremap <C-l> <C-w>l
 
 " Tab operations.
 nnoremap tn :tabnew<Space>
