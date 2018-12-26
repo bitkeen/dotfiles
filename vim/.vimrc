@@ -52,6 +52,10 @@ if has("autocmd")
   autocmd FileType xquery setlocal tabstop=4 shiftwidth=4 softtabstop=4 noexpandtab
   " Don't automatically insert comment leader for new lines.
   autocmd FileType * setlocal formatoptions-=o
+
+  " Highlight the current line, but only in focused window.
+  autocmd BufEnter,WinEnter,FocusGained * setlocal cursorline
+  autocmd WinLeave,FocusLost * setlocal nocursorline
 else
   " Maintain indent of current line.
   set autoindent
@@ -122,9 +126,6 @@ set path+=**
 set background=light
 " set background=dark
 colorscheme solarized
-
-" Highlight the current line.
-set cursorline
 
 " Remove comment chars when joining comments.
 set formatoptions+=j
