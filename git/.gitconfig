@@ -12,7 +12,7 @@
     dfc = diff --check
     dfs = diff --staged
     dt = difftool
-    lg = log
+    lg = log --abbrev-commit
     lgg = log --all --oneline --graph
     pl = pull
     plrb = pull --rebase
