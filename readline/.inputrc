@@ -25,8 +25,12 @@ $if mode=vi
     set keymap vi-insert
     Control-a: beginning-of-line
     Control-e: end-of-line
+    Control-f: clear-screen
     # Switch to block cursor before executing a command.
     # Without this, other programs like vim will use insert mode
     # cursor from bash.
     RETURN: "\e\n"
+
+    set keymap vi-command
+    Control-f: clear-screen
 $endif

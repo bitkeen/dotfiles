@@ -15,9 +15,6 @@ alias mv='mv -i'
 # Output line numbers with -n.
 alias gr='grep -n --color=auto --ignore-case'
 
-# Clear screen.
-alias c='clear'
-
 # Docker.
 alias d='docker'
 function dcmp {
