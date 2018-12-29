@@ -55,3 +55,6 @@
 [submodule "vim/.vim/bundle/vim-smooth-scroll"]
 	path = vim/.vim/bundle/vim-smooth-scroll
 	url = https://github.com/Bitkeen/vim-smooth-scroll
+[submodule "vim/.vim/bundle/vimwiki"]
+	path = vim/.vim/bundle/vimwiki
+	url = https://github.com/vimwiki/vimwiki
