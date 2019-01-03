@@ -278,6 +278,8 @@ let g:instant_markdown_autostart = 0
 let g:vimwiki_list = [{'path': '~/Documents/vimwiki', 'ext': '.md'}]
 " vimwiki markdown support.
 let g:vimwiki_ext2syntax = {'.md': 'markdown', '.markdown': 'markdown', '.mdown': 'markdown'}
+nmap <Leader>wb <Plug>VimwikiSplitLink
+nmap <Leader>wv <Plug>VimwikiVSplitLink
 
 " NERDTree - file system explorer
 map <leader>n :NERDTreeToggle<CR>
