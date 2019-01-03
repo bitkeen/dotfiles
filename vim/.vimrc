@@ -199,12 +199,18 @@ vnoremap <C-k> <C-w>k
 vnoremap <C-h> <C-w>h
 vnoremap <C-l> <C-w>l
 
-" Tab operations.
+" Open (in) a new tab.
 nnoremap tn :tabnew<Space>
+" Switch tabs.
 nnoremap <silent> th :tabprev<CR>
 nnoremap <silent> tj :tabfirst<CR>
 nnoremap <silent> tk :tablast<CR>
 nnoremap <silent> tl :tabnext<CR>
+" Move tabs.
+nnoremap <silent> tH :-tabmove<CR>
+nnoremap <silent> tJ :0tabmove<CR>
+nnoremap <silent> tK :$tabmove<CR>
+nnoremap <silent> tL :+tabmove<CR>
 
 " The first part clears the last used search. It will not set the pattern to
 " an empty string, because that would match everywhere. The pattern is really
