@@ -370,3 +370,6 @@ function! LightlineAbsolutepath()
   let modified = &modified ? ' [+]' : ''
   return absolutepath . modified
 endfunction
+
+" Gundo - graph undo tree.
+nnoremap <leader>gu :GundoToggle<CR>
