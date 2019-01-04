@@ -336,3 +336,37 @@ noremap <silent> <c-f> :call smooth_scroll#down(&scroll*2, 10, 4)<CR>
 
 " git-blame.vim - see blame information in the bottom line.
 nnoremap <silent> <leader>s :<C-u>call gitblame#echo()<CR>
+
+" lightline.vim - a light and configurable statusline/tabline.
+" Specify which feature is turned on. Both are equal to 1 by default.
+let g:lightline = {
+      \ 'enable': {
+      \   'statusline': 1,
+      \   'tabline': 0,
+      \ },
+      \ 'colorscheme': 'solarized',
+      \ 'active': {
+      \   'left': [ [ 'mode', 'paste' ],
+      \             [ 'gitbranch', 'spell', 'readonly', 'absolutepath' ] ],
+      \   'right': [ [ 'columninfo' ],
+      \              [ 'lineinfo' ],
+      \              [ 'percent' ] ],
+      \ },
+      \ 'component': {
+      \   'columninfo': ':%2v',
+      \   'lineinfo': '%3l/%L',
+      \   'spell': 'spell: %{&spell?&spelllang:""}',
+      \   'tabwinnr': '(%{tabpagewinnr(tabpagenr(), "$")})'
+      \ },
+      \ 'component_function': {
+      \   'absolutepath': 'LightlineAbsolutepath',
+      \   'gitbranch': 'fugitive#head',
+      \ },
+      \ }
+
+" Join file path and modified (remove the separator bar).
+function! LightlineAbsolutepath()
+  let absolutepath = expand('%:F') !=# '' ? expand('%:F') : '[No Name]'
+  let modified = &modified ? ' [+]' : ''
+  return absolutepath . modified
+endfunction
