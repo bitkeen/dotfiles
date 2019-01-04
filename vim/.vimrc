@@ -140,6 +140,9 @@ set splitright
 
 set clipboard=unnamedplus
 
+" Don't show current mode on the last line, e.g. `-- INSERT --`.
+set noshowmode
+
 " Allow cursor to move where there is no text in visual block mode.
 set virtualedit=block
 
