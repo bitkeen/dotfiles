@@ -58,3 +58,6 @@
 [submodule "vim/.vim/bundle/vimwiki"]
 	path = vim/.vim/bundle/vimwiki
 	url = https://github.com/vimwiki/vimwiki
+[submodule "vim/.vim/bundle/git-blame.vim"]
+	path = vim/.vim/bundle/git-blame.vim
+	url = https://github.com/zivyangll/git-blame.vim
