@@ -64,3 +64,6 @@
 [submodule "vim/.vim/bundle/lightline.vim"]
 	path = vim/.vim/bundle/lightline.vim
 	url = https://github.com/itchyny/lightline.vim.git
+[submodule "vim/.vim/bundle/gundo.vim"]
+	path = vim/.vim/bundle/gundo.vim
+	url = https://github.com/sjl/gundo.vim
