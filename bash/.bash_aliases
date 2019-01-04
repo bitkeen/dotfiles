@@ -4,6 +4,8 @@ alias xup="xrdb ~/.Xresources"
 alias bup='source ~/.bashrc'
 # Reload .tmux.conf.
 alias tup='tmux source-file ~/.tmux.conf'
+# Reload Readline's .inputrc.
+alias rup='bind -f ~/.inputrc'
 
 alias ls='ls -p'
 alias ll='ls -AlF'
