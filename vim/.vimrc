@@ -130,6 +130,9 @@ colorscheme solarized
 " Remove comment chars when joining comments.
 set formatoptions+=j
 
+" Always show status line.
+set laststatus=2
+
 " Open new split panes to right and bottom, which feels more
 " natural than Vim’s default.
 set splitbelow
