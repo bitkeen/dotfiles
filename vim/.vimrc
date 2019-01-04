@@ -267,9 +267,6 @@ endif
 " indentLine - display vertical lines at each indentation level.
 let g:indentLine_fileType = ['python', 'lua', 'vim', 'xquery']
 let g:indentLine_char = '|'
-" let g:indentLine_leadingSpaceEnabled = 1
-" let g:indentLine_leadingSpaceChar = '·'
-" let g:indentLine_leadingSpaceChar = '_'
 
 " vim-markdown - force .md files as markdown.
 let g:markdown_fenced_languages = ['html', 'python', 'bash=sh']
@@ -287,7 +284,7 @@ let g:vimwiki_ext2syntax = {'.md': 'markdown', '.markdown': 'markdown', '.mdown'
 nmap <Leader>wb <Plug>VimwikiSplitLink
 nmap <Leader>wv <Plug>VimwikiVSplitLink
 
-" NERDTree - file system explorer
+" NERDTree - file system explorer.
 map <leader>n :NERDTreeToggle<CR>
 " Find the current file in the tree.
 map <leader>f :NERDTreeFind<CR>
@@ -309,7 +306,7 @@ let g:CommandTAcceptSelectionSplitMap = '<C-b>'
 " vim-xkbswitch - automatically switch keyboard layout based on mode.
 let g:XkbSwitchEnabled = 1
 
-" vim-gitgutter - show a git diff in the sign column
+" vim-gitgutter - show a git diff in the sign column.
 " let g:gitgutter_enabled = 0
 " Always show the sign column.
 if exists('&signcolumn')
@@ -331,9 +328,11 @@ let g:better_whitespace_enabled=0
 autocmd FileType python let g:better_whitespace_enabled=1
 autocmd FileType python CurrentLineWhitespaceOff soft
 
+" vim-smooth-scroll
 noremap <silent> <c-u> :call smooth_scroll#up(&scroll, 10, 2)<CR>
 noremap <silent> <c-d> :call smooth_scroll#down(&scroll, 10, 2)<CR>
 noremap <silent> <c-b> :call smooth_scroll#up(&scroll*2, 10, 4)<CR>
 noremap <silent> <c-f> :call smooth_scroll#down(&scroll*2, 10, 4)<CR>
 
+" git-blame.vim - see blame information in the bottom line.
 nnoremap <silent> <leader>s :<C-u>call gitblame#echo()<CR>
