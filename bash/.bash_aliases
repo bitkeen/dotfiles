@@ -44,6 +44,13 @@ function dcmp {
 # Git.
 alias g='git'
 
+function groot {
+    # Change working directory to the git root if the current working
+    # directory is inside of a git repository.
+    git status > /dev/null 2>&1 || return 1
+    cd "$(git rev-parse --show-cdup)".
+}
+
 # Kill processes by name.
 alias ka='killall'
 
