@@ -67,3 +67,6 @@
 [submodule "vim/.vim/bundle/gundo.vim"]
 	path = vim/.vim/bundle/gundo.vim
 	url = https://github.com/sjl/gundo.vim
+[submodule "vim/.vim/bundle/Dockerfile.vim"]
+	path = vim/.vim/bundle/Dockerfile.vim
+	url = https://github.com/ekalinin/Dockerfile.vim
