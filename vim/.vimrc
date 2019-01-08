@@ -306,6 +306,9 @@ let g:CommandTAcceptSelectionSplitMap = '<C-b>'
 " vim-xkbswitch - automatically switch keyboard layout based on mode.
 let g:XkbSwitchEnabled = 1
 
+" vim-commentary - easy commenting
+autocmd FileType xquery setlocal commentstring=(:\ %s\ :)
+
 " vim-gitgutter - show a git diff in the sign column.
 " let g:gitgutter_enabled = 0
 " Always show the sign column.
