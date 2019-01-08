@@ -174,6 +174,104 @@ set wildignorecase
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""
+" Plugin configuration
+""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" indentLine - display vertical lines at each indentation level.
+let g:indentLine_fileType = ['python', 'lua', 'vim', 'xquery']
+let g:indentLine_char = '|'
+
+" vim-markdown - force .md files as markdown.
+let g:markdown_fenced_languages = ['html', 'python', 'bash=sh']
+let g:markdown_minlines = 100
+
+" vim-instant-markdown - instant markdown previews.
+let g:instant_markdown_autostart = 0
+
+" vimwiki - personal wiki for Vim.
+" vimwiki configuration.
+let g:vimwiki_list = [{'path': '~/Documents/vimwiki', 'ext': '.md'}]
+" vimwiki markdown support.
+let g:vimwiki_ext2syntax = {'.md': 'markdown', '.markdown': 'markdown', '.mdown': 'markdown'}
+
+" NERDTree - file system explorer.
+" Remap from 't' so that it does not conflict with tab operation
+" mappings like 'tn', 'tj', etc.
+let g:NERDTreeMapOpenInTab = 'tt'
+" Close vim if the only window left open is a NERDTree.
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+
+" Command-T - file finder.
+" Set the underlying scanning implementation that should be used to explore
+" the filesystem. Default value is 'ruby'.
+let g:CommandTFileScanner = 'find'
+" Always include matching dot-files in the match list regardless of whether
+" the search string contains a dot.
+let g:CommandTAlwaysShowDotFiles = 1
+let g:CommandTAcceptSelectionSplitMap = '<C-b>'
+
+" vim-xkbswitch - automatically switch keyboard layout based on mode.
+let g:XkbSwitchEnabled = 1
+
+" vim-commentary - easy commenting
+autocmd FileType xquery setlocal commentstring=(:\ %s\ :)
+
+" vim-gitgutter - show a git diff in the sign column.
+" let g:gitgutter_enabled = 0
+" Always show the sign column.
+if exists('&signcolumn')
+  set signcolumn=yes
+else
+  let g:gitgutter_sign_column_always = 1
+endif
+
+" jedi-vim - Python autocompletion
+let g:jedi#use_tabs_not_buffers = 1
+" let g:jedi#use_splits_not_buffers = "right"
+" Disable docstring window popup during completion.
+autocmd FileType python setlocal completeopt-=preview
+
+" vim-better-whitespace - show and remove trailing whitespace.
+let g:better_whitespace_enabled=0
+autocmd FileType python let g:better_whitespace_enabled=1
+autocmd FileType python CurrentLineWhitespaceOff soft
+
+" lightline.vim - a light and configurable statusline/tabline.
+" Specify which feature is turned on. Both are equal to 1 by default.
+let g:lightline = {
+      \ 'enable': {
+      \   'statusline': 1,
+      \   'tabline': 0,
+      \ },
+      \ 'colorscheme': 'solarized',
+      \ 'active': {
+      \   'left': [ [ 'mode', 'paste' ],
+      \             [ 'gitbranch', 'spell', 'readonly', 'absolutepath' ] ],
+      \   'right': [ [ 'columninfo' ],
+      \              [ 'lineinfo' ],
+      \              [ 'percent' ] ],
+      \ },
+      \ 'component': {
+      \   'columninfo': ':%2v',
+      \   'lineinfo': '%3l/%L',
+      \   'spell': 'spell: %{&spell?&spelllang:""}',
+      \   'tabwinnr': '(%{tabpagewinnr(tabpagenr(), "$")})'
+      \ },
+      \ 'component_function': {
+      \   'absolutepath': 'LightlineAbsolutepath',
+      \   'gitbranch': 'fugitive#head',
+      \ },
+      \ }
+
+" Join file path and modified (remove the separator bar).
+function! LightlineAbsolutepath()
+  let absolutepath = expand('%:F') !=# '' ? expand('%:F') : '[No Name]'
+  let modified = &modified ? ' [+]' : ''
+  return absolutepath . modified
+endfunction
+
+
+""""""""""""""""""""""""""""""""""""""""""""""""""
 " Mappings
 """"""""""""""""""""""""""""""""""""""""""""""""""
 
@@ -261,26 +359,10 @@ endif
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""
-" Plugins
+" Plugin mappings
 """"""""""""""""""""""""""""""""""""""""""""""""""
 
-" indentLine - display vertical lines at each indentation level.
-let g:indentLine_fileType = ['python', 'lua', 'vim', 'xquery']
-let g:indentLine_char = '|'
-
-" vim-markdown - force .md files as markdown.
-let g:markdown_fenced_languages = ['html', 'python', 'bash=sh']
-let g:markdown_minlines = 100
-
-" vim-instant-markdown - instant markdown previews.
-map <F6> :InstantMarkdownPreview<CR>
-let g:instant_markdown_autostart = 0
-
 " vimwiki - personal wiki for Vim.
-" vimwiki configuration.
-let g:vimwiki_list = [{'path': '~/Documents/vimwiki', 'ext': '.md'}]
-" vimwiki markdown support.
-let g:vimwiki_ext2syntax = {'.md': 'markdown', '.markdown': 'markdown', '.mdown': 'markdown'}
 nmap <Leader>wb <Plug>VimwikiSplitLink
 nmap <Leader>wv <Plug>VimwikiVSplitLink
 
@@ -288,48 +370,13 @@ nmap <Leader>wv <Plug>VimwikiVSplitLink
 map <leader>n :NERDTreeToggle<CR>
 " Find the current file in the tree.
 map <leader>f :NERDTreeFind<CR>
-" Remap from 't' so that it does not conflict with tab operation
-" mappings like 'tn', 'tj', etc.
-let g:NERDTreeMapOpenInTab = 'tt'
-" Close vim if the only window left open is a NERDTree.
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
-" Command-T - file finder.
-" Set the underlying scanning implementation that should be used to explore
-" the filesystem. Default value is 'ruby'.
-let g:CommandTFileScanner = 'find'
-" Always include matching dot-files in the match list regardless of whether
-" the search string contains a dot.
-let g:CommandTAlwaysShowDotFiles = 1
-let g:CommandTAcceptSelectionSplitMap = '<C-b>'
-
-" vim-xkbswitch - automatically switch keyboard layout based on mode.
-let g:XkbSwitchEnabled = 1
-
-" vim-commentary - easy commenting
-autocmd FileType xquery setlocal commentstring=(:\ %s\ :)
 
 " vim-gitgutter - show a git diff in the sign column.
-" let g:gitgutter_enabled = 0
-" Always show the sign column.
-if exists('&signcolumn')
-  set signcolumn=yes
-else
-  let g:gitgutter_sign_column_always = 1
-endif
 map <leader>hh :GitGutterLineHighlightsToggle<CR>
 
-" jedi-vim - Python autocompletion
-let g:jedi#use_tabs_not_buffers = 1
-" let g:jedi#use_splits_not_buffers = "right"
-" Disable docstring window popup during completion.
-autocmd FileType python setlocal completeopt-=preview
-
-" vim-better-whitespace - show and remove trailing whitespace.
-map <leader>sw :StripWhitespace<CR>
-let g:better_whitespace_enabled=0
-autocmd FileType python let g:better_whitespace_enabled=1
-autocmd FileType python CurrentLineWhitespaceOff soft
+" vim-instant-markdown - instant markdown previews.
+map <F6> :InstantMarkdownPreview<CR>
 
 " vim-smooth-scroll
 noremap <silent> <c-u> :call smooth_scroll#up(&scroll, 10, 2)<CR>
@@ -337,42 +384,14 @@ noremap <silent> <c-d> :call smooth_scroll#down(&scroll, 10, 2)<CR>
 noremap <silent> <c-b> :call smooth_scroll#up(&scroll*2, 10, 4)<CR>
 noremap <silent> <c-f> :call smooth_scroll#down(&scroll*2, 10, 4)<CR>
 
+" vim-gitgutter - show a git diff in the sign column.
+map <leader>hh :GitGutterLineHighlightsToggle<CR>
+
+" vim-better-whitespace - show and remove trailing whitespace.
+map <leader>sw :StripWhitespace<CR>
+
 " git-blame.vim - see blame information in the bottom line.
 nnoremap <silent> <leader>s :<C-u>call gitblame#echo()<CR>
-
-" lightline.vim - a light and configurable statusline/tabline.
-" Specify which feature is turned on. Both are equal to 1 by default.
-let g:lightline = {
-      \ 'enable': {
-      \   'statusline': 1,
-      \   'tabline': 0,
-      \ },
-      \ 'colorscheme': 'solarized',
-      \ 'active': {
-      \   'left': [ [ 'mode', 'paste' ],
-      \             [ 'gitbranch', 'spell', 'readonly', 'absolutepath' ] ],
-      \   'right': [ [ 'columninfo' ],
-      \              [ 'lineinfo' ],
-      \              [ 'percent' ] ],
-      \ },
-      \ 'component': {
-      \   'columninfo': ':%2v',
-      \   'lineinfo': '%3l/%L',
-      \   'spell': 'spell: %{&spell?&spelllang:""}',
-      \   'tabwinnr': '(%{tabpagewinnr(tabpagenr(), "$")})'
-      \ },
-      \ 'component_function': {
-      \   'absolutepath': 'LightlineAbsolutepath',
-      \   'gitbranch': 'fugitive#head',
-      \ },
-      \ }
-
-" Join file path and modified (remove the separator bar).
-function! LightlineAbsolutepath()
-  let absolutepath = expand('%:F') !=# '' ? expand('%:F') : '[No Name]'
-  let modified = &modified ? ' [+]' : ''
-  return absolutepath . modified
-endfunction
 
 " Gundo - graph undo tree.
 nnoremap <leader>gu :GundoToggle<CR>
