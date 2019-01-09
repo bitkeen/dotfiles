@@ -303,6 +303,10 @@ vnoremap <C-k> <C-w>k
 vnoremap <C-h> <C-w>h
 vnoremap <C-l> <C-w>l
 
+" Go to beginning or end of the line in command mode.
+cnoremap <C-a> <home>
+cnoremap <C-e> <end>
+
 " Open (in) a new tab.
 nnoremap tn :tabnew<Space>
 " Switch tabs.
@@ -339,12 +343,18 @@ nnoremap <leader>x :x<CR>
 " Quit without saving.
 nnoremap <leader>q :q!<CR>
 
+nnoremap <leader>V V`]
+
 " Yank all lines.
 nnoremap <leader>ya :%y<CR>
 
 " Open empty splits.
 nnoremap <leader>- :new<CR>
 nnoremap <leader>\ :vnew<CR>
+
+" Substitute.
+nnoremap <leader>s :%s/
+vnoremap <leader>s :s/
 
 if has("autocmd")
   " Compiling TeX.
@@ -366,11 +376,18 @@ endif
 nmap <Leader>wb <Plug>VimwikiSplitLink
 nmap <Leader>wv <Plug>VimwikiVSplitLink
 
+" Command-T - file finder.
+" Show open buffers. Default mapping is <leader>b, remap it to
+" <leader>bf because git-blame will be mapped to <leader>bl.
+nmap <silent> <leader>bf <Plug>(CommandTBuffer)
+" Show jumplist. Default is <leader>j, it conflicted with
+" mappings for opening new lines in normal mode.
+nmap <silent> <leader>l <Plug>(CommandTJump)
+
 " NERDTree - file system explorer.
 map <leader>n :NERDTreeToggle<CR>
 " Find the current file in the tree.
 map <leader>f :NERDTreeFind<CR>
-
 
 " vim-gitgutter - show a git diff in the sign column.
 map <leader>hh :GitGutterLineHighlightsToggle<CR>
@@ -388,10 +405,10 @@ noremap <silent> <c-f> :call smooth_scroll#down(&scroll*2, 10, 4)<CR>
 map <leader>hh :GitGutterLineHighlightsToggle<CR>
 
 " vim-better-whitespace - show and remove trailing whitespace.
-map <leader>sw :StripWhitespace<CR>
+map <leader>wp :StripWhitespace<CR>
 
 " git-blame.vim - see blame information in the bottom line.
-nnoremap <silent> <leader>s :<C-u>call gitblame#echo()<CR>
+nnoremap <silent> <leader>bl :<C-u>call gitblame#echo()<CR>
 
 " Gundo - graph undo tree.
 nnoremap <leader>gu :GundoToggle<CR>
