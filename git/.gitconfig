@@ -27,3 +27,5 @@
     whitespace = true
 [diff]
     tool = vimdiff
+[push]
+	default = current
