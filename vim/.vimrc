@@ -412,3 +412,6 @@ nnoremap <silent> <leader>bl :<C-u>call gitblame#echo()<CR>
 
 " Gundo - graph undo tree.
 nnoremap <leader>gu :GundoToggle<CR>
+
+" vim-grepper - use search tools in a vim split.
+nnoremap <leader>gg :Grepper<CR>
