@@ -415,3 +415,5 @@ nnoremap <leader>gu :GundoToggle<CR>
 
 " vim-grepper - use search tools in a vim split.
 nnoremap <leader>gg :Grepper<CR>
+
+let g:jedi#goto_assignments_command = "<leader>ga"
