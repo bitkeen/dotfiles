@@ -356,6 +356,11 @@ nnoremap <leader>\ :vnew<CR>
 nnoremap <leader>s :%s/
 vnoremap <leader>s :s/
 
+" Change inner word to upper case.
+nnoremap cu gUiw
+" Change inner word to lower case.
+nnoremap cl guiw
+
 if has("autocmd")
   " Compiling TeX.
   augroup tex
