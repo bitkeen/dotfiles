@@ -10,6 +10,9 @@ function d {
         im)
             cmd="images"
             shift;;
+        ps)
+            cmd="push"
+            shift;;
         *)
             cmd=$1
             shift;;
