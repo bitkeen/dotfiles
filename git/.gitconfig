@@ -1,6 +1,7 @@
 [include]
     path = ~/.gitconfig.local
 [alias]
+    aa = add --all
     aip = add -i -p
     br = branch
     co = checkout
@@ -18,6 +19,7 @@
     plrb = pull --rebase
     ps = push
     rb = rebase
+    rs = reset
     sh = stash
     shl = stash list
     shp = stash pop
