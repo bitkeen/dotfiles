@@ -7,6 +7,9 @@ function d {
         bd)
             cmd="build"
             shift;;
+        im)
+            cmd="images"
+            shift;;
         *)
             cmd=$1
             shift;;
