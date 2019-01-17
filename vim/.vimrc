@@ -412,7 +412,8 @@ noremap <silent> <c-f> :call smooth_scroll#down(&scroll*2, 10, 4)<CR>
 map <leader>hh :GitGutterLineHighlightsToggle<CR>
 
 " vim-better-whitespace - show and remove trailing whitespace.
-map <leader>wp :StripWhitespace<CR>
+map <leader>bwt :ToggleWhitespace<CR>
+map <leader>bws :StripWhitespace<CR>
 
 " git-blame.vim - see blame information in the bottom line.
 nnoremap <silent> <leader>bl :<C-u>call gitblame#echo()<CR>
@@ -421,6 +422,8 @@ nnoremap <silent> <leader>bl :<C-u>call gitblame#echo()<CR>
 nnoremap <leader>gu :GundoToggle<CR>
 
 " vim-grepper - use search tools in a vim split.
-nnoremap <leader>gg :Grepper<CR>
+nnoremap <leader>gr :Grepper<CR>
+" Search the word under the cursor.
+nnoremap <leader>gw :Grepper -cword -noprompt<cr>
 
 let g:jedi#goto_assignments_command = "<leader>ga"
