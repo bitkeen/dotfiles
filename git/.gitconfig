@@ -6,8 +6,10 @@
     br = branch
     co = checkout
     cob = checkout -b
+    chp = cherry-pick
     ci = commit
     cia = commit --amend
+    cim = commit -m
     cl = clone
     df = diff
     dfc = diff --check
