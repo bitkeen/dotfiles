@@ -233,7 +233,9 @@ autocmd FileType python setlocal completeopt-=preview
 
 " vim-better-whitespace - show and remove trailing whitespace.
 let g:better_whitespace_enabled=0
+let g:strip_whitespace_on_save=0
 autocmd FileType python let g:better_whitespace_enabled=1
+autocmd FileType python DisableWhitespace
 autocmd FileType python CurrentLineWhitespaceOff soft
 
 " lightline.vim - a light and configurable statusline/tabline.
