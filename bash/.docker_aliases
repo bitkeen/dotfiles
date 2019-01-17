@@ -4,6 +4,9 @@ function d {
         ex)
             cmd="exec -uroot -it $2 /bin/sh"
             shift;;
+        bd)
+            cmd="build"
+            shift;;
         *)
             cmd=$1
             shift;;
