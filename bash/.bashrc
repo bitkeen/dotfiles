@@ -83,6 +83,11 @@ if [ -f ~/.bash_aliases.local ]; then
     source ~/.bash_aliases.local
 fi
 
+# Add docker aliases.
+if [ -f ~/.docker_aliases ]; then
+    source ~/.docker_aliases
+fi
+
 
 ##################################################
 # ranger

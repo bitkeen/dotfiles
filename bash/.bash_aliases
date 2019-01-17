@@ -17,30 +17,6 @@ alias mv='mv -i'
 # Output line numbers with -n.
 alias gr='grep -n --color=auto --ignore-case'
 
-# Docker.
-alias d='docker'
-function dcmp {
-    key="$1"
-    case $key in
-        u)
-            cmd='up'
-            shift;;
-        d)
-            cmd='down'
-            shift;;
-        p)
-            cmd='pull'
-            shift;;
-        l)
-            cmd='logs -f'
-            shift;;
-        *)
-            cmd=$1
-            shift;;
-    esac
-    docker-compose $cmd $@
-}
-
 # Git.
 alias g='git'
 
