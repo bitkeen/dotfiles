@@ -272,6 +272,13 @@ function! LightlineAbsolutepath()
   return absolutepath . modified
 endfunction
 
+" vim-grepper - use search tools in a vim split.
+runtime plugin/grepper.vim
+" Ignore case.
+let g:grepper.grep.grepprg .= ' -i'
+" Populate the prompt with single quotes and put cursor in between.
+let g:grepper.prompt_quote = 2
+
 
 """"""""""""""""""""""""""""""""""""""""""""""""""
 " Mappings
