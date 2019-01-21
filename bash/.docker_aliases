@@ -2,7 +2,7 @@ function d {
     key="$1"
     case $key in
         ex)
-            cmd="exec -uroot -it $2 /bin/sh"
+            cmd="exec -uroot -it"
             shift;;
         bd)
             cmd="build"
