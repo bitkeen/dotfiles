@@ -373,6 +373,10 @@ nnoremap <leader>\ :vnew<CR>
 nnoremap <leader>s :%s/
 vnoremap <leader>s :s/
 
+" Open an empty tab and close all the other tabs.
+" Don't close the buffers.
+nnoremap <silent> <leader><leader>q :tabnew<CR>:tabonly<CR>
+
 " Change inner word to upper case.
 nnoremap cu gUiw
 " Change inner word to lower case.
