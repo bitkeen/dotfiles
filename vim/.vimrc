@@ -387,6 +387,14 @@ if has("autocmd")
     " Map F4 to compile XeTeX.
     autocmd FileType tex map <F4> :w<Enter>:!xelatex<space>%<Enter><Enter>
   augroup END
+  " Quickfix window mappings.
+  augroup qf
+    au!
+    " Go to older error list.
+    autocmd FileType qf nnoremap <leader>H :colder<CR>
+    " Go to newer error list.
+    autocmd FileType qf nnoremap <leader>L :cnewer<CR>
+  augroup END
 endif
 
 
