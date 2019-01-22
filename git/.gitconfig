@@ -6,6 +6,7 @@
     br = branch
     co = checkout
     cob = checkout -b
+    com = checkout master
     chp = cherry-pick
     ci = commit
     cia = commit --amend
