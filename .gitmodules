@@ -73,3 +73,6 @@
 [submodule "vim/.vim/bundle/vim-grepper"]
 	path = vim/.vim/bundle/vim-grepper
 	url = https://github.com/mhinz/vim-grepper
+[submodule "vim/.vim/bundle/QFEnter"]
+	path = vim/.vim/bundle/QFEnter
+	url = https://github.com/yssl/QFEnter
