@@ -4,6 +4,7 @@
     aa = add --all
     aip = add -i -p
     br = branch
+    bl = blame
     co = checkout
     cob = checkout -b
     com = checkout master
