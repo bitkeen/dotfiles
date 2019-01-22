@@ -274,10 +274,18 @@ endfunction
 
 " vim-grepper - use search tools in a vim split.
 runtime plugin/grepper.vim
-" Ignore case.
+" Specify the tools that are available to use. First in the list is
+" the default tool.
+let g:grepper.tools = ['git', 'grep']
+" -i - ignore case.
+" --no-index - search files in the current directory that is not
+" managed by Git.
+let g:grepper.git.grepprg .= ' -i --no-index'
 let g:grepper.grep.grepprg .= ' -i'
-" Populate the prompt with single quotes and put cursor in between.
-let g:grepper.prompt_quote = 2
+" Populate the prompt with double quotes and put cursor in between.
+let g:grepper.prompt_quote = 3
+" let g:grepper.highlight = 1
+let g:grepper.simple_prompt = 1
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""
@@ -431,6 +439,8 @@ nnoremap <leader>gu :GundoToggle<CR>
 " vim-grepper - use search tools in a vim split.
 nnoremap <leader>gr :Grepper<CR>
 " Search the word under the cursor.
-nnoremap <leader>gw :Grepper -cword -noprompt<cr>
+nnoremap <silent> <leader>gw :Grepper -cword -noprompt<cr>
+" Switch between searching tools.
+let g:grepper.prompt_mapping_tool = '<leader>gr'
 
 let g:jedi#goto_assignments_command = "<leader>ga"
