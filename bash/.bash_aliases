@@ -48,6 +48,8 @@ alias vw='vim -c "VimwikiIndex"'
 # -v - print a message for each created directory.
 alias mkd='mkdir -pv'
 
+alias bandcamp-dl="bandcamp-dl --base-dir=$HOME/Downloads/bandcamp-dl"
+
 alias ytdl='youtube-dl'
 # Download playlists using a separate config.
 # The config specifies different directory structure.
