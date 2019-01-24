@@ -76,3 +76,6 @@
 [submodule "vim/.vim/bundle/QFEnter"]
 	path = vim/.vim/bundle/QFEnter
 	url = https://github.com/yssl/QFEnter
+[submodule "vim/.vim/bundle/vim-visual-star-search"]
+	path = vim/.vim/bundle/vim-visual-star-search
+	url = https://github.com/nelstrom/vim-visual-star-search
