@@ -253,6 +253,11 @@ let g:lightline = {
       \              [ 'lineinfo' ],
       \              [ 'percent' ] ],
       \ },
+      \ 'inactive': {
+      \   'left': [ [ 'absolutepath' ] ],
+      \   'right': [ [ 'lineinfo' ],
+      \              [ 'percent' ] ],
+      \ },
       \ 'component': {
       \   'columninfo': ':%2v',
       \   'lineinfo': '%3l/%L',
