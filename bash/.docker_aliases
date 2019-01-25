@@ -1,4 +1,4 @@
-function d {
+function docker_alias {
     key="$1"
     case $key in
         ex)
@@ -10,9 +10,6 @@ function d {
         im)
             cmd="images"
             shift;;
-        ps)
-            cmd="push"
-            shift;;
         *)
             cmd=$1
             shift;;
@@ -20,7 +17,7 @@ function d {
     docker $cmd $@
 }
 
-function dcmp {
+function docker_compose_alias {
     key="$1"
     case $key in
         u)
@@ -41,3 +38,9 @@ function dcmp {
     esac
     docker-compose $cmd $@
 }
+
+alias docker='docker_alias'
+alias docker-compose='docker_compose_alias'
+
+alias d='docker'
+alias dcmp='docker-compose'
