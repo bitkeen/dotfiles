@@ -365,6 +365,9 @@ nnoremap <leader>x :x<CR>
 " Quit without saving.
 nnoremap <leader>q :q!<CR>
 
+" Edit file, starting in same directory as current file.
+nnoremap <leader>e :edit <C-R>=expand('%:p:h') . '/'<CR>
+
 nnoremap <leader>V V`]
 
 " Yank all lines.
@@ -412,8 +415,8 @@ endif
 """"""""""""""""""""""""""""""""""""""""""""""""""
 
 " vimwiki - personal wiki for Vim.
-nmap <Leader>wb <Plug>VimwikiSplitLink
-nmap <Leader>wv <Plug>VimwikiVSplitLink
+nmap <leader>wb <Plug>VimwikiSplitLink
+nmap <leader>wv <Plug>VimwikiVSplitLink
 
 " Command-T - file finder.
 " Show open buffers. Default mapping is <leader>b, remap it to
