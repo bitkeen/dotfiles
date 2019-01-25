@@ -28,9 +28,12 @@ venv_color="\[$(tput setaf 66)\]"
 ssh_color="\[$(tput setaf 239)\]"
 git_color="\[$(tput setaf 75)\]"
 
-ps1_left="${reset}${bold}\w${reset}" # working directory
+# Working directory.
+ps1_left="${reset}${bold}\w${reset}"
 ps1_right=""
-ps1_arrow=" ${reset}${bold}${arrow_color}>${reset} "
+# Last space is actually an nbsp. It is used for searching the
+# previous command in tmux (see .tmux.conf).
+ps1_arrow=" ${reset}${bold}${arrow_color}>${reset} "
 
 # Modify the prompt when using a shell from inside ranger.
 function ps1_ranger {
