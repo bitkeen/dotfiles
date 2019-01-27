@@ -208,7 +208,8 @@ let g:CommandTFileScanner = 'find'
 " Always include matching dot-files in the match list regardless of whether
 " the search string contains a dot.
 let g:CommandTAlwaysShowDotFiles = 1
-let g:CommandTAcceptSelectionSplitMap = '<C-b>'
+" Recurse into dot-directories.
+let g:CommandTScanDotDirectories = 1
 
 " vim-xkbswitch - automatically switch keyboard layout based on mode.
 let g:XkbSwitchEnabled = 1
@@ -425,6 +426,7 @@ nmap <silent> <leader>bf <Plug>(CommandTBuffer)
 " Show jumplist. Default is <leader>j, it conflicted with
 " mappings for opening new lines in normal mode.
 nmap <silent> <leader>l <Plug>(CommandTJump)
+let g:CommandTAcceptSelectionSplitMap = '<C-b>'
 
 " NERDTree - file system explorer.
 map <leader>n :NERDTreeToggle<CR>
