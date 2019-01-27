@@ -210,6 +210,8 @@ let g:CommandTFileScanner = 'find'
 let g:CommandTAlwaysShowDotFiles = 1
 " Recurse into dot-directories.
 let g:CommandTScanDotDirectories = 1
+" Override wildignore setting during Command-T searches.
+let g:CommandTWildIgnore=&wildignore . ",*/.git"
 
 " vim-xkbswitch - automatically switch keyboard layout based on mode.
 let g:XkbSwitchEnabled = 1
