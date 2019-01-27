@@ -1,0 +1,117 @@
+URxvt.font: xft:SauceCodePro Nerd Font Mono:size=13
+
+URxvt.scrollBar: false
+URxvt.iso14755: false
+URxvt.iso14755_52: false
+URxvt.depth: 32
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+! Extensions
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+URxvt.perl-ext-common: default,matcher,font-size,url-select,keyboard-select
+URxvt.colorUL:		#4682B4
+
+! matcher extension - clickable urls
+URxvt.url-launcher:   /usr/bin/xdg-open
+URxvt.matcher.button: 1
+URxvt.matcher.rend.0: Uline Bold fg5
+
+! font-size extension - change font size on the fly
+! with Ctrl++, Ctrl +-
+URxvt.keysym.C-equal:  font-size:increase
+URxvt.keysym.C-Up:     font-size:increase
+URxvt.keysym.C-Down:   font-size:decrease
+URxvt.keysym.C-S-Up:   font-size:incglobal
+URxvt.keysym.C-S-Down: font-size:decglobal
+URxvt.keysym.C-0:      font-size:reset
+URxvt.keysym.C-grave:  font-size:show
+
+! url-select - move through urls in terminal using vim bindings
+URxvt.keysym.M-u:	perl:url-select:select_next
+URxvt.url-select.launcher: /usr/bin/xdg-open
+
+! keyboard-select - move through text in terminal using vim bindings
+URxvt.keysym.M-Escape: perl:keyboard-select:activate
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+! Colors
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+! Colorscheme - Solarized.
+
+#define S_base03        #002b36
+#define S_base02        #073642
+#define S_base01        #586e75
+#define S_base00        #657b83
+#define S_base0         #839496
+#define S_base1         #93a1a1
+#define S_base2         #eee8d5
+#define S_base3         #fdf6e3
+
+! Light.
+*background:            S_base3
+*foreground:            S_base00
+*fadeColor:             S_base3
+*cursorColor:           S_base01
+*pointerColorBackground:S_base1
+*pointerColorForeground:S_base01
+
+! Dark.
+!*background:            S_base03
+!*foreground:            S_base0
+!*fadeColor:             S_base03
+!*cursorColor:           S_base1
+!*pointerColorBackground:S_base01
+!*pointerColorForeground:S_base1
+
+#define S_yellow        #b58900
+#define S_orange        #cb4b16
+#define S_red           #dc322f
+#define S_magenta       #d33682
+#define S_violet        #6c71c4
+#define S_blue          #268bd2
+#define S_cyan          #2aa198
+#define S_green         #859900
+
+!! black dark/light
+*color0:                S_base02
+*color8:                S_base03
+
+!! red dark/light
+*color1:                S_red
+*color9:                S_orange
+
+!! green dark/light
+*color2:                S_green
+*color10:               S_base01
+
+!! yellow dark/light
+*color3:                S_yellow
+*color11:               S_base00
+
+!! blue dark/light
+*color4:                S_blue
+*color12:               S_base0
+
+!! magenta dark/light
+*color5:                S_magenta
+*color13:               S_violet
+
+!! cyan dark/light
+*color6:                S_cyan
+*color14:               S_base1
+
+!! white dark/light
+*color7:                S_base2
+*color15:               S_base3
+
+! Colors for the dropdown terminal.
+tmuxdd.background: rgba:3333/3333/3333/CCCC
+tmuxdd.foreground: #ffffff
+tmuxdd.fadeColor: S_base03
+tmuxdd.cursorColor: S_base1
+tmuxdd.pointerColorBackground: S_base01
+tmuxdd.pointerColorForeground: S_base1
