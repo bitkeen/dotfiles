@@ -79,3 +79,6 @@
 [submodule "vim/.vim/bundle/vim-visual-star-search"]
 	path = vim/.vim/bundle/vim-visual-star-search
 	url = https://github.com/nelstrom/vim-visual-star-search
+[submodule "vim/.vim/bundle/vim-searchindex"]
+	path = vim/.vim/bundle/vim-searchindex
+	url = https://github.com/google/vim-searchindex
