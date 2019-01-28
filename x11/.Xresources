@@ -18,15 +18,20 @@ URxvt.url-launcher:   /usr/bin/xdg-open
 URxvt.matcher.button: 1
 URxvt.matcher.rend.0: Uline Bold fg5
 
-! font-size extension - change font size on the fly
-! with Ctrl++, Ctrl +-
-URxvt.keysym.C-equal:  font-size:increase
-URxvt.keysym.C-Up:     font-size:increase
-URxvt.keysym.C-Down:   font-size:decrease
-URxvt.keysym.C-S-Up:   font-size:incglobal
-URxvt.keysym.C-S-Down: font-size:decglobal
-URxvt.keysym.C-0:      font-size:reset
-URxvt.keysym.C-grave:  font-size:show
+! font-size extension - change font size on the fly.
+! Disable default bindings.
+URxvt.keysym.C-plus:   builtin-string:
+URxvt.keysym.C-minus:  builtin-string:
+URxvt.keysym.C-0:      builtin-string:
+! Set custom bindings.
+URxvt.keysym.M-equal:  font-size:increase
+URxvt.keysym.M-minus:  font-size:decrease
+URxvt.keysym.M-Up:     font-size:increase
+URxvt.keysym.M-Down:   font-size:decrease
+URxvt.keysym.M-S-Up:   font-size:incglobal
+URxvt.keysym.M-S-Down: font-size:decglobal
+URxvt.keysym.M-0:      font-size:reset
+URxvt.keysym.M-grave:  font-size:show
 
 ! url-select - move through urls in terminal using vim bindings
 URxvt.keysym.M-u:	perl:url-select:select_next
