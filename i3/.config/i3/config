@@ -257,6 +257,9 @@ bindsym XF86MonBrightnessUp exec --no-startup-id light -A 5
 # Decrease screen brightness.
 bindsym XF86MonBrightnessDown exec --no-startup-id light -U 5
 
+# Toggle screen brightness level.
+bindsym $mod+b exec --no-startup-id $scripts_dir/toggle_brightness.sh
+
 # Media player controls.
 # Mod+/
 bindsym $mod+question exec --no-startup-id mpc toggle
