@@ -67,7 +67,7 @@ set autoread
 if has("autocmd")
   augroup refresh
     au!
-    autocmd CursorHold,CursorHoldI * checktime
+    autocmd CursorHold,CursorHoldI * :checktime
     autocmd FocusGained,BufEnter * :checktime
   augroup END
 endif
