@@ -258,7 +258,7 @@ let g:lightline = {
       \              [ 'percent' ] ],
       \ },
       \ 'inactive': {
-      \   'left': [ [ 'absolutepath' ] ],
+      \   'left': [ [ 'absolutepath_inactive' ] ],
       \   'right': [ [ 'lineinfo' ],
       \              [ 'percent' ] ],
       \ },
@@ -268,18 +268,26 @@ let g:lightline = {
       \   'spell': 'spell: %{&spell?&spelllang:""}',
       \   'tabwinnr': '(%{tabpagewinnr(tabpagenr(), "$")})'
       \ },
+      \ 'component_function': {
+      \   'gitbranch': 'fugitive#head',
+      \   'absolutepath_inactive': 'LightlinePathAndModified',
+      \ },
       \ 'component_expand': {
       \   'ismodified': 'LightlineIsModified',
       \ },
       \ 'component_type': {
       \   'ismodified': 'warning',
       \ },
-      \ 'component_function': {
-      \   'gitbranch': 'fugitive#head',
-      \ },
       \ }
 " Update lightline on certain events.
 autocmd TextChanged,InsertLeave,BufWritePost * call lightline#update()
+
+" Join file path and modified (remove the separator bar).
+function! LightlinePathAndModified()
+  let absolutepath = expand('%:F') !=# '' ? expand('%:F') : '[No Name]'
+  let modified = &modified ? ' [+]' : ''
+  return absolutepath . modified
+endfunction
 
 function! LightlineIsModified()
   return &modified ? '[+]' : ''
