@@ -251,7 +251,8 @@ let g:lightline = {
       \ 'colorscheme': 'solarized',
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ],
-      \             [ 'gitbranch', 'spell', 'readonly', 'absolutepath' ] ],
+      \             [ 'gitbranch', 'spell', 'readonly' ],
+      \             [ 'absolutepath', 'ismodified' ] ],
       \   'right': [ [ 'columninfo' ],
       \              [ 'lineinfo' ],
       \              [ 'percent' ] ],
@@ -267,17 +268,21 @@ let g:lightline = {
       \   'spell': 'spell: %{&spell?&spelllang:""}',
       \   'tabwinnr': '(%{tabpagewinnr(tabpagenr(), "$")})'
       \ },
+      \ 'component_expand': {
+      \   'ismodified': 'LightlineIsModified',
+      \ },
+      \ 'component_type': {
+      \   'ismodified': 'warning',
+      \ },
       \ 'component_function': {
-      \   'absolutepath': 'LightlineAbsolutepath',
       \   'gitbranch': 'fugitive#head',
       \ },
       \ }
+" Update lightline on certain events.
+autocmd TextChanged,InsertLeave,BufWritePost * call lightline#update()
 
-" Join file path and modified (remove the separator bar).
-function! LightlineAbsolutepath()
-  let absolutepath = expand('%:F') !=# '' ? expand('%:F') : '[No Name]'
-  let modified = &modified ? ' [+]' : ''
-  return absolutepath . modified
+function! LightlineIsModified()
+  return &modified ? '[+]' : ''
 endfunction
 
 " vim-grepper - use search tools in a vim split.
