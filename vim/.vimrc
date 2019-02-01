@@ -192,11 +192,10 @@ let g:vimwiki_list = [{'path': '~/Documents/vimwiki', 'ext': '.md'}]
 let g:vimwiki_ext2syntax = {'.md': 'markdown', '.markdown': 'markdown', '.mdown': 'markdown'}
 
 " NERDTree - file system explorer.
-" Remap from 't' so that it does not conflict with tab operation
-" mappings like 'tn', 'tj', etc.
-let g:NERDTreeMapOpenInTab = 'tt'
 " Close vim if the only window left open is a NERDTree.
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+" Show hidden files by default.
+let NERDTreeShowHidden=1
 
 " Command-T - file finder.
 " Set the underlying scanning implementation that should be used to explore
@@ -463,7 +462,11 @@ nmap <silent> <leader>l <Plug>(CommandTJump)
 let g:CommandTAcceptSelectionSplitMap = '<C-b>'
 
 " NERDTree - file system explorer.
-map <leader><leader>n :NERDTreeToggle<CR>
+let g:NERDTreeMapOpenInTab = '<C-t>'
+let g:NERDTreeMapOpenSplit = '<C-b>'
+let g:NERDTreeMapOpenVSplit = '<C-v>'
+
+map <leader>n :NERDTreeToggle<CR>
 " Find the current file in the tree.
 map <leader>f :NERDTreeFind<CR>
 
