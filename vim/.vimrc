@@ -497,7 +497,8 @@ nnoremap <silent> <leader>gw :Grepper -cword -noprompt<cr>
 let g:grepper.prompt_mapping_tool = '<leader>gr'
 
 " jedi-vim - Python autocompletion
-let g:jedi#goto_assignments_command = "<leader>ga"
+let g:jedi#goto_assignments_command = '<leader>ga'
+let g:jedi#usages_command = '<leader>gy'
 
 " QFEnter - open a Quickfix item in a window you choose.
 let g:qfenter_keymap = {}
