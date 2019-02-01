@@ -36,10 +36,7 @@ endif
 if has("autocmd")
   au!
   " Make underscore a word separator.
-  autocmd FileType * setlocal iskeyword-=_
-  autocmd FileType sh setlocal iskeyword+=_
-  autocmd FileType python setlocal iskeyword+=_
-  autocmd FileType vim setlocal iskeyword+=_
+  autocmd FileType text setlocal iskeyword-=_
   " Colorcolumns.
   autocmd FileType * setlocal colorcolumn=0
   autocmd FileType python setlocal colorcolumn=81
