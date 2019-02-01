@@ -244,43 +244,59 @@ autocmd FileType python CurrentLineWhitespaceOff soft
 " lightline.vim - a light and configurable statusline/tabline.
 " Specify which feature is turned on. Both are equal to 1 by default.
 let g:lightline = {
-      \ 'enable': {
-      \   'statusline': 1,
-      \   'tabline': 0,
-      \ },
-      \ 'colorscheme': 'solarized',
-      \ 'active': {
-      \   'left': [ [ 'mode', 'paste' ],
-      \             [ 'gitbranch', 'spell', 'readonly' ],
-      \             [ 'absolutepath', 'ismodified' ] ],
-      \   'right': [ [ 'columninfo' ],
-      \              [ 'lineinfo' ],
-      \              [ 'percent' ] ],
-      \ },
-      \ 'inactive': {
-      \   'left': [ [ 'absolutepath_inactive' ] ],
-      \   'right': [ [ 'lineinfo' ],
-      \              [ 'percent' ] ],
-      \ },
-      \ 'component': {
-      \   'columninfo': ':%2v',
-      \   'lineinfo': '%3l/%L',
-      \   'spell': 'spell: %{&spell?&spelllang:""}',
-      \   'tabwinnr': '(%{tabpagewinnr(tabpagenr(), "$")})'
-      \ },
-      \ 'component_function': {
-      \   'gitbranch': 'fugitive#head',
-      \   'absolutepath_inactive': 'LightlinePathAndModified',
-      \ },
-      \ 'component_expand': {
-      \   'ismodified': 'LightlineIsModified',
-      \ },
-      \ 'component_type': {
-      \   'ismodified': 'warning',
-      \ },
-      \ }
+\  'enable': {
+\    'statusline': 1,
+\    'tabline': 1,
+\  },
+\  'colorscheme': 'solarized',
+\  'active': {
+\    'left': [ [ 'mode', 'paste' ],
+\              [ 'gitbranch', 'spell', 'readonly' ],
+\              [ 'absolutepath', 'ismodified' ] ],
+\    'right': [ [ 'columninfo' ],
+\               [ 'lineinfo' ],
+\               [ 'percent' ] ],
+\  },
+\  'inactive': {
+\    'left': [ [ 'absolutepath_inactive' ] ],
+\    'right': [ [ 'lineinfo' ],
+\               [ 'percent' ] ],
+\  },
+\  'tab': {
+\    'active': [ 'tabnum', 'filename', 'modified', 'tabwinnr' ],
+\    'inactive': [ 'tabnum', 'filename', 'modified', 'tabwinnr' ],
+\  },
+\  'component': {
+\    'columninfo': ':%2v',
+\    'lineinfo': '%3l/%L',
+\    'spell': 'spell: %{&spell?&spelllang:""}',
+\  },
+\  'tab_component_function': {
+\    'filename': 'lightline#tab#filename',
+\    'modified': 'lightline#tab#modified',
+\    'readonly': 'lightline#tab#readonly',
+\    'tabnum': 'lightline#tab#tabnum',
+\    'tabwinnr': 'LightLineTabWinNr',
+\  },
+\  'component_function': {
+\    'gitbranch': 'fugitive#head',
+\    'absolutepath_inactive': 'LightlinePathAndModified',
+\  },
+\  'component_expand': {
+\    'ismodified': 'LightlineIsModified',
+\  },
+\  'component_type': {
+\    'ismodified': 'warning',
+\  },
+\}
 " Update lightline on certain events.
 autocmd TextChanged,InsertLeave,BufWritePost * call lightline#update()
+
+" Return number of windows in a specific tab.
+function! LightLineTabWinNr(tabnr) abort
+  let tabwincount = tabpagewinnr(a:tabnr, "$")
+  return tabwincount > 1 ? '[' . tabwincount . ']' : ''
+endfunction
 
 " Join file path and modified (remove the separator bar).
 function! LightlinePathAndModified()
