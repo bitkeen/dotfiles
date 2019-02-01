@@ -466,7 +466,7 @@ nmap <silent> <leader>l <Plug>(CommandTJump)
 let g:CommandTAcceptSelectionSplitMap = '<C-b>'
 
 " NERDTree - file system explorer.
-map <leader>n :NERDTreeToggle<CR>
+map <leader><leader>n :NERDTreeToggle<CR>
 " Find the current file in the tree.
 map <leader>f :NERDTreeFind<CR>
 
