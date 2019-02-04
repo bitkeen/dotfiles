@@ -364,17 +364,15 @@ cnoremap <C-a> <home>
 cnoremap <C-e> <end>
 
 " Open (in) a new tab.
-nnoremap tn :tabnew<Space>
+nnoremap <leader>gn :tabnew<Space>
 " Switch tabs.
-nnoremap <silent> th :tabprev<CR>
-nnoremap <silent> tj :tabfirst<CR>
-nnoremap <silent> tk :tablast<CR>
-nnoremap <silent> tl :tabnext<CR>
+nnoremap <silent> <leader>gj :tabfirst<CR>
+nnoremap <silent> <leader>gk :tablast<CR>
 " Move tabs.
-nnoremap <silent> tH :-tabmove<CR>
-nnoremap <silent> tJ :0tabmove<CR>
-nnoremap <silent> tK :$tabmove<CR>
-nnoremap <silent> tL :+tabmove<CR>
+nnoremap <silent> <leader>gH :-tabmove<CR>
+nnoremap <silent> <leader>gJ :0tabmove<CR>
+nnoremap <silent> <leader>gK :$tabmove<CR>
+nnoremap <silent> <leader>gL :+tabmove<CR>
 
 " The first part clears the last used search. It will not set the pattern to
 " an empty string, because that would match everywhere. The pattern is really
@@ -423,6 +421,18 @@ nnoremap <silent> <leader><leader>q :tabnew<CR>:tabonly<CR>
 nnoremap cu gUiw
 " Change inner word to lower case.
 nnoremap cl guiw
+
+" Go to tab by number
+noremap <leader>1 1gt
+noremap <leader>2 2gt
+noremap <leader>3 3gt
+noremap <leader>4 4gt
+noremap <leader>5 5gt
+noremap <leader>6 6gt
+noremap <leader>7 7gt
+noremap <leader>8 8gt
+noremap <leader>9 9gt
+noremap <silent> <leader>0 :tablast<cr>
 
 if has("autocmd")
   " Compiling TeX.
