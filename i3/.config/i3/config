@@ -6,6 +6,7 @@ set $mod Mod4
 
 # Paths.
 set $scripts_dir ~/.dotfiles/scripts
+set $screenshots_dir ~/Pictures/screenshots
 
 # Fonts.
 set $titlesFont DejaVu Sans 12
@@ -238,7 +239,10 @@ bindsym $mod+Shift+d move workspace to output right
 bindsym $mod+Tab workspace back_and_forth
 
 # Print screen.
-bindsym Print exec --no-startup-id scrot ~/Pictures/screenshots/screenshot-%Y-%m-%d-time-%H-%M-%S.png
+bindsym Print exec --no-startup-id maim -u | tee $screenshots_dir/screenshot-$(date +%Y%m%dT%H%M%S).png | xclip -selection clipboard -t image/png && notify-send "Screenshot captured"
+# Bindings similar to those on MacOS.
+bindsym $mod+Control+3 exec --no-startup-id maim -u | tee $screenshots_dir/screenshot-$(date +%Y%m%dT%H%M%S).png | xclip -selection clipboard -t image/png && notify-send "Screenshot captured"
+bindsym $mod+Control+4 exec --no-startup-id maim -u -s | tee $screenshots_dir/screenshot-$(date +%Y%m%dT%H%M%S).png | xclip -selection clipboard -t image/png && notify-send "Screenshot captured"
 
 # Screen lock.
 bindsym $mod+Shift+x exec --no-startup-id $scripts_dir/i3_lock_custom.sh
