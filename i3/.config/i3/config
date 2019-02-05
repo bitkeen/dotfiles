@@ -346,6 +346,9 @@ exec_always --no-startup-id compton
 # Firefox.
 exec --no-startup-id firefox
 
+# Dunst.
+exec_always --no-startup-id dunst
+
 
 ##################################################
 # Scratchpad
