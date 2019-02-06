@@ -19,6 +19,7 @@
     dfs = diff --staged
     dt = difftool
     lg = log --abbrev-commit
+    lps = log -p -S
     lgg = log --all --oneline --graph
     pl = pull
     plrb = pull --rebase
