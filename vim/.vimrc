@@ -49,6 +49,13 @@ if has("autocmd")
   autocmd FileType xquery setlocal tabstop=4 shiftwidth=4 softtabstop=4 noexpandtab
   " Don't automatically insert comment leader for new lines.
   autocmd FileType * setlocal formatoptions-=o
+  " Open help windows in a vertical split by default.
+  autocmd FileType help wincmd L
+  " Show line numbers in help windows.
+  autocmd FileType help setlocal number
+  autocmd FileType help setlocal relativenumber
+  " Only show signcolumn when there is a sign to display.
+  autocmd FileType help set signcolumn=auto
 
   " Highlight the current line, but only in focused window.
   autocmd BufEnter,WinEnter,FocusGained * setlocal cursorline
