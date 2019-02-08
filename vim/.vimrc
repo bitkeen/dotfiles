@@ -119,6 +119,9 @@ set viminfo+=n~/.vim/viminfo
 " Provides tab-completion for all file-related tasks.
 set path+=**
 
+" Default is 2000.
+set redrawtime=5000
+
 " Set colorscheme.
 set background=light
 " set background=dark
