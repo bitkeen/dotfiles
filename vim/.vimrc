@@ -111,16 +111,23 @@ set number
 set relativenumber
 
 " Set directory to save swap files in.
-set directory=~/.vim/backups/swap//
+set directory=~/.vim/tmp/swap//
 
 " Save backup files in ~/.vim/backups.
-set backupdir=~/.vim/backups//
+set backupdir=~/.vim/tmp/backup//
 
 " Save undo files in ~/.vim/backups/undo.
-set undodir=~/.vim/backups/undo
+set undodir=~/.vim/tmp/undo//
 
 " Save viminfo in ~/.vim/.viminfo.
-set viminfo+=n~/.vim/viminfo
+set viminfo+=n~/.vim/tmp/viminfo
+
+" A view is a vim script that resotres the contents of the current
+" window.
+set viewdir=~/.vim/tmp/view//
+
+" Directory where netrw saves .netrwhist and .netrwbook.
+let g:netrw_home = '~/.vim/tmp'
 
 " Search down into subfolders.
 " Provides tab-completion for all file-related tasks.
