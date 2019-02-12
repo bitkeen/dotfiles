@@ -420,9 +420,6 @@ nnoremap <leader>e :edit <C-R>=expand('%:p:h') . '/'<CR>
 
 nnoremap <leader>V V`]
 
-" Yank all lines.
-nnoremap <leader>ya :%y<CR>
-
 " Open empty splits.
 nnoremap <leader>- :new<CR>
 nnoremap <leader>\ :vnew<CR>
