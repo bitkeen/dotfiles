@@ -88,3 +88,6 @@
 [submodule "vim/.vim/bundle/targets.vim"]
 	path = vim/.vim/bundle/targets.vim
 	url = https://github.com/wellle/targets.vim
+[submodule "vim/.vim/bundle/splitjoin.vim"]
+	path = vim/.vim/bundle/splitjoin.vim
+	url = https://github.com/AndrewRadev/splitjoin.vim
