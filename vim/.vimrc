@@ -402,7 +402,7 @@ nnoremap <silent> <leader>gL :+tabmove<CR>
 " The second part disables highlighting, redraws the screen (default
 " behavior for C-l) and moves one character to the left with 'h' (to keep
 " the cursor in place).
-nnoremap <silent> <leader>cl :let @/ = ""<CR> :nohls<CR><c-l>h
+nnoremap <silent> <leader>cl :let @/ = ""<CR> :nohlsearch<CR><c-l>h
 
 " Reload .vimrc.
 nnoremap <leader>rl :source $MYVIMRC<CR>
