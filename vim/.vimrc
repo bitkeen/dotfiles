@@ -175,6 +175,11 @@ endif
 " will be written. Also used for the CursorHold event.
 set updatetime=100
 
+" Commandline history size. Default is 50.
+if &history < 1000
+  set history=1000
+endif
+
 " Don't show intro message.
 set shortmess+=I
 
