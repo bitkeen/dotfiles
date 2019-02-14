@@ -1,4 +1,5 @@
 export EDITOR=/usr/bin/vim
+export HISTTIMEFORMAT="%d/%m/%y %T "
 
 # Enable completion for git.
 git_completion_file="/usr/share/bash-completion/completions/git"
