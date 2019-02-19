@@ -349,6 +349,9 @@ exec --no-startup-id firefox
 # Dunst.
 exec_always --no-startup-id dunst
 
+# Set key repeat rate.
+exec_always --no-startup-id xset r rate 250 30 &
+
 
 ##################################################
 # Scratchpad
