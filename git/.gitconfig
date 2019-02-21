@@ -31,6 +31,7 @@
     shd = stash drop
     shl = stash list
     shp = stash pop
+    sm = submodule
     st = status
     sw = show
 [core]
