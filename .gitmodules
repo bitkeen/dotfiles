@@ -100,3 +100,6 @@
 [submodule "vim/.vim/bundle/vim-exchange"]
 	path = vim/.vim/bundle/vim-exchange
 	url = https://github.com/tommcdo/vim-exchange
+[submodule "vim/.vim/bundle/vim-indent-object"]
+	path = vim/.vim/bundle/vim-indent-object
+	url = https://github.com/michaeljsmith/vim-indent-object
