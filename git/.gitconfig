@@ -20,7 +20,7 @@
     dt = difftool
     lg = log --abbrev-commit
     lps = log -p -S
-    lgg = log --all --oneline --graph
+    lgg = log --all --graph --format='%C(auto)%h%C(reset)%C(auto)%d%C(reset) %s %C(green)(%cr)%C(reset) %C(cyan)<%aN>%C(reset)'
     pl = pull
     plrb = pull --rebase
     ps = push
