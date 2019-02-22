@@ -103,3 +103,6 @@
 [submodule "vim/.vim/bundle/vim-indent-object"]
 	path = vim/.vim/bundle/vim-indent-object
 	url = https://github.com/michaeljsmith/vim-indent-object
+[submodule "vim/.vim/bundle/textobj-word-column.vim"]
+	path = vim/.vim/bundle/textobj-word-column.vim
+	url = https://github.com/coderifous/textobj-word-column.vim
