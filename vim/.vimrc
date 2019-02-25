@@ -532,10 +532,11 @@ nnoremap <leader>gu :GundoToggle<CR>
 
 " vim-grepper - use search tools in a vim split.
 nnoremap <leader>gr :Grepper<CR>
-" Search the word under the cursor.
-nnoremap <silent> <leader>gw :Grepper -cword -noprompt<cr>
 " Switch between searching tools.
 let g:grepper.prompt_mapping_tool = '<leader>gr'
+" Take any mortion and start searching for the selected query right away.
+nmap gs  <plug>(GrepperOperator)
+xmap gs  <plug>(GrepperOperator)
 
 " jedi-vim - Python autocompletion
 let g:jedi#goto_assignments_command = '<leader>ga'
