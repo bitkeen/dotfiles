@@ -106,3 +106,6 @@
 [submodule "vim/.vim/bundle/textobj-word-column.vim"]
 	path = vim/.vim/bundle/textobj-word-column.vim
 	url = https://github.com/coderifous/textobj-word-column.vim
+[submodule "vim/.vim/bundle/vim-endwise"]
+	path = vim/.vim/bundle/vim-endwise
+	url = https://github.com/tpope/vim-endwise
