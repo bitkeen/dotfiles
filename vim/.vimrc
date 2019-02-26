@@ -204,6 +204,10 @@ set wildmode=full
 " Ignore case when completing file names and directories.
 set wildignorecase
 
+" Don't redraw the screen while executing macros, registers and other
+" commands that have not been typed.
+set lazyredraw
+
 
 """"""""""""""""""""""""""""""""""""""""""""""""""
 " Plugin configuration
