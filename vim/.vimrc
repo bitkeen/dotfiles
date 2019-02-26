@@ -32,6 +32,19 @@ else
     let &t_SR = "\e[3 q"
 endif
 
+" Enable mouse when in tmux.
+if exists('$TMUX')
+  set ttymouse=xterm2
+endif
+
+" Bracketed paste works by default in Vim 8, but not when in tmux.
+if exists('$TMUX')
+  let &t_BE="\<Esc>[?2004h"
+  let &t_BD="\<Esc>[?2004l"
+  let &t_PS="\<Esc>[200~"
+  let &t_PE="\<Esc>[201~"
+endif
+
 " Only do this part when compiled with support for autocommands.
 if has("autocmd")
   au!
@@ -471,14 +484,6 @@ if has("autocmd")
     " Go to newer error list.
     autocmd FileType qf nnoremap <leader>L :cnewer<CR>
   augroup END
-endif
-
-" Bracketed paste works by default in Vim 8, but not in tmux.
-if &term =~ '^tmux'
-  let &t_BE="\<Esc>[?2004h"
-  let &t_BD="\<Esc>[?2004l"
-  let &t_PS="\<Esc>[200~"
-  let &t_PE="\<Esc>[201~"
 endif
 
 
