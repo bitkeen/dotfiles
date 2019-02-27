@@ -16,7 +16,8 @@ alias mv='mv -i'
 # Highlight matches, ignore case distinctions.
 # Output line numbers with -n.
 # Ignore binary files with -I.
-alias gr='grep -n --color=auto --ignore-case -I'
+alias grep='grep -n --color=auto --ignore-case -I'
+alias gr='grep'
 
 # Git.
 alias g='git'
