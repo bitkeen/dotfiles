@@ -117,6 +117,14 @@ ps1_right+="${reset}${bold}${vim_color}\$(ps1_vim)${reset}"
 ps1_right+="${reset}${bold}${ranger_color}\$(ps1_ranger)${reset}"
 ps1_right+="${reset}${bold}${venv_color}\$(ps1_venv)${reset}"
 
+# git-prompt.sh provides __git_ps1 that is used to show current Git branch
+# in bash prompt.
+git_prompt_file='/usr/share/git/completion/git-prompt.sh'
+if [ -f "$git_prompt_file" ]; then
+    source "$git_prompt_file"
+    ps1_right+="${reset}${bold}${git_color}\$(__git_ps1)${reset}"
+fi
+
 # Modify the prompt when using SSH.
 if [ -n "$SSH_CLIENT" ]; then
     ps1_u_at_h="${reset}${bold}\u@\h " # user@host
