@@ -56,7 +56,10 @@ export PATH=$PATH:$HOME/.local/bin
 export PATH="$PATH:$HOME/.vim/bundle/vim-superman/bin"
 
 # Load virtualenvwrapper.
-source /usr/bin/virtualenvwrapper_lazy.sh
+venv_wrapper_file="/usr/bin/virtualenvwrapper_lazy.sh"
+if [ -f "$venv_wrapper_file" ]; then
+    source "$venv_wrapper_file"
+fi
 
 # Base16 Shell.
 [ -n "$PS1" ] && \
