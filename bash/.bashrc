@@ -38,7 +38,7 @@ ranger_config_file="$HOME/.config/ranger/rc.conf"
 venv_wrapper_file="/usr/bin/virtualenvwrapper_lazy.sh"
 # git-prompt.sh provides __git_ps1 that is used to show current Git branch
 # in bash prompt.
-git_prompt_file='/usr/share/git/completion/git-prompt.sh'
+git_prompt_file='/Library/Developer/CommandLineTools/usr/share/git-core/git-prompt.sh'
 # }}}
 
 # Exports {{{
