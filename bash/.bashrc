@@ -32,9 +32,6 @@ git_color="\[$(tput setaf 75)\]"
 # Working directory.
 ps1_left="${reset}${bold}\w${reset}"
 ps1_right=""
-# Last space is actually an nbsp. It is used for searching the
-# previous command in tmux (see .tmux.conf).
-ps1_arrow=" ${reset}${bold}${arrow_color}>${reset} "
 
 # Modify the prompt when using a shell from inside ranger.
 function ps1_ranger {
@@ -70,7 +67,12 @@ if [ -n "$SSH_CLIENT" ]; then
     ps1_right+=" ${reset}${bold}${ssh_color}(ssh)${reset}"
 fi
 
-export PS1="${ps1_left}${ps1_right}${ps1_arrow}"
+# Last space is actually an nbsp. It is used for searching the
+# previous command in tmux (see .tmux.conf).
+ps1_arrow=" ${reset}${bold}${arrow_color}>${reset} "
+ps1_right+=${ps1_arrow}
+
+export PS1="${ps1_left}${ps1_right}"
 
 
 ##################################################
