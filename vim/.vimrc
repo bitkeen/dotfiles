@@ -23,10 +23,10 @@ if exists('$TMUX')
     set ttymouse=xterm2
 
     " Bracketed paste works by default in Vim 8, but not when in tmux.
-    let &t_BE="\<Esc>[?2004h"
-    let &t_BD="\<Esc>[?2004l"
-    let &t_PS="\<Esc>[200~"
-    let &t_PE="\<Esc>[201~"
+    let &t_BE = "\<Esc>[?2004h"
+    let &t_BD = "\<Esc>[?2004l"
+    let &t_PS = "\<Esc>[200~"
+    let &t_PE = "\<Esc>[201~"
 
     " Wrap escape sequences for tmux.
     let &t_SI = "\ePtmux;\e\e[5 q\e\\"
