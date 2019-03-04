@@ -31,8 +31,8 @@ _source_if_exists "$HOME/.lab_aliases"
 
 # Paths {{{
 base16_shell_dir="$HOME/.config/base16-shell/"
-fzf_bindings_file="/usr/share/fzf/key-bindings.bash"
-fzf_completion_file="/usr/share/fzf/completion.bash"
+fzf_bindings_file="/usr/local/opt/fzf/shell/key-bindings.bash"
+fzf_completion_file="/usr/local/opt/fzf/shell/completion.bash"
 git_completion_file="/usr/share/bash-completion/completions/git"
 ranger_config_file="$HOME/.config/ranger/rc.conf"
 venv_wrapper_file="/usr/bin/virtualenvwrapper_lazy.sh"
