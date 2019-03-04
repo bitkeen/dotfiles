@@ -1,6 +1,20 @@
 export EDITOR=/usr/bin/vim
 export HISTTIMEFORMAT="%Y-%m-%d %T "
 
+# Even though vi-mode is already set through readline configuration,
+# still need to set it here for fzf default bindings to work.
+set -o vi
+
+# Source fzf-related files.
+fzf_bindings_file="/usr/share/fzf/key-bindings.bash"
+if [ -f "$fzf_bindings_file" ]; then
+    source "$fzf_bindings_file"
+fi
+fzf_completion_file="/usr/share/fzf/completion.bash"
+if [ -f "$fzf_completion_file" ]; then
+    source "$fzf_completion_file"
+fi
+
 # Enable completion for git.
 git_completion_file="/usr/share/bash-completion/completions/git"
 if [ -f "$git_completion_file" ]; then
