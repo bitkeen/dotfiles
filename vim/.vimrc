@@ -364,9 +364,6 @@ let g:grepper.simple_prompt = 1
 
 let mapleader=" "
 
-" Repeat the previous macro.
-nnoremap <Enter> @@
-
 " Toggle spell-check.
 map <F2> :setlocal spell! spelllang=en_us<CR>
 
