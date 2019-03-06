@@ -80,8 +80,10 @@ set autoread
 if has("autocmd")
   augroup refresh
     au!
-    autocmd CursorHold,CursorHoldI * :checktime
-    autocmd FocusGained,BufEnter * :checktime
+    " 'checktime' causes errors in command line windows
+    " (q/, q:), 'silent!' ignores these errors
+    autocmd CursorHold,CursorHoldI * :silent! checktime
+    autocmd FocusGained,BufEnter * :silent! checktime
   augroup END
 endif
 
