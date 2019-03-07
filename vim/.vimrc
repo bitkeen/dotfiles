@@ -452,6 +452,10 @@ vnoremap <leader>s :s/
 " Don't close the buffers.
 nnoremap <silent> <leader><leader>q :tabnew<CR>:tabonly<CR>
 
+" Repeat the previous @, can be used with a count.
+" Mnemonic "again".
+nnoremap <leader>a @@
+
 " Change inner word to upper case.
 nnoremap cu gUiw
 " Change inner word to lower case.
