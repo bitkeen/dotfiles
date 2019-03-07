@@ -372,6 +372,9 @@ map <F2> :setlocal spell! spelllang=en_us<CR>
 " the jump list.
 nnoremap <expr> j (v:count > 4 ? "m'" . v:count : '') . (v:count > 1 ? 'j' : 'gj')
 nnoremap <expr> k (v:count > 4 ? "m'" . v:count : '') . (v:count > 1 ? 'k' : 'gk')
+" No marks in visual mode.
+vnoremap <expr> j v:count > 1 ? 'j' : 'gj'
+vnoremap <expr> k v:count > 1 ? 'k' : 'gk'
 
 " By default Y is synonym for yy. Remap it to yank from
 " the cursor to the end of the line, similar to C or D.
