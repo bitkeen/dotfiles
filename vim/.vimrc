@@ -456,6 +456,11 @@ nnoremap <silent> <leader><leader>q :tabnew<CR>:tabonly<CR>
 " Mnemonic "again".
 nnoremap <leader>a @@
 
+" Compare buffers in current tab.
+nnoremap <leader>dt :windo diffthis<CR>
+" Turn diff mode off.
+nnoremap <leader>do :windo diffoff<CR>
+
 " Change inner word to upper case.
 nnoremap cu gUiw
 " Change inner word to lower case.
