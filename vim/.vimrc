@@ -461,11 +461,6 @@ nnoremap <leader>dt :windo diffthis<CR>
 " Turn diff mode off.
 nnoremap <leader>do :windo diffoff<CR>
 
-" Change inner word to upper case.
-nnoremap cu gUiw
-" Change inner word to lower case.
-nnoremap cl guiw
-
 " Go to tab by number
 noremap <leader>1 1gt
 noremap <leader>2 2gt
