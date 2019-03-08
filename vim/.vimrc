@@ -422,11 +422,6 @@ nnoremap <silent> <leader>cl :let @/ = ""<CR> :nohlsearch<CR><c-l>h
 " Reload .vimrc.
 nnoremap <leader>rl :source $MYVIMRC<CR>
 
-" Insert a new line after the current line (don't enter insert mode).
-nnoremap <leader>j o<Esc>
-" Insert a new line before the current line (don't enter insert mode).
-nnoremap <leader>k O<Esc>
-
 " Save.
 nnoremap <leader>u :update<CR>
 " Save and quit.
@@ -508,9 +503,6 @@ nmap <leader>wv <Plug>VimwikiVSplitLink
 " Show open buffers. Default mapping is <leader>b, remap it to
 " <leader>bf because git-blame will be mapped to <leader>bl.
 nmap <silent> <leader>bf <Plug>(CommandTBuffer)
-" Show jumplist. Default is <leader>j, it conflicted with
-" mappings for opening new lines in normal mode.
-nmap <silent> <leader>l <Plug>(CommandTJump)
 let g:CommandTAcceptSelectionSplitMap = '<C-b>'
 
 " NERDTree - file system explorer.
