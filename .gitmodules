@@ -109,3 +109,6 @@
 [submodule "vim/.vim/bundle/vim-endwise"]
 	path = vim/.vim/bundle/vim-endwise
 	url = https://github.com/tpope/vim-endwise
+[submodule "vim/.vim/bundle/vim-abolish"]
+	path = vim/.vim/bundle/vim-abolish
+	url = https://github.com/tpope/vim-abolish
