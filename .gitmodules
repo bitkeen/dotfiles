@@ -112,3 +112,6 @@
 [submodule "vim/.vim/bundle/vim-abolish"]
 	path = vim/.vim/bundle/vim-abolish
 	url = https://github.com/tpope/vim-abolish
+[submodule "vim/.vim/bundle/vim-unimpaired"]
+	path = vim/.vim/bundle/vim-unimpaired
+	url = https://github.com/tpope/vim-unimpaired
