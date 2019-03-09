@@ -551,3 +551,11 @@ let g:qfenter_keymap.open = ['<CR>']
 let g:qfenter_keymap.vopen = ['<C-v>']
 let g:qfenter_keymap.hopen = ['<C-b>']
 let g:qfenter_keymap.topen = ['<C-t>']
+
+" unimpaired - pairs of handy bracket mappings.
+" Exchange single lines.
+nmap <C-U> [e
+nmap <C-D> ]e
+" Exchange multiple lines.
+vmap <C-U> [egv
+vmap <C-D> ]egv
