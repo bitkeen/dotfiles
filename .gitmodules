@@ -121,3 +121,6 @@
 [submodule "vim/.vim/bundle/vim-ragtag"]
 	path = vim/.vim/bundle/vim-ragtag
 	url = https://github.com/tpope/vim-ragtag
+[submodule "vim/.vim/bundle/CamelCaseMotion"]
+	path = vim/.vim/bundle/CamelCaseMotion
+	url = https://github.com/bkad/CamelCaseMotion
