@@ -11,6 +11,12 @@ function docker_alias {
         im)
             cmd="images"
             shift;;
+        lg)
+            cmd="logs"
+            shift;;
+        lgf)
+            cmd="logs -f"
+            shift;;
         *)
             cmd=$1
             shift;;
