@@ -1,3 +1,4 @@
+#!/bin/sh
 # Reload .Xresources.
 alias xup="xrdb ~/.Xresources"
 # Reload .bashrc.
