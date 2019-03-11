@@ -540,8 +540,8 @@ nnoremap <leader>gr :Grepper<CR>
 " Switch between searching tools.
 let g:grepper.prompt_mapping_tool = '<leader>gr'
 " Take any mortion and start searching for the selected query right away.
-nmap gs  <plug>(GrepperOperator)
-xmap gs  <plug>(GrepperOperator)
+nmap gs <plug>(GrepperOperator)
+xmap gs <plug>(GrepperOperator)
 
 " jedi-vim - Python autocompletion
 let g:jedi#goto_assignments_command = '<leader>ga'
@@ -559,8 +559,8 @@ call camelcasemotion#CreateMotionMappings('<localleader>')
 
 " unimpaired - pairs of handy bracket mappings.
 " Exchange single lines.
-nmap <C-U> [e
-nmap <C-D> ]e
+nmap <leader>j ]e
+nmap <leader>k [e
 " Exchange multiple lines.
-vmap <C-U> [egv
-vmap <C-D> ]egv
+vmap <leader>j ]egv
+vmap <leader>k [egv
