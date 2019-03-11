@@ -363,6 +363,8 @@ let g:grepper.simple_prompt = 1
 """"""""""""""""""""""""""""""""""""""""""""""""""
 
 let mapleader=" "
+" Backslash needs to be escaped.
+let maplocalleader="\\"
 
 " Toggle spell-check.
 map <F2> :setlocal spell! spelllang=en_us<CR>
