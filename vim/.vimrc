@@ -447,7 +447,9 @@ vnoremap <leader>s :s/
 
 " Open an empty tab and close all the other tabs.
 " Don't close the buffers.
-nnoremap <silent> <leader><leader>q :tabnew<CR>:tabonly<CR>
+nnoremap <silent> <localleader>qq :tabnew<CR>:tabonly<CR>
+" Close all buffers.
+nnoremap <silent> <localleader>qa :qa!<CR>
 
 " Repeat the previous @, can be used with a count.
 " Mnemonic "again".
