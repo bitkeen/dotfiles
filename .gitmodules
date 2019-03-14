@@ -121,3 +121,6 @@
 [submodule "vim/.vim/bundle/CamelCaseMotion"]
 	path = vim/.vim/bundle/CamelCaseMotion
 	url = https://github.com/bkad/CamelCaseMotion
+[submodule "vim/.vim/bundle/quick-scope"]
+	path = vim/.vim/bundle/quick-scope
+	url = https://github.com/unblevable/quick-scope
