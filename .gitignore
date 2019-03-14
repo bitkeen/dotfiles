@@ -1,1 +1,3 @@
 *.local
+pgcli/.config/pgcli/history
+pgcli/.config/pgcli/log
