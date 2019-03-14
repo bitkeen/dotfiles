@@ -566,3 +566,6 @@ nmap <leader>k [e
 " Exchange multiple lines.
 vmap <leader>j ]egv
 vmap <leader>k [egv
+
+" Trigger a highlight in the appropriate direction when pressing these keys:
+let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
