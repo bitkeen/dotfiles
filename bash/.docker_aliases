@@ -39,6 +39,12 @@ function docker_compose_alias {
         l)
             cmd='logs -f'
             shift;;
+        r)
+            cmd="run"
+            shift;;
+        rnd)
+            cmd="run --no-deps --name $2"
+            shift;;
         *)
             cmd=$1
             shift;;
