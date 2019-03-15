@@ -124,3 +124,6 @@
 [submodule "vim/.vim/bundle/quick-scope"]
 	path = vim/.vim/bundle/quick-scope
 	url = https://github.com/unblevable/quick-scope
+[submodule "vim/.vim/bundle/committia.vim"]
+	path = vim/.vim/bundle/committia.vim
+	url = https://github.com/rhysd/committia.vim
