@@ -2,6 +2,17 @@ $include /etc/inputrc
 
 set completion-ignore-case on
 
+# Display possible completions using different colors.
+set colored-stats on
+
+# List completions immediately instead of ringing the bell, when the
+# completing word has more than one possible completion.
+set show-all-if-ambiguous On
+
+# Append a character denoting a file's type to the filename when listing
+# possible completions.
+set visible-stats On
+
 # Remove delay when hitting Esc in bash vi mode.
 # Default value is 500 (ms).
 set keyseq-timeout 1
