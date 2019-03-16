@@ -127,3 +127,6 @@
 [submodule "vim/.vim/bundle/committia.vim"]
 	path = vim/.vim/bundle/committia.vim
 	url = https://github.com/rhysd/committia.vim
+[submodule "vim/.vim/bundle/vim-gtfo"]
+	path = vim/.vim/bundle/vim-gtfo
+	url = https://github.com/justinmk/vim-gtfo
