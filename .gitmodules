@@ -130,3 +130,6 @@
 [submodule "vim/.vim/bundle/vim-gtfo"]
 	path = vim/.vim/bundle/vim-gtfo
 	url = https://github.com/justinmk/vim-gtfo
+[submodule "vim/.vim/bundle/vim-rhubarb"]
+	path = vim/.vim/bundle/vim-rhubarb
+	url = https://github.com/tpope/vim-rhubarb
