@@ -433,7 +433,10 @@ nnoremap <leader>q :q!<CR>
 vnoremap <leader>q <Esc>:q!<CR>
 
 " Edit file, starting in same directory as current file.
-nnoremap <leader>e :edit <C-R>=expand('%:p:h') . '/'<CR>
+nnoremap <leader>ew :edit <C-R>=expand('%:p:h') . '/'<CR>
+nnoremap <leader>es :split <C-R>=expand('%:p:h') . '/'<CR>
+nnoremap <leader>ev :vsplit <C-R>=expand('%:p:h') . '/'<CR>
+nnoremap <leader>et :tabedit <C-R>=expand('%:p:h') . '/'<CR>
 
 nnoremap <leader>V V`]
 
