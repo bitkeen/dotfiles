@@ -572,3 +572,12 @@ vmap <leader>k [egv
 
 " Trigger a highlight in the appropriate direction when pressing these keys:
 let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
+
+" fugitive - Git wrapper
+" By default, Ctrl-g prints information about current file, which
+" is not useful since this information is already in lightline.
+nmap <C-g>ed :Gedit<space>
+nmap <C-g>bl :Gblame<CR>
+nmap <C-g>co :Git checkout<space>
+nmap <C-g>st :Gstatus<CR>
+nmap <C-g>sh :Git stash<CR>
