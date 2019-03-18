@@ -55,6 +55,7 @@ if has("autocmd")
   autocmd FileType ledger setlocal tabstop=4 shiftwidth=4 softtabstop=4 noexpandtab
   autocmd FileType go setlocal tabstop=4 shiftwidth=4 softtabstop=4 noexpandtab
   autocmd FileType vim setlocal tabstop=2 shiftwidth=2 softtabstop=2 expandtab
+  autocmd FileType yaml* setlocal tabstop=2 shiftwidth=2 softtabstop=2 expandtab
   autocmd FileType xquery setlocal tabstop=4 shiftwidth=4 softtabstop=4 noexpandtab
   " Don't automatically insert comment leader for new lines.
   autocmd FileType * setlocal formatoptions-=o
