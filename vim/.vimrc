@@ -524,6 +524,12 @@ map <leader>f :NERDTreeFind<CR>
 
 " vim-gitgutter - show a git diff in the sign column.
 map <leader>hh :GitGutterLineHighlightsToggle<CR>
+" Remap hunk text object mappings from ic, ac to ih, ah,
+" because ic and ac conflict with other plugins.
+omap ih <Plug>GitGutterTextObjectInnerPending
+omap ah <Plug>GitGutterTextObjectOuterPending
+xmap ih <Plug>GitGutterTextObjectInnerVisual
+xmap ah <Plug>GitGutterTextObjectOuterVisual
 
 " vim-instant-markdown - instant markdown previews.
 map <F6> :InstantMarkdownPreview<CR>
