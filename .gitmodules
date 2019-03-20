@@ -136,3 +136,6 @@
 [submodule "vim/.vim/bundle/fugitive-gitlab.vim"]
 	path = vim/.vim/bundle/fugitive-gitlab.vim
 	url = https://github.com/shumphrey/fugitive-gitlab.vim
+[submodule "vim/.vim/bundle/vim-textobj-xmlattr"]
+	path = vim/.vim/bundle/vim-textobj-xmlattr
+	url = https://github.com/whatyouhide/vim-textobj-xmlattr
