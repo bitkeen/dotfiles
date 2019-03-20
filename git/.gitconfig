@@ -21,6 +21,8 @@
     lg = log --abbrev-commit
     lps = log -p -S
     lgg = log --all --graph --format='%C(auto)%h%C(reset)%C(auto)%d%C(reset) %s %C(green)(%cr)%C(reset) %C(cyan)<%aN>%C(reset)'
+    ; git-open has to be installed (https://github.com/paulirish/git-open).
+    o = open
     pl = pull
     plrb = pull --rebase
     ps = push
