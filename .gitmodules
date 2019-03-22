@@ -139,3 +139,6 @@
 [submodule "vim/.vim/bundle/vim-textobj-xmlattr"]
 	path = vim/.vim/bundle/vim-textobj-xmlattr
 	url = https://github.com/whatyouhide/vim-textobj-xmlattr
+[submodule "tmux/.tmux/plugins/tmux-open"]
+	path = tmux/.tmux/plugins/tmux-open
+	url = https://github.com/tmux-plugins/tmux-open
