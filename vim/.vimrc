@@ -595,3 +595,5 @@ vmap <C-g>br :Gbrowse<CR>
 vmap <C-g>co :Git checkout<space>
 vmap <C-g>st :Gstatus<CR>
 vmap <C-g>sh :Git stash<CR>
+
+source ~/.dotfiles/vim/.vimrc.local
