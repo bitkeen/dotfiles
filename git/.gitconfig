@@ -20,8 +20,10 @@
     dfs = diff --staged
     dt = difftool
     lg = log --abbrev-commit
-    lps = log -p -S
     lgg = log --all --graph --format='%C(auto)%h%C(reset)%C(auto)%d%C(reset) %s %C(green)(%cr)%C(reset) %C(cyan)<%aN>%C(reset)'
+    lglr = log --left-right --oneline
+    lglrm = log --left-right --oneline HEAD...master
+    lps = log -p -S
     ; git-open has to be installed (https://github.com/paulirish/git-open).
     o = open
     pl = pull
