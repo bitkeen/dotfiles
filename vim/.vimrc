@@ -233,7 +233,8 @@ let g:vimwiki_ext2syntax = {'.md': 'markdown', '.markdown': 'markdown', '.mdown'
 " Close vim if the only window left open is a NERDTree.
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 " Show hidden files by default.
-let NERDTreeShowHidden=1
+let NERDTreeShowHidden = 1
+let NERDTreeIgnore = ['^__pycache__$[[dir]]']
 
 " Command-T - file finder.
 " Set the underlying scanning implementation that should be used to explore
