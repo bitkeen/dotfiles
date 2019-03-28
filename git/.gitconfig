@@ -10,6 +10,7 @@
     co = checkout
     cob = checkout -b
     com = checkout master
+    cop = checkout -p
     chp = cherry-pick
     ci = commit
     cia = commit --amend
