@@ -597,4 +597,7 @@ vmap <C-g>co :Git checkout<space>
 vmap <C-g>st :Gstatus<CR>
 vmap <C-g>sh :Git stash<CR>
 
+" vim-eunuch
+nmap <leader>rn :Rename<space>
+
 source ~/.dotfiles/vim/.vimrc.local
