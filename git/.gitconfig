@@ -32,6 +32,7 @@
     ps = push
     psf = push -f
     rb = rebase
+    rbs = rebase --skip
     rs = reset
     sh = stash
     shd = stash drop
