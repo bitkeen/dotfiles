@@ -600,4 +600,4 @@ vmap <C-g>sh :Git stash<CR>
 " vim-eunuch
 nmap <leader>rn :Rename<space>
 
-source ~/.dotfiles/vim/.vimrc.local
+silent! source ~/.dotfiles/vim/.vimrc.local
