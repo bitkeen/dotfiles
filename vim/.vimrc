@@ -253,6 +253,7 @@ let g:XkbSwitchEnabled = 1
 
 " vim-commentary - easy commenting
 autocmd FileType xquery setlocal commentstring=(:\ %s\ :)
+autocmd FileType abp setlocal commentstring=!%s
 
 " vim-gitgutter - show a git diff in the sign column.
 " let g:gitgutter_enabled = 0
