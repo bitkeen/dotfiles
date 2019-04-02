@@ -287,7 +287,7 @@ let g:lightline = {
 \  'active': {
 \    'left': [ [ 'mode', 'paste' ],
 \              [ 'gitbranch', 'spell', 'readonly' ],
-\              [ 'absolutepath', 'ismodified' ] ],
+\              [ 'session', 'absolutepath', 'ismodified' ] ],
 \    'right': [ [ 'columninfo' ],
 \               [ 'lineinfo' ],
 \               [ 'percent' ] ],
@@ -305,6 +305,7 @@ let g:lightline = {
 \    'columninfo': ':%2v',
 \    'lineinfo': '%3l/%L',
 \    'spell': 'spell: %{&spell?&spelllang:""}',
+\    'session': '%{ObsessionStatus()}'
 \  },
 \  'tab_component_function': {
 \    'filename': 'lightline#tab#filename',
@@ -599,5 +600,8 @@ vmap <C-g>sh :Git stash<CR>
 
 " vim-eunuch
 nmap <leader>rn :Rename<space>
+
+" vim-obsession
+nnoremap <leader>o :Obsess<CR>
 
 silent! source ~/.dotfiles/vim/.vimrc.local
