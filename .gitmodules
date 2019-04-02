@@ -148,3 +148,6 @@
 [submodule "vim/.vim/bundle/vim-obsession"]
 	path = vim/.vim/bundle/vim-obsession
 	url = https://github.com/tpope/vim-obsession
+[submodule "tmux/.tmux/plugins/tmux-continuum"]
+	path = tmux/.tmux/plugins/tmux-continuum
+	url = https://github.com/tmux-plugins/tmux-continuum
