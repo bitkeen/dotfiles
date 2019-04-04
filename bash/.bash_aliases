@@ -9,7 +9,8 @@ alias tup='tmux source-file ~/.tmux.conf'
 alias rup='bind -f ~/.inputrc'
 
 alias ls='ls -p -G'
-alias ll='ls -AlF'
+# -h - with -l and -s, print sizes like 1K 234M 2G etc.
+alias ll='ls -AlFh'
 
 # -r - copy directories recursively
 # -i - prompt before overwrite
