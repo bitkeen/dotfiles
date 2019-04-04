@@ -287,11 +287,11 @@ let g:lightline = {
 \  'colorscheme': 'solarized',
 \  'active': {
 \    'left': [ [ 'mode', 'paste' ],
-\              [ 'gitbranch', 'spell', 'readonly' ],
-\              [ 'session', 'absolutepath', 'ismodified' ] ],
+\              [ 'gitbranch', 'spell', 'isreadonly' ],
+\              [ 'keyboard_layout', 'absolutepath', 'ismodified' ] ],
 \    'right': [ [ 'columninfo' ],
 \               [ 'lineinfo' ],
-\               [ 'percent' ] ],
+\               [ 'percent', 'session' ] ],
 \  },
 \  'inactive': {
 \    'left': [ [ 'absolutepath_inactive' ] ],
@@ -306,7 +306,7 @@ let g:lightline = {
 \    'columninfo': ':%2v',
 \    'lineinfo': '%3l/%L',
 \    'spell': 'spell: %{&spell?&spelllang:""}',
-\    'session': '%{ObsessionStatus()}'
+\    'session': '%{ObsessionStatus()}',
 \  },
 \  'tab_component_function': {
 \    'filename': 'lightline#tab#filename',
@@ -318,12 +318,18 @@ let g:lightline = {
 \  'component_function': {
 \    'gitbranch': 'fugitive#head',
 \    'absolutepath_inactive': 'LightlinePathAndModified',
+\    'keyboard_layout': 'LightlineXkbSwitch',
 \  },
 \  'component_expand': {
 \    'ismodified': 'LightlineIsModified',
+\    'isreadonly': 'LightlineIsReadonly',
 \  },
 \  'component_type': {
 \    'ismodified': 'warning',
+\    'isreadonly': 'warning',
+\  },
+\  'component_visible_condition': {
+\    'session': 'ObsessionStatus()',
 \  },
 \}
 " Update lightline on certain events.
@@ -344,6 +350,27 @@ endfunction
 
 function! LightlineIsModified()
   return &modified ? '[+]' : ''
+endfunction
+
+function! LightlineIsReadonly()
+  return &readonly ? 'RO' : ''
+endfunction
+
+" Get keyboard layout using vim-xkbswitch.
+" Borrowed from airline.
+function! LightlineXkbSwitch()
+  if !exists('g:XkbSwitchLib')
+    return
+  endif
+
+  let keyboard_layout = libcall(g:XkbSwitchLib, 'Xkb_Switch_getXkbLayout', '')
+  let keyboard_layout = split(keyboard_layout, '\.')[-1]
+  let short_codes = get(g:, 'short_codes', {'us': 'US', 'ru': 'RU', 'ua': 'UA'})
+
+  if has_key(short_codes, keyboard_layout)
+    let keyboard_layout = short_codes[keyboard_layout]
+  endif
+  return keyboard_layout
 endfunction
 
 " vim-grepper - use search tools in a vim split.
