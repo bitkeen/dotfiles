@@ -286,7 +286,7 @@ let g:lightline = {
 \  },
 \  'colorscheme': 'solarized',
 \  'active': {
-\    'left': [ [ 'mode', 'paste' ],
+\    'left': [ [ 'mode', 'paste', 'zoom' ],
 \              [ 'gitbranch', 'spell', 'isreadonly' ],
 \              [ 'keyboard_layout', 'absolutepath', 'ismodified' ] ],
 \    'right': [ [ 'columninfo' ],
@@ -307,6 +307,7 @@ let g:lightline = {
 \    'lineinfo': '%3l/%L',
 \    'spell': 'spell: %{&spell?&spelllang:""}',
 \    'session': '%{ObsessionStatus()}',
+\    'zoom': '%{zoom#statusline()}',
 \  },
 \  'tab_component_function': {
 \    'filename': 'lightline#tab#filename',
@@ -330,6 +331,7 @@ let g:lightline = {
 \  },
 \  'component_visible_condition': {
 \    'session': 'ObsessionStatus()',
+\    'zoom': 'zoom#statusline()',
 \  },
 \}
 " Update lightline on certain events.
@@ -581,7 +583,7 @@ nnoremap <leader>gu :GundoToggle<CR>
 nnoremap <leader>gr :Grepper<CR>
 " Switch between searching tools.
 let g:grepper.prompt_mapping_tool = '<leader>gr'
-" Take any mortion and start searching for the selected query right away.
+" Take any motion and start searching for the selected query right away.
 nmap gs <plug>(GrepperOperator)
 xmap gs <plug>(GrepperOperator)
 
@@ -631,5 +633,9 @@ nmap <leader>rn :Rename<space>
 
 " vim-obsession
 nnoremap <leader>o :Obsess<CR>
+
+" vim-zoom
+nmap <leader>z <Plug>(zoom-toggle)
+let g:zoom#statustext = 'Z'
 
 silent! source ~/.dotfiles/vim/.vimrc.local
