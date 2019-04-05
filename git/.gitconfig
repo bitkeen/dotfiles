@@ -42,6 +42,7 @@
     rbs = rebase --skip
     rs = reset
     sh = stash
+    shps = stash push -m
     shd = stash drop
     shl = stash list
     shp = stash pop
