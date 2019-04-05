@@ -333,7 +333,21 @@ let g:lightline = {
 \    'session': 'ObsessionStatus()',
 \    'zoom': 'zoom#statusline()',
 \  },
+\  'mode_map': {
+\    'n' : 'N',
+\    'i' : 'I',
+\    'R' : 'R',
+\    'v' : 'V',
+\    'V' : 'VL',
+\    "\<C-v>": 'VB',
+\    'c' : 'C',
+\    's' : 'S',
+\    'S' : 'S',
+\    "\<C-s>": 'SB',
+\    't': 'T',
+\  },
 \}
+
 " Update lightline on certain events.
 autocmd TextChanged,InsertLeave,BufWritePost * call lightline#update()
 
