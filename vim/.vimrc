@@ -638,4 +638,8 @@ nnoremap <leader>o :Obsess<CR>
 nmap <leader>z <Plug>(zoom-toggle)
 let g:zoom#statustext = 'Z'
 
+let g:ranger_map_keys = 0
+map <leader>rg :Ranger<CR>
+map <leader>rt :RangerNewTab<CR>
+
 silent! source ~/.dotfiles/vim/.vimrc.local
