@@ -266,14 +266,11 @@ bindsym $mod+shift+b exec --no-startup-id $scripts_dir/toggle_brightness.sh
 
 # Media player controls.
 # Mod+/
-bindsym $mod+question exec --no-startup-id mpc toggle
-# bindsym $mod+question exec --no-startup-id playerctl play-pause
+bindsym $mod+question exec --no-startup-id cmus-remote --pause
 # Mod+,
-bindsym $mod+period exec --no-startup-id mpc next
-# bindsym $mod+period exec --no-startup-id playerctl next
+bindsym $mod+period exec --no-startup-id cmus-remote --next
 # Mod+.
-bindsym $mod+comma exec --no-startup-id mpc prev
-# bindsym $mod+comma exec --no-startup-id playerctl previous
+bindsym $mod+comma exec --no-startup-id cmus-remote --prev
 
 # Mouse bindings.
 # Disable mouse wheel switching between windows.
@@ -291,7 +288,7 @@ bindsym $mod+b exec firefox
 bindsym $mod+shift+f exec --no-startup-id urxvt -e ranger
 
 # Launch ncmpcpp.
-bindsym $mod+m exec --no-startup-id urxvt -e ncmpcpp
+bindsym $mod+m exec --no-startup-id urxvt -e cmus
 
 
 ##################################################

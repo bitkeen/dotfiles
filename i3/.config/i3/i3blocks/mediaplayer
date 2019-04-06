@@ -45,6 +45,14 @@ sub buttons {
         } elsif ($ENV{'BLOCK_BUTTON'} == 3) {
             system("mpc next");
         }
+    } elsif ($method eq 'cmus') {
+        if ($ENV{'BLOCK_BUTTON'} == 1) {
+            system("cmus-remote --prev");
+        } elsif ($ENV{'BLOCK_BUTTON'} == 2) {
+            system("cmus-remote --pause");
+        } elsif ($ENV{'BLOCK_BUTTON'} == 3) {
+            system("cmus-remote --next");
+        }
     } elsif ($method eq 'playerctl') {
         if ($ENV{'BLOCK_BUTTON'} == 1) {
             system("playerctl $player_arg play-pause");
@@ -79,6 +87,41 @@ sub mpd {
     }
 }
 
+sub cmus {
+    my @cmus = split /^/, qx(cmus-remote -Q);
+    if ($? == 0) {
+        my $status = '';
+        foreach my $line (@cmus) {
+            my @data = split /\s/, $line;
+            if (@data[0] eq 'status') {
+                $status = @data[1];
+                if ($status eq "playing") {
+                    $status = "";
+                } elsif ($status eq "paused") {
+                    $status = "";
+                } else {
+                    exit(0);
+                }
+            } elsif (@data[0] eq 'tag') {
+                my $key = @data[1];
+                my $value = join ' ', @data[2..$#data];
+
+                @metadata[0] = $value if $key eq 'artist';
+                @metadata[1] = $value if $key eq 'title';
+            }
+        }
+
+        if (@metadata) {
+            buttons('cmus');
+
+            # metadata found so we are done
+            my $song = join ' - ', @metadata;
+            print "$status  $song";
+            exit 0;
+        }
+    }
+}
+
 sub playerctl {
     # remove newline symbol from the end
     my $status = substr qx(playerctl status), 0, -1;
@@ -101,6 +144,9 @@ sub playerctl {
 
 if ($player_arg eq '' or $player_arg =~ /mpd/) {
     mpd;
+}
+elsif ($player_arg =~ /cmus/) {
+    cmus;
 }
 else {
     playerctl;
