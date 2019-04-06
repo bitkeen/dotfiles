@@ -262,7 +262,7 @@ bindsym XF86MonBrightnessUp exec --no-startup-id light -A 5
 bindsym XF86MonBrightnessDown exec --no-startup-id light -U 5
 
 # Toggle screen brightness level.
-bindsym $mod+b exec --no-startup-id $scripts_dir/toggle_brightness.sh
+bindsym $mod+shift+b exec --no-startup-id $scripts_dir/toggle_brightness.sh
 
 # Media player controls.
 # Mod+/
@@ -285,13 +285,13 @@ bindsym --whole-window --border button10 exec --no-startup-id pactl set-sink-vol
 bindsym --whole-window --border button11 exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5%
 
 # Launch Firefox.
-bindsym $mod+Shift+f exec firefox
+bindsym $mod+b exec firefox
 
 # Launch ranger.
-bindsym $mod+Shift+o exec --no-startup-id urxvt -e ranger
+bindsym $mod+shift+f exec --no-startup-id urxvt -e ranger
 
 # Launch ncmpcpp.
-bindsym $mod+Shift+m exec --no-startup-id urxvt -e ncmpcpp
+bindsym $mod+m exec --no-startup-id urxvt -e ncmpcpp
 
 
 ##################################################
