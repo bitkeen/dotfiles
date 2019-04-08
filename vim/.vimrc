@@ -422,7 +422,7 @@ let g:lightline = {
 \  'active': {
 \    'left': [ [ 'mode', 'paste' ],
 \              [ 'gitbranch', 'spell', 'isreadonly' ],
-\              [ 'keyboard_layout', 'absolutepath', 'ismodified' ] ],
+\              [ 'absolutepath', 'ismodified' ] ],
 \    'right': [ [ 'columninfo' ],
 \               [ 'lineinfo' ],
 \               [ 'percent', 'session', 'linter_checking', 'linter_errors', 'linter_warnings', 'linter_ok' ] ],
