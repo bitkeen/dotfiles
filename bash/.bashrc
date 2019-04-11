@@ -15,6 +15,12 @@ if [ -f "$fzf_completion_file" ]; then
     source "$fzf_completion_file"
 fi
 
+# Avoid loading default config file for ranger if a custom one exists.
+ranger_config_file="$HOME/.config/ranger/rc.conf"
+if [ -f "$ranger_config_file" ]; then
+    export RANGER_LOAD_DEFAULT_RC=FALSE
+fi
+
 # Enable completion for git.
 git_completion_file="/usr/share/bash-completion/completions/git"
 if [ -f "$git_completion_file" ]; then
@@ -90,12 +96,17 @@ export PS1="${ps1_left}${ps1_right}"
 
 
 ##################################################
-# Aliases
+# Aliases and functions
 ##################################################
 
 # Add main bash aliases.
 if [ -f ~/.bash_aliases ]; then
     source ~/.bash_aliases
+fi
+
+# Add  functions.
+if [ -f ~/.bash_functions ]; then
+    source ~/.bash_functions
 fi
 
 # Add local (untracked) bash aliases.
@@ -107,34 +118,3 @@ fi
 if [ -f ~/.docker_aliases ]; then
     source ~/.docker_aliases
 fi
-
-
-##################################################
-# ranger
-##################################################
-
-# Avoid loading default config file for ranger if a custom one exists.
-ranger_config_file="$HOME/.config/ranger/rc.conf"
-if [ -f "$ranger_config_file" ]; then
-    export RANGER_LOAD_DEFAULT_RC=FALSE
-fi
-
-# Automatically change the directory in bash after closing ranger.
-# Source:
-# https://github.com/ranger/ranger/blob/master/examples/bash_automatic_cd.sh
-# The same script can be found locally:
-# /usr/share/doc/ranger/examples/bash_automatic_cd.sh
-#
-# This is a function for automatically changing the directory to
-# the last visited one after ranger quits.
-# To undo the effect of this function, you can type "cd -" to return to the
-# original directory.
-function ranger-cd {
-    tempfile="$(mktemp -t tmp.XXXXXX)"
-    ranger --choosedir="$tempfile" "${@:-$(pwd)}"
-    test -f "$tempfile" &&
-    if [ "$(cat -- "$tempfile")" != "$(echo -n `pwd`)" ]; then
-        cd -- "$(cat "$tempfile")"
-    fi
-    rm -f -- "$tempfile"
-}

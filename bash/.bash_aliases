@@ -23,51 +23,6 @@ alias gr='grep'
 # Git.
 alias g='git'
 
-# dotfiles push
-# Push dotfiles repo changes to origin, rebasing each branch on master.
-function dps {
-    initial_dir=$PWD
-    dotfiles_dir="$HOME/.dotfiles"
-
-    cd $dotfiles_dir
-    git checkout master && git push &&
-    git checkout arch && git rebase master && git push -f &&
-    git checkout mac && git rebase master && git push -f &&
-    git checkout termux && git rebase master && git push -f &&
-    if [ -n "$1" ]; then
-        git checkout $1
-    else
-        git checkout master
-    fi
-    cd $initial_dir
-}
-
-# dotfiles pull
-# Pull and rebase all the branches of the dotfiles repository.
-function dpl {
-    initial_dir=$PWD
-    dotfiles_dir="$HOME/.dotfiles"
-
-    cd $dotfiles_dir
-    git checkout master && git pull --rebase &&
-    git checkout arch && git pull --rebase &&
-    git checkout mac && git pull --rebase &&
-    git checkout termux && git pull --rebase &&
-    if [ -n "$1" ]; then
-        git checkout $1
-    else
-        git checkout master
-    fi
-    cd $initial_dir
-}
-
-function groot {
-    # Change working directory to the git root if the current working
-    # directory is inside of a git repository.
-    git status > /dev/null 2>&1 || return 1
-    cd "$(git rev-parse --show-cdup)".
-}
-
 # Kill processes by name.
 alias ka='killall'
 
