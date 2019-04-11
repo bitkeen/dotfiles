@@ -731,6 +731,10 @@ vnoremap <silent> <LocalLeader>qo <Esc>:tabonly<CR>:only<CR>
 nnoremap <silent> <LocalLeader>qt :tabclose<CR>
 vnoremap <silent> <LocalLeader>qt <Esc>:tabclose<CR>
 
+" Paste from MacOS clipboard.
+" Useful for pasting large amounts of text.
+nnoremap <silent> <localleader>p :read !pbpaste<CR>
+
 " Repeat the previous @, can be used with a count.
 nnoremap <Leader><Leader> @@
 
