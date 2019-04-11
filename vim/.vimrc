@@ -430,11 +430,6 @@ vnoremap <expr> k v:count > 1 ? 'k' : 'gk'
 " the cursor to the end of the line, similar to C or D.
 noremap Y y$
 
-" Copy to system clipboard.
-vnoremap <C-c> "+y
-nnoremap <C-p> "+P
-vnoremap <C-p> "+P
-
 " Quicker window movement.
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
