@@ -495,6 +495,9 @@ nnoremap <leader>\ :vnew<CR>
 nnoremap <leader>s :%s/
 vnoremap <leader>s :s/
 
+" Make all windows the same height and width.
+nnoremap <leader>= <C-W>=
+
 " Open an empty tab and close all the other tabs.
 " Don't close the buffers.
 nnoremap <silent> <localleader>qq :tabnew<CR>:tabonly<CR>
