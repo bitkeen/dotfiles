@@ -11,6 +11,9 @@ function lab_alias {
             # -a - set assignee
             cmd="mr create -d -a"
             shift;;
+        mrls)
+            cmd="mr list"
+            shift;;
         *)
             cmd=$1
             shift;;
