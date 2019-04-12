@@ -22,6 +22,7 @@ alias gr='grep'
 
 # Git.
 alias g='git'
+alias l='lab'
 
 # Kill processes by name.
 alias ka='killall'

@@ -1,0 +1,21 @@
+#!/bin/sh
+# Aliases for the lab utility (https://github.com/zaquestion/lab).
+function lab_alias {
+    key="$1"
+    case $key in
+        mrc)
+            # -d - remove source branch from remote after merge
+            cmd="mr create -d"
+            shift;;
+        mrca)
+            # -a - set assignee
+            cmd="mr create -d -a"
+            shift;;
+        *)
+            cmd=$1
+            shift;;
+    esac
+    lab $cmd $@
+}
+
+alias lab='lab_alias'

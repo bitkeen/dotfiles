@@ -121,3 +121,8 @@ fi
 if [ -f ~/.docker_aliases ]; then
     source ~/.docker_aliases
 fi
+
+# Add lab aliases.
+if [ -f ~/.lab_aliases ]; then
+    source ~/.lab_aliases
+fi
