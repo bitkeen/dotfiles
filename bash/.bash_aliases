@@ -27,6 +27,9 @@ alias l='lab'
 # Kill processes by name.
 alias ka='killall'
 
+alias d='docker'
+alias dcmp='docker-compose'
+
 # Open ranger.
 # alias r='ranger'
 # The ranger-cd version switches the directory in bash on exit.

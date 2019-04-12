@@ -57,6 +57,3 @@ function docker_compose_alias {
 
 alias docker='docker_alias'
 alias docker-compose='docker_compose_alias'
-
-alias d='docker'
-alias dcmp='docker-compose'
