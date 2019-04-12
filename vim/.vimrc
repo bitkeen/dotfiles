@@ -525,6 +525,11 @@ noremap <leader>8 8gt
 noremap <leader>9 9gt
 noremap <silent> <leader>0 :tablast<cr>
 
+" Put the text after current line.
+nnoremap <leader>p :put<CR>
+" Put the text before current line.
+nnoremap <leader>P :put!<CR>
+
 if has("autocmd")
   " Compiling TeX.
   augroup tex
