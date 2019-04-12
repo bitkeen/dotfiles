@@ -11,6 +11,9 @@ function docker_alias {
         im)
             cmd="images"
             shift;;
+        killall)
+            cmd="kill $(docker ps -q)"
+            shift;;
         lg)
             cmd="logs"
             shift;;
