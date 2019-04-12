@@ -637,18 +637,12 @@ let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
 " fugitive - Git wrapper
 " By default, Ctrl-g prints information about current file, which
 " is not useful since this information is already in lightline.
-nmap <C-g>ed :Gedit<space>
-nmap <C-g>bl :Gblame<CR>
-nmap <C-g>br :Gbrowse<CR>
-nmap <C-g>co :Git checkout<space>
-nmap <C-g>st :Gstatus<CR>
-nmap <C-g>sh :Git stash<CR>
-vmap <C-g>ed :Gedit<space>
-vmap <C-g>bl :Gblame<CR>
-vmap <C-g>br :Gbrowse<CR>
-vmap <C-g>co :Git checkout<space>
-vmap <C-g>st :Gstatus<CR>
-vmap <C-g>sh :Git stash<CR>
+map <C-g>ed :Gedit<space>
+map <C-g>bl :Gblame<CR>
+map <C-g>br :Gbrowse<CR>
+map <C-g>co :Git checkout<space>
+map <C-g>st :Gstatus<CR>
+map <C-g>sh :Git stash<CR>
 
 " vim-eunuch
 nmap <leader>rn :Rename<space>
