@@ -640,6 +640,7 @@ let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
 map <C-g>ed :Gedit<space>
 map <C-g>bl :Gblame<CR>
 map <C-g>br :Gbrowse<CR>
+map <C-g>ci :Gcommit %<CR>
 map <C-g>co :Git checkout<space>
 map <C-g>st :Gstatus<CR>
 map <C-g>sh :Git stash<CR>
