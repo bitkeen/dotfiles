@@ -166,3 +166,6 @@
 [submodule "vim/.vim/bundle/MatchTagAlways"]
 	path = vim/.vim/bundle/MatchTagAlways
 	url = https://github.com/Valloric/MatchTagAlways
+[submodule "vim/.vim/bundle/gv.vim"]
+	path = vim/.vim/bundle/gv.vim
+	url = https://github.com/junegunn/gv.vim
