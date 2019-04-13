@@ -42,6 +42,10 @@ alias v='vim'
 # Open vimwiki.
 alias vw='vim -c "VimwikiIndex"'
 
+# The space at the end allows the next command word following the alias
+# to also be checked for alias expansion.
+alias sd='sudo '
+
 # Create directory.
 # -p - no error if existing, make parent directories as needed.
 # -v - print a message for each created directory.
