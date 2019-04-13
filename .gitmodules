@@ -169,3 +169,6 @@
 [submodule "vim/.vim/bundle/gv.vim"]
 	path = vim/.vim/bundle/gv.vim
 	url = https://github.com/junegunn/gv.vim
+[submodule "vim/.vim/bundle/vim-scriptease"]
+	path = vim/.vim/bundle/vim-scriptease
+	url = https://github.com/tpope/vim-scriptease
