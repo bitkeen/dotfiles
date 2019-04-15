@@ -172,3 +172,6 @@
 [submodule "vim/.vim/bundle/vim-scriptease"]
 	path = vim/.vim/bundle/vim-scriptease
 	url = https://github.com/tpope/vim-scriptease
+[submodule "tmux/.tmux/plugins/tmux-urlview"]
+	path = tmux/.tmux/plugins/tmux-urlview
+	url = https://github.com/tmux-plugins/tmux-urlview
