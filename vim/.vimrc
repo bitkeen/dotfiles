@@ -659,4 +659,8 @@ let g:ranger_map_keys = 0
 map <leader>rg :Ranger<CR>
 map <leader>rt :RangerNewTab<CR>
 
+" vim-merginal - interface for dealing with Git branches.
+" Requires fugitive.
+map <leader>m :MerginalToggle<CR>
+
 silent! source ~/.dotfiles/vim/.vimrc.local
