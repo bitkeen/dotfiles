@@ -169,6 +169,10 @@ set clipboard=unnamedplus
 " Don't show current mode on the last line, e.g. `-- INSERT --`.
 set noshowmode
 
+" Don't move the cursor to the first non-blank of the line
+" on Ctrl-D, Ctrl-U, gg, G, etc.
+set nostartofline
+
 " Allow cursor to move where there is no text in visual block mode.
 set virtualedit=block
 
