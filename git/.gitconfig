@@ -39,6 +39,7 @@
     shl = stash list
     shp = stash pop
     sm = submodule
+    smu = submodule update --init
     st = status
     sw = show
 [core]
