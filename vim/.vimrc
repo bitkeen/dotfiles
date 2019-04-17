@@ -660,4 +660,7 @@ map <leader>m :MerginalToggle<CR>
 " vZoom - quickly maximize & unmaximize the current window.
 nmap <leader>z <Plug>(vzoom)
 
+" vim-instant-markdown
+map <leader>i :InstantMarkdownPreview<CR>
+
 silent! source ~/.dotfiles/vim/.vimrc.local
