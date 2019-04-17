@@ -286,7 +286,7 @@ let g:lightline = {
 \  },
 \  'colorscheme': 'solarized',
 \  'active': {
-\    'left': [ [ 'mode', 'paste', 'zoom' ],
+\    'left': [ [ 'mode', 'paste' ],
 \              [ 'gitbranch', 'spell', 'isreadonly' ],
 \              [ 'keyboard_layout', 'absolutepath', 'ismodified' ] ],
 \    'right': [ [ 'columninfo' ],
@@ -307,7 +307,6 @@ let g:lightline = {
 \    'lineinfo': '%3l/%L',
 \    'spell': 'spell: %{&spell?&spelllang:""}',
 \    'session': '%{ObsessionStatus()}',
-\    'zoom': '%{zoom#statusline()}',
 \  },
 \  'tab_component_function': {
 \    'filename': 'lightline#tab#filename',
@@ -331,7 +330,6 @@ let g:lightline = {
 \  },
 \  'component_visible_condition': {
 \    'session': 'ObsessionStatus()',
-\    'zoom': 'zoom#statusline()',
 \  },
 \  'mode_map': {
 \    'n' : 'N',
@@ -650,10 +648,6 @@ nmap <leader>rn :Rename<space>
 
 " vim-obsession
 nnoremap <leader>o :Obsess<CR>
-
-" vim-zoom
-nmap <leader>z <Plug>(zoom-toggle)
-let g:zoom#statustext = 'Z'
 
 let g:ranger_map_keys = 0
 map <leader>rg :Ranger<CR>

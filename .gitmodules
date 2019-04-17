@@ -151,9 +151,6 @@
 [submodule "tmux/.tmux/plugins/tmux-continuum"]
 	path = tmux/.tmux/plugins/tmux-continuum
 	url = https://github.com/tmux-plugins/tmux-continuum
-[submodule "vim/.vim/bundle/vim-zoom"]
-	path = vim/.vim/bundle/vim-zoom
-	url = https://github.com/dhruvasagar/vim-zoom
 [submodule "vim/.vim/bundle/undoquit.vim"]
 	path = vim/.vim/bundle/undoquit.vim
 	url = https://github.com/AndrewRadev/undoquit.vim
