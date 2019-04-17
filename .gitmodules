@@ -169,9 +169,6 @@
 [submodule "vim/.vim/bundle/vim-scriptease"]
 	path = vim/.vim/bundle/vim-scriptease
 	url = https://github.com/tpope/vim-scriptease
-[submodule "tmux/.tmux/plugins/tmux-urlview"]
-	path = tmux/.tmux/plugins/tmux-urlview
-	url = https://github.com/tmux-plugins/tmux-urlview
 [submodule "vim/.vim/bundle/vim-closer"]
 	path = vim/.vim/bundle/vim-closer
 	url = https://github.com/rstacruz/vim-closer
@@ -190,3 +187,6 @@
 [submodule "vim/.vim/bundle/vim-instant-markdown"]
 	path = vim/.vim/bundle/vim-instant-markdown
 	url = https://github.com/suan/vim-instant-markdown
+[submodule "tmux/.tmux/plugins/tmux-fzf-url"]
+	path = tmux/.tmux/plugins/tmux-fzf-url
+	url = https://github.com/wfxr/tmux-fzf-url
