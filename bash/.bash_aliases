@@ -45,7 +45,7 @@ alias vm='vman '
 
 # The space at the end allows the next command word following the alias
 # to also be checked for alias expansion.
-alias sd='sudo '
+alias s='sudo '
 
 # Create directory.
 # -p - no error if existing, make parent directories as needed.
