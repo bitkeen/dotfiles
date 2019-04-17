@@ -181,3 +181,6 @@
 [submodule "vim/.vim/bundle/vim-merginal"]
 	path = vim/.vim/bundle/vim-merginal
 	url = https://github.com/idanarye/vim-merginal
+[submodule "vim/.vim/bundle/vim-gnupg"]
+	path = vim/.vim/bundle/vim-gnupg
+	url = https://github.com/jamessan/vim-gnupg
