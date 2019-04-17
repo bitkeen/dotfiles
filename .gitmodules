@@ -181,3 +181,6 @@
 [submodule "vim/.vim/bundle/vim-gnupg"]
 	path = vim/.vim/bundle/vim-gnupg
 	url = https://github.com/jamessan/vim-gnupg
+[submodule "vim/.vim/bundle/vZoom.vim"]
+	path = vim/.vim/bundle/vZoom.vim
+	url = https://github.com/KabbAmine/vZoom.vim

@@ -657,4 +657,7 @@ map <leader>rt :RangerNewTab<CR>
 " Requires fugitive.
 map <leader>m :MerginalToggle<CR>
 
+" vZoom - quickly maximize & unmaximize the current window.
+nmap <leader>z <Plug>(vzoom)
+
 silent! source ~/.dotfiles/vim/.vimrc.local
