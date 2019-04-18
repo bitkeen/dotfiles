@@ -39,6 +39,7 @@
     shd = stash drop
     shl = stash list
     shp = stash pop
+    shsw = stash show -p
     sm = submodule
     smu = submodule update --init
     st = status
