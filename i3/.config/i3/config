@@ -290,6 +290,9 @@ bindsym $mod+b exec firefox
 # Launch ranger.
 bindsym $mod+shift+f exec --no-startup-id urxvt -e ranger
 
+# Launch calcurse.
+bindsym $mod+c exec --no-startup-id urxvt -e calcurse
+
 # Launch ncmpcpp.
 bindsym $mod+m exec --no-startup-id urxvt -e ncmpcpp
 
