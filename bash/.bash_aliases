@@ -41,7 +41,6 @@ alias c='docker-compose'
 
 # Pacman.
 alias p='pacman'
-alias sp='sudo pacman'
 
 # Open ranger.
 # The ranger-cd version switches the directory in bash on exit,
