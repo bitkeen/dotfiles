@@ -661,4 +661,8 @@ nmap <leader>z <Plug>(vzoom)
 " vim-instant-markdown
 map <leader>i :InstantMarkdownPreview<CR>
 
+" SimpylFold - better Python code folding.
+let g:SimpylFold_docstring_preview = 1
+let g:SimpylFold_fold_docstring = 0
+
 silent! source ~/.dotfiles/vim/.vimrc.local
