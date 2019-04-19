@@ -316,17 +316,14 @@ floating_modifier $mod
 assign [class="Firefox"] $workspace1
 assign [class="mpv"] $workspace8
 assign [class="Anki"] $workspace5
-assign [class="Rhythmbox"] $workspace9
 assign [class="keepassxc"] $workspace10
 
 # Enable floating mode.
 for_window [class="Galculator"] floating enable
-for_window [class="Orage"] floating enable
 # Stack virtualbox windows together.
 for_window [class="VirtualBox"] layout stacking
 # Switch to workspace when a window is opened.
 for_window [class="mpv"] workspace $workspace8
-for_window [class="Rhythmbox"] workspace $workspace9
 for_window [class="keepassxc"] workspace $workspace10
 
 
