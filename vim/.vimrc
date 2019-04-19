@@ -178,7 +178,6 @@ set virtualedit=block
 
 " Put a string at the start of lines that have been wrapped.
 set showbreak=›
-" set showbreak=›\ " The backslash escapes the trailing space.
 
 " Indent wrapped lines at the same amount of space as the
 " beginning of that line.
