@@ -588,9 +588,6 @@ xmap ah <Plug>GitGutterTextObjectOuterVisual
 " vim-instant-markdown - instant markdown previews.
 map <F6> :InstantMarkdownPreview<CR>
 
-" vim-gitgutter - show a git diff in the sign column.
-map <leader>hh :GitGutterLineHighlightsToggle<CR>
-
 " git-blame.vim - see blame information in the bottom line.
 nnoremap <silent> <leader>bl :<C-u>call gitblame#echo()<CR>
 
