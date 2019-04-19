@@ -51,6 +51,9 @@ export HISTCONTROL=ignorespace:ignoredups:erasedups
 # Don't limit the number of commands to save in history.
 export HISTSIZE=-1
 export HISTTIMEFORMAT="%Y-%m-%d %T "
+# The following variable is needed for USB drives to work.
+# See https://unix.stackexchange.com/questions/26842/mounting-usb-drive-that-is-not-recognized.
+export MTP_NO_PROBE="1"
 # Scripts and user-specific Python packages are installed in .local/bin.
 export PATH="$PATH:$HOME/.local/bin"
 export PATH="$PATH:$HOME/.local/bin.local"
