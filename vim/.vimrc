@@ -274,13 +274,6 @@ let g:jedi#use_tabs_not_buffers = 1
 " Disable docstring window popup during completion.
 autocmd FileType python setlocal completeopt-=preview
 
-" vim-better-whitespace - show and remove trailing whitespace.
-let g:better_whitespace_enabled=0
-let g:strip_whitespace_on_save=0
-autocmd FileType python let g:better_whitespace_enabled=1
-autocmd FileType python DisableWhitespace
-autocmd FileType python CurrentLineWhitespaceOff soft
-
 " lightline.vim - a light and configurable statusline/tabline.
 " Specify which feature is turned on. Both are equal to 1 by default.
 let g:lightline = {
@@ -592,10 +585,6 @@ map <F6> :InstantMarkdownPreview<CR>
 
 " vim-gitgutter - show a git diff in the sign column.
 map <leader>hh :GitGutterLineHighlightsToggle<CR>
-
-" vim-better-whitespace - show and remove trailing whitespace.
-map <leader>bwt :ToggleWhitespace<CR>
-map <leader>bws :StripWhitespace<CR>
 
 " git-blame.vim - see blame information in the bottom line.
 nnoremap <silent> <leader>bl :<C-u>call gitblame#echo()<CR>
