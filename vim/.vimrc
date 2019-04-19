@@ -159,6 +159,9 @@ set formatoptions+=j
 " Always show status line.
 set laststatus=2
 
+" Always start editing with all folds open.
+set foldlevelstart=99
+
 " Open new split panes to right and bottom, which feels more
 " natural than Vim’s default.
 set splitbelow
