@@ -528,7 +528,7 @@ nnoremap <leader>p :put<CR>
 nnoremap <leader>P :put!<CR>
 
 " Toggle fold.
-nnoremap <leader>c za
+nnoremap <space><space> za
 
 if has("autocmd")
   " Compiling TeX.
