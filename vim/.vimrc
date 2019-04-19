@@ -461,7 +461,7 @@ nnoremap <silent> <leader>gL :+tabmove<CR>
 " The second part disables highlighting, redraws the screen (default
 " behavior for C-l) and moves one character to the left with 'h' (to keep
 " the cursor in place).
-nnoremap <silent> <leader>cl :let @/ = ""<CR> :nohlsearch<CR><c-l>h
+nnoremap <silent> <leader>l :let @/ = ""<CR> :nohlsearch<CR><c-l>h
 
 " Reload .vimrc.
 nnoremap <leader>rl :source $MYVIMRC<CR>
@@ -524,6 +524,9 @@ noremap <silent> <leader>0 :tablast<cr>
 nnoremap <leader>p :put<CR>
 " Put the text before current line.
 nnoremap <leader>P :put!<CR>
+
+" Toggle fold.
+nnoremap <leader>c za
 
 if has("autocmd")
   " Compiling TeX.
