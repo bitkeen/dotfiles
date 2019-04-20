@@ -156,6 +156,9 @@ colorscheme solarized
 " Remove comment chars when joining comments.
 set formatoptions+=j
 
+" Show trailing whitespace as middle dots (when 'list' is set).
+set listchars=trail:·
+
 " Always show status line.
 set laststatus=2
 
