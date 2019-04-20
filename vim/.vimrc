@@ -530,6 +530,9 @@ nnoremap <leader>P :put!<CR>
 " Toggle fold.
 nnoremap <space><space> za
 
+" Toggle invisible characters.
+nmap <localleader>l :set list!<CR>
+
 if has("autocmd")
   " Compiling TeX.
   augroup tex
