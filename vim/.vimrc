@@ -220,6 +220,9 @@ filetype plugin indent on
 " Enable syntax highlighting.
 syntax enable
 
+" Set the character encoding used inside Vim
+set encoding=utf-8
+
 " If you set the 'incsearch' option, Vim will show the first match
 " for the pattern, while you are still typing it. This quickly shows a
 " typo in the pattern.
