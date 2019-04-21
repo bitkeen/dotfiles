@@ -225,10 +225,6 @@ set lazyredraw
 let g:indentLine_fileType = ['python', 'lua', 'vim', 'xquery']
 let g:indentLine_char = '|'
 
-" vim-markdown - force .md files as markdown.
-let g:markdown_fenced_languages = ['html', 'python', 'bash=sh']
-let g:markdown_minlines = 100
-
 " vim-instant-markdown - instant markdown previews.
 let g:instant_markdown_autostart = 0
 
@@ -590,9 +586,6 @@ omap ih <Plug>GitGutterTextObjectInnerPending
 omap ah <Plug>GitGutterTextObjectOuterPending
 xmap ih <Plug>GitGutterTextObjectInnerVisual
 xmap ah <Plug>GitGutterTextObjectOuterVisual
-
-" vim-instant-markdown - instant markdown previews.
-map <F6> :InstantMarkdownPreview<CR>
 
 " git-blame.vim - see blame information in the bottom line.
 nnoremap <silent> <leader>bl :<C-u>call gitblame#echo()<CR>
