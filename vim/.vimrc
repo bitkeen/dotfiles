@@ -266,8 +266,10 @@ else
 endif
 
 " jedi-vim - Python autocompletion
-let g:jedi#use_tabs_not_buffers = 1
-" let g:jedi#use_splits_not_buffers = "right"
+let g:jedi#popup_on_dot = 0
+let g:jedi#show_call_signatures = 0
+let g:jedi#use_splits_not_buffers = "winwidth"
+
 " Disable docstring window popup during completion.
 autocmd FileType python setlocal completeopt-=preview
 
