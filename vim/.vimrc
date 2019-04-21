@@ -67,6 +67,8 @@ if has("autocmd")
   " Only show signcolumn when there is a sign to display.
   autocmd FileType help setlocal signcolumn=auto
 
+  autocmd FileType python setlocal foldmethod=indent
+
   " Highlight the current line, but only in focused window.
   autocmd BufEnter,WinEnter,FocusGained * setlocal cursorline
   autocmd WinLeave,FocusLost * setlocal nocursorline
