@@ -575,9 +575,9 @@ let g:NERDTreeMapOpenInTab = '<C-t>'
 let g:NERDTreeMapOpenSplit = '<C-b>'
 let g:NERDTreeMapOpenVSplit = '<C-v>'
 
-map <leader>n :NERDTreeToggle<CR>
+map <silent> <leader>n :NERDTreeToggle<CR>
 " Find the current file in the tree.
-map <leader>f :NERDTreeFind<CR>
+map <silent> <leader>f :NERDTreeFind<CR>
 
 " vim-gitgutter - show a git diff in the sign column.
 map <leader>hh :GitGutterLineHighlightsToggle<CR>
@@ -638,6 +638,9 @@ map <C-g>co :Git checkout<space>
 map <C-g>st :Gstatus<CR>
 map <C-g>sh :Git stash<CR>
 
+" GV - Git commit browser. Requires fugitive.
+map <C-g>v :GV<CR>
+
 " vim-eunuch
 nmap <leader>rn :Rename<space>
 
@@ -650,7 +653,7 @@ map <leader>rt :RangerNewTab<CR>
 
 " vim-merginal - interface for dealing with Git branches.
 " Requires fugitive.
-map <leader>m :MerginalToggle<CR>
+map <silent> <leader>m :MerginalToggle<CR>
 
 " vZoom - quickly maximize & unmaximize the current window.
 nmap <leader>z <Plug>(vzoom)
