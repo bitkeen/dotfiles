@@ -398,6 +398,9 @@ let g:grepper.prompt_quote = 3
 " let g:grepper.highlight = 1
 let g:grepper.simple_prompt = 1
 
+" Gundo - graph undo tree.
+let g:gundo_prefer_python3 = 1
+
 
 """"""""""""""""""""""""""""""""""""""""""""""""""
 " Mappings
