@@ -187,9 +187,6 @@
 [submodule "tmux/.tmux/plugins/tmux-fzf-url"]
 	path = tmux/.tmux/plugins/tmux-fzf-url
 	url = https://github.com/wfxr/tmux-fzf-url
-[submodule "vim/.vim/bundle/SimpylFold"]
-	path = vim/.vim/bundle/SimpylFold
-	url = https://github.com/tmhedberg/SimpylFold
 [submodule "vim/.vim/bundle/vim-python-pep8-indent"]
 	path = vim/.vim/bundle/vim-python-pep8-indent
 	url = https://github.com/Vimjas/vim-python-pep8-indent
