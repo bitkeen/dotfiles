@@ -65,7 +65,7 @@ if has("autocmd")
   autocmd FileType help setlocal number
   autocmd FileType help setlocal relativenumber
   " Only show signcolumn when there is a sign to display.
-  autocmd FileType help set signcolumn=auto
+  autocmd FileType help setlocal signcolumn=auto
 
   " Highlight the current line, but only in focused window.
   autocmd BufEnter,WinEnter,FocusGained * setlocal cursorline
