@@ -3,6 +3,8 @@
 # with defunct commands when upgrading ranger.
 
 import os
+from functools import partial
+
 from ranger.api.commands import Command
 from ranger.core.loader import CommandLoader
 
@@ -44,7 +46,15 @@ class empty_trash(Command):
     Empty the trash directory with 'gio trash --empty'.
     """
     def execute(self):
-        self.fm.run("gio trash --empty")
+        self.fm.ui.console.ask(
+            "Clear trash? (y/N)",
+            partial(self._question_callback),
+            ('n', 'N', 'y', 'Y'),
+        )
+
+    def _question_callback(self, answer):
+        if answer == 'y' or answer == 'Y':
+            self.fm.run("gio trash --empty")
 
 
 class extract_here(Command):
