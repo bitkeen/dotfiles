@@ -468,7 +468,7 @@ nnoremap <silent> <leader>gL :+tabmove<CR>
 nnoremap <silent> <leader>l :let @/ = ""<CR> :nohlsearch<CR><c-l>h
 
 " Reload .vimrc.
-nnoremap <leader>rl :source $MYVIMRC<CR>
+nnoremap <localleader>r :source $MYVIMRC<CR>
 
 " Save.
 nnoremap <leader>u :update<CR>
