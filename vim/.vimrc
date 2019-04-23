@@ -484,7 +484,8 @@ nnoremap <leader>es :split <C-R>=expand('%:p:h') . '/'<CR>
 nnoremap <leader>ev :vsplit <C-R>=expand('%:p:h') . '/'<CR>
 nnoremap <leader>et :tabedit <C-R>=expand('%:p:h') . '/'<CR>
 
-nnoremap <leader>V V`]
+" Visually select last changed or yanked text.
+nnoremap <leader>v `[v`]
 
 " Open empty splits.
 nnoremap <leader>- :new<CR>
