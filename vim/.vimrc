@@ -491,6 +491,10 @@ nnoremap <leader>v `[v`]
 nnoremap <leader>- :new<CR>
 nnoremap <leader>\ :vnew<CR>
 
+" Open current file in a vertical split.
+nnoremap <leader><C-v> :vsplit %<CR>
+nnoremap <leader><C-b> :split %<CR>
+
 " Substitute.
 nnoremap <leader>s :%s/
 vnoremap <leader>s :s/
