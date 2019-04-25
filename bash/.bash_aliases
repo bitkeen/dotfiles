@@ -36,6 +36,7 @@ alias dcmp='docker-compose'
 alias r='ranger-cd'
 
 alias t='tmux'
+alias ta='tmux attach -t'
 
 # Open (with) vim.
 alias v='vim'
