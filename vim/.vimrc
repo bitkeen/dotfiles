@@ -151,9 +151,11 @@ set path+=**
 set redrawtime=5000
 
 " Set colorscheme.
-set background=light
-" set background=dark
-colorscheme solarized
+if filereadable(expand("~/.vimrc_background"))
+  " Access colors present in 256 colorspace.
+  let base16colorspace=256
+  source ~/.vimrc_background
+endif
 
 " Remove comment chars when joining comments.
 set formatoptions+=j
@@ -282,7 +284,6 @@ let g:lightline = {
 \    'statusline': 1,
 \    'tabline': 1,
 \  },
-\  'colorscheme': 'solarized',
 \  'active': {
 \    'left': [ [ 'mode', 'paste' ],
 \              [ 'gitbranch', 'spell', 'isreadonly' ],
