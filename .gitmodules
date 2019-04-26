@@ -196,3 +196,6 @@
 [submodule "vim/.vim/bundle/base16-vim"]
 	path = vim/.vim/bundle/base16-vim
 	url = https://github.com/danielwe/base16-vim
+[submodule "vim/.vim/bundle/tmuxline.vim"]
+	path = vim/.vim/bundle/tmuxline.vim
+	url = https://github.com/edkolev/tmuxline.vim
