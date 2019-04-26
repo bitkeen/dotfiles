@@ -499,6 +499,13 @@ nnoremap <leader><C-b> :split %<CR>
 nnoremap <leader>s :%s/
 vnoremap <leader>s :s/
 
+" Remove trailing whitespace.
+nnoremap <leader>t :%s/\s\+$//e<CR>
+vnoremap <leader>t :s/\s\+$//e<CR>
+
+" Remove empty lines through entire file.
+nnoremap <leader>el :g/^$/d<CR>
+
 " Make all windows the same height and width.
 nnoremap <leader>= <C-W>=
 
