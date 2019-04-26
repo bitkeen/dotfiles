@@ -500,8 +500,8 @@ nnoremap <leader>s :%s/
 vnoremap <leader>s :s/
 
 " Remove trailing whitespace.
-nnoremap <leader>t :%s/\s\+$//e<CR>
-vnoremap <leader>t :s/\s\+$//e<CR>
+nnoremap <localleader>t :%s/\s\+$//e<CR>
+vnoremap <localleader>t :s/\s\+$//e<CR>
 
 " Remove empty lines through entire file.
 nnoremap <leader>el :g/^$/d<CR>
