@@ -13,26 +13,6 @@ set $titlesFont DejaVu Sans 12
 set $barFont Droid Sans Mono 14
 set $dmenuFont "Source Sans Pro:pixelsize=17"
 
-# Colors.
-# Background
-set $bgrclr #222222
-# Focused workspace border
-set $fcsbrd #666666
-# Focused window background
-set $fcwbgr #fdf6e3
-# Focused workspace background
-set $fcsbgr #666666
-# Focused window text
-set $fcwtxt #111111
-# Focused workspace text
-set $fcstxt #fdf6e3
-# Focused window indicator
-set $fcsind #fdf6e3
-# Bar separator
-set $barsep #666666
-# Bar statusline
-set $barstl #fdf6e3
-
 # Workspace names.
 # The first number will not be displayed. This is to make the last
 # workspace display 0, while not being sorted to the first position
@@ -47,50 +27,56 @@ set $workspace8 "8: 8 "
 set $workspace9 "9: 9 "
 set $workspace10 "10: 0 "
 
-# Workspace names with FontAwesome icons.
-# set $workspace1 "1:1 "
-# set $workspace2 "2:2 "
-# set $workspace3 "3:3 "
-# set $workspace4 "4:4 "
-# set $workspace5 "5:5 "
-# set $workspace6 "6:6 "
-# set $workspace7 "7:7 "
-# set $workspace8 "8:8 "
-# set $workspace9 "9:9 "
-# set $workspace10 "10:0 "
+# Define colors.
+set $red    #900000
+set $black  #000000
+# Base16 Tomorrow Night.
+set $base00 #1d1f21
+set $base01 #282a2e
+set $base02 #373b41
+set $base03 #969896
+set $base04 #b4b7b4
+set $base05 #c5c8c6
+set $base06 #e0e0e0
+set $base07 #ffffff
+set $base08 #cc6666
+set $base09 #de935f
+set $base0A #f0c674
+set $base0B #b5bd68
+set $base0C #8abeb7
+set $base0D #81a2be
+set $base0E #b294bb
+set $base0F #a3685a
 
 
 ##################################################
-# Window colors
+# Set up window colors
 ##################################################
 
 # class                 border  backgr. text    indicator child_border
-client.focused          $fcwbgr $fcwbgr $fcwtxt #000000   $fcwbgr
-client.focused_inactive #333333 #5f676a #ffffff #484e50   #5f676a
-client.unfocused        #777777 #777777 $fcwtxt #292d2e   #777777
-client.urgent           #2f343a #900000 #ffffff #900000   #900000
-client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
+client.focused          $base05 $base05 $base00 $black    $base05
+client.focused_inactive $base03 $base03 $base01 $black    $base03
+client.unfocused        $base02 $base02 $base03 $black    $base02
+client.urgent           $red    $red    $base07 $black    $red
+client.placeholder      $base03 $base03 $base01 $black    $base03
 
-client.background       $bgrclr
+client.background       $base00
 
 
 ##################################################
 # Bar
 ##################################################
-
-# Start i3bar to display a workspace bar (plus the system information
-# i3status finds out, if available).
 bar {
     colors {
-        background $bgrclr
-        statusline $barstl
-        separator  $barsep
+        background $base00
+        statusline $base06
+        separator  $base03
 
-        focused_workspace  $fcsbrd $fcsbgr $fcstxt
-        active_workspace   #333333 #5f676a #ffffff
-        inactive_workspace #333333 #222222 #888888
-        urgent_workspace   #2f343a #900000 #ffffff
-        binding_mode       #2f343a #900000 #ffffff
+        focused_workspace  $base00 $base05 $base00
+        active_workspace   $base00 $base03 $base01
+        inactive_workspace $base01 $base00 $base03
+        urgent_workspace   $red    $red    $base07
+        binding_mode       $red    $red    $base07
     }
 
     position top
