@@ -39,3 +39,65 @@ URxvt.url-select.launcher: /usr/bin/xdg-open
 
 ! keyboard-select - move through text in terminal using vim bindings
 URxvt.keysym.M-Escape: perl:keyboard-select:activate
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+! Colors
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+! Base16 Tomorrow Night
+! Scheme: Chris Kempson (http://chriskempson.com)
+#define base00 #1d1f21
+#define base01 #282a2e
+#define base02 #373b41
+#define base03 #969896
+#define base04 #b4b7b4
+#define base05 #c5c8c6
+#define base06 #e0e0e0
+#define base07 #ffffff
+#define base08 #cc6666
+#define base09 #de935f
+#define base0A #f0c674
+#define base0B #b5bd68
+#define base0C #8abeb7
+#define base0D #81a2be
+#define base0E #b294bb
+#define base0F #a3685a
+
+! Only set up colors for terminals launched with urxvt -name named.
+! E.g. `exec --no-startup-id urxvt -name named -e ncmpcpp`.
+! Colors for other terminals are set by base16-shell.
+named.foreground:   base05
+#ifdef background_opacity
+named.background:   [background_opacity]base00
+#else
+named.background:   base00
+#endif
+named.cursorColor:  base05
+
+named.color0:       base00
+named.color1:       base08
+named.color2:       base0B
+named.color3:       base0A
+named.color4:       base0D
+named.color5:       base0E
+named.color6:       base0C
+named.color7:       base05
+
+named.color8:       base03
+named.color9:       base08
+named.color10:      base0B
+named.color11:      base0A
+named.color12:      base0D
+named.color13:      base0E
+named.color14:      base0C
+named.color15:      base07
+
+! Note: colors beyond 15 might not be loaded (e.g., xterm, urxvt),
+! use 'shell' template to set these if necessary
+named.color16:      base09
+named.color17:      base0F
+named.color18:      base01
+named.color19:      base02
+named.color20:      base04
+named.color21:      base06
