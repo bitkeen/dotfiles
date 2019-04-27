@@ -1,0 +1,8 @@
+/* Make blank page dark.
+ * The color is base00 from base16-tomorrow-dark. */
+@-moz-document url-prefix(about:blank)
+{
+    *{
+        background-color: #1d1f21;
+    }
+}
