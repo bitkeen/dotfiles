@@ -430,6 +430,10 @@ vnoremap <expr> k v:count > 1 ? 'k' : 'gk'
 " the cursor to the end of the line, similar to C or D.
 noremap Y y$
 
+" Write with sudo.
+" See https://stackoverflow.com/a/7078429.
+cmap w!! w !sudo tee > /dev/null %
+
 " Quicker window movement.
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
