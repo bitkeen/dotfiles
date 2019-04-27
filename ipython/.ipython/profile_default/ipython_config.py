@@ -598,3 +598,33 @@ c.TerminalInteractiveShell.editing_mode = 'vi'
 ## If True, any %store-d variables will be automatically restored when IPython
 #  starts.
 #c.StoreMagics.autorestore = False
+
+#------------------------------------------------------------------------------
+# Colorscheme
+#------------------------------------------------------------------------------
+
+# https://github.com/memeplex/base16-prompt-toolkit
+#
+# For `ModuleNotFoundError: No module named 'prompt_toolkit.terminal`
+# see https://github.com/memeplex/base16-prompt-toolkit/issues/4.
+# with open('~/.vimrc_background') as fin:
+#     lines = fin.readlines()
+
+import importlib
+import os
+import re
+
+# Get the name of the theme currently used in Vim.
+text = ''
+with open('{}/.vimrc_background'.format(os.getenv('HOME'))) as fin:
+    text = '\n'.join(fin.readlines())
+m = re.search('(?<=colorscheme )(.*)', text)
+colorscheme = m.group(0)
+
+try:
+    theme = importlib.import_module('base16.{}'.format(colorscheme))
+except ModuleNotFoundError as e:
+    print(e)
+else:
+    c.TerminalInteractiveShell.highlighting_style = theme.Base16Style
+    c.TerminalInteractiveShell.highlighting_style_overrides = theme.overrides
