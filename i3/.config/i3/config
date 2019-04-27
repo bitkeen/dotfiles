@@ -253,13 +253,10 @@ bindsym $mod+b exec --no-startup-id $scripts_dir/toggle_brightness.sh
 # Media player controls.
 # Mod+/
 bindsym $mod+question exec --no-startup-id mpc toggle
-# bindsym $mod+question exec --no-startup-id playerctl play-pause
 # Mod+,
 bindsym $mod+period exec --no-startup-id mpc next
-# bindsym $mod+period exec --no-startup-id playerctl next
 # Mod+.
 bindsym $mod+comma exec --no-startup-id mpc prev
-# bindsym $mod+comma exec --no-startup-id playerctl previous
 
 # Mouse bindings.
 # Disable mouse wheel switching between windows.
@@ -337,18 +334,3 @@ exec_always --no-startup-id dunst
 
 # Set key repeat rate.
 exec_always --no-startup-id xset r rate 250 30 &
-
-
-##################################################
-# Scratchpad
-##################################################
-
-# Tmux dropdown.
-set $dd_name "tmuxdd"
-# bindsym $mod+grave exec --no-startup-id $scripts_dir/tmuxdd.sh $dd_name
-# Terminal window with name $dd_name is created in tmuxdd.sh
-for_window [instance=$dd_name] floating enable
-for_window [instance=$dd_name] resize set 1400 900
-for_window [instance=$dd_name] border pixel 1
-for_window [instance=$dd_name] move position center
-for_window [instance=$dd_name] move scratchpad
