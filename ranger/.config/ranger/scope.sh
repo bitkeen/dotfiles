@@ -37,7 +37,8 @@ FILE_EXTENSION_LOWER=$(echo ${FILE_EXTENSION} | tr '[:upper:]' '[:lower:]')
 HIGHLIGHT_SIZE_MAX=262143  # 256KiB
 HIGHLIGHT_TABWIDTH=8
 HIGHLIGHT_STYLE='pablo'
-PYGMENTIZE_STYLE='autumn'
+# Get the name of the theme currently used in Vim.
+PYGMENTIZE_STYLE="$(awk 'FNR==2{print $2}' $HOME/.vimrc_background)"
 
 
 handle_extension() {
