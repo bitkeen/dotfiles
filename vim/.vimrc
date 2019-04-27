@@ -252,6 +252,7 @@ let g:CommandTAlwaysShowDotFiles = 1
 let g:CommandTScanDotDirectories = 1
 " Override wildignore setting during Command-T searches.
 let g:CommandTWildIgnore=&wildignore . ",*/.git,Session.vim"
+let g:CommandTMaxFiles=500000
 
 " vim-xkbswitch - automatically switch keyboard layout based on mode.
 let g:XkbSwitchEnabled = 1
