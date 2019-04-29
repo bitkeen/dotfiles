@@ -334,3 +334,18 @@ exec_always --no-startup-id dunst
 
 # Set key repeat rate.
 exec_always --no-startup-id xset r rate 250 30 &
+
+
+##################################################
+# Scratchpad
+##################################################
+
+# Tmux dropdown.
+set $dd_name "named.tmuxdd"
+bindsym $mod+grave exec --no-startup-id $scripts_dir/tmuxdd.sh $dd_name
+# Terminal window with name $dd_name is created in tmuxdd.sh
+for_window [instance=$dd_name] floating enable
+for_window [instance=$dd_name] resize set 1600 900
+for_window [instance=$dd_name] border pixel 1
+for_window [instance=$dd_name] move position center
+for_window [instance=$dd_name] move scratchpad
