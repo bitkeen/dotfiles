@@ -67,37 +67,40 @@ URxvt.keysym.M-Escape: perl:keyboard-select:activate
 ! Only set up colors for terminals launched with urxvt -name named.
 ! E.g. `exec --no-startup-id urxvt -name named -e ncmpcpp`.
 ! Colors for other terminals are set by base16-shell.
-named.foreground:   base05
+named.*.foreground:   base05
 #ifdef background_opacity
-named.background:   [background_opacity]base00
+named.*.background:   [background_opacity]base00
 #else
-named.background:   base00
+named.*.background:   base00
 #endif
-named.cursorColor:  base05
+named.*.cursorColor:  base05
 
-named.color0:       base00
-named.color1:       base08
-named.color2:       base0B
-named.color3:       base0A
-named.color4:       base0D
-named.color5:       base0E
-named.color6:       base0C
-named.color7:       base05
+named.*.color0:       base00
+named.*.color1:       base08
+named.*.color2:       base0B
+named.*.color3:       base0A
+named.*.color4:       base0D
+named.*.color5:       base0E
+named.*.color6:       base0C
+named.*.color7:       base05
 
-named.color8:       base03
-named.color9:       base08
-named.color10:      base0B
-named.color11:      base0A
-named.color12:      base0D
-named.color13:      base0E
-named.color14:      base0C
-named.color15:      base07
+named.*.color8:       base03
+named.*.color9:       base08
+named.*.color10:      base0B
+named.*.color11:      base0A
+named.*.color12:      base0D
+named.*.color13:      base0E
+named.*.color14:      base0C
+named.*.color15:      base07
 
 ! Note: colors beyond 15 might not be loaded (e.g., xterm, urxvt),
 ! use 'shell' template to set these if necessary
-named.color16:      base09
-named.color17:      base0F
-named.color18:      base01
-named.color19:      base02
-named.color20:      base04
-named.color21:      base06
+named.*.color16:      base09
+named.*.color17:      base0F
+named.*.color18:      base01
+named.*.color19:      base02
+named.*.color20:      base04
+named.*.color21:      base06
+
+named.tmuxdd.background: rgba:3333/3333/3333/CCCC
+named.tmuxdd.foreground:   base07
