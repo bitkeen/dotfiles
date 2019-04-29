@@ -342,7 +342,7 @@ startup_screen = media_library
 #
 #mouse_support = yes
 #
-#mouse_list_scroll_whole_page = yes
+mouse_list_scroll_whole_page = no
 #
 #empty_tag_marker = <empty>
 #
