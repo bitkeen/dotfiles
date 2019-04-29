@@ -42,36 +42,43 @@ else
 endif
 
 " Only do this part when compiled with support for autocommands.
-if has("autocmd")
-  au!
-  " Make underscore a word separator.
-  autocmd FileType text setlocal iskeyword-=_
-  " Colorcolumns.
-  autocmd FileType * setlocal colorcolumn=0
-  autocmd FileType python setlocal colorcolumn=81
-  autocmd FileType vim setlocal colorcolumn=81
-  " Tab widths.
-  autocmd FileType * setlocal tabstop=4 shiftwidth=4 softtabstop=4 expandtab
-  autocmd FileType ledger setlocal noexpandtab
-  autocmd FileType go setlocal noexpandtab
-  autocmd FileType xquery setlocal noexpandtab
-  autocmd FileType vim setlocal tabstop=2 shiftwidth=2 softtabstop=2
-  autocmd FileType yaml* setlocal tabstop=2 shiftwidth=2 softtabstop=2
-  " Don't automatically insert comment leader for new lines.
-  autocmd FileType * setlocal formatoptions-=o
-  " Open help windows in a vertical split by default.
-  autocmd FileType help wincmd L
-  " Show line numbers in help windows.
-  autocmd FileType help setlocal number
-  autocmd FileType help setlocal relativenumber
-  " Only show signcolumn when there is a sign to display.
-  autocmd FileType help setlocal signcolumn=auto
+if has('autocmd')
+  augroup main
+    autocmd!
 
-  autocmd FileType python setlocal foldmethod=indent
+    " Don't automatically insert comment leader for new lines.
+    autocmd FileType * setlocal formatoptions-=o
 
-  " Highlight the current line, but only in focused window.
-  autocmd BufEnter,WinEnter,FocusGained * setlocal cursorline
-  autocmd WinLeave,FocusLost * setlocal nocursorline
+    " Make underscore a word separator.
+    autocmd FileType text setlocal iskeyword-=_
+
+    " Colorcolumns.
+    autocmd FileType * setlocal colorcolumn=0
+    autocmd FileType python setlocal colorcolumn=81
+    autocmd FileType vim setlocal colorcolumn=81
+
+    " Tab widths.
+    autocmd FileType * setlocal tabstop=4 shiftwidth=4 softtabstop=4 expandtab
+    autocmd FileType ledger setlocal noexpandtab
+    autocmd FileType go setlocal noexpandtab
+    autocmd FileType xquery setlocal noexpandtab
+    autocmd FileType vim setlocal tabstop=2 shiftwidth=2 softtabstop=2
+    autocmd FileType yaml* setlocal tabstop=2 shiftwidth=2 softtabstop=2
+
+    " Open help windows in a vertical split by default.
+    autocmd FileType help wincmd L
+    " Show line numbers in help windows.
+    autocmd FileType help setlocal number
+    autocmd FileType help setlocal relativenumber
+    " Only show signcolumn when there is a sign to display.
+    autocmd FileType help setlocal signcolumn=auto
+
+    autocmd FileType python setlocal foldmethod=indent
+
+    " Highlight the current line, but only in focused window.
+    autocmd BufEnter,WinEnter,FocusGained * setlocal cursorline
+    autocmd WinLeave,FocusLost * setlocal nocursorline
+  augroup END
 else
   " Maintain indent of current line.
   set autoindent
@@ -82,11 +89,19 @@ endif
 set autoread
 if has("autocmd")
   augroup refresh
-    au!
+    autocmd!
     " 'checktime' causes errors in command line windows
     " (q/, q:), 'silent!' ignores these errors
     autocmd CursorHold,CursorHoldI * :silent! checktime
     autocmd FocusGained,BufEnter * :silent! checktime
+  augroup END
+
+  augroup linting
+    autocmd!
+    autocmd FileType python setlocal makeprg=pylint\ --output-format=parseable
+    autocmd FileType python nnoremap <leader>L :silent make! %
+    " Automatic opening of the quickfix window.
+    autocmd QuickFixCmdPost [^l]* cwindow
   augroup END
 endif
 
@@ -221,6 +236,10 @@ set wildignorecase
 " Plugin configuration
 """"""""""""""""""""""""""""""""""""""""""""""""""
 
+augroup plugins
+    autocmd!
+augroup END
+
 " indentLine - display vertical lines at each indentation level.
 let g:indentLine_fileType = ['python', 'lua', 'vim', 'xquery']
 let g:indentLine_char = '|'
@@ -236,7 +255,7 @@ let g:vimwiki_ext2syntax = {'.md': 'markdown', '.markdown': 'markdown', '.mdown'
 
 " NERDTree - file system explorer.
 " Close vim if the only window left open is a NERDTree.
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+autocmd plugins BufEnter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 " Show hidden files by default.
 let NERDTreeShowHidden = 1
 let NERDTreeIgnore = ['^__pycache__$[[dir]]']
@@ -258,8 +277,8 @@ let g:CommandTMaxFiles=500000
 let g:XkbSwitchEnabled = 1
 
 " vim-commentary - easy commenting
-autocmd FileType xquery setlocal commentstring=(:\ %s\ :)
-autocmd FileType abp setlocal commentstring=!%s
+autocmd plugins FileType xquery setlocal commentstring=(:\ %s\ :)
+autocmd plugins FileType abp setlocal commentstring=!%s
 
 " vim-gitgutter - show a git diff in the sign column.
 " let g:gitgutter_enabled = 0
@@ -276,7 +295,7 @@ let g:jedi#show_call_signatures = 0
 let g:jedi#use_splits_not_buffers = "winwidth"
 
 " Disable docstring window popup during completion.
-autocmd FileType python setlocal completeopt-=preview
+autocmd plugins FileType python setlocal completeopt-=preview
 
 " lightline.vim - a light and configurable statusline/tabline.
 " Specify which feature is turned on. Both are equal to 1 by default.
@@ -347,7 +366,7 @@ let g:lightline = {
 \}
 
 " Update lightline on certain events.
-autocmd TextChanged,InsertLeave,BufWritePost * call lightline#update()
+autocmd plugins TextChanged,InsertLeave,BufWritePost * call lightline#update()
 
 " Return number of windows in a specific tab.
 function! LightLineTabWinNr(tabnr) abort
@@ -551,7 +570,7 @@ nmap <localleader>l :set list!<CR>
 if has("autocmd")
   " Compiling TeX.
   augroup tex
-    au!
+    autocmd!
     " Map F3 to compile LaTeX. The last <Enter> skips the log.
     autocmd FileType tex map <F3> :w<Enter>:!pdflatex<space>%<Enter><Enter>
     " Map F4 to compile XeTeX.
@@ -559,7 +578,7 @@ if has("autocmd")
   augroup END
   " Quickfix window mappings.
   augroup qf
-    au!
+    autocmd!
     " Go to older error list.
     autocmd FileType qf nnoremap <leader>H :colder<CR>
     " Go to newer error list.
