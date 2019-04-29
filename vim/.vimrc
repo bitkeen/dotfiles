@@ -618,8 +618,16 @@ nmap gs <plug>(GrepperOperator)
 xmap gs <plug>(GrepperOperator)
 
 " jedi-vim - Python autocompletion
+" <leader>d is default. Leave it here for visibility.
+let g:jedi#goto_command = '<leader>d'
+" <leader>r is default. Leave it here for visibility.
+let g:jedi#rename_command = '<leader>r'
+" Default is <leader>g.
 let g:jedi#goto_assignments_command = '<leader>ga'
+" Default is <leader>n.
 let g:jedi#usages_command = '<leader>gy'
+" Default is <C-space> which conflicts with Tmux prefix binding.
+let g:jedi#completions_command = '<C-n>'
 
 " QFEnter - open a Quickfix item in a window you choose.
 let g:qfenter_keymap = {}
@@ -657,14 +665,14 @@ map <C-g>sh :Git stash<CR>
 map <C-g>v :GV<CR>
 
 " vim-eunuch
-nmap <leader>rn :Rename<space>
+nmap <leader><C-r> :Rename<space>
 
 " vim-obsession
-nnoremap <leader>o :Obsess<CR>
+nnoremap <leader><C-o> :Obsess<CR>
 
 let g:ranger_map_keys = 0
-map <leader>rg :Ranger<CR>
-map <leader>rt :RangerNewTab<CR>
+map <leader>R :Ranger<CR>
+map <leader>T :RangerNewTab<CR>
 
 " vim-merginal - interface for dealing with Git branches.
 " Requires fugitive.
