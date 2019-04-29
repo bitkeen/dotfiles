@@ -334,9 +334,6 @@
 #def_key "y"
 #  start_searching
 #
-#def_key "y"
-#  toggle_single
-#
 #def_key "R"
 #  toggle_consume
 #
@@ -551,3 +548,10 @@ def_key "J"
 
 def_key "q"
   quit
+
+# Default for toggle_single.
+def_key "y"
+  dummy
+
+def_key "ctrl-y"
+  toggle_single
