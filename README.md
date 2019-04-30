@@ -9,4 +9,4 @@ Example: to setup Vim, simply run `stow vim` inside.
 Packages that I want to have installed on my machines
 are in the `requirements.txt` file.
 
-Install with `pip install -r requirements.txt`.
+Install with `pip install --user -r requirements.txt`.
