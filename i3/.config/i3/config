@@ -162,6 +162,8 @@ bindsym $mod+Shift+q kill
 # Need to use single quotes since dmenuFont variable uses double quotes.
 bindsym $mod+d exec --no-startup-id i3-dmenu-desktop --dmenu='/usr/bin/dmenu -i -fn $dmenuFont'
 
+# Tmux session selection menu.
+bindsym $mod+t exec --no-startup-id $scripts_dir/dmenu_tmux.sh
 # Power menu.
 bindsym $mod+Shift+z exec --no-startup-id $scripts_dir/dmenu_power.sh
 
