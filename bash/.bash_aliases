@@ -7,6 +7,8 @@ alias bup='source ~/.bashrc'
 alias tup='tmux source-file ~/.tmux.conf'
 # Reload Readline's .inputrc.
 alias rup='bind -f ~/.inputrc'
+# Restart i3.
+alias iup='i3-msg restart'
 
 alias ls='ls -p --color=auto'
 # -h - with -l and -s, print sizes like 1K 234M 2G etc.
