@@ -53,6 +53,8 @@ alias s='sudo '
 # -v - print a message for each created directory.
 alias mkd='mkdir -pv'
 
+alias tch='touch'
+
 alias bandcamp-dl="bandcamp-dl --base-dir=$HOME/Downloads/bandcamp-dl"
 
 alias ytdl='youtube-dl'
