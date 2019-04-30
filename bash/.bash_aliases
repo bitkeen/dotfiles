@@ -96,6 +96,9 @@ alias mycli='mycli --auto-vertical-output'
 alias dpl='dotfiles_pull'
 alias dps='dotfiles_push'
 
+alias sctl='systemctl'
+alias jctl='journalctl'
+
 # Tor start/stop.
 alias toron='sudo systemctl start tor.service'
 alias toroff='sudo systemctl stop tor.service'
