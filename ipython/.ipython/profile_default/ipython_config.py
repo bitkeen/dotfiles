@@ -622,7 +622,7 @@ m = re.search('(?<=colorscheme )(.*)', text)
 colorscheme = m.group(0)
 
 try:
-    theme = importlib.import_module('base16.{}'.format(colorscheme))
+    theme = importlib.import_module('base16_prompt_toolkit.{}'.format(colorscheme))
 except ModuleNotFoundError as e:
     print(e)
 else:
