@@ -51,7 +51,9 @@ export HISTCONTROL=ignorespace:ignoredups:erasedups
 # Don't limit the number of commands to save in history.
 export HISTSIZE=-1
 export HISTTIMEFORMAT="%Y-%m-%d %T "
-# Scripts and user-specific Python packages are installed in .local/bin.
+# Where user-specific Python packages are installed.
+export PATH="$PATH:$HOME/Library/Python/3.7/bin"
+# Scripts are installed in .local/bin.
 export PATH="$PATH:$HOME/.local/bin"
 export PATH="$PATH:$HOME/.local/bin.local"
 export PATH="$PATH:$HOME/.vim/pack/bundle/opt/vim-superman/bin"
