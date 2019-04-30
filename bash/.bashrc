@@ -40,6 +40,9 @@ if [ -f "$git_completion_file" ]; then
     fi
 fi
 
+# Where user-specific Python packages are installed.
+export PATH=$PATH:$HOME/.local/bin
+
 export PATH="$PATH:$HOME/.vim/bundle/vim-superman/bin"
 
 # Base16 Shell.
