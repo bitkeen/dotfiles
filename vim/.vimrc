@@ -272,6 +272,10 @@ let g:CommandTScanDotDirectories = 1
 " Override wildignore setting during Command-T searches.
 let g:CommandTWildIgnore=&wildignore . ",*/.git,Session.vim"
 let g:CommandTMaxFiles=500000
+" Traverse upwards looking for an SCM root, start from Vim's present
+" working directory.
+" Better than setting to 'file' when submodules are present.
+let g:CommandTTraverseSCM='dir'
 
 " vim-xkbswitch - automatically switch keyboard layout based on mode.
 let g:XkbSwitchEnabled = 1
