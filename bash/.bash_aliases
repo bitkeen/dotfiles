@@ -31,9 +31,9 @@ alias d='docker'
 alias dcmp='docker-compose'
 
 # Open ranger.
-# alias r='ranger'
-# The ranger-cd version switches the directory in bash on exit.
-alias r='ranger-cd'
+# The ranger-cd version switches the directory in bash on exit,
+# r.shell allows to expand shell aliases inside the :shell command.
+alias r='SHELL=~/.dotfiles/scripts/ranger-shell.sh ranger-cd'
 
 alias t='tmux'
 alias ta='tmux attach -t'
