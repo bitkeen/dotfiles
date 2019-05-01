@@ -68,7 +68,7 @@ complete -o default -F _pip_completion pip
 bold="\[$(tput bold)\]"
 reset="\[$(tput sgr0)\]"
 
-arrow_color="\[$(tput setaf 124)\]"
+arrow_color="\[$(tput setaf 208)\]"
 ranger_color="\[$(tput setaf 96)\]"
 venv_color="\[$(tput setaf 66)\]"
 ssh_color="\[$(tput setaf 239)\]"
