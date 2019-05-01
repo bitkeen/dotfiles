@@ -1,11 +1,12 @@
 #!/usr/bin/env bash
-#A simple script that uses dmenu to reboot, shutdown, suspend, etc.
+# Use dmenu to reboot, shutdown, suspend, etc.
+# Pass arguments to dmenu.
 
 commands="reboot\nshutdown\nsuspend"
 
-choice=$(echo -e $commands | dmenu -i)
+choice=$(echo -e "$commands" | dmenu -i "$@")
 
-case $choice in
+case "$choice" in
     "reboot")
         reboot
         ;;
