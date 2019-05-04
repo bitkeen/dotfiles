@@ -661,7 +661,7 @@ let g:qfenter_keymap.hopen = ['<C-b>']
 let g:qfenter_keymap.topen = ['<C-t>']
 
 " CamelCaseMotion - CamelCase and snake_case movement mappings.
-call camelcasemotion#CreateMotionMappings('<Tab>')
+call camelcasemotion#CreateMotionMappings('<localleader>')
 
 " unimpaired - pairs of handy bracket mappings.
 " Exchange single lines.
