@@ -179,7 +179,8 @@ endif
 set formatoptions+=j
 
 " Show trailing whitespace as middle dots (when 'list' is set).
-set listchars=trail:·
+" Tab is U+21B9. Slash escapes the space.
+set listchars=trail:·,tab:↹\ 
 
 " Always show status line.
 set laststatus=2
