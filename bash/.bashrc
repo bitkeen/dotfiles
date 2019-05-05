@@ -102,7 +102,7 @@ function ps1_venv {
 # Disable the default virtualenv prompt change.
 export VIRTUAL_ENV_DISABLE_PROMPT=1
 
-ps1_right="${reset}${bold}${ranger_color}\$(ps1_ranger)${reset}"
+ps1_right+="${reset}${bold}${ranger_color}\$(ps1_ranger)${reset}"
 ps1_right+="${reset}${bold}${venv_color}\$(ps1_venv)${reset}"
 
 # Modify the prompt when using SSH.
@@ -112,10 +112,15 @@ if [ -n "$SSH_CLIENT" ]; then
     ps1_right+=" ${reset}${bold}${ssh_color}(ssh)${reset}"
 fi
 
+# Show the number of background jobs in the number is greater than 0.
+ps1_jobs='$([ \j -gt 0 ] && echo " [\j]")'
+ps1_right+="${reset}${bold}${ps1_jobs}${reset}"
+
+# Add an arrow at the end.
 # Last space is actually an nbsp. It is used for searching the
 # previous command in tmux (see .tmux.conf).
-ps1_arrow=" ${reset}${bold}${arrow_color}>${reset} "
-ps1_right+=${ps1_arrow}
+ps1_arrow='> '
+ps1_right+="\n${reset}${bold}${arrow_color}${ps1_arrow}${reset}"
 
 export PS1="${ps1_left}${ps1_right}"
 
