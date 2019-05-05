@@ -102,7 +102,7 @@ if has("autocmd")
   augroup linting
     autocmd!
     autocmd FileType python setlocal makeprg=pylint\ --output-format=parseable
-    autocmd FileType python nnoremap <leader>L :silent make! %
+    autocmd FileType python nnoremap <Leader>L :silent make! %
     " Automatic opening of the quickfix window.
     autocmd QuickFixCmdPost [^l]* cwindow
   augroup END
@@ -460,33 +460,28 @@ noremap Y y$
 
 " Write with sudo.
 " See https://stackoverflow.com/a/7078429.
-cmap w!! w !sudo tee > /dev/null %
+cnoremap w!! w !sudo tee > /dev/null %
 
 " Quicker window movement.
-nnoremap <C-j> <C-w>j
-nnoremap <C-k> <C-w>k
-nnoremap <C-h> <C-w>h
-nnoremap <C-l> <C-w>l
-" Also set up for visual mode.
-vnoremap <C-j> <C-w>j
-vnoremap <C-k> <C-w>k
-vnoremap <C-h> <C-w>h
-vnoremap <C-l> <C-w>l
+noremap <C-j> <C-w>j
+noremap <C-k> <C-w>k
+noremap <C-h> <C-w>h
+noremap <C-l> <C-w>l
 
 " Go to beginning or end of the line in command mode.
 cnoremap <C-a> <home>
 cnoremap <C-e> <end>
 
 " Open (in) a new tab.
-nnoremap <leader>gn :tabnew<Space>
+nnoremap <Leader>gn :tabnew<Space>
 " Switch tabs.
-nnoremap <silent> <leader>gj :tabfirst<CR>
-nnoremap <silent> <leader>gk :tablast<CR>
+nnoremap <silent> <Leader>gj :tabfirst<CR>
+nnoremap <silent> <Leader>gk :tablast<CR>
 " Move tabs.
-nnoremap <silent> <leader>gH :-tabmove<CR>
-nnoremap <silent> <leader>gJ :0tabmove<CR>
-nnoremap <silent> <leader>gK :$tabmove<CR>
-nnoremap <silent> <leader>gL :+tabmove<CR>
+nnoremap <silent> <Leader>gH :-tabmove<CR>
+nnoremap <silent> <Leader>gJ :0tabmove<CR>
+nnoremap <silent> <Leader>gK :$tabmove<CR>
+nnoremap <silent> <Leader>gL :+tabmove<CR>
 
 " The first part clears the last used search. It will not set the pattern to
 " an empty string, because that would match everywhere. The pattern is really
@@ -494,104 +489,107 @@ nnoremap <silent> <leader>gL :+tabmove<CR>
 " The second part disables highlighting, redraws the screen (default
 " behavior for C-l) and moves one character to the left with 'h' (to keep
 " the cursor in place).
-nnoremap <silent> <leader>l :let @/ = ""<CR> :nohlsearch<CR><c-l>h
+nnoremap <silent> <Leader>l :let @/ = ""<CR> :nohlsearch<CR><c-l>h
 
 " Reload .vimrc.
-nnoremap <localleader>r :source $MYVIMRC<CR>
+nnoremap <LocalLeader>r :source $MYVIMRC<CR>
 
 " Save.
-nnoremap <leader>u :update<CR>
+nnoremap <Leader>u :update<CR>
 " Save and quit.
-nnoremap <leader>x :x<CR>
+nnoremap <Leader>x :x<CR>
 " Quit without saving.
-nnoremap <leader>q :q!<CR>
-vnoremap <leader>q <Esc>:q!<CR>
+nnoremap <Leader>q :q!<CR>
+vnoremap <Leader>q <Esc>:q!<CR>
 
 " Edit file, starting in same directory as current file.
-nnoremap <leader>ew :edit <C-R>=expand('%:p:h') . '/'<CR>
-nnoremap <leader>es :split <C-R>=expand('%:p:h') . '/'<CR>
-nnoremap <leader>ev :vsplit <C-R>=expand('%:p:h') . '/'<CR>
-nnoremap <leader>et :tabedit <C-R>=expand('%:p:h') . '/'<CR>
+nnoremap <Leader>ew :edit <C-R>=expand('%:p:h') . '/'<CR>
+nnoremap <Leader>es :split <C-R>=expand('%:p:h') . '/'<CR>
+nnoremap <Leader>ev :vsplit <C-R>=expand('%:p:h') . '/'<CR>
+nnoremap <Leader>et :tabedit <C-R>=expand('%:p:h') . '/'<CR>
 
 " Visually select last changed or yanked text.
-nnoremap <leader>v `[v`]
+nnoremap <Leader>v `[v`]
 
 " Open empty splits.
-nnoremap <leader>- :new<CR>
-nnoremap <leader>\ :vnew<CR>
+nnoremap <Leader>- :new<CR>
+nnoremap <Leader>\ :vnew<CR>
+" Without switching to normal mode, new split will be zoomed.
+vnoremap <Leader>- <Esc>:new<CR>
+vnoremap <Leader>\ <Esc>:vnew<CR>
 
 " Open current file in a vertical split.
-nnoremap <leader><C-v> :vsplit %<CR>
-nnoremap <leader><C-b> :split %<CR>
+nnoremap <Leader><C-v> :vsplit %<CR>
+nnoremap <Leader><C-b> :split %<CR>
 
 " Substitute.
-nnoremap <leader>s :%s/
-vnoremap <leader>s :s/
+nnoremap <Leader>s :%s/
+vnoremap <Leader>s :s/
 
 " Remove trailing whitespace.
-nnoremap <localleader>t :%s/\s\+$//e<CR>
-vnoremap <localleader>t :s/\s\+$//e<CR>
+nnoremap <LocalLeader>t :%s/\s\+$//e<CR>
+vnoremap <LocalLeader>t :s/\s\+$//e<CR>
 
 " Remove empty lines through entire file.
-nnoremap <leader>el :g/^$/d<CR>
+nnoremap <Leader>el :g/^$/d<CR>
 
 " Make all windows the same height and width.
-nnoremap <leader>= <C-W>=
+nnoremap <Leader>= <C-W>=
 
 " Open an empty tab and close all the other tabs.
 " Don't close the buffers.
-nnoremap <silent> <localleader>qq :tabnew<CR>:tabonly<CR>
+nnoremap <silent> <LocalLeader>qq :tabnew<CR>:tabonly<CR>
 " Close all buffers.
-nnoremap <silent> <localleader>qa :qa!<CR>
+nnoremap <silent> <LocalLeader>qa :qa!<CR>
 
 " Repeat the previous @, can be used with a count.
 " Mnemonic "again".
-nnoremap <leader>a @@
+nnoremap <Leader>a @@
 
 " Compare buffers in current tab.
-nnoremap <leader>dt :windo diffthis<CR>
+nnoremap <Leader>dt :windo diffthis<CR>
 " Turn diff mode off.
-nnoremap <leader>do :windo diffoff<CR>
+nnoremap <Leader>do :windo diffoff<CR>
 
 " Go to tab by number
-noremap <leader>1 1gt
-noremap <leader>2 2gt
-noremap <leader>3 3gt
-noremap <leader>4 4gt
-noremap <leader>5 5gt
-noremap <leader>6 6gt
-noremap <leader>7 7gt
-noremap <leader>8 8gt
-noremap <leader>9 9gt
-noremap <silent> <leader>0 :tablast<cr>
+noremap <Leader>1 1gt
+noremap <Leader>2 2gt
+noremap <Leader>3 3gt
+noremap <Leader>4 4gt
+noremap <Leader>5 5gt
+noremap <Leader>6 6gt
+noremap <Leader>7 7gt
+noremap <Leader>8 8gt
+noremap <Leader>9 9gt
+noremap <silent> <Leader>0 :tablast<CR>
 
 " Put the text after current line.
-nnoremap <leader>p :put<CR>
+nnoremap <Leader>p :put<CR>
 " Put the text before current line.
-nnoremap <leader>P :put!<CR>
+nnoremap <Leader>P :put!<CR>
 
 " Toggle fold.
-nnoremap <space><space> za
+nnoremap <Space><Space> za
 
 " Toggle invisible characters.
-nmap <localleader>l :set list!<CR>
+nnoremap <LocalLeader>l :set list!<CR>
 
 if has("autocmd")
   " Compiling TeX.
   augroup tex
     autocmd!
     " Map F3 to compile LaTeX. The last <Enter> skips the log.
-    autocmd FileType tex map <F3> :w<Enter>:!pdflatex<space>%<Enter><Enter>
+    autocmd FileType tex noremap <F3> :w<Enter>:!pdflatex<Space>%<Enter><Enter>
     " Map F4 to compile XeTeX.
-    autocmd FileType tex map <F4> :w<Enter>:!xelatex<space>%<Enter><Enter>
+    autocmd FileType tex noremap <F4> :w<Enter>:!xelatex<Space>%<Enter><Enter>
   augroup END
   " Quickfix window mappings.
   augroup qf
     autocmd!
     " Go to older error list.
-    autocmd FileType qf nnoremap <leader>H :colder<CR>
+    autocmd FileType qf nnoremap <Leader>H :colder<CR>
     " Go to newer error list.
-    autocmd FileType qf nnoremap <leader>L :cnewer<CR>
+    autocmd FileType qf nnoremap <Leader>L :cnewer<CR>
   augroup END
 endif
 
@@ -604,13 +602,13 @@ endif
 call togglebg#map("<F5>")
 
 " vimwiki - personal wiki for Vim.
-nmap <leader>wb <Plug>VimwikiSplitLink
-nmap <leader>wv <Plug>VimwikiVSplitLink
+nmap <Leader>wb <Plug>VimwikiSplitLink
+nmap <Leader>wv <Plug>VimwikiVSplitLink
 
 " Command-T - file finder.
-" Show open buffers. Default mapping is <leader>b, remap it to
-" <leader>bf because git-blame will be mapped to <leader>bl.
-nmap <silent> <leader>bf <Plug>(CommandTBuffer)
+" Show open buffers. Default mapping is <Leader>b, remap it to
+" <Leader>bf because git-blame will be mapped to <Leader>bl.
+nmap <silent> <Leader>bf <Plug>(CommandTBuffer)
 let g:CommandTAcceptSelectionSplitMap = '<C-b>'
 
 " NERDTree - file system explorer.
@@ -618,42 +616,42 @@ let g:NERDTreeMapOpenInTab = '<C-t>'
 let g:NERDTreeMapOpenSplit = '<C-b>'
 let g:NERDTreeMapOpenVSplit = '<C-v>'
 
-map <silent> <leader>n :NERDTreeToggle<CR>
+nnoremap <silent> <Leader>n :NERDTreeToggle<CR>
 " Find the current file in the tree.
-map <silent> <leader>f :NERDTreeFind<CR>
+nnoremap <silent> <Leader>f :NERDTreeFind<CR>
 
 " vim-gitgutter - show a git diff in the sign column.
-map <leader>hh :GitGutterLineHighlightsToggle<CR>
+noremap <Leader>hh :GitGutterLineHighlightsToggle<CR>
 " Remap hunk text object mappings from ic, ac to ih, ah,
 " because ic and ac conflict with other plugins.
 omap ih <Plug>GitGutterTextObjectInnerPending
 omap ah <Plug>GitGutterTextObjectOuterPending
-xmap ih <Plug>GitGutterTextObjectInnerVisual
-xmap ah <Plug>GitGutterTextObjectOuterVisual
+xmap ih <Plug>GitGutterTextObjectInnerPending
+xmap ah <Plug>GitGutterTextObjectOuterPending
 
 " git-blame.vim - see blame information in the bottom line.
-nnoremap <silent> <leader>bl :<C-u>call gitblame#echo()<CR>
+nnoremap <silent> <Leader>bl :<C-u>call gitblame#echo()<CR>
 
 " Gundo - graph undo tree.
-nnoremap <leader>gu :GundoToggle<CR>
+nnoremap <Leader>gu :GundoToggle<CR>
 
 " vim-grepper - use search tools in a vim split.
-nnoremap <leader>gr :Grepper<CR>
+nnoremap <Leader>gr :Grepper<CR>
 " Switch between searching tools.
-let g:grepper.prompt_mapping_tool = '<leader>gr'
+let g:grepper.prompt_mapping_tool = '<Leader>gr'
 " Take any motion and start searching for the selected query right away.
-nmap gs <plug>(GrepperOperator)
-xmap gs <plug>(GrepperOperator)
+nmap gs <Plug>(GrepperOperator)
+xmap gs <Plug>(GrepperOperator)
 
 " jedi-vim - Python autocompletion
-" <leader>d is default. Leave it here for visibility.
-let g:jedi#goto_command = '<leader>d'
-" <leader>r is default. Leave it here for visibility.
-let g:jedi#rename_command = '<leader>r'
-" Default is <leader>g.
-let g:jedi#goto_assignments_command = '<leader>ga'
-" Default is <leader>n.
-let g:jedi#usages_command = '<leader>gy'
+" <Leader>d is default. Leave it here for visibility.
+let g:jedi#goto_command = '<Leader>d'
+" <Leader>r is default. Leave it here for visibility.
+let g:jedi#rename_command = '<Leader>r'
+" Default is <Leader>g.
+let g:jedi#goto_assignments_command = '<Leader>ga'
+" Default is <Leader>n.
+let g:jedi#usages_command = '<Leader>gy'
 " Default is <C-space> which conflicts with Tmux prefix binding.
 let g:jedi#completions_command = '<C-n>'
 
@@ -665,15 +663,15 @@ let g:qfenter_keymap.hopen = ['<C-b>']
 let g:qfenter_keymap.topen = ['<C-t>']
 
 " CamelCaseMotion - CamelCase and snake_case movement mappings.
-call camelcasemotion#CreateMotionMappings('<localleader>')
+call camelcasemotion#CreateMotionMappings('<LocalLeader>')
 
 " unimpaired - pairs of handy bracket mappings.
 " Exchange single lines.
-nmap <leader>j ]e
-nmap <leader>k [e
+nnoremap <Leader>j ]e
+nnoremap <Leader>k [e
 " Exchange multiple lines.
-vmap <leader>j ]egv
-vmap <leader>k [egv
+vnoremap <Leader>j ]egv
+vnoremap <Leader>k [egv
 
 " Trigger a highlight in the appropriate direction when pressing these keys:
 let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
@@ -681,36 +679,36 @@ let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
 " fugitive - Git wrapper
 " By default, Ctrl-g prints information about current file, which
 " is not useful since this information is already in lightline.
-map <C-g>ed :Gedit<space>
-map <C-g>bl :Gblame<CR>
-map <C-g>br :Gbrowse<CR>
-map <C-g>ci :Gcommit %<CR>
-map <C-g>co :Git checkout<space>
-map <C-g>st :Gstatus<CR>
-map <C-g>sh :Git stash<CR>
+noremap <C-g>ed :Gedit<Space>
+noremap <C-g>bl :Gblame<CR>
+noremap <C-g>br :Gbrowse<CR>
+noremap <C-g>ci :Gcommit %<CR>
+noremap <C-g>co :Git checkout<Space>
+noremap <C-g>st :Gstatus<CR>
+noremap <C-g>sh :Git stash<CR>
 
 " GV - Git commit browser. Requires fugitive.
-map <C-g>v :GV<CR>
+noremap <C-g>v :GV<CR>
 
 " vim-eunuch
-nmap <leader><C-r> :Rename<space>
+nnoremap <Leader><C-r> :Rename<Space>
 
 " vim-obsession
-nnoremap <leader><C-o> :Obsess<CR>
+nnoremap <Leader><C-o> :Obsess<CR>
 
 let g:ranger_map_keys = 0
-map <leader>R :Ranger<CR>
-map <leader>T :RangerNewTab<CR>
+noremap <Leader>R :Ranger<CR>
+noremap <Leader>T :RangerNewTab<CR>
 
 " vim-merginal - interface for dealing with Git branches.
 " Requires fugitive.
-map <silent> <leader>m :MerginalToggle<CR>
+noremap <silent> <Leader>m :MerginalToggle<CR>
 
 " vZoom - quickly maximize & unmaximize the current window.
-nmap <leader>z <Plug>(vzoom)
+nmap <Leader>z <Plug>(vzoom)
 
 " vim-instant-markdown
-map <leader>i :InstantMarkdownPreview<CR>
+noremap <Leader>i :InstantMarkdownPreview<CR>
 
 " SimpylFold - better Python code folding.
 let g:SimpylFold_docstring_preview = 1
