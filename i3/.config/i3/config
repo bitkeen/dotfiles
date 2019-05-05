@@ -273,13 +273,13 @@ bindsym --whole-window --border button11 exec --no-startup-id pactl set-sink-vol
 bindsym $mod+shift+f exec firefox
 
 # Launch ranger.
-bindsym $mod+shift+o exec --no-startup-id urxvt -name named.default -e ranger
+bindsym $mod+shift+o exec --no-startup-id urxvt -e ranger
 
 # Launch calcurse.
-bindsym $mod+shift+c exec --no-startup-id urxvt -name named.default -e calcurse
+bindsym $mod+shift+c exec --no-startup-id urxvt -e calcurse
 
 # Launch ncmpcpp.
-bindsym $mod+shift+m exec --no-startup-id urxvt -name named.default -e ncmpcpp
+bindsym $mod+shift+m exec --no-startup-id urxvt -e ncmpcpp
 
 
 ##################################################
@@ -343,7 +343,7 @@ exec_always --no-startup-id xset r rate 250 30 &
 ##################################################
 
 # Tmux dropdown.
-set $dd_name "named.tmuxdd"
+set $dd_name "tmuxdd"
 bindsym $mod+grave exec --no-startup-id $scripts_dir/tmuxdd.sh $dd_name
 # Terminal window with name $dd_name is created in tmuxdd.sh
 for_window [instance=$dd_name] floating enable
