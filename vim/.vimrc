@@ -114,8 +114,6 @@ if has('syntax') && has('eval')
   packadd matchit
 endif
 
-" Avoid side effects if `nocp` already set.
-if &compatible | set nocompatible | endif
 filetype plugin indent on
 
 " Enable Pathogen package manager.
