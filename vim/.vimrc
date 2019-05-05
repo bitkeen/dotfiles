@@ -78,6 +78,9 @@ if has('autocmd')
     " Highlight the current line, but only in focused window.
     autocmd BufEnter,WinEnter,FocusGained * setlocal cursorline
     autocmd WinLeave,FocusLost * setlocal nocursorline
+
+    " Use Markdown in calcurse notes.
+    autocmd BufRead,BufNewFile /tmp/calcurse*,~/.calcurse/notes/* set filetype=markdown
   augroup END
 else
   " Maintain indent of current line.
