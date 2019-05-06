@@ -119,8 +119,8 @@ ps1_right+="${reset}${bold}${ps1_jobs}${reset}"
 # Add an arrow at the end.
 # Last space is actually an nbsp. It is used for searching the
 # previous command in tmux (see .tmux.conf).
-ps1_arrow='> '
-ps1_right+="\n${reset}${bold}${arrow_color}${ps1_arrow}${reset}"
+ps1_arrow=' > '
+ps1_right+="${reset}${bold}${arrow_color}${ps1_arrow}${reset}"
 
 export PS1="${ps1_left}${ps1_right}"
 
