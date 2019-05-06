@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 # From https://github.com/ranger/ranger/wiki/Shell-aliases.
 
 # EXPL: simplify when ranger-shell.sh -c $SHELL
@@ -7,8 +7,8 @@ then shift 2; fi
 
 # EXPL: overwrite when SHELL=ranger-shell.sh
 [[ -x /usr/bin/zsh ]] \
-&& export SHELL=/usr/bin/zsh \
-|| export SHELL=/usr/bin/bash
+&& export SHELL='/usr/bin/env zsh' \
+|| export SHELL='/usr/bin/env bash'
 
 # USE: Interactive shell
 (($#)) || exec ${SHELL:?}
