@@ -202,3 +202,6 @@
 [submodule "vim/.vim/bundle/ale"]
 	path = vim/.vim/bundle/ale
 	url = https://github.com/w0rp/ale
+[submodule "vim/.vim/bundle/lightline-ale"]
+	path = vim/.vim/bundle/lightline-ale
+	url = https://github.com/maximbaz/lightline-ale
