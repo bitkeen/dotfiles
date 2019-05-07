@@ -497,8 +497,8 @@ nnoremap <Leader>u :update<CR>
 " Save and quit.
 nnoremap <Leader>x :x<CR>
 " Quit without saving.
-nnoremap <Leader>q :q!<CR>
-vnoremap <Leader>q <Esc>:q!<CR>
+nnoremap <Leader>q :q<CR>
+vnoremap <Leader>q <Esc>:q<CR>
 
 " Edit file, starting in same directory as current file.
 nnoremap <Leader>ew :edit <C-R>=expand('%:p:h') . '/'<CR>
