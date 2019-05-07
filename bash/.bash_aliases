@@ -38,6 +38,8 @@ alias r='SHELL=~/.dotfiles/scripts/ranger-shell.sh ranger-cd'
 alias t='tmux'
 alias ta='tmux attach -t'
 
+alias ts='task'
+
 # Open (with) vim.
 alias v='vim'
 # Open vimwiki.
