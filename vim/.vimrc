@@ -727,4 +727,7 @@ let g:SimpylFold_fold_docstring = 0
 " Tmuxline - tmux status line generator.
 let g:tmuxline_powerline_separators = 0
 
+" ALE - Asynchronous Lint Engine
+let g:ale_set_highlights = 0
+
 silent! source ~/.dotfiles/vim/.vimrc.local
