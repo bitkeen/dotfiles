@@ -205,3 +205,6 @@
 [submodule "vim/.vim/bundle/lightline-ale"]
 	path = vim/.vim/bundle/lightline-ale
 	url = https://github.com/maximbaz/lightline-ale
+[submodule "vim/.vim/bundle/vim-signature"]
+	path = vim/.vim/bundle/vim-signature
+	url = https://github.com/kshenoy/vim-signature
