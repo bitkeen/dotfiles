@@ -631,15 +631,6 @@ nnoremap <silent> <Leader>n :NERDTreeToggle<CR>
 " Find the current file in the tree.
 nnoremap <silent> <Leader>f :NERDTreeFind<CR>
 
-" vim-gitgutter - show a git diff in the sign column.
-noremap <Leader>hh :GitGutterLineHighlightsToggle<CR>
-" Remap hunk text object mappings from ic, ac to ih, ah,
-" because ic and ac conflict with other plugins.
-omap ih <Plug>GitGutterTextObjectInnerPending
-omap ah <Plug>GitGutterTextObjectOuterPending
-xmap ih <Plug>GitGutterTextObjectInnerPending
-xmap ah <Plug>GitGutterTextObjectOuterPending
-
 " git-blame.vim - see blame information in the bottom line.
 nnoremap <silent> <Leader>bl :<C-u>call gitblame#echo()<CR>
 
@@ -700,6 +691,18 @@ noremap <C-g>sh :Git stash<CR>
 
 " GV - Git commit browser. Requires fugitive.
 noremap <C-g>v :GV<CR>
+
+" vim-gitgutter - show a git diff in the sign column.
+nmap <C-g>hp <Plug>GitGutterPreviewHunk
+nmap <C-g>hs <Plug>GitGutterStageHunk
+nmap <C-g>hu <Plug>GitGutterUndoHunk
+noremap <Leader>hh :GitGutterLineHighlightsToggle<CR>
+" Remap hunk text object mappings from ic, ac to ih, ah,
+" because ic and ac conflict with other plugins.
+omap ih <Plug>GitGutterTextObjectInnerPending
+omap ah <Plug>GitGutterTextObjectOuterPending
+xmap ih <Plug>GitGutterTextObjectInnerPending
+xmap ah <Plug>GitGutterTextObjectOuterPending
 
 " vim-eunuch
 nnoremap <Leader><C-r> :Rename<Space>
