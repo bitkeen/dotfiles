@@ -44,7 +44,7 @@ alias ts='task'
 alias v='vim'
 # Open vimwiki.
 alias vw='vim -c "VimwikiIndex"'
-alias vm='vman '
+alias vm='vman'
 
 # The space at the end allows the next command word following the alias
 # to also be checked for alias expansion.
