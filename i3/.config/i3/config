@@ -151,7 +151,7 @@ bindsym $mod+i resize shrink height 10 px or 10 ppt
 bindsym $mod+o resize grow width 10 px or 10 ppt
 
 # Start a terminal.
-bindsym $mod+Return exec --no-startup-id i3-sensible-terminal
+bindsym $mod+Return exec --no-startup-id $scripts_dir/tmux_terminal.sh
 
 # Kill focused window.
 bindsym $mod+Shift+q kill
