@@ -3,7 +3,8 @@
 [alias]
     a = add
     aa = add --all
-    aip = add -i -p
+    ai = add --interactive
+    ap = add --patch
     bl = blame
     br = branch
     bs = bisect
