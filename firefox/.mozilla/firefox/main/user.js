@@ -9,3 +9,6 @@ user_pref("extensions.pocket.enabled", false);
 
 // Disable about:config warning.
 user_pref("general.warnOnAboutConfig", false);
+
+// Disable password manager.
+user_pref("signon.rememberSignons", false);
