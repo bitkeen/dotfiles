@@ -29,12 +29,15 @@
     lglrp = log --left-right --oneline HEAD...@{-1}
     lps = log -p -S
     ; git-open has to be installed (https://github.com/paulirish/git-open).
+    mg = merge
     o = open
     pl = pull
     plrb = pull --rebase
     ps = push
     psf = push -f
     rb = rebase
+    rba = rebase --abort
+    rbi = rebase --interactive
     rbc = rebase --continue
     rbs = rebase --skip
     rs = reset
@@ -44,7 +47,8 @@
     shp = stash pop
     shsw = stash show -p
     sm = submodule
-    smu = submodule update --init
+    sma = submodule add
+    smu = submodule update --init --recursive
     st = status
     sw = show
 [core]
