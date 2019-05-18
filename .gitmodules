@@ -208,3 +208,6 @@
 [submodule "vim/.vim/bundle/vim-signature"]
 	path = vim/.vim/bundle/vim-signature
 	url = https://github.com/kshenoy/vim-signature
+[submodule "vim/.vim/bundle/completor.vim"]
+	path = vim/.vim/bundle/completor.vim
+	url = https://github.com/maralla/completor.vim
