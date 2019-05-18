@@ -1,10 +1,10 @@
-#!/usr/bin/env bash
+#!/usr/bin/env sh
 # Use dmenu to reboot, shutdown, suspend, etc.
 # Pass arguments to dmenu.
 
 commands="reboot\nshutdown\nsuspend"
 
-choice=$(echo -e "$commands" | dmenu -i "$@")
+choice=$(printf "%b" "$commands" | dmenu -i "$@")
 
 case "$choice" in
     "reboot")
