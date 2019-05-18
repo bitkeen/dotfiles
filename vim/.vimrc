@@ -302,12 +302,8 @@ else
 endif
 
 " jedi-vim - Python autocompletion
-let g:jedi#popup_on_dot = 0
-let g:jedi#show_call_signatures = 0
-let g:jedi#use_splits_not_buffers = "winwidth"
-
-" Disable docstring window popup during completion.
-autocmd plugins FileType python setlocal completeopt-=preview
+" Disable jedi completions as they are now handled by completor.
+let g:jedi#completions_enabled = 0
 
 " lightline.vim - a light and configurable statusline/tabline.
 " Specify which feature is turned on. Both are equal to 1 by default.
