@@ -729,6 +729,7 @@ let g:tmuxline_powerline_separators = 0
 
 " ALE - Asynchronous Lint Engine
 let g:ale_set_highlights = 0
+let ale_lint_on_text_changed = 'normal'
 
 " Signature - A plugin to toggle, display and navigate marks
 " Highlight signs of marks based upon state indicated by vim-gitgutter.
