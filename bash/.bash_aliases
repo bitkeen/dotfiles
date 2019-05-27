@@ -57,6 +57,10 @@ alias mkd='mkdir -pv'
 
 alias tch='touch'
 
+# Python virtualenvwrapper.
+alias wo='workon'
+alias deac='deactivate'
+
 alias bandcamp-dl="bandcamp-dl --base-dir=$HOME/Downloads/bandcamp-dl"
 
 alias ytdl='youtube-dl'
