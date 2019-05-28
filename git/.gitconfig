@@ -42,7 +42,8 @@
     rbs = rebase --skip
     rs = reset
     sh = stash
-    shps = stash push -m
+    shm = stash push -m
+    shps = stash push
     shd = stash drop
     shl = stash list
     shp = stash pop
@@ -50,7 +51,9 @@
     sm = submodule
     sma = submodule add
     smu = submodule update --init --recursive
-    st = status
+    ; -s - short format, -b - show branch info in short format
+    st = status -sb
+    sts = status
     sw = show
 [core]
     editor = vim
