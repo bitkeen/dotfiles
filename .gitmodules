@@ -211,3 +211,6 @@
 [submodule "vim/.vim/bundle/completor.vim"]
 	path = vim/.vim/bundle/completor.vim
 	url = https://github.com/maralla/completor.vim
+[submodule "vim/.vim/bundle/winresizer"]
+	path = vim/.vim/bundle/winresizer
+	url = https://github.com/simeji/winresizer
