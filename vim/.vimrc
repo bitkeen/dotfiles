@@ -98,14 +98,6 @@ if has("autocmd")
     autocmd CursorHold,CursorHoldI * :silent! checktime
     autocmd FocusGained,BufEnter * :silent! checktime
   augroup END
-
-  augroup linting
-    autocmd!
-    autocmd FileType python setlocal makeprg=pylint\ --output-format=parseable
-    autocmd FileType python nnoremap <Leader>L :silent make! %
-    " Automatic opening of the quickfix window.
-    autocmd QuickFixCmdPost [^l]* cwindow
-  augroup END
 endif
 
 " The matchit plugin makes the % command work better,
