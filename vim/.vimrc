@@ -699,8 +699,8 @@ nnoremap <Leader><C-r> :Rename<Space>
 nnoremap <Leader><C-o> :Obsess<CR>
 
 let g:ranger_map_keys = 0
-noremap <Leader>R :Ranger<CR>
-noremap <Leader>T :RangerNewTab<CR>
+noremap <Leader>rg :Ranger<CR>
+noremap <Leader>rt :RangerNewTab<CR>
 
 " vim-merginal - interface for dealing with Git branches.
 " Requires fugitive.
@@ -726,5 +726,8 @@ let ale_lint_on_text_changed = 'normal'
 " Signature - A plugin to toggle, display and navigate marks
 " Highlight signs of marks based upon state indicated by vim-gitgutter.
 let g:SignatureMarkTextHLDynamic = 1
+
+" winresizer - easy window resizing, similar to resize mode in i3wm
+let g:winresizer_start_key = '<Leader>R'
 
 silent! source ~/.dotfiles/vim/.vimrc.local
