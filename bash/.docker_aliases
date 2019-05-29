@@ -51,6 +51,9 @@ function docker_compose_alias {
         rnd)
             cmd="run --no-deps --name $2"
             shift;;
+        rs)
+            cmd="restart"
+            shift;;
         *)
             cmd=$1
             shift;;
