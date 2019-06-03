@@ -699,8 +699,8 @@ nnoremap <Leader><C-r> :Rename<Space>
 nnoremap <Leader><C-o> :Obsess<CR>
 
 let g:ranger_map_keys = 0
-noremap <Leader>rg :Ranger<CR>
-noremap <Leader>rt :RangerNewTab<CR>
+noremap <LocalLeader>f :Ranger<CR>
+noremap <LocalLeader>F :RangerNewTab<CR>
 
 " vim-merginal - interface for dealing with Git branches.
 " Requires fugitive.
