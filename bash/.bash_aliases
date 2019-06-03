@@ -28,7 +28,8 @@ alias l='lab'
 alias ka='killall'
 
 alias d='docker'
-alias dcmp='docker-compose'
+alias c='docker-compose'
+alias cdu='docker-compose down; docker-compose up'
 
 # Open ranger.
 # The ranger-cd version switches the directory in bash on exit,
