@@ -597,9 +597,6 @@ endif
 " Plugin mappings
 """"""""""""""""""""""""""""""""""""""""""""""""""
 
-" Solarized - toggle background color.
-call togglebg#map("<F5>")
-
 " vimwiki - personal wiki for Vim.
 nmap <Leader>wb <Plug>VimwikiSplitLink
 nmap <Leader>wv <Plug>VimwikiVSplitLink
