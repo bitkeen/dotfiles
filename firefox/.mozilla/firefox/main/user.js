@@ -16,3 +16,6 @@ user_pref("signon.rememberSignons", false);
 // Disable the "new tab page" feature and show a blank tab instead.
 user_pref("browser.newtabpage.enabled", false);
 user_pref("browser.newtab.url", "about:blank");
+
+// Disable recently used order for switching between tabs.
+user_pref("services.sync.prefs.sync.browser.ctrlTab.recentlyUsedOrder", "false");
