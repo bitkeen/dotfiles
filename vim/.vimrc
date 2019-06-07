@@ -674,8 +674,12 @@ noremap <C-g>co :Git checkout<Space>
 noremap <C-g>st :Gstatus<CR>
 noremap <C-g>sh :Git stash<CR>
 
+" C-Left moves the cursor before ':'.
+noremap <C-g>vs :Gvsplit :%<C-Left>
+noremap <C-g>sp :Gsplit :%<C-Left>
+
 " GV - Git commit browser. Requires fugitive.
-noremap <C-g>v :GV<CR>
+noremap <Leader>gv :GV<CR>
 
 " vim-gitgutter - show a git diff in the sign column.
 nmap <C-g>hp <Plug>GitGutterPreviewHunk
