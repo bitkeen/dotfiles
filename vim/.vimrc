@@ -442,7 +442,7 @@ let mapleader=" "
 let maplocalleader="\\"
 
 " Toggle spell-check.
-map <F2> :setlocal spell! spelllang=en_us<CR>
+map <LocalLeader>s :setlocal spell! spelllang=en_us<CR>
 
 " Use j and k if a count is specified, gj, gk if no count is specified.
 " For counts larger or equal to five, set a mark that can be used in
