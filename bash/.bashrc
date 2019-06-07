@@ -45,6 +45,7 @@ git_prompt_file='/Library/Developer/CommandLineTools/usr/share/git-core/git-prom
 export EDITOR=/usr/bin/vim
 export FZF_DEFAULT_OPTS="--preview 'cat {}' --preview-window='hidden' --bind='ctrl-t:toggle-preview'"
 export FZF_CTRL_R_OPTS='--sort'
+export HOMEBREW_NO_EMOJI=1
 # Ignore lines that start with a space,
 # don't save lines matching a previous history entry.
 export HISTCONTROL=ignorespace:ignoredups:erasedups
