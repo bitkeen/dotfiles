@@ -76,9 +76,6 @@ alias ipy='ipython'
 alias wo='workon'
 alias deac='deactivate'
 
-# -f - output info about filesystems.
-alias lsblk='lsblk -f'
-
 alias bandcamp-dl='bandcamp-dl --base-dir=$HOME/Downloads/bandcamp-dl'
 
 alias yd='youtube-dl'
