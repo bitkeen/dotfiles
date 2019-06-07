@@ -70,3 +70,9 @@ function ranger-cd {
     fi
     rm -f -- "$tempfile"
 }
+
+# Get a list of all mounted partitions, pipe it to fzf and open the
+# resulting directory in ranger.
+function rpart {
+    ranger "$(lsblk -l | grep -P -o "(?<=part )/.*" | fzf --height=20% --reverse)"
+}
