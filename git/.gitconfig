@@ -30,6 +30,8 @@
     lps = log -p -S
     ; git-open has to be installed (https://github.com/paulirish/git-open).
     mg = merge
+    mga = merge --abort
+    mgc = merge --continue
     o = open
     pl = pull
     plrb = pull --rebase
@@ -51,9 +53,9 @@
     sm = submodule
     sma = submodule add
     smu = submodule update --init --recursive
+    st = status
     ; -s - short format, -b - show branch info in short format
-    st = status -sb
-    sts = status
+    ss = status -sb
     sw = show
 [core]
     editor = vim
