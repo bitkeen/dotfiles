@@ -46,6 +46,9 @@ function docker_compose_alias {
         p)
             cmd='pull'
             shift;;
+        k)
+            cmd='kill'
+            shift;;
         lgf)
             cmd='logs -f --tail=0'
             shift;;
