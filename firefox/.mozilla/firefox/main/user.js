@@ -19,3 +19,15 @@ user_pref("browser.newtab.url", "about:blank");
 
 // Disable recently used order for switching between tabs.
 user_pref("services.sync.prefs.sync.browser.ctrlTab.recentlyUsedOrder", "false");
+
+// Enable timestamps in console.
+user_pref("devtools.webconsole.timestampMessages", "true");
+
+// Keep console logs after navigating to another page.
+user_pref("devtools.webconsole.persistlog", "true");
+
+// Disable performance tab in developer tools.
+user_pref("devtools.performance.enabled", "false");
+
+// Vim keybindings in editor.
+user_pref("devtools.editor.keymap", "vim");
