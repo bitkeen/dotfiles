@@ -73,6 +73,6 @@ function ranger-cd {
 
 # Get a list of all mounted partitions, pipe it to fzf and open the
 # resulting directory in ranger.
-function rpart {
-    ranger "$(lsblk -l | grep -P -o "(?<=part )/.*" | fzf --height=20% --reverse)"
+rpart() {
+    ranger "$(lsblk -l | grep -P -o "/.*" | fzf --height=20% --reverse)"
 }
