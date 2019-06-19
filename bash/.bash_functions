@@ -44,6 +44,13 @@ function groot {
     cd "$(git rev-parse --show-cdup)".
 }
 
+# Git stash and repeat previous command.
+function gshr {
+    git status > /dev/null 2>&1 || return 1
+    git stash
+    fc -s
+}
+
 # Automatically change the directory in bash after closing ranger.
 # Source:
 # https://github.com/ranger/ranger/blob/master/examples/bash_automatic_cd.sh
