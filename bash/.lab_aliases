@@ -15,10 +15,10 @@ function lab_alias {
             cmd="mr list"
             shift;;
         *)
-            cmd=$1
+            cmd="$key"
             shift;;
     esac
-    lab $cmd $@
+    lab "$cmd" "$@"
 }
 
 alias lab='lab_alias'
