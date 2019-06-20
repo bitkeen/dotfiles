@@ -60,6 +60,8 @@
 [core]
     editor = vim
     whitespace = true
+[color "status"]
+    untracked = yellow
 [diff]
     tool = vimdiff
 [push]
