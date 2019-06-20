@@ -220,3 +220,6 @@
 [submodule "vim/.vim/bundle/ghost-text.vim"]
 	path = vim/.vim/bundle/ghost-text.vim
 	url = https://github.com/pandysong/ghost-text.vim
+[submodule "vim/.vim/bundle/requirements.txt.vim"]
+	path = vim/.vim/bundle/requirements.txt.vim
+	url = https://github.com/raimon49/requirements.txt.vim
