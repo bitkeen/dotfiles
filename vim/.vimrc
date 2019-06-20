@@ -83,6 +83,8 @@ if has('autocmd')
 
     autocmd BufRead,BufNewFile ~/.dotfiles/vim/.vimrc setlocal foldmethod=marker
     autocmd BufRead,BufNewFile ~/.dotfiles/vim/.vimrc setlocal foldlevel=0
+    autocmd BufRead,BufNewFile ~/.dotfiles/bash/.bashrc setlocal foldmethod=marker
+    autocmd BufRead,BufNewFile ~/.dotfiles/bash/.bashrc setlocal foldlevel=0
 
     " Use Markdown in calcurse notes.
     autocmd BufRead,BufNewFile /tmp/calcurse*,~/.calcurse/notes/* set filetype=markdown
