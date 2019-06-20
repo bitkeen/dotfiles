@@ -1,3 +1,5 @@
+" Main {{{
+
 " Get the defaults that most users want.
 source $VIMRUNTIME/defaults.vim
 
@@ -230,10 +232,9 @@ set wildignorecase
 " a dialog asking if you wish to save changed files.
 set confirm
 
+" }}}
 
-""""""""""""""""""""""""""""""""""""""""""""""""""
-" Plugin configuration
-""""""""""""""""""""""""""""""""""""""""""""""""""
+" Plugin configuration {{{
 
 augroup plugins
     autocmd!
@@ -432,10 +433,9 @@ let g:grepper.simple_prompt = 1
 " Gundo - graph undo tree.
 let g:gundo_prefer_python3 = 1
 
+" }}}
 
-""""""""""""""""""""""""""""""""""""""""""""""""""
-" Mappings
-""""""""""""""""""""""""""""""""""""""""""""""""""
+" Mappings {{{
 
 let mapleader=" "
 " Backslash needs to be escaped.
@@ -592,10 +592,9 @@ if has("autocmd")
   augroup END
 endif
 
+" }}}
 
-""""""""""""""""""""""""""""""""""""""""""""""""""
-" Plugin mappings
-""""""""""""""""""""""""""""""""""""""""""""""""""
+" Plugin mappings {{{
 
 " vimwiki - personal wiki for Vim.
 nmap <Leader>wb <Plug>VimwikiSplitLink
@@ -732,3 +731,5 @@ let g:SignatureMarkTextHLDynamic = 1
 let g:winresizer_start_key = '<Leader>R'
 
 silent! source ~/.dotfiles/vim/.vimrc.local
+
+" }}}
