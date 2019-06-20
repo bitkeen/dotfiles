@@ -1,3 +1,5 @@
+# Main {{{
+
 export EDITOR=/usr/bin/vim
 # Don't limit the number of commands to save in history.
 export HISTSIZE=-1
@@ -60,10 +62,9 @@ _pip_completion()
 }
 complete -o default -F _pip_completion pip
 
+# }}}
 
-##################################################
-# Prompt
-##################################################
+# Prompt {{{
 
 bold="\[$(tput bold)\]"
 reset="\[$(tput sgr0)\]"
@@ -124,10 +125,9 @@ ps1_right+="${reset}${bold}${arrow_color}${ps1_arrow}${reset}"
 
 export PS1="${ps1_left}${ps1_right}"
 
+# }}}
 
-##################################################
-# Aliases and functions
-##################################################
+# Aliases and functions {{{
 
 # Add main bash aliases.
 if [ -f ~/.bash_aliases ]; then
@@ -153,3 +153,5 @@ fi
 if [ -f ~/.lab_aliases ]; then
     source ~/.lab_aliases
 fi
+
+# }}}
