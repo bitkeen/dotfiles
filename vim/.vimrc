@@ -450,11 +450,16 @@ map <LocalLeader>s :setlocal spell! spelllang=en_us<CR>
 " Use j and k if a count is specified, gj, gk if no count is specified.
 " For counts larger or equal to five, set a mark that can be used in
 " the jump list.
-nnoremap <expr> j (v:count > 4 ? "m'" . v:count : '') . (v:count > 1 ? 'j' : 'gj')
-nnoremap <expr> k (v:count > 4 ? "m'" . v:count : '') . (v:count > 1 ? 'k' : 'gk')
+nnoremap <expr> j (v:count > 4 ? "m'" . v:count : '') . (v:count >= 1 ? 'j' : 'gj')
+nnoremap <expr> k (v:count > 4 ? "m'" . v:count : '') . (v:count >= 1 ? 'k' : 'gk')
 " No marks in visual mode.
 vnoremap <expr> j v:count > 1 ? 'j' : 'gj'
 vnoremap <expr> k v:count > 1 ? 'k' : 'gk'
+
+nnoremap gj j
+nnoremap gk k
+vnoremap gj j
+vnoremap gk k
 
 " By default Y is synonym for yy. Remap it to yank from
 " the cursor to the end of the line, similar to C or D.
