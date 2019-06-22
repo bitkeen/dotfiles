@@ -81,8 +81,8 @@ if has('autocmd')
     autocmd BufEnter,WinEnter,FocusGained * setlocal cursorline
     autocmd WinLeave,FocusLost * setlocal nocursorline
 
-    autocmd BufRead .vimrc,.bashrc,.tmux.conf setlocal foldmethod=marker
-    autocmd BufRead .vimrc,.bashrc,.tmux.conf setlocal foldlevel=0
+    autocmd BufRead .vimrc,.bashrc,.tmux.conf,*/i3/config setlocal foldmethod=marker
+    autocmd BufRead .vimrc,.bashrc,.tmux.conf,*/i3/config setlocal foldlevel=0
 
     " Use Markdown in calcurse notes.
     autocmd BufRead,BufNewFile /tmp/calcurse*,~/.calcurse/notes/* set filetype=markdown
