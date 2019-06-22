@@ -273,7 +273,7 @@ let g:CommandTAlwaysShowDotFiles = 1
 " Recurse into dot-directories.
 let g:CommandTScanDotDirectories = 1
 " Override wildignore setting during Command-T searches.
-let g:CommandTWildIgnore=&wildignore . ",*/.git,Session.vim"
+let g:CommandTWildIgnore=&wildignore . ",*/.git,Session.vim,*/.vim/tmp"
 let g:CommandTMaxFiles=500000
 " Traverse upwards looking for an SCM root, start from Vim's present
 " working directory.
