@@ -1,6 +1,4 @@
-##################################################
-# Variables
-##################################################
+# Variables {{{
 
 set $mod Mod4
 
@@ -48,10 +46,9 @@ set $base0D #81a2be
 set $base0E #b294bb
 set $base0F #a3685a
 
+# }}}
 
-##################################################
-# Set up window colors
-##################################################
+# Window colors {{{
 
 # class                 border  backgr. text    indicator child_border
 client.focused          $base05 $base05 $base00 $black    $base05
@@ -62,10 +59,10 @@ client.placeholder      $base03 $base03 $base01 $black    $base03
 
 client.background       $base00
 
+# }}}
 
-##################################################
-# Bar
-##################################################
+# Bar {{{
+
 bar {
     colors {
         background $base00
@@ -90,10 +87,9 @@ bar {
     bindsym button5 nop
 }
 
+# }}}
 
-##################################################
-# Bindings
-##################################################
+# Bindings {{{
 
 # Switch to workspace.
 bindsym $mod+1 workspace $workspace1
@@ -281,10 +277,9 @@ bindsym $mod+shift+c exec --no-startup-id urxvt -e calcurse
 # Launch ncmpcpp.
 bindsym $mod+shift+m exec --no-startup-id urxvt -e ncmpcpp
 
+# }}}
 
-##################################################
-# Miscellaneous
-##################################################
+# Miscellaneous {{{
 
 hide_edge_borders smart
 workspace_auto_back_and_forth no
@@ -311,10 +306,9 @@ for_window [class="VirtualBox"] layout stacking
 for_window [class="mpv"] workspace $workspace8
 for_window [class="keepassxc"] workspace $workspace10
 
+# }}}
 
-##################################################
-# Startup applications
-##################################################
+# Startup applications {{{
 
 # Blueman applet.
 exec --no-startup-id blueman-applet
@@ -337,10 +331,9 @@ exec_always --no-startup-id dunst
 # Set key repeat rate.
 exec_always --no-startup-id xset r rate 250 30 &
 
+# }}}
 
-##################################################
-# Scratchpad
-##################################################
+# Scratchpad {{{
 
 # Tmux dropdown.
 set $dd_name "tmuxdd"
@@ -351,3 +344,5 @@ for_window [instance=$dd_name] resize set 1600 900
 for_window [instance=$dd_name] border pixel 1
 for_window [instance=$dd_name] move position center
 for_window [instance=$dd_name] move scratchpad
+
+# }}}
