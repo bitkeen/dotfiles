@@ -720,10 +720,6 @@ nmap <Leader>z <Plug>(vzoom)
 " vim-instant-markdown
 noremap <Leader>i :InstantMarkdownPreview<CR>
 
-" SimpylFold - better Python code folding.
-let g:SimpylFold_docstring_preview = 1
-let g:SimpylFold_fold_docstring = 0
-
 " Tmuxline - tmux status line generator.
 let g:tmuxline_powerline_separators = 0
 
