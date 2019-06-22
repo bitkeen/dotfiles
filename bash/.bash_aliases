@@ -15,10 +15,10 @@ alias ll='ls -AlF'
 alias mv='mv -i'
 
 # Highlight matches, ignore case distinctions.
+alias grep='grep --color=auto --ignore-case'
 # Output line numbers with -n.
 # Ignore binary files with -I.
-alias grep='grep -n --color=auto --ignore-case -I'
-alias gr='grep'
+alias gr='grep -n -I'
 
 # Git.
 alias g='git'
