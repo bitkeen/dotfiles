@@ -85,6 +85,8 @@ bar {
     # Disable mouse wheel switching between workspaces.
     bindsym button4 nop
     bindsym button5 nop
+    bindsym button9 exec --no-startup-id $scripts_dir/pulse_volume.sh increase
+    bindsym button8 exec --no-startup-id $scripts_dir/pulse_volume.sh decrease
 }
 
 # }}}
@@ -260,10 +262,9 @@ bindsym $mod+comma exec --no-startup-id mpc prev
 # Disable mouse wheel switching between windows.
 bindsym button4 nop
 bindsym button5 nop
-# Set thumb mouse buttons on Logitech M560 to raise and lower the volume.
-# Does not work in i3bar
-bindsym --whole-window --border button10 exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5%
-bindsym --whole-window --border button11 exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5%
+# Set thumb mouse buttons to raise and lower the volume.
+bindsym --whole-window --border button9 exec --no-startup-id $scripts_dir/pulse_volume.sh increase
+bindsym --whole-window --border button8 exec --no-startup-id $scripts_dir/pulse_volume.sh decrease
 
 # Launch Firefox.
 bindsym $mod+shift+f exec firefox
