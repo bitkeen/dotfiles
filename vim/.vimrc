@@ -75,17 +75,19 @@ if has('autocmd')
     " Only show signcolumn when there is a sign to display.
     autocmd FileType help setlocal signcolumn=auto
 
-    autocmd FileType python setlocal foldmethod=indent
-
     " Highlight the current line, but only in focused window.
     autocmd BufEnter,WinEnter,FocusGained * setlocal cursorline
     autocmd WinLeave,FocusLost * setlocal nocursorline
 
-    autocmd BufRead .vimrc,.bashrc,.tmux.conf,*/i3/config setlocal foldmethod=marker
-    autocmd BufRead .vimrc,.bashrc,.tmux.conf,*/i3/config setlocal foldlevel=0
-
     " Use Markdown in calcurse notes.
     autocmd BufRead,BufNewFile /tmp/calcurse*,~/.calcurse/notes/* set filetype=markdown
+  augroup END
+
+  augroup folding
+    autocmd!
+    autocmd FileType python setlocal foldmethod=indent
+    autocmd BufRead .vimrc,.bashrc,.tmux.conf,*/i3/config setlocal foldmethod=marker
+    autocmd BufRead .vimrc,.bashrc,.tmux.conf,*/i3/config setlocal foldlevel=0
   augroup END
 else
   " Maintain indent of current line.
