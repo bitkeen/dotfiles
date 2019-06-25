@@ -126,6 +126,8 @@ if [ -f "$git_prompt_file" ]; then
     export GIT_PS1_SHOWSTASHSTATE=1
     # Show unstaged (*) and staged (+) changes next to the branch name.
     export GIT_PS1_SHOWDIRTYSTATE=1
+    # Indicate difference between HEAD and its upstream.
+    export GIT_PS1_SHOWUPSTREAM="auto"
 
     source "$git_prompt_file"
     ps1_right+="${reset}${bold}${git_color}\$(__git_ps1)${reset}"
