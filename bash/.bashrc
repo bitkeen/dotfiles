@@ -124,6 +124,8 @@ if [ -f "$git_prompt_file" ]; then
     # Add a '$' in the __git_ps1 output to show stashed changes
     # are present.
     export GIT_PS1_SHOWSTASHSTATE=1
+    # Show unstaged (*) and staged (+) changes next to the branch name.
+    export GIT_PS1_SHOWDIRTYSTATE=1
 
     source "$git_prompt_file"
     ps1_right+="${reset}${bold}${git_color}\$(__git_ps1)${reset}"
