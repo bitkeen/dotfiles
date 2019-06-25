@@ -30,7 +30,7 @@ user_pref("devtools.webconsole.persistlog", "true");
 user_pref("devtools.performance.enabled", "false");
 
 // Vim keybindings in editor.
-user_pref("devtools.editor.keymap", "vim");
+// user_pref("devtools.editor.keymap", "vim");
 
 // Enable cryptomining and fingerprinting protection.
 user_pref("privacy.trackingprotection.cryptomining.enabled", "true");
