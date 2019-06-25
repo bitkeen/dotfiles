@@ -664,14 +664,6 @@ let g:qfenter_keymap.topen = ['<C-t>']
 " CamelCaseMotion - CamelCase and snake_case movement mappings.
 call camelcasemotion#CreateMotionMappings('<LocalLeader>')
 
-" unimpaired - pairs of handy bracket mappings.
-" Exchange single lines.
-nnoremap <Leader>j ]e
-nnoremap <Leader>k [e
-" Exchange multiple lines.
-vnoremap <Leader>j ]egv
-vnoremap <Leader>k [egv
-
 " Trigger a highlight in the appropriate direction when pressing these keys:
 let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
 
