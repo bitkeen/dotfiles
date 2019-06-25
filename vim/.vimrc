@@ -586,6 +586,9 @@ nnoremap <Space><Space> za
 " Toggle invisible characters.
 nnoremap <LocalLeader>l :set list!<CR>
 
+nnoremap [<Space> O<Esc>j
+nnoremap ]<Space> o<Esc>k
+
 if has("autocmd")
   " Compiling TeX.
   augroup tex
