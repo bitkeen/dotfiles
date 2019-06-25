@@ -71,6 +71,7 @@ reset="\[$(tput sgr0)\]"
 
 arrow_color="\[$(tput setaf 208)\]"
 ranger_color="\[$(tput setaf 96)\]"
+vim_color="\[$(tput setaf 70)\]"
 venv_color="\[$(tput setaf 66)\]"
 ssh_color="\[$(tput setaf 239)\]"
 git_color="\[$(tput setaf 75)\]"
@@ -78,6 +79,15 @@ git_color="\[$(tput setaf 75)\]"
 # Working directory.
 ps1_left="${reset}${bold}\w${reset}"
 ps1_right=""
+
+function ps1_vim {
+    if [ -n "$VIMRUNTIME" ]; then
+        vim_status="in vim"
+    else
+        vim_status=""
+    fi
+    [ -n "$vim_status" ] && echo " ($vim_status)"
+}
 
 # Modify the prompt when using a shell from inside ranger.
 function ps1_ranger {
@@ -103,6 +113,7 @@ function ps1_venv {
 # Disable the default virtualenv prompt change.
 export VIRTUAL_ENV_DISABLE_PROMPT=1
 
+ps1_right+="${reset}${bold}${vim_color}\$(ps1_vim)${reset}"
 ps1_right+="${reset}${bold}${ranger_color}\$(ps1_ranger)${reset}"
 ps1_right+="${reset}${bold}${venv_color}\$(ps1_venv)${reset}"
 
