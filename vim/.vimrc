@@ -582,9 +582,6 @@ nnoremap <Leader>p :put<CR>
 " Put the text before current line.
 nnoremap <Leader>P :put!<CR>
 
-" Toggle fold.
-nnoremap <Space><Space> za
-
 " Toggle invisible characters.
 nnoremap <LocalLeader>l :set list!<CR>
 
