@@ -121,6 +121,10 @@ ps1_right+="${reset}${bold}${venv_color}\$(ps1_venv)${reset}"
 # in bash prompt.
 git_prompt_file='/usr/share/git/completion/git-prompt.sh'
 if [ -f "$git_prompt_file" ]; then
+    # Add a '$' in the __git_ps1 output to show stashed changes
+    # are present.
+    export GIT_PS1_SHOWSTASHSTATE=1
+
     source "$git_prompt_file"
     ps1_right+="${reset}${bold}${git_color}\$(__git_ps1)${reset}"
 fi
