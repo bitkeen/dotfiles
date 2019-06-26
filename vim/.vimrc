@@ -563,8 +563,7 @@ nnoremap <silent> <LocalLeader>qq :tabnew<CR>:tabonly<CR>
 nnoremap <silent> <LocalLeader>qa :qa!<CR>
 
 " Repeat the previous @, can be used with a count.
-" Mnemonic "again".
-nnoremap <Leader>a @@
+nnoremap <Leader><Leader> @@
 
 " Compare buffers in current tab.
 nnoremap <Leader>dt :windo diffthis<CR>
