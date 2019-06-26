@@ -58,6 +58,8 @@ alias mkd='mkdir -pv'
 
 alias tch='touch'
 
+alias py='python'
+alias ipy='ipython'
 # Python virtualenvwrapper.
 alias wo='workon'
 alias deac='deactivate'
