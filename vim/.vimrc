@@ -86,8 +86,8 @@ if has('autocmd')
   augroup folding
     autocmd!
     autocmd FileType python setlocal foldmethod=indent
-    autocmd BufEnter .vimrc,.bashrc,.tmux.conf,*/i3/config setlocal foldmethod=marker
-    autocmd BufEnter .vimrc,.bashrc,.tmux.conf,*/i3/config setlocal foldlevel=0
+    autocmd BufWinEnter .vimrc,.bashrc,.tmux.conf,*/i3/config setlocal foldmethod=marker
+    autocmd BufWinEnter .vimrc,.bashrc,.tmux.conf,*/i3/config setlocal foldlevel=0
   augroup END
 else
   " Maintain indent of current line.
