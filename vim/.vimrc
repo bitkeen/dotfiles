@@ -427,8 +427,11 @@ endfunction
 runtime plugin/grepper.vim
 " Specify the tools that are available to use. First in the list is
 " the default tool.
-let g:grepper.tools = ['git', 'grep']
+let g:grepper.tools = ['rg', 'git', 'grep']
 " -i - ignore case.
+" --hidden - search hidden files and directories.
+" --glob "!.git/" - exclude .git directory.
+let g:grepper.rg.grepprg .= ' -i --hidden --glob "!.git/"'
 " --no-index - search files in the current directory that is not
 " managed by Git.
 let g:grepper.git.grepprg .= ' -i --no-index'
