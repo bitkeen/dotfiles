@@ -296,7 +296,7 @@ endif
 " Disable jedi completions as they are now handled by completor.
 let g:jedi#completions_enabled = 0
 
-" lightline.vim - a light and configurable statusline/tabline. {{{
+" lightline.vim - a light and configurable statusline/tabline {{{
 " Specify which feature is turned on. Both are equal to 1 by default.
 let g:lightline = {
 \  'enable': {
