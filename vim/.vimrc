@@ -21,26 +21,26 @@ if &t_Co > 2 || has("gui_running")
 endif
 
 if exists('$TMUX')
-    " Enable mouse when in tmux.
-    set ttymouse=xterm2
+  " Enable mouse when in tmux.
+  set ttymouse=xterm2
 
-    " Bracketed paste works by default in Vim 8, but not when in tmux.
-    let &t_BE = "\<Esc>[?2004h"
-    let &t_BD = "\<Esc>[?2004l"
-    let &t_PS = "\<Esc>[200~"
-    let &t_PE = "\<Esc>[201~"
+  " Bracketed paste works by default in Vim 8, but not when in tmux.
+  let &t_BE = "\<Esc>[?2004h"
+  let &t_BD = "\<Esc>[?2004l"
+  let &t_PS = "\<Esc>[200~"
+  let &t_PE = "\<Esc>[201~"
 
-    " Wrap escape sequences for tmux.
-    let &t_SI = "\ePtmux;\e\e[5 q\e\\"
-    let &t_EI = "\ePtmux;\e\e[2 q\e\\"
-    let &t_SR = "\ePtmux;\e\e[3 q\e\\"
+  " Wrap escape sequences for tmux.
+  let &t_SI = "\ePtmux;\e\e[5 q\e\\"
+  let &t_EI = "\ePtmux;\e\e[2 q\e\\"
+  let &t_SR = "\ePtmux;\e\e[3 q\e\\"
 else
-    " Blinking bar cursor in insert mode.
-    let &t_SI = "\e[5 q"
-    " Steady block cursor in normal mode.
-    let &t_EI = "\e[2 q"
-    " Blinking underscore cursor in replace mode.
-    let &t_SR = "\e[3 q"
+  " Blinking bar cursor in insert mode.
+  let &t_SI = "\e[5 q"
+  " Steady block cursor in normal mode.
+  let &t_EI = "\e[2 q"
+  " Blinking underscore cursor in replace mode.
+  let &t_SR = "\e[3 q"
 endif
 
 " Only do this part when compiled with support for autocommands.
@@ -242,7 +242,7 @@ set confirm
 " Plugin configuration {{{
 
 augroup plugins
-    autocmd!
+  autocmd!
 augroup END
 
 " indentLine - display vertical lines at each indentation level.
