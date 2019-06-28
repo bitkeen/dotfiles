@@ -310,6 +310,7 @@ let g:lightline = {
 \    'statusline': 1,
 \    'tabline': 1,
 \  },
+\  'colorscheme': 'powerline_custom',
 \  'active': {
 \    'left': [ [ 'mode', 'paste' ],
 \              [ 'gitbranch', 'spell', 'isreadonly' ],
