@@ -44,6 +44,7 @@
     rbc = rebase --continue
     rbs = rebase --skip
     rs = reset
+    rsp = reset --patch
     sh = stash
     shm = stash push -m
     shps = stash push
