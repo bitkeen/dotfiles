@@ -165,13 +165,6 @@ set path+=**
 " Default is 2000.
 set redrawtime=5000
 
-" Set colorscheme.
-if filereadable(expand("~/.vimrc_background"))
-  " Access colors present in 256 colorspace.
-  let base16colorspace=256
-  source ~/.vimrc_background
-endif
-
 " Remove comment chars when joining comments.
 set formatoptions+=j
 
@@ -420,7 +413,26 @@ function! LightlineXkbSwitch()
   endif
   return keyboard_layout
 endfunction
+" }}}
 
+" base16-vim - themes {{{
+" Colorscheme local customization.
+function! s:base16_tomorrow_night_custom() abort
+  call Base16hi("PMenuSel", g:base16_gui05, g:base16_gui01, g:base16_cterm05, g:base16_cterm01, "reverse", "")
+  call Base16hi("Comment", g:base16_gui03, "", g:base16_cterm03, "", "italic", "")
+endfunction
+
+augroup on_change_colorscheme
+  autocmd!
+  autocmd ColorScheme base16-tomorrow-night call s:base16_tomorrow_night_custom()
+augroup END
+
+" .vimrc_background sets colorscheme.
+if filereadable(expand("~/.vimrc_background"))
+  " Access colors present in 256 colorspace.
+  let base16colorspace=256
+  source ~/.vimrc_background
+endif
 " }}}
 
 " vim-grepper - use search tools in a vim split.
