@@ -86,6 +86,7 @@ if has('autocmd')
   augroup folding
     autocmd!
     autocmd FileType python setlocal foldmethod=indent
+    autocmd FileType yaml setlocal foldmethod=indent
     autocmd BufWinEnter .vimrc,.bashrc,.tmux.conf,*/i3/config setlocal foldmethod=marker
     autocmd BufWinEnter .vimrc,.bashrc,.tmux.conf,*/i3/config setlocal foldlevel=0
   augroup END
