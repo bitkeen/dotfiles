@@ -1,0 +1,10 @@
+# vim: ft=sh
+
+# Ignore case.
+-i
+
+# Search hidden files and directories.
+--hidden
+
+# Exclude .git directory.
+--glob=!.git/
