@@ -6,6 +6,7 @@ export HISTSIZE=-1
 # Don't save lines matching a previous history entry.
 export HISTCONTROL=ignoredups:erasedups
 export HISTTIMEFORMAT="%Y-%m-%d %T "
+export RIPGREP_CONFIG_PATH="$HOME/.config/rg/rgconfig"
 
 # Even though vi-mode is already set through readline configuration,
 # still need to set it here for fzf default bindings to work.
