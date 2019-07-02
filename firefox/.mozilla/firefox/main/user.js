@@ -35,3 +35,7 @@ user_pref("devtools.performance.enabled", "false");
 // Enable cryptomining and fingerprinting protection.
 user_pref("privacy.trackingprotection.cryptomining.enabled", "true");
 user_pref("privacy.trackingprotection.fingerprinting.enabled", "true");
+
+// The defaults go back and forth in history.
+user_pref("browser.gesture.swipe.left", "cmd_scrollLeft");
+user_pref("browser.gesture.swipe.right", "cmd_scrollRight");
