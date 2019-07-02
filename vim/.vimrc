@@ -593,8 +593,8 @@ noremap <Leader>5 5gt
 noremap <Leader>6 6gt
 noremap <Leader>7 7gt
 noremap <Leader>8 8gt
-noremap <Leader>9 9gt
-noremap <silent> <Leader>0 :tablast<CR>
+" 9 instead of 0, similar to the default mapping in Firefox.
+noremap <silent> <Leader>9 :tablast<CR>
 
 " Put the text after current line.
 nnoremap <Leader>p :put<CR>
