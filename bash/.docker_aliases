@@ -12,7 +12,7 @@ function docker_alias {
             cmd='images'
             shift;;
         killall)
-            cmd="kill $(docker ps -q)"
+            cmd="kill $('docker' ps -q)"
             shift;;
         lg)
             cmd="logs"
@@ -26,6 +26,9 @@ function docker_alias {
             shift;;
         ps)
             cmd='ps --format table{{.ID}}\t{{.Image}}\t{{.Names}}\t{{.RunningFor}}\t{{.Ports}}'
+            shift;;
+        rmall)
+            cmd="rm $('docker' ps -aq)"
             shift;;
         *)
             cmd=$1
