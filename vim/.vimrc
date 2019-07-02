@@ -753,6 +753,15 @@ let ale_lint_on_text_changed = 'normal'
 " Highlight signs of marks based upon state indicated by vim-gitgutter.
 let g:SignatureMarkTextHLDynamic = 1
 
+" signjump - jump to signs just like other object motions.
+let g:signjump = {
+\  'use_jumplist': 1,
+\  'map_next_sign': ']g',
+\  'map_prev_sign': '[g',
+\  'map_last_sign': ']G',
+\  'map_first_sign': '[G',
+\}
+
 " winresizer - easy window resizing, similar to resize mode in i3wm
 let g:winresizer_start_key = '<Leader>R'
 
