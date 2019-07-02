@@ -549,6 +549,8 @@ vnoremap <Leader>\ <Esc>:vnew<CR>
 nnoremap <silent><Leader>_ :new<CR><C-w>J:exec 'resize ' . (&lines/2-1)<CR>
 " Need to escape '|'.
 nnoremap <silent><Leader>\| :vnew<CR><C-w>L:exec 'vertical resize ' . (&columns/2)<CR>
+" Open a new empty tab.
+nnoremap <Leader>/ :tabnew<CR>
 
 " Open current file in a vertical split.
 nnoremap <Leader><C-v> :vsplit %<CR>
