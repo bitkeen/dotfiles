@@ -68,6 +68,12 @@ function docker_compose_alias {
         u)
             cmd='up'
             shift;;
+        urf)
+            # Restart a single service. Different from restart in the
+            # way that if a service in the docker-compose file has been
+            # changed, it will be restarted with the new changes.
+            cmd='up -d --no-deps --force-recreate'
+            shift;;
         *)
             cmd=$1
             shift;;
