@@ -35,7 +35,7 @@ fzf_bindings_file="/usr/local/opt/fzf/shell/key-bindings.bash"
 fzf_completion_file="/usr/local/opt/fzf/shell/completion.bash"
 git_completion_file="/usr/share/bash-completion/completions/git"
 ranger_config_file="$HOME/.config/ranger/rc.conf"
-venv_wrapper_file="/usr/bin/virtualenvwrapper_lazy.sh"
+venv_wrapper_file='/usr/local/bin/virtualenvwrapper_lazy.sh'
 # git-prompt.sh provides __git_ps1 that is used to show current Git branch
 # in bash prompt.
 git_prompt_file='/Library/Developer/CommandLineTools/usr/share/git-core/git-prompt.sh'
@@ -64,6 +64,8 @@ export DOTFILES_DIR="$HOME/.dotfiles"
 export RIPGREP_CONFIG_PATH="$HOME/.config/rg/rgconfig"
 # Disable the default virtualenv prompt change.
 export VIRTUAL_ENV_DISABLE_PROMPT=1
+export VIRTUALENVWRAPPER_PYTHON="$(command -v python3)"
+export VIRTUALENV_PYTHON="$(command -v python3)"
 # }}}
 
 _source_if_exists "$fzf_bindings_file"
