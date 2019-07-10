@@ -2,11 +2,11 @@
 function docker_alias {
     key="$1"
     case $key in
-        ex)
-            cmd='exec -uroot -it'
-            shift;;
         bd)
             cmd='build'
+            shift;;
+        ex)
+            cmd='exec -uroot -it'
             shift;;
         im)
             cmd='images'
@@ -18,11 +18,11 @@ function docker_alias {
             cmd="logs"
             shift;;
         lgf)
-            cmd='logs -f --tail=0'
+            cmd='logs -f'
             shift;;
         lgft)
             # --tail="all" by default
-            cmd='logs -f'
+            cmd='logs -f --tail=0'
             shift;;
         ps)
             cmd='ps --format table{{.ID}}\t{{.Image}}\t{{.Names}}\t{{.RunningFor}}\t{{.Ports}}'
@@ -40,24 +40,21 @@ function docker_alias {
 function docker_compose_alias {
     key="$1"
     case $key in
-        u)
-            cmd='up'
-            shift;;
         d)
             cmd='down'
-            shift;;
-        p)
-            cmd='pull'
             shift;;
         k)
             cmd='kill'
             shift;;
         lgf)
-            cmd='logs -f --tail=0'
+            cmd='logs -f'
             shift;;
         lgft)
             # --tail="all" by default
-            cmd='logs -f'
+            cmd='logs -f --tail=0'
+            shift;;
+        p)
+            cmd='pull'
             shift;;
         r)
             cmd="run"
@@ -67,6 +64,9 @@ function docker_compose_alias {
             shift;;
         rs)
             cmd="restart"
+            shift;;
+        u)
+            cmd='up'
             shift;;
         *)
             cmd=$1
