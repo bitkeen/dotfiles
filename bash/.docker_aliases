@@ -53,7 +53,7 @@ function docker_compose_alias {
             # --tail="all" by default
             cmd='logs -f --tail=0'
             shift;;
-        p)
+        pl)
             cmd='pull'
             shift;;
         r)
@@ -68,7 +68,7 @@ function docker_compose_alias {
         u)
             cmd='up'
             shift;;
-        urf)
+        ur)
             # Restart a single service. Different from restart in the
             # way that if a service in the docker-compose file has been
             # changed, it will be restarted with the new changes.
