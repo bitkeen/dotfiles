@@ -3,8 +3,9 @@
 export EDITOR=/usr/bin/vim
 # Don't limit the number of commands to save in history.
 export HISTSIZE=-1
-# Don't save lines matching a previous history entry.
-export HISTCONTROL=ignoredups:erasedups
+# Ignore lines that start with a space,
+# don't save lines matching a previous history entry.
+export HISTCONTROL=ignorespace:ignoredups:erasedups
 export HISTTIMEFORMAT="%Y-%m-%d %T "
 export RIPGREP_CONFIG_PATH="$HOME/.config/rg/rgconfig"
 
