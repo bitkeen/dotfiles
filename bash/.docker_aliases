@@ -1,5 +1,5 @@
 #!/bin/sh
-function docker_alias {
+docker_alias() {
     key="$1"
     case $key in
         bd)
@@ -37,7 +37,7 @@ function docker_alias {
     docker $cmd $@
 }
 
-function docker_compose_alias {
+docker_compose_alias() {
     key="$1"
     case $key in
         d)
