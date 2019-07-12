@@ -27,6 +27,9 @@ docker_alias() {
         ps)
             cmd='ps --format table{{.ID}}\t{{.Image}}\t{{.Names}}\t{{.RunningFor}}\t{{.Ports}}'
             shift;;
+        sys)
+            cmd="system"
+            shift;;
         rmall)
             cmd="rm $('docker' ps -aq)"
             shift;;
