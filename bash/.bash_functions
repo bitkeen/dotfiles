@@ -1,7 +1,7 @@
-#!/bin/sh
+#!/usr/bin/env bash
 # dotfiles push
 # Push dotfiles repo changes to origin, rebasing each branch on master.
-function dps {
+dps() {
     initial_dir=$PWD
     dotfiles_dir="$HOME/.dotfiles"
 
@@ -20,7 +20,7 @@ function dps {
 
 # dotfiles pull
 # Pull and rebase all the branches of the dotfiles repository.
-function dpl {
+dpl() {
     initial_dir=$PWD
     dotfiles_dir="$HOME/.dotfiles"
 
@@ -47,13 +47,13 @@ tsdate() {
 
 # Change working directory to the git root if the current working
 # directory is inside of a git repository.
-function groot {
+groot() {
     git status > /dev/null 2>&1 || return 1
     cd "$(git rev-parse --show-cdup)".
 }
 
 # Git stash and repeat previous command.
-function gshr {
+gshr() {
     git status > /dev/null 2>&1 || return 1
     git stash
     fc -s
@@ -69,7 +69,7 @@ function gshr {
 # the last visited one after ranger quits.
 # To undo the effect of this function, you can type "cd -" to return to the
 # original directory.
-function ranger-cd {
+ranger-cd() {
     tempfile="$(mktemp -t tmp.XXXXXX)"
     ranger --choosedir="$tempfile" "${@:-$(pwd)}"
     test -f "$tempfile" &&
