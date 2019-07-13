@@ -220,3 +220,6 @@
 [submodule "vim/.vim/bundle/vim-signjump"]
 	path = vim/.vim/bundle/vim-signjump
 	url = https://github.com/ZeroKnight/vim-signjump
+[submodule "vim/.vim/bundle/vim-vue"]
+	path = vim/.vim/bundle/vim-vue
+	url = https://github.com/posva/vim-vue
