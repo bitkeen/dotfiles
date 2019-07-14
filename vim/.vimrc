@@ -3,6 +3,9 @@
 " Get the defaults that most users want.
 source $VIMRUNTIME/defaults.vim
 
+" Set the character encoding used inside Vim.
+set encoding=utf-8
+
 if has("vms")
   " Do not keep a backup file, use versions instead.
   set nobackup
@@ -219,9 +222,6 @@ filetype plugin indent on
 
 " Enable syntax highlighting.
 syntax enable
-
-" Set the character encoding used inside Vim
-set encoding=utf-8
 
 " If you set the 'incsearch' option, Vim will show the first match
 " for the pattern, while you are still typing it. This quickly shows a
