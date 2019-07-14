@@ -1,40 +1,38 @@
 #!/usr/bin/env bash
-# dotfiles push
 # Push dotfiles repo changes to origin, rebasing each branch on master.
-dps() {
-    initial_dir=$PWD
+dotfiles_push() {
+    initial_dir="$PWD"
     dotfiles_dir="$HOME/.dotfiles"
 
-    cd $dotfiles_dir
+    cd "$dotfiles_dir" || return 1
     git checkout master && git push &&
     git checkout arch && git rebase master && git push -f &&
     git checkout mac && git rebase master && git push -f &&
     git checkout termux && git rebase master && git push -f &&
     if [ -n "$1" ]; then
-        git checkout $1
+        git checkout "$1"
     else
         git checkout master
     fi
-    cd $initial_dir
+    cd "$initial_dir"
 }
 
-# dotfiles pull
 # Pull and rebase all the branches of the dotfiles repository.
-dpl() {
-    initial_dir=$PWD
+dotfiles_pull() {
+    initial_dir="$PWD"
     dotfiles_dir="$HOME/.dotfiles"
 
-    cd $dotfiles_dir
+    cd "$dotfiles_dir" || return 1
     git checkout master && git pull --rebase &&
     git checkout arch && git pull --rebase &&
     git checkout mac && git pull --rebase &&
     git checkout termux && git pull --rebase &&
     if [ -n "$1" ]; then
-        git checkout $1
+        git checkout "$1"
     else
         git checkout master
     fi
-    cd $initial_dir
+    cd "$initial_dir"
 }
 
 tsdate() {
@@ -69,7 +67,7 @@ gshr() {
 # the last visited one after ranger quits.
 # To undo the effect of this function, you can type "cd -" to return to the
 # original directory.
-ranger-cd() {
+function ranger-cd {
     tempfile="$(mktemp -t tmp.XXXXXX)"
     ranger --choosedir="$tempfile" "${@:-$(pwd)}"
     test -f "$tempfile" &&

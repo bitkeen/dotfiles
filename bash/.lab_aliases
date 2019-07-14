@@ -18,7 +18,7 @@ function lab_alias {
             cmd="$key"
             shift;;
     esac
-    lab "$cmd" "$@"
+    lab $cmd $@
 }
 
 alias lab='lab_alias'
