@@ -42,7 +42,7 @@ git_prompt_file='/Library/Developer/CommandLineTools/usr/share/git-core/git-prom
 # }}}
 
 # Exports {{{
-export EDITOR=/usr/bin/vim
+export EDITOR=/usr/local/bin/vim
 export FZF_DEFAULT_OPTS="--preview 'cat {}' --preview-window='hidden' --bind='ctrl-t:toggle-preview'"
 export FZF_CTRL_R_OPTS='--sort'
 export HOMEBREW_NO_EMOJI=1
