@@ -52,6 +52,7 @@ export HISTCONTROL=ignorespace:ignoredups:erasedups
 # Don't limit the number of commands to save in history.
 export HISTSIZE=-1
 export HISTTIMEFORMAT="%Y-%m-%d %T "
+export LC_ALL=en_US.UTF-8
 # Where user-specific Python packages are installed.
 export PATH="$PATH:$HOME/Library/Python/3.7/bin"
 # Scripts are installed in .local/bin.
