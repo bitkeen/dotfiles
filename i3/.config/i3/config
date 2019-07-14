@@ -218,8 +218,8 @@ bindsym $mod+Shift+r restart
 bindsym $mod+Shift+e exec --no-startup-id "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
 # Move workspaces between outputs.
-bindsym $mod+Shift+a move workspace to output left
-bindsym $mod+Shift+d move workspace to output right
+bindsym $mod+Shift+p move workspace to output left
+bindsym $mod+Shift+n move workspace to output right
 
 # Enable back and forth switching with a keybinding.
 bindsym $mod+Tab workspace back_and_forth
@@ -277,6 +277,9 @@ bindsym $mod+shift+c exec --no-startup-id urxvt -e calcurse
 
 # Launch ncmpcpp.
 bindsym $mod+shift+m exec --no-startup-id urxvt -e ncmpcpp
+
+# Launch Anki.
+bindsym $mod+shift+a exec anki
 
 # }}}
 
