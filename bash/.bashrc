@@ -1,5 +1,11 @@
 # Main {{{
 
+_source_if_exists() {
+    # Source a file if it exists.
+    [ "$#" -ne 1 ] && return 1
+    [ -f "$1" ] && source "$1"
+}
+
 export EDITOR=/usr/bin/vim
 # Don't limit the number of commands to save in history.
 export HISTSIZE=-1
@@ -159,28 +165,14 @@ export PS1="${ps1_left}${ps1_right}"
 # Aliases and functions {{{
 
 # Add main bash aliases.
-if [ -f ~/.bash_aliases ]; then
-    source ~/.bash_aliases
-fi
-
+_source_if_exists "$HOME/.bash_aliases"
 # Add  functions.
-if [ -f ~/.bash_functions ]; then
-    source ~/.bash_functions
-fi
-
+_source_if_exists "$HOME/.bash_functions"
 # Add local (untracked) bash aliases.
-if [ -f ~/.bash_aliases.local ]; then
-    source ~/.bash_aliases.local
-fi
-
+_source_if_exists "$HOME/.bash_aliases.local"
 # Add docker aliases.
-if [ -f ~/.docker_aliases ]; then
-    source ~/.docker_aliases
-fi
-
+_source_if_exists "$HOME/.docker_aliases"
 # Add lab aliases.
-if [ -f ~/.lab_aliases ]; then
-    source ~/.lab_aliases
-fi
+_source_if_exists "$HOME/.lab_aliases"
 
 # }}}
