@@ -14,6 +14,7 @@
     cop = checkout -p
     chp = cherry-pick
     chpa = cherry-pick --abort
+    chpc = cherry-pick --continue
     ci = commit
     cia = commit --amend
     cim = commit -m
