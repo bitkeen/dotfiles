@@ -49,7 +49,7 @@ tsdate() {
 # directory is inside of a git repository.
 groot() {
     git status > /dev/null 2>&1 || return 1
-    cd "$(git rev-parse --show-cdup)".
+    cd "$(git rev-parse --show-cdup)"
 }
 
 # Git stash and repeat previous command.
