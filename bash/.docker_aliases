@@ -25,7 +25,10 @@ docker_alias() {
             cmd='logs -f --tail=0'
             shift;;
         ps)
-            cmd='ps --format table{{.ID}}\t{{.Image}}\t{{.Names}}\t{{.RunningFor}}\t{{.Ports}}'
+            cmd='ps --format table{{.ID}}\t{{.Image}}\t{{.Names}}\t{{.Status}}'
+            shift;;
+        psf)
+            cmd='ps'
             shift;;
         sys)
             cmd="system"
