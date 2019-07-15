@@ -1,6 +1,6 @@
 #!/bin/sh
 # Reload .Xresources.
-alias xup="xrdb ~/.Xresources"
+alias xup='xrdb ~/.Xresources'
 # Reload .bashrc.
 alias bup='source ~/.bashrc'
 # Reload .tmux.conf.
@@ -64,7 +64,7 @@ alias ipy='ipython'
 alias wo='workon'
 alias deac='deactivate'
 
-alias bandcamp-dl="bandcamp-dl --base-dir=$HOME/Downloads/bandcamp-dl"
+alias bandcamp-dl='bandcamp-dl --base-dir=$HOME/Downloads/bandcamp-dl'
 
 alias ytdl='youtube-dl'
 # Download playlists using a separate config.
