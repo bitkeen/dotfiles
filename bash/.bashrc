@@ -81,11 +81,14 @@ venv_color="\[$(tput setaf 66)\]"
 ssh_color="\[$(tput setaf 239)\]"
 git_color="\[$(tput setaf 75)\]"
 
+green_color="\[$(tput setaf 77)\]"
+red_color="\[$(tput setaf 124)\]"
+
 # Working directory.
 ps1_left="${reset}${bold}\w${reset}"
 ps1_right=""
 
-function ps1_vim {
+ps1_vim() {
     if [ -n "$VIMRUNTIME" ]; then
         vim_status="in vim"
     else
@@ -95,7 +98,7 @@ function ps1_vim {
 }
 
 # Modify the prompt when using a shell from inside ranger.
-function ps1_ranger {
+ps1_ranger() {
     if [ -n "$RANGER_LEVEL" ]; then
         ranger="in ranger"
     else
@@ -105,7 +108,7 @@ function ps1_ranger {
 }
 
 # Modify the prompt when using a virtual environment.
-function ps1_venv {
+ps1_venv() {
     if [ -n "$VIRTUAL_ENV" ]; then
         # Strip out the path and just leave the env name.
         venv="${VIRTUAL_ENV##*/}"
@@ -113,6 +116,11 @@ function ps1_venv {
         venv=""
     fi
     [ -n "$venv" ] && echo " ($venv)"
+}
+
+ps1_status() {
+    local last_status="$?"
+    [ "$last_status" == "0" ] && echo '+' || echo '-'
 }
 
 # Disable the default virtualenv prompt change.
@@ -155,7 +163,7 @@ ps1_right+="${reset}${bold}${ps1_jobs}${reset}"
 ps1_arrow=' > '
 ps1_right+="${reset}${bold}${arrow_color}${ps1_arrow}${reset}"
 
-export PS1="${ps1_left}${ps1_right}"
+export PS1="\$(ps1_status) ${ps1_left}${ps1_right}"
 
 # }}}
 
