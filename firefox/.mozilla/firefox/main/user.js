@@ -39,3 +39,6 @@ user_pref("privacy.trackingprotection.fingerprinting.enabled", "true");
 // The defaults go back and forth in history.
 user_pref("browser.gesture.swipe.left", "cmd_scrollLeft");
 user_pref("browser.gesture.swipe.right", "cmd_scrollRight");
+
+// Compact UI density.
+user_pref("browser.uidensity", 1);
