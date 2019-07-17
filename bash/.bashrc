@@ -163,7 +163,7 @@ ps1_right+="${reset}${bold}${ps1_jobs}${reset}"
 ps1_arrow=' > '
 ps1_right+="${reset}${bold}${arrow_color}${ps1_arrow}${reset}"
 
-export PS1="\$(ps1_status) ${ps1_left}${ps1_right}"
+export PS1="${reset}${bold}\$(ps1_status)${reset} ${ps1_left}${ps1_right}"
 
 # }}}
 
