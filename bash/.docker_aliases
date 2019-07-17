@@ -1,90 +1,69 @@
 #!/bin/sh
 docker_alias() {
     key="$1"
-    case $key in
+    case "$key" in
         bd)
-            cmd='build'
-            shift;;
+            cmd='build';;
         ex)
-            cmd='exec -uroot -it'
-            shift;;
+            cmd='exec -uroot -it';;
         im)
-            cmd='images'
-            shift;;
+            cmd='images';;
         killall)
-            cmd="kill $('docker' ps -q)"
-            shift;;
+            cmd="kill $('docker' ps -q)";;
         lg)
-            cmd="logs"
-            shift;;
+            cmd="logs";;
         lgf)
-            cmd='logs -f'
-            shift;;
+            cmd='logs -f';;
         lgft)
             # --tail="all" by default
-            cmd='logs -f --tail=0'
-            shift;;
+            cmd='logs -f --tail=0';;
         ps)
-            cmd='ps --format table{{.ID}}\t{{.Image}}\t{{.Names}}\t{{.Status}}'
-            shift;;
+            cmd='ps --format table{{.ID}}\t{{.Image}}\t{{.Names}}\t{{.Status}}';;
         psf)
-            cmd='ps'
-            shift;;
+            cmd='ps';;
         sys)
-            cmd="system"
-            shift;;
+            cmd="system";;
         rmall)
-            cmd="rm $('docker' ps -aq)"
-            shift;;
+            cmd="rm $('docker' ps -aq)";;
         *)
-            cmd=$1
-            shift;;
+            cmd=$1;;
     esac
-    docker $cmd $@
+    shift
+    docker $cmd "$@"
 }
 
 docker_compose_alias() {
     key="$1"
-    case $key in
+    case "$key" in
         d)
-            cmd='down'
-            shift;;
+            cmd='down';;
         k)
-            cmd='kill'
-            shift;;
+            cmd='kill';;
         lgf)
-            cmd='logs -f'
-            shift;;
+            cmd='logs -f';;
         lgft)
             # --tail="all" by default
-            cmd='logs -f --tail=0'
-            shift;;
+            cmd='logs -f --tail=0';;
         pl)
-            cmd='pull'
-            shift;;
+            cmd='pull';;
         r)
-            cmd="run"
-            shift;;
+            cmd="run";;
         rnd)
-            cmd="run --no-deps --name $2"
-            shift;;
+            cmd="run --no-deps --name $2";;
         rs)
-            cmd="restart"
-            shift;;
+            cmd="restart";;
         u)
-            cmd='up'
-            shift;;
+            cmd='up';;
         ur)
             # Restart a single service. Different from restart in the
             # way that if a service in the docker-compose file has been
             # changed, it will be restarted with the new changes.
-            cmd='up -d --no-deps --force-recreate'
-            shift;;
+            cmd='up -d --no-deps --force-recreate';;
         *)
-            cmd=$1
-            shift;;
+            cmd=$1;;
     esac
-    docker-compose $cmd $@
+    shift
+    docker-compose $cmd "$@"
 }
 
 alias docker='docker_alias'
