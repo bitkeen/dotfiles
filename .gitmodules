@@ -226,3 +226,6 @@
 [submodule "vim/.vim/bundle/vim-pug"]
 	path = vim/.vim/bundle/vim-pug
 	url = https://github.com/digitaltoad/vim-pug
+[submodule "vim/.vim/bundle/vim-isort"]
+	path = vim/.vim/bundle/vim-isort
+	url = https://github.com/fisadev/vim-isort
