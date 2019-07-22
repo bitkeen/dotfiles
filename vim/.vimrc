@@ -748,7 +748,10 @@ noremap <silent> <Leader>m :MerginalToggle<CR>
 nmap <Leader>z <Plug>(vzoom)
 
 " vim-instant-markdown
-noremap <Leader>i :InstantMarkdownPreview<CR>
+noremap <LocalLeader>i :InstantMarkdownPreview<CR>
+
+" vim-isort
+let g:vim_isort_map = '<Leader>i'
 
 " Tmuxline - tmux status line generator.
 let g:tmuxline_powerline_separators = 0
