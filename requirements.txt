@@ -1,4 +1,5 @@
-pygments-base16==1.0.3
 bandcamp-downloader==0.0.8.post12
+isort # Also required by pylint.
+pygments-base16==1.0.3
 pylint
 websockets # For ghost-text.vim.
