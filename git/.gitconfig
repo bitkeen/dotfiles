@@ -38,7 +38,7 @@
     pl = pull
     plrb = pull --rebase
     ps = push
-    psf = push -f
+    psf = push --force-with-lease
     rb = rebase
     rba = rebase --abort
     rbi = rebase --interactive
