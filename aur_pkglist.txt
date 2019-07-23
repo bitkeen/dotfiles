@@ -1,0 +1,4 @@
+# vim: ft=requirements
+# Arch Linux packages to install from AUR.
+git-open # Open a repo website (GitHub, GitLab, Bitbucket) in your browser
+htop-vim-git # Interactive text-mode process viewer. Patched for vim keybindings

@@ -1,0 +1,17 @@
+# vim: ft=requirements
+# Arch Linux packages to install.
+anki
+dunst # A customizable and lightweight notification-daemon
+firefox
+ipython
+keepassxc
+ncdu # NCurses Disk Usage
+mpv
+pulsemixer # CLI and curses mixer for pulseaudio
+ranger # Simple, vim-like TUI file manager
+virtualbox
+virtualbox-guest-iso # Guest Additions CD image
+youtube-dl
+zathura
+zathura-djvu
+zathura-pdf-mupdf
