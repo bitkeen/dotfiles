@@ -336,6 +336,7 @@ bindsym $mod+grave exec --no-startup-id $scripts_dir/tmuxdd.sh $dd_name
 for_window [instance=$dd_name] floating enable
 for_window [instance=$dd_name] resize set 1600 900
 for_window [instance=$dd_name] border pixel 1
+for_window [instance=$dd_name] sticky enable
 for_window [instance=$dd_name] move position center
 for_window [instance=$dd_name] move scratchpad
 
