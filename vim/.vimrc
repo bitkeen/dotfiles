@@ -284,9 +284,10 @@ let g:CommandTTraverseSCM='dir'
 let g:XkbSwitchEnabled = 1
 
 " vim-commentary - easy commenting
+autocmd plugins FileType abp setlocal commentstring=!%s
+autocmd plugins FileType requirements setlocal commentstring=#\ %s
 autocmd plugins FileType xquery setlocal commentstring=(:\ %s\ :)
 autocmd plugins FileType xdefaults setlocal commentstring=!%s
-autocmd plugins FileType abp setlocal commentstring=!%s
 
 " vim-gitgutter - show a git diff in the sign column.
 " let g:gitgutter_enabled = 0
