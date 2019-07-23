@@ -313,22 +313,11 @@ for_window [class="keepassxc"] workspace $workspace10
 
 # Startup applications {{{
 
-# Blueman applet.
 exec --no-startup-id blueman-applet
-
-# NetworkManager applet.
-exec --no-startup-id nm-applet
-
-# Dropbox.
-exec --no-startup-id dropbox
-
-# Compton.
-exec_always --no-startup-id compton
-
-# Firefox.
+exec --no-startup-id keepassxc
 exec --no-startup-id firefox
-
-# Dunst.
+exec --no-startup-id nm-applet
+exec_always --no-startup-id compton
 exec_always --no-startup-id dunst
 
 # Set key repeat rate.
