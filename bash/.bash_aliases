@@ -102,4 +102,7 @@ alias jctl='journalctl'
 alias toron='sudo systemctl start tor.service'
 alias toroff='sudo systemctl stop tor.service'
 
+# Get weather report.
+alias weather='curl wttr.in'
+
 alias nb='newsboat'
