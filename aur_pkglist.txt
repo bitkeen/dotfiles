@@ -2,3 +2,4 @@
 # Arch Linux packages to install from AUR.
 git-open # Open a repo website (GitHub, GitLab, Bitbucket) in your browser
 htop-vim-git # Interactive text-mode process viewer. Patched for vim keybindings
+xkb-switch # Program that allows to query and change the XKB layout state

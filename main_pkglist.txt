@@ -9,6 +9,7 @@ ncdu # NCurses Disk Usage
 mpv
 pulsemixer # CLI and curses mixer for pulseaudio
 ranger # Simple, vim-like TUI file manager
+shellcheck # Shell script analysis tool
 virtualbox
 virtualbox-guest-iso # Guest Additions CD image
 youtube-dl
