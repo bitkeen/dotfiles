@@ -22,22 +22,24 @@ ranger_config_file="$HOME/.config/ranger/rc.conf"
 venv_wrapper_file="/usr/bin/virtualenvwrapper_lazy.sh"
 
 export EDITOR=/usr/bin/vim
-# Don't limit the number of commands to save in history.
-export HISTSIZE=-1
 # Ignore lines that start with a space,
 # don't save lines matching a previous history entry.
 export HISTCONTROL=ignorespace:ignoredups:erasedups
+# Don't limit the number of commands to save in history.
+export HISTSIZE=-1
 export HISTTIMEFORMAT="%Y-%m-%d %T "
+# Where user-specific Python packages are installed.
+export PATH="$PATH:$HOME/.local/bin"
+export PATH="$PATH:$HOME/.vim/bundle/vim-superman/bin"
+# Avoid loading default config file for ranger if a custom one exists.
+[ -f "$ranger_config_file" ] && export RANGER_LOAD_DEFAULT_RC=FALSE
 export RIPGREP_CONFIG_PATH="$HOME/.config/rg/rgconfig"
+# Disable the default virtualenv prompt change.
+export VIRTUAL_ENV_DISABLE_PROMPT=1
 
 # Source fzf-related files.
 _source_if_exists "$fzf_bindings_file"
 _source_if_exists "$fzf_completion_file"
-
-# Avoid loading default config file for ranger if a custom one exists.
-if [ -f "$ranger_config_file" ]; then
-    export RANGER_LOAD_DEFAULT_RC=FALSE
-fi
 
 # Enable completion for git.
 if [ -f "$git_completion_file" ]; then
@@ -49,11 +51,6 @@ if [ -f "$git_completion_file" ]; then
         complete -o default -o nospace -F _git $git_alias
     fi
 fi
-
-# Where user-specific Python packages are installed.
-export PATH=$PATH:$HOME/.local/bin
-
-export PATH="$PATH:$HOME/.vim/bundle/vim-superman/bin"
 
 _source_if_exists "$venv_wrapper_file"
 
@@ -126,9 +123,6 @@ ps1_status() {
     local last_status="$?"
     [ "$last_status" == "0" ] && echo '+' || echo '-'
 }
-
-# Disable the default virtualenv prompt change.
-export VIRTUAL_ENV_DISABLE_PROMPT=1
 
 ps1_right+="${reset}${bold}${vim_color}\$(ps1_vim)${reset}"
 ps1_right+="${reset}${bold}${ranger_color}\$(ps1_ranger)${reset}"
