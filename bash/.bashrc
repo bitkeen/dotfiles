@@ -12,6 +12,7 @@ fzf_bindings_file="/usr/share/fzf/key-bindings.bash"
 fzf_completion_file="/usr/share/fzf/completion.bash"
 git_completion_file="/usr/share/bash-completion/completions/git"
 ranger_config_file="$HOME/.config/ranger/rc.conf"
+venv_wrapper_file="/usr/bin/virtualenvwrapper_lazy.sh"
 
 export EDITOR=/usr/bin/vim
 # Don't limit the number of commands to save in history.
@@ -55,11 +56,7 @@ export PATH=$PATH:$HOME/.local/bin
 
 export PATH="$PATH:$HOME/.vim/bundle/vim-superman/bin"
 
-# Load virtualenvwrapper.
-venv_wrapper_file="/usr/bin/virtualenvwrapper_lazy.sh"
-if [ -f "$venv_wrapper_file" ]; then
-    source "$venv_wrapper_file"
-fi
+_source_if_exists "$venv_wrapper_file"
 
 # Base16 Shell.
 [ -n "$PS1" ] && \
