@@ -1,5 +1,12 @@
 # Main {{{
 
+# Enable autocd for bash versions greater than 4.
+[ "${BASH_VERSINFO[0]}" -ge 4 ] && shopt -s autocd
+
+# Even though vi-mode is already set through readline configuration,
+# still need to set it here for fzf default bindings to work.
+set -o vi
+
 _source_if_exists() {
     # Source a file if it exists.
     [ "$#" -ne 1 ] && return 1
@@ -22,14 +29,6 @@ export HISTSIZE=-1
 export HISTCONTROL=ignorespace:ignoredups:erasedups
 export HISTTIMEFORMAT="%Y-%m-%d %T "
 export RIPGREP_CONFIG_PATH="$HOME/.config/rg/rgconfig"
-
-
-# Enable autocd for bash versions greater than 4.
-[ "${BASH_VERSINFO[0]}" -ge 4 ] && shopt -s autocd
-
-# Even though vi-mode is already set through readline configuration,
-# still need to set it here for fzf default bindings to work.
-set -o vi
 
 # Source fzf-related files.
 _source_if_exists "$fzf_bindings_file"
