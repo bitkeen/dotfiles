@@ -33,7 +33,7 @@ _source_if_exists "$HOME/.lab_aliases"
 base16_shell_dir="$HOME/.config/base16-shell/"
 fzf_bindings_file="/usr/local/opt/fzf/shell/key-bindings.bash"
 fzf_completion_file="/usr/local/opt/fzf/shell/completion.bash"
-git_completion_file="/usr/share/bash-completion/completions/git"
+git_completion_file="/Library/Developer/CommandLineTools/usr/share/git-core/git-completion.bash"
 ranger_config_file="$HOME/.config/ranger/rc.conf"
 venv_wrapper_file='/usr/local/bin/virtualenvwrapper_lazy.sh'
 # git-prompt.sh provides __git_ps1 that is used to show current Git branch
