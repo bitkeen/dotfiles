@@ -13,14 +13,16 @@ _source_if_exists() {
     [ -f "$1" ] && source "$1"
 }
 
-# Paths
+# Paths {{{
 base16_shell_dir="$HOME/.config/base16-shell/"
 fzf_bindings_file="/usr/share/fzf/key-bindings.bash"
 fzf_completion_file="/usr/share/fzf/completion.bash"
 git_completion_file="/usr/share/bash-completion/completions/git"
 ranger_config_file="$HOME/.config/ranger/rc.conf"
 venv_wrapper_file="/usr/bin/virtualenvwrapper_lazy.sh"
+# }}}
 
+# Exports {{{
 export EDITOR=/usr/bin/vim
 # Ignore lines that start with a space,
 # don't save lines matching a previous history entry.
@@ -36,6 +38,7 @@ export PATH="$PATH:$HOME/.vim/bundle/vim-superman/bin"
 export RIPGREP_CONFIG_PATH="$HOME/.config/rg/rgconfig"
 # Disable the default virtualenv prompt change.
 export VIRTUAL_ENV_DISABLE_PROMPT=1
+# }}}
 
 # Source fzf-related files.
 _source_if_exists "$fzf_bindings_file"
