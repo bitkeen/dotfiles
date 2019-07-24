@@ -6,6 +6,13 @@ _source_if_exists() {
     [ -f "$1" ] && source "$1"
 }
 
+# Paths
+base16_shell_dir="$HOME/.config/base16-shell/"
+fzf_bindings_file="/usr/share/fzf/key-bindings.bash"
+fzf_completion_file="/usr/share/fzf/completion.bash"
+git_completion_file="/usr/share/bash-completion/completions/git"
+ranger_config_file="$HOME/.config/ranger/rc.conf"
+
 export EDITOR=/usr/bin/vim
 # Don't limit the number of commands to save in history.
 export HISTSIZE=-1
@@ -24,19 +31,15 @@ export RIPGREP_CONFIG_PATH="$HOME/.config/rg/rgconfig"
 set -o vi
 
 # Source fzf-related files.
-fzf_bindings_file="/usr/share/fzf/key-bindings.bash"
-fzf_completion_file="/usr/share/fzf/completion.bash"
 _source_if_exists "$fzf_bindings_file"
 _source_if_exists "$fzf_completion_file"
 
 # Avoid loading default config file for ranger if a custom one exists.
-ranger_config_file="$HOME/.config/ranger/rc.conf"
 if [ -f "$ranger_config_file" ]; then
     export RANGER_LOAD_DEFAULT_RC=FALSE
 fi
 
 # Enable completion for git.
-git_completion_file="/usr/share/bash-completion/completions/git"
 if [ -f "$git_completion_file" ]; then
     source $git_completion_file
 
@@ -53,10 +56,9 @@ export PATH=$PATH:$HOME/.local/bin
 export PATH="$PATH:$HOME/.vim/bundle/vim-superman/bin"
 
 # Base16 Shell.
-BASE16_SHELL="$HOME/.config/base16-shell/"
 [ -n "$PS1" ] && \
-    [ -s "$BASE16_SHELL/profile_helper.sh" ] && \
-        eval "$("$BASE16_SHELL/profile_helper.sh")"
+    [ -s "$base16_shell_dir/profile_helper.sh" ] && \
+        eval "$("$base16_shell_dir/profile_helper.sh")"
 
 # Enable completion for pip.
 _pip_completion()
