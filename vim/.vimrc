@@ -43,6 +43,9 @@ else
   let &t_SR = "\e[3 q"
 endif
 
+" Maintain indent of current line.
+set autoindent
+
 " Only do this part when compiled with support for autocommands.
 if has('autocmd')
   augroup main
@@ -94,9 +97,6 @@ if has('autocmd')
     autocmd BufWinEnter .vimrc,.bashrc,.tmux.conf,*/i3/config setlocal foldmethod=marker
     autocmd BufWinEnter .vimrc,.bashrc,.tmux.conf,*/i3/config setlocal foldlevel=0
   augroup END
-else
-  " Maintain indent of current line.
-  set autoindent
 endif
 
 " Automatically refresh current file on if it was changed
@@ -118,12 +118,12 @@ if has('syntax') && has('eval')
   packadd matchit
 endif
 
-filetype plugin indent on
-
 " Enable Pathogen package manager.
 execute pathogen#infect()
 " Generate documentation.
 call pathogen#helptags()
+
+filetype plugin indent on
 
 " Enable syntax highlighting.
 syntax enable
