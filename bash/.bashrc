@@ -20,6 +20,9 @@ fzf_completion_file="/usr/share/fzf/completion.bash"
 git_completion_file="/usr/share/bash-completion/completions/git"
 ranger_config_file="$HOME/.config/ranger/rc.conf"
 venv_wrapper_file="/usr/bin/virtualenvwrapper_lazy.sh"
+# git-prompt.sh provides __git_ps1 that is used to show current Git branch
+# in bash prompt.
+git_prompt_file='/usr/share/git/completion/git-prompt.sh'
 # }}}
 
 # Exports {{{
@@ -40,9 +43,9 @@ export RIPGREP_CONFIG_PATH="$HOME/.config/rg/rgconfig"
 export VIRTUAL_ENV_DISABLE_PROMPT=1
 # }}}
 
-# Source fzf-related files.
 _source_if_exists "$fzf_bindings_file"
 _source_if_exists "$fzf_completion_file"
+_source_if_exists "$venv_wrapper_file"
 
 # Enable completion for git.
 if [ -f "$git_completion_file" ]; then
@@ -54,8 +57,6 @@ if [ -f "$git_completion_file" ]; then
         complete -o default -o nospace -F _git $git_alias
     fi
 fi
-
-_source_if_exists "$venv_wrapper_file"
 
 # Base16 Shell.
 [ -n "$PS1" ] && \
@@ -84,9 +85,6 @@ vim_color="\[$(tput setaf 70)\]"
 venv_color="\[$(tput setaf 66)\]"
 ssh_color="\[$(tput setaf 239)\]"
 git_color="\[$(tput setaf 75)\]"
-
-green_color="\[$(tput setaf 77)\]"
-red_color="\[$(tput setaf 124)\]"
 
 # Working directory.
 ps1_left="${reset}${bold}\w${reset}"
@@ -131,9 +129,6 @@ ps1_right+="${reset}${bold}${vim_color}\$(ps1_vim)${reset}"
 ps1_right+="${reset}${bold}${ranger_color}\$(ps1_ranger)${reset}"
 ps1_right+="${reset}${bold}${venv_color}\$(ps1_venv)${reset}"
 
-# git-prompt.sh provides __git_ps1 that is used to show current Git branch
-# in bash prompt.
-git_prompt_file='/usr/share/git/completion/git-prompt.sh'
 if [ -f "$git_prompt_file" ]; then
     # Add a '$' in the __git_ps1 output to show stashed changes
     # are present.
