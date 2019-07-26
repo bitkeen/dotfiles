@@ -15,9 +15,12 @@ fi
 key="$1"
 case $key in
     increase)
-        pactl set-sink-volume @DEFAULT_SINK@ +5%
-        # Always unmute on volume increase.
-        pactl set-sink-mute @DEFAULT_SINK@ 0
+        if pactl list sinks | grep 'Mute: yes'; then
+            # If a sink is muted, just unmute it.
+            pactl set-sink-mute @DEFAULT_SINK@ 0
+        else
+            pactl set-sink-volume @DEFAULT_SINK@ +5%
+        fi
         ;;
     decrease)
         pactl set-sink-volume @DEFAULT_SINK@ -5%
