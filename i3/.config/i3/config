@@ -319,8 +319,6 @@ exec --no-startup-id blueman-applet
 exec --no-startup-id keepassxc
 exec --no-startup-id firefox
 exec --no-startup-id nm-applet
-exec_always --no-startup-id compton
-exec_always --no-startup-id dunst
 
 # Set key repeat rate.
 exec_always --no-startup-id xset r rate 250 30 &
