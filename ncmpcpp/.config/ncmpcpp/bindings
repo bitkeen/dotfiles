@@ -549,6 +549,11 @@ def_key "J"
 def_key "q"
   quit
 
+# Start a song from the beginning.
+def_key "0"
+  previous
+  next
+
 # Default for toggle_single.
 def_key "y"
   dummy
