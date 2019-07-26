@@ -231,7 +231,7 @@ bindsym $mod+Control+3 exec --no-startup-id maim -u | tee $screenshots_dir/scree
 bindsym $mod+Control+4 exec --no-startup-id maim -u -s | tee $screenshots_dir/screenshot-$(date +%Y%m%dT%H%M%S).png | xclip -selection clipboard -t image/png && notify-send "Screenshot captured"
 
 # Screen lock.
-bindsym $mod+Shift+x exec --no-startup-id $scripts_dir/i3_lock_custom.sh
+bindsym $mod+Shift+x exec --no-startup-id $scripts_dir/screen_lock.sh
 
 # Pulse Audio volume controls.
 # Increase sound volume.
