@@ -1,17 +1,22 @@
 # vim: ft=requirements
 # Arch Linux packages to install.
 anki
+compton # A compositor for X11, required for transparency
 dunst # A customizable and lightweight notification-daemon
 firefox
+i3-wm
+i3blocks
 ipython
 keepassxc
 ncdu # NCurses Disk Usage
 mpv
 pulsemixer # CLI and curses mixer for pulseaudio
 ranger # Simple, vim-like TUI file manager
+redshift # Set color temperature of display according to time of day
 shellcheck # Shell script analysis tool
 virtualbox
 virtualbox-guest-iso # Guest Additions CD image
+xsecurelock # X11 screen lock utility
 youtube-dl
 zathura
 zathura-djvu
