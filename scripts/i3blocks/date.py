@@ -5,10 +5,10 @@
 # command=date.py '%a, %d.%m'
 # instance=urxvt -e calcurse
 # interval=5
-from argparse import ArgumentParser
-from time import strftime
 import os
 import subprocess as sp
+from argparse import ArgumentParser
+from time import strftime
 
 def get_args():
     """Set up argument parser. The positional argument is date
