@@ -2,10 +2,9 @@
 # Keyboard layout block for i3blocks based on xkb-switch utility.
 # Example usage:
 # keyboard_layout.py --colors white blue yellow
-from argparse import ArgumentParser
-from collections import defaultdict
-from subprocess import call, check_output
 import os
+from argparse import ArgumentParser
+from subprocess import call, check_output
 
 def get_args():
     """Set up argument parser. The single optional argument is an
@@ -32,8 +31,8 @@ def get_all_layouts():
     return [lt.upper() for lt in layouts.split()]
 
 
-if __name__ == '__main__':
-    # switch to the next layout on left mouse button click
+def main():
+    # Switch to the next layout on left mouse button click.
     if os.environ.get('BLOCK_BUTTON') == '1':
         call(['xkb-switch', '-n'])
 
@@ -50,3 +49,7 @@ if __name__ == '__main__':
     markup = "<span color='{}'>{}</span>"
     block_text = markup.format(dict_colors[current_lt], current_lt)
     print(block_text)
+
+
+if __name__ == '__main__':
+    main()
