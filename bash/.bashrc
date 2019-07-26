@@ -64,6 +64,10 @@ export DOTFILES_DIR="$HOME/.dotfiles"
 export RIPGREP_CONFIG_PATH="$HOME/.config/rg/rgconfig"
 # Disable the default virtualenv prompt change.
 export VIRTUAL_ENV_DISABLE_PROMPT=1
+# The number of pixels the prompt of auth_x11 may be moved at startup to
+# mitigate possible burn-in effects
+export XSECURELOCK_SHOW_DATETIME=1
+export XSECURELOCK_BURNIN_MITIGATION=20
 # }}}
 
 _source_if_exists "$fzf_bindings_file"
