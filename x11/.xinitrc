@@ -33,5 +33,8 @@ compton &
 # Notification daemon
 dunst &
 
+# Hide cursor when idle.
+unclutter &
+
 # Start i3.
 exec i3
