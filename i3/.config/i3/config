@@ -321,7 +321,7 @@ exec --no-startup-id firefox
 exec --no-startup-id nm-applet
 
 # Set key repeat rate.
-exec_always --no-startup-id xset r rate 250 30 &
+exec_always --no-startup-id xset r rate 250 40 &
 
 # }}}
 
