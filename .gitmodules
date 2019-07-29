@@ -229,3 +229,6 @@
 [submodule "vim/.vim/bundle/vim-isort"]
 	path = vim/.vim/bundle/vim-isort
 	url = https://github.com/fisadev/vim-isort
+[submodule "vim/.vim/bundle/vim-syntax-extra"]
+	path = vim/.vim/bundle/vim-syntax-extra
+	url = https://github.com/justinmk/vim-syntax-extra
