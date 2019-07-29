@@ -20,6 +20,11 @@ alias grep='grep --color=auto --ignore-case'
 # Ignore binary files with -I.
 alias gr='grep -n -I'
 
+# Find.
+alias fn='find . -name'
+# Case-insensitive.
+alias fin='find . -iname'
+
 # Git.
 alias g='git'
 alias l='lab'
