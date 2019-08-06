@@ -49,14 +49,18 @@
     sh = stash
     shm = stash push -m
     shps = stash push
-    shd = stash drop
+    ; Run 'git stash drop' if no argument is provided,
+    ; otherwise run 'git stash drop stash@{$1}'.
+    shd = "!sh -c '[ -z \"$1\" ] \
+            && git stash drop || \
+            git stash drop stash@{\"$1\"}' -"
     shl = stash list
-    ; Run 'git stash pop' if no argument is provided,
-    ; otherwise run 'git stash pop stash@{$1}'.
     shp = "!sh -c '[ -z \"$1\" ] \
             && git stash pop || \
             git stash pop stash@{\"$1\"}' -"
-    shsw = stash show -p
+    shsw = "!sh -c '[ -z \"$1\" ] \
+            && git stash show -p || \
+            git stash show -p stash@{\"$1\"}' -"
     sm = submodule
     sma = submodule add
     smu = submodule update --init --recursive
