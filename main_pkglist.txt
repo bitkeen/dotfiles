@@ -18,7 +18,6 @@ unclutter # A small program for hiding the mouse cursor
 virtualbox
 virtualbox-guest-iso # Guest Additions CD image
 xsecurelock # X11 screen lock utility
-youtube-dl
 zathura
 zathura-djvu
 zathura-pdf-mupdf
