@@ -51,7 +51,11 @@
     shps = stash push
     shd = stash drop
     shl = stash list
-    shp = stash pop
+    ; Run 'git stash pop' if no argument is provided,
+    ; otherwise run 'git stash pop stash@{$1}'.
+    shp = "!sh -c '[ -z \"$1\" ] \
+            && git stash pop || \
+            git stash pop stash@{\"$1\"}' -"
     shsw = stash show -p
     sm = submodule
     sma = submodule add
