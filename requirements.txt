@@ -6,3 +6,4 @@ pyflakes
 pylint
 pylint-django
 websockets # For ghost-text.vim.
+youtube-dl
