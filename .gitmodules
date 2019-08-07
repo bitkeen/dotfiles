@@ -232,3 +232,6 @@
 [submodule "vim/.vim/bundle/vim-syntax-extra"]
 	path = vim/.vim/bundle/vim-syntax-extra
 	url = https://github.com/justinmk/vim-syntax-extra
+[submodule "vim-slime"]
+	path = vim/.vim/bundle/vim-slime
+	url = https://github.com/jpalardy/vim-slime
