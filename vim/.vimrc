@@ -784,6 +784,17 @@ let g:winresizer_start_key = '<Leader>R'
 nnoremap <LocalLeader>g :GhostTextStart
 nnoremap <LocalLeader>G :GhostTextStop
 
+" vim-slime
+let g:slime_target = "tmux"
+let g:slime_paste_file = tempname()
+augroup slime
+  autocmd!
+  " Disable linting.
+  autocmd BufWinEnter */.vim/slime/repl.py :ALEDisable
+  autocmd BufWinEnter */.vim/slime/repl.lua :ALEDisable
+augroup END
+
+
 " }}}
 
 silent! source ~/.dotfiles/vim/.vimrc.local
