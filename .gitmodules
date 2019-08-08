@@ -235,3 +235,6 @@
 [submodule "vim-slime"]
 	path = vim/.vim/bundle/vim-slime
 	url = https://github.com/jpalardy/vim-slime
+[submodule "vim-auto-save"]
+	path = vim/.vim/bundle/vim-auto-save
+	url = https://github.com/907th/vim-auto-save
