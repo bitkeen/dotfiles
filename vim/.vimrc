@@ -792,6 +792,12 @@ augroup slime
   " Disable linting.
   autocmd BufWinEnter */.vim/slime/repl.py :ALEDisable
   autocmd BufWinEnter */.vim/slime/repl.lua :ALEDisable
+  " Enable auto-save.
+  autocmd BufWinEnter */.vim/slime/repl.py :AutoSaveToggle
+  autocmd BufWinEnter */.vim/slime/repl.lua :AutoSaveToggle
+  " Don't display the auto-save notification.
+  autocmd BufWinEnter */.vim/slime/repl.py :let g:auto_save_silent = 1
+  autocmd BufWinEnter */.vim/slime/repl.lua :let g:auto_save_silent = 1
 augroup END
 
 
