@@ -235,6 +235,16 @@ set wildignorecase
 " a dialog asking if you wish to save changed files.
 set confirm
 
+" Vim before 8.1.1365 is vulnerable to arbitrary code execution via modelines
+" by opening a specially crafted text file.
+if !has("patch-8.1-1366")
+  set nomodeline
+else
+  " Disallow options that are an epxression to be set in the modeline.
+  " Default is off, but it is still included here.
+  set nomodelineexpr
+endif
+
 " }}}
 
 " Plugin configuration {{{
