@@ -595,9 +595,9 @@ nnoremap <silent> <LocalLeader>qa :qa!<CR>
 nnoremap <Leader><Leader> @@
 
 " Compare buffers in current tab.
-nnoremap <Leader>dt :windo diffthis<CR>
+nnoremap [w :windo diffthis<CR>
 " Turn diff mode off.
-nnoremap <Leader>do :windo diffoff<CR>
+nnoremap ]w :windo diffoff<CR>
 
 " Go to tab by number
 noremap <Leader>1 1gt
