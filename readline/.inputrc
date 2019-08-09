@@ -34,6 +34,7 @@ $endif
 
 $if mode=vi
     set keymap vi-insert
+    Control-x: edit-and-execute-command
     Control-a: beginning-of-line
     Control-e: end-of-line
     Control-f: clear-screen
