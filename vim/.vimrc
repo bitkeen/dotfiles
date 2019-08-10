@@ -270,7 +270,10 @@ let g:instant_markdown_autostart = 0
 
 " vimwiki - personal wiki for Vim.
 " vimwiki configuration.
-let g:vimwiki_list = [{'path': '~/Documents/vimwiki', 'ext': '.md'}]
+let g:vimwiki_list = [
+\  {'path': '~/Documents/mainwiki', 'syntax': 'markdown', 'ext': '.md'},
+\  {'path': '~/Sync/markor/syncwiki', 'syntax': 'markdown', 'ext': '.md'},
+\]
 " vimwiki markdown support.
 let g:vimwiki_ext2syntax = {'.md': 'markdown', '.markdown': 'markdown', '.mdown': 'markdown'}
 
@@ -662,8 +665,11 @@ endif
 " Plugin mappings {{{
 
 " vimwiki - personal wiki for Vim.
+" Default is "<Leader>wt".
+nmap <Leader>wn <Plug>VimwikiTabIndex
 nmap <Leader>wb <Plug>VimwikiSplitLink
 nmap <Leader>wv <Plug>VimwikiVSplitLink
+nmap <Leader>wt <Plug>VimwikiTabnewLink
 
 " Command-T - file finder.
 " Show open buffers. Default mapping is <Leader>b, remap it to
