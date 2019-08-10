@@ -262,7 +262,8 @@ augroup END
 
 " indentLine - display vertical lines at each indentation level.
 let g:indentLine_fileType = ['python', 'lua', 'vim', 'xquery']
-let g:indentLine_char = '|'
+" U+2502: BOX DRAWINGS LIGHT VERTICAL.
+let g:indentLine_char = '│'
 
 " vim-instant-markdown - instant markdown previews.
 let g:instant_markdown_autostart = 0
