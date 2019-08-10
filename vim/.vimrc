@@ -245,6 +245,13 @@ else
   set nomodelineexpr
 endif
 
+" Netrw
+let g:netrw_banner=0
+" Tree view.
+let g:netrw_liststyle=3
+" Set window width to 25%.
+let g:netrw_winsize=25
+
 " }}}
 
 " Plugin configuration {{{
