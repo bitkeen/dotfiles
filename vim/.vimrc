@@ -660,6 +660,9 @@ if has("autocmd")
   augroup END
 endif
 
+" Pretty format a JSON buffer.
+nnoremap <LocalLeader>j :%!python -m json.tool<CR>
+
 " }}}
 
 " Plugin mappings {{{
