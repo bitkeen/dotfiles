@@ -670,6 +670,7 @@ nmap <Leader>wn <Plug>VimwikiTabIndex
 nmap <Leader>wb <Plug>VimwikiSplitLink
 nmap <Leader>wv <Plug>VimwikiVSplitLink
 nmap <Leader>wt <Plug>VimwikiTabnewLink
+nmap glt <Plug>VimwikiToggleListItem
 
 " Command-T - file finder.
 " Show open buffers. Default mapping is <Leader>b, remap it to
@@ -748,7 +749,7 @@ noremap <Leader>gv :GV<CR>
 nmap <C-g>hp <Plug>GitGutterPreviewHunk
 nmap <C-g>hs <Plug>GitGutterStageHunk
 nmap <C-g>hu <Plug>GitGutterUndoHunk
-noremap <Leader>hh :GitGutterLineHighlightsToggle<CR>
+noremap <C-g>hh :GitGutterLineHighlightsToggle<CR>
 " Remap hunk text object mappings from ic, ac to ih, ah,
 " because ic and ac conflict with other plugins.
 omap ih <Plug>GitGutterTextObjectInnerPending
