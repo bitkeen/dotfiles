@@ -11,7 +11,7 @@ docker_alias() {
         killall)
             cmd="kill $('docker' ps -q)";;
         krm)
-            'docker' kill "$('docker' ps -q)" &&\
+            'docker' kill "$('docker' ps -q)" &&
                 'docker' rm "$('docker' ps -aq)"
             return;;
         lg)
@@ -19,12 +19,18 @@ docker_alias() {
         lgf)
             cmd='logs -f';;
         lgft)
-            # --tail="all" by default
+            # --tail="all" is default
             cmd='logs -f --tail=0';;
         ps)
             cmd='ps --format table{{.ID}}\t{{.Image}}\t{{.Names}}\t{{.Status}}';;
         psf)
             cmd='ps';;
+        rs)
+            cmd="restart";;
+        rsl)
+            [ "$#" -lt 2 ] && echo 'Specify container name.' && return 1
+            'docker' restart "$2" && 'docker' logs -f "$2"
+            return;;
         sys)
             cmd="system";;
         rmall)
@@ -46,7 +52,7 @@ docker_compose_alias() {
         lgf)
             cmd='logs -f';;
         lgft)
-            # --tail="all" by default
+            # --tail="all" is default
             cmd='logs -f --tail=0';;
         pl)
             cmd='pull';;
@@ -56,13 +62,24 @@ docker_compose_alias() {
             cmd="run --no-deps --name $2";;
         rs)
             cmd="restart";;
+        rsl)
+            [ "$#" -lt 2 ] && echo 'Specify container name.' && return 1
+            'docker-compose' restart "$2" &&
+                'docker-compose' logs -f "$2"
+            return;;
         u)
-            cmd='up';;
+            shift && 'docker-compose' up --detach "$@" && 'docker-compose' logs -f
+            return;;
         ur)
             # Restart a single service. Different from restart in the
             # way that if a service in the docker-compose file has been
             # changed, it will be restarted with the new changes.
             cmd='up -d --no-deps --force-recreate';;
+        url)
+            [ "$#" -lt 2 ] && echo 'Specify container name.' && return 1
+            'docker-compose' up -d --no-deps --force-recreate "$2" &&
+                'docker-compose' logs -f "$2"
+            return;;
         *)
             cmd=$1;;
     esac
