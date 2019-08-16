@@ -68,6 +68,7 @@ if has('autocmd')
     autocmd FileType go setlocal noexpandtab
     autocmd FileType xquery setlocal noexpandtab
     autocmd FileType vim setlocal tabstop=2 shiftwidth=2 softtabstop=2
+    autocmd FileType json setlocal tabstop=2 shiftwidth=2 softtabstop=2
     autocmd FileType yaml* setlocal tabstop=2 shiftwidth=2 softtabstop=2
 
     " Open help windows in a vertical split by default.
