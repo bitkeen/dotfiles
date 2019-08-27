@@ -7,6 +7,9 @@
 # still need to set it here for fzf default bindings to work.
 set -o vi
 
+# Disable XON/XOFF flow control (Ctrl+S, Ctrl+Q).
+stty -ixon
+
 _source_if_exists() {
     # Source a file if it exists.
     [ "$#" -ne 1 ] && return 1
