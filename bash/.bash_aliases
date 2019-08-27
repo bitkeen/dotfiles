@@ -92,3 +92,5 @@ alias mycli='mycli --auto-vertical-output'
 
 alias dpl='dotfiles_pull'
 alias dps='dotfiles_push'
+
+alias nb='newsboat'
