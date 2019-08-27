@@ -63,6 +63,8 @@ alias mkd='mkdir -pv'
 
 alias tch='touch'
 
+alias nb='newsboat'
+
 alias py='python'
 alias ipy='ipython'
 # Python virtualenvwrapper.
