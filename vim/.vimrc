@@ -765,7 +765,8 @@ xmap ah <Plug>GitGutterTextObjectOuterPending
 nnoremap <Leader><C-r> :Rename<Space>
 
 " vim-obsession
-nnoremap <Leader><C-o> :Obsess<CR>
+" Toggle.
+nnoremap <Leader><C-o> :Obsess!<CR>
 
 let g:ranger_map_keys = 0
 noremap <LocalLeader>f :Ranger<CR>
