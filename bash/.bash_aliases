@@ -34,7 +34,7 @@ alias ka='killall'
 
 alias d='docker'
 alias c='docker-compose'
-alias cdu='docker-compose down; docker-compose up'
+alias cdu="'docker-compose' down; 'docker-compose' up --detach && 'docker-compose' logs -f"
 
 # Open ranger.
 # The ranger-cd version switches the directory in bash on exit,
