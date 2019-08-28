@@ -102,6 +102,9 @@ alias jctl='journalctl'
 alias toron='sudo systemctl start tor.service'
 alias toroff='sudo systemctl stop tor.service'
 
+# Empty trash.
+alias et='gio trash --empty'
+
 # Get weather report.
 alias weather='curl wttr.in'
 
