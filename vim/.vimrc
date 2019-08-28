@@ -835,4 +835,4 @@ augroup END
 
 " }}}
 
-silent! source ~/.dotfiles/vim/.vimrc.local
+silent! source ~/.vimrc.local
