@@ -21,6 +21,8 @@ docker_alias() {
         lgft)
             # --tail="all" is default
             cmd='logs -f --tail=0';;
+        pl)
+            cmd='pull';;
         ps)
             cmd='ps --format table{{.ID}}\t{{.Image}}\t{{.Names}}\t{{.Status}}';;
         psf)
