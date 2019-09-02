@@ -39,7 +39,7 @@ alias cdu='docker-compose down; docker-compose up'
 # Open ranger.
 # The ranger-cd version switches the directory in bash on exit,
 # r.shell allows to expand shell aliases inside the :shell command.
-alias r='SHELL=~/.dotfiles/scripts/ranger-shell.sh ranger-cd'
+alias r='SHELL=~/.local/bin/system/ranger-shell.sh ranger-cd'
 
 alias t='tmux'
 alias ta='tmux attach -t'
