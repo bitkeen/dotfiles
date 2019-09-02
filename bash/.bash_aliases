@@ -90,5 +90,5 @@ alias weather='curl wttr.in'
 # mode if the result is wider than the terminal width.
 alias mycli='mycli --auto-vertical-output'
 
-alias dps='dotfiles_push'
 alias dpl='dotfiles_pull'
+alias dps='dotfiles_push'

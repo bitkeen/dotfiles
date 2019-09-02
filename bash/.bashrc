@@ -42,6 +42,7 @@ export PATH="$PATH:$HOME/.vim/bundle/vim-superman/bin"
 # Script directories.
 export PATH="$PATH:$HOME/.local/bin"
 export PATH="$PATH:$HOME/.local/bin.local"
+export DOTFILES_DIR="$HOME/.dotfiles"
 # Avoid loading default config file for ranger if a custom one exists.
 [ -f "$ranger_config_file" ] && export RANGER_LOAD_DEFAULT_RC=FALSE
 export RIPGREP_CONFIG_PATH="$HOME/.config/rg/rgconfig"

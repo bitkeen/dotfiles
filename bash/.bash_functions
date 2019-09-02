@@ -1,40 +1,4 @@
 #!/usr/bin/env bash
-# Push dotfiles repo changes to origin, rebasing each branch on master.
-dotfiles_push() {
-    initial_dir="$PWD"
-    dotfiles_dir="$HOME/.dotfiles"
-
-    cd "$dotfiles_dir" || return 1
-    git checkout master && git push &&
-    git checkout arch && git rebase master && git push -f &&
-    git checkout mac && git rebase master && git push -f &&
-    git checkout termux && git rebase master && git push -f &&
-    if [ -n "$1" ]; then
-        git checkout "$1"
-    else
-        git checkout master
-    fi
-    cd "$initial_dir"
-}
-
-# Pull and rebase all the branches of the dotfiles repository.
-dotfiles_pull() {
-    initial_dir="$PWD"
-    dotfiles_dir="$HOME/.dotfiles"
-
-    cd "$dotfiles_dir" || return 1
-    git checkout master && git pull --rebase &&
-    git checkout arch && git pull --rebase &&
-    git checkout mac && git pull --rebase &&
-    git checkout termux && git pull --rebase &&
-    if [ -n "$1" ]; then
-        git checkout "$1"
-    else
-        git checkout master
-    fi
-    cd "$initial_dir"
-}
-
 tsdate() {
     timestamp=0
     if [ -n "$1" ]; then
