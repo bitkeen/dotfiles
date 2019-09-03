@@ -3,7 +3,7 @@
 set $mod Mod4
 
 # Paths.
-set $scripts_dir ~/.dotfiles/scripts
+set $scripts_dir ~/.local/bin/system
 set $screenshots_dir ~/Pictures/screenshots
 
 # Fonts.
