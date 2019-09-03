@@ -39,12 +39,10 @@ export HISTCONTROL=ignorespace:ignoredups:erasedups
 # Don't limit the number of commands to save in history.
 export HISTSIZE=-1
 export HISTTIMEFORMAT="%Y-%m-%d %T "
-# Where user-specific Python packages are installed.
-export PATH="$PATH:$HOME/.local/bin"
-export PATH="$PATH:$HOME/.vim/bundle/vim-superman/bin"
-# Script directories.
+# Scripts and user-specific Python packages are installed in .local/bin.
 export PATH="$PATH:$HOME/.local/bin"
 export PATH="$PATH:$HOME/.local/bin.local"
+export PATH="$PATH:$HOME/.vim/bundle/vim-superman/bin"
 export DOTFILES_DIR="$HOME/.dotfiles"
 # Avoid loading default config file for ranger if a custom one exists.
 [ -f "$ranger_config_file" ] && export RANGER_LOAD_DEFAULT_RC=FALSE
