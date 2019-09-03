@@ -777,6 +777,7 @@ xmap ah <Plug>GitGutterTextObjectOuterPending
 
 " vim-eunuch
 nnoremap <Leader><C-r> :Rename<Space>
+nnoremap <Leader><C-d> :Delete<CR>
 
 " vim-obsession
 " Toggle.
