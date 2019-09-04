@@ -1,12 +1,4 @@
 #!/usr/bin/env bash
-tsdate() {
-    timestamp=0
-    if [ -n "$1" ]; then
-        timestamp="$1"
-    fi
-    date -d @"$timestamp" -R
-}
-
 # Change working directory to the git root if the current working
 # directory is inside of a git repository.
 groot() {

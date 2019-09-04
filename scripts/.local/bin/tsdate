@@ -1,0 +1,6 @@
+#!/bin/sh
+timestamp=0
+if [ -n "$1" ]; then
+    timestamp="$1"
+fi
+date -r "$timestamp" -R
