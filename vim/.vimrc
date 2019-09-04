@@ -269,16 +269,17 @@ let g:indentLine_char = '│'
 " vim-instant-markdown - instant markdown previews.
 let g:instant_markdown_autostart = 0
 
-" vimwiki - personal wiki for Vim.
-" vimwiki configuration.
+" vimwiki - personal wiki for Vim. {{{
 let g:vimwiki_list = [
 \  {'path': '~/Documents/mainwiki', 'syntax': 'markdown', 'ext': '.md'},
 \  {'path': '~/Sync/markor/syncwiki', 'syntax': 'markdown', 'ext': '.md'},
+\  {'path': '~/Documents/workwiki', 'syntax': 'markdown', 'ext': '.md'},
 \]
 " vimwiki markdown support.
 let g:vimwiki_ext2syntax = {'.md': 'markdown', '.markdown': 'markdown', '.mdown': 'markdown'}
+" }}}
 
-" NERDTree - file system explorer.
+" NERDTree - file system explorer. {{{
 " Close vim if the only window left open is a NERDTree.
 autocmd plugins BufEnter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 " Show hidden files by default.
@@ -291,8 +292,9 @@ function! NERDTreeTryFind()
     NERDTreeToggle
   endif
 endfunction
+" }}}
 
-" Command-T - file finder.
+" Command-T - file finder. {{{
 " Set the underlying scanning implementation that should be used to explore
 " the filesystem. Default value is 'ruby'.
 let g:CommandTFileScanner = 'find'
@@ -308,24 +310,26 @@ let g:CommandTMaxFiles=500000
 " working directory.
 " Better than setting to 'file' when submodules are present.
 let g:CommandTTraverseSCM='dir'
+" }}}
 
 " vim-xkbswitch - automatically switch keyboard layout based on mode.
 let g:XkbSwitchEnabled = 1
 
-" vim-commentary - easy commenting
+" vim-commentary - easy commenting. {{{
 autocmd plugins FileType abp setlocal commentstring=!%s
 autocmd plugins FileType requirements setlocal commentstring=#\ %s
 autocmd plugins FileType xquery setlocal commentstring=(:\ %s\ :)
 autocmd plugins FileType xdefaults setlocal commentstring=!%s
+" }}}
 
-" vim-gitgutter - show a git diff in the sign column.
-" let g:gitgutter_enabled = 0
+" vim-gitgutter - show a git diff in the sign column. {{{
 " Always show the sign column.
 if exists('&signcolumn')
   set signcolumn=yes
 else
   let g:gitgutter_sign_column_always = 1
 endif
+" }}}
 
 " jedi-vim - Python autocompletion
 " Disable jedi completions as they are now handled by completor.
@@ -470,7 +474,7 @@ if filereadable(expand("~/.vimrc_background"))
 endif
 " }}}
 
-" vim-grepper - use search tools in a vim split.
+" vim-grepper - use search tools in a vim split. {{{
 runtime plugin/grepper.vim
 " Specify the tools that are available to use. First in the list is
 " the default tool.
@@ -486,6 +490,7 @@ let g:grepper.grep.grepprg .= ' -i'
 let g:grepper.prompt_quote = 3
 " let g:grepper.highlight = 1
 let g:grepper.simple_prompt = 1
+" }}}
 
 " Gundo - graph undo tree.
 let g:gundo_prefer_python3 = 1
