@@ -285,6 +285,13 @@ autocmd plugins BufEnter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERD
 let NERDTreeShowHidden = 1
 let NERDTreeIgnore = ['^__pycache__$[[dir]]']
 
+function! NERDTreeTryFind()
+  silent NERDTreeFind
+  if &ft != 'nerdtree'
+    NERDTreeToggle
+  endif
+endfunction
+
 " Command-T - file finder.
 " Set the underlying scanning implementation that should be used to explore
 " the filesystem. Default value is 'ruby'.
@@ -689,7 +696,7 @@ let g:NERDTreeMapOpenVSplit = '<C-v>'
 
 nnoremap <silent> <Leader>n :NERDTreeToggle<CR>
 " Find the current file in the tree.
-nnoremap <silent> <Leader>f :NERDTreeFind<CR>
+nnoremap <silent> <Leader>f :call NERDTreeTryFind()<CR>
 
 " git-blame.vim - see blame information in the bottom line.
 nnoremap <silent> <Leader>bl :<C-u>call gitblame#echo()<CR>
