@@ -7,6 +7,8 @@
     ap = add --patch
     bl = blame
     br = branch
+    brd = branch -D
+    brm = branch -m
     bs = bisect
     co = checkout
     cob = checkout -b
