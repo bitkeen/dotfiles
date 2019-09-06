@@ -49,6 +49,10 @@ docker_compose_alias() {
     case "$key" in
         d)
             cmd='down';;
+        du)
+            'docker-compose' down
+            'docker-compose' up --detach "$@" && 'docker-compose' logs -f
+            return;;
         k)
             cmd='kill';;
         lgf)
