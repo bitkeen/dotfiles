@@ -287,7 +287,8 @@ let NERDTreeShowHidden = 1
 let NERDTreeIgnore = ['^__pycache__$[[dir]]']
 
 function! NERDTreeTryFind()
-  silent NERDTreeFind
+  " Run NERDTreeToggle if NERDTreeFind didn't work.
+  NERDTreeFind
   if &ft != 'nerdtree'
     NERDTreeToggle
   endif
