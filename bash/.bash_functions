@@ -13,6 +13,11 @@ gshr() {
     fc -s
 }
 
+ww() {
+    # Open index file of the $1 wiki (the first one if $1 is omitted).
+    vim -c "execute \"normal $1\<Plug>VimwikiIndex\""
+}
+
 # Automatically change the directory in bash after closing ranger.
 # Source:
 # https://github.com/ranger/ranger/blob/master/examples/bash_automatic_cd.sh
