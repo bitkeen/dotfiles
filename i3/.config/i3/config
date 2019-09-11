@@ -278,6 +278,11 @@ bindsym $mod+shift+m exec --no-startup-id urxvt -e ncmpcpp
 # Launch Anki.
 bindsym $mod+shift+a exec anki
 
+# Directly switch to a keyboard layout.
+bindsym $mod+ctrl+a exec --no-startup-id xkb-switch -s ua
+bindsym $mod+ctrl+s exec --no-startup-id xkb-switch -s us
+bindsym $mod+ctrl+r exec --no-startup-id xkb-switch -s ru
+
 # }}}
 
 # Miscellaneous {{{
