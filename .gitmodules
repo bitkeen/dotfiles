@@ -238,3 +238,6 @@
 [submodule "vim-auto-save"]
 	path = vim/.vim/bundle/vim-auto-save
 	url = https://github.com/907th/vim-auto-save
+[submodule "ultisnips"]
+	path = vim/.vim/bundle/ultisnips
+	url = https://github.com/SirVer/ultisnips
