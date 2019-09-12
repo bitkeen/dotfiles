@@ -660,7 +660,7 @@ nnoremap [b O<Esc>j
 
 if has("autocmd")
   " Compiling TeX.
-  augroup tex
+  augroup texmaps
     autocmd!
     " Map F3 to compile LaTeX. The last <Enter> skips the log.
     autocmd FileType tex noremap <F3> :w<Enter>:!pdflatex<Space>%<Enter><Enter>
@@ -668,7 +668,7 @@ if has("autocmd")
     autocmd FileType tex noremap <F4> :w<Enter>:!xelatex<Space>%<Enter><Enter>
   augroup END
   " Quickfix window mappings.
-  augroup qf
+  augroup qfmaps
     autocmd!
     " Go to older error list.
     autocmd FileType qf nnoremap <Leader>H :colder<CR>
