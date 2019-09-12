@@ -675,6 +675,11 @@ if has("autocmd")
     " Go to newer error list.
     autocmd FileType qf nnoremap <Leader>L :cnewer<CR>
   augroup END
+  augroup htmlmaps
+    " Pretty format current buffer using tidy.
+    autocmd FileType html nnoremap <F4> :silent % !tidy -q -i --show-errors 0 %<CR>
+    autocmd FileType xtml nnoremap <F4> :silent % !tidy -q -i --show-errors 0 -xml %<CR>
+  augroup END
 endif
 
 " Pretty format a JSON buffer.
