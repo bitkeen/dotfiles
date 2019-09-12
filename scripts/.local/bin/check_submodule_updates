@@ -1,0 +1,18 @@
+#!/bin/sh
+# Fetch submodules and for each one show the number of commits that
+# are on origin/master but not on the local master.
+#
+# The only argument is the path to the git repository.
+#
+# Example:
+# check_submodule_updates ~/.dotfiles
+
+[ -z "$1" ] && echo 'Specify path to the repository.' && exit 1
+cd "$1" || exit 1
+
+echo 'Fetching submodule repositories.'
+git submodule foreach 'git fetch' || exit 1
+
+echo 'Checking for updates.'
+git submodule foreach \
+    'echo "$name - $(git log --left-right --oneline master..origin/master | wc -l)" && printf "\n"'
