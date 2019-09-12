@@ -4,6 +4,7 @@ anki
 compton # A compositor for X11, required for transparency
 dunst # A customizable and lightweight notification-daemon
 firefox
+fzf
 i3-wm
 i3blocks
 ipython
