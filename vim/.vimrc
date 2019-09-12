@@ -854,6 +854,9 @@ augroup slime
   autocmd BufWinEnter */.vim/slime/repl.lua :let g:auto_save_silent = 1
 augroup END
 
+" UltiSnips - snippets.
+let g:UltiSnipsEditSplit = 'context'
+let g:UltiSnipsSnippetDirectories = [$HOME.'/.vim/ultisnips']
 
 " }}}
 
