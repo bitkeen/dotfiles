@@ -7,6 +7,6 @@ cd "$DOTFILES_DIR" || return 1
 git checkout arch && git pull --rebase &&
 git checkout mac && git pull --rebase &&
 git checkout termux && git pull --rebase &&
-[ -n "$1" ] && git checkout "$1" && git checkout master) || exit 1
+[ -n "$1" ] && git checkout "$1" || git checkout master) || exit 1
 
 cd "$initial_dir"
