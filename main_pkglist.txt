@@ -15,6 +15,7 @@ pulsemixer # CLI and curses mixer for pulseaudio
 ranger # Simple, vim-like TUI file manager
 redshift # Set color temperature of display according to time of day
 shellcheck # Shell script analysis tool
+tidy # A tool to tidy HTML code
 unclutter # A small program for hiding the mouse cursor
 virtualbox
 virtualbox-guest-iso # Guest Additions CD image
