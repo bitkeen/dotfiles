@@ -499,6 +499,26 @@ let g:grepper.simple_prompt = 1
 " Gundo - graph undo tree.
 let g:gundo_prefer_python3 = 1
 
+" vim-slime
+let g:slime_target = "tmux"
+let g:slime_paste_file = tempname()
+augroup slime
+  autocmd!
+  " Disable linting.
+  autocmd BufWinEnter */.vim/slime/repl.py :ALEDisable
+  autocmd BufWinEnter */.vim/slime/repl.lua :ALEDisable
+  " Enable auto-save.
+  autocmd BufWinEnter */.vim/slime/repl.py :AutoSaveToggle
+  autocmd BufWinEnter */.vim/slime/repl.lua :AutoSaveToggle
+  " Don't display the auto-save notification.
+  autocmd BufWinEnter */.vim/slime/repl.py :let g:auto_save_silent = 1
+  autocmd BufWinEnter */.vim/slime/repl.lua :let g:auto_save_silent = 1
+augroup END
+
+" UltiSnips - snippets.
+let g:UltiSnipsEditSplit = 'context'
+let g:UltiSnipsSnippetDirectories = [$HOME.'/.vim/ultisnips']
+
 " }}}
 
 " Mappings {{{
@@ -691,7 +711,7 @@ nnoremap <LocalLeader>j :%!python -m json.tool<CR>
 
 " vimwiki - personal wiki for Vim.
 " Default is "<Leader>wt".
-nmap <Leader>wn <Plug>VimwikiTabIndex
+nmap <Leader>wT <Plug>VimwikiTabIndex
 nmap <Leader>wb <Plug>VimwikiSplitLink
 nmap <Leader>wv <Plug>VimwikiVSplitLink
 nmap <Leader>wt <Plug>VimwikiTabnewLink
@@ -837,26 +857,6 @@ let g:winresizer_start_key = '<Leader>R'
 " ghost-text.vim - support for GhostText Firefox addon.
 nnoremap <LocalLeader>g :GhostTextStart
 nnoremap <LocalLeader>G :GhostTextStop
-
-" vim-slime
-let g:slime_target = "tmux"
-let g:slime_paste_file = tempname()
-augroup slime
-  autocmd!
-  " Disable linting.
-  autocmd BufWinEnter */.vim/slime/repl.py :ALEDisable
-  autocmd BufWinEnter */.vim/slime/repl.lua :ALEDisable
-  " Enable auto-save.
-  autocmd BufWinEnter */.vim/slime/repl.py :AutoSaveToggle
-  autocmd BufWinEnter */.vim/slime/repl.lua :AutoSaveToggle
-  " Don't display the auto-save notification.
-  autocmd BufWinEnter */.vim/slime/repl.py :let g:auto_save_silent = 1
-  autocmd BufWinEnter */.vim/slime/repl.lua :let g:auto_save_silent = 1
-augroup END
-
-" UltiSnips - snippets.
-let g:UltiSnipsEditSplit = 'context'
-let g:UltiSnipsSnippetDirectories = [$HOME.'/.vim/ultisnips']
 
 " }}}
 
