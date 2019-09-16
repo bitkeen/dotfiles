@@ -53,6 +53,7 @@ docker_compose_alias() {
         d)
             cmd='down';;
         du)
+            shift
             'docker-compose' down
             'docker-compose' up --detach "$@" && 'docker-compose' logs -f
             return;;
