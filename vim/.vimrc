@@ -253,6 +253,9 @@ let g:netrw_liststyle=3
 " Directory where netrw saves .netrwhist and .netrwbook.
 let g:netrw_home = '~/.vim/tmp'
 
+" Enable basic fzf plugin.
+set rtp+=/usr/bin/fzf
+
 " }}}
 
 " Plugin configuration {{{
