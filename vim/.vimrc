@@ -282,22 +282,6 @@ let g:vimwiki_list = [
 let g:vimwiki_ext2syntax = {'.md': 'markdown', '.markdown': 'markdown', '.mdown': 'markdown'}
 " }}}
 
-" NERDTree - file system explorer. {{{
-" Close vim if the only window left open is a NERDTree.
-autocmd plugins BufEnter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
-" Show hidden files by default.
-let NERDTreeShowHidden = 1
-let NERDTreeIgnore = ['^__pycache__$[[dir]]']
-
-function! NERDTreeTryFind()
-  " Run NERDTreeToggle if NERDTreeFind didn't work.
-  NERDTreeFind
-  if &ft != 'nerdtree'
-    NERDTreeToggle
-  endif
-endfunction
-" }}}
-
 " Command-T - file finder. {{{
 " Set the underlying scanning implementation that should be used to explore
 " the filesystem. Default value is 'ruby'.
@@ -722,15 +706,6 @@ nmap glt <Plug>VimwikiToggleListItem
 " <Leader>bf because git-blame will be mapped to <Leader>bl.
 nmap <silent> <Leader>bf <Plug>(CommandTBuffer)
 let g:CommandTAcceptSelectionSplitMap = '<C-b>'
-
-" NERDTree - file system explorer.
-let g:NERDTreeMapOpenInTab = '<C-t>'
-let g:NERDTreeMapOpenSplit = '<C-b>'
-let g:NERDTreeMapOpenVSplit = '<C-v>'
-
-nnoremap <silent> <Leader>n :NERDTreeToggle<CR>
-" Find the current file in the tree.
-nnoremap <silent> <Leader>f :call NERDTreeTryFind()<CR>
 
 " git-blame.vim - see blame information in the bottom line.
 nnoremap <silent> <Leader>bl :<C-u>call gitblame#echo()<CR>
