@@ -46,6 +46,7 @@
     rbi = rebase --interactive
     rbc = rebase --continue
     rbs = rebase --skip
+    rbm = rebase master
     rs = reset
     rsp = reset --patch
     sh = stash
