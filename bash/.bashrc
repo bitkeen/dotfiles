@@ -33,6 +33,7 @@ git_prompt_file='/usr/share/git/completion/git-prompt.sh'
 
 # Exports {{{
 export EDITOR=/usr/bin/vim
+export FZF_CTRL_R_OPTS='--sort'
 # Ignore lines that start with a space,
 # don't save lines matching a previous history entry.
 export HISTCONTROL=ignorespace:ignoredups:erasedups
