@@ -238,3 +238,6 @@
 [submodule "ultisnips"]
 	path = vim/.vim/bundle/ultisnips
 	url = https://github.com/SirVer/ultisnips
+[submodule "vim-vinegar"]
+	path = vim/.vim/bundle/vim-vinegar
+	url = https://github.com/tpope/vim-vinegar
