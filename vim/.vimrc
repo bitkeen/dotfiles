@@ -662,6 +662,9 @@ nnoremap ]<Space> a<Space><Esc>
 nnoremap ]b o<Esc>k
 nnoremap [b O<Esc>j
 
+nnoremap <silent> <Leader>bn :bnext<CR>
+nnoremap <silent> <Leader>bp :bprevious<CR>
+
 if has("autocmd")
   " Compiling TeX.
   augroup texmaps
