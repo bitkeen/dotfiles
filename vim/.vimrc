@@ -164,9 +164,6 @@ set viminfo+=n~/.vim/tmp/viminfo
 " window.
 set viewdir=~/.vim/tmp/view//
 
-" Directory where netrw saves .netrwhist and .netrwbook.
-let g:netrw_home = '~/.vim/tmp'
-
 " Search down into subfolders.
 " Provides tab-completion for all file-related tasks.
 set path+=**
@@ -253,8 +250,8 @@ endif
 let g:netrw_banner=0
 " Tree view.
 let g:netrw_liststyle=3
-" Set window width to 25%.
-let g:netrw_winsize=25
+" Directory where netrw saves .netrwhist and .netrwbook.
+let g:netrw_home = '~/.vim/tmp'
 
 " }}}
 
@@ -692,6 +689,12 @@ nnoremap <LocalLeader>j :%!python -m json.tool<CR>
 " }}}
 
 " Plugin mappings {{{
+
+" Netrw - file explorer {{{
+nnoremap <silent> <Leader>ft :Texplore<CR>
+nnoremap <silent> <Leader>fb :Sexplore<CR>
+nnoremap <silent> <Leader>fv :Vexplore<CR>
+" }}}
 
 " vimwiki - personal wiki for Vim.
 " Default is "<Leader>wt".
