@@ -45,7 +45,6 @@ git_prompt_file='/Library/Developer/CommandLineTools/usr/share/git-core/git-prom
 export EDITOR=/usr/local/bin/vim
 export FZF_DEFAULT_OPTS="--preview 'cat {}' --preview-window='hidden' --bind='ctrl-t:toggle-preview'"
 export FZF_CTRL_R_OPTS='--sort'
-export HOMEBREW_NO_EMOJI=1
 # Ignore lines that start with a space,
 # don't save lines matching a previous history entry.
 export HISTCONTROL=ignorespace:ignoredups:erasedups
@@ -67,6 +66,14 @@ export RIPGREP_CONFIG_PATH="$HOME/.config/rg/rgconfig"
 export VIRTUAL_ENV_DISABLE_PROMPT=1
 export VIRTUALENVWRAPPER_PYTHON="$(command -v python3)"
 export VIRTUALENV_PYTHON="$(command -v python3)"
+
+# Homebrew settings {{{
+# Homebrew will not print the HOMEBREW_INSTALL_BADGE on a successful build.
+export HOMEBREW_NO_EMOJI=1
+# Homebrew will not auto-update before running brew install.
+export HOMEBREW_NO_AUTO_UPDATE=1
+# }}}
+
 # }}}
 
 _source_if_exists "$fzf_bindings_file"
