@@ -696,7 +696,7 @@ nnoremap <LocalLeader>j :%!python -m json.tool<CR>
 " Netrw - file explorer {{{
 nnoremap <silent> <Leader>ft :Texplore<CR>
 nnoremap <silent> <Leader>fb :Sexplore<CR>
-nnoremap <silent> <Leader>fv :Vexplore<CR>
+nnoremap <silent> <Leader>fv :Vexplore!<CR>
 " }}}
 
 " vimwiki - personal wiki for Vim.
