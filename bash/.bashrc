@@ -17,9 +17,6 @@ _source_if_exists() {
 }
 
 # Paths {{{
-docker_completion_file="$HOME/.config/bash/docker-completion.bash"
-docker_compose_completion_file="$HOME/.config/bash/docker-compose-completion.bash"
-lab_completion_file="$HOME/.config/bash/lab-completion.bash"
 base16_shell_dir="$HOME/.config/base16-shell/"
 fzf_bindings_file="/usr/share/fzf/key-bindings.bash"
 fzf_completion_file="/usr/share/fzf/completion.bash"
@@ -52,11 +49,8 @@ export RIPGREP_CONFIG_PATH="$HOME/.config/rg/rgconfig"
 export VIRTUAL_ENV_DISABLE_PROMPT=1
 # }}}
 
-_source_if_exists "$docker_completion_file"
-_source_if_exists "$docker_compose_completion_file"
 _source_if_exists "$fzf_bindings_file"
 _source_if_exists "$fzf_completion_file"
-_source_if_exists "$lab_completion_file"
 _source_if_exists "$venv_wrapper_file"
 
 # Enable completion for git.
