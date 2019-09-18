@@ -1,0 +1,10 @@
+#!/bin/sh
+
+url="$1"
+xpath="$2"
+
+echo "Checking $xpath at $1."
+
+(curl --silent "$url" |
+    xmllint --html --xpath "$xpath" - >/dev/null 2>&1) &&
+    echo "Found." || echo "Couldn't find."
