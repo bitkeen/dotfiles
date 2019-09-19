@@ -1,9 +1,17 @@
 #!/bin/sh
+# Check if an XPath selector produces results on a page.
+#
+# Dependencies:
+# - curl
+# - xmllint
+#
+# Example:
+# check_page 'https://example.com' '//a'
 
 url="$1"
 xpath="$2"
 
-echo "Checking $xpath at $1."
+echo "Checking '$xpath' at '$1'."
 
 (curl --silent "$url" |
     xmllint --html --xpath "$xpath" - >/dev/null 2>&1) &&
