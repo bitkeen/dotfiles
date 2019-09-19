@@ -18,6 +18,12 @@ ww() {
     vim -c "execute \"normal $1\<Plug>VimwikiIndex\""
 }
 
+# Open a directory from special files containing a list of shortcuts.
+fzg() {
+    cd "$(fzf_shortcuts ~/.config/shortcuts ~/.config/shortcuts.local)" ||
+        return 1
+}
+
 # Automatically change the directory in bash after closing ranger.
 # Source:
 # https://github.com/ranger/ranger/blob/master/examples/bash_automatic_cd.sh
