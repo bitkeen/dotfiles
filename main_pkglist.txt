@@ -9,6 +9,7 @@ i3-wm
 i3blocks
 ipython
 keepassxc
+libxml2 # XML parsing library, version 2, contains xmllint but is usually installed as a dependency for other packages
 ncdu # NCurses Disk Usage
 mpv
 pulsemixer # CLI and curses mixer for pulseaudio
