@@ -842,6 +842,9 @@ let g:winresizer_start_key = '<Leader>R'
 nnoremap <LocalLeader>g :GhostTextStart
 nnoremap <LocalLeader>G :GhostTextStop
 
+" UltiSnips - snippets
+nnoremap <LocalLeader>u :UltiSnipsEdit<CR>
+
 " }}}
 
 silent! source ~/.vimrc.local
