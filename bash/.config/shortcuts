@@ -1,3 +1,4 @@
+.a ~/.dotfiles.local
 .b ~/.vim/bundle
 .c ~/.config
 .d ~/.dotfiles
