@@ -2,6 +2,7 @@
 .c ~/.config
 .d ~/.dotfiles
 .l ~/.local
+.s ~/.local/bin
 .t ~/.tmux
 .v ~/.vim
 ab ~/Audio/audiobooks
@@ -9,6 +10,8 @@ bk ~/Books
 db ~/Dropbox
 dc ~/Documents
 df ~/Downloads/firefox
+dp ~/Documents/projects
+dr ~/Documents/repos
 dt ~/Downloads/torrents
 dl ~/Downloads
 dy ~/Downloads/youtube-dl
@@ -18,4 +21,5 @@ pd ~/Audio/podcasts
 st ~/Sync
 ph ~/Sync/phone
 vd ~/Videos
+vt ~/Videos/to-watch
 sh ~/.local/share/Trash
