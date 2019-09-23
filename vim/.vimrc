@@ -626,6 +626,9 @@ nnoremap <silent> <LocalLeader>qa :qa!<CR>
 " Repeat the previous @, can be used with a count.
 nnoremap <Leader><Leader> @@
 
+nnoremap [h :help<Space>
+nnoremap ]h :tab help<Space>
+
 " Compare buffers in current tab.
 nnoremap [w :windo diffthis<CR>
 " Turn diff mode off.
