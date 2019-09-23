@@ -1,0 +1,10 @@
+#!/bin/sh
+# Generate a random password.
+
+length=16
+if [ -n "$1" ]; then
+    length="$1"
+fi
+# See https://unix.stackexchange.com/a/64905 for explanation of
+# the use of LC_ALL variable.
+LC_ALL='C' tr -dc 'A-Za-z0-9' < /dev/urandom | head -c "$length"; echo
