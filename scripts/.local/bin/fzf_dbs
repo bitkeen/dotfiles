@@ -1,0 +1,27 @@
+#!/bin/sh
+# Connect to a database from a file with connection strings, using
+# either pgcli or mycli.
+# Each line should consist of a connection alias and a corresponding
+# connection string, separated with a single space.
+#
+# Dependencies:
+# - fzf
+# - mycli
+# - pgcli
+#
+# Usage example:
+# fzf_dbs ~/.config/db_connections
+
+conn_file="$1"
+[ -z "$conn_file" ] && echo "Connections file wasn't specified." && exit 1
+[ ! -f "$conn_file" ] && echo "Connections file doesn't exist." && exit 1
+
+fzf_opts="--reverse --height 40% $FZF_DEFAULT_OPTS"
+
+choice="$(FZF_DEFAULT_OPTS="$fzf_opts" fzf < "$conn_file" |
+            awk '{$1=""; print substr($0, 2)}')" # Remove the first column.
+
+(
+    ( ( echo "$choice" | grep '^postgresql' ) && pgcli "$choice" ) ||
+    ( ( echo "$choice" | grep '^mysql' ) && mycli "$choice" )
+) || ( echo 'Wrong connection string format.' && exit 1 )
