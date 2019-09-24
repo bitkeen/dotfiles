@@ -534,7 +534,7 @@ noremap Y y$
 
 " Write with sudo.
 " See https://stackoverflow.com/a/7078429.
-cnoremap w!! w !sudo tee > /dev/null %
+nnoremap <Leader>U :write !sudo tee > /dev/null %<CR>
 
 " Quicker window movement.
 noremap <C-j> <C-w>j
