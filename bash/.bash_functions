@@ -24,6 +24,10 @@ fzg() {
         return 1
 }
 
+fzd() {
+    fzf_dbs ~/.config/db_connections.local
+}
+
 # Automatically change the directory in bash after closing ranger.
 # Source:
 # https://github.com/ranger/ranger/blob/master/examples/bash_automatic_cd.sh
