@@ -244,3 +244,6 @@
 [submodule "vim-characterize"]
 	path = vim/.vim/bundle/vim-characterize
 	url = https://github.com/tpope/vim-characterize
+[submodule "python-syntax"]
+	path = vim/.vim/bundle/python-syntax
+	url = https://github.com/vim-python/python-syntax
