@@ -241,3 +241,6 @@
 [submodule "vim-vinegar"]
 	path = vim/.vim/bundle/vim-vinegar
 	url = https://github.com/tpope/vim-vinegar
+[submodule "vim-characterize"]
+	path = vim/.vim/bundle/vim-characterize
+	url = https://github.com/tpope/vim-characterize
