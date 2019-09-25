@@ -283,6 +283,13 @@ bindsym $mod+ctrl+a exec --no-startup-id xkb-switch -s ua
 bindsym $mod+ctrl+s exec --no-startup-id xkb-switch -s us
 bindsym $mod+ctrl+r exec --no-startup-id xkb-switch -s ru
 
+# Ctrl-q closes window in Firefox, there is currently no way to disable
+# it in the browser config. The binding can also be used by other
+# programs, so disabling it system-wide might not be the best solution,
+# although I don't think I have a program that binds Ctrl-q to something
+# other than "quit".
+bindsym Ctrl+q exec nop
+
 # }}}
 
 # Miscellaneous {{{
