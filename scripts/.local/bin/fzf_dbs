@@ -20,6 +20,7 @@ fzf_opts="--reverse --height 40% $FZF_DEFAULT_OPTS"
 
 choice="$(FZF_DEFAULT_OPTS="$fzf_opts" fzf < "$conn_file" |
             awk '{$1=""; print substr($0, 2)}')" # Remove the first column.
+[ -z "$choice" ] && exit 1
 
 (
     ( ( echo "$choice" | grep '^postgresql' ) && pgcli "$choice" ) ||
