@@ -662,11 +662,11 @@ nnoremap <LocalLeader>l :set list!<CR>
 nnoremap [<Space> i<Space><Esc>
 nnoremap ]<Space> a<Space><Esc>
 " Insert a blank line below/above the current line.
-nnoremap ]b o<Esc>k
-nnoremap [b O<Esc>j
+nnoremap [n o<Esc>k
+nnoremap ]n O<Esc>j
 
-nnoremap <silent> <Leader>bn :bnext<CR>
-nnoremap <silent> <Leader>bp :bprevious<CR>
+nnoremap <silent> [b :bnext<CR>
+nnoremap <silent> ]b :bprevious<CR>
 
 if has("autocmd")
   " Compiling TeX.
