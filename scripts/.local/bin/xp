@@ -1,0 +1,15 @@
+#!/bin/sh
+# Search elements with XPath in an XML file.
+#
+# Requires xmlstarlet.
+#
+# Usage example:
+# xp file.html '//a'
+
+[ -z "$1" ] && (echo 'Specify the file.'; exit 1)
+[ -z "$2" ] && (echo 'Specify the XPath.'; exit 1)
+
+# First try to repair incoming XML, then searh for the elements.
+# See https://stackoverflow.com/a/47285050.
+xmlstarlet fo -o -R -H -D "$1" 2>/dev/null |
+    xmlstarlet sel -t -v "$2"
