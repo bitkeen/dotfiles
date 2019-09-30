@@ -17,9 +17,10 @@
     chp = cherry-pick
     chpa = cherry-pick --abort
     chpc = cherry-pick --continue
-    ci = commit
+    ; Ignore the local timezone and commit with UTC.
+    ci = "!git commit --date=\"$(date -u '+%Y-%m-%dT%H:%M:%S%z')\""
     cia = commit --amend
-    cim = commit -m
+    cim = "!git commit --date=\"$(date -u '+%Y-%m-%dT%H:%M:%S%z')\" -m"
     cl = clone
     df = diff
     dfc = diff --check
