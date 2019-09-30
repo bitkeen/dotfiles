@@ -848,6 +848,9 @@ nnoremap <LocalLeader>G :GhostTextStop
 " UltiSnips - snippets
 nnoremap <LocalLeader>u :UltiSnipsEdit<CR>
 
+" python-syntax - better python syntax highlighting
+let g:python_highlight_all = 1
+
 " }}}
 
 silent! source ~/.vimrc.local
