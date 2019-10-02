@@ -19,8 +19,8 @@ dy ~/Downloads/youtube-dl
 mc ~/Audio/music
 pc ~/Pictures
 pd ~/Audio/podcasts
-st ~/Sync
-ph ~/Sync/phone
+st ~/sync
+ph ~/sync/phone
 vd ~/Videos
 vt ~/Videos/to-watch
 sh ~/.local/share/Trash
