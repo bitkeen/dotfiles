@@ -842,10 +842,6 @@ let g:signjump = {
 " winresizer - easy window resizing, similar to resize mode in i3wm
 let g:winresizer_start_key = '<Leader>R'
 
-" ghost-text.vim - support for GhostText Firefox addon.
-nnoremap <LocalLeader>g :GhostTextStart
-nnoremap <LocalLeader>G :GhostTextStop
-
 " UltiSnips - snippets
 nnoremap <LocalLeader>u :UltiSnipsEdit<CR>
 
