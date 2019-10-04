@@ -274,9 +274,9 @@ let g:instant_markdown_autostart = 0
 
 " vimwiki - personal wiki for Vim. {{{
 let g:vimwiki_list = [
-\  {'path': '~/Sync/wikis/mainwiki', 'syntax': 'markdown', 'ext': '.md'},
-\  {'path': '~/Sync/wikis/phonewiki', 'syntax': 'markdown', 'ext': '.md'},
-\  {'path': '~/Sync/wikis/workwiki', 'syntax': 'markdown', 'ext': '.md'},
+\  {'path': '~/sync/wikis/mainwiki', 'syntax': 'markdown', 'ext': '.md'},
+\  {'path': '~/sync/wikis/phonewiki', 'syntax': 'markdown', 'ext': '.md'},
+\  {'path': '~/sync/wikis/workwiki', 'syntax': 'markdown', 'ext': '.md'},
 \]
 " vimwiki markdown support.
 let g:vimwiki_ext2syntax = {'.md': 'markdown', '.markdown': 'markdown', '.mdown': 'markdown'}
