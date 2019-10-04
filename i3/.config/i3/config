@@ -311,7 +311,6 @@ floating_modifier $mod
 assign [class="Anki"] $workspace5
 assign [class="firefox"] $workspace1
 assign [class="keepassxc"] $workspace10
-assign [class="mpv"] $workspace8
 assign [class="VirtualBox"] $workspace7
 
 # Enable floating mode.
@@ -320,7 +319,6 @@ for_window [class="Galculator"] floating enable
 for_window [class="VirtualBox"] layout stacking
 # Focus on a window after it has been opened.
 for_window [class="keepassxc"] focus
-for_window [class="mpv"] focus
 for_window [class="VirtualBox"] focus
 
 # }}}
