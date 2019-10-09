@@ -8,7 +8,6 @@
 .v ~/.vim
 ab ~/Audio/audiobooks
 bk ~/Books
-db ~/Dropbox
 dc ~/Documents
 df ~/Downloads/firefox
 dp ~/Documents/projects
