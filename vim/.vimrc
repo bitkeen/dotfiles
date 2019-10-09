@@ -814,8 +814,15 @@ nmap <Leader>z <Plug>(vzoom)
 " vim-instant-markdown
 noremap <LocalLeader>i :InstantMarkdownPreview<CR>
 
-" vim-isort
-let g:vim_isort_map = '<Leader>i'
+if has('python3')
+  packadd MatchTagAlways
+  packadd completor.vim
+  packadd ultisnips
+
+  " vim-isort
+  autocmd plugins FileType python packadd vim-isort
+  autocmd plugins FileType python let g:vim_isort_map = '<Leader>i'
+endif
 
 " Tmuxline - tmux status line generator.
 let g:tmuxline_powerline_separators = 0
