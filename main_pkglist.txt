@@ -3,11 +3,13 @@
 anki
 compton # A compositor for X11, required for transparency
 dunst # A customizable and lightweight notification-daemon
+feh # Image viewer, currently only used to set backgrounds with .fehbg script
 firefox
 fzf
 i3-wm
 i3blocks
 ipython
+jq # Command-line JSON processor
 keepassxc
 libxml2 # XML parsing library, version 2, contains xmllint but is usually installed as a dependency for other packages
 ncdu # NCurses Disk Usage
@@ -16,11 +18,13 @@ pulsemixer # CLI and curses mixer for pulseaudio
 ranger # Simple, vim-like TUI file manager
 redshift # Set color temperature of display according to time of day
 shellcheck # Shell script analysis tool
+sxiv # Simple X Image Viewer
 tidy # A tool to tidy HTML code
 unclutter # A small program for hiding the mouse cursor
 virtualbox
 virtualbox-guest-iso # Guest Additions CD image
 xsecurelock # X11 screen lock utility
+xmlstarlet # Command line utilities for XML
 zathura
 zathura-djvu
 zathura-pdf-mupdf
