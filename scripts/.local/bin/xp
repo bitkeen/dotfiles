@@ -6,8 +6,8 @@
 # Usage example:
 # xp file.html '//a'
 
-[ -z "$1" ] && (echo 'Specify the file.'; exit 1)
-[ -z "$2" ] && (echo 'Specify the XPath.'; exit 1)
+[ -z "$1" ] && echo 'Specify the file.' && exit 1
+[ -z "$2" ] && echo 'Specify the XPath.' && exit 1
 
 # First try to repair incoming XML, then searh for the elements.
 # See https://stackoverflow.com/a/47285050.
