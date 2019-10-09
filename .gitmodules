@@ -199,8 +199,8 @@
 [submodule "vim/.vim/bundle/vim-signature"]
 	path = vim/.vim/bundle/vim-signature
 	url = https://github.com/kshenoy/vim-signature
-[submodule "vim/.vim/bundle/completor.vim"]
-	path = vim/.vim/bundle/completor.vim
+[submodule "completor.vim"]
+	path = vim/.vim/pack/bundle/opt/completor.vim
 	url = https://github.com/maralla/completor.vim
 [submodule "vim/.vim/bundle/winresizer"]
 	path = vim/.vim/bundle/winresizer
@@ -230,7 +230,7 @@
 	path = vim/.vim/bundle/vim-auto-save
 	url = https://github.com/907th/vim-auto-save
 [submodule "ultisnips"]
-	path = vim/.vim/bundle/ultisnips
+	path = vim/.vim/pack/bundle/opt/ultisnips
 	url = https://github.com/SirVer/ultisnips
 [submodule "vim-vinegar"]
 	path = vim/.vim/bundle/vim-vinegar
