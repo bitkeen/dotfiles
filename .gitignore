@@ -2,3 +2,4 @@
 !.local/
 pgcli/.config/pgcli/history
 pgcli/.config/pgcli/log
+ranger/.config/ranger/bookmark_maps.conf
