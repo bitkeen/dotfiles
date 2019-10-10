@@ -47,7 +47,7 @@ alias ts='task'
 
 # Open (with) vim.
 alias v='vim'
-alias vm='vman'
+alias vm='vman '
 alias vs='vim -S'
 
 # The space at the end allows the next command word following the alias
