@@ -47,6 +47,21 @@ case "$1" in
         rotate  90 ;;
     'slash')
         rotate 180 ;;
+	'd')
+        while read file;
+        do
+            [ "$(printf "No\\nYes" |
+                dmenu_configured -p "Move $file to trash?")" = 'Yes' ] &&
+                notify-send -i "$(readlink -f "$file")" "$file moved to trash." &&
+                gio trash "$file"
+        done ;;
+	'D')
+        while read file;
+        do
+            [ "$(printf "No\\nYes" |
+                dmenu_configured -p "Delete $file?")" = 'Yes' ] &&
+                rm "$file" && notify-send "$file deleted."
+        done ;;
     'C-c')
         tr '\n' '\0' | xargs -0 feh --bg-center --image-bg '#330000' & ;;
     'C-f')
