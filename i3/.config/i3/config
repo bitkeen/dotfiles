@@ -9,7 +9,6 @@ set $screenshots_dir ~/Pictures/screenshots
 # Fonts.
 set $titles_font DejaVu Sans 12
 set $bar_font Droid Sans Mono 14
-set $dmenu_path '~/.local/bin/dmenu_configured'
 
 # Workspace names.
 # The first number will not be displayed. This is to make the last
@@ -157,8 +156,8 @@ bindsym $mod+Shift+q kill
 # Start dmenu (a program launcher).
 #bindsym $mod+d exec --no-startup-id dmenu_run -fn $dmenu_font
 # Start dmenu that only displays applications shipping a .desktop file.
-# Need to use single quotes since dmenu_font variable uses double quotes.
-bindsym $mod+d exec --no-startup-id i3-dmenu-desktop --dmenu=$dmenu_path
+# Run with 'sh -c' to find dmenu_configured in $PATH.
+bindsym $mod+d exec --no-startup-id i3-dmenu-desktop --dmenu='sh -c dmenu_configured'
 
 # Tmux session selection menu.
 bindsym $mod+t exec --no-startup-id $scripts_dir/dmenu_tmux.sh
