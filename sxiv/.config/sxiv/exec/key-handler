@@ -34,7 +34,7 @@ case "$1" in
                 dmenu_configured -l 20 -p 'Where to move?')"
             [ -z "$destdir" ] && exit 1
             mv "$file" "$destdir" &&
-                notify-send -i "$(readlink -f "$file")" "$file moved to $destdir." &
+                notify-send -i "$destdir/$file" "$file moved to $destdir." &
         done ;;
     'e')
         while read file; do command -v gimp && gimp "$file" & done ;;
@@ -59,12 +59,13 @@ case "$1" in
     'slash')
         rotate 180 ;;
 	'd')
+        [ "$(printf "No\\nYes" |
+            dmenu_configured -p "Move selected images to trash?")" = 'No' ] &&
+            exit 1
         while read file;
         do
-            [ "$(printf "No\\nYes" |
-                dmenu_configured -p "Move $file to trash?")" = 'Yes' ] &&
-                notify-send -i "$(readlink -f "$file")" "$file moved to trash." &&
-                gio trash "$file"
+            gio trash "$file" &&
+                notify-send  -f "$file" "$file moved to trash."
         done ;;
 	'D')
         while read file;
