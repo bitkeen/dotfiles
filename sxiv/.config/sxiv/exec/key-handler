@@ -25,6 +25,17 @@ rotate() {
 }
 
 case "$1" in
+    'm')
+        # Move image(s) to a subdirectory of XDG_PICTURES_DIR.
+        while read file;
+        do
+            [ -z "$destdir" ] &&
+                destdir="$(find "$(xdg-user-dir PICTURES)" -type d -exec ls -d {} \; |
+                dmenu_configured -l 20 -p 'Where to move?')"
+            [ -z "$destdir" ] && exit 1
+            mv "$file" "$destdir" &&
+                notify-send -i "$(readlink -f "$file")" "$file moved to $destdir." &
+        done ;;
     'e')
         while read file; do command -v gimp && gimp "$file" & done ;;
     'y')
