@@ -23,6 +23,8 @@ sn ~/sync
 sm ~/sync/main
 sw ~/sync/wikis
 ph ~/sync/phone
-vd ~/Videos
-vt ~/Videos/to-watch
+pa ~/sync/phone/Audio
+pp ~/sync/phone/DCIM
+vd ~/videos
+vt ~/videos/to-watch
 sh ~/.local/share/Trash
