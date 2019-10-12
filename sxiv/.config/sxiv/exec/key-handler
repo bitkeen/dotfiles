@@ -25,7 +25,25 @@ rotate() {
 }
 
 case "$1" in
-    'm')
+    'e')
+        while read file; do command -v gimp && gimp "$file" & done ;;
+	'd')
+        [ "$(printf "No\\nYes" |
+            dmenu_configured -p "Move selected images to trash?")" = 'No' ] &&
+            exit 1
+        while read file;
+        do
+            gio trash "$file" &&
+                notify-send  -f "$file" "$file moved to trash."
+        done ;;
+	'D')
+        while read file;
+        do
+            [ "$(printf "No\\nYes" |
+                dmenu_configured -p "Delete $file?")" = 'Yes' ] &&
+                rm "$file" && notify-send "$file deleted."
+        done ;;
+    'x')
         # Move image(s) to a subdirectory of XDG_PICTURES_DIR.
         while read file;
         do
@@ -36,8 +54,6 @@ case "$1" in
             mv "$file" "$destdir" &&
                 notify-send -i "$destdir/$file" "$file moved to $destdir." &
         done ;;
-    'e')
-        while read file; do command -v gimp && gimp "$file" & done ;;
     'y')
         # Copy image.
         while read file;
@@ -58,22 +74,6 @@ case "$1" in
         rotate  90 ;;
     'slash')
         rotate 180 ;;
-	'd')
-        [ "$(printf "No\\nYes" |
-            dmenu_configured -p "Move selected images to trash?")" = 'No' ] &&
-            exit 1
-        while read file;
-        do
-            gio trash "$file" &&
-                notify-send  -f "$file" "$file moved to trash."
-        done ;;
-	'D')
-        while read file;
-        do
-            [ "$(printf "No\\nYes" |
-                dmenu_configured -p "Delete $file?")" = 'Yes' ] &&
-                rm "$file" && notify-send "$file deleted."
-        done ;;
     'C-c')
         tr '\n' '\0' | xargs -0 feh --bg-center --image-bg '#330000' & ;;
     'C-f')
