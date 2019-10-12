@@ -24,5 +24,5 @@ else
 fi
 
 # Remove blank line at the end of the file with the `sed` command.
-awk '{print "map <C-g>" $1 " cd " $2"\nmap <C-t>"$1 " tab_new " $2"\n"}' \
+awk '{print "map <C-g>"$1" cd "$2"\nmap <C-t>"$1" tab_new "$2"\nmap <C-x>"$1" shell mv %s "$2"\n"}' \
     < "$shortcuts" | sed '${/^$/d;}' > "$bookmarks"
