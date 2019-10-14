@@ -142,9 +142,6 @@
 [submodule "vim/.vim/bundle/undoquit.vim"]
 	path = vim/.vim/bundle/undoquit.vim
 	url = https://github.com/AndrewRadev/undoquit.vim
-[submodule "vim/.vim/bundle/ranger.vim"]
-	path = vim/.vim/bundle/ranger.vim
-	url = https://github.com/francoiscabrol/ranger.vim
 [submodule "vim/.vim/bundle/vim-highlightedyank"]
 	path = vim/.vim/bundle/vim-highlightedyank
 	url = https://github.com/machakann/vim-highlightedyank
