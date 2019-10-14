@@ -101,9 +101,9 @@ class media_layout(Command):
     watching videos. In the future, this can be generalized as
     a layout function that gets a list of directories as a parameter.
     """
-    directories = ['~/Audio/podcasts',
-                   '~/Videos',
-                   '~/Downloads/youtube-dl',]
+    directories = ['~/audio/podcasts',
+                   '~/videos',
+                   '~/downloads/youtube-dl',]
     def execute(self):
         # This is required to make sure that tab #1 is always open.
         # Otherwise, the layout might be out of order if tab #1 is

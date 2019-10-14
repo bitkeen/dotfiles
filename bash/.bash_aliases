@@ -76,7 +76,7 @@ alias ipy='ipython'
 alias wo='workon'
 alias deac='deactivate'
 
-alias bandcamp-dl='bandcamp-dl --base-dir=$HOME/Downloads/bandcamp-dl'
+alias bandcamp-dl='bandcamp-dl --base-dir="$(xdg-user-dir DOWNLOAD)"/bandcamp-dl'
 
 alias yd='youtube-dl'
 # Download playlists using a separate config.

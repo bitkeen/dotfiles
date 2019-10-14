@@ -42,3 +42,7 @@ user_pref("browser.gesture.swipe.right", "cmd_scrollRight");
 
 // Compact UI density.
 user_pref("browser.uidensity", 1);
+
+// Set download dir.
+user_pref("browser.download.dir", "/home/user/downloads/firefox");
+user_pref("browser.download.lastDir", "/home/user/downloads/firefox");
