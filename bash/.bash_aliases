@@ -43,8 +43,6 @@ alias r='SHELL=~/.local/bin/system/ranger-shell.sh ranger-cd'
 alias t='tmux'
 alias ta='tmux attach -t'
 
-alias ts='task'
-
 # Open (with) vim.
 alias v='vim'
 alias vm='vman '
