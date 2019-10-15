@@ -1,5 +1,6 @@
 #!/bin/sh
 # Check if an XPath selector produces results on a page.
+# Exit code is 0 if search is successful, 1 otherwise.
 #
 # Dependencies:
 # - curl
@@ -11,8 +12,9 @@
 url="$1"
 xpath="$2"
 
-echo "Checking '$xpath' at '$1'."
+echo "Checking '$xpath' at '$url'"
 
 (curl --silent "$url" |
     xmllint --html --xpath "$xpath" - >/dev/null 2>&1) &&
-    echo "Found." || echo "Couldn't find."
+    (echo "Found"; notify-send "Found elements at $url" ; exit 0) ||
+    (echo "Couldn't find"; exit 1)
