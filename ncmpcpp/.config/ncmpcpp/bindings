@@ -331,8 +331,8 @@
 #def_key "y"
 #  save_tag_changes
 #
-#def_key "y"
-#  start_searching
+def_key "y"
+  start_searching
 #
 #def_key "R"
 #  toggle_consume
@@ -548,6 +548,9 @@ def_key "J"
 
 def_key "q"
   quit
+
+def_key "D"
+  delete_playlist_items
 
 # Start a song from the beginning.
 def_key "0"
