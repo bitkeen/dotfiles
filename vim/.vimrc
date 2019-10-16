@@ -658,7 +658,11 @@ nnoremap <Leader>P :put!<CR>
 
 nnoremap <Leader>o :copen<CR>
 
-nnoremap <Leader>ef :set ft=
+" Default mappings for [f and ]f are the same as "gf" and are deprecated.
+" Show current filetype.
+nnoremap [f :echo &ft<CR>
+" Change filetype.
+nnoremap ]f :set ft=
 
 " Toggle invisible characters.
 nnoremap <LocalLeader>l :set list!<CR>
