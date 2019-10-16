@@ -8,12 +8,16 @@ firefox
 fzf
 i3-wm
 i3blocks
+imagemagick # An image viewing/manipulation program
 ipython
 jq # Command-line JSON processor
 keepassxc
 libxml2 # XML parsing library, version 2, contains xmllint but is usually installed as a dependency for other packages
-ncdu # NCurses Disk Usage
+mpc
+mpd
 mpv
+ncdu # NCurses Disk Usage
+ncmpcpp
 pulsemixer # CLI and curses mixer for pulseaudio
 ranger # Simple, vim-like TUI file manager
 redshift # Set color temperature of display according to time of day
