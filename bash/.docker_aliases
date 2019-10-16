@@ -14,8 +14,8 @@ docker_alias() {
         killall)
             cmd="kill $('docker' ps -q)";;
         krm)
-            'docker' kill "$('docker' ps -q)" &&
-                'docker' rm "$('docker' ps -aq)"
+            'docker' kill "$('docker' ps -q)"
+            'docker' rm "$('docker' ps -aq)"
             return;;
         lg)
             cmd="logs";;
