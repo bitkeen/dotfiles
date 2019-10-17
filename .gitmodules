@@ -244,3 +244,6 @@
 [submodule "vim-textobj-conflict"]
 	path = vim/.vim/bundle/vim-textobj-conflict
 	url = https://github.com/rhysd/vim-textobj-conflict
+[submodule "pydoc.vim"]
+	path = vim/.vim/bundle/pydoc.vim
+	url = https://github.com/bitkeen/pydoc.vim
