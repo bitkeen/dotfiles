@@ -84,3 +84,5 @@
     tool = vimdiff
 [push]
     default = current
+[rebase]
+	autosquash = true
