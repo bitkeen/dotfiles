@@ -95,36 +95,6 @@ class extract_here(Command):
         self.fm.loader.add(obj)
 
 
-class media_layout(Command):
-    """:media_layout
-    Open the tabs commonly used for listening to podcasts and
-    watching videos. In the future, this can be generalized as
-    a layout function that gets a list of directories as a parameter.
-    """
-    directories = ['~/audio/podcasts',
-                   '~/videos',
-                   '~/downloads/youtube-dl',]
-    def execute(self):
-        # This is required to make sure that tab #1 is always open.
-        # Otherwise, the layout might be out of order if tab #1 is
-        # closed while other tabs are open.
-        self.fm.tab_open(1)
-        # Select next tab (for not to close the first tab).
-        self.fm.tab_move(-1)
-        # Leave only the first tab open.
-        for i in range(1, len(self.fm.tabs)):
-            self.fm.tab_close()
-
-        if self.directories:
-            # Open first directory in the existing tab.
-            self.fm.cd(self.directories[0])
-            # Open other directories in the future tabs.
-            for d in self.directories[1:]:
-                self.fm.tab_new(d)
-            # Go back to the first tab.
-            self.fm.tab_open(1)
-
-
 class fzf_select(Command):
     """
     :fzf_select
