@@ -3,6 +3,8 @@
 # with defunct commands when upgrading ranger.
 
 import os
+import os.path
+import subprocess
 from functools import partial
 
 from ranger.api.commands import Command
@@ -28,7 +30,7 @@ class compress(Command):
         parts = self.line.split()
         au_flags = parts[1:]
 
-        descr = "compressing files in: " + os.path.basename(parts[1])
+        descr = 'compressing files in: ' + os.path.basename(parts[1])
         obj = CommandLoader(args=['apack'] + au_flags + \
                 [os.path.relpath(f.path, cwd.path) for f in marked_files], descr=descr)
 
@@ -47,14 +49,14 @@ class empty_trash(Command):
     """
     def execute(self):
         self.fm.ui.console.ask(
-            "Clear trash? (y/N)",
+            'Clear trash? (y/N)',
             partial(self._question_callback),
             ('n', 'N', 'y', 'Y'),
         )
 
     def _question_callback(self, answer):
         if answer == 'y' or answer == 'Y':
-            self.fm.run("gio trash --empty")
+            self.fm.run('gio trash --empty')
 
 
 class extract_here(Command):
@@ -83,9 +85,9 @@ class extract_here(Command):
         self.fm.copy_buffer.clear()
         self.fm.cut_buffer = False
         if len(copied_files) == 1:
-            descr = "extracting: " + os.path.basename(one_file.path)
+            descr = 'extracting: ' + os.path.basename(one_file.path)
         else:
-            descr = "extracting files from: " + os.path.basename(one_file.dirname)
+            descr = 'extracting files from: ' + os.path.basename(one_file.dirname)
         obj = CommandLoader(args=['aunpack'] + au_flags \
                 + [f.path for f in copied_files], descr=descr)
 
@@ -135,8 +137,6 @@ class fzf_select(Command):
     https://github.com/ranger/ranger/wiki/Custom-Commands#fzf-integration
     """
     def execute(self):
-        import subprocess
-        import os.path
         if self.quantifier:
             # match only directories
             command="find -L . \( -path '*/\.*' -o -fstype 'dev' -o -fstype 'proc' \) -prune \
