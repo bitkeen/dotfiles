@@ -88,3 +88,5 @@
 	autosquash = true
 [advice]
 	detachedHead = false
+[diff]
+    colorMoved = zebra
