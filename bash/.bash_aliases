@@ -105,7 +105,4 @@ alias toroff='sudo systemctl stop tor.service'
 # Empty trash.
 alias et='gio trash --empty'
 
-# Get weather report.
-alias weather='curl wttr.in'
-
 alias nb='newsboat'
