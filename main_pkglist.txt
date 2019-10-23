@@ -23,6 +23,8 @@ ranger # Simple, vim-like TUI file manager
 redshift # Set color temperature of display according to time of day
 shellcheck # Shell script analysis tool
 sxiv # Simple X Image Viewer
+syncthing # Open Source Continuous Replication / Cluster Synchronization Thing
+syncthing-gtk # GTK3 based GUI and notification area icon for Syncthing
 tidy # A tool to tidy HTML code
 unclutter # A small program for hiding the mouse cursor
 virtualbox
