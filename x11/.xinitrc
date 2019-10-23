@@ -36,5 +36,8 @@ dunst &
 # Hide cursor when idle.
 unclutter &
 
+# Needed for Syncthing tray icon.
+syncthing-gtk &
+
 # Start i3.
 exec i3
