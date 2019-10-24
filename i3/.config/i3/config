@@ -256,6 +256,8 @@ bindsym $mod+question exec --no-startup-id mpc toggle
 bindsym $mod+period exec --no-startup-id mpc next
 # Mod+.
 bindsym $mod+comma exec --no-startup-id mpc prev
+# Mod+<
+bindsym $mod+shift+comma exec --no-startup-id mpc seek 0
 
 # Mouse bindings.
 # Disable mouse wheel switching between windows.
