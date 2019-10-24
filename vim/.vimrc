@@ -508,6 +508,8 @@ let g:UltiSnipsSnippetDirectories = [$HOME.'/.vim/ultisnips']
 let g:pydoc_open_cmd = 'vsplit'
 let g:pydoc_highlight = 0
 
+autocmd plugins FileType todo :AutoSaveToggle
+
 " }}}
 
 " Mappings {{{
