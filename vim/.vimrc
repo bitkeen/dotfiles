@@ -169,7 +169,7 @@ set viewdir=~/.vim/tmp/view//
 set path+=**
 
 " Default is 2000.
-set redrawtime=5000
+set redrawtime=10000
 
 " Remove comment chars when joining comments.
 set formatoptions+=j
