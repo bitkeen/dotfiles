@@ -39,5 +39,7 @@ unclutter &
 # Needed for Syncthing tray icon.
 syncthing-gtk &
 
+idlelock.sh &
+
 # Start i3.
 exec i3
