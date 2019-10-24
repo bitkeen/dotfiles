@@ -28,9 +28,6 @@ case "$1" in
     'e')
         while read file; do command -v gimp && gimp "$file" & done ;;
 	'd')
-        [ "$(printf "No\\nYes" |
-            dmenu_configured -p "Move selected images to trash?")" = 'No' ] &&
-            exit 1
         while read file;
         do
             gio trash "$file" &&
