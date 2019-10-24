@@ -11,7 +11,10 @@ alias rup='bind -f ~/.inputrc'
 alias ls='ls -p'
 alias ll='ls -AlF'
 
-# Prompt before overwriting.
+# -r - copy directories recursively
+# -i - prompt before overwrite
+alias cp='cp -ir'
+# -i - prompt before overwrite
 alias mv='mv -i'
 
 # Highlight matches, ignore case distinctions.
