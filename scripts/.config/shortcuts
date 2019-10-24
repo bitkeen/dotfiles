@@ -19,7 +19,9 @@ dy ~/Downloads/youtube-dl
 mc ~/Audio/music
 pc ~/Pictures
 pd ~/Audio/podcasts
-st ~/sync
+sn ~/sync
+sm ~/sync/main
+sw ~/sync/wikis
 ph ~/sync/phone
 vd ~/Videos
 vt ~/Videos/to-watch
