@@ -5,5 +5,5 @@ pydocstyle
 pyflakes
 pylint
 pylint-django
-websockets # For ghost-text.vim.
+ueberzug # Used in ranger for image previews.
 youtube-dl
