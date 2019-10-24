@@ -19,7 +19,6 @@ mpv
 ncdu # NCurses Disk Usage
 ncmpcpp
 pulsemixer # CLI and curses mixer for pulseaudio
-ranger # Simple, vim-like TUI file manager
 redshift # Set color temperature of display according to time of day
 shellcheck # Shell script analysis tool
 sxiv # Simple X Image Viewer
