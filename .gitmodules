@@ -247,3 +247,6 @@
 [submodule "pydoc.vim"]
 	path = vim/.vim/bundle/pydoc.vim
 	url = https://github.com/bitkeen/pydoc.vim
+[submodule "lessspace.vim"]
+	path = vim/.vim/bundle/lessspace.vim
+	url = https://github.com/thirtythreeforty/lessspace.vim
