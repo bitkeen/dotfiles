@@ -13,7 +13,7 @@ stty -ixon
 _source_if_exists() {
     # Source a file if it exists.
     [ "$#" -ne 1 ] && return 1
-    [ -f "$1" ] && source "$1"
+    [ -f "$1" ] && source "$1" || return 1
 }
 
 # Aliases and functions {{{
