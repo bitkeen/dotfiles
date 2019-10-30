@@ -14,8 +14,8 @@ docker_alias() {
         killall)
             cmd="kill $('docker' ps -q)";;
         krm)
-            'docker' kill "$('docker' ps -q)"
-            'docker' rm "$('docker' ps -aq)"
+            'docker' ps -q | xargs docker kill
+            'docker' ps -aq | xargs docker rm
             return;;
         lg)
             cmd="logs";;
@@ -46,6 +46,7 @@ docker_alias() {
     shift
     docker $cmd "$@"
 }
+
 
 docker_compose_alias() {
     key="$1"
@@ -96,6 +97,7 @@ docker_compose_alias() {
     shift
     docker-compose $cmd "$@"
 }
+
 
 alias docker='docker_alias'
 alias docker-compose='docker_compose_alias'
