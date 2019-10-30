@@ -250,3 +250,6 @@
 [submodule "lessspace.vim"]
 	path = vim/.vim/bundle/lessspace.vim
 	url = https://github.com/thirtythreeforty/lessspace.vim
+[submodule "Vim-Jinja2-Syntax"]
+	path = vim/.vim/bundle/Vim-Jinja2-Syntax
+	url = https://github.com/Glench/Vim-Jinja2-Syntax
