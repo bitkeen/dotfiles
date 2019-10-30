@@ -16,6 +16,21 @@ _source_if_exists() {
     [ -f "$1" ] && source "$1"
 }
 
+# Aliases and functions {{{
+
+# Add main bash aliases.
+_source_if_exists "$HOME/.bash_aliases"
+# Add  functions.
+_source_if_exists "$HOME/.bash_functions"
+# Add local (untracked) bash aliases.
+_source_if_exists "$HOME/.bash_aliases.local"
+# Add docker aliases.
+_source_if_exists "$HOME/.docker_aliases"
+# Add lab aliases.
+_source_if_exists "$HOME/.lab_aliases"
+
+# }}}
+
 # Paths {{{
 base16_shell_dir="$HOME/.config/base16-shell/"
 fzf_bindings_file="/usr/share/fzf/key-bindings.bash"
@@ -159,20 +174,5 @@ ps1_arrow=' > '
 ps1_right+="${reset}${bold}${arrow_color}${ps1_arrow}${reset}"
 
 export PS1="${reset}${bold}\$(ps1_status)${reset} ${ps1_left}${ps1_right}"
-
-# }}}
-
-# Aliases and functions {{{
-
-# Add main bash aliases.
-_source_if_exists "$HOME/.bash_aliases"
-# Add  functions.
-_source_if_exists "$HOME/.bash_functions"
-# Add local (untracked) bash aliases.
-_source_if_exists "$HOME/.bash_aliases.local"
-# Add docker aliases.
-_source_if_exists "$HOME/.docker_aliases"
-# Add lab aliases.
-_source_if_exists "$HOME/.lab_aliases"
 
 # }}}
