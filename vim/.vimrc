@@ -698,8 +698,8 @@ if has("autocmd")
   augroup END
   augroup htmlmaps
     " Pretty format current buffer using tidy.
-    autocmd FileType html nnoremap <F4> :silent % !tidy -q -i --show-errors 0 %<CR>
-    autocmd FileType xml nnoremap <F4> :silent % !tidy -q -i --show-errors 0 -xml %<CR>
+    autocmd FileType html nnoremap <F4> :silent % !tidy -q -i --show-errors 0<CR>
+    autocmd FileType xml nnoremap <F4> :silent % !tidy -q -i --show-errors 0 -xml<CR>
   augroup END
 endif
 
