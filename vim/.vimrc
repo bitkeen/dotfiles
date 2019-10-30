@@ -676,8 +676,8 @@ nnoremap ]<Space> a<Space><Esc>
 nnoremap [n O<Esc>j
 nnoremap ]n o<Esc>k
 
-nnoremap <silent> [b :bnext<CR>
-nnoremap <silent> ]b :bprevious<CR>
+nnoremap <silent> [b :bprevious<CR>
+nnoremap <silent> ]b :bnext<CR>
 
 if has("autocmd")
   " Compiling TeX.
