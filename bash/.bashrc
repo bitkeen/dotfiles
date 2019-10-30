@@ -143,7 +143,7 @@ ps1_right+="${reset}${bold}${vim_color}\$(ps1_vim)${reset}"
 ps1_right+="${reset}${bold}${ranger_color}\$(ps1_ranger)${reset}"
 ps1_right+="${reset}${bold}${venv_color}\$(ps1_venv)${reset}"
 
-if [ -f "$git_prompt_file" ]; then
+if _source_if_exists "$git_prompt_file"; then
     # Add a '$' in the __git_ps1 output to show stashed changes
     # are present.
     export GIT_PS1_SHOWSTASHSTATE=1
@@ -152,7 +152,6 @@ if [ -f "$git_prompt_file" ]; then
     # Indicate difference between HEAD and its upstream.
     export GIT_PS1_SHOWUPSTREAM="auto"
 
-    source "$git_prompt_file"
     ps1_right+="${reset}${bold}${git_color}\$(__git_ps1)${reset}"
 fi
 
