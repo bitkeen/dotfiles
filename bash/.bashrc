@@ -55,13 +55,14 @@ _source_if_exists "$fzf_completion_file"
 _source_if_exists "$venv_wrapper_file"
 
 # Enable completion for git.
-if [ -f "$git_completion_file" ]; then
-    source $git_completion_file
-
+if _source_if_exists "$git_completion_file"; then
     # Make git completion work with an alias if it exists.
-    git_alias=$(alias | awk '/git/ {print $2}' | cut -f 1 -d '=')
+    # Since there could be multiple aliases that contain "git" in them,
+    # Need to search strictly for aliases of 'git'.
+    # \047 is octal representation of a single quote.
+    git_alias=$(alias | awk '/\047git\047/ {print $2}' | cut -f 1 -d '=')
     if [ -n "$git_alias" ]; then
-        complete -o default -o nospace -F _git $git_alias
+        complete -o default -o nospace -F _git "$git_alias"
     fi
 fi
 
