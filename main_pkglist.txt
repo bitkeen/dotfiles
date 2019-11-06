@@ -2,12 +2,17 @@
 # Arch Linux packages to install.
 adobe-source-sans-pro-fonts
 adobe-source-serif-pro-fonts
+android-tools # Required for scrcpy (from AUR).
 anki
 compton # A compositor for X11, required for transparency
+dmenu
 dunst # A customizable and lightweight notification-daemon
+exfat-utils
 feh # Image viewer, currently only used to set backgrounds with .fehbg script
 firefox
 fzf
+gnome-themes-extra # Contains Adwaita theme.
+gvim
 i3-wm
 i3blocks
 imagemagick # An image viewing/manipulation program
@@ -15,27 +20,40 @@ ipython
 jq # Command-line JSON processor
 keepassxc
 libxml2 # XML parsing library, version 2, contains xmllint but is usually installed as a dependency for other packages
+light # A program to control backlight controllers
+maim # Utility to take a screenshot using
+man-pages # Linux man pages
 mpc
 mpd
 mpv
 ncdu # NCurses Disk Usage
 ncmpcpp
+ntfs-3g
 paper-icon-theme
 pulsemixer # CLI and curses mixer for pulseaudio
 redshift # Set color temperature of display according to time of day
+ripgrep
 shellcheck # Shell script analysis tool
+stow
 sxiv # Simple X Image Viewer
 syncthing # Open Source Continuous Replication / Cluster Synchronization Thing
 syncthing-gtk # GTK3 based GUI and notification area icon for Syncthing
 tidy # A tool to tidy HTML code
 thunar # File Manager for the Xfce Desktop Environment
+tmux
+tor
+torsocks # Wrapper to safely torify applications
 transmission-gtk
 unclutter # A small program for hiding the mouse cursor
+urxvt
+urxvt-perls
 virtualbox
 virtualbox-guest-iso # Guest Additions CD image
+xclip
 xcursor-vanilla-dmz # Vanilla DMZ cursor theme
-xsecurelock # X11 screen lock utility
 xmlstarlet # Command line utilities for XML
+xorg-server
+xsecurelock # X11 screen lock utility
 zathura
 zathura-djvu
 zathura-pdf-mupdf
