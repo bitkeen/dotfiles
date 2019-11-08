@@ -17,7 +17,6 @@ _source_if_exists() {
 }
 
 # Aliases and functions {{{
-
 # Add main bash aliases.
 _source_if_exists "$HOME/.bash_aliases"
 # Add  functions.
@@ -28,7 +27,6 @@ _source_if_exists "$HOME/.bash_aliases.local"
 _source_if_exists "$HOME/.docker_aliases"
 # Add lab aliases.
 _source_if_exists "$HOME/.lab_aliases"
-
 # }}}
 
 # Paths {{{
