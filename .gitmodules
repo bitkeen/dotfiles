@@ -256,3 +256,6 @@
 [submodule "vim-easydir"]
 	path = vim/.vim/pack/bundle/start/vim-easydir
 	url = https://github.com/duggiefresh/vim-easydir
+[submodule "tagbar"]
+	path = vim/.vim/bundle/tagbar
+	url = https://github.com/majutsushi/tagbar
