@@ -1,0 +1,10 @@
+" vim: ft=vim
+set clipboard=unnamed
+set contentassistmode
+set hlsearch
+set ignorecase
+
+noremap Y y$
+nnoremap <Space>l :nohlsearch<CR>
+nnoremap <Space>q :q<CR>
+vnoremap <Space>q <Esc>:q<CR>
