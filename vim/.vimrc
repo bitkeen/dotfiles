@@ -615,8 +615,8 @@ nnoremap <Leader>s :%s/
 vnoremap <Leader>s :s/
 
 " Remove trailing whitespace.
-nnoremap <LocalLeader>t :%s/\s\+$//e<CR>
-vnoremap <LocalLeader>t :s/\s\+$//e<CR>
+nnoremap <LocalLeader>tw :%s/\s\+$//e<CR>
+vnoremap <LocalLeader>tw :s/\s\+$//e<CR>
 
 " Remove empty lines through entire file.
 nnoremap <Leader>el :g/^$/d<CR>
@@ -864,6 +864,9 @@ nnoremap <LocalLeader>u :UltiSnipsEdit<CR>
 
 " python-syntax - better python syntax highlighting
 let g:python_highlight_all = 1
+
+" Tagbar - a class outline viewer using ctags
+nmap <LocalLeader>tt :TagbarToggle<CR>
 
 " }}}
 
