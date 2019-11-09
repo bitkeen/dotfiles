@@ -7,14 +7,15 @@
 # - xmllint
 #
 # Example:
-# check_page 'https://example.com' '//a'
+# check_page 'https://example.com' '//a' 'Example'
 
 url="$1"
 xpath="$2"
+description="$3"
 
 echo "Checking '$xpath' at '$url'"
 
 (curl --silent "$url" |
     xmllint --html --xpath "$xpath" - >/dev/null 2>&1) &&
-    (echo "Found"; notify-send "Found elements at $url" ; exit 0) ||
-    (echo "Couldn't find"; exit 1)
+    (echo "Found $description"; notify-send "Found elements at $url ($description)" ; exit 0) ||
+    (echo "Couldn't find $description"; exit 1)
