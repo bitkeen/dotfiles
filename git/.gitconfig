@@ -80,8 +80,6 @@
     ; -s - short format, -b - show branch info in short format
     ss = status -sb
     sw = show
-[branch]
-    autosetupmerge = always
 [core]
     editor = vim
     whitespace = true
