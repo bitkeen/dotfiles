@@ -6,11 +6,19 @@ groot() {
     cd "$(git rev-parse --show-toplevel)"
 }
 
-# Git stash and repeat previous command.
+# Run git stash and repeat the previous command.
 gshr() {
     git status > /dev/null 2>&1 || return 1
     git stash
     fc -s
+}
+
+# Run git stash, repeat the previous command and pop from the stash.
+gshrp() {
+    git status > /dev/null 2>&1 || return 1
+    git stash
+    fc -s
+    git stash pop
 }
 
 ww() {
