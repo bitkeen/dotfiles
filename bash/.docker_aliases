@@ -28,8 +28,12 @@ docker_alias() {
             cmd='pull';;
         ps)
             cmd='ps --format table{{.ID}}\t{{.Image}}\t{{.Names}}\t{{.Status}}';;
+        psa)
+            cmd='ps -a --format table{{.ID}}\t{{.Image}}\t{{.Names}}\t{{.Status}}';;
         psf)
             cmd='ps';;
+        psfa)
+            cmd='ps -a';;
         rs)
             cmd="restart";;
         rsl)
