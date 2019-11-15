@@ -46,6 +46,7 @@
     rb = rebase
     rba = rebase --abort
     rbi = rebase --interactive
+    rbim = rebase --interactive master
     rbc = rebase --continue
     rbs = rebase --skip
     rbm = rebase master
@@ -54,6 +55,7 @@
     sh = stash
     shm = stash push -m
     shps = stash push
+    shpp = stash push -p
     ; Run 'git stash drop' if no argument is provided,
     ; otherwise run 'git stash drop stash@{$1}'.
     shd = "!sh -c '[ -z \"$1\" ] \
