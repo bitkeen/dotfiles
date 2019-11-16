@@ -866,7 +866,13 @@ nnoremap <LocalLeader>u :UltiSnipsEdit<CR>
 let g:python_highlight_all = 1
 
 " Tagbar - a class outline viewer using ctags
-nmap <LocalLeader>tt :TagbarToggle<CR>
+nnoremap <LocalLeader>tt :TagbarToggle<CR>
+
+" Linediff - diff two blocks of text
+nnoremap [l :Linediff<CR>
+nnoremap ]l :LinediffReset<CR>
+vnoremap [l :Linediff<CR>
+vnoremap ]l :LinediffReset<CR>
 
 " }}}
 
