@@ -706,6 +706,10 @@ endif
 " Pretty format a JSON buffer.
 nnoremap <LocalLeader>j :%!python -m json.tool<CR>
 
+" Replace search term under the cursor, dot repeats the change.
+nnoremap c* *Ncgn
+nnoremap c# #NcgN
+
 " }}}
 
 " Plugin mappings {{{
