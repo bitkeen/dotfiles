@@ -1,4 +1,19 @@
 #!/usr/bin/env bash
+u() {
+    # Go up $1 directories.
+    # If $1 is omitted or is not an integer, go up 1 directory.
+    dir=''
+    if echo "$1" | grep -Eq '^[0-9]+$'; then
+        for i in $(seq "$1")
+        do
+            dir="$dir../"
+        done
+    else
+        dir='..'
+    fi
+    cd "$dir"
+}
+
 # Change working directory to the git root if the current working
 # directory is inside of a git repository.
 groot() {
