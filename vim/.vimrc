@@ -510,6 +510,9 @@ let g:pydoc_highlight = 0
 
 autocmd plugins FileType todo :AutoSaveToggle
 
+" vim-arpeggio - key mappings for simultaneously pressed keys
+let g:arpeggio_timeoutlen=20
+
 " }}}
 
 " Mappings {{{
@@ -886,8 +889,6 @@ vnoremap [l :Linediff<CR>
 vnoremap ]l :LinediffReset<CR>
 
 " vim-arpeggio - key mappings for simultaneously pressed keys
-call arpeggio#map('n', '', 0, 'q;', 'q:')
-
 autocmd plugins FileType python call arpeggio#map('i', '', 0, '<Space>r', 'return ')
 autocmd plugins FileType python call arpeggio#map('i', '', 0, '<Space>d', 'def ')
 autocmd plugins FileType python call arpeggio#map('i', '', 0, '<Space>c', 'class ')
