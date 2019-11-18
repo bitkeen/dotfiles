@@ -712,6 +712,11 @@ nnoremap <LocalLeader>j :%!python -m json.tool<CR>
 nnoremap c* *Ncgn
 nnoremap c# #NcgN
 
+" Open command-line window.
+nnoremap q; q:
+" Run previous command.
+nnoremap @; @:
+
 " }}}
 
 " Plugin mappings {{{
