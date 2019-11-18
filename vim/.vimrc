@@ -880,6 +880,9 @@ nnoremap ]l :LinediffReset<CR>
 vnoremap [l :Linediff<CR>
 vnoremap ]l :LinediffReset<CR>
 
+" vim-arpeggio - key mappings for simultaneously pressed keys
+call arpeggio#map('n', '', 0, 'q;', 'q:')
+
 " }}}
 
 silent! source ~/.vimrc.local
