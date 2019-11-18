@@ -1,6 +1,13 @@
-snippet aug
-augroup $1
+snippet aug "Autocmd group" b
+augroup ${1:Name}
 	autocmd!
 	autocmd $0
 augroup END
+endsnippet
+
+
+snippet fn "Function" b
+function! ${1:FunctionName}($2)
+	$0
+endfunction
 endsnippet
