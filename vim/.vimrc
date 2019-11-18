@@ -883,6 +883,14 @@ vnoremap ]l :LinediffReset<CR>
 " vim-arpeggio - key mappings for simultaneously pressed keys
 call arpeggio#map('n', '', 0, 'q;', 'q:')
 
+autocmd plugins FileType python call arpeggio#map('i', '', 0, '<Space>r', 'return ')
+autocmd plugins FileType python call arpeggio#map('i', '', 0, '<Space>d', 'def ')
+autocmd plugins FileType python call arpeggio#map('i', '', 0, '<Space>c', 'class ')
+autocmd plugins FileType python call arpeggio#map('i', '', 0, '<Space>i', 'import ')
+autocmd plugins FileType python call arpeggio#map('i', '', 0, '<Space>t', 'True')
+autocmd plugins FileType python call arpeggio#map('i', '', 0, '<Space>f', 'False')
+autocmd plugins FileType python call arpeggio#map('i', '', 0, '<Space>n', 'None')
+
 " }}}
 
 silent! source ~/.vimrc.local
