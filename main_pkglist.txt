@@ -4,9 +4,12 @@ adobe-source-sans-pro-fonts
 adobe-source-serif-pro-fonts
 android-tools # Required for scrcpy (from AUR).
 anki
+arandr # Xrandr front-end
 compton # A compositor for X11, required for transparency
+ctags # Universal ctags
 dmenu
 dunst # A customizable and lightweight notification-daemon
+etckeeper # Store /etc in a VCS repository
 exfat-utils
 feh # Image viewer, currently only used to set backgrounds with .fehbg script
 firefox
@@ -28,8 +31,8 @@ mpd
 mpv
 ncdu # NCurses Disk Usage
 ncmpcpp
+network-manager-applet
 ntfs-3g
-paper-icon-theme
 pulsemixer # CLI and curses mixer for pulseaudio
 redshift # Set color temperature of display according to time of day
 ripgrep
