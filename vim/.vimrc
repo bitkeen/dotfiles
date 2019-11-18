@@ -629,6 +629,8 @@ nnoremap <Leader>= <C-W>=
 nnoremap <silent> <LocalLeader>qq :tabnew<CR>:tabonly<CR>
 " Close all buffers.
 nnoremap <silent> <LocalLeader>qa :qa!<CR>
+" Leave only current tab and current window.
+nnoremap <silent> <LocalLeader>qo :tabonly<CR>:only<CR>
 
 " Repeat the previous @, can be used with a count.
 nnoremap <Leader><Leader> @@
