@@ -522,7 +522,7 @@ let mapleader=" "
 let maplocalleader="\\"
 
 " Toggle spell-check.
-map <LocalLeader>s :setlocal spell! spelllang=en_us<CR>
+map <F6> :setlocal spell! spelllang=en_us<CR>
 
 " Use j and k if a count is specified, gj, gk if no count is specified.
 " For counts larger or equal to five, set a mark that can be used in
@@ -719,6 +719,12 @@ nnoremap c# #NcgN
 nnoremap q; q:
 " Run previous command.
 nnoremap @; @:
+" Paste from the command register.
+" `noremap!` maps both for the insert and the command-line mode.
+noremap! <C-r>; <C-r>:
+
+nnoremap <Silent> <LocalLeader>ss :%sort<CR>
+vnoremap <Silent> <LocalLeader>ss :sort<CR>
 
 " }}}
 
