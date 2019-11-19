@@ -240,7 +240,7 @@
 	url = https://github.com/vim-python/python-syntax
 [submodule "todo.txt-vim"]
 	path = vim/.vim/bundle/todo.txt-vim
-	url = https://github.com/freitass/todo.txt-vim
+	url = https://github.com/bitkeen/todo.txt-vim
 [submodule "vim-textobj-conflict"]
 	path = vim/.vim/bundle/vim-textobj-conflict
 	url = https://github.com/rhysd/vim-textobj-conflict
