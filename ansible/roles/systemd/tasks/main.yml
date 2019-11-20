@@ -1,0 +1,10 @@
+---
+- name: install screen lock service file
+  copy:
+    src: 'lock@.service'
+    dest: '/etc/systemd/system/lock@.service'
+
+- name: enable screen lock service
+  systemd:
+    name: lock@user
+    enabled: yes
