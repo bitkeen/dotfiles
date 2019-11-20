@@ -215,7 +215,8 @@ centered_cursor = yes
 ## Note: You can specify third character which will be used to build 'empty'
 ## part of progressbar.
 ##
-progressbar_look = "->"
+# Lower Three Eighths Block U+2583
+progressbar_look = "▃▃▃"
 #
 ## Available values: database, playlist.
 ##
