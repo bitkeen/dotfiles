@@ -1,0 +1,6 @@
+#!/bin/sh
+if ! [ -x "$(command -v ansible)" ]; then
+    sudo pacman -S ansible
+fi
+
+ansible-playbook -i ~/.dotfiles/ansible/hosts --ask-become-pass ~/.dotfiles/ansible/arch.yml

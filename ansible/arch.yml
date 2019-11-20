@@ -1,0 +1,9 @@
+---
+- name: set up an Arch Linux machine
+  hosts: localhost
+  become: yes
+  roles:
+    - pacman
+  vars:
+    - user_home: "{{ '~' | expanduser }}"
+    - dotfiles_home: "{{ user_home }}/.dotfiles"
