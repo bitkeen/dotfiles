@@ -122,6 +122,13 @@ if has('syntax') && has('eval')
   packadd matchit
 endif
 
+if has('packages')
+  packadd! linediff.vim
+  packadd! vim-easydir
+else
+  execute pathogen#infect('pack/bundle/opt/{}')
+endif
+
 " Enable Pathogen package manager.
 execute pathogen#infect()
 " Generate documentation.
