@@ -123,8 +123,84 @@ if has('syntax') && has('eval')
 endif
 
 if has('packages')
+  packadd! ale
+  packadd! ansible-vim
+  packadd! base16-vim
+  packadd! CamelCaseMotion
+  packadd! command-t
+  packadd! committia.vim
+  packadd! Dockerfile.vim
+  packadd! fugitive-gitlab.vim
+  packadd! git-blame.vim
+  packadd! gundo.vim
+  packadd! gv.vim
+  packadd! indentLine
+  packadd! jedi-vim
+  packadd! lightline-ale
+  packadd! lightline.vim
   packadd! linediff.vim
+  packadd! pydoc.vim
+  packadd! python-syntax
+  packadd! QFEnter
+  packadd! quick-scope
+  packadd! requirements.txt.vim
+  packadd! splitjoin.vim
+  packadd! tagbar
+  packadd! targets.vim
+  packadd! textobj-word-column.vim
+  packadd! tmuxline.vim
+  packadd! todo.txt-vim
+  packadd! undoquit.vim
+  packadd! vim-abolish
+  packadd! vim-arpeggio
+  packadd! vim-auto-save
+  packadd! vim-characterize
+  packadd! vim-closer
+  packadd! vim-commentary
   packadd! vim-easydir
+  packadd! vim-endwise
+  packadd! vim-eunuch
+  packadd! vim-exchange
+  packadd! vim-expand-region
+  packadd! vim-fugitive
+  packadd! vim-gitgutter
+  packadd! vim-gnupg
+  packadd! vim-grepper
+  packadd! vim-gtfo
+  packadd! vim-highlightedyank
+  packadd! vim-indent-object
+  packadd! vim-instant-markdown
+  packadd! Vim-Jinja2-Syntax
+  packadd! vim-ledger
+  packadd! vim-merginal
+  packadd! vim-obsession
+  packadd! vim-pug
+  packadd! vim-python-pep8-indent
+  packadd! vim-ragtag
+  packadd! vim-repeat
+  packadd! vim-rhubarb
+  packadd! vim-scriptease
+  packadd! vim-searchindex
+  packadd! vim-signature
+  packadd! vim-signjump
+  packadd! vim-slime
+  packadd! vim-speeddating
+  packadd! vim-superman
+  packadd! vim-surround
+  packadd! vim-syntax-extra
+  packadd! vim-textobj-conflict
+  packadd! vim-textobj-entire
+  packadd! vim-textobj-user
+  packadd! vim-textobj-xmlattr
+  packadd! vim-tmux-focus-events
+  packadd! vim-tmux-navigator
+  packadd! vim-vinegar
+  packadd! vim-visual-star-search
+  packadd! vim-vue
+  packadd! vim-xkbswitch
+  packadd! vimwiki
+  packadd! vZoom.vim
+  packadd! winresizer
 else
   execute pathogen#infect('pack/bundle/opt/{}')
 endif
