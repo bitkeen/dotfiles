@@ -54,7 +54,7 @@ export HISTTIMEFORMAT="%Y-%m-%d %T "
 # Scripts and user-specific Python packages are installed in .local/bin.
 export PATH="$PATH:$HOME/.local/bin"
 export PATH="$PATH:$HOME/.local/bin.local"
-export PATH="$PATH:$HOME/.vim/bundle/vim-superman/bin"
+export PATH="$PATH:$HOME/.vim/pack/bundle/opt/vim-superman/bin"
 export DOTFILES_DIR="$HOME/.dotfiles"
 # Avoid loading default config file for ranger if a custom one exists.
 [ -f "$ranger_config_file" ] && export RANGER_LOAD_DEFAULT_RC=FALSE
