@@ -265,3 +265,6 @@
 [submodule "ansible-vim"]
 	path = vim/.vim/pack/bundle/opt/ansible-vim
 	url = https://github.com/pearofducks/ansible-vim
+[submodule "tabular"]
+	path = vim/.vim/pack/bundle/opt/tabular
+	url = https://github.com/godlygeek/tabular

@@ -145,6 +145,7 @@ if has('packages')
   packadd! quick-scope
   packadd! requirements.txt.vim
   packadd! splitjoin.vim
+  packadd! tabular
   packadd! tagbar
   packadd! targets.vim
   packadd! textobj-word-column.vim
