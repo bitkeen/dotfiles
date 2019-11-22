@@ -82,10 +82,10 @@
 [submodule "splitjoin.vim"]
 	path = vim/.vim/pack/bundle/opt/splitjoin.vim
 	url = https://github.com/AndrewRadev/splitjoin.vim
-[submodule "tmux/.tmux/plugins/tpm"]
+[submodule "tpm"]
 	path = tmux/.tmux/plugins/tpm
 	url = https://github.com/tmux-plugins/tpm
-[submodule "tmux/.tmux/plugins/tmux-prefix-highlight"]
+[submodule "tmux-prefix-highlight"]
 	path = tmux/.tmux/plugins/tmux-prefix-highlight
 	url = https://github.com/tmux-plugins/tmux-prefix-highlight
 [submodule "vim-exchange"]
@@ -127,16 +127,16 @@
 [submodule "vim-textobj-xmlattr"]
 	path = vim/.vim/pack/bundle/opt/vim-textobj-xmlattr
 	url = https://github.com/whatyouhide/vim-textobj-xmlattr
-[submodule "tmux/.tmux/plugins/tmux-open"]
+[submodule "tmux-open"]
 	path = tmux/.tmux/plugins/tmux-open
 	url = https://github.com/tmux-plugins/tmux-open
-[submodule "tmux/.tmux/plugins/tmux-resurrect"]
+[submodule "tmux-resurrect"]
 	path = tmux/.tmux/plugins/tmux-resurrect
 	url = https://github.com/tmux-plugins/tmux-resurrect
 [submodule "vim-obsession"]
 	path = vim/.vim/pack/bundle/opt/vim-obsession
 	url = https://github.com/tpope/vim-obsession
-[submodule "tmux/.tmux/plugins/tmux-continuum"]
+[submodule "tmux-continuum"]
 	path = tmux/.tmux/plugins/tmux-continuum
 	url = https://github.com/tmux-plugins/tmux-continuum
 [submodule "undoquit.vim"]
@@ -172,7 +172,7 @@
 [submodule "vim-instant-markdown"]
 	path = vim/.vim/pack/bundle/opt/vim-instant-markdown
 	url = https://github.com/suan/vim-instant-markdown
-[submodule "tmux/.tmux/plugins/tmux-fzf-url"]
+[submodule "tmux-fzf-url"]
 	path = tmux/.tmux/plugins/tmux-fzf-url
 	url = https://github.com/wfxr/tmux-fzf-url
 [submodule "vim-python-pep8-indent"]
