@@ -1,6 +1,6 @@
 h ~
 .a ~/.dotfiles.local
-.b ~/.vim/bundle
+.b ~/.vim/pack/bundle/opt
 .c ~/.config
 .d ~/.dotfiles
 .l ~/.local
