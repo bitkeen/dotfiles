@@ -1,0 +1,15 @@
+#!/bin/sh
+# A wrapper around the 'mpc prev' command.
+# If the current song has been playing for less than 5 seconds, switch to the
+# previous song, otherwise reset the current song's position to 0.
+
+if ! [ -x "$(command -v mpc)" ]; then
+    echo 'Error: the script requires mpc'
+    exit 1
+fi
+
+if mpc status | grep -Po '(?<=\s0:0)[0-5](?=/)'; then
+    mpc prev
+else
+    mpc seek 0
+fi
