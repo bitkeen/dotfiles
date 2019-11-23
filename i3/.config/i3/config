@@ -257,7 +257,7 @@ bindsym $mod+question exec --no-startup-id mpc toggle
 # Mod+,
 bindsym $mod+period exec --no-startup-id mpc next
 # Mod+.
-bindsym $mod+comma exec --no-startup-id mpc prev
+bindsym $mod+comma exec --no-startup-id mpc_prev_wrapper
 # Mod+<
 bindsym $mod+shift+comma exec --no-startup-id mpc seek 0
 

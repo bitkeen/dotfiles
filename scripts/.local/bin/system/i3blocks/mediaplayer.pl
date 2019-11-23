@@ -41,7 +41,7 @@ sub buttons {
         if ($ENV{'BLOCK_BUTTON'} == 1) {
             system("mpc toggle");
         } elsif ($ENV{'BLOCK_BUTTON'} == 2) {
-            system("mpc prev");
+            system("mpc_prev_wrapper");
         } elsif ($ENV{'BLOCK_BUTTON'} == 3) {
             system("mpc next");
         }
