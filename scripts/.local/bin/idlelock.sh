@@ -2,6 +2,6 @@
 
 xidlehook \
   --not-when-audio \
-  --timer normal 180 \
+  --timer normal 300 \
     'xsecurelock' \
     '' \
