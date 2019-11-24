@@ -46,3 +46,6 @@ user_pref("browser.uidensity", 1);
 // Set download dir.
 user_pref("browser.download.dir", "/home/user/downloads/firefox");
 user_pref("browser.download.lastDir", "/home/user/downloads/firefox");
+
+// Don't display close buttons on tabs with lower width.
+user_pref("browser.tabs.tabClipWidth", "9000");
