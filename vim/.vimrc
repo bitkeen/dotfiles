@@ -718,6 +718,8 @@ nnoremap <silent> <LocalLeader>qq :tabnew<CR>:tabonly<CR>
 nnoremap <silent> <LocalLeader>qa :qa!<CR>
 " Leave only current tab and current window.
 nnoremap <silent> <LocalLeader>qo :tabonly<CR>:only<CR>
+" Close current tab.
+nnoremap <silent> <LocalLeader>qt :tabclose<CR>
 
 " Repeat the previous @, can be used with a count.
 nnoremap <Leader><Leader> @@
