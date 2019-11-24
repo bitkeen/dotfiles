@@ -77,10 +77,10 @@ if has('autocmd')
     " Open help windows in a vertical split by default.
     autocmd FileType help wincmd L
     " Show line numbers in help windows.
-    autocmd FileType help setlocal number
-    autocmd FileType help setlocal relativenumber
+    autocmd FileType help,man setlocal number
+    autocmd FileType help,man setlocal relativenumber
     " Only show signcolumn when there is a sign to display.
-    autocmd FileType help setlocal signcolumn=auto
+    autocmd FileType help,man setlocal signcolumn=auto
 
     " Highlight the current line, but only in focused window.
     autocmd BufEnter,WinEnter,FocusGained * setlocal cursorline
