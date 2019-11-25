@@ -308,6 +308,9 @@ endif
 
 " Don't show intro message.
 set shortmess+=I
+" Don't show the "ATTENTION" message when an existing swap file
+" is found.
+set shortmess+=A
 
 " Command-line completion mode.
 " Complete the next full m
