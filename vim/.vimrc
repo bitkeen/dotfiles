@@ -320,10 +320,6 @@ set wildmode=full
 " Ignore case when completing file names and directories.
 set wildignorecase
 
-" Instead of failing a command because of unsaved changes, raise
-" a dialog asking if you wish to save changed files.
-set confirm
-
 " Vim before 8.1.1365 is vulnerable to arbitrary code execution via modelines
 " by opening a specially crafted text file.
 if !has("patch-8.1-1366")
