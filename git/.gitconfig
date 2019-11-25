@@ -20,13 +20,18 @@
     ; Ignore the local timezone and commit with UTC.
     ci = "!git commit --date=\"$(date -u '+%Y-%m-%dT%H:%M:%S%z')\""
     cia = commit --amend
-    cif = commit --fixup
+    ; Fixup HEAD if no argument is provided.
+    cif = "!sh -c '[ -z \"$1\" ] \
+            && git commit --fixup HEAD || \
+            git commit --fixup \"$1\"'"
     cim = "!git commit --date=\"$(date -u '+%Y-%m-%dT%H:%M:%S%z')\" -m"
     cl = clone
     df = diff
     dfc = diff --check
     dfs = diff --staged
     dt = difftool
+    ; Show the hash of HEAD.
+    hh = rev-parse --short HEAD
     lg = log --abbrev-commit
     lgg = log --all --graph --format='%C(auto)%h%C(reset)%C(auto)%d%C(reset) %s %C(green)(%cr)%C(reset) %C(cyan)<%aN>%C(reset)'
     lglr = log --left-right --oneline
