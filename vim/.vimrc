@@ -994,6 +994,16 @@ autocmd plugins FileType python call arpeggio#map('i', '', 0, '<Space>t', 'True'
 autocmd plugins FileType python call arpeggio#map('i', '', 0, '<Space>f', 'False')
 autocmd plugins FileType python call arpeggio#map('i', '', 0, '<Space>n', 'None')
 
+" targets.vim - additional text objects
+" Include angle brackets in the "b" mapping.
+autocmd User targets#mappings#user call targets#mappings#extend({
+\  'b': {'pair': [
+\    {'o':'(', 'c':')'},
+\    {'o':'[', 'c':']'},
+\    {'o':'{', 'c':'}'},
+\    {'o':'<', 'c':'>'},]},
+\})
+
 " }}}
 
 silent! source ~/.vimrc.local
