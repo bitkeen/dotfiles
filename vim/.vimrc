@@ -814,8 +814,8 @@ nnoremap @; @:
 " `noremap!` maps both for the insert and the command-line mode.
 noremap! <C-r>; <C-r>:
 
-nnoremap <Silent> <LocalLeader>ss :%sort<CR>
-vnoremap <Silent> <LocalLeader>ss :sort<CR>
+nnoremap <Silent> <LocalLeader>ss :%sort i<CR>
+vnoremap <Silent> <LocalLeader>ss :sort i<CR>
 
 " }}}
 
