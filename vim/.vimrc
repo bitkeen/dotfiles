@@ -178,6 +178,7 @@ if has('packages')
   packadd! vim-obsession
   packadd! vim-pug
   packadd! vim-python-pep8-indent
+  packadd! vim-qlist
   packadd! vim-ragtag
   packadd! vim-repeat
   packadd! vim-rhubarb

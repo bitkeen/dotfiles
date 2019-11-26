@@ -268,3 +268,6 @@
 [submodule "tabular"]
 	path = vim/.vim/pack/bundle/opt/tabular
 	url = https://github.com/godlygeek/tabular
+[submodule "vim-qlist"]
+	path = vim/.vim/pack/bundle/opt/vim-qlist
+	url = https://github.com/romainl/vim-qlist
