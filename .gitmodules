@@ -274,3 +274,6 @@
 [submodule "vim-textobj-comment"]
 	path = vim/.vim/pack/bundle/opt/vim-textobj-comment
 	url = https://github.com/glts/vim-textobj-comment
+[submodule "vim-qfreplace"]
+	path = vim/.vim/pack/bundle/opt/vim-qfreplace
+	url = https://github.com/thinca/vim-qfreplace/

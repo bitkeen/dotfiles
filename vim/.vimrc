@@ -178,6 +178,7 @@ if has('packages')
   packadd! vim-obsession
   packadd! vim-pug
   packadd! vim-python-pep8-indent
+  packadd! vim-qfreplace
   packadd! vim-qlist
   packadd! vim-ragtag
   packadd! vim-repeat
@@ -1008,6 +1009,7 @@ autocmd User targets#mappings#user call targets#mappings#extend({
 \    {'o':'<', 'c':'>'},]},
 \})
 
+" textobj-comment - text objects for comments
 let g:textobj_comment_no_default_key_mappings = 1
 xmap ag <Plug>(textobj-comment-a)
 omap ag <Plug>(textobj-comment-a)
