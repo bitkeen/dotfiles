@@ -191,6 +191,7 @@ if has('packages')
   packadd! vim-superman
   packadd! vim-surround
   packadd! vim-syntax-extra
+  packadd! vim-textobj-comment
   packadd! vim-textobj-conflict
   packadd! vim-textobj-entire
   packadd! vim-textobj-user
