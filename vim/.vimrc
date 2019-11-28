@@ -1024,6 +1024,9 @@ let g:splitjoin_join_mapping = ''
 nmap zJ :SplitjoinSplit<cr>
 nmap zK :SplitjoinJoin<cr>
 
+" qfreplace - change lines from quickfix
+nmap cq :Qfreplace<CR>
+
 " }}}
 
 silent! source ~/.vimrc.local
