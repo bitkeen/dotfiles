@@ -12,7 +12,6 @@ bk ~/books
 dc ~/documents
 df ~/downloads/firefox
 dp ~/documents/projects
-dr ~/documents/repos
 dt ~/downloads/torrents
 dl ~/downloads
 dy ~/downloads/youtube-dl
