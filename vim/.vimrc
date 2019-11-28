@@ -1018,6 +1018,12 @@ omap aG <Plug>(textobj-comment-big-a)
 xmap ig <Plug>(textobj-comment-i)
 omap ig <Plug>(textobj-comment-i)
 
+" Splitjoin - switch between single-line and multiline forms of code
+let g:splitjoin_split_mapping = ''
+let g:splitjoin_join_mapping = ''
+nmap zJ :SplitjoinSplit<cr>
+nmap zK :SplitjoinJoin<cr>
+
 " }}}
 
 silent! source ~/.vimrc.local
