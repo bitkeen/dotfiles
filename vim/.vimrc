@@ -1008,6 +1008,14 @@ autocmd User targets#mappings#user call targets#mappings#extend({
 \    {'o':'<', 'c':'>'},]},
 \})
 
+let g:textobj_comment_no_default_key_mappings = 1
+xmap ag <Plug>(textobj-comment-a)
+omap ag <Plug>(textobj-comment-a)
+xmap aG <Plug>(textobj-comment-big-a)
+omap aG <Plug>(textobj-comment-big-a)
+xmap ig <Plug>(textobj-comment-i)
+omap ig <Plug>(textobj-comment-i)
+
 " }}}
 
 silent! source ~/.vimrc.local
