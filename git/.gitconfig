@@ -23,7 +23,7 @@
     ; Fixup HEAD if no argument is provided.
     cif = "!sh -c '[ -z \"$1\" ] \
             && git commit --fixup HEAD || \
-            git commit --fixup \"$1\"'"
+            git commit --fixup \"$1\"' -"
     cim = "!git commit --date=\"$(date -u '+%Y-%m-%dT%H:%M:%S%z')\" -m"
     cl = clone
     df = diff
