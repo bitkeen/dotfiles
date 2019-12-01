@@ -18,6 +18,7 @@
       - fzf
       - gnome-themes-extra # Contains Adwaita theme.
       - gvim
+      - gimp
       - i3-wm
       - i3blocks
       - imagemagick # An image viewing/manipulation program
