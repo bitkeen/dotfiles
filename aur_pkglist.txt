@@ -4,9 +4,11 @@ git-open # Open a repo website (GitHub, GitLab, Bitbucket) in your browser
 htop-vim-git # Interactive text-mode process viewer. Patched for vim keybindings
 mycli
 nerd-fonts-source-code-pro
+paper-icon-theme
 pgcli
 ranger-git # 1.9.2 which is in the official repo doesn't support image previews with ueberzug
 scrcpy # Display and control an Android device
+slack-desktop
+tor-browser
 xidlehook # xautolock rewrite in Rust, with a few extra features
 xkb-switch # Program that allows to query and change the XKB layout state
-paper-icon-theme
