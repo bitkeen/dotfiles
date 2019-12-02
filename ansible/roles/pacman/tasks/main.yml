@@ -55,6 +55,7 @@
       - tidy # A tool to tidy HTML code
       - thunar # File Manager for the Xfce Desktop Environment
       - thunderbird
+      - thunderbird-extension-enigmail
       - tmux
       - tor
       - torsocks # Wrapper to safely torify applications
