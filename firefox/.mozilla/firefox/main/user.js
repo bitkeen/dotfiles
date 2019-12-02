@@ -55,3 +55,6 @@ user_pref("browser.tabs.tabClipWidth", "9000");
 
 // Load userChrome.css and userContent.css.
 user_pref("toolkit.legacyUserProfileCustomizations.stylesheets", "true");
+
+// Restore previous session on startup.
+user_pref("browser.startup.page", "3");
