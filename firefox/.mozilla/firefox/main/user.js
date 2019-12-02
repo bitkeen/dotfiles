@@ -49,3 +49,6 @@ user_pref("browser.download.lastDir", "/home/user/downloads/firefox");
 
 // Don't display close buttons on tabs with lower width.
 user_pref("browser.tabs.tabClipWidth", "9000");
+
+// Load userChrome.css and userContent.css.
+user_pref("toolkit.legacyUserProfileCustomizations.stylesheets", "true");
