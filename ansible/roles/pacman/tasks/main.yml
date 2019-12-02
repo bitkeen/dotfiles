@@ -43,6 +43,7 @@
       - network-manager-applet
       - ntfs-3g
       - pulsemixer # CLI and curses mixer for pulseaudio
+      - python-virtualenvwrapper
       - redshift # Set color temperature of display according to time of day
       - ripgrep
       - rxvt-unicode
