@@ -166,6 +166,9 @@ bindsym $mod+t exec --no-startup-id $scripts_dir/dmenu_tmux.sh
 # Power menu.
 bindsym $mod+Shift+z exec --no-startup-id $scripts_dir/dmenu_power.sh
 
+# Switch active window.
+bindsym $mod+n exec --no-startup-id simpleswitcher -now
+
 # Change focus.
 bindsym $mod+h focus left
 bindsym $mod+j focus down
