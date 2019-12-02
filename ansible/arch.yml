@@ -3,8 +3,11 @@
   hosts: localhost
   become: yes
   roles:
+    - main
     - pacman
     - systemd
   vars:
     - user_home: "{{ '~' | expanduser }}"
     - dotfiles_home: "{{ user_home }}/.dotfiles"
+    - user_name: user
+    - user_group: user
