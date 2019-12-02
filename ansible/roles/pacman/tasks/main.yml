@@ -9,7 +9,10 @@
       - arandr # Xrandr front-end
       - picom # A compositor for X11, required for transparency
       - ctags # Universal ctags
+      - dbeaver
       - dmenu
+      - docker
+      - docker-compose
       - dunst # A customizable and lightweight notification-daemon
       - etckeeper # Store /etc in a VCS repository
       - exfat-utils
@@ -36,6 +39,7 @@
       - mpv
       - ncdu # NCurses Disk Usage
       - ncmpcpp
+      - neofetch
       - network-manager-applet
       - ntfs-3g
       - pulsemixer # CLI and curses mixer for pulseaudio
@@ -49,6 +53,7 @@
       - syncthing-gtk # GTK3 based GUI and notification area icon for Syncthing
       - tidy # A tool to tidy HTML code
       - thunar # File Manager for the Xfce Desktop Environment
+      - thunderbird
       - tmux
       - tor
       - torsocks # Wrapper to safely torify applications
