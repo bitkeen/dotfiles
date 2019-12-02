@@ -22,14 +22,15 @@ alias mv='mv -i'
 
 # Highlight matches, ignore case distinctions.
 alias grep='grep --color=auto --ignore-case'
-# Output line numbers with -n.
-# Ignore binary files with -I.
+# -n - output line numbers
+# -I - ignore binary files
 alias gr='grep -n -I'
 
 # Find.
-alias fn='find . -name'
+# -L - follow symbolic links
+alias fn='find -L . -name'
 # Case-insensitive.
-alias fin='find . -iname'
+alias fin='find -L . -iname'
 
 # Git.
 alias g='git'
