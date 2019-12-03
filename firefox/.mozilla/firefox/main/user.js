@@ -61,3 +61,6 @@ user_pref("browser.startup.page", "3");
 
 // Disable extension recommendations.
 user_pref("extensions.htmlaboutaddons.recommendations.enabled", "false");
+
+// Highlight all search results.
+user_pref("findbar.highlightAll", "true");
