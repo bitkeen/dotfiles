@@ -97,5 +97,5 @@
 	detachedHead = false
 [diff]
     colorMoved = zebra
-[url "https://github.com/"]
-    insteadOf = gh:
+[url "https://github.com"]
+    insteadOf = gh://
