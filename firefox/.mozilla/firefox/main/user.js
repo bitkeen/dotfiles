@@ -58,3 +58,6 @@ user_pref("toolkit.legacyUserProfileCustomizations.stylesheets", "true");
 
 // Restore previous session on startup.
 user_pref("browser.startup.page", "3");
+
+// Disable extension recommendations.
+user_pref("extensions.htmlaboutaddons.recommendations.enabled", "false");
