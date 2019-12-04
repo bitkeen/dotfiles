@@ -12,22 +12,31 @@
 # Usage example:
 # fzf_dbs ~/.config/db_connections
 
+
 conn_file="$1"
 [ -z "$conn_file" ] && echo "Connections file wasn't specified." && exit 1
 [ ! -f "$conn_file" ] && echo "Connections file doesn't exist." && exit 1
 
 fzf_opts="--reverse --height 40% $FZF_DEFAULT_OPTS"
 
-choice="$(FZF_DEFAULT_OPTS="$fzf_opts" fzf < "$conn_file" |
-            awk '{$1=""; print substr($0, 2)}')" # Remove the first column.
+choice="$(FZF_DEFAULT_OPTS="$fzf_opts" fzf < "$conn_file")"
+
 [ -z "$choice" ] && exit 1
 
-if echo "$choice" | grep '^postgresql' > /dev/null; then
+choice_name="$(echo "$choice" | awk '{print $1}')"
+choice_connection="$(echo "$choice" | awk '{$1=""; print substr($0, 2)}')"
+
+if echo "$choice_connection" | grep '^postgresql' > /dev/null; then
     ! [ -x "$(command -v pgcli)" ] && echo 'Could not find pgcli.' && exit 1
-    pgcli "$choice"
-elif echo "$choice" | grep '^mysql' > /dev/null; then
+    pgcli_prompt="$choice_name \u@\H/\d > "
+    pgcli --prompt "$pgcli_prompt" "$choice_connection"
+
+elif echo "$choice_connection" | grep '^mysql' > /dev/null; then
     ! [ -x "$(command -v mycli)" ] && echo 'Could not find mycli.' && exit 1
-    mycli "$choice"
+    mycli_prompt="$choice_name \t \u@\h:\d > "
+    mycli --prompt "$mycli_prompt" "$choice_connection"
+
 else
     echo 'Wrong connection string format.' && exit 1
+
 fi
