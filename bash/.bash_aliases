@@ -107,3 +107,5 @@ alias toroff='sudo systemctl stop tor.service'
 alias et='gio trash --empty'
 
 alias nb='newsboat'
+
+alias get-ranger-maps='get-ranger-maps ~/.config/ranger/bookmark_maps.conf ~/.config/shortcuts ~/.config/shortcuts.local'
