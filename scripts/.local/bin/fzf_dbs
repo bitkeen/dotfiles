@@ -22,7 +22,12 @@ choice="$(FZF_DEFAULT_OPTS="$fzf_opts" fzf < "$conn_file" |
             awk '{$1=""; print substr($0, 2)}')" # Remove the first column.
 [ -z "$choice" ] && exit 1
 
-(
-    ( ( echo "$choice" | grep '^postgresql' ) && pgcli "$choice" ) ||
-    ( ( echo "$choice" | grep '^mysql' ) && mycli "$choice" )
-) || ( echo 'Wrong connection string format.' && exit 1 )
+if echo "$choice" | grep '^postgresql' > /dev/null; then
+    ! [ -x "$(command -v pgcli)" ] && echo 'Could not find pgcli.' && exit 1
+    pgcli "$choice"
+elif echo "$choice" | grep '^mysql' > /dev/null; then
+    ! [ -x "$(command -v mycli)" ] && echo 'Could not find mycli.' && exit 1
+    mycli "$choice"
+else
+    echo 'Wrong connection string format.' && exit 1
+fi
