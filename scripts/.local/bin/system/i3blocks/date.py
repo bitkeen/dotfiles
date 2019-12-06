@@ -27,4 +27,4 @@ if __name__ == '__main__':
     print(strftime(args.format))
 
     if button == '1' and instance:
-        sp.call(instance.split())
+        sp.call(instance, shell=True)
