@@ -41,5 +41,8 @@ syncthing-gtk &
 
 idlelock.sh &
 
+# Set key repeat rate.
+xset r rate 250 40 &
+
 # Start i3.
 exec i3
