@@ -3,4 +3,4 @@ timestamp=0
 if [ -n "$1" ]; then
     timestamp="$1"
 fi
-date -r "$timestamp" -R
+date -d @"$timestamp" --utc
