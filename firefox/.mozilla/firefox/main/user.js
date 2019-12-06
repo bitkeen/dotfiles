@@ -64,3 +64,6 @@ user_pref("extensions.htmlaboutaddons.recommendations.enabled", "false");
 
 // Highlight all search results.
 user_pref("findbar.highlightAll", "true");
+
+// Disable suggestions from history in the address bar.
+user_pref("browser.urlbar.suggest.history", "false");
