@@ -87,9 +87,6 @@ if has('autocmd')
     autocmd BufEnter,WinEnter,FocusGained * setlocal cursorline
     autocmd WinLeave,FocusLost * setlocal nocursorline
 
-    " Use Markdown in calcurse notes.
-    autocmd BufRead,BufNewFile /tmp/calcurse*,~/.calcurse/notes/* set filetype=markdown
-
     " See https://github.com/posva/vim-vue#my-syntax-highlighting-stops-working-randomly.
     autocmd FileType vue syntax sync fromstart
   augroup END
