@@ -89,6 +89,8 @@
     submodulesummary = 1
 [diff]
     tool = vimdiff
+[pull]
+    ff = only
 [push]
     default = current
 [rebase]
