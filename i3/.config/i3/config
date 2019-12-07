@@ -2,9 +2,6 @@
 
 set $mod Mod4
 
-# Paths.
-set $scripts_dir ~/.local/bin/system
-
 # Fonts.
 set $titles_font DejaVu Sans 12
 set $bar_font Droid Sans Mono 14
@@ -83,8 +80,8 @@ bar {
     # Disable mouse wheel switching between workspaces.
     bindsym button4 nop
     bindsym button5 nop
-    bindsym button9 exec --no-startup-id $scripts_dir/pulse_volume.sh increase
-    bindsym button8 exec --no-startup-id $scripts_dir/pulse_volume.sh decrease
+    bindsym button9 exec --no-startup-id pulse_volume.sh increase
+    bindsym button8 exec --no-startup-id pulse_volume.sh decrease
 }
 
 # }}}
@@ -221,11 +218,11 @@ bindsym $mod+Tab workspace back_and_forth
 
 # Pulse Audio volume controls.
 # Increase sound volume.
-bindsym XF86AudioRaiseVolume exec --no-startup-id $scripts_dir/pulse_volume.sh increase
+bindsym XF86AudioRaiseVolume exec --no-startup-id pulse_volume.sh increase
 # Decrease sound volume.
-bindsym XF86AudioLowerVolume exec --no-startup-id $scripts_dir/pulse_volume.sh decrease
+bindsym XF86AudioLowerVolume exec --no-startup-id pulse_volume.sh decrease
 # Mute sound.
-bindsym XF86AudioMute exec --no-startup-id $scripts_dir/pulse_volume.sh mute
+bindsym XF86AudioMute exec --no-startup-id pulse_volume.sh mute
 
 # Sreen brightness controls.
 # Increase screen brightness.
@@ -308,7 +305,7 @@ exec --no-startup-id nm-applet
 
 # Tmux dropdown.
 set $dd_name "tmuxdd"
-bindsym $mod+grave exec --no-startup-id $scripts_dir/i3_tmuxdd.sh $dd_name
+bindsym $mod+grave exec --no-startup-id i3_tmuxdd.sh $dd_name
 # Terminal window with name $dd_name is created in tmuxdd.sh
 for_window [instance=$dd_name] floating enable
 for_window [instance=$dd_name] resize set 1600 900

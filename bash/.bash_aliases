@@ -48,7 +48,7 @@ alias p='pacman'
 # Open ranger.
 # The ranger-cd version switches the directory in bash on exit,
 # r.shell allows to expand shell aliases inside the :shell command.
-alias r='SHELL=~/.local/bin/system/ranger-shell.sh ranger-cd'
+alias r='SHELL=~/.local/bin/ranger-shell.sh ranger-cd'
 
 alias t='tmux'
 alias ta='tmux attach -t'
