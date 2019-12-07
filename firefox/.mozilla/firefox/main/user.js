@@ -70,3 +70,6 @@ user_pref("browser.urlbar.suggest.history", "false");
 
 // Disable IDN.
 user_pref("network.IDN_show_punycode", "true");
+
+// Show bookmark editor popup on saving.
+user_pref("browser.bookmarks.editDialog.showForNewBookmarks", "true");
