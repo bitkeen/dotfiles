@@ -1,0 +1,45 @@
+# Tmux session selection menu.
+super + t
+    dmenu_tmux.sh
+
+# Power menu.
+super + shift + z
+    dmenu_power.sh
+
+# Switch active window.
+super + n
+    simpleswitcher -now
+
+# Screen lock.
+super + shift + x
+    screen_lock.sh
+
+# Toggle screen brightness level.
+super + b
+    toggle_brightness.sh
+
+# Media player controls.
+# Mod+/
+super + slash
+	mpc toggle
+# Mod+.
+super + period
+	mpc next
+# Mod+,
+super + comma
+	mpc_prev_wrapper
+
+# Print screen.
+Print
+    maim -u | tee "$(xdg-user-dir PICTURES)/screenshots/screenshot-$(date +%Y%m%dT%H%M%S).png" | xclip -selection clipboard -t image/png && notify-send "Screenshot captured"
+# Bindings similar to those on MacOS.
+super+control+3
+    maim -u | tee "$(xdg-user-dir PICTURES)/screenshots/screenshot-$(date +%Y%m%dT%H%M%S).png" | xclip -selection clipboard -t image/png && notify-send "Screenshot captured"
+super+control+4
+    maim -u -s | tee "$(xdg-user-dir PICTURES)/screenshots/screenshot-$(date +%Y%m%dT%H%M%S).png" | xclip -selection clipboard -t image/png && notify-send "Screenshot captured"
+
+# Set thumb mouse buttons to raise and lower the volume.
+button9
+    pulse_volume.sh increase
+button8
+    pulse_volume.sh decrease
