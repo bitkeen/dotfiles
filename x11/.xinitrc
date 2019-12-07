@@ -41,6 +41,9 @@ syncthing-gtk &
 
 idlelock.sh &
 
+# Bind keys.
+sxhkd &
+
 # Set key repeat rate.
 xset r rate 250 40 &
 
