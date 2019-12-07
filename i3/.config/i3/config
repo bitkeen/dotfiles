@@ -308,7 +308,7 @@ exec --no-startup-id nm-applet
 
 # Tmux dropdown.
 set $dd_name "tmuxdd"
-bindsym $mod+grave exec --no-startup-id $scripts_dir/tmuxdd.sh $dd_name
+bindsym $mod+grave exec --no-startup-id $scripts_dir/i3_tmuxdd.sh $dd_name
 # Terminal window with name $dd_name is created in tmuxdd.sh
 for_window [instance=$dd_name] floating enable
 for_window [instance=$dd_name] resize set 1600 900
