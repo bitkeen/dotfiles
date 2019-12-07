@@ -68,6 +68,7 @@
       - xcursor-vanilla-dmz # Vanilla DMZ cursor theme
       - xmlstarlet # Command line utilities for XML
       - xorg-server
+      - xorg-xev # Print contents of X events
       - xsecurelock # X11 screen lock utility
       - zathura
       - zathura-djvu
