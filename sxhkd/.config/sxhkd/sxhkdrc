@@ -31,12 +31,12 @@ super + comma
 
 # Print screen.
 Print
-    maim -u | tee "$(xdg-user-dir PICTURES)/screenshots/screenshot-$(date +%Y%m%dT%H%M%S).png" | xclip -selection clipboard -t image/png && notify-send "Screenshot captured"
+    maim -u | tee "$(xdg-user-dir PICTURES)screenshots/screenshot-$(date +%Y%m%dT%H%M%S).png" | xclip -selection clipboard -t image/png && notify-send "Screenshot captured"
 # Bindings similar to those on MacOS.
 super+control+3
-    maim -u | tee "$(xdg-user-dir PICTURES)/screenshots/screenshot-$(date +%Y%m%dT%H%M%S).png" | xclip -selection clipboard -t image/png && notify-send "Screenshot captured"
+    maim -u | tee "$(xdg-user-dir PICTURES)screenshots/screenshot-$(date +%Y%m%dT%H%M%S).png" | xclip -selection clipboard -t image/png && notify-send "Screenshot captured"
 super+control+4
-    maim -u -s | tee "$(xdg-user-dir PICTURES)/screenshots/screenshot-$(date +%Y%m%dT%H%M%S).png" | xclip -selection clipboard -t image/png && notify-send "Screenshot captured"
+    maim -u -s | tee "$(xdg-user-dir PICTURES)screenshots/screenshot-$(date +%Y%m%dT%H%M%S).png" | xclip -selection clipboard -t image/png && notify-send "Screenshot captured"
 
 # Set thumb mouse buttons to raise and lower the volume.
 button9
