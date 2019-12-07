@@ -49,6 +49,7 @@
       - rxvt-unicode
       - shellcheck # Shell script analysis tool
       - stow
+      - sxhkd
       - sxiv # Simple X Image Viewer
       - syncthing # Open Source Continuous Replication / Cluster Synchronization Thing
       - syncthing-gtk # GTK3 based GUI and notification area icon for Syncthing
