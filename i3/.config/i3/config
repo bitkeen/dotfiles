@@ -4,7 +4,6 @@ set $mod Mod4
 
 # Paths.
 set $scripts_dir ~/.local/bin/system
-set $screenshots_dir ~/pictures/screenshots
 
 # Fonts.
 set $titles_font DejaVu Sans 12
@@ -161,14 +160,6 @@ bindsym $mod+Shift+q kill
 # Run with 'sh -c' to find dmenu_configured in $PATH.
 bindsym $mod+d exec --no-startup-id i3-dmenu-desktop --dmenu='sh -c dmenu_configured'
 
-# Tmux session selection menu.
-bindsym $mod+t exec --no-startup-id $scripts_dir/dmenu_tmux.sh
-# Power menu.
-bindsym $mod+Shift+z exec --no-startup-id $scripts_dir/dmenu_power.sh
-
-# Switch active window.
-bindsym $mod+n exec --no-startup-id simpleswitcher -now
-
 # Change focus.
 bindsym $mod+h focus left
 bindsym $mod+j focus down
@@ -228,15 +219,6 @@ bindsym $mod+Shift+n move workspace to output right
 # Enable back and forth switching with a keybinding.
 bindsym $mod+Tab workspace back_and_forth
 
-# Print screen.
-bindsym Print exec --no-startup-id maim -u | tee $screenshots_dir/screenshot-$(date +%Y%m%dT%H%M%S).png | xclip -selection clipboard -t image/png && notify-send "Screenshot captured"
-# Bindings similar to those on MacOS.
-bindsym $mod+Control+3 exec --no-startup-id maim -u | tee $screenshots_dir/screenshot-$(date +%Y%m%dT%H%M%S).png | xclip -selection clipboard -t image/png && notify-send "Screenshot captured"
-bindsym $mod+Control+4 exec --no-startup-id maim -u -s | tee $screenshots_dir/screenshot-$(date +%Y%m%dT%H%M%S).png | xclip -selection clipboard -t image/png && notify-send "Screenshot captured"
-
-# Screen lock.
-bindsym $mod+Shift+x exec --no-startup-id $scripts_dir/screen_lock.sh
-
 # Pulse Audio volume controls.
 # Increase sound volume.
 bindsym XF86AudioRaiseVolume exec --no-startup-id $scripts_dir/pulse_volume.sh increase
@@ -251,26 +233,10 @@ bindsym XF86MonBrightnessUp exec --no-startup-id light -A 5
 # Decrease screen brightness.
 bindsym XF86MonBrightnessDown exec --no-startup-id light -U 5
 
-# Toggle screen brightness level.
-bindsym $mod+b exec --no-startup-id $scripts_dir/toggle_brightness.sh
-
-# Media player controls.
-# Mod+/
-bindsym $mod+question exec --no-startup-id mpc toggle
-# Mod+,
-bindsym $mod+period exec --no-startup-id mpc next
-# Mod+.
-bindsym $mod+comma exec --no-startup-id mpc_prev_wrapper
-# Mod+<
-bindsym $mod+shift+comma exec --no-startup-id mpc seek 0
-
 # Mouse bindings.
 # Disable mouse wheel switching between windows.
 bindsym button4 nop
 bindsym button5 nop
-# Set thumb mouse buttons to raise and lower the volume.
-bindsym --whole-window --border button9 exec --no-startup-id $scripts_dir/pulse_volume.sh increase
-bindsym --whole-window --border button8 exec --no-startup-id $scripts_dir/pulse_volume.sh decrease
 
 # Launch Firefox.
 bindsym $mod+shift+f exec firefox
