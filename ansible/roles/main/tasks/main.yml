@@ -9,6 +9,12 @@
     - { path: .local/bin }
     - { path: .vim }
     - { path: .vim/ultisnips }
+    - { path: documents }
+    - { path: downloads }
+    - { path: downloads/firefox }
+    - { path: pictures }
+    - { path: pictures/screenshots }
+    - { path: sync }
 
 - name: create .dotfiles.local symlink
   file:
