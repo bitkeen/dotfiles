@@ -1,0 +1,4 @@
+#!/bin/sh
+# Get a list of all mounted partitions and pipe it into fzf.
+
+lsblk -l | grep -P -o "/.*" | fzf --height=20% --reverse
