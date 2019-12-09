@@ -71,8 +71,11 @@ ranger-cd() {
     rm -f -- "$tempfile"
 }
 
-# Get a list of all mounted partitions, pipe it to fzf and open the
-# resulting directory in ranger.
-rpart() {
-    ranger "$(lsblk -l | grep -P -o "/.*" | fzf --height=20% --reverse)"
+# Go to a mounted partition's directory.
+rmnt() {
+    ranger-cd "$(fzf_mounted)"
+}
+
+cmnt() {
+    cd "$(fzf_mounted)"
 }
