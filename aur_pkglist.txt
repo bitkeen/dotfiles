@@ -7,6 +7,7 @@ mycli
 nerd-fonts-source-code-pro
 paper-icon-theme
 pgcli
+polybar # A fast and easy-to-use status bar
 ranger-git # 1.9.2 which is in the official repo doesn't support image previews with ueberzug
 scrcpy # Display and control an Android device
 slack-desktop
