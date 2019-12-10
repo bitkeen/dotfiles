@@ -1,0 +1,7 @@
+---
+- name: install python packages
+  become: yes
+  become_user: "{{ user_name }}"
+  pip:
+    extra_args: --user
+    requirements: "{{ role_path }}/files/requirements.txt"
