@@ -7,7 +7,7 @@ Before=suspend.target
 User=%i
 Type=simple
 Environment=DISPLAY=:0
-ExecStart=/usr/bin/bash /home/user/.dotfiles/scripts/.local/bin/system/screen_lock.sh
+ExecStart=/usr/bin/bash /home/user/.dotfiles/scripts/.local/bin/screen_lock.sh
 
 [Install]
 WantedBy=sleep.target
