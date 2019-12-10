@@ -4,7 +4,6 @@ set $mod Mod4
 
 # Fonts.
 set $titles_font DejaVu Sans 12
-set $bar_font Droid Sans Mono 14
 
 # Workspace names.
 # The first number will not be displayed. This is to make the last
@@ -53,36 +52,6 @@ client.urgent           $red    $red    $base07 $black    $red
 client.placeholder      $base03 $base03 $base01 $black    $base03
 
 client.background       $base00
-
-# }}}
-
-# Bar {{{
-
-bar {
-    colors {
-        background $base00
-        statusline $base06
-        separator  $base03
-
-        focused_workspace  $base00 $base05 $base00
-        active_workspace   $base00 $base03 $base01
-        inactive_workspace $base01 $base00 $base03
-        urgent_workspace   $red    $red    $base07
-        binding_mode       $red    $red    $base07
-    }
-
-    position top
-    font pango:$bar_font
-    tray_padding 0px
-    strip_workspace_numbers yes
-    status_command i3blocks -c ~/.config/i3/i3blocks.conf
-
-    # Disable mouse wheel switching between workspaces.
-    bindsym button4 nop
-    bindsym button5 nop
-    bindsym button9 exec --no-startup-id pulse_volume.sh increase
-    bindsym button8 exec --no-startup-id pulse_volume.sh decrease
-}
 
 # }}}
 
@@ -298,6 +267,8 @@ exec --no-startup-id blueman-applet
 exec --no-startup-id keepassxc
 exec --no-startup-id firefox
 exec --no-startup-id nm-applet
+
+exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
 # }}}
 
