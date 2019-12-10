@@ -105,7 +105,8 @@ label-urgent-padding = 2
 type = internal/mpd
 format-online = <label-song> <icon-prev> <toggle> <icon-next>
 
-label-song = %artist% — %title%
+; En dash U+2013
+label-song = %artist% – %title%
 
 icon-prev = 
 icon-play = 
