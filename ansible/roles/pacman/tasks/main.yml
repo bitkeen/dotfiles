@@ -29,6 +29,7 @@
       - ipython
       - jq # Command-line JSON processor
       - keepassxc
+      - libsecret # Needed for storing Git credentials
       - libxml2 # XML parsing library, version 2, contains xmllint but is usually installed as a dependency for other packages
       - light # A program to control backlight controllers
       - maim # Utility to take a screenshot
@@ -42,6 +43,7 @@
       - neofetch
       - network-manager-applet
       - ntfs-3g
+      - openbsd-netcat # TCP/IP swiss army knife
       - pulsemixer # CLI and curses mixer for pulseaudio
       - python-virtualenvwrapper
       - redshift # Set color temperature of display according to time of day
