@@ -101,3 +101,5 @@
     colorMoved = zebra
 [url "https://github.com"]
     insteadOf = gh://
+[credential]
+	helper = /usr/lib/git-core/git-credential-libsecret
