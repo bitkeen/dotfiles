@@ -821,6 +821,8 @@ noremap! <C-r>; <C-r>:
 nnoremap <Silent> <LocalLeader>ss :%sort i<CR>
 vnoremap <Silent> <LocalLeader>ss :sort i<CR>
 
+nnoremap gss :echo system("stat " . shellescape(expand('%:p')) . "<bar> sed -n 4p")<CR>
+
 " }}}
 
 " Plugin mappings {{{
