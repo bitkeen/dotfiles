@@ -1,5 +1,7 @@
 [include]
     path = ~/.gitconfig.local
+[advice]
+	detachedHead = false
 [alias]
     a = add
     aa = add --all
@@ -85,20 +87,17 @@
     whitespace = true
 [color "status"]
     untracked = yellow
-[status]
-    submodulesummary = 1
 [diff]
     tool = vimdiff
+    colorMoved = zebra
 [pull]
     ff = only
 [push]
     default = current
 [rebase]
 	autosquash = true
-[advice]
-	detachedHead = false
-[diff]
-    colorMoved = zebra
+[status]
+    submodulesummary = 1
 [url "https://github.com"]
     insteadOf = gh://
 [credential]
