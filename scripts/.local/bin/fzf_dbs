@@ -19,7 +19,9 @@ conn_file="$1"
 
 fzf_opts="--reverse --height 40% $FZF_DEFAULT_OPTS"
 
-choice="$(FZF_DEFAULT_OPTS="$fzf_opts" fzf < "$conn_file")"
+# Delete the comments first.
+choice="$(sed -e "/^#/d" -e "s/ \?\#.*//" "$conn_file" \
+          | FZF_DEFAULT_OPTS="$fzf_opts" fzf)"
 
 [ -z "$choice" ] && exit 1
 
