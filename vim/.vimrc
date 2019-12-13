@@ -226,6 +226,10 @@ set incsearch
 " Make search case-insensitive.
 set ignorecase
 
+" Override the 'ignorecase' option if the search pattern contains upper
+" case characters.
+set smartcase
+
 " Don't insert two spaces after '.', '?' and '!' for join command.
 set nojoinspaces
 
