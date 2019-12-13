@@ -1,0 +1,36 @@
+---
+- name: stow the dotfiles
+  command:
+    cmd: "stow {{ item.dir }}"
+    chdir: "{{ dotfiles_home }}"
+  loop:
+    - { dir: bash }
+    - { dir: compton }
+    - { dir: dunst }
+    - { dir: firefox }
+    - { dir: git }
+    - { dir: gtk-3.0 }
+    - { dir: guvcview }
+    - { dir: i3 }
+    - { dir: ipython }
+    - { dir: mpd }
+    - { dir: mpv }
+    - { dir: mycli }
+    - { dir: ncmpcpp }
+    - { dir: newsboat }
+    - { dir: pgcli }
+    - { dir: polybar }
+    - { dir: pylint }
+    - { dir: ranger }
+    - { dir: readline }
+    - { dir: redshift }
+    - { dir: rg }
+    - { dir: scripts }
+    - { dir: sxhkd }
+    - { dir: sxiv }
+    - { dir: tmux }
+    - { dir: vim }
+    - { dir: x11 }
+    - { dir: xdg-user-dirs }
+    - { dir: youtube-dl }
+    - { dir: zathura }
