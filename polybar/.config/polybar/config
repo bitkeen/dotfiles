@@ -57,6 +57,7 @@ label-indicator-underline = ${colors.secondary}
 type = internal/i3
 format = <label-state> <label-mode>
 index-sort = true
+pin-workspaces = true
 
 label-mode-padding = 2
 label-mode-foreground = #000
