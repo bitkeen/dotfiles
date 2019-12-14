@@ -4,9 +4,12 @@
     name:
       - adobe-source-sans-pro-fonts
       - adobe-source-serif-pro-fonts
-      - android-tools # Required for scrcpy (from AUR).
+      - android-tools # Required for scrcpy (from AUR)
       - anki
       - arandr # Xrandr front-end
+      - bluez # Daemons for the bluetooth protocol stack
+      - bluez-utils # Provides the bluetoothctl utility
+      - blueman # Graphical bluetooth manager
       - picom # A compositor for X11, required for transparency
       - ctags # Universal ctags
       - dbeaver
@@ -19,7 +22,8 @@
       - feh # Image viewer, currently only used to set backgrounds with .fehbg script
       - firefox
       - fzf
-      - gnome-themes-extra # Contains Adwaita theme.
+      - gnome-keyring # Stores passwords and encryption keys
+      - gnome-themes-extra # Contains Adwaita theme
       - gvim
       - gimp
       - guvcview # Webcam capturing interface
@@ -49,6 +53,7 @@
       - redshift # Set color temperature of display according to time of day
       - ripgrep
       - rxvt-unicode
+      - seahorse # GNOME application for managing PGP keys
       - shellcheck # Shell script analysis tool
       - stow
       - sxhkd
