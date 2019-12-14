@@ -1,12 +1,19 @@
 ## Dotfiles
-I use GNU Stow to create symlinks for my dotfiles.
 
-The repository should be cloned to `~/.dotfiles`.
+My local machine setup and dotfiles are managed with Ansible.
+Symlinks to the directories are created by running GNU Stow in it.
 
-Example: to setup Vim, simply run `stow vim` inside.
+To learn which components are going to be installed and configured, see the playbook (`ansible/arch.yml`).
 
-#### Python packages
-Packages that I want to have installed on my machines
-are in the `requirements.txt` file.
+To set up the system from a blank slate with these configs, first install git, then clone the repository:
+```
+if ! [ -x "$(command -v git)" ]; then
+    sudo pacman -S git
+fi
+git clone https://github.com/bitkeen/dotfiles ~/.dotfiles
+```
 
-Install with `pip install --user -r requirements.txt`.
+After that, run the bootstrapping script:
+```
+~/.dotfiles/ansible/bootstrap
+```
