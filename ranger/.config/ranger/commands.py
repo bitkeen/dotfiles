@@ -123,3 +123,21 @@ class fzf_select(Command):
                 self.fm.cd(fzf_file)
             else:
                 self.fm.select_file(fzf_file)
+
+
+class fzf_mounted(Command):
+    """
+    :fzf_mounted
+
+    Go to a mounted partition chosen with fzf.
+    """
+    def execute(self):
+        command="fzf_mounted"
+
+        fzf = self.fm.execute_command(command,
+                                      universal_newlines=True,
+                                      stdout=subprocess.PIPE)
+        stdout, stderr = fzf.communicate()
+        if fzf.returncode == 0:
+            fzf_dir = os.path.abspath(stdout.rstrip('\n'))
+            self.fm.cd(fzf_dir)
