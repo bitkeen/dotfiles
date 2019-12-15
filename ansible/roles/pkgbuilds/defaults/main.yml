@@ -1,0 +1,2 @@
+---
+pkgbuilds_dir: '{{ user_home }}/documents/projects/public/pkgbuilds'

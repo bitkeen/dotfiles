@@ -1,0 +1,19 @@
+---
+- name: clone pkgbuilds repository
+  become: yes
+  become_user: "{{ user_name }}"
+  git:
+    repo: 'https://github.com/bitkeen/pkgbuilds.git'
+    dest: '{{ pkgbuilds_dir }}'
+
+- name: get the directory names
+  command: ls '{{ pkgbuilds_dir }}'
+  register: dirs
+
+- name: make and install packages
+  become: yes
+  become_user: "{{ user_name }}"
+  command:
+    cmd: makepkg -si --noconfirm
+    chdir: '{{ pkgbuilds_dir }}/{{ item }}'
+  loop: '{{ dirs.stdout_lines }}'
