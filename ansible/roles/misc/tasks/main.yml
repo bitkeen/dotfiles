@@ -21,3 +21,20 @@
     src: '{{ user_home }}/.dotfiles.local'
     dest: '{{ dotfiles_home }}/.dotfiles.local'
     state: link
+
+# https://wiki.archlinux.org/index.php/GNOME/Keyring#PAM_method
+- name: configure PAM for GNOME Keyring
+  lineinfile:
+    path: /etc/pam.d/login
+    line: '{{ item.line }}'
+    regexp: '{{ item.line }}'
+    insertafter: '{{ item.pattern }}'
+  loop:
+    - {
+      line: 'auth       optional     pam_gnome_keyring.so',
+      pattern: '^auth'
+    }
+    - {
+      line: 'session    optional     pam_gnome_keyring.so auto_start',
+      pattern: '^session'
+    }
