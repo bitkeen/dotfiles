@@ -37,7 +37,11 @@ dunst &
 unclutter &
 
 # Needed for Syncthing tray icon.
-syncthing-gtk &
+syncthing-gtk --minimized &
+
+nm-applet &
+
+blueman-applet &
 
 idlelock.sh &
 

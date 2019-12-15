@@ -255,10 +255,8 @@ for_window [class="VirtualBox"] focus
 
 # Startup applications {{{
 
-exec --no-startup-id blueman-applet
 exec --no-startup-id keepassxc
 exec --no-startup-id firefox
-exec --no-startup-id nm-applet
 
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
