@@ -7,13 +7,13 @@
       - android-tools # Required for scrcpy (from AUR)
       - anki
       - arandr # Xrandr front-end
+      - asp # Arch Linux build source file management tool
       - bluez # Daemons for the bluetooth protocol stack
       - bluez-utils # Provides the bluetoothctl utility
       - blueman # Graphical bluetooth manager
       - picom # A compositor for X11, required for transparency
       - ctags # Universal ctags
       - dbeaver
-      - dmenu
       - docker
       - docker-compose
       - dunst # A customizable and lightweight notification-daemon
