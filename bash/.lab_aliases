@@ -9,6 +9,8 @@ lab_alias() {
         mrca)
             # -a - set assignee
             cmd="mr create -d -a";;
+        mrco)
+            cmd="mr checkout";;
         mrls)
             cmd="mr list";;
         *)
