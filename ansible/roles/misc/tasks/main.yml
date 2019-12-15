@@ -38,3 +38,8 @@
       line: 'session    optional     pam_gnome_keyring.so auto_start',
       pattern: '^session'
     }
+
+- name: get submodules
+  command:
+    cmd: git submodule update --init --recursive
+    chdir: "{{ dotfiles_home }}"
