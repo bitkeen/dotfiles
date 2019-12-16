@@ -68,6 +68,8 @@
       - tor
       - torsocks # Wrapper to safely torify applications
       - transmission-gtk
+      - udiskie
+      - udisks2
       - unclutter # A small program for hiding the mouse cursor
       - urxvt-perls
       - virtualbox
