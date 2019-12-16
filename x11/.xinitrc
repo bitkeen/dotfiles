@@ -37,7 +37,7 @@ dunst &
 unclutter &
 
 # Needed for Syncthing tray icon.
-syncthing-gtk --minimized &
+XDG_CURRENT_DESKTOP='i3' syncthing-gtk --minimized &
 
 nm-applet &
 
