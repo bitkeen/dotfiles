@@ -1,14 +1,16 @@
 ; vim:ft=dosini
 [colors]
-;background = ${xrdb:color0:#222}
 background = #222
 background-alt = #444
-;foreground = ${xrdb:color7:#222}
 foreground = #dfdfdf
-foreground-alt = #555
-primary = #d8d8d8
-secondary = #7cafc2
 alert = #bd2c40
+
+bright-white = #f8f8f8
+cyan = #86c1b9
+green = #a1b56c
+orange = #dc9656
+white = #d8d8d8
+yellow = #f7ca88
 
 
 [bar/main]
@@ -41,12 +43,6 @@ tray-padding = 2
 cursor-click = pointer
 
 
-[module/xkeyboard]
-type = internal/xkeyboard
-label-layout = %layout%
-label-layout-underline = #f7ca88
-
-
 [module/i3]
 type = internal/i3
 format = <label-state> <label-mode>
@@ -56,28 +52,35 @@ strip-wsnumbers = true
 
 label-mode-padding = 2
 label-mode-foreground = #000
-label-mode-background = ${colors.primary}
+label-mode-background = ${colors.white}
 
 ; focused = Active workspace on focused monitor
 label-focused = %name%
+label-focused-foreground = ${colors.bright-white}
 label-focused-background = ${colors.background-alt}
-label-focused-underline= ${colors.primary}
+label-focused-underline= ${colors.bright-white}
 label-focused-padding = 3
-
-; unfocused = Inactive workspace on any monitor
-label-unfocused = %name%
-label-unfocused-padding = 3
 
 ; visible = Active workspace on unfocused monitor
 label-visible = %name%
+label-visible-foreground = ${colors.bright-white}
 label-visible-background = ${self.label-focused-background}
-label-visible-underline = ${self.label-focused-underline}
 label-visible-padding = ${self.label-focused-padding}
+
+; unfocused = Inactive workspace on any monitor
+label-unfocused = %name%
+label-unfocused-padding = ${self.label-focused-padding}
 
 ; urgent = Workspace with urgency hint set
 label-urgent = %name%
 label-urgent-background = ${colors.alert}
-label-urgent-padding = 3
+label-urgent-padding = ${self.label-focused-padding}
+
+
+[module/xkeyboard]
+type = internal/xkeyboard
+label-layout = %layout%
+label-layout-underline = ${colors.yellow}
 
 
 [module/mpd]
@@ -102,17 +105,11 @@ interface = wlp2s0
 interval = 3.0
 
 format-connected = <ramp-signal> <label-connected>
-format-connected-underline = #86c1b9
+format-connected-underline = ${colors.cyan}
 label-connected = %essid%
 
-format-disconnected =
-;format-disconnected = <label-disconnected>
-;format-disconnected-underline = ${self.format-connected-underline}
-;label-disconnected = %ifname% disconnected
-;label-disconnected-foreground = ${colors.foreground-alt}
-
 ramp-signal-0 = 
-ramp-signal-foreground = ${colors.foreground-alt}
+ramp-signal-foreground = ${colors.foreground}
 
 
 [module/date]
@@ -122,7 +119,7 @@ max_width = 20
 date = "%a, %b %d"
 time = %H:%M
 label = %date% %time%
-format-underline = #d8d8d8
+format-underline = ${colors.white}
 
 
 [module/pulseaudio]
@@ -131,7 +128,7 @@ format-volume = <label-volume>
 label-volume =  %percentage%%
 label-volume-foreground = ${root.foreground}
 label-muted =  muted
-label-muted-foreground = #666
+label-muted-foreground = ${colors.foreground}
 
 
 [module/battery]
@@ -141,13 +138,13 @@ adapter = ADP1
 full-at = 98
 
 format-charging = <animation-charging> <label-charging>
-format-charging-underline = #a1b56c
+format-charging-underline = ${colors.green}
 
 format-discharging = <ramp-capacity> <label-discharging>
-format-discharging-underline = #dc9656
+format-discharging-underline = ${colors.orange}
 
 format-full-prefix = " "
-format-full-prefix-foreground = ${colors.foreground-alt}
+format-full-prefix-foreground = ${colors.foreground}
 format-full-underline = ${self.format-charging-underline}
 
 ramp-capacity-0 = 
@@ -155,10 +152,10 @@ ramp-capacity-1 = 
 ramp-capacity-2 = 
 ramp-capacity-3 = 
 ramp-capacity-4 = 
-ramp-capacity-foreground = ${colors.foreground-alt}
+ramp-capacity-foreground = ${colors.foreground}
 
 animation-charging-0 = 
-animation-charging-foreground = ${colors.foreground-alt}
+animation-charging-foreground = ${colors.foreground}
 
 
 [module/dmenu_power]
