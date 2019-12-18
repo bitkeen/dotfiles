@@ -49,6 +49,7 @@ format = <label-state> <label-mode>
 index-sort = true
 pin-workspaces = true
 strip-wsnumbers = true
+enable-scroll = false
 
 label-mode-padding = 2
 label-mode-foreground = #000
