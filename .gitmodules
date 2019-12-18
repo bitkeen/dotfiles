@@ -280,3 +280,6 @@
 [submodule "vim-sxhkdrc"]
 	path = vim/.vim/pack/bundle/opt/vim-sxhkdrc
 	url = https://github.com/baskerville/vim-sxhkdrc
+[submodule "tmux-path-extractor"]
+	path = tmux/.tmux/plugins/tmux-path-extractor
+	url = https://github.com/bitkeen/tmux-path-extractor
