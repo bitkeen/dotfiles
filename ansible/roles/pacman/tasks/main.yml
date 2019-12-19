@@ -28,7 +28,6 @@
       - gimp
       - guvcview # Webcam capturing interface
       - i3-wm
-      - i3blocks
       - imagemagick # An image viewing/manipulation program
       - ipython
       - jq # Command-line JSON processor
