@@ -14,3 +14,4 @@ slack-desktop
 tor-browser
 xidlehook # xautolock rewrite in Rust, with a few extra features
 xkb-switch # Program that allows to query and change the XKB layout state
+path-extractor # A unix filter which outputs the filepaths found in stdin
