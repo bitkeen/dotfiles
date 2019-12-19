@@ -151,7 +151,6 @@ if has('packages')
   packadd! todo.txt-vim
   packadd! undoquit.vim
   packadd! vim-abolish
-  packadd! vim-arpeggio
   packadd! vim-auto-save
   packadd! vim-characterize
   packadd! vim-closer
@@ -599,9 +598,6 @@ let g:pydoc_highlight = 0
 
 autocmd plugins FileType todo :AutoSaveToggle
 
-" vim-arpeggio - key mappings for simultaneously pressed keys
-let g:arpeggio_timeoutlen=20
-
 " }}}
 
 " Mappings {{{
@@ -996,15 +992,6 @@ nnoremap [l :Linediff<CR>
 nnoremap ]l :LinediffReset<CR>
 vnoremap [l :Linediff<CR>
 vnoremap ]l :LinediffReset<CR>
-
-" vim-arpeggio - key mappings for simultaneously pressed keys
-autocmd plugins FileType python call arpeggio#map('i', '', 0, '<Space>r', 'return ')
-autocmd plugins FileType python call arpeggio#map('i', '', 0, '<Space>d', 'def ')
-autocmd plugins FileType python call arpeggio#map('i', '', 0, '<Space>c', 'class ')
-autocmd plugins FileType python call arpeggio#map('i', '', 0, '<Space>i', 'import ')
-autocmd plugins FileType python call arpeggio#map('i', '', 0, '<Space>t', 'True')
-autocmd plugins FileType python call arpeggio#map('i', '', 0, '<Space>f', 'False')
-autocmd plugins FileType python call arpeggio#map('i', '', 0, '<Space>n', 'None')
 
 " targets.vim - additional text objects
 " Include angle brackets in the "b" mapping.
