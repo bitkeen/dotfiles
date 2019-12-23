@@ -81,7 +81,6 @@ label-urgent-padding = ${self.label-focused-padding}
 [module/xkeyboard]
 type = internal/xkeyboard
 label-layout = %layout%
-label-layout-underline = ${colors.yellow}
 
 
 [module/mpd]
@@ -106,7 +105,6 @@ interface = wlp2s0
 interval = 3.0
 
 format-connected = <ramp-signal> <label-connected>
-format-connected-underline = ${colors.cyan}
 label-connected = %essid%
 
 ramp-signal-0 = 
@@ -120,7 +118,6 @@ max_width = 20
 date = "%a, %b %d"
 time = %H:%M
 label = %date% %time%
-format-underline = ${colors.white}
 
 
 [module/pulseaudio]
@@ -139,14 +136,11 @@ adapter = ADP1
 full-at = 98
 
 format-charging = <animation-charging> <label-charging>
-format-charging-underline = ${colors.green}
 
 format-discharging = <ramp-capacity> <label-discharging>
-format-discharging-underline = ${colors.orange}
 
 format-full-prefix = " "
 format-full-prefix-foreground = ${colors.foreground}
-format-full-underline = ${self.format-charging-underline}
 
 ramp-capacity-0 = 
 ramp-capacity-1 = 
