@@ -7,6 +7,7 @@
       - android-tools # Required for scrcpy (from AUR)
       - anki
       - arandr # Xrandr front-end
+      - atool # A script for managing file archives of various types
       - asp # Arch Linux build source file management tool
       - bluez # Daemons for the bluetooth protocol stack
       - bluez-utils # Provides the bluetoothctl utility
@@ -24,6 +25,8 @@
       - fzf
       - gnome-keyring # Stores passwords and encryption keys
       - gnome-themes-extra # Contains Adwaita theme
+      - gst-plugins-good # GStreamer open-source multimedia framework good plugins
+      - gst-plugins-ugly # GStreamer open-source multimedia framework ugly plugins
       - gvim
       - gimp
       - guvcview # Webcam capturing interface
@@ -44,6 +47,8 @@
       - ncdu # NCurses Disk Usage
       - ncmpcpp
       - neofetch
+      - networkmanager
+      - networkmanager-openvpn
       - network-manager-applet
       - ntfs-3g
       - openbsd-netcat # TCP/IP swiss army knife
@@ -70,6 +75,7 @@
       - udiskie
       - udisks2
       - unclutter # A small program for hiding the mouse cursor
+      - unzip # For extracting and viewing files in .zip archives
       - urxvt-perls
       - virtualbox
       - virtualbox-guest-iso # Guest Additions CD image
@@ -78,7 +84,9 @@
       - xmlstarlet # Command line utilities for XML
       - xorg-server
       - xorg-xev # Print contents of X events
+      - xorg-xprop # Property displayer for X
       - xsecurelock # X11 screen lock utility
       - zathura
       - zathura-djvu
       - zathura-pdf-mupdf
+      - zip # Compressor/archiver for creating and modifying zipfiles
