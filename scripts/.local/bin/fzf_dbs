@@ -25,23 +25,22 @@ choice="$(sed -e "/^#/d" -e "s/ \?\#.*//" "$conn_file" \
 
 [ -z "$choice" ] && exit 1
 
+# If running in tmux, save the previous window name.
+[ -z "$TMUX" ] || current_window_name="$(tmux display-message -p '#W')"
+
 choice_name="$(echo "$choice" | awk '{print $1}')"
 choice_connection="$(echo "$choice" | awk '{$1=""; print substr($0, 2)}')"
 
 if echo "$choice_connection" | grep '^postgresql' > /dev/null; then
     ! [ -x "$(command -v pgcli)" ] && echo 'Could not find pgcli.' && exit 1
     pgcli_prompt="$choice_name \u@\H/\d > "
-    [ -z "$TMUX" ] ||
-        (current_window_name="$(tmux display-message -p '#W')";
-            tmux rename-window 'pgcli')
+    [ -z "$TMUX" ] || tmux rename-window 'pgcli'
     pgcli --prompt "$pgcli_prompt" "$choice_connection"
 
 elif echo "$choice_connection" | grep '^mysql' > /dev/null; then
     ! [ -x "$(command -v mycli)" ] && echo 'Could not find mycli.' && exit 1
     mycli_prompt="$choice_name \t \u@\h:\d > "
-    [ -z "$TMUX" ] ||
-        (current_window_name="$(tmux display-message -p '#W')";
-            tmux rename-window 'mycli')
+    [ -z "$TMUX" ] || tmux rename-window 'mycli'
     mycli --prompt "$mycli_prompt" "$choice_connection"
 
 else
