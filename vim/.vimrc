@@ -630,8 +630,8 @@ vnoremap gk k
 " the cursor to the end of the line, similar to C or D.
 nnoremap Y y$
 
-nnoremap yp :let @+ = expand('%:t') \| echo 'Yanked "' . @0 . '"'<CR>
-nnoremap yP :let @+ = expand('%:p') \| echo 'Yanked "' . @0 . '"'<CR>
+nnoremap yp :let @+ = expand('%:t') \| echo 'Yanked "' . @+ . '"'<CR>
+nnoremap yP :let @+ = expand('%:p') \| echo 'Yanked "' . @+ . '"'<CR>
 
 " Write with sudo.
 " See https://stackoverflow.com/a/7078429.
