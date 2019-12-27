@@ -53,6 +53,7 @@
       - ntfs-3g
       - openbsd-netcat # TCP/IP swiss army knife
       - pulsemixer # CLI and curses mixer for pulseaudio
+      - python-pip
       - python-virtualenvwrapper
       - redshift # Set color temperature of display according to time of day
       - ripgrep
