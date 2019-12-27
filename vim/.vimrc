@@ -930,7 +930,7 @@ nnoremap <Leader><C-w> :SudoWrite<CR>
 
 " vim-obsession
 " Toggle.
-nnoremap <Leader><C-o> :Obsess!<CR>
+nnoremap gso :Obsess!<CR>
 
 let g:ranger_map_keys = 0
 noremap <LocalLeader>f :Ranger<CR>
