@@ -240,7 +240,7 @@ floating_modifier $mod
 
 assign [class="Anki"] $workspace5
 assign [class="firefox"] $workspace1
-assign [class="keepassxc"] $workspace10
+assign [class="KeePassXC"] $workspace10
 assign [class="VirtualBox"] $workspace7
 
 # Enable floating mode.
