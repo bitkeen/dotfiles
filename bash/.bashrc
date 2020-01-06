@@ -3,6 +3,9 @@
 # Enable autocd for bash versions greater than 4.
 [ "${BASH_VERSINFO[0]}" -ge 4 ] && shopt -s autocd
 
+# Enable extended pattern matching features.
+shopt -s extglob
+
 # Even though vi-mode is already set through readline configuration,
 # still need to set it here for fzf default bindings to work.
 set -o vi
