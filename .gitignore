@@ -15,3 +15,5 @@ ipython/.ipython/profile_default/startup/*
 !ipython/.ipython/profile_default/startup/*.py
 
 ranger/.config/ranger/bookmark_maps.conf
+
+mpv/.config/mpv/watch_later/
