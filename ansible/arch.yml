@@ -14,3 +14,8 @@
     - dotfiles_home: "{{ user_home }}/.dotfiles"
     - user_name: user
     - user_group: user
+
+- name: import local playbook
+  import_playbook: "{{ user_home }}/.dotfiles.local/ansible/arch.yml"
+  vars:
+    user_home: "{{ '~' | expanduser }}"
