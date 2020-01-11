@@ -1,0 +1,5 @@
+---
+- name: set default machine folder
+  command: "vboxmanage setproperty machinefolder {{ user_home }}/vm"
+  become: yes
+  become_user: "{{ user_name }}"

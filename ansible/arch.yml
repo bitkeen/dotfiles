@@ -9,6 +9,7 @@
     - python
     - stow
     - pkgbuilds
+    - virtualbox
   vars:
     - user_home: "{{ '~' | expanduser }}"
     - dotfiles_home: "{{ user_home }}/.dotfiles"
