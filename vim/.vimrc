@@ -347,6 +347,9 @@ let g:netrw_home = '~/.vim/tmp'
 " Enable basic fzf plugin.
 set rtp+=/usr/bin/fzf
 
+" Highlight the text line without line number.
+set cursorlineopt=line
+
 " }}}
 
 " Plugin configuration {{{
