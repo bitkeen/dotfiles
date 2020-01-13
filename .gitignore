@@ -17,3 +17,5 @@ ipython/.ipython/profile_default/startup/*
 ranger/.config/ranger/bookmark_maps.conf
 
 mpv/.config/mpv/watch_later/
+
+ncmpcpp/.config/ncmpcpp/error.log
