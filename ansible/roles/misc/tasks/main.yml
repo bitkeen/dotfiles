@@ -11,6 +11,7 @@
     - { path: .vim/ultisnips }
     - { path: documents }
     - { path: downloads }
+    - { path: downloads/bandcamp-dl }
     - { path: downloads/firefox }
     - { path: pictures }
     - { path: pictures/screenshots }
