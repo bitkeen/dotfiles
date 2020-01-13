@@ -4,6 +4,10 @@
     src: 'lock@.service'
     dest: '/etc/systemd/system/lock@.service'
 
+- name: reload units
+  systemd:
+    daemon_reload: yes
+
 - name: enable screen lock service
   systemd:
     name: lock@user
