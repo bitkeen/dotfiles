@@ -1,0 +1,16 @@
+#!/bin/sh
+# Enter a shell inside a running Docker container.
+# .docker_aliases script is required.
+# Docker commands are different from the default here.
+
+. ~/.dotfiles/bash/.docker_aliases
+
+fzf_opts="--reverse --height 40% $FZF_DEFAULT_OPTS"
+
+choice="$(docker ps |
+    awk 'NR>1 {print $3}' |
+    FZF_DEFAULT_OPTS="$fzf_opts" fzf)"
+
+[ -z "$choice" ] && exit 1
+
+docker ex "$choice"
