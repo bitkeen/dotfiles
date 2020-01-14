@@ -537,6 +537,10 @@ def_key "G"
   move_end
 def_key "g"
   move_home
+def_key "ctrl-e"
+  scroll_down
+def_key "ctrl-y"
+  scroll_up
 
 def_key "n"
   next_found_item
@@ -561,5 +565,5 @@ def_key "0"
 def_key "y"
   dummy
 
-def_key "ctrl-y"
+def_key "ctrl-o"
   toggle_single
