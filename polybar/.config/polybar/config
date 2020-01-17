@@ -33,9 +33,10 @@ module-margin-right = 2
 
 font-0 = DejaVu Sans:size=13;3
 font-1 = SauceCodePro Nerd Font Mono:size=15;5
+font-2 = Font Awesome 5 Brands Regular:size=11;5
 
 modules-left = i3
-modules-right = mpd pulseaudio wlan xkeyboard battery date dmenu_power
+modules-right = docker mpd pulseaudio wlan xkeyboard battery date dmenu_power
 
 tray-position = right
 tray-padding = 2
@@ -157,6 +158,16 @@ animation-charging-foreground = ${colors.foreground}
 type = custom/text
 content = 
 click-left = dmenu_power.sh
+
+
+[module/docker]
+type = custom/script
+exec = 'docker' ps -aq | wc -l
+; Only show if there are no containers.
+exec-if = [ "$(docker ps -a | wc -l)" != "1" ]
+label = %output%
+format-prefix = " "
+interval = 5
 
 
 [settings]
