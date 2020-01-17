@@ -73,6 +73,7 @@
       - tor
       - torsocks # Wrapper to safely torify applications
       - transmission-gtk
+      - ttf-font-awesome # Iconic font
       - udiskie
       - udisks2
       - unclutter # A small program for hiding the mouse cursor
