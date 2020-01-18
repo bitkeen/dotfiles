@@ -52,6 +52,7 @@
       - network-manager-applet
       - ntfs-3g
       - openbsd-netcat # TCP/IP swiss army knife
+      - pacman-contrib # Contributed scripts and tools for pacman systems
       - pulsemixer # CLI and curses mixer for pulseaudio
       - python-pip
       - python-virtualenvwrapper
