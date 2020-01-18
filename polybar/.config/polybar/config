@@ -163,8 +163,8 @@ click-left = dmenu_power.sh
 [module/docker]
 type = custom/script
 exec = 'docker' ps -aq | wc -l
-; Only show if there are no containers.
-exec-if = [ "$(docker ps -a | wc -l)" != "1" ]
+; Only show if docker daemon is running and there are containers.
+exec-if = docker ps && [ "$(docker ps -a | wc -l)" != "1" ]
 label = %output%
 format-prefix = " "
 interval = 5
