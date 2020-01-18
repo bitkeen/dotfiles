@@ -12,3 +12,9 @@
   systemd:
     name: lock@user
     enabled: yes
+
+- name: enable and start paccache.timer to discard unused packages weekly
+  systemd:
+    name: paccache.timer
+    enabled: yes
+    state: started
