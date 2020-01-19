@@ -47,6 +47,12 @@
     line: '        <defaultFolderPath>~/sync</defaultFolderPath>'
     regexp: '<defaultFolderPath>.*</defaultFolderPath>'
 
+- name: configure pacman
+  lineinfile:
+    path: '/etc/pacman.conf'
+    line: 'VerbosePkgLists'
+    regexp: '^#[ ]?VerbosePkgLists$'
+
 - name: get submodules
   become: yes
   become_user: "{{ user_name }}"
