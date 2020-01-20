@@ -98,7 +98,7 @@
 	autosquash = true
 [status]
     submodulesummary = 1
-[url "https://github.com"]
+[url "https://github.com/"]
     insteadOf = gh://
 [credential]
 	helper = /usr/lib/git-core/git-credential-libsecret
