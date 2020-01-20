@@ -73,3 +73,6 @@ user_pref("network.IDN_show_punycode", "true");
 
 // Show bookmark editor popup on saving.
 user_pref("browser.bookmarks.editDialog.showForNewBookmarks", "true");
+
+// Set max cache capacity to 10GiB (the default is 1GiB).
+user_pref("browser.cache.disk.capacity", "10485760")
