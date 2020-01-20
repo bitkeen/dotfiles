@@ -90,7 +90,7 @@ if has('autocmd')
     " See https://github.com/posva/vim-vue#my-syntax-highlighting-stops-working-randomly.
     autocmd FileType vue syntax sync fromstart
 
-    " Update binds when sxhkdrc is updated.
+    " Reload binds when sxhkdrc is updated.
     autocmd BufWritePost *sxhkdrc silent !pkill -USR1 sxhkd
   augroup END
 
