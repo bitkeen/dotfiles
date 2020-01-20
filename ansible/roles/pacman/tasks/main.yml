@@ -9,6 +9,7 @@
       - arandr # Xrandr front-end
       - atool # A script for managing file archives of various types
       - asp # Arch Linux build source file management tool
+      - base-devel
       - bluez # Daemons for the bluetooth protocol stack
       - bluez-utils # Provides the bluetoothctl utility
       - blueman # Graphical bluetooth manager
@@ -38,6 +39,7 @@
       - libsecret # Needed for storing Git credentials
       - libxml2 # XML parsing library, version 2, contains xmllint but is usually installed as a dependency for other packages
       - light # A program to control backlight controllers
+      - lxappearance # Feature-rich GTK+ theme switcher of the LXDE Desktop
       - maim # Utility to take a screenshot
       - man-pages # Linux man pages
       - mediainfo # Supplies technical and tag information about a video or audio file (CLI interface), currently used for audio file previews in ranger
@@ -50,6 +52,7 @@
       - networkmanager
       - networkmanager-openvpn
       - network-manager-applet
+      - newsboat
       - ntfs-3g
       - openbsd-netcat # TCP/IP swiss army knife
       - pacman-contrib # Contributed scripts and tools for pacman systems
@@ -58,9 +61,11 @@
       - python-virtualenvwrapper
       - redshift # Set color temperature of display according to time of day
       - ripgrep
+      - simplescreenrecorder
       - rxvt-unicode
       - seahorse # GNOME application for managing PGP keys
       - shellcheck # Shell script analysis tool
+      - solaar # Device manager for Logitech's Unifying receiver peripherals
       - stow
       - sxhkd
       - sxiv # Simple X Image Viewer
