@@ -256,8 +256,8 @@ for_window [class="VirtualBox"] focus
 
 # Startup applications {{{
 
-exec --no-startup-id keepassxc
-exec --no-startup-id firefox
+exec keepassxc
+exec firefox
 
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
