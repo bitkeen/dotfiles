@@ -28,6 +28,8 @@ _source_if_exists "$HOME/.config/bash/bash_functions"
 _source_if_exists "$HOME/.config/bash/bash_aliases.local"
 # Add docker aliases.
 _source_if_exists "$HOME/.config/bash/docker_aliases"
+# Add git aliases.
+_source_if_exists "$HOME/.config/bash/git_aliases"
 # Add lab aliases.
 _source_if_exists "$HOME/.config/bash/lab_aliases"
 # }}}

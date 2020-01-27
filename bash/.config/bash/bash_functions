@@ -14,28 +14,6 @@ u() {
     cd "$dir"
 }
 
-# Change working directory to the git root if the current working
-# directory is inside of a git repository.
-groot() {
-    git status > /dev/null 2>&1 || return 1
-    cd "$(git rev-parse --show-toplevel)"
-}
-
-# Run git stash and repeat the previous command.
-gshr() {
-    git status > /dev/null 2>&1 || return 1
-    git stash
-    fc -s
-}
-
-# Run git stash, repeat the previous command and pop from the stash.
-gshrp() {
-    git status > /dev/null 2>&1 || return 1
-    git stash
-    fc -s
-    git stash pop
-}
-
 ww() {
     # Open index file of the $1 wiki (the first one if $1 is omitted).
     vim -c "execute \"normal $1\<Plug>VimwikiIndex\""
