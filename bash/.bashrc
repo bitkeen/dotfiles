@@ -21,15 +21,15 @@ _source_if_exists() {
 
 # Aliases and functions {{{
 # Add main bash aliases.
-_source_if_exists "$HOME/.bash_aliases"
+_source_if_exists "$HOME/.config/bash/bash_aliases"
 # Add  functions.
-_source_if_exists "$HOME/.bash_functions"
+_source_if_exists "$HOME/.config/bash/bash_functions"
 # Add local (untracked) bash aliases.
-_source_if_exists "$HOME/.bash_aliases.local"
+_source_if_exists "$HOME/.config/bash/bash_aliases.local"
 # Add docker aliases.
-_source_if_exists "$HOME/.docker_aliases"
+_source_if_exists "$HOME/.config/bash/docker_aliases"
 # Add lab aliases.
-_source_if_exists "$HOME/.lab_aliases"
+_source_if_exists "$HOME/.config/bash/lab_aliases"
 # }}}
 
 # Paths {{{
