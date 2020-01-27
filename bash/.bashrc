@@ -19,20 +19,8 @@ _source_if_exists() {
     [ -f "$1" ] && source "$1" || return 1
 }
 
-# Aliases and functions {{{
-# Add main bash aliases.
-_source_if_exists "$HOME/.config/bash/bash_aliases"
-# Add  functions.
-_source_if_exists "$HOME/.config/bash/bash_functions"
-# Add local (untracked) bash aliases.
-_source_if_exists "$HOME/.config/bash/bash_aliases.local"
-# Add docker aliases.
-_source_if_exists "$HOME/.config/bash/docker_aliases"
-# Add git aliases.
-_source_if_exists "$HOME/.config/bash/git_aliases"
-# Add lab aliases.
-_source_if_exists "$HOME/.config/bash/lab_aliases"
-# }}}
+# Source aliases and functions.
+for f in ~/.config/bash/*; do source "$f"; done
 
 # Paths {{{
 base16_shell_dir="$HOME/.config/base16-shell/"
