@@ -32,8 +32,11 @@ alias fn='find -L . -name'
 # Case-insensitive.
 alias fin='find -L . -iname'
 
-# Git.
-alias g='git'
+# Could not make git alias script work the same way docker and lab
+# aliases work, i.e. `alias git='git_alias'` inside the `git_aliases`
+# script. There was what looked like an infinite loop when trying to
+# reload .bashrc.
+alias g='git_alias'
 alias l='lab'
 
 # Kill processes by name.

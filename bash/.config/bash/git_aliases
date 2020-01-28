@@ -1,8 +1,7 @@
 #!/bin/sh
 # Aliases for Git.
 git_alias() {
-    key="$1"
-    case "$key" in
+    case "$1" in
         rt)
             # Change working directory to the git root if the current
             # working directory is inside of a git repository.
@@ -24,10 +23,7 @@ git_alias() {
             git stash pop
             return;;
         *)
-            cmd="$key";;
+            git "$@"
+            return;;
     esac
-    shift
-    git $cmd "$@"
 }
-
-alias git='git_alias'
