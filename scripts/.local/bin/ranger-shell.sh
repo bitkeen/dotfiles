@@ -17,8 +17,7 @@ then shift 2; fi
 [[ $1 != -c ]] || shift
 exec ${SHELL:?} -c '
 (( $(id -u) )) || HOME=/home/${SUDO_USER:-${USER:-${USERNAME:?}}}
-source ~/.bash_aliases
-source ~/.bash_aliases.local
+for f in ~/.config/bash/*; do source "$f"; done
 [[ ${SHELL:?} =~ zsh$ ]] && setopt aliases || shopt -s expand_aliases
 eval "$@"
 ' "$0" "$@"
