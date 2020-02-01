@@ -147,6 +147,8 @@ if _source_if_exists "$git_prompt_file"; then
     export GIT_PS1_SHOWSTASHSTATE=1
     # Show unstaged (*) and staged (+) changes next to the branch name.
     export GIT_PS1_SHOWDIRTYSTATE=1
+    # If there are untracked files, then a '%' will be shown.
+    export GIT_PS1_SHOWUNTRACKEDFILES=1
     # Indicate difference between HEAD and its upstream.
     export GIT_PS1_SHOWUPSTREAM="auto"
 
