@@ -5,25 +5,27 @@ git_alias() {
         rt)
             # Change working directory to the git root if the current
             # working directory is inside of a git repository.
-            git status > /dev/null 2>&1 || return 1
+            'git' status > /dev/null 2>&1 || return 1
             cd "$(git rev-parse --show-toplevel)"
             return;;
         shr)
             # Run git stash and repeat the previous command.
-            git status > /dev/null 2>&1 || return 1
-            git stash
+            'git' status > /dev/null 2>&1 || return 1
+            'git' stash
             fc -s
             return;;
         shrp)
             # Run git stash, repeat the previous command and pop from
             # the stash.
-            git status > /dev/null 2>&1 || return 1
-            git stash
+            'git' status > /dev/null 2>&1 || return 1
+            'git' stash
             fc -s
-            git stash pop
+            'git' stash pop
             return;;
         *)
-            git "$@"
+            'git' "$@"
             return;;
     esac
 }
+
+alias git='git_alias'
