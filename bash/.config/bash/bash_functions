@@ -53,6 +53,16 @@ ranger-cd() {
     rm -f -- "$tempfile"
 }
 
+# Temporary workaround for tmux renaming problem.
+wrap_ranger() {
+    [ -z "$TMUX" ] || current_window_name="$(tmux display-message -p '#W')"
+    # The ranger-cd version switches the directory in bash on exit,
+    # ranger-shell.sh allows to expand shell aliases inside the :shell
+    # command.
+    SHELL=~/.local/bin/ranger-shell.sh ranger-cd
+    [ -z "$current_window_name" ] || tmux rename-window "$current_window_name"
+}
+
 # Go to a mounted partition's directory.
 rmnt() {
     ranger-cd "$(fzf_mounted)"
