@@ -937,7 +937,9 @@ xmap ah <Plug>GitGutterTextObjectOuterPending
 nnoremap <Leader><C-r> :Rename<Space>
 nnoremap <Leader><C-d> :Delete<CR>
 nnoremap <Leader><C-e> :SudoEdit<Space>
-nnoremap <Leader><C-w> :SudoWrite<CR>
+" lightline wasn't getting updated for some reason.
+" Update it explicitly, :echo at the is to clear the command line.
+nnoremap <Leader><C-w> :SudoWrite<CR>:call lightline#update()<CR>:echo<CR>
 
 " vim-obsession
 " Toggle.
