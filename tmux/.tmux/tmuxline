@@ -4,6 +4,9 @@
 
 zoom_highlight="#[fg=colour231,bg=colour242]#{?window_zoomed_flag, Z ,}#[default]"
 
+# Output "(number of panes)" is number of panes is greater than 1, else nothing.
+pane_number_indicator="#{?#{>:#{window_panes},1},(#{window_panes}),}"
+
 set -g status-justify "left"
 set -g status "on"
 set -g status-left-style "none"
@@ -20,5 +23,5 @@ setw -g window-status-separator ""
 setw -g window-status-style "none,fg=colour245,bg=colour236"
 set -g status-left "#[fg=colour22,bg=colour148,bold] #S #[fg=colour148,bg=colour236,nobold,nounderscore,noitalics]"
 set -g status-right '#{prefix_highlight} #[fg=colour233,bg=colour144] #P - #T '
-setw -g window-status-format "#[fg=colour245,bg=colour236] #I |#[fg=colour245,bg=colour236] #W #F "
-setw -g window-status-current-format "#[fg=colour236,bg=colour240,nobold,nounderscore,noitalics]#[fg=colour231,bg=colour240] #I |#[fg=colour231,bg=colour240] #W $zoom_highlight"
+setw -g window-status-format "#[fg=colour245,bg=colour236] #I |#[fg=colour245,bg=colour236] #W $pane_number_indicator #F "
+setw -g window-status-current-format "#[fg=colour236,bg=colour240,nobold,nounderscore,noitalics]#[fg=colour231,bg=colour240] #I |#[fg=colour231,bg=colour240] #W $pane_number_indicator $zoom_highlight"
