@@ -18,3 +18,9 @@
     name: paccache.timer
     enabled: yes
     state: started
+
+- name: enable and start systemd-timesyncd to sync time
+  systemd:
+    name: systemd-timesyncd.service
+    enabled: yes
+    state: started
