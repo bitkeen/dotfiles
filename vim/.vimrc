@@ -207,11 +207,10 @@ if has('packages')
   packadd! vZoom.vim
   packadd! winresizer
 else
+  " Enable Pathogen package manager.
   execute pathogen#infect('pack/bundle/opt/{}')
 endif
 
-" Enable Pathogen package manager.
-execute pathogen#infect()
 " Generate documentation.
 call pathogen#helptags()
 
