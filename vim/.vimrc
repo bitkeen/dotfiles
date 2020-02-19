@@ -587,8 +587,8 @@ augroup slime
   autocmd BufWinEnter */.vim/slime/repl.py :ALEDisable
   autocmd BufWinEnter */.vim/slime/repl.lua :ALEDisable
   " Enable auto-save.
-  autocmd BufWinEnter */.vim/slime/repl.py :AutoSaveToggle
-  autocmd BufWinEnter */.vim/slime/repl.lua :AutoSaveToggle
+  autocmd BufWinEnter */.vim/slime/repl.py :let b:auto_save = 1
+  autocmd BufWinEnter */.vim/slime/repl.lua :let b:auto_save = 1
   " Don't display the auto-save notification.
   autocmd BufWinEnter */.vim/slime/repl.py :let g:auto_save_silent = 1
   autocmd BufWinEnter */.vim/slime/repl.lua :let g:auto_save_silent = 1
@@ -602,7 +602,7 @@ let g:UltiSnipsSnippetDirectories = [$HOME.'/.vim/ultisnips']
 let g:pydoc_open_cmd = 'vsplit'
 let g:pydoc_highlight = 0
 
-autocmd plugins FileType todo :AutoSaveToggle
+autocmd plugins FileType todo :let b:auto_save = 1
 
 " }}}
 
