@@ -19,8 +19,8 @@ ww() {
     vim -c "execute \"normal $1\<Plug>VimwikiIndex\""
 }
 
-# Open a directory from special files containing a list of shortcuts.
 fzg() {
+    # Open a directory from special files containing a list of shortcuts.
     cd "$(fzf_shortcuts ~/.config/shortcuts ~/.config/shortcuts.local)" ||
         return 1
 }
@@ -33,17 +33,17 @@ fzc() {
     fzf_containers
 }
 
-# Automatically change the directory in bash after closing ranger.
-# Source:
-# https://github.com/ranger/ranger/blob/master/examples/bash_automatic_cd.sh
-# The same script can be found locally:
-# /usr/share/doc/ranger/examples/bash_automatic_cd.sh
-#
-# This is a function for automatically changing the directory to
-# the last visited one after ranger quits.
-# To undo the effect of this function, you can type "cd -" to return to the
-# original directory.
 ranger-cd() {
+    # Automatically change the directory in bash after closing ranger.
+    # Source:
+    # https://github.com/ranger/ranger/blob/master/examples/bash_automatic_cd.sh
+    # The same script can be found locally:
+    # /usr/share/doc/ranger/examples/bash_automatic_cd.sh
+    #
+    # This is a function for automatically changing the directory to
+    # the last visited one after ranger quits.
+    # To undo the effect of this function, you can type "cd -" to return to the
+    # original directory.
     tempfile="$(mktemp -t tmp.XXXXXX)"
     ranger --choosedir="$tempfile" "${@:-$(pwd)}"
     test -f "$tempfile" &&
@@ -53,8 +53,8 @@ ranger-cd() {
     rm -f -- "$tempfile"
 }
 
-# Temporary workaround for tmux renaming problem.
 wrap_ranger() {
+    # Temporary workaround for tmux renaming problem.
     [ -z "$TMUX" ] || current_window_name="$(tmux display-message -p '#W')"
     # The ranger-cd version switches the directory in bash on exit,
     # ranger-shell.sh allows to expand shell aliases inside the :shell
@@ -63,8 +63,8 @@ wrap_ranger() {
     [ -z "$current_window_name" ] || tmux rename-window "$current_window_name"
 }
 
-# Go to a mounted partition's directory.
 rmnt() {
+    # Go to a mounted partition's directory.
     ranger-cd "$(fzf_mounted)"
 }
 
