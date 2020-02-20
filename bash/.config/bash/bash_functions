@@ -33,6 +33,27 @@ fzc() {
     fzf_containers
 }
 
+vim_session_venv() {
+    # Get a directory to venv mapping from a file, activate venv
+    # before launching vim with the session of the directory.
+    # Do not change venv if already in a venv.
+    #
+    # File example:
+    # /home/user/directory1 venv1
+    # /home/user/directory2 venv2
+    #
+    # Usage example:
+    # vim_session_venv ~/.config/venv_mapping
+    venv_mapping_file="$1"
+    [ -z "$venv_mapping_file" ] && echo "Venv mapping file wasn't specified." && exit 1
+    [ ! -f "$venv_mapping_file" ] && echo "Venv mapping file doesn't exist." && exit 1
+
+    venv_name="$(grep "$(pwd)" "$venv_mapping_file" | awk '{ print $2 }')"
+
+    workon "$venv_name"
+    vim -S
+}
+
 ranger-cd() {
     # Automatically change the directory in bash after closing ranger.
     # Source:
