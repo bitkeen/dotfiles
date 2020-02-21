@@ -1,4 +1,3 @@
-auto-reload yes
 reload-threads 8
 
 bind-key j down
