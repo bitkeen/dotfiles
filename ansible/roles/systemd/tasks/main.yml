@@ -1,26 +1,28 @@
 ---
-- name: install screen lock service file
+- name: install unit files
   copy:
-    src: 'lock@.service'
-    dest: '/etc/systemd/system/lock@.service'
+    src: '{{ item.unit_name }}'
+    dest: '/etc/systemd/system/{{ item.unit_name }}'
+  loop:
+    - { unit_name: lock@.service }
+    - { unit_name: newsboat-reload.service }
+    - { unit_name: newsboat-reload.timer }
 
 - name: reload units
   systemd:
     daemon_reload: yes
 
+- name: enable and start services
+  systemd:
+    name: "{{ item.unit_name }}"
+    enabled: yes
+    state: started
+  loop:
+    - { unit_name: newsboat-reload.timer }
+    - { unit_name: paccache.timer } # Discard unused packages weekly.
+    - { unit_name: systemd-timesyncd.service } # Sync time.
+
 - name: enable screen lock service
   systemd:
     name: lock@user
     enabled: yes
-
-- name: enable and start paccache.timer to discard unused packages weekly
-  systemd:
-    name: paccache.timer
-    enabled: yes
-    state: started
-
-- name: enable and start systemd-timesyncd to sync time
-  systemd:
-    name: systemd-timesyncd.service
-    enabled: yes
-    state: started
