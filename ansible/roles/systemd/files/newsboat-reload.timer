@@ -1,0 +1,9 @@
+[Unit]
+Description=Reload newsboat feeds
+
+[Timer]
+OnBootSec=10minutes
+OnUnitActiveSec=12hours
+
+[Install]
+WantedBy=timers.target
