@@ -44,13 +44,14 @@ vim_session_venv() {
     #
     # Usage example:
     # vim_session_venv ~/.config/venv_mapping
-    venv_mapping_file="$1"
-    [ -z "$venv_mapping_file" ] && echo "Venv mapping file wasn't specified." && exit 1
-    [ ! -f "$venv_mapping_file" ] && echo "Venv mapping file doesn't exist." && exit 1
+    if [ -z "$VIRTUAL_ENV" ]; then
+        venv_mapping_file="$1"
+        [ -z "$venv_mapping_file" ] && echo "Venv mapping file wasn't specified." && return 1
+        [ ! -f "$venv_mapping_file" ] && echo "Venv mapping file doesn't exist." && return 1
 
-    venv_name="$(grep "$(pwd)" "$venv_mapping_file" | awk '{ print $2 }')"
-
-    workon "$venv_name"
+        venv_name="$(grep "$(pwd)" "$venv_mapping_file" | awk '{ print $2 }')"
+        [ -n "$venv_name" ] && workon "$venv_name"
+    fi
     vim -S
 }
 
