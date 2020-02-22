@@ -52,7 +52,12 @@ vim_session_venv() {
         venv_name="$(grep "$(pwd)" "$venv_mapping_file" | awk '{ print $2 }')"
         [ -n "$venv_name" ] && workon "$venv_name"
     fi
-    vim -S
+
+    if [ -f 'Session.vim' ]; then
+        vim -S
+    else
+        vim -c 'Obsession'
+    fi
 }
 
 ranger-cd() {
