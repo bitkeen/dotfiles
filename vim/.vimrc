@@ -427,7 +427,7 @@ let g:lightline = {
 \  'colorscheme': 'powerline_custom',
 \  'active': {
 \    'left': [ [ 'mode', 'paste' ],
-\              [ 'gitbranch', 'spell', 'isreadonly' ],
+\              [ 'venv', 'gitbranch', 'spell', 'isreadonly' ],
 \              [ 'keyboard_layout', 'absolutepath', 'ismodified' ] ],
 \    'right': [ [ 'columninfo' ],
 \               [ 'lineinfo' ],
@@ -463,6 +463,7 @@ let g:lightline = {
 \  'component_expand': {
 \    'ismodified': 'LightlineIsModified',
 \    'isreadonly': 'LightlineIsReadonly',
+\    'venv': 'LightlineVenv',
 \    'linter_checking': 'lightline#ale#checking',
 \    'linter_warnings': 'lightline#ale#warnings',
 \    'linter_errors': 'lightline#ale#errors',
@@ -516,6 +517,10 @@ endfunction
 
 function! LightlineIsReadonly()
   return &readonly ? 'RO' : ''
+endfunction
+
+function! LightlineVenv()
+  return $VIRTUAL_ENV != '' ? trim(system('basename $VIRTUAL_ENV')) : ''
 endfunction
 
 " Get keyboard layout using vim-xkbswitch.
