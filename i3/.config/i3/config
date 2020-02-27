@@ -202,9 +202,6 @@ bindsym $mod+shift+f exec firefox
 # Launch ranger.
 bindsym $mod+shift+o exec --no-startup-id urxvt -e ranger
 
-# Launch ncmpcpp.
-bindsym $mod+shift+m exec --no-startup-id urxvt -e ncmpcpp
-
 # Launch Anki.
 bindsym $mod+shift+a exec anki
 
@@ -267,13 +264,22 @@ exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
 # Tmux dropdown.
 set $dd_name "tmuxdd"
-bindsym $mod+grave exec --no-startup-id i3_tmuxdd.sh $dd_name
-# Terminal window with name $dd_name is created in tmuxdd.sh
+bindsym $mod+grave exec --no-startup-id i3_tmuxdd.sh $dd_name dropdown
+# Terminal window with name $dd_name is created in i3_tmuxdd.sh
 for_window [instance=$dd_name] floating enable
 for_window [instance=$dd_name] resize set 1600 900
 for_window [instance=$dd_name] border pixel 1
 for_window [instance=$dd_name] sticky enable
 for_window [instance=$dd_name] move position center
 for_window [instance=$dd_name] move scratchpad
+
+set $music_dd_name "musicdd"
+bindsym $mod+m exec --no-startup-id i3_tmuxdd.sh $music_dd_name music
+for_window [instance=$music_dd_name] floating enable
+for_window [instance=$music_dd_name] resize set 1600 900
+for_window [instance=$music_dd_name] border pixel 1
+for_window [instance=$music_dd_name] sticky enable
+for_window [instance=$music_dd_name] move position center
+for_window [instance=$music_dd_name] move scratchpad
 
 # }}}
