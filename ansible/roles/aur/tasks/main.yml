@@ -6,7 +6,6 @@
     repo: 'https://aur.archlinux.org/{{ item.name }}.git'
     dest: '{{ aur_pkg_dir }}/{{ item.name }}'
   loop:
-    - { name: yay } # AUR helper
     - { name: git-open } # Open a repo website (GitHub, GitLab, Bitbucket) in your browser
     - { name: htop-vim-git } # Interactive text-mode process viewer. Patched for vim keybindings
     - { name: lab }
@@ -20,6 +19,7 @@
     - { name: scrcpy } # Display and control an Android device
     - { name: slack-desktop }
     - { name: tor-browser }
+    - { name: virtualbox-ext-oracle } # VirtualBox Extension Pack
     - { name: xidlehook } # xautolock rewrite in Rust, with a few extra features
     - { name: xkb-switch } # Program that allows to query and change the XKB layout state
     - { name: yay } # AUR helper
