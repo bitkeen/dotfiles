@@ -237,6 +237,7 @@ floating_modifier $mod
 
 assign [class="Anki"] $workspace5
 assign [class="firefox"] $workspace1
+assign [class="Thunderbird"] $workspace9
 assign [class="KeePassXC"] $workspace10
 assign [class="VirtualBox"] $workspace7
 
@@ -255,6 +256,7 @@ for_window [class="VirtualBox"] focus
 
 exec keepassxc
 exec firefox
+exec thunderbird
 
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
