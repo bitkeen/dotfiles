@@ -1,0 +1,37 @@
+---
+- name: clone AUR pkgbuilds
+  become: yes
+  become_user: "{{ user_name }}"
+  git:
+    repo: 'https://aur.archlinux.org/{{ item.name }}.git'
+    dest: '{{ aur_pkg_dir }}/{{ item.name }}'
+  loop:
+    - { name: yay } # AUR helper
+    - { name: git-open } # Open a repo website (GitHub, GitLab, Bitbucket) in your browser
+    - { name: htop-vim-git } # Interactive text-mode process viewer. Patched for vim keybindings
+    - { name: lab }
+    - { name: mycli }
+    - { name: nerd-fonts-source-code-pro }
+    - { name: paper-icon-theme }
+    - { name: path-extractor } # A unix filter which outputs the filepaths found in stdin
+    - { name: pgcli }
+    - { name: polybar } # A fast and easy-to-use status bar
+    - { name: ranger-git } # 1.9.2 which is in the official repo doesn't support image previews with ueberzug
+    - { name: scrcpy } # Display and control an Android device
+    - { name: slack-desktop }
+    - { name: tor-browser }
+    - { name: xidlehook } # xautolock rewrite in Rust, with a few extra features
+    - { name: xkb-switch } # Program that allows to query and change the XKB layout state
+    - { name: yay } # AUR helper
+
+- name: get the directory names for AUR
+  command: ls '{{ aur_pkg_dir }}'
+  register: aur_dirs
+
+- name: make and install AUR packages
+  become: yes
+  become_user: "{{ user_name }}"
+  command:
+    cmd: makepkg -si --noconfirm --needed
+    chdir: '{{ aur_pkg_dir }}/{{ item }}'
+  loop: '{{ aur_dirs.stdout_lines }}'

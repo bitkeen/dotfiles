@@ -9,6 +9,7 @@
     - python
     - stow
     - pkgbuilds
+    - aur
     - virtualbox
   vars:
     - user_home: "{{ '~' | expanduser }}"
