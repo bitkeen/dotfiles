@@ -46,11 +46,10 @@ vim_session_venv() {
     # vim_session_venv ~/.config/venv_mapping
     if [ -z "$VIRTUAL_ENV" ]; then
         venv_mapping_file="$1"
-        [ -z "$venv_mapping_file" ] && echo "Venv mapping file wasn't specified." && return 1
-        [ ! -f "$venv_mapping_file" ] && echo "Venv mapping file doesn't exist." && return 1
-
-        venv_name="$(grep "$(pwd)" "$venv_mapping_file" | awk '{ print $2 }')"
-        [ -n "$venv_name" ] && workon "$venv_name"
+        if [ -n "$venv_mapping_file" ] && [ -f "$venv_mapping_file" ]; then
+            venv_name="$(grep "$(pwd)" "$venv_mapping_file" | awk '{ print $2 }')"
+            [ -n "$venv_name" ] && workon "$venv_name"
+        fi
     fi
 
     if [ -f 'Session.vim' ]; then
