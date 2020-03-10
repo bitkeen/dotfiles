@@ -54,6 +54,7 @@
       - networkmanager-openvpn
       - network-manager-applet
       - newsboat
+      - npm # A package manager for javascript
       - ntfs-3g
       - openbsd-netcat # TCP/IP swiss army knife
       - pacman-contrib # Contributed scripts and tools for pacman systems
@@ -63,6 +64,7 @@
       - redshift # Set color temperature of display according to time of day
       - ripgrep
       - simplescreenrecorder
+      - reflector # A script to retrieve and filter the latest Pacman mirror list
       - rxvt-unicode
       - seahorse # GNOME application for managing PGP keys
       - shellcheck # Shell script analysis tool
