@@ -52,11 +52,7 @@ vim_session_venv() {
         fi
     fi
 
-    if [ -f 'Session.vim' ]; then
-        vim -S
-    else
-        vim -c 'Obsession'
-    fi
+    vim -c 'WrappedObsession'
 }
 
 ranger-cd() {
