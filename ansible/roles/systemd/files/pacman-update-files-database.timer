@@ -1,0 +1,9 @@
+[Unit]
+Description=Sync the files database
+
+[Timer]
+OnBootSec=1hour
+OnUnitActiveSec=1day
+
+[Install]
+WantedBy=timers.target

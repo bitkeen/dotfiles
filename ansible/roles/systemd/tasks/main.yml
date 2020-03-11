@@ -7,6 +7,8 @@
     - { unit_name: lock@.service }
     - { unit_name: newsboat-reload.service }
     - { unit_name: newsboat-reload.timer }
+    - { unit_name: pacman-update-files-database.service }
+    - { unit_name: pacman-update-files-database.timer }
 
 - name: reload units
   systemd:
@@ -19,6 +21,7 @@
     state: started
   loop:
     - { unit_name: newsboat-reload.timer }
+    - { unit_name: pacman-update-files-database.timer }
     - { unit_name: paccache.timer } # Discard unused packages weekly.
     - { unit_name: systemd-timesyncd.service } # Sync time.
 

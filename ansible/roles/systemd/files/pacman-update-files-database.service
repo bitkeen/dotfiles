@@ -1,0 +1,5 @@
+[Unit]
+Description=Sync the files database
+
+[Service]
+ExecStart=/usr/bin/pacman -Fy
