@@ -9,6 +9,7 @@
     - { path: .local/bin }
     - { path: .vim }
     - { path: .vim/ultisnips }
+    - { path: .config/newsboat }
     - { path: documents }
     - { path: downloads }
     - { path: downloads/bandcamp-dl }
