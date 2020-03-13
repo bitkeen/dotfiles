@@ -280,3 +280,6 @@
 [submodule "tmux-path-extractor"]
 	path = tmux/.tmux/plugins/tmux-path-extractor
 	url = https://github.com/bitkeen/tmux-path-extractor
+[submodule "vim-terraform"]
+	path = vim/.vim/pack/bundle/opt/vim-terraform
+	url = https://github.com/hashivim/vim-terraform
