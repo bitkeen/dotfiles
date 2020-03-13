@@ -958,7 +958,7 @@ nnoremap <Leader><C-w> :SudoWrite<CR>:call lightline#update()<CR>:echo<CR>
 
 " vim-obsession
 " Toggle.
-nnoremap gso :Obsess!<CR>
+nnoremap gso :Obsession!<CR>
 
 let g:ranger_map_keys = 0
 noremap <LocalLeader>f :Ranger<CR>
