@@ -87,6 +87,8 @@
     whitespace = true
     ; -x4 sets tab width to 4 (default is 8).
     pager = less -x4
+[commit]
+    verbose = true
 [color "status"]
     untracked = yellow
 [diff]
