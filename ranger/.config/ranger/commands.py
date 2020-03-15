@@ -132,7 +132,7 @@ class fzf_mounted(Command):
     Go to a mounted partition chosen with fzf.
     """
     def execute(self):
-        command="fzf_mounted"
+        command='fzf_mounted'
 
         fzf = self.fm.execute_command(command,
                                       universal_newlines=True,
