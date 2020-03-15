@@ -1,4 +1,6 @@
 #!/bin/sh
 # Get a list of all mounted partitions and pipe it into fzf.
 
-lsblk -l | grep -P -o "/.*" | fzf --height=20% --reverse
+lsblk -l |
+    grep -P -o "/.*" |
+    fzf --header "Select mount point:" --height=40% --no-info --reverse
