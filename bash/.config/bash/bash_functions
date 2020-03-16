@@ -87,9 +87,11 @@ wrap_ranger() {
 
 rmnt() {
     # Go to a mounted partition's directory.
-    ranger-cd "$(fzf_mounted)"
+    choice="$(fzf_mounted)"
+    [ -n "$choice" ] && ranger-cd "$choice"
 }
 
 cmnt() {
-    cd "$(fzf_mounted)"
+    choice="$(fzf_mounted)"
+    [ -n "$choice" ] && cd "$choice"
 }
