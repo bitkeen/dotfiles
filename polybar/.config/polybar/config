@@ -2,6 +2,7 @@
 [colors]
 background = #222
 background-alt = #444
+background-visible = #333
 foreground = #dfdfdf
 alert = #bd2c40
 
@@ -66,7 +67,7 @@ label-focused-padding = 3
 ; visible = Active workspace on unfocused monitor
 label-visible = %name%
 label-visible-foreground = ${colors.bright-white}
-label-visible-background = ${self.label-focused-background}
+label-visible-background = ${colors.background-visible}
 label-visible-padding = ${self.label-focused-padding}
 
 ; unfocused = Inactive workspace on any monitor
