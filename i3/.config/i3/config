@@ -169,10 +169,10 @@ bindsym $mod+Shift+r restart
 bindsym $mod+Shift+e exec --no-startup-id "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
 # Move workspaces between outputs.
-bindsym $mod+Shift+Left move workspace to output left
-bindsym $mod+Shift+Down move workspace to output down
-bindsym $mod+Shift+Up move workspace to output up
-bindsym $mod+Shift+Right move workspace to output right
+bindsym $mod+Control+h move workspace to output left
+bindsym $mod+Control+j move workspace to output down
+bindsym $mod+Control+k move workspace to output up
+bindsym $mod+Control+l move workspace to output right
 
 # Enable back and forth switching with a keybinding.
 bindsym $mod+Tab workspace back_and_forth
