@@ -37,7 +37,7 @@ font-1 = SauceCodePro Nerd Font Mono:size=15;5
 font-2 = Font Awesome 5 Brands Regular:size=11;5
 
 modules-left = i3
-modules-right = docker mpd pulseaudio wlan xkeyboard battery date dmenu_power
+modules-right = docker mpd pulseaudio vpn wlan xkeyboard battery date dmenu_power
 
 tray-position = right
 tray-padding = 2
@@ -169,6 +169,16 @@ exec-if = docker ps && [ "$(docker ps -a | wc -l)" != "1" ]
 label = %output%
 format-prefix = " "
 interval = 5
+
+
+[module/vpn]
+type = custom/script
+exec = echo 'VPN'
+; Only show if a VPN connection is active.
+exec-if = [ -n "$(nmcli con show --active | awk '$3~/^vpn$/ { print $3 }')" ]
+label = %output%
+format-prefix = " "
+interval = 3
 
 
 [settings]
