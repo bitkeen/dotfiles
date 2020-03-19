@@ -6,7 +6,7 @@ docker_alias() {
             cmd='build';;
         ex)
             [ "$#" -lt 2 ] && echo 'Specify container name.' && return 1
-            'docker' exec -i -t -u root "$2" sh -c \
+            'docker' exec -i -t "$2" sh -c \
                 'if [ -f /bin/bash ]; then bash -l; else sh -l; fi'
             return;;
         im)
