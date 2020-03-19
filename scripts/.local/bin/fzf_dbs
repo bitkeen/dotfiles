@@ -2,7 +2,7 @@
 # Connect to a database from a file with connection strings, using
 # either pgcli or mycli.
 # Each line should consist of a connection alias and a corresponding
-# connection string, separated with a single space.
+# connection string, separated with "=".
 #
 # Dependencies:
 # - fzf
@@ -28,8 +28,8 @@ choice="$(sed -e "/^#/d" -e "s/ \?\#.*//" -e "/^\s*$/d" "$conn_file" \
 # If running in tmux, save the previous window name.
 [ -z "$TMUX" ] || current_window_name="$(tmux display-message -p '#W')"
 
-choice_name="$(echo "$choice" | awk '{print $1}')"
-choice_connection="$(echo "$choice" | awk '{$1=""; print substr($0, 2)}')"
+choice_name="$(echo "$choice" | awk -F '=' '{print $1}')"
+choice_connection="$(echo "$choice" | awk -F '=' '{$1=""; print substr($0, 2)}')"
 
 if echo "$choice_connection" | grep '^postgresql' > /dev/null; then
     ! [ -x "$(command -v pgcli)" ] && echo 'Could not find pgcli.' && exit 1
