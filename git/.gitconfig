@@ -30,6 +30,7 @@
     cl = clone
     df = diff
     dfc = diff --check
+    dfm = diff master
     dfs = diff --staged
     dt = difftool
     ; Show the hash of HEAD.
