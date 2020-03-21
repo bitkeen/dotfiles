@@ -46,6 +46,7 @@
     mg = merge
     mga = merge --abort
     mgc = merge --continue
+    mgm = merge master
     o = open
     pl = pull
     plrb = pull --rebase
