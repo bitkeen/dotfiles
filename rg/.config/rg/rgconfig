@@ -1,7 +1,7 @@
 # vim: ft=sh
 
-# Ignore case.
--i
+# Smart case.
+--smart-case
 
 # Search hidden files and directories.
 --hidden
