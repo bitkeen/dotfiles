@@ -1,0 +1,15 @@
+#!/bin/sh
+# Checkout to a Git branch selected in fzf.
+
+branch="$(
+    'git' branch |
+        sed 's/\*//'| # Remove current branch symbol (*).
+        sed 's/^\s*//'| # Strip leading whitespace.
+        fzf --height=40% --reverse
+)"
+
+if [ -n "$branch" ]; then
+    'git' checkout "$branch"
+else
+    exit 1
+fi
