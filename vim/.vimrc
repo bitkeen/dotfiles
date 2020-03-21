@@ -403,6 +403,7 @@ let g:CommandTMaxFiles=10000000
 " working directory.
 " Better than setting to 'file' when submodules are present.
 let g:CommandTTraverseSCM='dir'
+let g:CommandTSmartCase=1
 " }}}
 
 " vim-xkbswitch - automatically switch keyboard layout based on mode.
