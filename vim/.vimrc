@@ -918,6 +918,7 @@ let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
 " fugitive - Git wrapper
 " By default, Ctrl-g prints information about current file, which
 " is not useful since this information is already in lightline.
+noremap <C-g>ad :Git add %<CR>
 noremap <C-g>ed :Gedit<Space>
 noremap <C-g>bl :Gblame<CR>
 noremap <C-g>br :Gbrowse<CR>
