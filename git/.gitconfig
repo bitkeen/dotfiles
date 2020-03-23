@@ -99,6 +99,7 @@
     colorMoved = zebra
 [pull]
     ff = only
+    default = current
 [push]
     default = current
 [rebase]
