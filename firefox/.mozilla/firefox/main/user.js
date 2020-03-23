@@ -76,3 +76,6 @@ user_pref("browser.bookmarks.editDialog.showForNewBookmarks", "true");
 
 // Set max cache capacity to 10GiB (the default is 1GiB).
 user_pref("browser.cache.disk.capacity", "10485760")
+
+// Use last download dir.
+user_pref("browser.download.folderList", 2)
