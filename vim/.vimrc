@@ -92,6 +92,8 @@ if has('autocmd')
 
     " Reload binds when sxhkdrc is updated.
     autocmd BufWritePost *sxhkdrc silent !pkill -USR1 sxhkd
+
+    autocmd BufWinEnter *.rules setlocal filetype=udevrules
   augroup END
 
   augroup folding
