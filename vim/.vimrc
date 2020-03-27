@@ -193,6 +193,7 @@ if has('packages')
   packadd! vim-surround
   packadd! vim-sxhkdrc
   packadd! vim-syntax-extra
+  packadd vim-terraform
   packadd! vim-textobj-comment
   packadd! vim-textobj-conflict
   packadd! vim-textobj-entire
