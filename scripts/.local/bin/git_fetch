@@ -3,5 +3,5 @@
 
 initial_dir="$PWD"
 cd "$1" || exit 1
-git fetch
+git fetch && echo "Fetched $1"
 cd "$initial_dir" || exit 1
