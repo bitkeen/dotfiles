@@ -283,3 +283,6 @@
 [submodule "vim-terraform"]
 	path = vim/.vim/pack/bundle/opt/vim-terraform
 	url = https://github.com/hashivim/vim-terraform
+[submodule "fzf.vim"]
+	path = vim/.vim/pack/bundle/opt/fzf.vim
+	url = https://github.com/junegunn/fzf.vim

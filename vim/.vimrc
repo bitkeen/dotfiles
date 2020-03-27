@@ -132,6 +132,7 @@ if has('packages')
   packadd! committia.vim
   packadd! Dockerfile.vim
   packadd! fugitive-gitlab.vim
+  packadd! fzf.vim
   packadd! git-blame.vim
   packadd! gundo.vim
   packadd! gv.vim
@@ -1053,6 +1054,9 @@ nmap zK :SplitjoinJoin<cr>
 
 " qfreplace - change lines from quickfix
 nmap cq :Qfreplace<CR>
+
+" fzf.vim
+let g:fzf_command_prefix = 'Fzf'
 
 " }}}
 
