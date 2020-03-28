@@ -275,8 +275,7 @@ for_window [instance=$dd_name] sticky enable
 for_window [instance=$dd_name] move position center
 for_window [instance=$dd_name] move scratchpad
 
-set $music_dd_name "musicdd"
-bindsym $mod+m exec --no-startup-id i3_tmuxdd.sh $music_dd_name music
+bindsym $mod+m exec --no-startup-id i3_tmuxdd.sh $dd_name music
 for_window [instance=$music_dd_name] floating enable
 for_window [instance=$music_dd_name] resize set 1600 900
 for_window [instance=$music_dd_name] border pixel 1
