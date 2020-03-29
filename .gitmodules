@@ -56,7 +56,7 @@
 	path = vim/.vim/pack/bundle/opt/gundo.vim
 	url = https://github.com/sjl/gundo.vim
 [submodule "Dockerfile.vim"]
-	path = vim/.vim/pack/bundle/opt/Dockerfile.vim
+	path = vim/.vim/pack/bundle/start/Dockerfile.vim
 	url = https://github.com/ekalinin/Dockerfile.vim
 [submodule "vim-grepper"]
 	path = vim/.vim/pack/bundle/opt/vim-grepper
@@ -239,7 +239,7 @@
 	path = vim/.vim/pack/bundle/opt/python-syntax
 	url = https://github.com/vim-python/python-syntax
 [submodule "todo.txt-vim"]
-	path = vim/.vim/pack/bundle/opt/todo.txt-vim
+	path = vim/.vim/pack/bundle/start/todo.txt-vim
 	url = https://github.com/bitkeen/todo.txt-vim
 [submodule "vim-textobj-conflict"]
 	path = vim/.vim/pack/bundle/opt/vim-textobj-conflict

@@ -131,7 +131,6 @@ if has('packages')
   packadd! CamelCaseMotion
   packadd! command-t
   packadd! committia.vim
-  packadd! Dockerfile.vim
   packadd! fugitive-gitlab.vim
   packadd! fzf.vim
   packadd! git-blame.vim
@@ -153,7 +152,6 @@ if has('packages')
   packadd! targets.vim
   packadd! textobj-word-column.vim
   packadd! tmuxline.vim
-  packadd! todo.txt-vim
   packadd! undoquit.vim
   packadd! vim-abolish
   packadd! vim-auto-save
