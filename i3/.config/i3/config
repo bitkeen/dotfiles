@@ -245,6 +245,8 @@ assign [class="VirtualBox"] $workspace7
 
 # Enable floating mode.
 for_window [class="Transmission-gtk"] floating enable
+for_window [class="Transmission-gtk"] resize set $default_floating_size
+for_window [class="Transmission-gtk"] move position center
 for_window [class="Tor Browser"] floating enable
 # Stack VirtualBox windows together.
 for_window [class="VirtualBox"] layout stacking
