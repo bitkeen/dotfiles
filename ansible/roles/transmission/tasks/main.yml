@@ -1,0 +1,41 @@
+---
+- name: check if transmission config exists
+  become: yes
+  become_user: '{{ user_name }}'
+  stat:
+    path: '{{ user_home }}/.config/transmission/settings.json'
+  register: settings
+
+- name: create transmisison config file, if it doesnt exist already
+  become: yes
+  become_user: '{{ user_name }}'
+  copy:
+    src: settings.json
+    dest: '{{ user_home }}/.config/transmission/settings.json'
+  when: settings.stat.exists == False
+
+- name: register lines with keys from settings.json
+  become: yes
+  become_user: '{{ user_name }}'
+  command:
+    cmd: grep -P '^\s*".*":' {{ role_path }}/files/settings.json
+  register: lines
+  when: settings.stat.exists == True
+
+- name: register keys from settings.json
+  become: yes
+  become_user: '{{ user_name }}'
+  command:
+    cmd: 'jq -r keys[] {{ role_path }}/files/settings.json'
+  register: keys
+  when: settings.stat.exists == True
+
+- name: paste lines into transmisison config file, if it already exists
+  become: yes
+  become_user: '{{ user_name }}'
+  lineinfile:
+    path: '{{ user_home }}/.config/transmission/settings.json'
+    line: '{{ item.0 }}'
+    regexp: '^\s*"{{ item.1 }}":'
+  loop: '{{ lines.stdout_lines|zip(keys.stdout_lines)|list }}'
+  when: settings.stat.exists == True

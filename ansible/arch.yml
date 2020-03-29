@@ -11,6 +11,7 @@
     - stow
     - pkgbuilds
     - aur
+    - transmission
     - virtualbox
   vars:
     - user_home: "{{ '~' | expanduser }}"
