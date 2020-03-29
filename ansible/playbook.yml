@@ -20,6 +20,6 @@
     - user_group: user
 
 - name: import local playbook
-  import_playbook: "{{ user_home }}/.dotfiles.local/ansible/arch.yml"
+  import_playbook: "{{ user_home }}/.dotfiles.local/ansible/playbook.yml"
   vars:
     user_home: "{{ '~' | expanduser }}"
