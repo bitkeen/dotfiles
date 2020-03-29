@@ -997,7 +997,12 @@ let g:tmuxline_powerline_separators = 0
 let g:ale_set_highlights = 0
 let g:ale_lint_on_text_changed = 'normal'
 let g:ale_echo_msg_format = '[%linter%] %code%: %s'
-let g:ale_linters = {'python': ['pydocstyle', 'pyflakes', 'pylint']}
+" `yaml.ansible` - custom filetype set by ansible-vim plugin.
+" By default, ALE will only lint `ansible` filetype.
+let g:ale_linters = {
+\  'python': ['pydocstyle', 'pyflakes', 'pylint'],
+\  'yaml.ansible': ['ansible-lint'],
+\}
 
 " Signature - A plugin to toggle, display and navigate marks
 " Highlight signs of marks based upon state indicated by vim-gitgutter.
