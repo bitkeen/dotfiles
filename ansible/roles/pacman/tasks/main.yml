@@ -102,3 +102,4 @@
       - zathura-djvu
       - zathura-pdf-mupdf
       - zip # Compressor/archiver for creating and modifying zipfiles
+      - yamllint # Linter for YAML files
