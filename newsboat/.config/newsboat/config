@@ -1,3 +1,6 @@
+auto-reload yes
+suppress-first-reload yes
+
 reload-threads 8
 
 bind-key j down
