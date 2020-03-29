@@ -3,3 +3,10 @@
   command: "vboxmanage setproperty machinefolder {{ user_home }}/vm"
   become: yes
   become_user: "{{ user_name }}"
+
+# https://askubuntu.com/a/25600
+- name: add user to vboxusers group
+  user:
+    name: '{{ user_name }}'
+    groups: vboxusers
+    append: yes
