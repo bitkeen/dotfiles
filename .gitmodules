@@ -260,7 +260,7 @@
 	path = vim/.vim/pack/bundle/opt/linediff.vim
 	url = https://github.com/AndrewRadev/linediff.vim
 [submodule "ansible-vim"]
-	path = vim/.vim/pack/bundle/opt/ansible-vim
+	path = vim/.vim/pack/bundle/start/ansible-vim
 	url = https://github.com/pearofducks/ansible-vim
 [submodule "tabular"]
 	path = vim/.vim/pack/bundle/opt/tabular
@@ -281,7 +281,7 @@
 	path = tmux/.tmux/plugins/tmux-path-extractor
 	url = https://github.com/bitkeen/tmux-path-extractor
 [submodule "vim-terraform"]
-	path = vim/.vim/pack/bundle/opt/vim-terraform
+	path = vim/.vim/pack/bundle/start/vim-terraform
 	url = https://github.com/hashivim/vim-terraform
 [submodule "fzf.vim"]
 	path = vim/.vim/pack/bundle/opt/fzf.vim
