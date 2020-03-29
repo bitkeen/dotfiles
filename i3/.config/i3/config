@@ -40,6 +40,8 @@ set $base0D #81a2be
 set $base0E #b294bb
 set $base0F #a3685a
 
+set $default_floating_size 1600 900
+
 # }}}
 
 # Window colors {{{
@@ -266,21 +268,17 @@ exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
 # Tmux dropdown.
 set $dd_name "tmuxdd"
+
 bindsym $mod+grave exec --no-startup-id i3_tmuxdd.sh $dd_name dropdown
+bindsym $mod+m exec --no-startup-id i3_tmuxdd.sh $dd_name music
+
 # Terminal window with name $dd_name is created in i3_tmuxdd.sh
 for_window [instance=$dd_name] floating enable
-for_window [instance=$dd_name] resize set 1600 900
+for_window [instance=$dd_name] resize set $default_floating_size
 for_window [instance=$dd_name] border pixel 1
 for_window [instance=$dd_name] sticky enable
 for_window [instance=$dd_name] move position center
 for_window [instance=$dd_name] move scratchpad
 
-bindsym $mod+m exec --no-startup-id i3_tmuxdd.sh $dd_name music
-for_window [instance=$music_dd_name] floating enable
-for_window [instance=$music_dd_name] resize set 1600 900
-for_window [instance=$music_dd_name] border pixel 1
-for_window [instance=$music_dd_name] sticky enable
-for_window [instance=$music_dd_name] move position center
-for_window [instance=$music_dd_name] move scratchpad
 
 # }}}
