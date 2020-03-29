@@ -6,6 +6,7 @@
       - adobe-source-serif-pro-fonts
       - android-tools # Required for scrcpy (from AUR)
       - anki
+      - ansible-lint
       - arandr # Xrandr front-end
       - atool # A script for managing file archives of various types
       - asp # Arch Linux build source file management tool
