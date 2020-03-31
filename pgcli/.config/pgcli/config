@@ -168,6 +168,7 @@ arg-toolbar = 'noinherit bold'
 arg-toolbar.text = 'nobold'
 bottom-toolbar.transaction.valid = 'bg:#222222 #00ff5f bold'
 bottom-toolbar.transaction.failed = 'bg:#222222 #ff005f bold'
+Token.Prompt = 'bold'
 
 # style classes for colored table output
 output.header = "#00ff5f bold"
