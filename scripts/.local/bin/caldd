@@ -1,0 +1,5 @@
+#!/bin/sh
+# Open a terminal window with cal command output and nothing else.
+
+# 'tput civis' hides the cursor.
+urxvt -name 'caldd' -e sh -c 'tput civis; cal -y; while true; do :; done'
