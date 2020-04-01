@@ -219,6 +219,9 @@ bindsym $mod+ctrl+r exec --no-startup-id xkb-switch -s ru
 # other than "quit".
 bindsym Ctrl+q exec nop
 
+# Launch calendar dropdown.
+bindsym $mod+c exec --no-startup-id caldd
+
 # }}}
 
 # Miscellaneous {{{
