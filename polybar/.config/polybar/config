@@ -112,16 +112,6 @@ label-connected = %essid%
 ramp-signal-0 = 
 ramp-signal-foreground = ${colors.foreground}
 
-
-[module/date]
-type = internal/date
-interval = 5
-max_width = 20
-date = "%a, %b %d"
-time = %H:%M
-label = %date% %time%
-
-
 [module/pulseaudio]
 type = internal/pulseaudio
 format-volume = <label-volume>
@@ -179,6 +169,13 @@ exec-if = [ -n "$(nmcli con show --active | awk '$3~/^vpn$/ { print $3 }')" ]
 label = %output%
 format-prefix = " "
 interval = 3
+
+
+[module/date]
+type = custom/script
+exec = date '+%a, %b %d %H:%M'
+interval = 5
+click-left = caldd
 
 
 [settings]
