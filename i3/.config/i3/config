@@ -269,7 +269,7 @@ exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
 # }}}
 
-# Scratchpad {{{
+# Dropdown/scratchpad {{{
 
 # Tmux dropdown.
 set $dd_name "tmuxdd"
