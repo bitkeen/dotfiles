@@ -102,5 +102,6 @@ URxvt.keysym.M-Escape: perl:keyboard-select:activate
 
 tmuxdd.background: rgba:3333/3333/3333/CCCC
 tmuxdd.foreground: base07
-musicdd.background: rgba:3333/3333/3333/CCCC
-musicdd.foreground: base07
+
+caldd.background: rgba:3333/3333/3333/CCCC
+caldd.foreground: base07
