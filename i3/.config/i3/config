@@ -282,5 +282,9 @@ for_window [instance=$dd_name] sticky enable
 for_window [instance=$dd_name] move position center
 for_window [instance=$dd_name] move scratchpad
 
+for_window [instance="caldd"] floating enable
+for_window [instance="caldd"] resize set 750 800
+for_window [instance="caldd"] border pixel 1
+for_window [instance="caldd"] move position center
 
 # }}}
