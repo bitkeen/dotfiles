@@ -40,7 +40,7 @@ set $base0D #81a2be
 set $base0E #b294bb
 set $base0F #a3685a
 
-set $default_floating_size 1600 900
+set $default_floating_size 80ppt 80ppt
 
 # }}}
 
