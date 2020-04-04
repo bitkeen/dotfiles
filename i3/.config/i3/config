@@ -257,6 +257,9 @@ for_window [class="VirtualBox"] layout stacking
 for_window [class="keepassxc"] focus
 for_window [class="VirtualBox"] focus
 
+# For some reason there is a window title box for dragon, disable it.
+for_window [instance="dragon-drag-and-drop"] border pixel 1
+
 # }}}
 
 # Startup applications {{{
