@@ -175,7 +175,7 @@ interval = 3
 type = custom/script
 exec = date '+%a, %b %d %H:%M'
 interval = 5
-click-left = caldd
+click-left = caldd &
 
 
 [settings]
