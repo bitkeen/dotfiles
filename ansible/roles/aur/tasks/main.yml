@@ -7,6 +7,7 @@
     dest: '{{ aur_pkg_dir }}/{{ item.name }}'
   loop:
     - { name: git-open } # Open a repo website (GitHub, GitLab, Bitbucket) in your browser
+    - { name: dragon-drag-and-drop } # Simple drag-and-drop source/sink for X
     - { name: htop-vim-git } # Interactive text-mode process viewer. Patched for vim keybindings
     - { name: lab }
     - { name: mycli }
