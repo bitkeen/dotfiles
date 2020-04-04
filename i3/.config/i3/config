@@ -275,7 +275,7 @@ exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 set $dd_name "tmuxdd"
 
 bindsym $mod+grave exec --no-startup-id i3_tmuxdd.sh $dd_name dropdown
-bindsym $mod+m exec --no-startup-id i3_tmuxdd.sh $dd_name music
+bindsym $mod+m exec --no-startup-id i3_tmuxdd.sh $dd_name misc
 
 # Terminal window with name $dd_name is created in i3_tmuxdd.sh
 for_window [instance=$dd_name] floating enable
