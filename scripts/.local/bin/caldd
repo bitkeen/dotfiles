@@ -1,8 +1,7 @@
 #!/bin/sh
-# Open a terminal window with cal command output and nothing else.
-
-# Kill existing instances.
-pgrep -f 'urxvt -name caldd' | xargs kill 2>/dev/null
+# Open a terminal window with cal command output and nothing else if
+# it doesn't already exist, kill it otherwise.
 
 # 'tput civis' hides the cursor.
-urxvt -name 'caldd' -e sh -c 'tput civis; cal -y; while true; do :; done'
+pgrep -f 'urxvt -name caldd' | xargs kill 2>/dev/null ||
+    urxvt -name 'caldd' -e sh -c 'tput civis; cal -y; while true; do :; done'
