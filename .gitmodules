@@ -286,3 +286,6 @@
 [submodule "fzf.vim"]
 	path = vim/.vim/pack/bundle/opt/fzf.vim
 	url = https://github.com/junegunn/fzf.vim
+[submodule "vim-swap"]
+	path = vim/.vim/pack/bundle/opt/vim-swap
+	url = https://github.com/machakann/vim-swap

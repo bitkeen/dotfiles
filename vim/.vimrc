@@ -190,6 +190,7 @@ if has('packages')
   packadd! vim-speeddating
   packadd! vim-superman
   packadd! vim-surround
+  packadd! vim-swap
   packadd! vim-sxhkdrc
   packadd! vim-syntax-extra
   packadd! vim-textobj-comment
