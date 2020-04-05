@@ -1051,6 +1051,12 @@ omap aG <Plug>(textobj-comment-big-a)
 xmap ig <Plug>(textobj-comment-i)
 omap ig <Plug>(textobj-comment-i)
 
+" vim-swap
+let g:swap_no_default_key_mappings = 1
+nmap [j <Plug>(swap-prev)
+nmap ]j <Plug>(swap-next)
+nmap gsa <Plug>(swap-interactive)
+
 " Splitjoin - switch between single-line and multiline forms of code
 let g:splitjoin_split_mapping = ''
 let g:splitjoin_join_mapping = ''
