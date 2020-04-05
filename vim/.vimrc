@@ -846,7 +846,7 @@ vnoremap <Silent> <LocalLeader>ss :sort i<CR>
 
 nnoremap gss :echo system("stat " . shellescape(expand('%:p')) . "<bar> sed -n 4p")<CR>
 
-noremap zea :edit ~/.dotfiles/ansible/arch.yml<CR>
+noremap zea :edit ~/.dotfiles/ansible/playbook.yml<CR>
 noremap zeb :edit ~/.bashrc<CR>
 noremap zef :edit ~/.dotfiles/firefox/.mozilla/firefox/main/user.js<CR>
 noremap zei :edit ~/.config/i3/config<CR>
