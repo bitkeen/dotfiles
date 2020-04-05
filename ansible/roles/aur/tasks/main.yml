@@ -17,7 +17,6 @@
     - { name: path-extractor } # A unix filter which outputs the filepaths found in stdin
     - { name: polybar } # A fast and easy-to-use status bar
     - { name: python-pgspecial } # Dependency for pgcli (pgcli is installed from pkgbuilds repo)
-    - { name: ranger-git } # 1.9.2 which is in the official repo doesn't support image previews with ueberzug
     - { name: scrcpy } # Display and control an Android device
     - { name: slack-desktop }
     - { name: tor-browser }

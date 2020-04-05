@@ -62,6 +62,7 @@
       - pulsemixer # CLI and curses mixer for pulseaudio
       - python-pip
       - python-virtualenvwrapper
+      - ranger
       - redshift # Set color temperature of display according to time of day
       - ripgrep
       - simplescreenrecorder
