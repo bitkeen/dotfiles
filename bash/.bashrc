@@ -38,6 +38,7 @@ git_prompt_file='/usr/share/git/completion/git-prompt.sh'
 export EDITOR=/usr/bin/vim
 export FZF_DEFAULT_OPTS="--preview 'cat {}' --preview-window='hidden' --bind='ctrl-t:toggle-preview'"
 export FZF_CTRL_R_OPTS='--sort'
+export GOPATH="$HOME/.local/share/go"
 # Ignore lines that start with a space,
 # don't save lines matching a previous history entry.
 export HISTCONTROL=ignorespace:ignoredups:erasedups
