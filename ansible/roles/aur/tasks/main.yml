@@ -5,6 +5,7 @@
   git:
     repo: 'https://aur.archlinux.org/{{ item.name }}.git'
     dest: '{{ aur_pkg_dir }}/{{ item.name }}'
+    force: yes # Discard local modifications.
   loop:
     - { name: git-open } # Open a repo website (GitHub, GitLab, Bitbucket) in your browser
     - { name: dragon-drag-and-drop } # Simple drag-and-drop source/sink for X
@@ -33,6 +34,6 @@
   become: yes
   become_user: "{{ user_name }}"
   command:
-    cmd: makepkg -si --noconfirm --needed
+    cmd: makepkg -si --cleanbuild --noconfirm --needed --rmdeps
     chdir: '{{ aur_pkg_dir }}/{{ item }}'
   loop: '{{ aur_dirs.stdout_lines }}'
