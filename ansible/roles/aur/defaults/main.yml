@@ -1,2 +1,21 @@
 ---
 aur_pkg_dir: '{{ user_home }}/.cache/ansible_aur'
+
+packages:
+  - { name: git-open } # Open a repo website (GitHub, GitLab, Bitbucket) in your browser
+  - { name: dragon-drag-and-drop } # Simple drag-and-drop source/sink for X
+  - { name: htop-vim-git } # Interactive text-mode process viewer. Patched for vim keybindings
+  - { name: lab }
+  - { name: mycli }
+  - { name: nerd-fonts-source-code-pro }
+  - { name: paper-icon-theme }
+  - { name: path-extractor } # A unix filter which outputs the filepaths found in stdin
+  - { name: polybar } # A fast and easy-to-use status bar
+  - { name: python-pgspecial } # Dependency for pgcli (pgcli is installed from pkgbuilds repo)
+  - { name: scrcpy } # Display and control an Android device
+  - { name: slack-desktop }
+  - { name: tor-browser }
+  - { name: virtualbox-ext-oracle } # VirtualBox Extension Pack
+  - { name: xidlehook } # xautolock rewrite in Rust, with a few extra features
+  - { name: xkb-switch } # Program that allows to query and change the XKB layout state
+  - { name: yay } # AUR helper
