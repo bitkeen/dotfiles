@@ -92,6 +92,7 @@
       - urxvt-perls
       - virtualbox
       - virtualbox-guest-iso # Guest Additions CD image
+      - wireshark-cli # Network traffic and protocol analyzer/sniffer - CLI tools and data files
       - xclip
       - xcursor-vanilla-dmz # Vanilla DMZ cursor theme
       - xmlstarlet # Command line utilities for XML
