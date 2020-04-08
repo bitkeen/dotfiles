@@ -11,15 +11,25 @@
 dd_name="$1"
 session_name="$2"
 
+get_num_clients() {
+    # Get number of clients attached to a specific session.
+    tmux list-clients -t "$1" | wc -l
+}
+
 launch_new_terminal() {
     # Tmux dropdown is not running.
+    # Get number of clients for specified session for later comparison.
+    num_clients="$(get_num_clients "$session_name")"
+
     tmux_cmd="tmux new-session -A -s $session_name"
     i3 "exec --no-startup-id urxvt -name $dd_name -e $tmux_cmd"
 
+    new_num_clients="$(get_num_clients "$session_name")"
     # Wait until the session is ready.
-    while ! tmux ls | grep "$session_name" | grep attached
+    while [ "$new_num_clients" -eq "$num_clients" ]
     do
-        continue
+        sleep .01 # 10 ms
+        new_num_clients="$(get_num_clients "$session_name")"
     done
 }
 
