@@ -841,8 +841,8 @@ nnoremap @; @:
 " `noremap!` maps both for the insert and the command-line mode.
 noremap! <C-r>; <C-r>:
 
-nnoremap <Silent> <LocalLeader>ss :%sort i<CR>
-vnoremap <Silent> <LocalLeader>ss :sort i<CR>
+nnoremap <silent> <LocalLeader>ss :%sort i<CR>
+vnoremap <silent> <LocalLeader>ss :sort i<CR>
 
 nnoremap gss :echo system("stat " . shellescape(expand('%:p')) . "<bar> sed -n 4p")<CR>
 
