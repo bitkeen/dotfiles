@@ -289,3 +289,6 @@
 [submodule "vim-swap"]
 	path = vim/.vim/pack/bundle/opt/vim-swap
 	url = https://github.com/machakann/vim-swap
+[submodule "tmux-fingers"]
+	path = tmux/.tmux/plugins/tmux-fingers
+	url = https://github.com/Morantron/tmux-fingers
