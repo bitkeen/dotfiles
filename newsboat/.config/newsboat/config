@@ -13,3 +13,7 @@ bind-key G end
 bind-key g home
 bind-key l open
 bind-key h quit articlelist
+
+browser firefox
+macro , open-in-browser
+macro v set browser "i3 exec mpv"; open-in-browser ; set browser firefox
