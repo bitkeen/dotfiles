@@ -101,8 +101,8 @@
       - xorg-xev # Print contents of X events
       - xorg-xprop # Property displayer for X
       - xsecurelock # X11 screen lock utility
+      - yamllint # Linter for YAML files
       - zathura
       - zathura-djvu
       - zathura-pdf-mupdf
       - zip # Compressor/archiver for creating and modifying zipfiles
-      - yamllint # Linter for YAML files
