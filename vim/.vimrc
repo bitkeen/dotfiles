@@ -901,6 +901,8 @@ let g:jedi#goto_command = '<Leader>d'
 let g:jedi#rename_command = '<Leader>r'
 " Default is <Leader>g.
 let g:jedi#goto_assignments_command = '<Leader>ga'
+" Default is <Leader>s.
+let g:jedi#goto_stubs_command = '<Leader>gs'
 " Default is <Leader>n.
 let g:jedi#usages_command = '<Leader>gy'
 " Default is <C-space> which conflicts with Tmux prefix binding.
