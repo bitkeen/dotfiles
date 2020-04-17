@@ -3,7 +3,7 @@
 " Get the defaults that most users want.
 source $VIMRUNTIME/defaults.vim
 
-if has("vms")
+if has('vms')
   " Do not keep a backup file, use versions instead.
   set nobackup
 else
@@ -15,7 +15,7 @@ else
   endif
 endif
 
-if &t_Co > 2 || has("gui_running")
+if &t_Co > 2 || has('gui_running')
   " Switch on highlighting the last used search pattern.
   set hlsearch
 endif
@@ -110,7 +110,7 @@ endif
 " Automatically refresh current file on if it was changed
 " outside of Vim.
 set autoread
-if has("autocmd")
+if has('autocmd')
   augroup refresh
     autocmd!
     " 'checktime' causes errors in command line windows
@@ -331,7 +331,7 @@ set wildignorecase
 
 " Vim before 8.1.1365 is vulnerable to arbitrary code execution via modelines
 " by opening a specially crafted text file.
-if !has("patch-8.1-1366")
+if !has('patch-8.1-1366')
   set nomodeline
 else
   " Disallow options that are an epxression to be set in the modeline.
@@ -347,7 +347,7 @@ let g:netrw_liststyle=3
 let g:netrw_home = '~/.vim/tmp'
 
 " Enable basic fzf plugin.
-set rtp+=/usr/bin/fzf
+set runtimepath+=/usr/bin/fzf
 
 " Highlight the text line without line number.
 set cursorlineopt=line
@@ -356,7 +356,7 @@ command! WrappedObsession execute s:wrapped_obsession()
 
 function! s:wrapped_obsession()
   " Source Session.vim if it exists, start a new session otherwise.
-  if getfsize("Session.vim") > 0
+  if getfsize('Session.vim') > 0
     source Session.vim
   else
     Obsession
@@ -400,7 +400,7 @@ let g:CommandTAlwaysShowDotFiles = 1
 " Recurse into dot-directories.
 let g:CommandTScanDotDirectories = 1
 " Override wildignore setting during Command-T searches.
-let g:CommandTWildIgnore=&wildignore . ",*/.git,Session.vim,*/.vim/tmp"
+let g:CommandTWildIgnore=&wildignore . ',*/.git,Session.vim,*/.vim/tmp'
 let g:CommandTMaxFiles=10000000
 " Traverse upwards looking for an SCM root, start from Vim's present
 " working directory.
@@ -515,7 +515,7 @@ autocmd plugins TextChanged,InsertLeave,BufWritePost * call lightline#update()
 
 " Return number of windows in a specific tab.
 function! LightLineTabWinNr(tabnr) abort
-  let tabwincount = tabpagewinnr(a:tabnr, "$")
+  let tabwincount = tabpagewinnr(a:tabnr, '$')
   return tabwincount > 1 ? '[' . tabwincount . ']' : ''
 endfunction
 
@@ -559,8 +559,8 @@ endfunction
 " base16-vim - themes {{{
 " Colorscheme local customization.
 function! s:base16_tomorrow_night_custom() abort
-  call Base16hi("PMenuSel", g:base16_gui05, g:base16_gui01, g:base16_cterm05, g:base16_cterm01, "reverse", "")
-  call Base16hi("Comment", g:base16_gui03, "", g:base16_cterm03, "", "italic", "")
+  call Base16hi('PMenuSel', g:base16_gui05, g:base16_gui01, g:base16_cterm05, g:base16_cterm01, 'reverse', '')
+  call Base16hi('Comment', g:base16_gui03, '', g:base16_cterm03, '', 'italic', '')
 endfunction
 
 augroup on_change_colorscheme
@@ -569,7 +569,7 @@ augroup on_change_colorscheme
 augroup END
 
 " .vimrc_background sets colorscheme.
-if filereadable(expand("~/.vimrc_background"))
+if filereadable(expand('~/.vimrc_background'))
   " Access colors present in 256 colorspace.
   let base16colorspace=256
   source ~/.vimrc_background
@@ -598,7 +598,7 @@ let g:grepper.simple_prompt = 1
 let g:gundo_prefer_python3 = 1
 
 " vim-slime
-let g:slime_target = "tmux"
+let g:slime_target = 'tmux'
 let g:slime_paste_file = tempname()
 augroup slime
   autocmd!
@@ -627,7 +627,7 @@ autocmd plugins FileType todo :let b:auto_save = 1
 
 " Mappings {{{
 
-let mapleader=" "
+let mapleader=' '
 " Backslash needs to be escaped.
 let maplocalleader="\\"
 
@@ -803,7 +803,7 @@ nnoremap ]n o<Esc>k
 nnoremap <silent> [b :bprevious<CR>
 nnoremap <silent> ]b :bnext<CR>
 
-if has("autocmd")
+if has('autocmd')
   " Compiling TeX.
   augroup texmaps
     autocmd!
