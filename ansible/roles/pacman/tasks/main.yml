@@ -90,6 +90,7 @@
       - unclutter # A small program for hiding the mouse cursor
       - unzip # For extracting and viewing files in .zip archives
       - urxvt-perls
+      - vint # Lint tool for Vim script Language
       - virtualbox
       - virtualbox-guest-iso # Guest Additions CD image
       - wireshark-cli # Network traffic and protocol analyzer/sniffer - CLI tools and data files
