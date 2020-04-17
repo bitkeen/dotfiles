@@ -1071,6 +1071,10 @@ nmap zK :SplitjoinJoin<cr>
 " qfreplace - change lines from quickfix
 nmap cq :Qfreplace<CR>
 
+" ALE - Asynchronous Lint Engine
+nmap [e <Plug>(ale_previous)
+nmap ]e <Plug>(ale_next)
+
 " fzf.vim
 let g:fzf_command_prefix = 'Fzf'
 
