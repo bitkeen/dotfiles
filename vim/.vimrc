@@ -153,6 +153,7 @@ if has('packages')
   packadd! targets.vim
   packadd! textobj-word-column.vim
   packadd! tmuxline.vim
+  packadd! traces.vim " For :substitute previews.
   packadd! undoquit.vim
   packadd! vim-abolish
   packadd! vim-auto-save

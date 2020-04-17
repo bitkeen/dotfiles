@@ -292,3 +292,6 @@
 [submodule "tmux-fingers"]
 	path = tmux/.tmux/plugins/tmux-fingers
 	url = https://github.com/Morantron/tmux-fingers
+[submodule "traces.vim"]
+	path = vim/.vim/pack/bundle/opt/traces.vim
+	url = https://github.com/markonm/traces.vim
