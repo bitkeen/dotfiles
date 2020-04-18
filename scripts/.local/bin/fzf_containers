@@ -5,11 +5,11 @@
 
 . ~/.dotfiles/bash/.config/bash/docker_aliases
 
-fzf_opts="--reverse --height 40% $FZF_DEFAULT_OPTS"
+FZF_DEFAULT_OPTS="--reverse --height 40% $FZF_DEFAULT_OPTS"
 
 choice="$(docker ps |
     awk 'NR>1 {print $3}' |
-    FZF_DEFAULT_OPTS="$fzf_opts" fzf)"
+    fzf)"
 
 [ -z "$choice" ] && exit 1
 

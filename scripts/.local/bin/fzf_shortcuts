@@ -7,7 +7,9 @@
 # Usage example:
 # fzf_shortcuts ~/.config/shortcuts
 
+FZF_DEFAULT_OPTS="--reverse --height 40% $FZF_DEFAULT_OPTS"
+
 cat "$@" 2>/dev/null | # Concatenate input files.
-    FZF_DEFAULT_OPTS="--reverse --height 40% $FZF_DEFAULT_OPTS" fzf |
+    fzf |
     awk '{$1=""; print substr($0, 2)}' | # Remove the first column.
     sed "s,^~,$HOME,"
