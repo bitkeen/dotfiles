@@ -1,0 +1,13 @@
+---
+- name: get wasavi extension id
+  shell:
+    warn: false # Don't warn about using get_url isntead of curl.
+    cmd: curl --silent https://raw.githubusercontent.com/akahuku/wasavi/{{ wasavi_version }}/dist/firefox.json | jq -r ".addons | keys[0]"
+  register: extension_id
+
+- name: download wasavi extension
+  become: yes
+  become_user: '{{ user_name }}'
+  get_url:
+    url: 'https://github.com/akahuku/wasavi/blob/{{ wasavi_version }}/dist/wasavi.xpi?raw=true'
+    dest: '{{ profile_path }}/extensions/{{ extension_id.stdout }}.xpi'

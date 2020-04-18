@@ -11,6 +11,7 @@
     - stow
     - pkgbuilds
     - aur
+    - firefox
     - transmission
     - virtualbox
   vars:
