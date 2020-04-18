@@ -25,14 +25,6 @@ fzg() {
         return 1
 }
 
-fzd() {
-    fzf_dbs ~/.config/db_connections.local
-}
-
-fzc() {
-    fzf_containers
-}
-
 vim_session_venv() {
     # Get a directory to venv mapping from a file, activate venv
     # before launching vim with the session of the directory.
