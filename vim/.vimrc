@@ -121,10 +121,8 @@ if has('autocmd')
 endif
 
 if has('packages')
-  " The matchit plugin makes the % command work better,
-  " but it is not backwards compatible.
   if has('syntax') && has('eval')
-    packadd matchit
+    packadd matchit " Extended matching with '%'
   endif
 
   if has('python3')
