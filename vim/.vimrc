@@ -120,13 +120,19 @@ if has('autocmd')
   augroup END
 endif
 
-" The matchit plugin makes the % command work better,
-" but it is not backwards compatible.
-if has('syntax') && has('eval')
-  packadd matchit
-endif
-
 if has('packages')
+  " The matchit plugin makes the % command work better,
+  " but it is not backwards compatible.
+  if has('syntax') && has('eval')
+    packadd matchit
+  endif
+
+  if has('python3')
+    packadd MatchTagAlways
+    packadd completor.vim
+    packadd ultisnips
+  endif
+
   packadd! ale " Asynchronous Lint Engine
   packadd! base16-vim " Themes
   packadd! CamelCaseMotion " CamelCase and snake_case movement mappings
@@ -989,10 +995,6 @@ nmap <Leader>z <Plug>(vzoom)
 noremap <LocalLeader>i :InstantMarkdownPreview<CR>
 
 if has('python3')
-  packadd MatchTagAlways
-  packadd completor.vim
-  packadd ultisnips
-
   " vim-isort
   autocmd plugins FileType python packadd vim-isort
   autocmd plugins FileType python let g:vim_isort_map = '<Leader>i'
