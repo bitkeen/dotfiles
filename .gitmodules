@@ -295,3 +295,6 @@
 [submodule "traces.vim"]
 	path = vim/.vim/pack/bundle/opt/traces.vim
 	url = https://github.com/markonm/traces.vim
+[submodule "quickpeek.vim"]
+	path = vim/.vim/pack/bundle/opt/quickpeek.vim
+	url = https://github.com/AndrewRadev/quickpeek.vim
