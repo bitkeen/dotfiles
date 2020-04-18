@@ -121,6 +121,8 @@ if has('autocmd')
 endif
 
 if has('packages')
+  packadd cfilter " Filter a quickfix or location list
+
   if has('syntax') && has('eval')
     packadd matchit " Extended matching with '%'
   endif
