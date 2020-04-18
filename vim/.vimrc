@@ -941,7 +941,7 @@ noremap <C-g>lg :0Glog<CR>
 noremap <C-g>mv :Git mv <C-R>=expand('%:p')<CR> <C-R>=expand('%:p:h') . '/'<CR>
 noremap <C-g>st :Gstatus<CR>
 noremap <C-g>sh :Git stash<CR>
-noremap <C-g>rs :Git reset %<CR>
+noremap <silent> <C-g>rs :silent Git reset %<CR>
 
 " C-Left moves the cursor before ':'.
 noremap <C-g>vs :Gvsplit :%<C-Left>
