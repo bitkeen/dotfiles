@@ -979,10 +979,6 @@ nnoremap <Leader><C-w> :SudoWrite<CR>:call lightline#update()<CR>:echo<CR>
 " Toggle.
 nnoremap gso :Obsession!<CR>
 
-let g:ranger_map_keys = 0
-noremap <LocalLeader>f :Ranger<CR>
-noremap <LocalLeader>F :RangerNewTab<CR>
-
 " vim-merginal
 " Requires fugitive.
 noremap <silent> <Leader>m :MerginalToggle<CR>
