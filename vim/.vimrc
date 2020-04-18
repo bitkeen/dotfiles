@@ -633,7 +633,6 @@ autocmd plugins FileType todo :let b:auto_save = 1
 " quickpeek.vim
 let g:quickpeek_popup_options = {'title': 'Preview'}
 let g:quickpeek_window_settings = ['cursorline', 'number', 'relativenumber']
-let g:quickpeek_auto = v:true
 
 " }}}
 
