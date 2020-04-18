@@ -2,6 +2,8 @@
 # Open a terminal window with cal command output and nothing else if
 # it doesn't already exist, kill it otherwise.
 
-# 'tput civis' hides the cursor.
+# 'tput civis' - hide the cursor.
+# 'cal -y -m' show calendar for current year with Monday as the first
+# day of the week.
 pgrep -f 'urxvt -name caldd' | xargs kill 2>/dev/null ||
-    urxvt -name 'caldd' -e sh -c 'tput civis; cal -y; while true; do :; done'
+    urxvt -name 'caldd' -e sh -c 'tput civis; cal -y -m; while true; do :; done'
