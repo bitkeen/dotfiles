@@ -3,4 +3,5 @@ if ! [ -x "$(command -v ansible)" ]; then
     sudo pacman -S ansible
 fi
 
+export ANSIBLE_PYTHON_INTERPRETER=auto_silent
 ansible-playbook -i ~/.dotfiles/ansible/hosts --ask-become-pass ~/.dotfiles/ansible/playbook.yml
