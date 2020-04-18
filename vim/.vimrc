@@ -127,68 +127,68 @@ if has('syntax') && has('eval')
 endif
 
 if has('packages')
-  packadd! ale
-  packadd! base16-vim
-  packadd! CamelCaseMotion
-  packadd! command-t
+  packadd! ale " Asynchronous Lint Engine
+  packadd! base16-vim " Themes
+  packadd! CamelCaseMotion " CamelCase and snake_case movement mappings
+  packadd! command-t " File finder
   packadd! committia.vim
   packadd! fugitive-gitlab.vim
   packadd! fzf.vim
-  packadd! git-blame.vim
-  packadd! gundo.vim
-  packadd! gv.vim
-  packadd! indentLine
-  packadd! jedi-vim
+  packadd! git-blame.vim " See blame information in the bottom line
+  packadd! gundo.vim " Graph undo tree
+  packadd! gv.vim " Git commit browser. Requires fugitive
+  packadd! indentLine " Display vertical lines at each indentation level
+  packadd! jedi-vim " Python autocompletion
   packadd! lightline-ale
-  packadd! lightline.vim
-  packadd! linediff.vim
+  packadd! lightline.vim " A light and configurable statusline/tabline
+  packadd! linediff.vim " Diff two blocks of text
   packadd! pydoc.vim
-  packadd! python-syntax
-  packadd! QFEnter
+  packadd! python-syntax " Better python syntax highlighting
+  packadd! QFEnter " Open a Quickfix item in a window you choose
   packadd! quick-scope
   packadd! quickpeek.vim " A preview popup on quickfix entries
   packadd! requirements.txt.vim
-  packadd! splitjoin.vim
+  packadd! splitjoin.vim " Switch between single-line and multiline forms of code
   packadd! tabular
-  packadd! tagbar
-  packadd! targets.vim
+  packadd! tagbar " A class outline viewer using ctags
+  packadd! targets.vim " Additional text objects
   packadd! textobj-word-column.vim
-  packadd! tmuxline.vim
-  packadd! traces.vim " For :substitute previews.
+  packadd! tmuxline.vim " Tmux status line generator
+  packadd! traces.vim " For :substitute previews
   packadd! undoquit.vim
   packadd! vim-abolish
   packadd! vim-auto-save
   packadd! vim-characterize
   packadd! vim-closer
-  packadd! vim-commentary
+  packadd! vim-commentary " Easy commenting
   packadd! vim-easydir
   packadd! vim-endwise
   packadd! vim-eunuch
   packadd! vim-exchange
   packadd! vim-expand-region
-  packadd! vim-fugitive
-  packadd! vim-gitgutter
+  packadd! vim-fugitive " Git wrapper
+  packadd! vim-gitgutter " Show a git diff in the sign column
   packadd! vim-gnupg
-  packadd! vim-grepper
+  packadd! vim-grepper " Use search tools in a vim split
   packadd! vim-gtfo
   packadd! vim-highlightedyank
   packadd! vim-indent-object
-  packadd! vim-instant-markdown
+  packadd! vim-instant-markdown " Instant markdown previews
   packadd! Vim-Jinja2-Syntax
   packadd! vim-ledger
-  packadd! vim-merginal
+  packadd! vim-merginal " Interface for dealing with Git branches
   packadd! vim-obsession
   packadd! vim-pug
   packadd! vim-python-pep8-indent
-  packadd! vim-qfreplace
+  packadd! vim-qfreplace " Change lines from quickfix
   packadd! vim-qlist
   packadd! vim-ragtag
   packadd! vim-repeat
   packadd! vim-rhubarb
   packadd! vim-scriptease
   packadd! vim-searchindex
-  packadd! vim-signature
-  packadd! vim-signjump
+  packadd! vim-signature " A plugin to toggle, display and navigate marks
+  packadd! vim-signjump " Jump to signs just like other object motions
   packadd! vim-slime
   packadd! vim-speeddating
   packadd! vim-superman
@@ -196,7 +196,7 @@ if has('packages')
   packadd! vim-swap
   packadd! vim-sxhkdrc
   packadd! vim-syntax-extra
-  packadd! vim-textobj-comment
+  packadd! vim-textobj-comment " Text objects for comments
   packadd! vim-textobj-conflict
   packadd! vim-textobj-entire
   packadd! vim-textobj-user
@@ -206,10 +206,10 @@ if has('packages')
   packadd! vim-vinegar
   packadd! vim-visual-star-search
   packadd! vim-vue
-  packadd! vim-xkbswitch
-  packadd! vimwiki
-  packadd! vZoom.vim
-  packadd! winresizer
+  packadd! vim-xkbswitch " Automatically switch keyboard layout based on mode
+  packadd! vimwiki " Personal wiki for Vim
+  packadd! vZoom.vim " Quickly maximize & unmaximize the current window
+  packadd! winresizer " Easy window resizing, similar to resize mode in i3wm
 else
   " Enable Pathogen package manager.
   execute pathogen#infect('pack/bundle/opt/{}')
@@ -372,15 +372,15 @@ augroup plugins
   autocmd!
 augroup END
 
-" indentLine - display vertical lines at each indentation level.
+" indentLine
 let g:indentLine_fileType = ['python', 'lua', 'vim', 'xquery']
 " U+2502: BOX DRAWINGS LIGHT VERTICAL.
 let g:indentLine_char = '│'
 
-" vim-instant-markdown - instant markdown previews.
+" vim-instant-markdown
 let g:instant_markdown_autostart = 0
 
-" vimwiki - personal wiki for Vim. {{{
+" vimwiki {{{
 let g:vimwiki_list = [
 \  {'path': '~/sync/wikis/mainwiki', 'syntax': 'markdown', 'ext': '.md'},
 \  {'path': '~/sync/wikis/phonewiki', 'syntax': 'markdown', 'ext': '.md'},
@@ -391,7 +391,7 @@ let g:vimwiki_ext2syntax = {'.md': 'markdown', '.markdown': 'markdown', '.mdown'
 let g:vimwiki_hl_headers = 1
 " }}}
 
-" Command-T - file finder. {{{
+" Command-T {{{
 " Set the underlying scanning implementation that should be used to explore
 " the filesystem. Default value is 'ruby'.
 let g:CommandTFileScanner = 'find'
@@ -410,17 +410,17 @@ let g:CommandTTraverseSCM='dir'
 let g:CommandTSmartCase=1
 " }}}
 
-" vim-xkbswitch - automatically switch keyboard layout based on mode.
+" vim-xkbswitch
 let g:XkbSwitchEnabled = 1
 
-" vim-commentary - easy commenting. {{{
+" vim-commentary {{{
 autocmd plugins FileType abp setlocal commentstring=!%s
 autocmd plugins FileType requirements setlocal commentstring=#\ %s
 autocmd plugins FileType xquery setlocal commentstring=(:\ %s\ :)
 autocmd plugins FileType xdefaults setlocal commentstring=!%s
 " }}}
 
-" vim-gitgutter - show a git diff in the sign column. {{{
+" vim-gitgutter {{{
 " Always show the sign column.
 if exists('&signcolumn')
   set signcolumn=yes
@@ -429,11 +429,11 @@ else
 endif
 " }}}
 
-" jedi-vim - Python autocompletion
+" jedi-vim
 " Disable jedi completions as they are now handled by completor.
 let g:jedi#completions_enabled = 0
 
-" lightline.vim - a light and configurable statusline/tabline {{{
+" lightline.vim {{{
 " Specify which feature is turned on. Both are equal to 1 by default.
 let g:lightline = {
 \  'enable': {
@@ -557,7 +557,7 @@ function! LightlineXkbSwitch()
 endfunction
 " }}}
 
-" base16-vim - themes {{{
+" base16-vim {{{
 " Colorscheme local customization.
 function! s:base16_tomorrow_night_custom() abort
   call Base16hi('PMenuSel', g:base16_gui05, g:base16_gui01, g:base16_cterm05, g:base16_cterm01, 'reverse', '')
@@ -595,7 +595,7 @@ let g:grepper.prompt_quote = 3
 let g:grepper.simple_prompt = 1
 " }}}
 
-" Gundo - graph undo tree.
+" Gundo
 let g:gundo_prefer_python3 = 1
 
 " vim-slime
@@ -614,7 +614,7 @@ augroup slime
   autocmd BufWinEnter */.vim/slime/repl.lua :let g:auto_save_silent = 1
 augroup END
 
-" UltiSnips - snippets.
+" UltiSnips
 let g:UltiSnipsEditSplit = 'context'
 let g:UltiSnipsSnippetDirectories = [$HOME.'/.vim/ultisnips']
 
@@ -872,7 +872,7 @@ nnoremap <silent> <Leader>fb :Sexplore<CR>
 nnoremap <silent> <Leader>fv :Vexplore!<CR>
 " }}}
 
-" vimwiki - personal wiki for Vim.
+" vimwiki
 " Default is "<Leader>wt".
 nmap <Leader>wT <Plug>VimwikiTabIndex
 nmap <Leader>wb <Plug>VimwikiSplitLink
@@ -880,19 +880,19 @@ nmap <Leader>wv <Plug>VimwikiVSplitLink
 nmap <Leader>wt <Plug>VimwikiTabnewLink
 nmap glt <Plug>VimwikiToggleListItem
 
-" Command-T - file finder.
+" Command-T
 " Show open buffers. Default mapping is <Leader>b, remap it to
 " <Leader>bf because git-blame will be mapped to <Leader>bl.
 nmap <silent> <Leader>bf <Plug>(CommandTBuffer)
 let g:CommandTAcceptSelectionSplitMap = '<C-b>'
 
-" git-blame.vim - see blame information in the bottom line.
+" git-blame.vim
 nnoremap <silent> <Leader>bl :<C-u>call gitblame#echo()<CR>
 
-" Gundo - graph undo tree.
+" Gundo
 nnoremap <Leader>gu :GundoToggle<CR>
 
-" vim-grepper - use search tools in a vim split.
+" vim-grepper
 nnoremap <Leader>gr :Grepper<CR>
 " Switch between searching tools.
 let g:grepper.prompt_mapping_tool = '<Leader>gr'
@@ -900,7 +900,7 @@ let g:grepper.prompt_mapping_tool = '<Leader>gr'
 nmap gs <Plug>(GrepperOperator)
 xmap gs <Plug>(GrepperOperator)
 
-" jedi-vim - Python autocompletion
+" jedi-vim
 " <Leader>d is default. Leave it here for visibility.
 let g:jedi#goto_command = '<Leader>d'
 " <Leader>r is default. Leave it here for visibility.
@@ -914,20 +914,20 @@ let g:jedi#usages_command = '<Leader>gy'
 " Default is <C-space> which conflicts with Tmux prefix binding.
 let g:jedi#completions_command = '<C-n>'
 
-" QFEnter - open a Quickfix item in a window you choose.
+" QFEnter
 let g:qfenter_keymap = {}
 let g:qfenter_keymap.open = ['<CR>']
 let g:qfenter_keymap.vopen = ['<C-v>']
 let g:qfenter_keymap.hopen = ['<C-b>']
 let g:qfenter_keymap.topen = ['<C-t>']
 
-" CamelCaseMotion - CamelCase and snake_case movement mappings.
+" CamelCaseMotion
 call camelcasemotion#CreateMotionMappings('<LocalLeader>')
 
 " Trigger a highlight in the appropriate direction when pressing these keys:
 let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
 
-" fugitive - Git wrapper
+" fugitive
 " By default, Ctrl-g prints information about current file, which
 " is not useful since this information is already in lightline.
 noremap <C-g>ad :Git add %<CR>
@@ -947,10 +947,10 @@ noremap <C-g>rs :Git reset %<CR>
 noremap <C-g>vs :Gvsplit :%<C-Left>
 noremap <C-g>sp :Gsplit :%<C-Left>
 
-" GV - Git commit browser. Requires fugitive.
+" GV
 noremap <Leader>gv :GV<CR>
 
-" vim-gitgutter - show a git diff in the sign column.
+" vim-gitgutter
 nmap <C-g>hp <Plug>GitGutterPreviewHunk
 nmap <C-g>hs <Plug>GitGutterStageHunk
 nmap <C-g>hu <Plug>GitGutterUndoHunk
@@ -978,11 +978,11 @@ let g:ranger_map_keys = 0
 noremap <LocalLeader>f :Ranger<CR>
 noremap <LocalLeader>F :RangerNewTab<CR>
 
-" vim-merginal - interface for dealing with Git branches.
+" vim-merginal
 " Requires fugitive.
 noremap <silent> <Leader>m :MerginalToggle<CR>
 
-" vZoom - quickly maximize & unmaximize the current window.
+" vZoom
 nmap <Leader>z <Plug>(vzoom)
 
 " vim-instant-markdown
@@ -998,10 +998,10 @@ if has('python3')
   autocmd plugins FileType python let g:vim_isort_map = '<Leader>i'
 endif
 
-" Tmuxline - tmux status line generator.
+" Tmuxline
 let g:tmuxline_powerline_separators = 0
 
-" ALE - Asynchronous Lint Engine
+" ALE
 let g:ale_set_highlights = 0
 let g:ale_lint_on_text_changed = 'normal'
 let g:ale_echo_msg_format = '[%linter%] %code%: %s'
@@ -1012,11 +1012,11 @@ let g:ale_linters = {
 \  'yaml.ansible': ['ansible-lint'],
 \}
 
-" Signature - A plugin to toggle, display and navigate marks
+" Signature
 " Highlight signs of marks based upon state indicated by vim-gitgutter.
 let g:SignatureMarkTextHLDynamic = 1
 
-" signjump - jump to signs just like other object motions.
+" signjump
 let g:signjump = {
 \  'use_jumplist': 1,
 \  'map_next_sign': ']g',
@@ -1025,25 +1025,25 @@ let g:signjump = {
 \  'map_first_sign': '[G',
 \}
 
-" winresizer - easy window resizing, similar to resize mode in i3wm
+" winresizer
 let g:winresizer_start_key = '<Leader>R'
 
-" UltiSnips - snippets
+" UltiSnips
 nnoremap <LocalLeader>u :UltiSnipsEdit<CR>
 
-" python-syntax - better python syntax highlighting
+" python-syntax
 let g:python_highlight_all = 1
 
-" Tagbar - a class outline viewer using ctags
+" Tagbar
 nnoremap <LocalLeader>tt :TagbarToggle<CR>
 
-" Linediff - diff two blocks of text
+" Linediff
 nnoremap [l :Linediff<CR>
 nnoremap ]l :LinediffReset<CR>
 vnoremap [l :Linediff<CR>
 vnoremap ]l :LinediffReset<CR>
 
-" targets.vim - additional text objects
+" targets.vim
 " Include angle brackets in the "b" mapping.
 autocmd User targets#mappings#user call targets#mappings#extend({
 \  'b': {'pair': [
@@ -1053,7 +1053,7 @@ autocmd User targets#mappings#user call targets#mappings#extend({
 \    {'o':'<', 'c':'>'},]},
 \})
 
-" textobj-comment - text objects for comments
+" textobj-comment
 let g:textobj_comment_no_default_key_mappings = 1
 xmap ag <Plug>(textobj-comment-a)
 omap ag <Plug>(textobj-comment-a)
@@ -1068,16 +1068,16 @@ nmap [j <Plug>(swap-prev)
 nmap ]j <Plug>(swap-next)
 nmap gsa <Plug>(swap-interactive)
 
-" Splitjoin - switch between single-line and multiline forms of code
+" Splitjoin
 let g:splitjoin_split_mapping = ''
 let g:splitjoin_join_mapping = ''
 nmap zJ :SplitjoinSplit<cr>
 nmap zK :SplitjoinJoin<cr>
 
-" qfreplace - change lines from quickfix
+" qfreplace
 nmap cq :Qfreplace<CR>
 
-" ALE - Asynchronous Lint Engine
+" ALE
 nmap [e <Plug>(ale_previous)
 nmap ]e <Plug>(ale_next)
 
