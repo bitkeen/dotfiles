@@ -49,4 +49,6 @@ $if mode=vi
     Control-a: beginning-of-line
     Control-e: end-of-line
     Control-f: clear-screen
+    # Wrapper for `C-]` bash mapping that allows it to work in normal mode.
+    Control-]: "a\C-]\C-["
 $endif
