@@ -22,6 +22,9 @@ _source_if_exists() {
 # Source aliases and functions.
 for f in ~/.config/bash/*; do source "$f"; done
 
+# For copyline function see `bash_functions` file.
+bind -x '"\C-]":copyline'
+
 # Paths {{{
 base16_shell_dir="$HOME/.config/base16-shell/"
 fzf_bindings_file="/usr/share/fzf/key-bindings.bash"

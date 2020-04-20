@@ -87,3 +87,16 @@ cmnt() {
     choice="$(fzf_mounted)"
     [ -n "$choice" ] && cd "$choice"
 }
+
+copyline() {
+    # Copy current command.
+    # From https://stackoverflow.com/a/23710535.
+    # Should be bound to a shortcut in bash, depends on `copy`
+    # wrapper script.
+    printf %s "$READLINE_LINE" | copy
+}
+
+clc() {
+    # Copy last command.
+    history -p '!!' | sed 1q | copy
+}
