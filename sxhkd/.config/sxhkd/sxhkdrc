@@ -18,6 +18,12 @@ super + shift + x
 super + b
     toggle_brightness.sh
 
+# Mount/unmount menus.
+super + shift + m
+    dmenu-udisks-mount
+super + shift + u
+    dmenu-udisks-unmount
+
 # Media player controls.
 # Mod+/
 super + slash
