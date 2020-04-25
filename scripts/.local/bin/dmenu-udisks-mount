@@ -1,0 +1,15 @@
+#!/bin/sh
+# Use dmenu to mount drives using udisksctl.
+
+devices="$(
+    lsblk --list --paths --output NAME,TYPE,MOUNTPOINT | awk '$2~/^part$/' | awk '$3~/^$/{ print $1 }'
+)"
+[ -z "$devices" ] && notify-send 'Nothing to mount' && exit 1
+
+choice="$(
+    echo "$devices" |
+    dmenu_configured -p 'Mount:'
+)"
+[ -z "$choice" ] && exit 1
+
+udisksctl mount --block-device="$choice"
