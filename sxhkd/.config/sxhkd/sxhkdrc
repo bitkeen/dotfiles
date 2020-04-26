@@ -33,7 +33,7 @@ super + period
 	mpc next
 # Mod+,
 super + comma
-	mpc_prev_wrapper
+	mpc-prev-wrapper
 
 # Print screen.
 Print
