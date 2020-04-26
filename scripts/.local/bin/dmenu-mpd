@@ -1,0 +1,8 @@
+#!/bin/sh
+# Pass current mpd playlist to dmenu and play selected song.
+
+# Dashes are en dash.
+mpc playlist -f "%position% – %artist% – %title%" |
+    dmenu_configured -l 15 |
+    grep -Po '^\d+' |
+    xargs mpc play
