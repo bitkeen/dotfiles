@@ -1,2 +1,2 @@
 #!/bin/sh
-dmenu -fn 'Source Sans Pro:pixelsize=20' -i "$@"
+dmenu -i "$@"
