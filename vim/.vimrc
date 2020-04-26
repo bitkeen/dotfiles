@@ -93,6 +93,8 @@ if has('autocmd')
 
     " Reload binds when sxhkdrc is updated.
     autocmd BufWritePost *sxhkdrc silent !pkill -USR1 sxhkd
+    " Reload Xresources on update.
+    autocmd BufWritePost *Xresources, silent !xrdb %
 
     autocmd BufWinEnter *.rules setlocal filetype=udevrules
   augroup END
