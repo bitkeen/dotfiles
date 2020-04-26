@@ -5,4 +5,4 @@
 mpc playlist -f "%position% – %artist% – %title%" |
     dmenu_configured -l 15 |
     grep -Po '^\d+' |
-    xargs mpc play
+    xargs -n 1 -I {} mpc play {}
