@@ -1,14 +1,14 @@
 #!/bin/sh
 # Check if an XPath selector produces results on a page.
-# If elements are found, append a notification to an improvized
-# "mailbox", which is just a plain text file in home directory.
+# Use notify
+# If elements are found, notify-file script is run.
 #
 # Exit code is 0 if search is successful, 1 otherwise.
 #
 # Dependencies:
 # - curl
-# - libnotify
 # - xmllint
+# - notify-file script
 #
 # Example:
 # check_page 'https://example.com' '//a' 'Example'
@@ -25,9 +25,7 @@ page="$(curl --silent --insecure "$url")"
 (echo "$page" |
     xmllint --html --xpath "$xpath" - >/dev/null 2>&1) &&
     (
-        notification="Found elements at $url ($description)"
-        echo "$notification" | tee --append "$HOME/mailbox"
-        notify-send "$notification"
+        notify-file "Found elements at $url ($description)"
         exit 0
     ) ||
         (echo "Couldn't find $description"; exit 1)
