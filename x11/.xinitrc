@@ -1,4 +1,4 @@
-#! /bin/bash
+#!/bin/bash
 
 # Set keyboard layouts. localectl is provided by systemd.
 localectl --no-convert set-x11-keymap us,ru,ua pc105 "" grp:alt_shift_toggle,caps:ctrl_modifier &
