@@ -1,0 +1,14 @@
+#!/bin/sh
+# Append a notification message to a notifications file and
+# emit a notification via notify-send.
+#
+# Dependencies:
+# - libnotify
+
+message="$1"
+[ -z "$message" ] && echo 'Notification message is missing' && exit 1
+
+notification_file="$HOME/notifications"
+
+echo "$(date '+%F %T') - $message" | tee --append "$notification_file"
+notify-send "$message"
