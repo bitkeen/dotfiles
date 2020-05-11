@@ -13,7 +13,17 @@ bind-key G end
 bind-key g home
 bind-key l open
 bind-key h quit articlelist
+bind-key ^D pagedown
+bind-key ^U pageup
+
+# Unbind 'mark-all-feeds-read'
+unbind-key C
 
 browser firefox
 macro , open-in-browser
 macro v set browser "i3 exec mpv"; open-in-browser ; set browser firefox
+
+# Separator feeds, used to separate categories, e.g. `---Cooking---`.
+highlight all "---.*---.*" yellow black bold
+# Make counters and indices invisible in separators.
+highlight feedlist ".*(0/0)) " black
