@@ -95,6 +95,8 @@ if has('autocmd')
     autocmd BufWritePost *sxhkdrc silent !pkill -USR1 sxhkd
     " Reload Xresources on update.
     autocmd BufWritePost *Xresources, silent !xrdb %
+    " Reload i3 config on update.
+    autocmd BufWritePost */i3/config, silent !i3-msg restart
 
     autocmd BufWinEnter *.rules setlocal filetype=udevrules
   augroup END
