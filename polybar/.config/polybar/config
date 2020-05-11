@@ -37,7 +37,7 @@ font-1 = SauceCodePro Nerd Font Mono:size=15;5
 font-2 = Font Awesome 5 Brands Regular:size=11;5
 
 modules-left = i3
-modules-right = docker mpd pulseaudio vpn wlan xkeyboard battery date dmenu_power
+modules-right = docker mpd pulseaudio vpn wlan xkeyboard battery weather date dmenu_power
 
 tray-position = right
 tray-padding = 2
@@ -176,6 +176,13 @@ type = custom/script
 exec = date '+%a, %b %d %H:%M'
 interval = 5
 click-left = caldd &
+
+[module/weather]
+format-prefix = " "
+type = custom/script
+exec = curl --silent wttr.in/?0FTQ | sed -n 2p | grep -Po '\d+.* °C'
+interval = 5
+click-left = weatherdd &
 
 
 [settings]
