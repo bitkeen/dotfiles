@@ -1,0 +1,9 @@
+#!/bin/sh
+# Similar to caldd.
+# Open a terminal window with weather and nothing else if
+# it doesn't already exist, kill it otherwise.
+# Requires `weather` script.
+
+# 'tput civis' - hide the cursor.
+pgrep -f 'urxvt -name weatherdd' | xargs kill 2>/dev/null ||
+    urxvt -name 'weatherdd' -e sh -c 'tput civis; weather; while true; do :; done'
