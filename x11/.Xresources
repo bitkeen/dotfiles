@@ -120,3 +120,6 @@ tmuxdd.foreground: base07
 
 caldd.background: rgba:3333/3333/3333/CCCC
 caldd.foreground: base07
+
+weatherdd.background: rgba:3333/3333/3333/CCCC
+weatherdd.foreground: base07
