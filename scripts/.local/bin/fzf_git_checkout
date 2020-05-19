@@ -2,8 +2,9 @@
 # Checkout to a Git branch selected in fzf.
 
 branch="$(
-    'git' branch |
+    'git' branch --all |
         sed 's/\*//'| # Remove current branch symbol (*).
+        sed 's/remotes\/[^\/]*\///' | # Remove `remotes/<remote name>/`.
         sed 's/^\s*//'| # Strip leading whitespace.
         fzf --height=40% --reverse
 )"
