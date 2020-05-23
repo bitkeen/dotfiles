@@ -852,10 +852,6 @@ vnoremap <LocalLeader>j :!python -m json.tool<CR>
 nnoremap c* *Ncgn
 nnoremap c# #NcgN
 
-" Open command-line window.
-nnoremap q; q:
-" Run previous command.
-nnoremap @; @:
 " Paste from the command register.
 " `noremap!` maps both for the insert and the command-line mode.
 noremap! <C-r>; <C-r>:
