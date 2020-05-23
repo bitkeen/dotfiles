@@ -930,9 +930,6 @@ let g:qfenter_keymap.vopen = ['<C-v>']
 let g:qfenter_keymap.hopen = ['<C-b>']
 let g:qfenter_keymap.topen = ['<C-t>']
 
-" CamelCaseMotion
-call camelcasemotion#CreateMotionMappings('<LocalLeader>')
-
 " Trigger a highlight in the appropriate direction when pressing these keys:
 let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
 
