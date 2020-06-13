@@ -3,17 +3,17 @@
   hosts: localhost
   become: yes
   roles:
-    - misc
-    - pacman
-    - systemd
-    - python
-    - npm
-    - stow
-    - pkgbuilds
-    - aur
-    - firefox
-    - transmission
-    - virtualbox
+    - { role: misc, tags: misc }
+    - { role: pacman, tags: pacman }
+    - { role: systemd, tags: systemd }
+    - { role: python, tags: python }
+    - { role: npm, tags: npm }
+    - { role: stow, tags: stow }
+    - { role: pkgbuilds, tags: pkgbuilds }
+    - { role: aur, tags: aur }
+    - { role: firefox, tags: firefox }
+    - { role: transmission, tags: transmission }
+    - { role: virtualbox, tags: virtualbox }
   vars:
     - user_home: "{{ '~' | expanduser }}"
     - dotfiles_home: "{{ user_home }}/.dotfiles"
