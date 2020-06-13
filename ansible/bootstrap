@@ -1,7 +1,13 @@
 #!/bin/sh
+# Run ansible-playbook, accept tags as args.
 if ! [ -x "$(command -v ansible)" ]; then
     sudo pacman -S ansible
 fi
 
 export ANSIBLE_PYTHON_INTERPRETER=auto_silent
-ansible-playbook -i ~/.dotfiles/ansible/hosts --ask-become-pass ~/.dotfiles/ansible/playbook.yml
+
+[ -n "$1" ] &&
+    tags_arg="$(printf " --tags %s" "$@")"
+
+# Don't double quote for word-splitting of args.
+ansible-playbook -i ~/.dotfiles/ansible/hosts --ask-become-pass ~/.dotfiles/ansible/playbook.yml $tags_arg
