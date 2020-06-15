@@ -831,10 +831,12 @@ if has('autocmd')
     " Go to newer error list.
     autocmd FileType qf nnoremap <Leader>L :cnewer<CR>
   augroup END
-  augroup htmlmaps
-    " Pretty format current buffer using tidy.
-    autocmd FileType html nnoremap <F4> :silent % !tidy -q -i --show-errors 0<CR>
-    autocmd FileType xml nnoremap <F4> :silent % !tidy -q -i --show-errors 0 -xml<CR>
+  augroup formatmaps
+    " Pretty format current buffer.
+    autocmd FileType html nnoremap <silent> <LocalLeader>f :silent % !tidy -q -i --show-errors 0<CR>
+    autocmd FileType xml nnoremap <silent> <LocalLeader>f :silent % !tidy -q -i --show-errors 0 -xml<CR>
+    autocmd FileType json nnoremap <silent> <LocalLeader>f :silent % !python -m json.tool<CR>
+    autocmd FileType sql nnoremap <silent> <LocalLeader>f :silent % !pg_format<CR>
   augroup END
 endif
 
