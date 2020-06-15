@@ -10,6 +10,7 @@ packages:
   - { name: nerd-fonts-source-code-pro }
   - { name: paper-icon-theme }
   - { name: path-extractor } # A unix filter which outputs the filepaths found in stdin
+  - { name: pgformatter-git } # Correctly indent PostgreSQL queries
   - { name: polybar } # A fast and easy-to-use status bar
   - { name: python-pgspecial } # Dependency for pgcli (pgcli is installed from pkgbuilds repo)
   - { name: scrcpy } # Display and control an Android device
