@@ -45,7 +45,7 @@ alias c='docker-compose'
 alias p='pacman'
 
 # Open ranger.
-alias r='wrap_ranger'
+alias f='wrap_ranger'
 
 alias t='tmux'
 alias ta='tmux attach -t'
