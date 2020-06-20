@@ -357,8 +357,6 @@ set runtimepath+=/usr/bin/fzf
 " Highlight the text line without line number.
 set cursorlineopt=line
 
-command! WrappedObsession execute s:wrapped_obsession()
-
 function! s:wrapped_obsession()
   " Source Session.vim if it exists, start a new session otherwise.
   if getfsize('Session.vim') > 0
@@ -367,6 +365,8 @@ function! s:wrapped_obsession()
     Obsession
   endif
 endfunction
+
+command! WrappedObsession execute s:wrapped_obsession()
 
 " }}}
 
