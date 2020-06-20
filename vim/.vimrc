@@ -740,11 +740,11 @@ nnoremap <Leader>= <C-W>=
 
 " Open an empty tab and close all the other tabs.
 " Don't close the buffers.
-nnoremap <silent> <LocalLeader>qq :tabnew<CR>:tabonly<CR>
-vnoremap <silent> <LocalLeader>qq <Esc>:tabnew<CR>:tabonly<CR>
+nnoremap <silent> <LocalLeader>qq :tabnew<CR>:tabonly!<CR>
+vnoremap <silent> <LocalLeader>qq <Esc>:tabnew<CR>:tabonly!<CR>
 " Close all buffers.
-nnoremap <silent> <LocalLeader>qa :qa!<CR>
-vnoremap <silent> <LocalLeader>qa :qa!<CR>
+nnoremap <silent> <LocalLeader>qa :qall!<CR>
+vnoremap <silent> <LocalLeader>qa :qall!<CR>
 " Leave only current tab and current window.
 nnoremap <silent> <LocalLeader>qo :tabonly<CR>:only<CR>
 vnoremap <silent> <LocalLeader>qo <Esc>:tabonly<CR>:only<CR>
