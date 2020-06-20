@@ -357,6 +357,13 @@ set runtimepath+=/usr/bin/fzf
 " Highlight the text line without line number.
 set cursorlineopt=line
 
+function! CloseQuickfixWindows()
+  let l:current_tab = tabpagenr()
+  tabdo windo lclose | cclose
+  " Return to the most recent tab.
+  execute "tabnext" l:current_tab
+endfunction
+
 function! s:wrapped_obsession()
   " Source Session.vim if it exists, start a new session otherwise.
   if getfsize('Session.vim') > 0
@@ -744,6 +751,9 @@ vnoremap <silent> <LocalLeader>qo <Esc>:tabonly<CR>:only<CR>
 " Close current tab.
 nnoremap <silent> <LocalLeader>qt :tabclose<CR>
 vnoremap <silent> <LocalLeader>qt <Esc>:tabclose<CR>
+" Close quickfix windows.
+nnoremap <silent> <LocalLeader>qf :call CloseQuickfixWindows()<CR>
+vnoremap <silent> <LocalLeader>qf <Esc>:call CloseQuickfixWindows()<CR>
 
 " Repeat the previous @, can be used with a count.
 nnoremap <Leader><Leader> @@
