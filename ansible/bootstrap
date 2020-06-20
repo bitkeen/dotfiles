@@ -1,5 +1,8 @@
 #!/bin/sh
-# Run ansible-playbook, accept tags as args.
+# Run ansible-playbook, accept role tags as args.
+# Example:
+# bootstrap firefox systemd
+
 if ! [ -x "$(command -v ansible)" ]; then
     sudo pacman -S ansible
 fi
