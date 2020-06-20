@@ -2,6 +2,7 @@ auto-reload yes
 suppress-first-reload yes
 reload-threads 8
 feedlist-format "%n %11u %t"
+datetime-format "%d %b %Y"
 
 bind-key j down
 bind-key k up
