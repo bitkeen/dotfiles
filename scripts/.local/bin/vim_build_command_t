@@ -1,8 +1,0 @@
-#!/bin/sh
-initial_dir="$PWD"
-
-cd ~/.vim/pack/bundle/opt/command-t/ruby/command-t/ext/command-t
-ruby extconf.rb
-make
-
-cd "$initial_dir"
