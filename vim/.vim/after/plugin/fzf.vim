@@ -41,6 +41,7 @@ if &runtimepath =~# '/usr/bin/fzf' " Basic plugin.
     \ -not -path "*/.git"
     \ -not -path "*/Session.vim"
     \ -not -path "*/.vim/tmp/*"
+    \ -not -path "*/__pycache__/*"
     \ -print'
 
     " Override `split` action.
