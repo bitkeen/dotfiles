@@ -36,6 +36,7 @@ if &runtimepath =~# '/usr/bin/fzf' " Basic plugin.
     " Add alt-enter binding to select query.
     command! -bar -bang FzfFiletypes call fzf#vim#filetypes({'options': ['--bind=alt-enter:print-query']}, <bang>0)
 
+    " Used in FzfFiles.
     let $FZF_DEFAULT_COMMAND = 'find -L . -mindepth 1 -maxdepth 15 -type f
     \ -not -path "*/.git/*"
     \ -not -path "*/.git"
