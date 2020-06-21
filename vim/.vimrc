@@ -134,7 +134,6 @@ if has('packages')
   packadd! ale " Asynchronous Lint Engine
   packadd! base16-vim " Themes
   packadd! CamelCaseMotion " CamelCase and snake_case movement mappings
-  packadd! command-t " File finder
   packadd! committia.vim
   packadd! fugitive-gitlab.vim
   packadd! fzf.vim
@@ -400,25 +399,6 @@ let g:vimwiki_list = [
 " vimwiki markdown support.
 let g:vimwiki_ext2syntax = {'.md': 'markdown', '.markdown': 'markdown', '.mdown': 'markdown'}
 let g:vimwiki_hl_headers = 1
-" }}}
-
-" Command-T {{{
-" Set the underlying scanning implementation that should be used to explore
-" the filesystem. Default value is 'ruby'.
-let g:CommandTFileScanner = 'find'
-" Always include matching dot-files in the match list regardless of whether
-" the search string contains a dot.
-let g:CommandTAlwaysShowDotFiles = 1
-" Recurse into dot-directories.
-let g:CommandTScanDotDirectories = 1
-" Override wildignore setting during Command-T searches.
-let g:CommandTWildIgnore=&wildignore . ',*/.git,Session.vim,*/.vim/tmp'
-let g:CommandTMaxFiles=10000000
-" Traverse upwards looking for an SCM root, start from Vim's present
-" working directory.
-" Better than setting to 'file' when submodules are present.
-let g:CommandTTraverseSCM='dir'
-let g:CommandTSmartCase=1
 " }}}
 
 " vim-xkbswitch
@@ -868,12 +848,6 @@ nmap <Leader>wb <Plug>VimwikiSplitLink
 nmap <Leader>wv <Plug>VimwikiVSplitLink
 nmap <Leader>wt <Plug>VimwikiTabnewLink
 nmap glt <Plug>VimwikiToggleListItem
-
-" Command-T
-" Show open buffers. Default mapping is <Leader>b, remap it to
-" <Leader>bf because git-blame will be mapped to <Leader>bl.
-nmap <silent> <Leader>bf <Plug>(CommandTBuffer)
-let g:CommandTAcceptSelectionSplitMap = '<C-b>'
 
 " git-blame.vim
 nnoremap <silent> <Leader>bl :<C-u>call gitblame#echo()<CR>

@@ -13,9 +13,6 @@
 [submodule "vim-commentary"]
 	path = vim/.vim/pack/bundle/opt/vim-commentary
 	url = https://github.com/tpope/vim-commentary.git
-[submodule "command-t"]
-	path = vim/.vim/pack/bundle/opt/command-t
-	url = https://github.com/wincent/command-t.git
 [submodule "vim-xkbswitch"]
 	path = vim/.vim/pack/bundle/opt/vim-xkbswitch
 	url = https://github.com/lyokha/vim-xkbswitch.git
