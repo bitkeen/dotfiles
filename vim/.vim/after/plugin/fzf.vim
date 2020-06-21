@@ -35,6 +35,7 @@ if &runtimepath =~# '/usr/bin/fzf' " Basic plugin.
   if &runtimepath =~# 'bundle/opt/fzf.vim' " Plugin extension.
     " Add alt-enter binding to select query.
     command! -bar -bang FzfFiletypes call fzf#vim#filetypes({'options': ['--bind=alt-enter:print-query']}, <bang>0)
+    command! -bang FzfHomeFiles call fzf#vim#files('~', <bang>0)
 
     " Used in FzfFiles.
     let $FZF_DEFAULT_COMMAND = 'find -L . -mindepth 1 -maxdepth 15 -type f
@@ -54,6 +55,7 @@ if &runtimepath =~# '/usr/bin/fzf' " Basic plugin.
 
     " File opener.
     nnoremap <Leader>t :FzfFiles<CR>
+    nnoremap <Leader>T :FzfHomeFiles<CR>
 
     " Change filetype with fzf.
     nnoremap ]f :FzfFiletypes<CR>
