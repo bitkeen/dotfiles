@@ -36,6 +36,23 @@ if &runtimepath =~# '/usr/bin/fzf' " Basic plugin.
     " Add alt-enter binding to select query.
     command! -bar -bang FzfFiletypes call fzf#vim#filetypes({'options': ['--bind=alt-enter:print-query']}, <bang>0)
 
+    let $FZF_DEFAULT_COMMAND = 'find -L . -mindepth 1 -maxdepth 15 -type f
+    \ -not -path "*/.git/*"
+    \ -not -path "*/.git"
+    \ -not -path "*/Session.vim"
+    \ -not -path "*/.vim/tmp/*"
+    \ -print'
+
+    " Override `split` action.
+    let g:fzf_action = {
+    \ 'ctrl-t': 'tab split',
+    \ 'ctrl-b': 'split',
+    \ 'ctrl-v': 'vsplit',
+    \}
+
+    " File opener.
+    nnoremap <Leader>t :FzfFiles<CR>
+
     " Change filetype with fzf.
     nnoremap ]f :FzfFiletypes<CR>
     vnoremap ]f <Esc>:FzfFiletypes<CR>
