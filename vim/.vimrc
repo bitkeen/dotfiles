@@ -770,6 +770,7 @@ nnoremap <Leader>o :copen<CR>
 nnoremap [f :echo &filetype<CR>
 " Change filetype.
 nnoremap ]f :set filetype=
+vnoremap ]f <Esc>:set filetype=
 
 " Toggle invisible characters.
 nnoremap <LocalLeader>l :set list!<CR>

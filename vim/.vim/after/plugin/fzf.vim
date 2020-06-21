@@ -38,5 +38,6 @@ if &runtimepath =~# '/usr/bin/fzf' " Basic plugin.
 
     " Change filetype with fzf.
     nnoremap ]f :FzfFiletypes<CR>
+    vnoremap ]f <Esc>:FzfFiletypes<CR>
   endif
 endif
