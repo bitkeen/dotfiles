@@ -4,12 +4,12 @@
   become: yes
   roles:
     - { role: misc, tags: misc }
+    - { role: pkgbuilds, tags: pkgbuilds }
     - { role: pacman, tags: pacman }
     - { role: systemd, tags: systemd }
     - { role: python, tags: python }
     - { role: npm, tags: npm }
     - { role: stow, tags: stow }
-    - { role: pkgbuilds, tags: pkgbuilds }
     - { role: aur, tags: aur }
     - { role: firefox, tags: firefox }
     - { role: transmission, tags: transmission }
