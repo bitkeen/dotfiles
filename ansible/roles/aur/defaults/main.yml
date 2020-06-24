@@ -2,7 +2,9 @@
 aur_pkg_dir: '{{ user_home }}/.cache/ansible_aur'
 
 packages:
+  - { name: colorpicker } # Click on a pixel on your screen and print its color value in RGB. Written for X11.
   - { name: git-open } # Open a repo website (GitHub, GitLab, Bitbucket) in your browser
+  - { name: delta } # A syntax-highlighting pager for git and diff output
   - { name: dragon-drag-and-drop } # Simple drag-and-drop source/sink for X
   - { name: htop-vim-git } # Interactive text-mode process viewer. Patched for vim keybindings
   - { name: lab }
