@@ -89,8 +89,9 @@
 [core]
     editor = vim
     whitespace = true
-    ; -x4 sets tab width to 4 (default is 8).
-    pager = less -x4
+    ; Use delta if available, use less otherwise.
+    ; --tabs=4 sets tab width to 4 (default is 8).
+    pager = "if command -v delta > /dev/null; then delta --tabs=4 --theme=base16 --color-only; else less --tabs=4; fi"
 [commit]
     verbose = true
 [color "status"]
@@ -98,6 +99,9 @@
 [diff]
     tool = vimdiff
     colorMoved = zebra
+[interactive]
+    ; --tabs=4 didn't work for some reason in both delta and less.
+    diffFilter = "if command -v delta > /dev/null; then delta --theme=base16 --color-only; else less; fi"
 [log]
     date = format-local:%F %T
 [pull]
