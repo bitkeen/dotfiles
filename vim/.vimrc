@@ -188,6 +188,7 @@ if has('packages')
   packadd! vim-ragtag
   packadd! vim-repeat
   packadd! vim-rhubarb
+  packadd! vim-rsi " Readline style insertion
   packadd! vim-scriptease
   packadd! vim-searchindex
   packadd! vim-signature " A plugin to toggle, display and navigate marks

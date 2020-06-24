@@ -295,3 +295,6 @@
 [submodule "quickpeek.vim"]
 	path = vim/.vim/pack/bundle/opt/quickpeek.vim
 	url = https://github.com/AndrewRadev/quickpeek.vim
+[submodule "vim-rsi"]
+	path = vim/.vim/pack/bundle/opt/vim-rsi
+	url = https://github.com/tpope/vim-rsi
