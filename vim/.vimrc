@@ -644,10 +644,6 @@ noremap <C-k> <C-w>k
 noremap <C-h> <C-w>h
 noremap <C-l> <C-w>l
 
-" Go to beginning or end of the line in command mode.
-cnoremap <C-a> <home>
-cnoremap <C-e> <end>
-
 " Open (in) a new tab.
 nnoremap <Leader>gn :tabnew<Space>
 " Switch tabs.
