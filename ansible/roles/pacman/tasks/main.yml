@@ -11,6 +11,7 @@
       - atool # A script for managing file archives of various types
       - asp # Arch Linux build source file management tool
       - base-devel
+      - bat # Cat clone with syntax highlighting and git integration
       - bluez # Daemons for the bluetooth protocol stack
       - bluez-utils # Provides the bluetoothctl utility
       - blueman # Graphical bluetooth manager
@@ -67,7 +68,6 @@
       - ripgrep
       - simplescreenrecorder
       - reflector # A script to retrieve and filter the latest Pacman mirror list
-      - rxvt-unicode
       - seahorse # GNOME application for managing PGP keys
       - shellcheck # Shell script analysis tool
       - solaar # Device manager for Logitech's Unifying receiver peripherals
