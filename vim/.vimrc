@@ -821,6 +821,9 @@ vnoremap <silent> <LocalLeader>ss :sort i<CR>
 
 nnoremap gss :echo system("stat " . shellescape(expand('%:p')) . "<bar> sed -n 4p")<CR>
 
+" Open a new tab with the results of a Vim command execution.
+nnoremap gsr :tabnew <Bar> put=execute('')<Left><Left>
+
 noremap zea :edit ~/.dotfiles/ansible/playbook.yml<CR>
 noremap zeb :edit ~/.bashrc<CR>
 noremap zef :edit ~/.dotfiles/firefox/.mozilla/firefox/main/user.js<CR>
