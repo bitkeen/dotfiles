@@ -42,8 +42,10 @@ export EDITOR=/usr/bin/vim
 export FZF_DEFAULT_OPTS="--preview 'cat {}' --preview-window='hidden' --bind='ctrl-t:toggle-preview'"
 export FZF_CTRL_R_OPTS='--sort'
 # Default command ignores all dot-directories. This one only ignores `.git`.
-export FZF_ALT_C_COMMAND="command find -L . -mindepth 1 \\( -path '*/\\.git*' -o -fstype 'sysfs' -o -fstype 'devfs' -o -fstype 'devtmpfs' -o -fstype 'proc' \\) -prune \
-    -o -type d -print 2> /dev/null | cut -b3-"
+export FZF_ALT_C_COMMAND="command find -L . -mindepth 1 \\( -path '*/\\.git*' -o -fstype 'sysfs' -o -fstype 'devfs' -o -fstype 'devtmpfs' -o -fstype 'proc' \\) \
+    -prune -o -type d -print 2> /dev/null | cut -b3-"
+export FZF_CTRL_T_COMMAND="command find -L . -mindepth 1 \\( -path '*/\\.git*' -o -fstype 'sysfs' -o -fstype 'devfs' -o -fstype 'devtmpfs' -o -fstype 'proc' \\) \
+    -prune -o -type f -print -o -type d -print -o -type l -print 2> /dev/null | cut -b3-"
 export GOPATH="$HOME/.local/share/go"
 # Ignore lines that start with a space,
 # don't save lines matching a previous history entry.
