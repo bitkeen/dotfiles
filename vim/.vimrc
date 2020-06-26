@@ -376,6 +376,27 @@ endfunction
 
 command! WrappedObsession execute s:wrapped_obsession()
 
+let g:formatter_mapping = {
+\ 'html': '!tidy -q -i --show-errors 0',
+\ 'json': '!python -m json.tool',
+\ 'python': '!autopep8',
+\ 'sql': '!pg_format',
+\ 'xml': '!tidy -q -i --show-errors 0 -xml',
+\}
+
+function! FormatFile(filetype, range_prefix)
+  " Get and execute a formatter from g:formatter_mapping based on
+  " filetype argument for the specified range.
+  let l:formatter = get(g:formatter_mapping, a:filetype)
+  if a:filetype ==# ''
+    echo 'Filetype not specified'
+  elseif l:formatter !=# '0'
+    execute a:range_prefix . get(g:formatter_mapping, a:filetype)
+  else
+    echo 'No formatter for ' . a:filetype
+  endif
+endfunction
+
 " }}}
 
 " Plugin configuration {{{
@@ -800,13 +821,6 @@ if has('autocmd')
     " Go to newer error list.
     autocmd FileType qf nnoremap <Leader>L :cnewer<CR>
   augroup END
-  augroup formatmaps
-    " Pretty format current buffer.
-    autocmd FileType html nnoremap <silent> <LocalLeader>f :silent % !tidy -q -i --show-errors 0<CR>
-    autocmd FileType xml nnoremap <silent> <LocalLeader>f :silent % !tidy -q -i --show-errors 0 -xml<CR>
-    autocmd FileType json nnoremap <silent> <LocalLeader>f :silent % !python -m json.tool<CR>
-    autocmd FileType sql nnoremap <silent> <LocalLeader>f :silent % !pg_format<CR>
-  augroup END
 endif
 
 " Replace search term under the cursor, dot repeats the change.
@@ -832,6 +846,8 @@ noremap zei :edit ~/.config/i3/config<CR>
 noremap zer :edit ~/.config/ranger/rc.conf<CR>
 noremap zet :edit ~/.tmux.conf<CR>
 noremap zev :edit ~/.vimrc<CR>
+
+nnoremap <silent> <LocalLeader>f :call FormatFile(&filetype, '%')<CR>
 
 " }}}
 

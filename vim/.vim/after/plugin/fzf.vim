@@ -2,28 +2,21 @@ if &runtimepath =~# '/usr/bin/fzf' " Basic plugin.
   " Choose a filetype and pretty format the current buffer (or range).
   function! FzfPrettyFormat(mode) range
     if a:mode ==? 'normal'
-      let s:prefix = '%'
+      let s:range_prefix = '%'
     elseif a:mode ==? 'visual'
-      let s:prefix = "'<,'>"
+      let s:range_prefix = "'<,'>"
     else
       echoerr 'Wrong mode value'
       return 1
     endif
 
-    let s:file_types = {
-    \ 'html': '!tidy -q -i --show-errors 0',
-    \ 'xml': '!tidy -q -i --show-errors 0 -xml',
-    \ 'json': '!python -m json.tool',
-    \ 'sql': '!pg_format',
-    \}
-
-    function! s:get_type_formatter(type)
-      execute s:prefix . get(s:file_types, a:type)
+    function! s:get_type_formatter(filetype)
+      call FormatFile(a:filetype, s:range_prefix)
     endfunction
 
     call fzf#run({
     \ 'sink': function('s:get_type_formatter'),
-    \ 'source': keys(s:file_types),
+    \ 'source': keys(g:formatter_mapping),
     \ 'options': '+m --prompt="Pretty format> "',
     \ 'down': '40%',
     \})
