@@ -135,6 +135,7 @@ if has('packages')
   packadd! base16-vim " Themes
   packadd! CamelCaseMotion " CamelCase and snake_case movement mappings
   packadd! committia.vim
+  packadd! conflict-marker.vim
   packadd! fugitive-gitlab.vim
   packadd! fzf.vim
   packadd! git-blame.vim " See blame information in the bottom line
@@ -1029,6 +1030,11 @@ nmap ]e <Plug>(ale_next)
 
 " fzf.vim
 let g:fzf_command_prefix = 'Fzf'
+
+" conflict-marker.vim
+nnoremap gct :ConflictMarkerThemselves<CR>
+nnoremap gco :ConflictMarkerOurselves<CR>
+nnoremap gcb :ConflictMarkerBoth<CR>
 
 " }}}
 
