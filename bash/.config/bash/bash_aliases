@@ -38,7 +38,9 @@ alias l='lab'
 # Kill processes by name.
 alias ka='killall'
 
+alias docker='docker-alias-wrapper'
 alias d='docker'
+alias docker-compose='docker-compose-alias-wrapper'
 alias c='docker-compose'
 
 # Pacman.

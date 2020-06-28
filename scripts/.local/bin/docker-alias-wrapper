@@ -1,0 +1,51 @@
+#!/bin/sh
+# Aliases for docker.
+key="$1"
+case "$key" in
+    bd)
+        cmd='build';;
+    ex)
+        [ "$#" -lt 2 ] && echo 'Specify container name.' && return 1
+        'docker' exec -i -t "$2" sh -c \
+            'if [ -f /bin/bash ]; then bash -l; else sh -l; fi'
+        return;;
+    im)
+        cmd='images';;
+    killall)
+        cmd="kill $('docker' ps -q)";;
+    krm)
+        'docker' ps -q | xargs docker kill
+        'docker' ps -aq | xargs docker rm
+        return;;
+    lg)
+        cmd="logs";;
+    lgf)
+        cmd='logs -f';;
+    lgft)
+        # --tail="all" is default
+        cmd='logs -f --tail=0';;
+    pl)
+        cmd='pull';;
+    ps)
+        cmd='ps --format table{{.ID}}\t{{.Image}}\t{{.Names}}\t{{.Status}}';;
+    psa)
+        cmd='ps -a --format table{{.ID}}\t{{.Image}}\t{{.Names}}\t{{.Status}}';;
+    psf)
+        cmd='ps';;
+    psfa)
+        cmd='ps -a';;
+    rs)
+        cmd="restart";;
+    rsl)
+        [ "$#" -lt 2 ] && echo 'Specify container name.' && return 1
+        'docker' restart "$2" && 'docker' logs -f "$2"
+        return;;
+    sys)
+        cmd="system";;
+    rmall)
+        cmd="rm $('docker' ps -aq)";;
+    *)
+        cmd=$1;;
+esac
+shift
+docker $cmd "$@"
