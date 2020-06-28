@@ -95,6 +95,7 @@ alias mycli='mycli --auto-vertical-output'
 alias dpl='dotfiles_pull'
 alias dps='dotfiles_push'
 
+alias systemctl='systemctl-alias-wrapper'
 alias sctl='systemctl'
 alias jctl='journalctl'
 
