@@ -737,6 +737,9 @@ nnoremap <silent> <Leader>fv :Vexplore!<CR>
 
 " vimwiki
 " Default is "<Leader>wt".
+let g:vimwiki_key_mappings = {
+\ 'headers': 0,
+\}
 nmap <Leader>wT <Plug>VimwikiTabIndex
 nmap <Leader>wb <Plug>VimwikiSplitLink
 nmap <Leader>wv <Plug>VimwikiVSplitLink
