@@ -1,0 +1,5 @@
+- name: switch executable in tor-browser.desktop
+  lineinfile:
+    path: '/usr/share/applications/tor-browser.desktop'
+    line: 'Exec={{ user_home }}/.local/bin/i3-tor-browser-non-floating'
+    regexp: '^Exec=/usr/bin/tor-browser$'
