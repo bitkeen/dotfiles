@@ -10,6 +10,7 @@
       - arandr # Xrandr front-end
       - atool # A script for managing file archives of various types
       - asp # Arch Linux build source file management tool
+      - autopep8 # A tool that automatically formats Python code to conform to the PEP 8 style guide
       - base-devel
       - bat # Cat clone with syntax highlighting and git integration
       - bluez # Daemons for the bluetooth protocol stack
