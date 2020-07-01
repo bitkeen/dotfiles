@@ -18,6 +18,10 @@ super + shift + x
 super + b
     toggle_brightness.sh
 
+# Open a book.
+super + shift + b
+    dmenu-books
+
 # Mount/unmount menus.
 super + shift + m
     dmenu-udisks-mount
