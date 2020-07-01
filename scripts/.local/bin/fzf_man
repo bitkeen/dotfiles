@@ -4,4 +4,6 @@
 # only argument.
 
 [ -z "$1" ] && reader='man' || reader="$1"
-$reader "$(apropos . | fzf | awk '{print $1}')"
+page="$(apropos . | fzf --tac | awk '{print $1}')"
+[ -z "$page" ] && exit 1
+"$reader" "$page"
