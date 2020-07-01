@@ -28,7 +28,7 @@ URxvt.depth: 32
 URxvt.perl-ext-common: default,matcher,font-size,url-select,keyboard-select
 URxvt.colorUL:		#4682B4
 
-! matcher extension - clickable urls
+! matcher extension - clickable urls.
 URxvt.url-launcher:   /usr/bin/xdg-open
 URxvt.matcher.button: 1
 URxvt.matcher.rend.0: Uline Bold fg5
