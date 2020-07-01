@@ -47,6 +47,7 @@
       - maim # Utility to take a screenshot
       - man-pages # Linux man pages
       - mediainfo # Supplies technical and tag information about a video or audio file (CLI interface), currently used for audio file previews in ranger
+      - mlocate # Merging locate/updatedb implementation
       - mpc
       - mpd
       - mpv
