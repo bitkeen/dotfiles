@@ -39,7 +39,12 @@ git_prompt_file='/usr/share/git/completion/git-prompt.sh'
 
 # Exports {{{
 export EDITOR=/usr/bin/vim
-export FZF_DEFAULT_OPTS="--preview 'cat {}' --preview-window='hidden' --bind='ctrl-t:toggle-preview'"
+export FZF_DEFAULT_OPTS=" \
+    --preview 'cat {}' \
+    --preview-window='hidden' \
+    --bind='ctrl-t:toggle-preview' \
+    --bind='alt-enter:print-query' \
+    "
 export FZF_CTRL_R_OPTS='--sort'
 # Default command ignores all dot-directories. This one only ignores `.git`.
 export FZF_ALT_C_COMMAND="command find -L . -mindepth 1 \\( -path '*/\\.git*' -o -fstype 'sysfs' -o -fstype 'devfs' -o -fstype 'devtmpfs' -o -fstype 'proc' \\) \
