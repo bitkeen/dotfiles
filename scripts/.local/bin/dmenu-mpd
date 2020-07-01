@@ -3,6 +3,6 @@
 
 # Dashes are en dash.
 mpc playlist -f "%position% – %artist% – %title%" |
-    dmenu_configured -l 15 |
+    dmenu-vertical |
     grep -Po '^\d+' |
     xargs -n 1 -I {} mpc play {}
