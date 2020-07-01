@@ -1,0 +1,11 @@
+#!/bin/sh
+# Open a book from the ~/books directory.
+#
+# Dependencies:
+# - rifle
+# - dmenu
+#
+# TODO:
+# filter out non-book filetypes.
+
+rifle "$(find -L ~/books -type f | dmenu-vertical)"
