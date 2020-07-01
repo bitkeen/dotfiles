@@ -1,0 +1,7 @@
+#!/bin/sh
+# Fuzzy-find and open a man page.
+# Can use a custom man reader which should be passed as the first and
+# only argument.
+
+[ -z "$1" ] && reader='man' || reader="$1"
+$reader "$(apropos . | fzf | awk '{print $1}')"
