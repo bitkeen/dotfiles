@@ -4,8 +4,8 @@
 # Dependencies:
 # - rifle
 # - dmenu
-#
-# TODO:
-# filter out non-book filetypes.
 
-rifle "$(find -L ~/books -type f | dmenu-vertical)"
+xdg-open "$( \
+    find -L ~/books -type f -name '*.pdf' -o -name '*.epub' -o -name '*.djvu' |
+    dmenu-vertical
+)"
