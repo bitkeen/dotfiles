@@ -31,6 +31,6 @@
     - { dir: tmux }
     - { dir: vim }
     - { dir: x11 }
-    - { dir: xdg-user-dirs }
+    - { dir: xdg }
     - { dir: youtube-dl }
     - { dir: zathura }
