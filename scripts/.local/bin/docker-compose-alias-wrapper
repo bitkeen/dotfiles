@@ -8,7 +8,7 @@ case "$key" in
         shift
         'docker-compose' down
         'docker-compose' up --detach "$@" && 'docker-compose' logs -f
-        return;;
+        exit;;
     k)
         cmd='kill';;
     lgf)
@@ -25,23 +25,23 @@ case "$key" in
     rs)
         cmd="restart";;
     rsl)
-        [ "$#" -lt 2 ] && echo 'Specify container name.' && return 1
+        [ "$#" -lt 2 ] && echo 'Specify container name.' && exit 1
         'docker-compose' restart "$2" &&
             'docker-compose' logs -f "$2"
-        return;;
+        exit;;
     u)
         shift && 'docker-compose' up --detach "$@" && 'docker-compose' logs -f
-        return;;
+        exit;;
     ur)
         # Restart a single service. Different from restart in the
         # way that if a service in the docker-compose file has been
         # changed, it will be restarted with the new changes.
         cmd='up -d --no-deps --force-recreate';;
     url)
-        [ "$#" -lt 2 ] && echo 'Specify container name.' && return 1
+        [ "$#" -lt 2 ] && echo 'Specify container name.' && exit 1
         'docker-compose' up -d --no-deps --force-recreate "$2" &&
             'docker-compose' logs -f "$2"
-        return;;
+        exit;;
     *)
         cmd=$1;;
 esac
