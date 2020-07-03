@@ -12,7 +12,6 @@
     - { role: stow, tags: stow }
     - { role: aur, tags: aur }
     - { role: firefox, tags: firefox }
-    - { role: tor-browser, tags: tor-browser }
     - { role: transmission, tags: transmission }
     - { role: virtualbox, tags: virtualbox }
   vars:
