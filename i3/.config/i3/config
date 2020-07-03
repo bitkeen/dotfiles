@@ -264,7 +264,6 @@ for_window [class="Tor Browser"] floating enable
 # Stack VirtualBox windows together.
 for_window [class="VirtualBox"] layout stacking
 # Focus on a window after it has been opened.
-for_window [class="keepassxc"] focus
 for_window [class="VirtualBox"] focus
 
 # For some reason there is a window title box for dragon, disable it.
