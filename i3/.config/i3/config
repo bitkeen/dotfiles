@@ -258,8 +258,6 @@ for_window [class="Syncthing GTK"] floating enable
 for_window [class="Syncthing GTK"] resize set $default_floating_size
 for_window [class="Syncthing GTK"] move position center
 for_window [class="Syncthing GTK"] focus
-# Tor Browser.
-for_window [class="Tor Browser"] floating enable
 
 # Stack VirtualBox windows together.
 for_window [class="VirtualBox"] layout stacking
