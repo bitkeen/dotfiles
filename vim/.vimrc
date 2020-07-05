@@ -67,7 +67,8 @@ if has('autocmd')
 
     " Tab widths.
     autocmd FileType * setlocal tabstop=4 shiftwidth=4 softtabstop=4 expandtab
-    autocmd FileType go,ledger,make,snippets,xquery setlocal noexpandtab
+    autocmd FileType c,go,ledger,make,snippets,xquery setlocal noexpandtab
+    autocmd FileType c setlocal shiftwidth=8 tabstop=8
     autocmd FileType json,terraform,vim,yaml* setlocal tabstop=2 shiftwidth=2 softtabstop=2
 
     " Open help windows in a vertical split by default.
