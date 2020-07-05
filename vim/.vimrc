@@ -3,18 +3,6 @@
 " Get the defaults that most users want.
 source $VIMRUNTIME/defaults.vim
 
-if has('vms')
-  " Do not keep a backup file, use versions instead.
-  set nobackup
-else
-  " Keep a backup file (restore to previous version).
-  set backup
-  if has('persistent_undo')
-    " Keep an undo file (undo changes after closing).
-    set undofile
-  endif
-endif
-
 if &t_Co > 2 || has('gui_running')
   " Switch on highlighting the last used search pattern.
   set hlsearch
@@ -120,11 +108,9 @@ if has('autocmd')
 endif
 
 if has('packages')
+  " Default plugins in vim distribution.
   packadd cfilter " Filter a quickfix or location list
-
-  if has('syntax') && has('eval')
-    packadd matchit " Extended matching with '%'
-  endif
+  packadd matchit " Extended matching with '%'
 
   if has('python3')
     packadd MatchTagAlways
@@ -247,6 +233,13 @@ set nojoinspaces
 set number
 " Enable relative line numbers.
 set relativenumber
+
+" Keep a backup file (restore to previous version).
+set backup
+if has('persistent_undo')
+  " Keep an undo file (undo changes after closing).
+  set undofile
+endif
 
 " Set directory to save swap files in.
 set directory=~/.vim/tmp/swap//
