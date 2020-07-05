@@ -153,7 +153,7 @@
 	url = https://github.com/tpope/vim-scriptease
 [submodule "vim-closer"]
 	path = vim/.vim/pack/bundle/opt/vim-closer
-	url = https://github.com/rstacruz/vim-closer
+	url = https://github.com/bitkeen/vim-closer
 [submodule "vim-merginal"]
 	path = vim/.vim/pack/bundle/opt/vim-merginal
 	url = https://github.com/idanarye/vim-merginal
