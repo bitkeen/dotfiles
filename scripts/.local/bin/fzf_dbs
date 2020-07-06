@@ -46,6 +46,18 @@ elif echo "$choice_connection" | grep '^mysql' > /dev/null; then
     [ -z "$TMUX" ] || tmux rename-window 'mycli'
     mycli --prompt "$mycli_prompt" "$choice_connection"
 
+elif echo "$choice_connection" | grep '^redis' > /dev/null; then
+    if [ -x "$(command -v iredis)" ]; then
+        [ -z "$TMUX" ] || tmux rename-window 'iredis'
+        iredis --url "$choice_connection"
+    elif [ -x "$(command -v redis-cli)" ]; then
+        [ -z "$TMUX" ] || tmux rename-window 'redis-cli'
+        redis-cli -u "$choice_connection"
+    else
+        echo 'Could not find iredis/redis-cli'
+        exit 1
+    fi
+
 else
     echo 'Wrong connection string format.' && exit 1
 
