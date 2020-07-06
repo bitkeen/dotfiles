@@ -733,10 +733,13 @@ nnoremap <silent> <Leader>fv :Vexplore!<CR>
 " }}}
 
 " vimwiki
-" Default is "<Leader>wt".
+" headers conflicted with vinegar.
+" table_mappings conflicted with UltiSnips.
 let g:vimwiki_key_mappings = {
 \ 'headers': 0,
+\ 'table_mappings': 0,
 \}
+" Default is "<Leader>wt".
 nmap <Leader>wT <Plug>VimwikiTabIndex
 nmap <Leader>wb <Plug>VimwikiSplitLink
 nmap <Leader>wv <Plug>VimwikiVSplitLink
