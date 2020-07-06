@@ -202,11 +202,9 @@ if has('packages')
   packadd! vimwiki " Personal wiki for Vim
   packadd! vZoom.vim " Quickly maximize & unmaximize the current window
   packadd! winresizer " Easy window resizing, similar to resize mode in i3wm
-  helptags ALL
 else
   " Enable Pathogen package manager.
   execute pathogen#infect('pack/bundle/opt/{}')
-  call pathogen#helptags()
 endif
 
 filetype plugin indent on
