@@ -705,8 +705,14 @@ vnoremap <silent> <LocalLeader>ss :sort i<CR>
 
 nnoremap gss :echo system("stat " . shellescape(expand('%:p')) . "<bar> sed -n 4p")<CR>
 
+nnoremap gsm :make<CR>
+" Compile current file (GNU make is required).
+nnoremap gsc :make %:r<CR>
+" Run the compiled binary.
+nnoremap gsr :!./%<<CR>
+
 " Open a new tab with the results of a Vim command execution.
-nnoremap gsr :tabnew <Bar> put=execute('')<Left><Left>
+nnoremap gst :tabnew <Bar> put=execute('')<Left><Left>
 
 noremap zea :edit ~/.dotfiles/ansible/playbook.yml<CR>
 noremap zeb :edit ~/.bashrc<CR>
