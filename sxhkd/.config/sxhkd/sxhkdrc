@@ -1,10 +1,10 @@
 # Tmux session selection menu.
 super + t
-    dmenu_tmux.sh
+    dmenu-tmux
 
 # Power menu.
 super + shift + z
-    dmenu_power.sh
+    dmenu-power
 
 # Switch active window.
 super + n

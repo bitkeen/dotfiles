@@ -11,7 +11,7 @@ devices="$(
 
 choice="$(
     echo "$devices" |
-    dmenu_configured -p 'Unmount:' |
+    dmenu-configured -p 'Unmount:' |
     awk '{ print $1 }'
 )"
 [ -z "$choice" ] && exit 1

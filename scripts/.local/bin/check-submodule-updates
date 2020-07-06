@@ -5,7 +5,7 @@
 # The only argument is the path to the git repository.
 #
 # Example:
-# check_submodule_updates ~/.dotfiles
+# check-submodule-updates ~/.dotfiles
 
 [ -z "$1" ] && echo 'Specify path to the repository.' && exit 1
 cd "$1" || exit 1

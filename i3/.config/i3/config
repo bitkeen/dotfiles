@@ -125,8 +125,8 @@ bindsym $mod+Shift+q kill
 # Start dmenu (a program launcher).
 #bindsym $mod+d exec --no-startup-id dmenu_run -fn $dmenu_font
 # Start dmenu that only displays applications shipping a .desktop file.
-# Run with 'sh -c' to find dmenu_configured in $PATH.
-bindsym $mod+d exec --no-startup-id i3-dmenu-desktop --dmenu='sh -c dmenu_configured'
+# Run with 'sh -c' to find dmenu-configured in $PATH.
+bindsym $mod+d exec --no-startup-id i3-dmenu-desktop --dmenu='sh -c dmenu-configured'
 
 # Change focus.
 bindsym $mod+h focus left
@@ -285,10 +285,10 @@ exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 # Tmux dropdown.
 set $dd_name "tmuxdd"
 
-bindsym $mod+grave exec --no-startup-id i3_tmuxdd.sh $dd_name dropdown
-bindsym $mod+m exec --no-startup-id i3_tmuxdd.sh $dd_name misc
+bindsym $mod+grave exec --no-startup-id i3-tmuxdd $dd_name dropdown
+bindsym $mod+m exec --no-startup-id i3-tmuxdd $dd_name misc
 
-# Terminal window with name $dd_name is created in i3_tmuxdd.sh
+# Terminal window with name $dd_name is created in i3-tmuxdd.
 for_window [instance=$dd_name] floating enable
 for_window [instance=$dd_name] resize set $default_floating_size
 for_window [instance=$dd_name] border pixel 1

@@ -8,7 +8,7 @@ devices="$(
 
 choice="$(
     echo "$devices" |
-    dmenu_configured -p 'Mount:'
+    dmenu-configured -p 'Mount:'
 )"
 [ -z "$choice" ] && exit 1
 

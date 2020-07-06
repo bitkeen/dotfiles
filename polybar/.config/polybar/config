@@ -148,7 +148,7 @@ animation-charging-foreground = ${colors.foreground}
 [module/dmenu_power]
 type = custom/text
 content = 
-click-left = dmenu_power.sh
+click-left = dmenu-power
 
 
 [module/docker]

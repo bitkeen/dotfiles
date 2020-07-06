@@ -11,7 +11,7 @@
 # - notify-file script
 #
 # Example:
-# check_page 'https://example.com' '//a' 'Example'
+# check-page 'https://example.com' '//a' 'Example'
 
 url="$1"
 xpath="$2"

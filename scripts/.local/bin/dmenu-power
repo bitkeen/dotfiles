@@ -4,7 +4,7 @@
 
 commands="lock\nreboot\nshutdown\nsuspend\nexit i3\ncancel"
 
-choice=$(printf "%b" "$commands" | dmenu_configured "$@")
+choice=$(printf "%b" "$commands" | dmenu-configured "$@")
 
 case "$choice" in
     "lock")

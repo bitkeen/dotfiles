@@ -1,2 +1,2 @@
 #!/bin/sh
-dmenu_configured -l 15 "$@"
+dmenu-configured -l 15 "$@"

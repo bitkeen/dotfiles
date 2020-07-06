@@ -37,7 +37,7 @@ case "$1" in
         while read file;
         do
             [ "$(printf "No\\nYes" |
-                dmenu_configured -p "Delete $file?")" = 'Yes' ] &&
+                dmenu-configured -p "Delete $file?")" = 'Yes' ] &&
                 rm "$file" && notify-send "$file deleted."
         done ;;
     'x')
@@ -46,7 +46,7 @@ case "$1" in
         do
             [ -z "$destdir" ] &&
                 destdir="$(find "$(xdg-user-dir PICTURES)" -type d -exec ls -d {} \; |
-                dmenu_configured -l 20 -p 'Where to move?')"
+                dmenu-configured -l 20 -p 'Where to move?')"
             [ -z "$destdir" ] && exit 1
             mv "$file" "$destdir" &&
                 notify-send -i "$destdir/$file" "$file moved to $destdir." &
