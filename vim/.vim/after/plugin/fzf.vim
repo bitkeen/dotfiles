@@ -1,17 +1,8 @@
 if &runtimepath =~# '/usr/bin/fzf' " Basic plugin.
   " Choose a filetype and pretty format the current buffer (or range).
-  function! FzfPrettyFormat(mode) range
-    if a:mode ==? 'normal'
-      let s:range_prefix = '%'
-    elseif a:mode ==? 'visual'
-      let s:range_prefix = "'<,'>"
-    else
-      echoerr 'Wrong mode value'
-      return 1
-    endif
-
+  function! FzfPrettyFormat(range_prefix) range
     function! s:get_type_formatter(filetype)
-      call FormatFile(a:filetype, s:range_prefix)
+      call FormatFile(a:filetype, a:range_prefix)
     endfunction
 
     call fzf#run({
@@ -22,8 +13,8 @@ if &runtimepath =~# '/usr/bin/fzf' " Basic plugin.
     \})
   endfunction
 
-  nnoremap <LocalLeader>F :call FzfPrettyFormat('normal')<CR>
-  vnoremap <LocalLeader>F :call FzfPrettyFormat('visual')<CR>
+  nnoremap <LocalLeader>F :call FzfPrettyFormat("%")<CR>
+  vnoremap <LocalLeader>F :call FzfPrettyFormat("'<,'>")<CR>
 
   if &runtimepath =~# 'bundle/opt/fzf.vim' " Plugin extension.
     " Add alt-enter binding to select query.

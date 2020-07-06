@@ -370,7 +370,7 @@ command! WrappedObsession execute s:wrapped_obsession()
 let g:formatter_mapping = {
 \ 'html': '!tidy -q -i --show-errors 0',
 \ 'json': '!python -m json.tool',
-\ 'python': '!autopep8',
+\ 'python': '!autopep8 -',
 \ 'sql': '!pg_format',
 \ 'xml': '!tidy -q -i --show-errors 0 -xml',
 \}
@@ -720,7 +720,8 @@ noremap zer :edit ~/.config/ranger/rc.conf<CR>
 noremap zet :edit ~/.tmux.conf<CR>
 noremap zev :edit ~/.vimrc<CR>
 
-nnoremap <silent> <LocalLeader>f :call FormatFile(&filetype, '%')<CR>
+nnoremap <silent> <LocalLeader>f :call FormatFile(&filetype, "%")<CR>
+vnoremap <silent> <LocalLeader>f :call FormatFile(&filetype, "'<,'>")<CR>
 
 " }}}
 
