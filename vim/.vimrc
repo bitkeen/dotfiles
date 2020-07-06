@@ -107,106 +107,6 @@ if has('autocmd')
   augroup END
 endif
 
-if has('packages')
-  " Default plugins in vim distribution.
-  packadd cfilter " Filter a quickfix or location list
-  packadd matchit " Extended matching with '%'
-
-  if has('python3')
-    packadd MatchTagAlways
-    packadd completor.vim
-    packadd ultisnips
-  endif
-
-  packadd! ale " Asynchronous Lint Engine
-  packadd! base16-vim " Themes
-  packadd! CamelCaseMotion " CamelCase and snake_case movement mappings
-  packadd! committia.vim
-  packadd! conflict-marker.vim
-  packadd! fugitive-gitlab.vim
-  packadd! fzf.vim
-  packadd! git-blame.vim " See blame information in the bottom line
-  packadd! gundo.vim " Graph undo tree
-  packadd! gv.vim " Git commit browser. Requires fugitive
-  packadd! indentLine " Display vertical lines at each indentation level
-  packadd! jedi-vim " Python autocompletion
-  packadd! lightline-ale
-  packadd! lightline.vim " A light and configurable statusline/tabline
-  packadd! linediff.vim " Diff two blocks of text
-  packadd! pydoc.vim
-  packadd! python-syntax " Better python syntax highlighting
-  packadd! QFEnter " Open a Quickfix item in a window you choose
-  packadd! quick-scope
-  packadd! quickpeek.vim " A preview popup on quickfix entries
-  packadd! requirements.txt.vim
-  packadd! splitjoin.vim " Switch between single-line and multiline forms of code
-  packadd! tabular
-  packadd! tagbar " A class outline viewer using ctags
-  packadd! targets.vim " Additional text objects
-  packadd! textobj-word-column.vim
-  packadd! tmuxline.vim " Tmux status line generator
-  packadd! traces.vim " For :substitute previews
-  packadd! undoquit.vim
-  packadd! vim-abolish
-  packadd! vim-auto-save
-  packadd! vim-characterize
-  packadd! vim-closer
-  packadd! vim-commentary " Easy commenting
-  packadd! vim-easydir
-  packadd! vim-endwise
-  packadd! vim-eunuch
-  packadd! vim-exchange
-  packadd! vim-expand-region
-  packadd! vim-fugitive " Git wrapper
-  packadd! vim-gitgutter " Show a git diff in the sign column
-  packadd! vim-gnupg
-  packadd! vim-grepper " Use search tools in a vim split
-  packadd! vim-gtfo
-  packadd! vim-highlightedyank
-  packadd! vim-indent-object
-  packadd! vim-instant-markdown " Instant markdown previews
-  packadd! Vim-Jinja2-Syntax
-  packadd! vim-ledger
-  packadd! vim-merginal " Interface for dealing with Git branches
-  packadd! vim-obsession
-  packadd! vim-pug
-  packadd! vim-python-pep8-indent
-  packadd! vim-qfreplace " Change lines from quickfix
-  packadd! vim-qlist
-  packadd! vim-ragtag
-  packadd! vim-repeat
-  packadd! vim-rhubarb
-  packadd! vim-rsi " Readline style insertion
-  packadd! vim-scriptease
-  packadd! vim-searchindex
-  packadd! vim-signature " A plugin to toggle, display and navigate marks
-  packadd! vim-signjump " Jump to signs just like other object motions
-  packadd! vim-slime
-  packadd! vim-speeddating
-  packadd! vim-superman
-  packadd! vim-surround
-  packadd! vim-swap
-  packadd! vim-sxhkdrc
-  packadd! vim-syntax-extra
-  packadd! vim-textobj-comment " Text objects for comments
-  packadd! vim-textobj-conflict
-  packadd! vim-textobj-entire
-  packadd! vim-textobj-user
-  packadd! vim-textobj-xmlattr
-  packadd! vim-tmux-focus-events
-  packadd! vim-tmux-navigator
-  packadd! vim-vinegar
-  packadd! vim-visual-star-search
-  packadd! vim-vue
-  packadd! vim-xkbswitch " Automatically switch keyboard layout based on mode
-  packadd! vimwiki " Personal wiki for Vim
-  packadd! vZoom.vim " Quickly maximize & unmaximize the current window
-  packadd! winresizer " Easy window resizing, similar to resize mode in i3wm
-else
-  " Enable Pathogen package manager.
-  execute pathogen#infect('pack/bundle/opt/{}')
-endif
-
 filetype plugin indent on
 
 " Enable syntax highlighting.
@@ -377,6 +277,108 @@ function! FormatFile(filetype, range_prefix)
   endif
 endfunction
 
+" }}}
+
+" Packages {{{
+if has('packages')
+  " Default plugins in vim distribution.
+  packadd cfilter " Filter a quickfix or location list
+  packadd matchit " Extended matching with '%'
+
+  if has('python3')
+    packadd MatchTagAlways
+    packadd completor.vim
+    packadd ultisnips
+  endif
+
+  packadd! ale " Asynchronous Lint Engine
+  packadd! base16-vim " Themes
+  packadd! CamelCaseMotion " CamelCase and snake_case movement mappings
+  packadd! committia.vim
+  packadd! conflict-marker.vim
+  packadd! fugitive-gitlab.vim
+  packadd! fzf.vim
+  packadd! git-blame.vim " See blame information in the bottom line
+  packadd! gundo.vim " Graph undo tree
+  packadd! gv.vim " Git commit browser. Requires fugitive
+  packadd! indentLine " Display vertical lines at each indentation level
+  packadd! jedi-vim " Python autocompletion
+  packadd! lightline-ale
+  packadd! lightline.vim " A light and configurable statusline/tabline
+  packadd! linediff.vim " Diff two blocks of text
+  packadd! pydoc.vim
+  packadd! python-syntax " Better python syntax highlighting
+  packadd! QFEnter " Open a Quickfix item in a window you choose
+  packadd! quick-scope
+  packadd! quickpeek.vim " A preview popup on quickfix entries
+  packadd! requirements.txt.vim
+  packadd! splitjoin.vim " Switch between single-line and multiline forms of code
+  packadd! tabular
+  packadd! tagbar " A class outline viewer using ctags
+  packadd! targets.vim " Additional text objects
+  packadd! textobj-word-column.vim
+  packadd! tmuxline.vim " Tmux status line generator
+  packadd! traces.vim " For :substitute previews
+  packadd! undoquit.vim
+  packadd! vim-abolish
+  packadd! vim-auto-save
+  packadd! vim-characterize
+  packadd! vim-closer
+  packadd! vim-commentary " Easy commenting
+  packadd! vim-easydir
+  packadd! vim-endwise
+  packadd! vim-eunuch
+  packadd! vim-exchange
+  packadd! vim-expand-region
+  packadd! vim-fugitive " Git wrapper
+  packadd! vim-gitgutter " Show a git diff in the sign column
+  packadd! vim-gnupg
+  packadd! vim-grepper " Use search tools in a vim split
+  packadd! vim-gtfo
+  packadd! vim-highlightedyank
+  packadd! vim-indent-object
+  packadd! vim-instant-markdown " Instant markdown previews
+  packadd! Vim-Jinja2-Syntax
+  packadd! vim-ledger
+  packadd! vim-merginal " Interface for dealing with Git branches
+  packadd! vim-obsession
+  packadd! vim-pug
+  packadd! vim-python-pep8-indent
+  packadd! vim-qfreplace " Change lines from quickfix
+  packadd! vim-qlist
+  packadd! vim-ragtag
+  packadd! vim-repeat
+  packadd! vim-rhubarb
+  packadd! vim-rsi " Readline style insertion
+  packadd! vim-scriptease
+  packadd! vim-searchindex
+  packadd! vim-signature " A plugin to toggle, display and navigate marks
+  packadd! vim-signjump " Jump to signs just like other object motions
+  packadd! vim-slime
+  packadd! vim-speeddating
+  packadd! vim-superman
+  packadd! vim-surround
+  packadd! vim-swap
+  packadd! vim-sxhkdrc
+  packadd! vim-syntax-extra
+  packadd! vim-textobj-comment " Text objects for comments
+  packadd! vim-textobj-conflict
+  packadd! vim-textobj-entire
+  packadd! vim-textobj-user
+  packadd! vim-textobj-xmlattr
+  packadd! vim-tmux-focus-events
+  packadd! vim-tmux-navigator
+  packadd! vim-vinegar
+  packadd! vim-visual-star-search
+  packadd! vim-vue
+  packadd! vim-xkbswitch " Automatically switch keyboard layout based on mode
+  packadd! vimwiki " Personal wiki for Vim
+  packadd! vZoom.vim " Quickly maximize & unmaximize the current window
+  packadd! winresizer " Easy window resizing, similar to resize mode in i3wm
+else
+  " Enable Pathogen package manager.
+  execute pathogen#infect('pack/bundle/opt/{}')
+endif
 " }}}
 
 " Plugin configuration {{{
