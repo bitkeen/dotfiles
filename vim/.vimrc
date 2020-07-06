@@ -356,17 +356,6 @@ function! CloseQuickfixWindows()
   execute "tabnext" l:current_tab
 endfunction
 
-function! s:wrapped_obsession()
-  " Source Session.vim if it exists, start a new session otherwise.
-  if getfsize('Session.vim') > 0
-    source Session.vim
-  else
-    Obsession
-  endif
-endfunction
-
-command! WrappedObsession execute s:wrapped_obsession()
-
 let g:formatter_mapping = {
 \ 'html': '!tidy -q -i --show-errors 0',
 \ 'json': '!python -m json.tool',
@@ -456,6 +445,19 @@ if filereadable(expand('~/.vimrc_background'))
   let base16colorspace=256
   source ~/.vimrc_background
 endif
+" }}}
+
+" vim-obsession {{{
+function! s:wrapped_obsession()
+  " Source Session.vim if it exists, start a new session otherwise.
+  if getfsize('Session.vim') > 0
+    source Session.vim
+  else
+    Obsession
+  endif
+endfunction
+
+command! WrappedObsession execute s:wrapped_obsession()
 " }}}
 
 " Gundo
