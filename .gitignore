@@ -1,6 +1,8 @@
 *.local
 !.local/
 
+litecli/.config/litecli/*
+!litecli/.config/litecli/config
 pgcli/.config/pgcli/*
 !pgcli/.config/pgcli/config
 mpd/.config/mpd/*
