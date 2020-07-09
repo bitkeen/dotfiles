@@ -8,6 +8,7 @@ packages:
   - { name: dragon-drag-and-drop } # Simple drag-and-drop source/sink for X
   - { name: htop-vim-git } # Interactive text-mode process viewer. Patched for vim keybindings
   - { name: lab }
+  - { name: litecli }
   - { name: mycli }
   - { name: nerd-fonts-source-code-pro }
   - { name: paper-icon-theme }
