@@ -1,11 +1,12 @@
 #!/bin/sh
 # Connect to a database from a file with connection strings, using
-# either pgcli or mycli.
+# either iredis/redis-cli, pgcli or mycli.
 # Each line should consist of a connection alias and a corresponding
 # connection string, separated with "=".
 #
 # Dependencies:
 # - fzf
+# - iredis/redis-cli
 # - mycli
 # - pgcli
 #
