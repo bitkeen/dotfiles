@@ -13,6 +13,7 @@
     - { dir: guvcview }
     - { dir: i3 }
     - { dir: ipython }
+    - { dir: litecli }
     - { dir: mpd }
     - { dir: mpv }
     - { dir: mycli }
