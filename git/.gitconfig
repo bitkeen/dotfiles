@@ -38,7 +38,7 @@
     hh = rev-parse --short HEAD
     lg = log --oneline --format='%C(auto)%h%C(reset) %s %C(cyan)<%aN>%C(reset) %C(green)%cr%C(reset) (%ad)'
     lgg = log --all --graph --format='%C(auto)%h%C(reset)%C(auto)%d%C(reset) %s %C(cyan)<%aN>%C(reset) %C(green)%cr%C(reset) (%ad)'
-    lglr = log --left-right --oneline --format='%C(auto)%h%C(reset) %s %C(cyan)<%aN>%C(reset) %C(green)%cr%C(reset) (%ad)'
+    lglr = log --left-right --oneline --format='%C(auto)%m%C(reset) %C(auto)%h%C(reset) %s %C(cyan)<%aN>%C(reset) %C(green)%cr%C(reset) (%ad)'
     lglrm = log --left-right --oneline HEAD...master --format='%C(auto)%m%C(reset) %C(auto)%h%C(reset) %s %C(cyan)<%aN>%C(reset) %C(green)%cr%C(reset) (%ad)'
     ; Compare with the previous branch.
     lglrp = log --left-right --oneline HEAD...@{-1} --format='%C(auto)%m%C(reset) %C(auto)%h%C(reset) %s %C(cyan)<%aN>%C(reset) %C(green)%cr%C(reset) (%ad)'
