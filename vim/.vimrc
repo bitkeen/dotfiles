@@ -714,7 +714,7 @@ nnoremap gsc :make %:r<CR>
 nnoremap gsr :!./%<<CR>
 
 " Open a new tab with the results of a Vim command execution.
-nnoremap gst :tabnew <Bar> put=execute('')<Left><Left>
+nnoremap gsx :tabnew <Bar> put=execute('')<Left><Left>
 
 noremap zea :edit ~/.dotfiles/ansible/playbook.yml<CR>
 noremap zeb :edit ~/.bashrc<CR>
