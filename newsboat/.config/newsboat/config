@@ -4,6 +4,8 @@ reload-threads 8
 feedlist-format "%n %11u %t"
 datetime-format "%d %b %Y"
 
+bind-key a toggle-article-read
+bind-key A mark-feed-read # Default.
 bind-key j down
 bind-key k up
 bind-key j next articlelist
@@ -23,6 +25,10 @@ unbind-key C
 browser firefox
 macro , open-in-browser
 macro v set browser "i3 exec mpv"; open-in-browser ; set browser firefox
+
+color info yellow black bold
+color listfocus color232 yellow
+color listfocus_unread color232 yellow bold
 
 # Separator feeds, used to separate categories, e.g. `---Cooking---`.
 highlight all "---.*---.*" yellow black bold
