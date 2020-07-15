@@ -28,3 +28,10 @@ pp ~/sync/phone/DCIM
 vd ~/videos
 vt ~/videos/to-watch
 sh ~/.local/share/Trash
+// /
+/e /etc
+/m /run/media
+/o /opt
+/p /tmp
+/u /usr
+/v /var
