@@ -5,3 +5,27 @@
   pip:
     extra_args: --user
     requirements: "{{ role_path }}/files/requirements.txt"
+
+- name: create a temporary directory to clone packages into
+  become: yes
+  become_user: '{{ user_name }}'
+  tempfile:
+    state: directory
+    suffix: python
+  register: python_tempdir
+
+- name: clone personal forks of Python packages
+  become: yes
+  become_user: '{{ user_name }}'
+  command:
+    chdir: '{{ python_tempdir.path }}'
+    cmd: git clone '{{ github_user_profile }}/{{ item }}'
+  loop: '{{ personal_package_forks }}'
+
+- name: install the forks
+  become: yes
+  become_user: '{{ user_name }}'
+  command:
+    chdir: '{{ python_tempdir.path }}/{{ item }}'
+    cmd: pip install .
+  loop: '{{ personal_package_forks }}'
