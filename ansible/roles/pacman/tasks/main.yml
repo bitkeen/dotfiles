@@ -8,15 +8,14 @@
       - anki
       - ansible-lint
       - arandr # Xrandr front-end
-      - atool # A script for managing file archives of various types
       - asp # Arch Linux build source file management tool
+      - atool # A script for managing file archives of various types
       - autopep8 # A tool that automatically formats Python code to conform to the PEP 8 style guide
       - base-devel
       - bat # Cat clone with syntax highlighting and git integration
+      - blueman # Graphical bluetooth manager
       - bluez # Daemons for the bluetooth protocol stack
       - bluez-utils # Provides the bluetoothctl utility
-      - blueman # Graphical bluetooth manager
-      - picom # A compositor for X11, required for transparency
       - ctags # Universal ctags
       - dbeaver
       - docker
@@ -27,14 +26,14 @@
       - feh # Image viewer, currently only used to set backgrounds with .fehbg script
       - firefox
       - fzf
+      - gimp
       - gnome-keyring # Stores passwords and encryption keys
       - gnome-themes-extra # Contains Adwaita theme
       - go-pie # Required for path-extractor (AUR), conflicts with go
       - gst-plugins-good # GStreamer open-source multimedia framework good plugins
       - gst-plugins-ugly # GStreamer open-source multimedia framework ugly plugins
-      - gvim
-      - gimp
       - guvcview # Webcam capturing interface
+      - gvim
       - i3-wm
       - imagemagick # An image viewing/manipulation program
       - ipython
@@ -54,34 +53,35 @@
       - ncdu # NCurses Disk Usage
       - ncmpcpp
       - neofetch
+      - network-manager-applet
       - networkmanager
       - networkmanager-openvpn
-      - network-manager-applet
       - newsboat
       - npm # A package manager for javascript
       - ntfs-3g
       - openbsd-netcat # TCP/IP swiss army knife
       - pacman-contrib # Contributed scripts and tools for pacman systems
+      - picom # A compositor for X11, required for transparency
       - pulsemixer # CLI and curses mixer for pulseaudio
       - python-pip
       - python-virtualenvwrapper
       - ranger
       - redshift # Set color temperature of display according to time of day
-      - ripgrep
-      - simplescreenrecorder
       - reflector # A script to retrieve and filter the latest Pacman mirror list
+      - ripgrep
       - seahorse # GNOME application for managing PGP keys
       - shellcheck # Shell script analysis tool
+      - simplescreenrecorder
       - solaar # Device manager for Logitech's Unifying receiver peripherals
       - stow
       - sxhkd
       - sxiv # Simple X Image Viewer
       - syncthing # Open Source Continuous Replication / Cluster Synchronization Thing
       - syncthing-gtk # GTK3 based GUI and notification area icon for Syncthing
-      - tidy # A tool to tidy HTML code
       - thunar # File Manager for the Xfce Desktop Environment
       - thunderbird
       - thunderbird-extension-enigmail
+      - tidy # A tool to tidy HTML code
       - tmux
       - tor
       - torsocks # Wrapper to safely torify applications
