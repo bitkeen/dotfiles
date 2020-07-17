@@ -40,8 +40,17 @@
 - name: configure pacman
   lineinfile:
     path: '/etc/pacman.conf'
-    line: 'VerbosePkgLists'
-    regexp: '^#[ ]?VerbosePkgLists$'
+    line: '{{ item.line }}'
+    regexp: '{{ item.regexp }}'
+  loop:
+    - {
+      line: 'VerbosePkgLists',
+      regexp: '^#[ ]?VerbosePkgLists$'
+    }
+    - {
+      line: 'IgnoreGroup = custom',
+      regexp: '^#[ ]?IgnoreGroup ='
+    }
 
 - name: install sqlint
   become: yes
