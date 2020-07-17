@@ -1,22 +1,11 @@
 ---
 - name: create directories in user_home
   file:
-    path: "{{ user_home }}/{{ item.path }}"
+    path: "{{ user_home }}/{{ item.value }}"
     state: directory
     owner: "{{ user_name }}"
     group: "{{ user_group }}"
-  loop:
-    - { path: .local/bin }
-    - { path: .vim }
-    - { path: .vim/ultisnips }
-    - { path: .config/newsboat }
-    - { path: documents }
-    - { path: downloads }
-    - { path: downloads/bandcamp-dl }
-    - { path: downloads/firefox }
-    - { path: pictures }
-    - { path: pictures/screenshots }
-    - { path: sync }
+  loop: "{{ dirs | dict2items }}"
 
 - name: create .dotfiles.local symlink
   file:

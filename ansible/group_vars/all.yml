@@ -1,0 +1,18 @@
+---
+dirs:
+  dot_local_bin: '{{ user_home }}/.local/bin'
+  dot_vim: '{{ user_home }}/.vim'
+  dot_vim_ultisnips: '{{ user_home }}/.vim/ultisnips'
+  dot_config_newsboat: '{{ user_home }}/.config/newsboat'
+  documents: '{{ user_home }}/documents'
+  documents_projects: '{{ user_home }}/documents/projects'
+  documents_projects_cloned: '{{ user_home }}/documents/projects/cloned'
+  documents_projects_forks: '{{ user_home }}/documents/projects/forks'
+  documents_projects_private: '{{ user_home }}/documents/projects/private'
+  documents_projects_public: '{{ user_home }}/documents/projects/public'
+  downloads: '{{ user_home }}/downloads'
+  downloads/bandcamp_dl: '{{ user_home }}/downloads/bandcamp_dl'
+  downloads/firefox: '{{ user_home }}/downloads/firefox'
+  pictures: '{{ user_home }}/pictures'
+  pictures/screenshots: '{{ user_home }}/pictures/screenshots'
+  sync: '{{ user_home }}/sync'
