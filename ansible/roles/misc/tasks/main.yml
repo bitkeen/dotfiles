@@ -71,3 +71,9 @@
   become_user: "{{ user_name }}"
   command:
     cmd: vim -c 'helptags ALL' -c 'quit'
+
+- name: add user to docker group
+  user:
+    name: '{{ user_name }}'
+    groups: docker
+    append: yes
