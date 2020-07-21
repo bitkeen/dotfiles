@@ -85,6 +85,7 @@
       - tmux
       - tor
       - torsocks # Wrapper to safely torify applications
+      - traceroute # Tracks the route taken by packets over an IP network
       - transmission-gtk
       - ttf-font-awesome # Iconic font
       - udiskie
