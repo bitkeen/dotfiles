@@ -1,4 +1,9 @@
-# Configuration file for ipython.
+import importlib
+import os
+import re
+import sys
+
+from prompt_toolkit.key_binding.vi_state import InputMode, ViState
 
 #------------------------------------------------------------------------------
 # InteractiveShellApp(Configurable) configuration
@@ -607,12 +612,6 @@ c.TerminalInteractiveShell.extra_open_editor_shortcuts = True
 #
 # For `ModuleNotFoundError: No module named 'prompt_toolkit.terminal`
 # see https://github.com/memeplex/base16-prompt-toolkit/issues/4.
-# with open('~/.vimrc_background') as fin:
-#     lines = fin.readlines()
-
-import importlib
-import os
-import re
 
 # Get the name of the theme currently used in Vim.
 text = ''
@@ -628,3 +627,37 @@ except ModuleNotFoundError as e:
 else:
     c.TerminalInteractiveShell.highlighting_style = theme.Base16Style
     c.TerminalInteractiveShell.highlighting_style_overrides = theme.overrides
+
+#------------------------------------------------------------------------------
+# Vi mode cursor
+#------------------------------------------------------------------------------
+# From https://github.com/prompt-toolkit/python-prompt-toolkit/issues/192,
+# adapted for Tmux.
+
+def get_input_mode(self):
+    return self._input_mode
+
+
+def set_input_mode(self, mode):
+    # For REPLACE_SINGLE prompt-toolkit from 
+    # https://github.com/bitkeen/python-prompt-toolkit is required.
+    shape = {
+        InputMode.NAVIGATION: 2,
+        InputMode.REPLACE_SINGLE: 3,
+        InputMode.REPLACE: 3,
+        InputMode.INSERT: 5,
+    }.get(mode)
+    if 'TMUX' in os.environ:
+        raw = u'\x1bPtmux;\x1b\x1b[{} q\x1b\\'.format(shape)
+    else:
+        raw = u'\x1b[{} q'.format(shape)
+
+    out = sys.stdout.write
+    out(raw)
+    sys.stdout.flush()
+    self._input_mode = mode
+
+
+ViState._input_mode = InputMode.INSERT
+ViState.input_mode = property(get_input_mode, set_input_mode)
+c.TerminalInteractiveShell.prompt_includes_vi_mode = False
