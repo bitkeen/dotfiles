@@ -13,6 +13,7 @@ bk ~/books
 dc ~/documents
 df ~/downloads/firefox
 dp ~/documents/projects
+pf ~/documents/projects/forks
 dt ~/downloads/torrents
 dl ~/downloads
 dy ~/downloads/youtube-dl
