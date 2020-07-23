@@ -1,8 +1,10 @@
 if &runtimepath =~# '/usr/bin/fzf' " Basic plugin.
   " Choose a filetype and pretty format the current buffer (or range).
   function! FzfPrettyFormat(range_prefix) range
-    function! s:get_type_formatter(filetype)
-      call FormatFile(a:filetype, a:range_prefix)
+    let range_prefix_arg = a:range_prefix
+
+    function! s:get_type_formatter(filetype) closure
+      call FormatFile(a:filetype, range_prefix_arg)
     endfunction
 
     call fzf#run({
