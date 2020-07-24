@@ -22,5 +22,6 @@
 
 - name: import local playbook
   import_playbook: "{{ user_home }}/.dotfiles.local/ansible/playbook.yml"
+  tags: local
   vars:
     user_home: "{{ '~' | expanduser }}"
