@@ -112,3 +112,5 @@ alias get-ranger-maps='get-ranger-maps ~/.config/ranger/bookmark_maps.conf ~/.co
 
 alias fzd='fzf_dbs ~/.config/db_connections.local'
 alias fzc='fzf_containers'
+
+alias timer='TIMER_SOUND="$HOME/.local/share/timer/sound-2.wav" timer'
