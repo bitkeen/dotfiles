@@ -12,6 +12,6 @@
   become: yes
   become_user: "{{ user_name }}"
   command:
-    cmd: makepkg -si --cleanbuild --noconfirm --needed --rmdeps
+    cmd: makepkg -si --cleanbuild --clean --noconfirm --needed --rmdeps
     chdir: '{{ aur_pkg_dir }}/{{ item.name }}'
   loop: '{{ packages|flatten(levels=1) }}'
