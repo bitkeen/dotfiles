@@ -14,11 +14,6 @@
     - { role: firefox, tags: firefox }
     - { role: transmission, tags: transmission }
     - { role: virtualbox, tags: virtualbox }
-  vars:
-    - user_home: "{{ '~' | expanduser }}"
-    - dotfiles_home: "{{ user_home }}/.dotfiles"
-    - user_name: user
-    - user_group: user
 
 - name: import local playbook
   import_playbook: "{{ user_home }}/.dotfiles.local/ansible/playbook.yml"

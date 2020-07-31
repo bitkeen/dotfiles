@@ -1,4 +1,8 @@
 ---
+user_name: user
+user_group: user
+user_home: "{{ '~' | expanduser }}"
+dotfiles_home: "{{ user_home }}/.dotfiles"
 dirs:
   dot_local_bin: '{{ user_home }}/.local/bin'
   dot_vim: '{{ user_home }}/.vim'
