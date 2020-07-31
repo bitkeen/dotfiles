@@ -2,25 +2,26 @@
 aur_pkg_dir: '{{ user_home }}/.cache/ansible_aur'
 
 packages:
-  - { name: colorpicker } # Click on a pixel on your screen and print its color value in RGB. Written for X11.
-  - { name: git-open } # Open a repo website (GitHub, GitLab, Bitbucket) in your browser
-  - { name: git-delta } # A syntax-highlighting pager for git and diff output
-  - { name: dragon-drag-and-drop } # Simple drag-and-drop source/sink for X
-  - { name: htop-vim-git } # Interactive text-mode process viewer. Patched for vim keybindings
-  - { name: jiq } # Json Incremental Digger that uses jq internally
-  - { name: lab }
-  - { name: litecli }
-  - { name: mycli }
-  - { name: nerd-fonts-source-code-pro }
-  - { name: paper-icon-theme }
-  - { name: path-extractor } # A unix filter which outputs the filepaths found in stdin
-  - { name: pgformatter-git } # Correctly indent PostgreSQL queries
-  - { name: polybar } # A fast and easy-to-use status bar
-  - { name: python-pgspecial } # Dependency for pgcli (pgcli is installed from pkgbuilds repo)
-  - { name: scrcpy } # Display and control an Android device
-  - { name: slack-desktop }
-  - { name: tor-browser }
-  - { name: virtualbox-ext-oracle } # VirtualBox Extension Pack
-  - { name: xidlehook } # xautolock rewrite in Rust, with a few extra features
-  - { name: xkb-switch } # Program that allows to query and change the XKB layout state
-  - { name: yay } # AUR helper
+  - colorpicker # Click on a pixel on your screen and print its color value in RGB. Written for X11.
+  - gcalcli # Google calendar command line interface
+  - git-open # Open a repo website (GitHub, GitLab, Bitbucket) in your browser
+  - git-delta # A syntax-highlighting pager for git and diff output
+  - dragon-drag-and-drop # Simple drag-and-drop source/sink for X
+  - htop-vim-git # Interactive text-mode process viewer. Patched for vim keybindings
+  - jiq # Json Incremental Digger that uses jq internally
+  - lab
+  - litecli
+  - mycli
+  - nerd-fonts-source-code-pro
+  - paper-icon-theme
+  - path-extractor # A unix filter which outputs the filepaths found in stdin
+  - pgformatter-git # Correctly indent PostgreSQL queries
+  - polybar # A fast and easy-to-use status bar
+  - python-pgspecial # Dependency for pgcli (pgcli is installed from pkgbuilds repo)
+  - scrcpy # Display and control an Android device
+  - slack-desktop
+  - tor-browser
+  - virtualbox-ext-oracle # VirtualBox Extension Pack
+  - xidlehook # xautolock rewrite in Rust, with a few extra features
+  - xkb-switch # Program that allows to query and change the XKB layout state
+  - yay # AUR helper

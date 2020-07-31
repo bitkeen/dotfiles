@@ -3,15 +3,15 @@
   become: yes
   become_user: "{{ user_name }}"
   git:
-    repo: 'https://aur.archlinux.org/{{ item.name }}.git'
-    dest: '{{ aur_pkg_dir }}/{{ item.name }}'
+    repo: 'https://aur.archlinux.org/{{ item }}.git'
+    dest: '{{ aur_pkg_dir }}/{{ item }}'
     force: yes # Discard local modifications.
-  loop: '{{ packages|flatten(levels=1) }}'
+  loop: '{{ packages }}'
 
 - name: make and install AUR packages
   become: yes
   become_user: "{{ user_name }}"
   command:
     cmd: makepkg -si --cleanbuild --clean --noconfirm --needed --rmdeps
-    chdir: '{{ aur_pkg_dir }}/{{ item.name }}'
-  loop: '{{ packages|flatten(levels=1) }}'
+    chdir: '{{ aur_pkg_dir }}/{{ item }}'
+  loop: '{{ packages }}'
