@@ -9,7 +9,7 @@
 
 - name: create .dotfiles.local symlink
   file:
-    src: '{{ user_home }}/.dotfiles.local'
+    src: '{{ dirs.dotfiles_local }}'
     dest: '{{ dotfiles_home }}/.dotfiles.local'
     state: link
 
