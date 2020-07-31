@@ -1,14 +1,27 @@
 #!/bin/sh
 # Run ansible-playbook, accept role tags as args.
-# Example:
+# Local playbook will be run as well either if there are no tags,
+# or if `local` tag is present.
+#
+# Examples:
 # bootstrap firefox systemd
+# bootstrap local misc
 
 ! [ -x "$(which ansible)" ] && sudo pacman --noconfirm -S ansible
 
 export ANSIBLE_PYTHON_INTERPRETER=auto_silent
 
+playbooks="$HOME/.dotfiles/ansible/playbook.yml"
+local_playbook="$HOME/.dotfiles.local/ansible/playbook.yml"
+hosts="$HOME/.dotfiles/ansible/hosts"
+
 [ -n "$1" ] &&
     tags_arg="$(printf " --tags %s" "$@")"
 
+[ -z "$tags_arg" ] || 
+    [ "$(echo "$tags_arg" | grep -P ' local | local$')" ] &&
+    [ -f "$local_playbook" ] && 
+    playbooks="$playbooks $local_playbook"
+
 # Don't double quote for word-splitting of args.
-ansible-playbook -i ~/.dotfiles/ansible/hosts --ask-become-pass ~/.dotfiles/ansible/playbook.yml $tags_arg
+ansible-playbook --ask-become-pass -i "$hosts" "$playbooks" $tags_arg

@@ -14,9 +14,3 @@
     - { role: firefox, tags: firefox }
     - { role: transmission, tags: transmission }
     - { role: virtualbox, tags: virtualbox }
-
-- name: import local playbook
-  import_playbook: "{{ user_home }}/.dotfiles.local/ansible/playbook.yml"
-  tags: local
-  vars:
-    user_home: "{{ '~' | expanduser }}"
