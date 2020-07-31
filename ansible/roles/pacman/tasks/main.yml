@@ -3,3 +3,8 @@
   pacman:
     name: '{{ item }}'
   loop: '{{ packages }}'
+
+- name: install work-related pacman packages
+  pacman:
+    name: '{{ item }}'
+  loop: '{{ work_packages }}'

@@ -15,7 +15,6 @@ packages:
   - bluez # Daemons for the bluetooth protocol stack
   - bluez-utils # Provides the bluetoothctl utility
   - ctags # Universal ctags
-  - dbeaver
   - docker
   - docker-compose
   - dunst # A customizable and lightweight notification-daemon
@@ -108,3 +107,9 @@ packages:
   - zathura-djvu
   - zathura-pdf-mupdf
   - zip # Compressor/archiver for creating and modifying zipfiles
+
+work_packages:
+  - aws-cli # Universal Command Line Interface for Amazon Web Services
+  - dbeaver
+  - redis
+  - terraform
