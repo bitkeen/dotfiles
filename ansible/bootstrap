@@ -3,9 +3,7 @@
 # Example:
 # bootstrap firefox systemd
 
-if ! [ -x "$(command -v ansible)" ]; then
-    sudo pacman -S ansible
-fi
+! [ -x "$(which ansible)" ] && sudo pacman --noconfirm -S ansible
 
 export ANSIBLE_PYTHON_INTERPRETER=auto_silent
 
