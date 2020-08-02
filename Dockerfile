@@ -2,8 +2,8 @@ FROM archlinux
 
 RUN pacman --noconfirm -Syyu
 
-# Install base-devel for `which`.
-RUN pacman --noconfirm -S ansible base-devel git
+# Install base-devel for `sudo`.
+RUN pacman --noconfirm -S base-devel git
 
 RUN useradd -m user
 RUN usermod -aG wheel user
