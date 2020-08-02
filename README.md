@@ -5,7 +5,7 @@
 My local machine setup and dotfiles are managed with Ansible.
 Symlinks to the directories are created by running GNU Stow in it.
 
-To learn which components are going to be installed and configured, see the playbook (`ansible/arch.yml`).
+To learn which components are going to be installed and configured, see the playbook (`ansible/playbook.yml`).
 
 To set up the system from a blank slate with these configs, first install git, then clone the repository:
 ```sh
@@ -16,6 +16,11 @@ git clone https://github.com/bitkeen/dotfiles ~/.dotfiles
 After that, run the bootstrapping script:
 ```sh
 ~/.dotfiles/ansible/bootstrap
+```
+
+You can also run specific roles by passing tags to `bootstrap`:
+```sh
+~/.dotfiles/ansible/bootstrap python firefox
 ```
 
 ##### Branches
