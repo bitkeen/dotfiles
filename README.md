@@ -7,9 +7,9 @@ Symlinks to the directories are created by running GNU Stow in it.
 
 To learn which components are going to be installed and configured, see the playbook (`ansible/playbook.yml`).
 
-To set up the system from a blank slate with these configs, first install git, then clone the repository:
+To set up the system from a blank slate with these configs, first install the initial dependencies, then clone the repository:
 ```sh
-! [ -x "$(which git)" ] && sudo pacman -S git
+pacman -S base-devel git
 git clone https://github.com/bitkeen/dotfiles ~/.dotfiles
 ```
 
