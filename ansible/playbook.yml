@@ -8,6 +8,7 @@
     - { role: systemd, tags: systemd }
     - { role: python, tags: python }
     - { role: npm, tags: npm }
+    - { role: ruby, tags: ruby }
     - { role: stow, tags: stow }
     - { role: aur, tags: aur }
     - { role: pkgbuilds, tags: pkgbuilds }

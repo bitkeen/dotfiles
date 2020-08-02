@@ -52,13 +52,6 @@
       regexp: '^#[ ]?IgnoreGroup ='
     }
 
-- name: install sqlint
-  become: yes
-  become_user: "{{ user_name }}"
-  command:
-    # Simple SQL linter supporting ANSI and PostgreSQL syntaxes.
-    cmd: gem install sqlint
-
 - name: get submodules
   become: yes
   become_user: "{{ user_name }}"
