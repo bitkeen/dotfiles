@@ -7,7 +7,8 @@
 # bootstrap firefox systemd
 # bootstrap local misc
 
-! [ -x "$(which ansible)" ] && sudo pacman --noconfirm -S ansible
+! [ -x "$(which ansible 2> /dev/null)" ] &&
+    sudo pacman --noconfirm -S ansible
 
 export ANSIBLE_PYTHON_INTERPRETER=auto_silent
 
