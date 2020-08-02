@@ -1,6 +1,6 @@
 ---
 - name: stow the dotfiles
   command:
-    cmd: "stow {{ item }}"
-    chdir: "{{ dotfiles_home }}"
-  loop: "{{ packages }}"
+    cmd: 'stow {{ item }}'
+    chdir: '{{ dotfiles_home }}'
+  loop: '{{ packages }}'
