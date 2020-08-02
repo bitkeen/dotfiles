@@ -9,8 +9,8 @@
     - { role: python, tags: python }
     - { role: npm, tags: npm }
     - { role: stow, tags: stow }
-    - { role: pkgbuilds, tags: pkgbuilds }
     - { role: aur, tags: aur }
+    - { role: pkgbuilds, tags: pkgbuilds }
     - { role: firefox, tags: firefox }
     - { role: transmission, tags: transmission }
     - { role: virtualbox, tags: virtualbox }
