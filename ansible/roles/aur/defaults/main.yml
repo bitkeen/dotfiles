@@ -1,6 +1,11 @@
 ---
 aur_pkg_dir: '{{ user_home }}/.cache/ansible_aur'
 
+python_deps:
+  # AUR dependencies for some Python packages.
+  - python-pgspecial # Dependency for pgcli.
+  - python-cli_helpers # Dependency for litecli, mycli, pgcli.
+
 packages:
   - colorpicker # Click on a pixel on your screen and print its color value in RGB. Written for X11.
   - gcalcli # Google calendar command line interface
@@ -17,7 +22,6 @@ packages:
   - path-extractor # A unix filter which outputs the filepaths found in stdin
   - pgformatter-git # Correctly indent PostgreSQL queries
   - polybar # A fast and easy-to-use status bar
-  - python-pgspecial # Dependency for pgcli (pgcli is installed from pkgbuilds repo)
   - scrcpy # Display and control an Android device
   - slack-desktop
   - tor-browser
