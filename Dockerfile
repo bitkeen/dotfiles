@@ -19,3 +19,6 @@ WORKDIR /home/user
 
 # Don't run the whole playbook until it's ready to be run in docker.
 RUN /home/user/.dotfiles/ansible/bootstrap pacman
+RUN /home/user/.dotfiles/ansible/bootstrap python
+RUN /home/user/.dotfiles/ansible/bootstrap npm
+RUN /home/user/.dotfiles/ansible/bootstrap virtualbox
