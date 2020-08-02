@@ -1,0 +1,33 @@
+---
+packages:
+  - bash
+  - compton
+  - dunst
+  - firefox
+  - git
+  - gtk-3.0
+  - guvcview
+  - i3
+  - ipython
+  - litecli
+  - mpd
+  - mpv
+  - mycli
+  - ncmpcpp
+  - newsboat
+  - pgcli
+  - polybar
+  - pylint
+  - ranger
+  - readline
+  - redshift
+  - rg
+  - scripts
+  - sxhkd
+  - sxiv
+  - tmux
+  - vim
+  - x11
+  - xdg
+  - youtube-dl
+  - zathura
