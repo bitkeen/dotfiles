@@ -10,7 +10,7 @@ packages:
   - colorpicker # Click on a pixel on your screen and print its color value in RGB. Written for X11.
   - dragon-drag-and-drop # Simple drag-and-drop source/sink for X
   - gcalcli # Google calendar command line interface
-  - git-delta # A syntax-highlighting pager for git and diff output
+  - git-delta-bin # A syntax-highlighting pager for git and diff output
   - git-open # Open a repo website (GitHub, GitLab, Bitbucket) in your browser
   - htop-vim-git # Interactive text-mode process viewer. Patched for vim keybindings
   - jiq # Json Incremental Digger that uses jq internally
