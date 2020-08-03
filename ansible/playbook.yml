@@ -3,14 +3,16 @@
   hosts: localhost
   become: yes
   roles:
+    # Install various packages.
     - { role: pacman, tags: pacman }
-    - { role: misc, tags: misc }
     - { role: python, tags: python }
     - { role: npm, tags: npm }
     - { role: ruby, tags: ruby }
-    - { role: stow, tags: stow }
     - { role: aur, tags: aur }
     - { role: pkgbuilds, tags: pkgbuilds }
+    # Other roles.
+    - { role: misc, tags: misc }
+    - { role: stow, tags: stow }
     - { role: firefox, tags: firefox }
     - { role: transmission, tags: transmission }
     - { role: virtualbox, tags: virtualbox }
