@@ -1,4 +1,10 @@
 ---
+- name: import GPG keys to verify the signature on tor-browser
+  become: yes
+  become_user: "{{ user_name }}"
+  command:
+    cmd: gpg --auto-key-locate nodefault,wkd --locate-keys torbrowser@torproject.org
+
 - name: clone AUR pkgbuilds
   become: yes
   become_user: "{{ user_name }}"
