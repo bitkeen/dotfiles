@@ -35,13 +35,13 @@ case "$key" in
     psfa)
         cmd='ps -a';;
     rs)
-        cmd="restart";;
+        cmd='restart';;
     rsl)
         [ "$#" -lt 2 ] && echo 'Specify container name.' && exit 1
         'docker' restart "$2" && 'docker' logs -f "$2"
         exit;;
     sys)
-        cmd="system";;
+        cmd='system';;
     rmall)
         cmd="rm $('docker' ps -aq)";;
     *)
