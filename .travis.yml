@@ -2,10 +2,10 @@ services:
   - docker
 
 script:
-  - docker build -t bitkeen/dotfiles .
+  - docker build -t "$DOCKER_USERNAME"/dotfiles .
 
 after_success:
-  - if [ "$TRAVIS_BRANCH" == "master" ]; then
-        echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
-        docker push bitkeen/dotfiles
+  - if [ "$TRAVIS_BRANCH" == "arch" ]; then
+      echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin;
+      docker push "$DOCKER_USERNAME"/dotfiles;
     fi
