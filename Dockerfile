@@ -29,3 +29,8 @@ RUN /home/user/.dotfiles/ansible/bootstrap aur
 # Other roles.
 RUN /home/user/.dotfiles/ansible/bootstrap misc
 RUN /home/user/.dotfiles/ansible/bootstrap virtualbox
+
+# Clear package cache.
+RUN sudo rm /var/cache/pacman/pkg/*
+RUN sudo rm -rf /home/user/.cache/ansible_aur
+RUN sudo rm -rf /tmp/ansible*python
