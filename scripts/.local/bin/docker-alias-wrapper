@@ -40,6 +40,8 @@ case "$key" in
         [ "$#" -lt 2 ] && echo 'Specify container name.' && exit 1
         'docker' restart "$2" && 'docker' logs -f "$2"
         exit;;
+    run)
+        cmd='run --rm';;
     sys)
         cmd='system';;
     rmall)
