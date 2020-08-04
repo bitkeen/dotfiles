@@ -1,7 +1,7 @@
 ---
 - name: clone pkgbuilds repository
   become: yes
-  become_user: "{{ user_name }}"
+  become_user: '{{ user_name }}'
   git:
     repo: 'https://github.com/bitkeen/pkgbuilds.git'
     dest: '{{ pkgbuilds_dir }}'
@@ -12,7 +12,7 @@
 
 - name: make and install packages
   become: yes
-  become_user: "{{ user_name }}"
+  become_user: '{{ user_name }}'
   command:
     cmd: makepkg -si --cleanbuild --noconfirm --needed --rmdeps
     chdir: '{{ pkgbuilds_dir }}/{{ item }}'
