@@ -24,7 +24,7 @@ RUN /home/user/.dotfiles/ansible/bootstrap python
 RUN /home/user/.dotfiles/ansible/bootstrap npm
 RUN /home/user/.dotfiles/ansible/bootstrap ruby
 RUN /home/user/.dotfiles/ansible/bootstrap aur
-RUN /home/user/.dotfiles/ansible/bootstrap pkgbuilds
+# RUN /home/user/.dotfiles/ansible/bootstrap pkgbuilds
 
 # Other roles.
 RUN /home/user/.dotfiles/ansible/bootstrap misc
