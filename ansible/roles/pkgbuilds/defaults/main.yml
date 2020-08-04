@@ -1,2 +1,4 @@
 ---
 pkgbuilds_dir: '{{ user_home }}/documents/projects/public/pkgbuilds'
+conflicts:
+  - rxvt-unicode-256xresources

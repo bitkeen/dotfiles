@@ -16,4 +16,13 @@
   command:
     cmd: makepkg -si --cleanbuild --noconfirm --needed --rmdeps
     chdir: '{{ pkgbuilds_dir }}/{{ item }}'
-  loop: '{{ dirs.stdout_lines }}'
+  # Install packages that cause conflicts in a separate task.
+  loop: '{{ dirs.stdout_lines | difference(conflicts) }}'
+
+- name: make and install packages that cause conflicts
+  become: yes
+  become_user: '{{ user_name }}'
+  shell:
+    cmd: yes | makepkg -si --cleanbuild --needed --rmdeps
+    chdir: '{{ pkgbuilds_dir }}/{{ item }}'
+  loop: '{{ conflicts }}'
