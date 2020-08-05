@@ -12,7 +12,7 @@ packages:
   - gcalcli # Google calendar command line interface
   - git-delta-bin # A syntax-highlighting pager for git and diff output
   - git-open # Open a repo website (GitHub, GitLab, Bitbucket) in your browser
-  # - htop-vim-git # Interactive text-mode process viewer. Patched for vim keybindings
+  - htop-vim-git # Interactive text-mode process viewer. Patched for vim keybindings
   - jiq # Json Incremental Digger that uses jq internally
   - lab
   - litecli
