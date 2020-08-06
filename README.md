@@ -1,9 +1,9 @@
-## Dotfiles
+# dotfiles
 
 [![Build Status](https://travis-ci.org/bitkeen/dotfiles.svg?branch=arch)](https://travis-ci.org/bitkeen/dotfiles)
 
 My local machine setup and dotfiles are managed with Ansible.
-Symlinks to the directories are created by running GNU Stow in it.
+Symlinks to the directories are created with GNU Stow from an Ansible role.
 
 To learn which components are going to be installed and configured, see the playbook (`ansible/playbook.yml`).
 
