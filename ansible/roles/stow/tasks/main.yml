@@ -1,4 +1,22 @@
 ---
+- name: get stat on potential conflicts
+  stat: 'path={{ item }}'
+  register: r
+  loop: '{{ potential_conflicts }}'
+
+- name: create a directory to move conflicts into
+  file:
+    path: '{{ conflicts_dir }}'
+    state: directory
+    owner: '{{ user_name }}'
+    group: '{{ user_group }}'
+  when: (r.results | selectattr('stat.exists', 'equalto', true) | selectattr('stat.islnk', 'equalto', false) | list | length > 0)
+
+- name: move conflicts
+  command: 'mv {{ item.item }} {{ conflicts_dir }}'
+  when: item.stat.exists and not item.stat.islnk
+  loop: '{{ r.results }}'
+
 - name: stow the dotfiles
   command:
     cmd: 'stow {{ item }}'

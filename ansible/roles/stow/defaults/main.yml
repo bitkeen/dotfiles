@@ -1,4 +1,13 @@
 ---
+# Potentially conflicting files.
+potential_conflicts:
+  - '{{ user_home }}/.bashrc'
+  - '{{ user_home }}/.bash_profile'
+  - '{{ user_home }}/.viminfo'
+
+# Directory to move conflicting files into.
+conflicts_dir: '{{ user_home }}/stow-conflicts'
+
 packages:
   - bash
   - compton
