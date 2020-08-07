@@ -28,6 +28,7 @@ RUN /home/user/.dotfiles/ansible/bootstrap pkgbuilds
 
 # Other roles.
 RUN /home/user/.dotfiles/ansible/bootstrap misc
+RUN /home/user/.dotfiles/ansible/bootstrap transmission
 RUN /home/user/.dotfiles/ansible/bootstrap virtualbox
 
 # Clear package cache.
