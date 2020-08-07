@@ -2,6 +2,7 @@
 - name: set up an Arch Linux machine
   hosts: localhost
   become: yes
+  gather_facts: no
   roles:
     # Install various packages.
     - { role: pacman, tags: pacman }
