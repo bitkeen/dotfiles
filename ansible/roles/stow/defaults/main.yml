@@ -2,6 +2,7 @@
 # Potentially conflicting files.
 potential_conflicts:
   - '{{ user_home }}/.bashrc'
+  - '{{ user_home }}/.bash_logout'
   - '{{ user_home }}/.bash_profile'
   - '{{ user_home }}/.viminfo'
 
