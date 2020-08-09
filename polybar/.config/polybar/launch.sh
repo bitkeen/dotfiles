@@ -4,7 +4,7 @@
 killall -q polybar
 
 # Wait until the process has been shut down.
-while pgrep -u $UID -x polybar >/dev/null; do sleep 1; done
+while pgrep -u $UID -x polybar >/dev/null; do sleep .05; done
 
 # See
 # https://github.com/polybar/polybar/issues/763#issuecomment-331604987
