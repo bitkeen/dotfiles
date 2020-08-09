@@ -28,7 +28,9 @@ export PATH="$PATH:$HOME/.local/bin"
 export PATH="$PATH:$HOME/.local/bin.local"
 export PATH="$PATH:$HOME/.vim/pack/bundle/opt/vim-superman/bin"
 export PATH="$PATH:$(ruby -e 'puts Gem.user_dir')/bin"
-export DOTFILES_DIR="$HOME/.dotfiles"
+# Make any new terminal have the history of other terminals without
+# having to exit those other terminals.
+export PROMPT_COMMAND='history -a'
 # Avoid loading default config file for ranger if a custom one exists.
 [ -f "$ranger_config_file" ] && export RANGER_LOAD_DEFAULT_RC=FALSE
 export RIPGREP_CONFIG_PATH="$HOME/.config/rg/rgconfig"
