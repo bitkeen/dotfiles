@@ -1,43 +1,5 @@
-# Main {{{
-
-# Enable autocd for bash versions greater than 4.
-[ "${BASH_VERSINFO[0]}" -ge 4 ] && shopt -s autocd
-
-# Enable extended pattern matching features.
-shopt -s extglob
-
-# Even though vi-mode is already set through readline configuration,
-# still need to set it here for fzf default bindings to work.
-set -o vi
-
-# Disable XON/XOFF flow control (Ctrl+S, Ctrl+Q).
-stty -ixon
-
-_source_if_exists() {
-    # Source a file if it exists.
-    [ "$#" -ne 1 ] && return 1
-    [ -f "$1" ] && source "$1" || return 1
-}
-
-# Source aliases and functions.
-for f in ~/.config/bash/*; do source "$f"; done
-
-# For copyline function see `bash_functions` file.
-bind -x '"\C-]":copyline'
-
-# Paths {{{
-base16_shell_dir="$HOME/.config/base16-shell/"
-fzf_bindings_file="/usr/share/fzf/key-bindings.bash"
-fzf_completion_file="/usr/share/fzf/completion.bash"
-git_completion_file="/usr/share/bash-completion/completions/git"
-ranger_config_file="$HOME/.config/ranger/rc.conf"
-venv_wrapper_file="/usr/bin/virtualenvwrapper_lazy.sh"
-# git-prompt.sh provides __git_ps1 that is used to show current Git branch
-# in bash prompt.
-git_prompt_file='/usr/share/git/completion/git-prompt.sh'
-# }}}
-
 # Exports {{{
+
 export EDITOR=/usr/bin/vim
 export FZF_DEFAULT_OPTS=" \
     --preview 'cat {}' \
@@ -76,6 +38,46 @@ export VIRTUAL_ENV_DISABLE_PROMPT=1
 # mitigate possible burn-in effects
 export XSECURELOCK_SHOW_DATETIME=1
 export XSECURELOCK_BURNIN_MITIGATION=20
+
+# }}}
+
+# Main {{{
+
+# Enable autocd for bash versions greater than 4.
+[ "${BASH_VERSINFO[0]}" -ge 4 ] && shopt -s autocd
+
+# Enable extended pattern matching features.
+shopt -s extglob
+
+# Even though vi-mode is already set through readline configuration,
+# still need to set it here for fzf default bindings to work.
+set -o vi
+
+# Disable XON/XOFF flow control (Ctrl+S, Ctrl+Q).
+stty -ixon
+
+_source_if_exists() {
+    # Source a file if it exists.
+    [ "$#" -ne 1 ] && return 1
+    [ -f "$1" ] && source "$1" || return 1
+}
+
+# Source aliases and functions.
+for f in ~/.config/bash/*; do source "$f"; done
+
+# For copyline function see `bash_functions` file.
+bind -x '"\C-]":copyline'
+
+# Paths {{{
+base16_shell_dir="$HOME/.config/base16-shell/"
+fzf_bindings_file="/usr/share/fzf/key-bindings.bash"
+fzf_completion_file="/usr/share/fzf/completion.bash"
+git_completion_file="/usr/share/bash-completion/completions/git"
+ranger_config_file="$HOME/.config/ranger/rc.conf"
+venv_wrapper_file="/usr/bin/virtualenvwrapper_lazy.sh"
+# git-prompt.sh provides __git_ps1 that is used to show current Git branch
+# in bash prompt.
+git_prompt_file='/usr/share/git/completion/git-prompt.sh'
 # }}}
 
 _source_if_exists "$fzf_bindings_file"
