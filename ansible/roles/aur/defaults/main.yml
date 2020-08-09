@@ -1,5 +1,5 @@
 ---
-aur_pkg_dir: '{{ user_home }}/.cache/ansible_aur'
+aur_pkg_dir: '{{ user_home }}/.cache/ansible/aur'
 
 python_deps:
   # AUR dependencies for some Python packages.
