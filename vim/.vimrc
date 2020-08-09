@@ -805,16 +805,16 @@ noremap <C-g>sp :Gsplit :%<C-Left>
 noremap <Leader>gv :GV<CR>
 
 " vim-gitgutter
-nmap <C-g>hp <Plug>GitGutterPreviewHunk
-nmap <C-g>hs <Plug>GitGutterStageHunk
-nmap <C-g>hu <Plug>GitGutterUndoHunk
+nmap <C-g>hp <Plug>(GitGutterPreviewHunk)
+nmap <C-g>hs <Plug>(GitGutterStageHunk)
+nmap <C-g>hu <Plug>(GitGutterUndoHunk)
 noremap <C-g>hh :GitGutterLineHighlightsToggle<CR>
 " Remap hunk text object mappings from ic, ac to ih, ah,
 " because ic and ac conflict with other plugins.
-omap ih <Plug>GitGutterTextObjectInnerPending
-omap ah <Plug>GitGutterTextObjectOuterPending
-xmap ih <Plug>GitGutterTextObjectInnerPending
-xmap ah <Plug>GitGutterTextObjectOuterPending
+omap ih <Plug>(GitGutterTextObjectInnerPending)
+omap ah <Plug>(GitGutterTextObjectOuterPending)
+xmap ih <Plug>(GitGutterTextObjectInnerVisual)
+xmap ah <Plug>(GitGutterTextObjectOuterVisual)
 
 " vim-eunuch
 nnoremap <Leader><C-r> :Rename<Space>
