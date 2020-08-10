@@ -8,7 +8,7 @@
 
 - name: get the directory names
   command: ls '{{ pkgbuilds_dir }}'
-  register: dirs
+  register: package_dirs
 
 - name: make and install packages
   become: yes
@@ -17,7 +17,7 @@
     cmd: makepkg -si --cleanbuild --noconfirm --needed --rmdeps
     chdir: '{{ pkgbuilds_dir }}/{{ item }}'
   # Install packages that cause conflicts in a separate task.
-  loop: '{{ dirs.stdout_lines | difference(conflicts) }}'
+  loop: '{{ package_dirs.stdout_lines | difference(conflicts) }}'
 
 - name: make and install packages that cause conflicts
   become: yes
