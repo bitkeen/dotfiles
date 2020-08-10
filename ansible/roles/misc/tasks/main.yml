@@ -1,11 +1,11 @@
 ---
 - name: create directories in user_home
   file:
-    path: "{{ item.value }}"
+    path: '{{ item.value }}'
     state: directory
-    owner: "{{ user_name }}"
-    group: "{{ user_group }}"
-  loop: "{{ dirs | dict2items }}"
+    owner: '{{ user_name }}'
+    group: '{{ user_group }}'
+  loop: '{{ dirs | dict2items }}'
 
 - name: create .dotfiles.local symlink
   file:
@@ -56,14 +56,14 @@
 
 - name: get submodules
   become: yes
-  become_user: "{{ user_name }}"
+  become_user: '{{ user_name }}'
   command:
     cmd: git submodule update --init --recursive
-    chdir: "{{ dotfiles_home }}"
+    chdir: '{{ dotfiles_home }}'
 
 - name: generate helptags for vim
   become: yes
-  become_user: "{{ user_name }}"
+  become_user: '{{ user_name }}'
   command:
     cmd: vim -c 'helptags ALL' -c 'quit'
 
