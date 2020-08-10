@@ -18,6 +18,7 @@ dirs:
   downloads: '{{ user_home }}/downloads'
   downloads/bandcamp_dl: '{{ user_home }}/downloads/bandcamp_dl'
   downloads/firefox: '{{ user_home }}/downloads/firefox'
+  firefox_profile: '{{ user_home }}/.mozilla/firefox/main'
   pictures: '{{ user_home }}/pictures'
   pictures/screenshots: '{{ user_home }}/pictures/screenshots'
   sync: '{{ user_home }}/sync'
