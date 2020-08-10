@@ -17,17 +17,14 @@ USER user
 
 WORKDIR /home/user
 
-# Don't run the whole playbook until it's ready to be run in docker.
-# Install various packages.
+# For now, firefox and systemd are omitted
 RUN /home/user/.dotfiles/ansible/bootstrap \
-    # Install various packages.
     pacman \
     python \
     npm \
     ruby \
     aur \
     pkgbuilds \
-    # Other roles.
     misc \
     stow \
     transmission \
