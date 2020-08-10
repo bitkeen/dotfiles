@@ -10,4 +10,4 @@
   become_user: '{{ user_name }}'
   get_url:
     url: 'https://github.com/akahuku/wasavi/blob/{{ wasavi_version }}/dist/wasavi.xpi?raw=true'
-    dest: '{{ profile_path }}/extensions/{{ extension_id.stdout }}.xpi'
+    dest: '{{ dirs.firefox_extensions }}/{{ extension_id.stdout }}.xpi'

@@ -1,3 +1,2 @@
 ---
 wasavi_version: 'e88948587ac5f0da56ad36bf9a7a0b76e64eb67e'
-profile_path: '{{ user_home }}/.mozilla/firefox/main'
