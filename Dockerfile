@@ -17,7 +17,7 @@ USER user
 
 WORKDIR /home/user
 
-# For now, firefox and systemd are omitted
+# For now, only systemd role is omitted
 RUN /home/user/.dotfiles/ansible/bootstrap \
     pacman \
     python \
@@ -27,6 +27,7 @@ RUN /home/user/.dotfiles/ansible/bootstrap \
     pkgbuilds \
     misc \
     stow \
+    firefox \
     transmission \
     virtualbox
 
