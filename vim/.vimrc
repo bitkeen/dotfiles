@@ -496,6 +496,9 @@ autocmd plugins FileType todo :let b:auto_save = 1
 let g:quickpeek_popup_options = {'title': 'Preview'}
 let g:quickpeek_window_settings = ['cursorline', 'number', 'relativenumber']
 
+" vim-sneak
+let g:sneak#label = 1
+
 " }}}
 
 " Mappings {{{
