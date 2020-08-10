@@ -938,6 +938,10 @@ nnoremap gct :ConflictMarkerThemselves<CR>
 nnoremap gco :ConflictMarkerOurselves<CR>
 nnoremap gcb :ConflictMarkerBoth<CR>
 
+" vim-sneak
+map <expr> n sneak#is_sneaking() ? '<Plug>Sneak_;' : 'n'
+map <expr> N sneak#is_sneaking() ? '<Plug>Sneak_,' : 'N'
+
 " }}}
 
 silent! source ~/.vimrc.local
