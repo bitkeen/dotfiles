@@ -309,7 +309,7 @@ if has('packages')
   packadd! pydoc.vim
   packadd! python-syntax " Better python syntax highlighting
   packadd! QFEnter " Open a Quickfix item in a window you choose
-  packadd! quick-scope
+  " packadd! quick-scope
   packadd! quickpeek.vim " A preview popup on quickfix entries
   packadd! requirements.txt.vim
   packadd! splitjoin.vim " Switch between single-line and multiline forms of code
