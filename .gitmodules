@@ -301,3 +301,6 @@
 [submodule "conflict-marker.vim"]
 	path = vim/.vim/pack/bundle/opt/conflict-marker.vim
 	url = https://github.com/rhysd/conflict-marker.vim
+[submodule "vim-sneak"]
+	path = vim/.vim/pack/bundle/opt/vim-sneak
+	url = https://github.com/justinmk/vim-sneak

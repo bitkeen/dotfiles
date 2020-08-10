@@ -355,6 +355,7 @@ if has('packages')
   packadd! vim-signature " A plugin to toggle, display and navigate marks
   packadd! vim-signjump " Jump to signs just like other object motions
   packadd! vim-slime
+  packadd! vim-sneak
   packadd! vim-speeddating
   packadd! vim-superman
   packadd! vim-surround
