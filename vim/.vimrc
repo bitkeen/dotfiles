@@ -747,6 +747,7 @@ nnoremap <silent> <Leader>fv :Vexplore!<CR>
 let g:vimwiki_key_mappings = {
 \ 'headers': 0,
 \ 'table_mappings': 0,
+\ 'text_objs': 0,
 \}
 " Default is "<Leader>wt".
 nmap <Leader>wT <Plug>VimwikiTabIndex
