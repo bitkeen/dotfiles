@@ -114,3 +114,5 @@ alias fzd='fzf_dbs ~/.config/db_connections.local'
 alias fzc='fzf_containers'
 
 alias timer='TIMER_SOUND="$HOME/.local/share/timer/sound-2.wav" timer'
+
+alias drdf='docker run -it --rm bitkeen/dotfiles'
