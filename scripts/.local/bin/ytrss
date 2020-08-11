@@ -1,0 +1,26 @@
+#!/bin/sh
+# Get a newsboat RSS feed of a YouTube channel.
+# 
+# xp script is required.
+#
+# The first argument is a channel URL.
+# The rest of the arguments are optional feed tags for newsboat.
+
+[ -z "$1" ] && echo 'URL not provided' && exit 1
+channel_url="$1"
+[ -n "$2" ] && shift && tags=" $*"
+
+page_html="$(curl -s "$channel_url")"
+
+title="$tags \"~$(
+    echo "$page_html" |
+    xp '//title' |
+    sed 's/ - YouTube$//'
+) (YouTube)\""
+
+channel_id="$(
+    echo "$page_html" |
+    xp '//meta[@itemprop="channelId"]/@content'
+)"
+
+echo "https://www.youtube.com/feeds/videos.xml?channel_id=${channel_id}${title}"
