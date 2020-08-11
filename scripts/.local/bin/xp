@@ -1,15 +1,29 @@
 #!/bin/sh
-# Search elements with XPath in an XML file.
+# Search elements with XPath either in a HTML file or in stdin.
 #
 # Requires xmlstarlet.
 #
-# Usage example:
+# Usage examples:
 # xp file.html '//a'
+# curl -s example.com | xp '//a'
 
-[ -z "$1" ] && echo 'Specify the file.' && exit 1
-[ -z "$2" ] && echo 'Specify the XPath.' && exit 1
+if [ "$#" = 0 ]; then
+    echo 'XPath not provided'; exit 1
+elif [ "$#" = 1 ]; then
+    xpath="$1"
+elif [ "$#" = 2 ]; then
+    filepath="$1"
+    xpath="$2"
+else
+    echo 'Too many arguments'; exit 1
+fi
 
-# First try to repair incoming XML, then searh for the elements.
+# First try to repair incoming HTML, then searh for the elements.
 # See https://stackoverflow.com/a/47285050.
-xmlstarlet fo -o -R -H -D "$1" 2>/dev/null |
-    xmlstarlet sel -t -v "$2"
+if [ -n "$filepath" ]; then
+    xmlstarlet fo -o -R -H -D "$filepath" 2>/dev/null |
+        xmlstarlet sel -t -v "$xpath"
+else
+    xmlstarlet fo -o -R -H -D 2>/dev/null |
+        xmlstarlet sel -t -v "$xpath"
+fi
