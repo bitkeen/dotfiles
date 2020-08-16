@@ -6,7 +6,7 @@ case "$key" in
         cmd='build';;
     ex)
         [ "$#" -lt 2 ] && echo 'Specify container name.' && exit 1
-        'docker' exec -i -t "$2" sh -c \
+        'docker' exec -u root -i -t "$2" sh -c \
             'if [ -f /bin/bash ]; then bash -l; else sh -l; fi'
         exit;;
     im)
