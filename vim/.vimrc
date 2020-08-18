@@ -535,11 +535,13 @@ nnoremap yP :let @+ = expand('%:p') \| echo 'Yanked "' . @+ . '"'<CR>
 " See https://stackoverflow.com/a/7078429.
 nnoremap <Leader>U :write !sudo tee > /dev/null %<CR>
 
-" Quicker window movement.
-noremap <C-j> <C-w>j
-noremap <C-k> <C-w>k
-noremap <C-h> <C-w>h
-noremap <C-l> <C-w>l
+" Quicker window movement. Not needed in case tmux-navigator is used.
+if !exists('g:loaded_tmux_navigator') || !g:loaded_tmux_navigator == 1
+  noremap <C-j> <C-w>j
+  noremap <C-k> <C-w>k
+  noremap <C-h> <C-w>h
+  noremap <C-l> <C-w>l
+endif
 
 " Open (in) a new tab.
 nnoremap <Leader>gn :tabnew<Space>
