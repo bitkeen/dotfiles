@@ -77,13 +77,13 @@ wrap_ranger() {
     [ -z "$current_window_name" ] || tmux rename-window "$current_window_name"
 }
 
-rmnt() {
+fm() {
     # Go to a mounted partition's directory.
     choice="$(fzf_mounted)"
     [ -n "$choice" ] && ranger-cd "$choice"
 }
 
-cmnt() {
+gfm() {
     choice="$(fzf_mounted)"
     [ -n "$choice" ] && cd "$choice"
 }
