@@ -50,8 +50,21 @@ super+control+3
 super+control+4
     screenshot.sh -u -s
 
+# Volume controls.
+XF86AudioRaiseVolume 
+    pulse_volume.sh increase
+XF86AudioLowerVolume 
+    pulse_volume.sh decrease
+XF86AudioMute 
+    pulse_volume.sh mute
 # Set thumb mouse buttons to raise and lower the volume.
 button9
     pulse_volume.sh increase
 button8
     pulse_volume.sh decrease
+
+# Sreen brightness controls.
+XF86MonBrightnessUp
+    light -A 5
+XF86MonBrightnessDown
+    light -U 5
