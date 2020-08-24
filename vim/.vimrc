@@ -802,7 +802,7 @@ noremap <C-g>ci :Gcommit %<CR>
 noremap <C-g>co :Git checkout<Space>
 " Show log for current file.
 noremap <C-g>lg :0Glog<CR>
-noremap <C-g>mv :Git mv <C-R>=expand('%:p')<CR> <C-R>=expand('%:p:h') . '/'<CR>
+noremap <C-g>mv :GMove <C-R>=expand('%:p:h') . '/'<CR>
 noremap <C-g>st :Gstatus<CR>
 noremap <C-g>sh :Git stash<CR>
 noremap <silent> <C-g>rs :silent Git reset %<CR>
