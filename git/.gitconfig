@@ -14,7 +14,7 @@
     bs = bisect
     co = checkout
     cob = checkout -b
-    cof = "!fzf_git_checkout"
+    cof = "!fzf-git-checkout"
     com = checkout master
     cop = checkout -p
     chp = cherry-pick

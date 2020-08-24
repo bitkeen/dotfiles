@@ -11,9 +11,9 @@
 # - pgcli
 #
 # Usage example:
-# fzf_dbs ~/.config/db_connections
+# fzf-dbs ~/.config/db_connections
 # Add 'mariadb' as initial part of the query:
-# fzf_dbs ~/.config/db_connections mariadb
+# fzf-dbs ~/.config/db_connections mariadb
 
 
 conn_file="$1"

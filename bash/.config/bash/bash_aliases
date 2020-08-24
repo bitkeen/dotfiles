@@ -56,7 +56,7 @@ alias tk='tmux kill-session -t'
 # Open (with) vim.
 alias v='vim'
 alias vm='vman '
-alias fzm='fzf_man vman'
+alias fzm='fzf-man vman'
 alias vs='vim_session_venv ~/.config/venv_mapping'
 
 # The space at the end allows the next command word following the alias
@@ -110,8 +110,8 @@ alias nb='newsboat'
 
 alias get-ranger-maps='get-ranger-maps ~/.config/ranger/bookmark_maps.conf ~/.config/shortcuts ~/.config/shortcuts.local'
 
-alias fzd='fzf_dbs ~/.config/db_connections.local'
-alias fzc='fzf_containers'
+alias fzd='fzf-dbs ~/.config/db_connections.local'
+alias fzc='fzf-containers'
 
 alias timer='TIMER_SOUND="$HOME/.local/share/timer/sound-2.wav" timer'
 

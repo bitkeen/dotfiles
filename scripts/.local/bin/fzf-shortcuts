@@ -5,7 +5,7 @@
 # From it, only the path will be output by this script.
 #
 # Usage example:
-# fzf_shortcuts ~/.config/shortcuts
+# fzf-shortcuts ~/.config/shortcuts
 
 FZF_DEFAULT_OPTS="--reverse --height 40% $FZF_DEFAULT_OPTS"
 
