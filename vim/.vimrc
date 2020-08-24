@@ -711,7 +711,10 @@ noremap! <C-r>; <C-r>:
 nnoremap <silent> <LocalLeader>ss :%sort i<CR>
 vnoremap <silent> <LocalLeader>ss :sort i<CR>
 
-nnoremap gss :echo system("stat " . shellescape(expand('%:p')) . "<bar> sed -n 4p")<CR>
+" Get file access mode.
+nnoremap gss :echo system("stat " . shellescape(expand('%:p')) . "<bar> sed -n 4p <bar> tr -d '\n'")<CR>
+" Get file creation date.
+nnoremap gsd :echo system("stat " . shellescape(expand('%:p')) . "<bar> sed -n 's/^ //;8p' <bar> tr -d '\n'")<CR>
 
 nnoremap gsm :make<CR>
 " Compile current file (GNU make is required).
