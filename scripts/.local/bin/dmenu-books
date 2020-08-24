@@ -6,6 +6,6 @@
 # - dmenu
 
 xdg-open "$( \
-    find -L ~/books -type f -name '*.pdf' -o -name '*.epub' -o -name '*.djvu' |
+    find -L ~/books -path ~/books/finished -prune -a -type f -o -name '*.pdf' -o -name '*.epub' -o -name '*.djvu' |
     dmenu-vertical
 )"
