@@ -79,12 +79,12 @@ wrap_ranger() {
 
 fm() {
     # Go to a mounted partition's directory.
-    choice="$(fzf_mounted)"
+    choice="$(fzf-mounted)"
     [ -n "$choice" ] && ranger-cd "$choice"
 }
 
 gfm() {
-    choice="$(fzf_mounted)"
+    choice="$(fzf-mounted)"
     [ -n "$choice" ] && cd "$choice"
 }
 
