@@ -46,8 +46,13 @@ handle_extension() {
         # Archive
         a|ace|alz|arc|arj|bz|bz2|cab|cpio|deb|gz|jar|lha|lz|lzh|lzma|lzo|\
         rpm|rz|t7z|tar|tbz|tbz2|tgz|tlz|txz|tZ|tzo|war|xpi|xz|Z|zip)
-            atool --list -- "${FILE_PATH}" && exit 5
-            bsdtar --list --file "${FILE_PATH}" && exit 5
+            # Don't preview archives larger than 10 MiB.
+            if [ $(stat -c '%s' "${FILE_PATH}") -le 52428800 ]; then
+                atool --list -- "${FILE_PATH}" && exit 5
+                bsdtar --list --file "${FILE_PATH}" && exit 5
+            else
+                echo 'No preview - file too large' && exit 5
+            fi
             exit 1;;
         rar)
             # Avoid password prompt by providing empty password
