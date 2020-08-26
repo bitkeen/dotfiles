@@ -68,3 +68,26 @@ XF86MonBrightnessUp
     light -A 5
 XF86MonBrightnessDown
     light -U 5
+
+# Directly switch to a keyboard layout.
+super + ctrl + 1
+    xkb-switch -s us
+super + ctrl + 2
+    xkb-switch -s ru
+super + ctrl + 3
+    xkb-switch -s ua
+
+# GUI programs.
+# Run with i3-msg to get a "loading" cursor.
+super + shift + a
+    i3-msg 'exec anki'
+super + shift + f
+    i3-msg 'exec firefox'
+super + shift + t
+    i3-msg 'exec transmission-gtk'
+super + c
+    caldd
+super + v
+    weatherdd
+super + shift + o
+    urxvt -e ranger
