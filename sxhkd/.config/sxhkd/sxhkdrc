@@ -45,9 +45,9 @@ super + question
 Print
     screenshot.sh -u
 # Bindings similar to those on MacOS.
-super+control+3
+super + control + 4
     screenshot.sh -u
-super+control+4
+super + control + 5
     screenshot.sh -u -s
 
 # Volume controls.
