@@ -1,0 +1,24 @@
+#!/bin/sh
+# Clear the playlist and add all the library to it.
+# Currently playing song is saved and resumed after playlist reload.
+
+playing="$(mpc status | sed -n 2p | grep '^\[playing\]')"
+
+clear_and_add() {
+    mpc clear > /dev/null
+    mpc add /
+}
+
+if [ -n "$playing" ]; then
+    artist="$(mpc status -f '%artist%' | sed -n 1p | tr -d '\n')"
+    title="$(mpc status -f '%title%' | sed -n 1p | tr -d '\n')"
+    filename="$(mpc search "((artist == '$artist') AND (title == '$title'))")"
+    position="$(mpc status | sed -n 2p | grep -Po '(?<=   )\d+:\d+(?=\/)')"
+
+    clear_and_add
+
+    mpc searchplay filename "$filename" > /dev/null
+    mpc seek "$position" > /dev/null
+else
+    clear_and_add
+fi
