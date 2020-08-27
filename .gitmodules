@@ -3,7 +3,7 @@
 	url = https://github.com/Yggdroot/indentLine.git
 [submodule "vim-surround"]
 	path = vim/.vim/pack/bundle/opt/vim-surround
-	url = https://github.com/tpope/vim-surround.git
+	url = https://github.com/bitkeen/vim-surround.git
 [submodule "vim-repeat"]
 	path = vim/.vim/pack/bundle/opt/vim-repeat
 	url = https://github.com/tpope/vim-repeat.git
