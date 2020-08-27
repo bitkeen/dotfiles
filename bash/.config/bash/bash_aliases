@@ -116,3 +116,7 @@ alias fzc='fzf-containers'
 alias timer='TIMER_SOUND="$HOME/.local/share/timer/sound-2.wav" timer'
 
 alias drdf='docker run -it --rm bitkeen/dotfiles'
+
+# Convert input to decimal byte values.
+# Ignore grep aliases.
+alias ascii="od -An -t dC | 'grep' -Po '\d.*(?=10)'"
