@@ -6,4 +6,3 @@ pydocstyle
 pyflakes
 pylint
 pylint-django
-youtube-dl

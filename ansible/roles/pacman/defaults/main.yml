@@ -104,6 +104,7 @@ packages:
   - xorg-xprop # Property displayer for X
   - xsecurelock # X11 screen lock utility
   - yamllint # Linter for YAML files
+  - youtube-dl
   - zathura
   - zathura-djvu
   - zathura-pdf-mupdf
