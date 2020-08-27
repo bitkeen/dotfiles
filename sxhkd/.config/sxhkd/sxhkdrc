@@ -85,9 +85,9 @@ super + shift + f
     i3-msg 'exec firefox'
 super + shift + t
     i3-msg 'exec transmission-gtk'
+super + shift + o
+    i3-msg 'exec --no-startup-id urxvt -e ranger'
 super + c
     caldd
 super + v
     weatherdd
-super + shift + o
-    urxvt -e ranger
