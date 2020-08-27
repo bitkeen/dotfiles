@@ -6,5 +6,4 @@ pydocstyle
 pyflakes
 pylint
 pylint-django
-ueberzug # Used in ranger for image previews.
 youtube-dl

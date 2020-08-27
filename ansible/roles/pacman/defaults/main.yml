@@ -88,6 +88,7 @@ packages:
   - ttf-font-awesome # Iconic font
   - udiskie
   - udisks2
+  - ueberzug # Used in ranger for image previews.
   - unclutter # A small program for hiding the mouse cursor
   - unzip # For extracting and viewing files in .zip archives
   - urxvt-perls
