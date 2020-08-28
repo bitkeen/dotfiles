@@ -28,7 +28,7 @@ xrdb .Xresources
 pgrep mpd || mpd
 
 # A compositor for X11
-compton &
+picom &
 
 # Notification daemon
 dunst &
