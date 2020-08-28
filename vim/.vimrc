@@ -948,6 +948,10 @@ nnoremap gcb :ConflictMarkerBoth<CR>
 map <expr> n sneak#is_sneaking() ? '<Plug>Sneak_;' : 'n'
 map <expr> N sneak#is_sneaking() ? '<Plug>Sneak_,' : 'N'
 
+" vim-surround
+" text -> "text"
+let g:surround_{char2nr('q')} = "\"\r\""
+
 " }}}
 
 silent! source ~/.vimrc.local
