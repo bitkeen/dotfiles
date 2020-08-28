@@ -6,6 +6,8 @@ datetime-format "%d %b %Y"
 
 bind-key a toggle-article-read
 bind-key A mark-feed-read # Default.
+bind-key N toggle-article-read # Default.
+bind-key m toggle-article-read
 bind-key j down
 bind-key k up
 bind-key j next articlelist
