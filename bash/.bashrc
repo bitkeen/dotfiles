@@ -99,9 +99,21 @@ if _source_if_exists "$git_completion_file"; then
 fi
 
 # Base16 Shell.
-[ -n "$PS1" ] && \
-    [ -s "$base16_shell_dir/profile_helper.sh" ] && \
-        eval "$("$base16_shell_dir/profile_helper.sh")"
+set_up_base_16() {
+    [ -n "$PS1" ] && \
+        [ -s "$base16_shell_dir/profile_helper.sh" ] && \
+            eval "$("$base16_shell_dir/profile_helper.sh")"
+}
+
+if [ -n "$TMUX" ]; then
+    # Don't set up base16-shell when in a dropdown terminal. 
+    # This is to keep color overrides (for transparency) in .Xresources.
+    tmux_s_name="$(tmux display-message -p '#S')"
+    [ "$tmux_s_name" != 'dropdown' ] && [ "$tmux_s_name" != 'misc' ] && \
+        set_up_base_16
+else
+    set_up_base_16
+fi
 
 # }}}
 
