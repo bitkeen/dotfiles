@@ -24,7 +24,7 @@ You can also run specific roles by passing tags to `bootstrap`:
 ```
 
 ##### Branches
-- `master` - a point at which all the other branches start differing, it is rarely updated now as I mostly use Arch Linux
-- `arch` - currently it is the main branch, specific to Arch Linux
+- `arch` - currently the main branch, specific to Arch Linux
+- `master` - a point at which all the other branches start differing, it is not updated now as I mostly use Arch Linux
 - `mac` - changes specific to macOS
 - `termux` - changes specific to Termux on Android
