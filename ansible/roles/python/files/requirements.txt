@@ -4,5 +4,6 @@ isort # Also required by pylint.
 pygments-base16==1.0.3
 pydocstyle
 pyflakes
+pyfzf==0.2.2
 pylint
 pylint-django
