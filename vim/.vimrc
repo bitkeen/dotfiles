@@ -573,11 +573,13 @@ nnoremap <Leader>x :x<CR>
 nnoremap <Leader>q :q<CR>
 vnoremap <Leader>q <Esc>:q<CR>
 
+" Expand the directory of the current file in command line.
+cnoremap %% <C-R>=fnameescape(expand('%:p:h')) . '/'<CR>
 " Edit file, starting in same directory as current file.
-nnoremap <Leader>ew :edit <C-R>=expand('%:p:h') . '/'<CR>
-nnoremap <Leader>eb :split <C-R>=expand('%:p:h') . '/'<CR>
-nnoremap <Leader>ev :vsplit <C-R>=expand('%:p:h') . '/'<CR>
-nnoremap <Leader>et :tabedit <C-R>=expand('%:p:h') . '/'<CR>
+nmap <Leader>ew :edit %%
+nmap <Leader>eb :split %%
+nmap <Leader>ev :vsplit %%
+nmap <Leader>et :tabedit %%
 
 " Visually select last changed or yanked text.
 nnoremap <Leader>v `[v`]
