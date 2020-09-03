@@ -82,8 +82,8 @@ if &runtimepath =~# 'bundle/opt/lightline.vim'
 
   " Return number of windows in a specific tab.
   function! LightlineTabWinNr(tabnr) abort
-    let tabwincount = tabpagewinnr(a:tabnr, '$')
-    return tabwincount > 1 ? '[' . tabwincount . ']' : ''
+    let l:tabwincount = tabpagewinnr(a:tabnr, '$')
+    return l:tabwincount > 1 ? '[' . l:tabwincount . ']' : ''
   endfunction
 
   function! LightlineIsNew()
@@ -110,14 +110,14 @@ if &runtimepath =~# 'bundle/opt/lightline.vim'
       return
     endif
 
-    let keyboard_layout = libcall(g:XkbSwitchLib, 'Xkb_Switch_getXkbLayout', '')
-    let keyboard_layout = split(keyboard_layout, '\.')[-1]
+    let l:keyboard_layout = libcall(g:XkbSwitchLib, 'Xkb_Switch_getXkbLayout', '')
+    let l:keyboard_layout = split(l:keyboard_layout, '\.')[-1]
     let short_codes = get(g:, 'short_codes', {'us': 'US', 'ru': 'RU', 'ua': 'UA'})
 
-    if has_key(short_codes, keyboard_layout)
-      let keyboard_layout = short_codes[keyboard_layout]
+    if has_key(short_codes, l:keyboard_layout)
+      let l:keyboard_layout = short_codes[l:keyboard_layout]
     endif
-    return keyboard_layout
+    return l:keyboard_layout
   endfunction
 
   function! LightlineObsession()
