@@ -334,9 +334,6 @@
 def_key "y"
   start_searching
 #
-#def_key "R"
-#  toggle_consume
-#
 #def_key "Y"
 #  toggle_replay_gain_mode
 #
@@ -563,6 +560,10 @@ def_key "0"
 
 # Default for toggle_single.
 def_key "y"
+  dummy
+
+# Default for toggle_consume.
+def_key "R"
   dummy
 
 def_key "ctrl-o"
