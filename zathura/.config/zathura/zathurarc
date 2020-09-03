@@ -18,3 +18,8 @@ unmap =
 map <C-0> zoom reset
 map <C--> zoom out
 map <C-=> zoom in
+
+unmap f
+unmap F
+map u follow
+map U display_link
