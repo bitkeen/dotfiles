@@ -9,13 +9,13 @@ if &runtimepath =~# 'bundle/opt/lightline.vim'
   \ 'active': {
   \   'left': [ [ 'mode', 'paste' ],
   \             [ 'venv', 'gitbranch', 'spell', 'isreadonly' ],
-  \             [ 'keyboard_layout', 'absolutepath', 'ismodified' ] ],
+  \             [ 'keyboard_layout', 'path_active', 'ismodified' ] ],
   \   'right': [ [ 'columninfo' ],
   \              [ 'lineinfo' ],
   \              [ 'percent', 'session', 'linter_checking', 'linter_errors', 'linter_warnings', 'linter_ok' ] ],
   \ },
   \ 'inactive': {
-  \   'left': [ [ 'absolutepath_inactive' ] ],
+  \   'left': [ [ 'path_inactive' ] ],
   \   'right': [ [ 'lineinfo' ],
   \              [ 'percent' ] ],
   \ },
@@ -28,6 +28,8 @@ if &runtimepath =~# 'bundle/opt/lightline.vim'
   \   'lineinfo': '%3l/%L',
   \   'spell': 'spell: %{&spell?&spelllang:""}',
   \   'session': '%{LightlineObsession()}',
+  \   'path_active': '%F%( %h%)%( %{LightlineIsNew()}%)',
+  \   'path_inactive': '%F%( %h%)%( %{LightlineIsNew()}%)%( %{LightlineIsModified()}%)'
   \ },
   \ 'tab_component_function': {
   \   'filename': 'lightline#tab#filename',
@@ -38,7 +40,6 @@ if &runtimepath =~# 'bundle/opt/lightline.vim'
   \ },
   \ 'component_function': {
   \   'gitbranch': 'fugitive#head',
-  \   'absolutepath_inactive': 'LightlinePathAndModified',
   \   'keyboard_layout': 'LightlineXkbSwitch',
   \ },
   \ 'component_expand': {
@@ -85,11 +86,9 @@ if &runtimepath =~# 'bundle/opt/lightline.vim'
     return tabwincount > 1 ? '[' . tabwincount . ']' : ''
   endfunction
 
-  " Join file path and modified (remove the separator bar).
-  function! LightlinePathAndModified()
-    let absolutepath = expand('%:F') !=# '' ? expand('%:F') : '[No Name]'
-    let modified = &modified ? ' [+]' : ''
-    return absolutepath . modified
+  function! LightlineIsNew()
+    let l:abspath = expand('%:F')
+    return l:abspath ==# '' || filereadable(l:abspath) ? '' : '[New]'
   endfunction
 
   function! LightlineIsModified()
