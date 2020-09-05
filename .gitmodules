@@ -304,3 +304,6 @@
 [submodule "vim-sneak"]
 	path = vim/.vim/pack/bundle/opt/vim-sneak
 	url = https://github.com/justinmk/vim-sneak
+[submodule "vim-css-color"]
+	path = vim/.vim/pack/bundle/opt/vim-css-color
+	url = https://github.com/ap/vim-css-color

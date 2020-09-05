@@ -325,6 +325,7 @@ if has('packages')
   packadd! vim-characterize
   packadd! vim-closer
   packadd! vim-commentary " Easy commenting
+  packadd! vim-css-color
   packadd! vim-easydir
   packadd! vim-endwise
   packadd! vim-eunuch
