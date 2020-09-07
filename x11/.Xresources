@@ -115,6 +115,6 @@ URxvt.keysym.M-Escape: perl:keyboard-select:activate
 *color20:      base04
 *color21:      base06
 
-tmuxdd.background: rgba:2222/2222/2222/DDDD
+tmuxdd.background: rgba:2222/2222/2222/EEEE
 tmuxdd.foreground: base07
 tmuxdd.cursorColor: base07
