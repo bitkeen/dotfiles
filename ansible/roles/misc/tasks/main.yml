@@ -79,3 +79,12 @@
     name: '{{ user_name }}'
     groups: docker
     append: yes
+
+- name: configure gtk
+  become: yes
+  become_user: '{{ user_name }}'
+  command:
+    cmd: '{{ item }}'
+  loop:
+    - gsettings set org.gtk.Settings.FileChooser show-hidden true
+    - gsettings set org.gtk.Settings.FileChooser sort-directories-first true
