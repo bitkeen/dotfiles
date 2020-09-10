@@ -6,6 +6,15 @@ git:
 services:
   - docker
 
+addons:
+  apt:
+    packages:
+      - yamllint
+    update: true
+
+before_script:
+  - yamllint .
+
 script:
   - docker build -t "$DOCKER_USERNAME"/dotfiles .
 
