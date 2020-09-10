@@ -6,11 +6,8 @@ git:
 services:
   - docker
 
-addons:
-  apt:
-    packages:
-      - yamllint
-    update: true
+before_install:
+  - pip install yamllint==1.24.2
 
 before_script:
   - yamllint .
