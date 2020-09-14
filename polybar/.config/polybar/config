@@ -37,7 +37,7 @@ font-1 = SauceCodePro Nerd Font Mono:size=15;5
 font-2 = Font Awesome 5 Brands Regular:size=11;5
 
 modules-left = i3
-modules-right = docker mpd pulseaudio vpn wlan xkeyboard battery weather date dmenu_power
+modules-right = docker mpd pulseaudio vpn wlan xkeyboard filesystem battery weather date dmenu_power
 
 tray-position = right
 tray-padding = 2
@@ -78,6 +78,13 @@ label-unfocused-padding = ${self.label-focused-padding}
 label-urgent = %name%
 label-urgent-background = ${colors.alert}
 label-urgent-padding = ${self.label-focused-padding}
+
+
+[module/filesystem]
+type = internal/fs
+mount-0 = /
+interval = 10
+label-mounted = %mountpoint% %free%
 
 
 [module/xkeyboard]
@@ -176,6 +183,7 @@ type = custom/script
 exec = date '+%a, %b %d %H:%M'
 interval = 5
 click-left = caldd &
+
 
 [module/weather]
 format-prefix = " "
