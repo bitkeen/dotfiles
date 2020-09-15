@@ -1,0 +1,20 @@
+#!/bin/sh
+# Open a terminal window with vim.
+# If another terminal with the same name already exists, it is going
+# to be killed.
+#
+# Used to create some custom workspaces with all the
+# needed files already open.
+
+[ -z "$1" ] && echo 'Specify terminal name' && exit 1
+[ -z "$2" ] && echo 'Specify vim args' && exit 1
+
+# Possibly exported from parent process.
+# Will mess up cursor shapes if kept.
+unset TMUX
+
+TERM_NAME="$1"
+ARGS="$2"
+
+pgrep -f "urxvt -name $TERM_NAME" | xargs kill 2>/dev/null ||
+    urxvt -name "$TERM_NAME" -e sh -c "vim '$ARGS'"
