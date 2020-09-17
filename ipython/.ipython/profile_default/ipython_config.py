@@ -639,8 +639,7 @@ def get_input_mode(self):
 
 
 def set_input_mode(self, mode):
-    # For REPLACE_SINGLE prompt-toolkit from 
-    # https://github.com/bitkeen/python-prompt-toolkit is required.
+    # For REPLACE_SINGLE prompt-toolkit >= 3.0.6 is required.
     shape = {
         InputMode.NAVIGATION: 2,
         InputMode.REPLACE_SINGLE: 3,
