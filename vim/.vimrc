@@ -90,7 +90,6 @@ if has('autocmd')
     autocmd FileType yaml setlocal foldmethod=indent
     autocmd FileType html,xml setlocal foldmethod=indent
     autocmd BufWinEnter .vimrc,.bash*,.tmux.conf,*/i3/config setlocal foldmethod=marker
-    autocmd BufWinEnter .vimrc,.bash*,.tmux.conf,*/i3/config setlocal foldlevel=0
   augroup END
 endif
 
