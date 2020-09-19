@@ -1,2 +1,2 @@
 #!/bin/sh
-vimterm 'scratchterm' '-c cd /home/user/sync/wikis/scratchwiki | edit `date +\%Y-\%m-\%d`-`rpw 8`.md | write'
+vimterm 'scratchterm' '-c cd ~/sync/wikis/scratchwiki | edit `date +\%Y-\%m-\%dT\%H-\%M-\%S`_`rpw 8`.md | let b:auto_save = 1'
