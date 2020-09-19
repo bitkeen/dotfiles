@@ -91,3 +91,8 @@ super + c
     caldd
 super + v
     weatherdd
+
+super + x
+    todoterm
+super + e
+    scratchterm
