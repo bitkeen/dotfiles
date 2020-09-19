@@ -41,3 +41,4 @@ packages:
   - xdg
   - youtube-dl
   - zathura
+  - zsh
