@@ -109,6 +109,7 @@ packages:
   - zathura-djvu
   - zathura-pdf-mupdf
   - zip # Compressor/archiver for creating and modifying zipfiles
+  - zsh
 
 work_packages:
   - aws-cli # Universal Command Line Interface for Amazon Web Services
