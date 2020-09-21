@@ -12,7 +12,9 @@ from ranger.core.loader import CommandLoader
 
 
 class compress(Command):
-    """:compress
+    """
+    :compress
+
     Compress marked files to current directory.
     """
     def execute(self):
@@ -44,7 +46,9 @@ class compress(Command):
 
 
 class empty_trash(Command):
-    """:empty_trash
+    """
+    :empty_trash
+
     Empty the trash directory with 'gio trash --empty'.
     """
     def execute(self):
@@ -55,12 +59,14 @@ class empty_trash(Command):
         )
 
     def _question_callback(self, answer):
-        if answer == 'y' or answer == 'Y':
+        if answer in ('y', 'Y'):
             self.fm.run('gio trash --empty')
 
 
 class extract_here(Command):
-    """:extract_here
+    """
+    :extract_here
+
     Extract copied files to current directory.
     Archive extraction is done by copying (yy) one or more archive
     files and then executing :extract_here on the desired directory.
@@ -109,14 +115,14 @@ class fzf_select(Command):
     def execute(self):
         if self.quantifier:
             # match only directories
-            command="find -L . \( -path '*/\.*' -o -fstype 'dev' -o -fstype 'proc' \) -prune \
+            command = "find -L . \( -path '*/\.*' -o -fstype 'dev' -o -fstype 'proc' \) -prune \
             -o -type d -print 2> /dev/null | sed 1d | cut -b3- | fzf +m"
         else:
             # match files and directories
-            command="find -L . \( -path '*/\.*' -o -fstype 'dev' -o -fstype 'proc' \) -prune \
+            command = "find -L . \( -path '*/\.*' -o -fstype 'dev' -o -fstype 'proc' \) -prune \
             -o -print 2> /dev/null | sed 1d | cut -b3- | fzf +m"
         fzf = self.fm.execute_command(command, universal_newlines=True, stdout=subprocess.PIPE)
-        stdout, stderr = fzf.communicate()
+        stdout, _ = fzf.communicate()
         if fzf.returncode == 0:
             fzf_file = os.path.abspath(stdout.rstrip('\n'))
             if os.path.isdir(fzf_file):
@@ -139,7 +145,7 @@ class fzf_mounted(Command):
         fzf = self.fm.execute_command(command,
                                       universal_newlines=True,
                                       stdout=subprocess.PIPE)
-        stdout, stderr = fzf.communicate()
+        stdout, _ = fzf.communicate()
         if fzf.returncode == 0:
             fzf_dir = os.path.abspath(stdout.rstrip('\n'))
             method(path=fzf_dir)
