@@ -130,9 +130,11 @@ class fzf_mounted(Command):
     :fzf_mounted
 
     Go to a mounted partition chosen with fzf.
+    Pass `-t` flag to open the selected directory in a new tab.
     """
     def execute(self):
-        command='fzf-mounted'
+        command = 'fzf-mounted'
+        method = self.fm.tab_new if '-t' in self.args else self.fm.cd
 
         fzf = self.fm.execute_command(command,
                                       universal_newlines=True,
@@ -140,4 +142,4 @@ class fzf_mounted(Command):
         stdout, stderr = fzf.communicate()
         if fzf.returncode == 0:
             fzf_dir = os.path.abspath(stdout.rstrip('\n'))
-            self.fm.cd(fzf_dir)
+            method(path=fzf_dir)
