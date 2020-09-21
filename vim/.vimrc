@@ -236,9 +236,7 @@ else
 endif
 
 " Netrw
-let g:netrw_banner=0
-" Tree view.
-let g:netrw_liststyle=3
+let g:netrw_banner = 0
 " Directory where netrw saves .netrwhist and .netrwbook.
 let g:netrw_home = '~/.vim/tmp'
 
