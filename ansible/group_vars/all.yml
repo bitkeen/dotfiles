@@ -16,7 +16,7 @@ dirs:
   documents_projects_private: '{{ user_home }}/documents/projects/private'
   documents_projects_public: '{{ user_home }}/documents/projects/public'
   downloads: '{{ user_home }}/downloads'
-  downloads/bandcamp_dl: '{{ user_home }}/downloads/bandcamp_dl'
+  downloads/bandcamp_dl: '{{ user_home }}/downloads/bandcamp-dl'
   downloads/firefox: '{{ user_home }}/downloads/firefox'
   firefox_profile: '{{ user_home }}/.mozilla/firefox/main'
   firefox_extensions: '{{ user_home }}/.mozilla/firefox/main/extensions'
