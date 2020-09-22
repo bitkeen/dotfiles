@@ -34,7 +34,7 @@ if &runtimepath =~# '/usr/bin/fzf' " Basic plugin.
 
     " Override `split` action.
     let g:fzf_action = {
-    \ 'ctrl-t': 'tab split',
+    \ 'ctrl-t': 'tab drop',
     \ 'ctrl-b': 'split',
     \ 'ctrl-v': 'vsplit',
     \}
