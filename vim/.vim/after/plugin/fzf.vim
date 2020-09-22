@@ -11,12 +11,14 @@ if &runtimepath =~# '/usr/bin/fzf' " Basic plugin.
     \ 'sink': function('s:get_type_formatter'),
     \ 'source': keys(g:formatter_mapping),
     \ 'options': '+m --prompt="Pretty format> "',
-    \ 'down': '40%',
+    \ 'down': '50%',
     \})
   endfunction
 
   nnoremap <LocalLeader>F :call FzfPrettyFormat("%")<CR>
   vnoremap <LocalLeader>F :call FzfPrettyFormat("'<,'>")<CR>
+
+  let g:fzf_layout = { 'down': '50%' }
 
   if &runtimepath =~# 'bundle/opt/fzf.vim' " Plugin extension.
     " Add alt-enter binding to select query.
