@@ -950,6 +950,7 @@ nnoremap gcb :ConflictMarkerBoth<CR>
 " vim-sneak
 map <expr> n sneak#is_sneaking() ? '<Plug>Sneak_;' : 'n'
 map <expr> N sneak#is_sneaking() ? '<Plug>Sneak_,' : 'N'
+highlight SneakLabel guifg=black guibg=white ctermfg=black ctermbg=white
 
 " vim-surround
 " text -> "text"
