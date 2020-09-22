@@ -488,9 +488,6 @@ let g:UltiSnipsSnippetDirectories = [$HOME.'/.vim/ultisnips']
 let g:pydoc_open_cmd = 'vsplit'
 let g:pydoc_highlight = 0
 
-" todo.txt-vim
-autocmd plugins FileType todo :let b:auto_save = 1
-
 " quickpeek.vim
 let g:quickpeek_popup_options = {'title': 'Preview'}
 let g:quickpeek_window_settings = ['cursorline', 'number', 'relativenumber']
