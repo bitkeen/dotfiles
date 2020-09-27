@@ -7,7 +7,7 @@
 #
 # Dependencies:
 # - curl
-# - xmllint
+# - xp script
 # - notify-file script
 #
 # Example:
@@ -19,13 +19,12 @@ description="$3"
 
 echo "Checking '$xpath' at '$url'"
 
-page="$(curl --silent --insecure "$url")"
+page="$(curl -L --silent --insecure "$url")"
 [ -z "$page" ] && echo "Error: couldn't get the page" && exit 1
 
-(echo "$page" |
-    xmllint --html --xpath "$xpath" - >/dev/null 2>&1) &&
-    (
-        notify-file "Found elements at $url ($description)"
-        exit 0
-    ) ||
-        (echo "Couldn't find $description"; exit 1)
+if echo "$page" | xp "$xpath" >/dev/null 2>&1; then
+    notify-file "Found elements at $url ($description)"
+    exit 0
+else
+    echo "Couldn't find $description"; exit 1
+fi
