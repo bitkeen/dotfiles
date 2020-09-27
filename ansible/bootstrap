@@ -25,4 +25,4 @@ hosts="$HOME/.dotfiles/ansible/hosts"
     playbooks="$playbooks $local_playbook"
 
 # Don't double quote for word-splitting of args.
-ansible-playbook --ask-become-pass -i "$hosts" "$playbooks" $tags_arg
+ansible-playbook --ask-become-pass -i "$hosts" $playbooks $tags_arg
