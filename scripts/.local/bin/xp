@@ -4,7 +4,7 @@
 # Requires xmlstarlet.
 #
 # Usage examples:
-# xp file.html '//a'
+# xp '//a' file.html
 # curl -s example.com | xp '//a'
 
 if [ "$#" = 0 ]; then
@@ -12,18 +12,26 @@ if [ "$#" = 0 ]; then
 elif [ "$#" = 1 ]; then
     xpath="$1"
 elif [ "$#" = 2 ]; then
-    filepath="$1"
-    xpath="$2"
+    xpath="$1"
+    filepath="$2"
 else
     echo 'Too many arguments'; exit 1
 fi
 
+format() {
+    xmlstarlet format --omit-decl --recover --html --dropdtd 2>/dev/null
+}
+
+sel () {
+    xmlstarlet sel --template --value-of "$1"
+}
+
 # First try to repair incoming HTML, then searh for the elements.
 # See https://stackoverflow.com/a/47285050.
 if [ -n "$filepath" ]; then
-    xmlstarlet fo -o -R -H -D "$filepath" 2>/dev/null |
-        xmlstarlet sel -t -v "$xpath"
+    format < "$filepath" |
+        sel "$xpath"
 else
-    xmlstarlet fo -o -R -H -D 2>/dev/null |
-        xmlstarlet sel -t -v "$xpath"
+    format |
+        sel "$xpath"
 fi
