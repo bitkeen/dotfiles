@@ -1,9 +1,11 @@
 #!/bin/sh
 # Check if an XPath selector produces results on a page.
-# Use notify
 # If elements are found, notify-file script is run.
 #
 # Exit code is 0 if search is successful, 1 otherwise.
+#
+# Set NOTIFY_FILE=0 in env if you don't want any notifications,
+# just the exit code.
 #
 # Dependencies:
 # - curl
@@ -23,7 +25,9 @@ page="$(curl -L --silent --insecure "$url")"
 [ -z "$page" ] && echo "Error: couldn't get the page" && exit 1
 
 if echo "$page" | xp "$xpath" >/dev/null 2>&1; then
-    notify-file "Found elements at $url ($description)"
+    if [ "$NOTIFY_FILE" != '0' ]; then
+        notify-file "Found elements at $url ($description)"
+    fi
     exit 0
 else
     echo "Couldn't find $description"; exit 1
