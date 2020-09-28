@@ -17,5 +17,6 @@ case "$key" in
     *)
         cmd="$key";;
 esac
-shift
+[ -n "$key" ] && shift
+
 systemctl $cmd "$@"
