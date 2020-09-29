@@ -96,6 +96,7 @@ alias yda='youtube-dl --config-location ~/.config/youtube-dl-audio.conf'
 alias mycli='mycli --auto-vertical-output'
 
 alias systemctl='systemctl-alias-wrapper'
+alias journalctl='journalctl-alias-wrapper'
 alias sctl='systemctl'
 alias jctl='journalctl'
 
