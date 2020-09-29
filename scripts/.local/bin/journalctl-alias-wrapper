@@ -1,0 +1,21 @@
+#!/bin/sh
+# Aliases for journalctl.
+key="$1"
+case "$key" in
+    l|lf)
+        # Get logs for the latest run of a service.
+        if [ -z "$2" ]; then
+            echo "Service name wasn't provided"
+            exit 1
+        fi
+        invocation_id="$(systemctl show -p InvocationID --value "$2")"
+        cmd="_SYSTEMD_INVOCATION_ID=$invocation_id"
+        [ "$key" = 'lf' ] && cmd="$cmd --follow"
+        shift
+        ;;
+    *)
+        cmd="$key"
+        ;;
+esac
+shift
+journalctl $cmd "$@"
