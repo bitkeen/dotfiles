@@ -20,6 +20,7 @@ packages:
   - dunst # A customizable and lightweight notification-daemon
   - etckeeper # Store /etc in a VCS repository
   - exfat-utils
+  - fdupes # Identify or delete duplicate files residing within specified directories
   - feh # Image viewer, currently only used to set backgrounds with .fehbg script
   - firefox
   - fzf
@@ -30,7 +31,7 @@ packages:
   - gst-plugins-good # GStreamer open-source multimedia framework good plugins
   - gst-plugins-ugly # GStreamer open-source multimedia framework ugly plugins
   - guvcview # Webcam capturing interface
-  - gvim
+  - gvim # Vim in GVim package has support for system clipboard
   - i3-wm
   - imagemagick # An image viewing/manipulation program
   - ipython
@@ -96,6 +97,7 @@ packages:
   - virtualbox
   - virtualbox-guest-iso # Guest Additions CD image
   - wireshark-cli # Network traffic and protocol analyzer/sniffer - CLI tools and data files
+  - whois # Intelligent WHOIS client
   - xclip
   - xcursor-vanilla-dmz # Vanilla DMZ cursor theme
   - xmlstarlet # Command line utilities for XML
