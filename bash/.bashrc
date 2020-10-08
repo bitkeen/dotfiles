@@ -1,8 +1,6 @@
 # Exports {{{
 # Only bash-specific variables. The rest of the exports are in shell_env.
 
-export FZF_BINDINGS_FILE="/usr/share/fzf/key-bindings.bash"
-export FZF_COMPLETION_FILE="/usr/share/fzf/completion.bash"
 # Ignore lines that start with a space,
 # don't save lines matching a previous history entry.
 export HISTCONTROL=ignorespace:ignoredups:erasedups

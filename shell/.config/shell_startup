@@ -10,13 +10,18 @@ _source_if_exists() {
     [ -f "$1" ] && source "$1" || return 1
 }
 
-# Exported in .bashrc and .zshrc.
-_source_if_exists "$FZF_BINDINGS_FILE"
-_source_if_exists "$FZF_COMPLETION_FILE"
-
+if [ -n "$ZSH_VERSION" ]; then
+    fzf_bindings_file="/usr/share/fzf/key-bindings.zsh"
+    fzf_completion_file="/usr/share/fzf/completion.zsh"
+else
+    fzf_bindings_file="/usr/share/fzf/key-bindings.bash"
+    fzf_completion_file="/usr/share/fzf/completion.bash"
+fi
 base16_shell_dir="$HOME/.config/base16-shell/"
 venv_wrapper_file="/usr/bin/virtualenvwrapper_lazy.sh"
 
+_source_if_exists "$fzf_bindings_file"
+_source_if_exists "$fzf_completion_file"
 _source_if_exists "$venv_wrapper_file"
 
 # Base16 Shell.

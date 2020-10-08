@@ -1,6 +1,3 @@
-export FZF_BINDINGS_FILE="/usr/share/fzf/key-bindings.zsh"
-export FZF_COMPLETION_FILE="/usr/share/fzf/completion.zsh"
-
 autoload -Uz compinit
 compinit
 
