@@ -34,7 +34,7 @@ _source_if_exists() {
 }
 
 # Source aliases and functions.
-for f in ~/.config/bash/*; do source "$f"; done
+for f in ~/.config/shell/*; do source "$f"; done
 
 # For copyline function see `bash_functions` file.
 bind -x '"\C-]":copyline'
