@@ -21,3 +21,8 @@ setopt prompt_subst
 RPROMPT=\$vcs_info_msg_0_
 # PROMPT=\$vcs_info_msg_0_'%# '
 zstyle ':vcs_info:git:*' formats '%b'
+
+# Plugins
+zsh_plugins="$HOME/.config/zsh/plugins"
+# Increment and decrement numbers easily with Ctrl+a and Ctrl+x.
+source "$zsh_plugins/vi-increment/vi-increment.plugin.zsh"
