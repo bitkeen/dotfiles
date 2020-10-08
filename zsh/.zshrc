@@ -22,6 +22,9 @@ RPROMPT=\$vcs_info_msg_0_
 # PROMPT=\$vcs_info_msg_0_'%# '
 zstyle ':vcs_info:git:*' formats '%b'
 
+# Source aliases and functions.
+for f in ~/.config/shell/*; do source "$f"; done
+
 # Plugins
 zsh_plugins="$HOME/.config/zsh/plugins"
 # Increment and decrement numbers easily with Ctrl+a and Ctrl+x.
