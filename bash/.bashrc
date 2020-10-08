@@ -27,12 +27,6 @@ set -o vi
 # Disable XON/XOFF flow control (Ctrl+S, Ctrl+Q).
 stty -ixon
 
-_source_if_exists() {
-    # Source a file if it exists.
-    [ "$#" -ne 1 ] && return 1
-    [ -f "$1" ] && source "$1" || return 1
-}
-
 # Source aliases and functions.
 for f in ~/.config/shell/*; do source "$f"; done
 
