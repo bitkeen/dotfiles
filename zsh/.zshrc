@@ -1,3 +1,6 @@
+export FZF_BINDINGS_FILE="/usr/share/fzf/key-bindings.zsh"
+export FZF_COMPLETION_FILE="/usr/share/fzf/completion.zsh"
+
 autoload -Uz compinit
 compinit
 
@@ -23,7 +26,7 @@ RPROMPT=\$vcs_info_msg_0_
 zstyle ':vcs_info:git:*' formats '%b'
 
 # Source aliases and functions.
-for f in ~/.config/shell/*; do source "$f"; done
+source ~/.config/shell_startup
 
 # Plugins
 zsh_plugins="$HOME/.config/zsh/plugins"

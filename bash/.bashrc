@@ -1,6 +1,8 @@
 # Exports {{{
 # Only bash-specific variables. The rest of the exports are in shell_env.
 
+export FZF_BINDINGS_FILE="/usr/share/fzf/key-bindings.bash"
+export FZF_COMPLETION_FILE="/usr/share/fzf/completion.bash"
 # Ignore lines that start with a space,
 # don't save lines matching a previous history entry.
 export HISTCONTROL=ignorespace:ignoredups:erasedups
@@ -13,6 +15,8 @@ export PROMPT_COMMAND='history -a'
 # }}}
 
 # Main {{{
+
+source ~/.config/shell_startup
 
 # Enable autocd for bash versions greater than 4.
 [ "${BASH_VERSINFO[0]}" -ge 4 ] && shopt -s autocd
@@ -27,16 +31,11 @@ set -o vi
 # Disable XON/XOFF flow control (Ctrl+S, Ctrl+Q).
 stty -ixon
 
-# Source aliases and functions.
-for f in ~/.config/shell/*; do source "$f"; done
-
 # For copyline function see `bash_functions` file.
 bind -x '"\C-]":copyline'
 
 # Paths {{{
 base16_shell_dir="$HOME/.config/base16-shell/"
-fzf_bindings_file="/usr/share/fzf/key-bindings.bash"
-fzf_completion_file="/usr/share/fzf/completion.bash"
 git_completion_file="/usr/share/bash-completion/completions/git"
 venv_wrapper_file="/usr/bin/virtualenvwrapper_lazy.sh"
 # git-prompt.sh provides __git_ps1 that is used to show current Git branch
@@ -44,8 +43,6 @@ venv_wrapper_file="/usr/bin/virtualenvwrapper_lazy.sh"
 git_prompt_file='/usr/share/git/completion/git-prompt.sh'
 # }}}
 
-_source_if_exists "$fzf_bindings_file"
-_source_if_exists "$fzf_completion_file"
 _source_if_exists "$venv_wrapper_file"
 
 # Enable completion for git.
