@@ -10,12 +10,13 @@ _source_if_exists() {
     [ -f "$1" ] && source "$1" || return 1
 }
 
-base16_shell_dir="$HOME/.config/base16-shell/"
-venv_wrapper_file="/usr/bin/virtualenvwrapper_lazy.sh"
-
 # Exported in .bashrc and .zshrc.
 _source_if_exists "$FZF_BINDINGS_FILE"
 _source_if_exists "$FZF_COMPLETION_FILE"
+
+base16_shell_dir="$HOME/.config/base16-shell/"
+venv_wrapper_file="/usr/bin/virtualenvwrapper_lazy.sh"
+
 _source_if_exists "$venv_wrapper_file"
 
 # Base16 Shell.
