@@ -37,13 +37,10 @@ bind -x '"\C-]":copyline'
 # Paths {{{
 base16_shell_dir="$HOME/.config/base16-shell/"
 git_completion_file="/usr/share/bash-completion/completions/git"
-venv_wrapper_file="/usr/bin/virtualenvwrapper_lazy.sh"
 # git-prompt.sh provides __git_ps1 that is used to show current Git branch
 # in bash prompt.
 git_prompt_file='/usr/share/git/completion/git-prompt.sh'
 # }}}
-
-_source_if_exists "$venv_wrapper_file"
 
 # Enable completion for git.
 if _source_if_exists "$git_completion_file"; then
