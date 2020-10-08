@@ -33,6 +33,7 @@ packages:
   - redshift
   - rg
   - scripts
+  - shell
   - sxhkd
   - sxiv
   - tmux
