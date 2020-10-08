@@ -833,7 +833,7 @@ xmap ah <Plug>(GitGutterTextObjectOuterVisual)
 nnoremap <Leader><C-r> :Rename<Space>
 nnoremap <Leader><C-d> :Delete<CR>
 nnoremap <Leader><C-e> :SudoEdit<Space>
-nnoremap <Leader><C-c> :Chmod<Space>
+nnoremap <Leader><C-m> :Chmod<Space>
 nnoremap <Leader><C-w> :SudoWrite<CR>
 
 " vim-obsession
