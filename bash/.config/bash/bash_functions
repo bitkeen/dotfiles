@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/sh
 vm () {
     # A wrapper around vman.
     # Order of precedence:
@@ -28,7 +28,7 @@ u() {
     # If $1 is omitted or is not an integer, go up 1 directory.
     dir=''
     if echo "$1" | grep -Eq '^[0-9]+$'; then
-        for i in $(seq "$1")
+        for _ in $(seq "$1")
         do
             dir="$dir../"
         done
@@ -71,7 +71,7 @@ vim_session_venv() {
     vim -c 'WrappedObsession'
 }
 
-ranger-cd() {
+ranger_cd() {
     # Automatically change the directory in bash after closing ranger.
     # Source:
     # https://github.com/ranger/ranger/blob/master/examples/bash_automatic_cd.sh
@@ -82,29 +82,29 @@ ranger-cd() {
     # the last visited one after ranger quits.
     # To undo the effect of this function, you can type "cd -" to return to the
     # original directory.
-    tempfile="$(mktemp -t tmp.XXXXXX)"
-    ranger --choosedir="$tempfile" "${@:-$(pwd)}"
-    test -f "$tempfile" &&
-    if [ "$(cat -- "$tempfile")" != "$(echo -n `pwd`)" ]; then
-        cd -- "$(cat "$tempfile")"
+    temp_file="$(mktemp -t "ranger_cd.XXXXXXXXXX")"
+    ranger --choosedir="$temp_file" -- "${@:-$PWD}"
+    chosen_dir="$(cat -- "$temp_file")"
+    if [ -f "$temp_file" ] && [ "$chosen_dir" != "$PWD" ]; then
+        cd -- "$chosen_dir"
     fi
-    rm -f -- "$tempfile"
+    rm -f -- "$temp_file"
 }
 
 wrap_ranger() {
     # Temporary workaround for tmux renaming problem.
     [ -z "$TMUX" ] || current_window_name="$(tmux display-message -p '#W')"
-    # The ranger-cd version switches the directory in bash on exit,
+    # The ranger_cd version switches the directory in bash on exit,
     # ranger-shell.sh allows to expand shell aliases inside the :shell
     # command.
-    SHELL=~/.local/bin/ranger-shell.sh ranger-cd
+    SHELL=~/.local/bin/ranger-shell.sh ranger_cd
     [ -z "$current_window_name" ] || tmux rename-window "$current_window_name"
 }
 
 fm() {
     # Go to a mounted partition's directory.
     choice="$(fzf-mounted)"
-    [ -n "$choice" ] && ranger-cd "$choice"
+    [ -n "$choice" ] && ranger_cd "$choice"
 }
 
 gfm() {
