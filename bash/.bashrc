@@ -1,46 +1,15 @@
 # Exports {{{
+# Only bash-specific variables. The rest of the exports are in shell_env.
 
-export EDITOR=/usr/bin/vim
-export FZF_DEFAULT_OPTS=" \
-    --preview 'cat {}' \
-    --preview-window='hidden' \
-    --bind='ctrl-t:toggle-preview' \
-    --bind='alt-enter:print-query' \
-    "
-export FZF_CTRL_R_OPTS='--sort'
-# Default command ignores all dot-directories. This one only ignores `.git`.
-export FZF_ALT_C_COMMAND="command find -L . -mindepth 1 \\( -path '*/\\.git*' -o -fstype 'sysfs' -o -fstype 'devfs' -o -fstype 'devtmpfs' -o -fstype 'proc' \\) \
-    -prune -o -type d -print 2> /dev/null | cut -b3-"
-export FZF_CTRL_T_COMMAND="command find -L . -mindepth 1 \\( -path '*/\\.git*' -o -fstype 'sysfs' -o -fstype 'devfs' -o -fstype 'devtmpfs' -o -fstype 'proc' \\) \
-    -prune -o -type f -print -o -type d -print -o -type l -print 2> /dev/null | cut -b3-"
-export GOPATH="$HOME/.local/share/go"
 # Ignore lines that start with a space,
 # don't save lines matching a previous history entry.
 export HISTCONTROL=ignorespace:ignoredups:erasedups
 # Don't limit the number of commands to save in history.
 export HISTSIZE=-1
 export HISTTIMEFORMAT="%Y-%m-%d %T "
-# The following variable is needed for USB drives to work.
-# See https://unix.stackexchange.com/questions/26842/mounting-usb-drive-that-is-not-recognized.
-export MTP_NO_PROBE="1"
-# Scripts and user-specific Python packages are installed in .local/bin.
-export PATH="$PATH:$HOME/.local/bin"
-export PATH="$PATH:$HOME/.local/bin.local"
-export PATH="$PATH:$HOME/.vim/pack/bundle/opt/vim-superman/bin"
-export PATH="$PATH:$(ruby -e 'puts Gem.user_dir')/bin"
 # Make any new terminal have the history of other terminals without
 # having to exit those other terminals.
 export PROMPT_COMMAND='history -a'
-# Avoid loading default config file for ranger if a custom one exists.
-[ -f "$ranger_config_file" ] && export RANGER_LOAD_DEFAULT_RC=FALSE
-export RIPGREP_CONFIG_PATH="$HOME/.config/rg/rgconfig"
-# Disable the default virtualenv prompt change.
-export VIRTUAL_ENV_DISABLE_PROMPT=1
-# The number of pixels the prompt of auth_x11 may be moved at startup to
-# mitigate possible burn-in effects
-export XSECURELOCK_SHOW_DATETIME=1
-export XSECURELOCK_BURNIN_MITIGATION=20
-
 # }}}
 
 # Main {{{
@@ -75,7 +44,6 @@ base16_shell_dir="$HOME/.config/base16-shell/"
 fzf_bindings_file="/usr/share/fzf/key-bindings.bash"
 fzf_completion_file="/usr/share/fzf/completion.bash"
 git_completion_file="/usr/share/bash-completion/completions/git"
-ranger_config_file="$HOME/.config/ranger/rc.conf"
 venv_wrapper_file="/usr/bin/virtualenvwrapper_lazy.sh"
 # git-prompt.sh provides __git_ps1 that is used to show current Git branch
 # in bash prompt.
