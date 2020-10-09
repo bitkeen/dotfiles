@@ -28,4 +28,4 @@ source ~/.config/shell_startup
 # Plugins
 zsh_plugins="$HOME/.config/zsh/plugins"
 # Increment and decrement numbers easily with Ctrl+a and Ctrl+x.
-source "$zsh_plugins/vi-increment/vi-increment.plugin.zsh"
+source "$zsh_plugins/vi-increment/vi-increment.zsh"
