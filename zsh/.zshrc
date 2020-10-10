@@ -13,6 +13,19 @@ bindkey -v
 # Reduce Esc key lag in vi mode to 10ms.
 export KEYTIMEOUT=1
 
+# Insert mode.
+bindkey '^[[3~' delete-char
+bindkey '^?' backward-delete-char
+bindkey '^A' beginning-of-line
+bindkey '^E' end-of-line
+bindkey '^F' clear-screen
+bindkey '^]' vi-yank-whole-line
+bindkey -s '^G' ' fzg\n'
+
+# Normal mode.
+bindkey -a '^F' clear-screen
+bindkey -a '^[[3~' delete-char
+
 # for f in ~/.config/bash/*; do source "$f"; done
 autoload -Uz vcs_info
 precmd_vcs_info() { vcs_info }
