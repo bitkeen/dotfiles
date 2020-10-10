@@ -26,7 +26,6 @@ bindkey -s '^G' ' fzg\n'
 bindkey -a '^F' clear-screen
 bindkey -a '^[[3~' delete-char
 
-# for f in ~/.config/bash/*; do source "$f"; done
 autoload -Uz vcs_info
 precmd_vcs_info() { vcs_info }
 precmd_functions+=( precmd_vcs_info )
