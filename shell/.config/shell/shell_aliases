@@ -2,7 +2,9 @@
 # Reload .Xresources.
 alias xup='xrdb ~/.Xresources'
 # Reload .bashrc.
-alias bup='source ~/.bashrc'
+alias bup='[ -z "$ZSH_VERSION" ] && source ~/.bashrc || echo "Not in bash"'
+# Reload .zshrc.
+alias zup='[ -n "$ZSH_VERSION" ] && source ~/.zshrc || echo "Not in zsh"'
 # Reload .tmux.conf.
 alias tup='tmux source-file ~/.tmux.conf'
 # Reload Readline's .inputrc.
