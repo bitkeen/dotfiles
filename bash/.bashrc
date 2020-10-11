@@ -34,9 +34,6 @@ bind -x '"\C-]":copyline'
 
 # Paths {{{
 git_completion_file="/usr/share/bash-completion/completions/git"
-# git-prompt.sh provides __git_ps1 that is used to show current Git branch
-# in bash prompt.
-git_prompt_file='/usr/share/git/completion/git-prompt.sh'
 # }}}
 
 # Enable completion for git.
@@ -105,17 +102,7 @@ ps1_right+="${reset}${bold}${vim_color}\$(ps1_vim)${reset}"
 ps1_right+="${reset}${bold}${ranger_color}\$(ps1_ranger)${reset}"
 ps1_right+="${reset}${bold}${venv_color}\$(ps1_venv)${reset}"
 
-if _source_if_exists "$git_prompt_file"; then
-    # Add a '$' in the __git_ps1 output to show stashed changes
-    # are present.
-    export GIT_PS1_SHOWSTASHSTATE=1
-    # Show unstaged (*) and staged (+) changes next to the branch name.
-    export GIT_PS1_SHOWDIRTYSTATE=1
-    # If there are untracked files, then a '%' will be shown.
-    export GIT_PS1_SHOWUNTRACKEDFILES=1
-    # Indicate difference between HEAD and its upstream.
-    export GIT_PS1_SHOWUPSTREAM="auto"
-
+if [ -f "$git_prompt_file" ]; then
     ps1_right+="${reset}${bold}${git_color}\$(__git_ps1)${reset}"
 fi
 

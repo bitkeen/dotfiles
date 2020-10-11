@@ -14,11 +14,25 @@ _source_if_exists() {
 fzf_bindings_file="/usr/share/fzf/key-bindings.$ext"
 fzf_completion_file="/usr/share/fzf/completion.$ext"
 base16_shell_dir="$HOME/.config/base16-shell/"
-venv_wrapper_file="/usr/bin/virtualenvwrapper_lazy.sh"
+venv_wrapper_file='/usr/bin/virtualenvwrapper_lazy.sh'
+# Provides __git_ps1() to show current Git branch in shell prompt.
+git_prompt_file='/usr/share/git/completion/git-prompt.sh'
 
 _source_if_exists "$fzf_bindings_file"
 _source_if_exists "$fzf_completion_file"
 _source_if_exists "$venv_wrapper_file"
+
+if _source_if_exists "$git_prompt_file"; then
+    # Add a '$' in the __git_ps1 output to show stashed changes
+    # are present.
+    export GIT_PS1_SHOWSTASHSTATE=1
+    # Show unstaged (*) and staged (+) changes next to the branch name.
+    export GIT_PS1_SHOWDIRTYSTATE=1
+    # If there are untracked files, then a '%' will be shown.
+    export GIT_PS1_SHOWUNTRACKEDFILES=1
+    # Indicate difference between HEAD and its upstream.
+    export GIT_PS1_SHOWUPSTREAM="auto"
+fi
 
 # Base16 Shell.
 set_up_base_16() {
