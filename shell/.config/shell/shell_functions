@@ -1,17 +1,13 @@
 #!/bin/sh
 # Modify the prompt when using a virtual environment.
 ps1_venv() {
-    if [ -n "$VIRTUAL_ENV" ]; then
-        # Strip out the path and just leave the env name.
-        echo " (${VIRTUAL_ENV##*/})"
-    fi
+    # Strip out the path and just leave the env name.
+    [ -n "$VIRTUAL_ENV" ] && echo " (${VIRTUAL_ENV##*/})"
 }
 
 # Modify the prompt when using a shell from inside ranger.
 ps1_ranger() {
-    if [ -n "$RANGER_LEVEL" ]; then
-        echo ' (in ranger)'
-    fi
+    [ -n "$RANGER_LEVEL" ] && echo ' (in ranger)'
 }
 
 ps1_git() {
