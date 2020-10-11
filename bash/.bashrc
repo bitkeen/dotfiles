@@ -52,42 +52,38 @@ fi
 
 # Prompt {{{
 
+get_color() {
+    echo "\[$(tput setaf "$1")\]"
+}
+
 bold="\[$(tput bold)\]"
 reset="\[$(tput sgr0)\]"
 
-arrow_color="\[$(tput setaf 208)\]"
-ranger_color="\[$(tput setaf 96)\]"
-vim_color="\[$(tput setaf 70)\]"
-venv_color="\[$(tput setaf 66)\]"
-ssh_color="\[$(tput setaf 239)\]"
-git_color="\[$(tput setaf 75)\]"
-
 # Working directory.
-ps1_left="${reset}${bold}\w${reset}"
-ps1_right=""
+ps1_left="\w"
 
-ps1_right+="${reset}${bold}${vim_color}\$(ps1_vim)${reset}"
-ps1_right+="${reset}${bold}${ranger_color}\$(ps1_ranger)${reset}"
-ps1_right+="${reset}${bold}${venv_color}\$(ps1_venv)${reset}"
-ps1_right+="${reset}${bold}${git_color}\$(ps1_git)${reset}"
+ps1_right=""
+ps1_right+="$(get_color 70)\$(ps1_vim)"
+ps1_right+="$(get_color 96)\$(ps1_ranger)"
+ps1_right+="$(get_color 66)\$(ps1_venv)"
+ps1_right+="$(get_color 75)\$(ps1_git)"
 
 # Modify the prompt when using SSH.
 if [ -n "$SSH_CLIENT" ]; then
-    ps1_u_at_h="${reset}${bold}\u@\h " # user@host
+    ps1_u_at_h="\u@\h " # user@host
     ps1_left="${ps1_u_at_h}${ps1_left}"
-    ps1_right+=" ${reset}${bold}${ssh_color}(ssh)${reset}"
+    ps1_right+=" $(get_color 239)(ssh)"
 fi
 
 # Show the number of background jobs in the number is greater than 0.
 ps1_jobs='$([ \j -gt 0 ] && echo " [\j]")'
-ps1_right+="${reset}${bold}${ps1_jobs}${reset}"
+ps1_right+="${ps1_jobs}"
 
 # Add an arrow at the end.
+ps1_right+=" $(get_color 208)>"
+
 # Last space is actually an nbsp. It is used for searching the
 # previous command in tmux (see .tmux.conf).
-ps1_arrow=' > '
-ps1_right+="${reset}${bold}${arrow_color}${ps1_arrow}${reset}"
-
-export PS1="${reset}${bold}\$(ps1_status)${reset} ${ps1_left}${ps1_right}"
+export PS1="${reset}${bold}\$(ps1_status) ${ps1_left}${ps1_right}${reset} "
 
 # }}}
