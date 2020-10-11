@@ -27,9 +27,8 @@ bindkey -s '^G' ' fzg\n'
 bindkey -a '^F' clear-screen
 bindkey -a '^[[3~' delete-char
 
-autoload -Uz vcs_info
-precmd_vcs_info() { vcs_info }
-precmd_functions+=( precmd_vcs_info )
+# Perform parameter expansion, command substitution and
+# arithmetic expansion in prompts.
 setopt prompt_subst
 
 PROMPT="%(0?.+.-)"               # Status of last command.
@@ -39,8 +38,11 @@ PROMPT+="%F{96}\$(ps1_ranger)%f" # Ranger.
 PROMPT+="%F{66}\$(ps1_venv)%f"   # Venv.
 PROMPT+="%F{75}\$(ps1_git)%f"    # Git status
 PROMPT+="%(1j. [%j].)"           # Background job count.
-PROMPT+=" %F{green}>%f"            # Arrow.
-PROMPT="%B$PROMPT%b "            # Make everything bold.
+PROMPT+=" %F{green}>%f"          # Arrow.
+# Last space is actually an nbsp. It is used for searching the
+# previous command in tmux (see .tmux.conf).
+# Make everything bold.
+PROMPT="%B$PROMPT%b "
 
 # Change cursor shape for different vi modes.
 zle-keymap-select () {
