@@ -1,3 +1,6 @@
+# Source aliases and functions.
+source ~/.config/shell_startup
+
 autoload -Uz compinit
 compinit
 
@@ -47,9 +50,6 @@ zle -N zle-keymap-select
 
 # Update cursor for each new prompt.
 precmd() { zle-keymap-select } 
-
-# Source aliases and functions.
-source ~/.config/shell_startup
 
 # Plugins
 zsh_plugins="$HOME/.config/zsh/plugins"
