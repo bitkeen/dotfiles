@@ -28,7 +28,7 @@ autoload -Uz vcs_info
 precmd_vcs_info() { vcs_info }
 precmd_functions+=( precmd_vcs_info )
 setopt prompt_subst
-PROMPT='%F{blue}%B%~%b%f > '
+PROMPT='%B%(0?.+.-) %~ %F{208}>%f%b '
 
 # Change cursor shape for different vi modes.
 zle-keymap-select () {
