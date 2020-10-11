@@ -6,9 +6,7 @@ setopt autocd
 # Disable XON/XOFF flow control (Ctrl+S, Ctrl+Q).
 unsetopt flow_control
 
-# Vi mode
-# Set up esc timeout
-# (readline?)
+# Set vi mode.
 bindkey -v
 # Reduce Esc key lag in vi mode to 10ms.
 export KEYTIMEOUT=1
