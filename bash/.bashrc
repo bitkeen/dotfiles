@@ -29,7 +29,7 @@ set -o vi
 # Disable XON/XOFF flow control (Ctrl+S, Ctrl+Q).
 stty -ixon
 
-# For copyline function see `bash_functions` file.
+# For copyline function see `shell_functions` file.
 bind -x '"\C-]":copyline'
 
 # Paths {{{
