@@ -1,5 +1,4 @@
 #!/bin/sh
-# Modify the prompt when using a virtual environment.
 ps1_venv() {
     # Strip out the path and just leave the env name.
     [ -n "$VIRTUAL_ENV" ] && echo " (${VIRTUAL_ENV##*/})"
@@ -9,7 +8,6 @@ ps1_vim() {
     [ -n "$VIMRUNTIME" ] && echo ' (in vim)'
 }
 
-# Modify the prompt when using a shell from inside ranger.
 ps1_ranger() {
     [ -n "$RANGER_LEVEL" ] && echo ' (in ranger)'
 }
