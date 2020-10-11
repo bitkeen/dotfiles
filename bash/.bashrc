@@ -75,24 +75,6 @@ ps1_vim() {
     [ -n "$vim_status" ] && echo " ($vim_status)"
 }
 
-# Modify the prompt when using a shell from inside ranger.
-ps1_ranger() {
-    if [ -n "$RANGER_LEVEL" ]; then
-        ranger="in ranger"
-    else
-        ranger=""
-    fi
-    [ -n "$ranger" ] && echo " ($ranger)"
-}
-
-# Modify the prompt when using a virtual environment.
-ps1_venv() {
-    if [ -n "$VIRTUAL_ENV" ]; then
-        # Strip out the path and just leave the env name.
-        echo " (${VIRTUAL_ENV##*/})"
-    fi
-}
-
 ps1_status() {
     local last_status="$?"
     [ "$last_status" = '0' ] && echo '+' || echo '-'
@@ -101,10 +83,7 @@ ps1_status() {
 ps1_right+="${reset}${bold}${vim_color}\$(ps1_vim)${reset}"
 ps1_right+="${reset}${bold}${ranger_color}\$(ps1_ranger)${reset}"
 ps1_right+="${reset}${bold}${venv_color}\$(ps1_venv)${reset}"
-
-if [ -f "$git_prompt_file" ]; then
-    ps1_right+="${reset}${bold}${git_color}\$(__git_ps1)${reset}"
-fi
+ps1_right+="${reset}${bold}${git_color}\$(ps1_git)${reset}"
 
 # Modify the prompt when using SSH.
 if [ -n "$SSH_CLIENT" ]; then
