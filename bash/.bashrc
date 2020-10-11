@@ -66,11 +66,6 @@ git_color="\[$(tput setaf 75)\]"
 ps1_left="${reset}${bold}\w${reset}"
 ps1_right=""
 
-ps1_status() {
-    local last_status="$?"
-    [ "$last_status" = '0' ] && echo '+' || echo '-'
-}
-
 ps1_right+="${reset}${bold}${vim_color}\$(ps1_vim)${reset}"
 ps1_right+="${reset}${bold}${ranger_color}\$(ps1_ranger)${reset}"
 ps1_right+="${reset}${bold}${venv_color}\$(ps1_venv)${reset}"
