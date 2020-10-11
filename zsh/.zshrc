@@ -30,6 +30,24 @@ precmd_functions+=( precmd_vcs_info )
 setopt prompt_subst
 PROMPT='%F{blue}%B%~%b%f > '
 
+# Change cursor shape for different vi modes.
+zle-keymap-select () {
+    if [ "$KEYMAP" = 'vicmd' ]; then
+        cursor='\e[2 q'
+    elif 
+        [ "$KEYMAP" = 'main' ] ||
+        [ "$KEYMAP" = 'viins' ] ||
+        [ "$KEYMAP" = '' ]; then
+            cursor='\e[5 q'
+    fi
+    [ -n "$TMUX" ] && cursor="\ePtmux;\e$cursor\e\\"
+    echo -ne "$cursor"
+}
+zle -N zle-keymap-select
+
+# Update cursor for each new prompt.
+precmd() { zle-keymap-select } 
+
 # Source aliases and functions.
 source ~/.config/shell_startup
 
