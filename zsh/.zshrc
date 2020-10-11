@@ -34,6 +34,7 @@ setopt prompt_subst
 
 PROMPT="%(0?.+.-)"               # Status of last command.
 PROMPT+=" %~"                    # Current directory.
+PROMPT+="%F{70}\$(ps1_vim)%f"    # Vim.
 PROMPT+="%F{96}\$(ps1_ranger)%f" # Ranger.
 PROMPT+="%F{66}\$(ps1_venv)%f"   # Venv.
 PROMPT+="%F{75}\$(ps1_git)%f"    # Git status

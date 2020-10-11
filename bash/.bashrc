@@ -66,15 +66,6 @@ git_color="\[$(tput setaf 75)\]"
 ps1_left="${reset}${bold}\w${reset}"
 ps1_right=""
 
-ps1_vim() {
-    if [ -n "$VIMRUNTIME" ]; then
-        vim_status="in vim"
-    else
-        vim_status=""
-    fi
-    [ -n "$vim_status" ] && echo " ($vim_status)"
-}
-
 ps1_status() {
     local last_status="$?"
     [ "$last_status" = '0' ] && echo '+' || echo '-'
