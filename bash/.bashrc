@@ -92,16 +92,13 @@ ps1_ranger() {
 ps1_venv() {
     if [ -n "$VIRTUAL_ENV" ]; then
         # Strip out the path and just leave the env name.
-        venv="${VIRTUAL_ENV##*/}"
-    else
-        venv=""
+        echo " (${VIRTUAL_ENV##*/})"
     fi
-    [ -n "$venv" ] && echo " ($venv)"
 }
 
 ps1_status() {
     local last_status="$?"
-    [ "$last_status" == "0" ] && echo '+' || echo '-'
+    [ "$last_status" = '0' ] && echo '+' || echo '-'
 }
 
 ps1_right+="${reset}${bold}${vim_color}\$(ps1_vim)${reset}"
