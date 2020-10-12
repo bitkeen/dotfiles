@@ -1,3 +1,8 @@
+export HISTFILE=~/.zsh_history
+# Zsh doesn't have an option for unlimited history. Set size to a billion.
+export HISTSIZE=1000000000
+export SAVEHIST="$HISTSIZE"
+
 # Source aliases and functions.
 source ~/.config/shell_startup
 
@@ -5,9 +10,20 @@ autoload -Uz compinit
 compinit
 
 setopt AUTO_CD
-
 # Disable XON/XOFF flow control (Ctrl+S, Ctrl+Q).
 unsetopt FLOW_CONTROL
+# Command correction.
+setopt CORRECT
+# Argument correction.
+setopt CORRECT_ALL
+
+# Record command timestamps and runtime.
+setopt EXTENDED_HISTORY
+# Append to history on each command, don't wait for shell exit.
+setopt INC_APPEND_HISTORY
+# Do not display duplicates in search, even if the duplicates are not
+# contiguous. History already worked this way with fzf Ctrl-R.
+setopt HIST_FIND_NO_DUPS
 
 # Set vi mode.
 bindkey -v
