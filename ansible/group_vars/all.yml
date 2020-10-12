@@ -9,6 +9,7 @@ dirs:
   dot_vim: '{{ user_home }}/.vim'
   dot_vim_ultisnips: '{{ user_home }}/.vim/ultisnips'
   dot_config_newsboat: '{{ user_home }}/.config/newsboat'
+  dot_config_shell: '{{ user_home }}/.config/shell'
   documents: '{{ user_home }}/documents'
   documents_projects: '{{ user_home }}/documents/projects'
   documents_projects_cloned: '{{ user_home }}/documents/projects/cloned'
