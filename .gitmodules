@@ -176,7 +176,7 @@
 	path = vim/.vim/pack/bundle/opt/vim-python-pep8-indent
 	url = https://github.com/Vimjas/vim-python-pep8-indent
 [submodule "base16-shell"]
-	path = bash/.config/base16-shell
+	path = shell/.config/base16-shell
 	url = https://github.com/chriskempson/base16-shell
 [submodule "base16-vim"]
 	path = vim/.vim/pack/bundle/opt/base16-vim
