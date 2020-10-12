@@ -77,7 +77,8 @@ fi
 
 # Show the number of background jobs in the number is greater than 0.
 ps1_jobs='$([ \j -gt 0 ] && echo " [\j]")'
-ps1_right+="${ps1_jobs}"
+# Use the same color as the `\w` part.
+ps1_right+="${reset}${bold}${ps1_jobs}"
 
 # Add an arrow at the end.
 ps1_right+=" $(get_color 208)>"
