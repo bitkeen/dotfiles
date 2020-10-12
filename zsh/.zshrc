@@ -43,6 +43,11 @@ bindkey -s '^G' ' fzg\n'
 bindkey -a '^F' clear-screen
 bindkey -a '^[[3~' delete-char
 
+autoload edit-command-line
+zle -N edit-command-line
+# Default mapping for v in normal mode is to start visual selection.
+bindkey -M vicmd v edit-command-line
+
 # Perform parameter expansion, command substitution and
 # arithmetic expansion in prompts.
 setopt prompt_subst
