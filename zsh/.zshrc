@@ -4,10 +4,10 @@ source ~/.config/shell_startup
 autoload -Uz compinit
 compinit
 
-setopt autocd
+setopt AUTO_CD
 
 # Disable XON/XOFF flow control (Ctrl+S, Ctrl+Q).
-unsetopt flow_control
+unsetopt FLOW_CONTROL
 
 # Set vi mode.
 bindkey -v
