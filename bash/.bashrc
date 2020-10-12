@@ -32,10 +32,7 @@ stty -ixon
 # For copyline function see `shell_functions` file.
 bind -x '"\C-]":copyline'
 
-# Paths {{{
 git_completion_file="/usr/share/bash-completion/completions/git"
-# }}}
-
 # Enable completion for git.
 if _source_if_exists "$git_completion_file"; then
     # Make git completion work with an alias if it exists.
