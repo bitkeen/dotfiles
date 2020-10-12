@@ -14,8 +14,6 @@ setopt AUTO_CD
 unsetopt FLOW_CONTROL
 # Command correction.
 setopt CORRECT
-# Argument correction.
-setopt CORRECT_ALL
 
 # Record command timestamps and runtime.
 setopt EXTENDED_HISTORY
