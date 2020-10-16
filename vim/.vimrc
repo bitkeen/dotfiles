@@ -956,6 +956,10 @@ highlight SneakLabel guifg=black guibg=white ctermfg=black ctermbg=white
 " text -> "text"
 let g:surround_{char2nr('q')} = "\"\r\""
 
+" vim-fugitive
+" Formatting for Glog.
+let g:fugitive_summary_format = '%s <%aN> %ar (%ad)'
+
 " }}}
 
 silent! source ~/.vimrc.local
