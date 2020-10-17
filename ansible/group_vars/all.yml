@@ -12,7 +12,7 @@ dirs:
   dot_config_shell: '{{ user_home }}/.config/shell'
   documents: '{{ user_home }}/documents'
   documents_projects: '{{ user_home }}/documents/projects'
-  documents_projects_cloned: '{{ user_home }}/documents/projects/cloned'
+  documents_projects_clones: '{{ user_home }}/documents/projects/clones'
   documents_projects_forks: '{{ user_home }}/documents/projects/forks'
   documents_projects_private: '{{ user_home }}/documents/projects/private'
   documents_projects_public: '{{ user_home }}/documents/projects/public'
