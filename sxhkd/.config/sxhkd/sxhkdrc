@@ -1,3 +1,12 @@
+# Select a program to run.
+super+shift+d
+    dmenu_run
+
+# Select a program shipping a .desktop file.
+# Run with 'sh -c' to find dmenu-configured in $PATH.
+super+d
+    i3-dmenu-desktop --dmenu='sh -c dmenu-configured'
+
 # Tmux session selection menu.
 super+t
     dmenu-tmux

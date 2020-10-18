@@ -122,12 +122,6 @@ bindsym $super+shift+Return exec --no-startup-id "i3-msg 'split v; exec tmux_ter
 # Kill focused window.
 bindsym $super+shift+q kill
 
-# Start dmenu (a program launcher).
-#bindsym $super+d exec --no-startup-id dmenu_run -fn $dmenu_font
-# Start dmenu that only displays applications shipping a .desktop file.
-# Run with 'sh -c' to find dmenu-configured in $PATH.
-bindsym $super+d exec --no-startup-id i3-dmenu-desktop --dmenu='sh -c dmenu-configured'
-
 # Change focus.
 bindsym $super+h focus left
 bindsym $super+j focus down
