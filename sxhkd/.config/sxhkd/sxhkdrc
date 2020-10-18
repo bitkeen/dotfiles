@@ -1,53 +1,53 @@
 # Tmux session selection menu.
-super + t
+super+t
     dmenu-tmux
 
 # Power menu.
-super + shift + z
+super+shift+z
     dmenu-power
 
 # Switch active window.
-super + n
+super+n
     simpleswitcher -now
 
 # Screen lock.
-super + shift + x
+super+shift+x
     screen_lock.sh
 
 # Toggle screen brightness level.
-super + b
+super+b
     toggle_brightness.sh
 
 # Open a book.
-super + shift + b
+super+shift+b
     dmenu-books
 
 # Mount/unmount menus.
-super + shift + m
+super+shift+m
     dmenu-udisks-mount
-super + shift + u
+super+shift+u
     dmenu-udisks-unmount
 
 # Media player controls.
 # Mod+/
-super + slash
+super+slash
 	mpc toggle
 # Mod+.
-super + period
+super+period
 	mpc next
 # Mod+,
-super + comma
+super+comma
 	mpc-prev-wrapper
-super + question
+super+question
     dmenu-mpd
 
 # Print screen.
 Print
     screenshot.sh -u
 # Bindings similar to those on MacOS.
-super + control + 4
+super+control+4
     screenshot.sh -u
-super + control + 5
+super+control+5
     screenshot.sh -u -s
 
 # Volume controls.
@@ -70,32 +70,32 @@ XF86MonBrightnessDown
     light -U 5
 
 # Directly switch to a keyboard layout.
-super + ctrl + 1
+super+ctrl+1
     xkb-switch -s us
-super + ctrl + 2
+super+ctrl+2
     xkb-switch -s ru
-super + ctrl + 3
+super+ctrl+3
     xkb-switch -s ua
 
 # GUI programs.
 # Run with i3-msg to get a "loading" cursor.
-super + shift + a
+super+shift+a
     i3-msg 'exec anki'
-super + shift + f
+super+shift+f
     i3-msg 'exec firefox'
-super + shift + t
+super+shift+t
     i3-msg 'exec transmission-gtk'
-super + shift + o
+super+shift+o
     i3-msg 'exec --no-startup-id urxvt -e ranger'
-super + c
+super+c
     caldd
-super + v
+super+v
     weatherdd
 
-super + x
+super+x
     todoterm
-super + e
+super+e
     scratchterm
 
-super + shift + s
+super+shift+s
     dmenu-screenlayout
