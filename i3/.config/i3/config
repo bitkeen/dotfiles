@@ -1,6 +1,6 @@
 # Variables {{{
 
-set $mod Mod4
+set $super Mod4
 
 # Fonts.
 set $titles_font DejaVu Sans 12
@@ -60,28 +60,28 @@ client.background       $base00
 # Bindings {{{
 
 # Switch to workspace.
-bindsym $mod+1 workspace $workspace1
-bindsym $mod+2 workspace $workspace2
-bindsym $mod+3 workspace $workspace3
-bindsym $mod+4 workspace $workspace4
-bindsym $mod+5 workspace $workspace5
-bindsym $mod+6 workspace $workspace6
-bindsym $mod+7 workspace $workspace7
-bindsym $mod+8 workspace $workspace8
-bindsym $mod+9 workspace $workspace9
-bindsym $mod+0 workspace $workspace10
+bindsym $super+1 workspace $workspace1
+bindsym $super+2 workspace $workspace2
+bindsym $super+3 workspace $workspace3
+bindsym $super+4 workspace $workspace4
+bindsym $super+5 workspace $workspace5
+bindsym $super+6 workspace $workspace6
+bindsym $super+7 workspace $workspace7
+bindsym $super+8 workspace $workspace8
+bindsym $super+9 workspace $workspace9
+bindsym $super+0 workspace $workspace10
 
 # Move focused container to workspace.
-bindsym $mod+Shift+1 move container to workspace $workspace1
-bindsym $mod+Shift+2 move container to workspace $workspace2
-bindsym $mod+Shift+3 move container to workspace $workspace3
-bindsym $mod+Shift+4 move container to workspace $workspace4
-bindsym $mod+Shift+5 move container to workspace $workspace5
-bindsym $mod+Shift+6 move container to workspace $workspace6
-bindsym $mod+Shift+7 move container to workspace $workspace7
-bindsym $mod+Shift+8 move container to workspace $workspace8
-bindsym $mod+Shift+9 move container to workspace $workspace9
-bindsym $mod+Shift+0 move container to workspace $workspace10
+bindsym $super+Shift+1 move container to workspace $workspace1
+bindsym $super+Shift+2 move container to workspace $workspace2
+bindsym $super+Shift+3 move container to workspace $workspace3
+bindsym $super+Shift+4 move container to workspace $workspace4
+bindsym $super+Shift+5 move container to workspace $workspace5
+bindsym $super+Shift+6 move container to workspace $workspace6
+bindsym $super+Shift+7 move container to workspace $workspace7
+bindsym $super+Shift+8 move container to workspace $workspace8
+bindsym $super+Shift+9 move container to workspace $workspace9
+bindsym $super+Shift+0 move container to workspace $workspace10
 
 # Resize window (you can also use the mouse for that).
 mode "resize" {
@@ -106,78 +106,78 @@ mode "resize" {
         bindsym Return mode "default"
         bindsym Escape mode "default"
 }
-bindsym $mod+r mode "resize"
+bindsym $super+r mode "resize"
 
 # Resize window without entering resize mode.
-bindsym $mod+y resize shrink width 10 px or 10 ppt
-bindsym $mod+u resize grow height 10 px or 10 ppt
-bindsym $mod+i resize shrink height 10 px or 10 ppt
-bindsym $mod+o resize grow width 10 px or 10 ppt
+bindsym $super+y resize shrink width 10 px or 10 ppt
+bindsym $super+u resize grow height 10 px or 10 ppt
+bindsym $super+i resize shrink height 10 px or 10 ppt
+bindsym $super+o resize grow width 10 px or 10 ppt
 
 # Start a terminal in a vertical split.
-bindsym $mod+Return exec --no-startup-id "i3-msg 'split h; exec tmux_terminal.sh'"
+bindsym $super+Return exec --no-startup-id "i3-msg 'split h; exec tmux_terminal.sh'"
 # Start a terminal in a horizontal split.
-bindsym $mod+Shift+Return exec --no-startup-id "i3-msg 'split v; exec tmux_terminal.sh'"
+bindsym $super+Shift+Return exec --no-startup-id "i3-msg 'split v; exec tmux_terminal.sh'"
 
 # Kill focused window.
-bindsym $mod+Shift+q kill
+bindsym $super+Shift+q kill
 
 # Start dmenu (a program launcher).
-#bindsym $mod+d exec --no-startup-id dmenu_run -fn $dmenu_font
+#bindsym $super+d exec --no-startup-id dmenu_run -fn $dmenu_font
 # Start dmenu that only displays applications shipping a .desktop file.
 # Run with 'sh -c' to find dmenu-configured in $PATH.
-bindsym $mod+d exec --no-startup-id i3-dmenu-desktop --dmenu='sh -c dmenu-configured'
+bindsym $super+d exec --no-startup-id i3-dmenu-desktop --dmenu='sh -c dmenu-configured'
 
 # Change focus.
-bindsym $mod+h focus left
-bindsym $mod+j focus down
-bindsym $mod+k focus up
-bindsym $mod+l focus right
+bindsym $super+h focus left
+bindsym $super+j focus down
+bindsym $super+k focus up
+bindsym $super+l focus right
 
 # Move focused window.
-bindsym $mod+Shift+h move left
-bindsym $mod+Shift+j move down
-bindsym $mod+Shift+k move up
-bindsym $mod+Shift+l move right
+bindsym $super+Shift+h move left
+bindsym $super+Shift+j move down
+bindsym $super+Shift+k move up
+bindsym $super+Shift+l move right
 
 # Split in horizontal orientation.
-bindsym $mod+backslash split h
+bindsym $super+backslash split h
 # Split in vertical orientation.
-bindsym $mod+minus split v
+bindsym $super+minus split v
 
 # Enter fullscreen mode for the focused container.
-bindsym $mod+f fullscreen toggle
+bindsym $super+f fullscreen toggle
 
 # Change container layout (stacked, tabbed, toggle split).
-bindsym $mod+s layout stacking
-bindsym $mod+w layout tabbed
-bindsym $mod+g layout toggle split
+bindsym $super+s layout stacking
+bindsym $super+w layout tabbed
+bindsym $super+g layout toggle split
 
 # Toggle tiling / floating.
-bindsym $mod+Shift+space floating toggle
+bindsym $super+Shift+space floating toggle
 
 # Change focus between tiling / floating windows.
-bindsym $mod+space focus mode_toggle
+bindsym $super+space focus mode_toggle
 # Focus the parent container.
-bindsym $mod+a focus parent
+bindsym $super+a focus parent
 # Focus the child container.
-#bindsym $mod+d focus child
+#bindsym $super+d focus child
 
 # Reload the configuration file.
-bindsym $mod+shift+c reload
+bindsym $super+shift+c reload
 # Restart i3 inplace (preserves your layout/session, can be used to upgrade i3).
-bindsym $mod+Shift+r restart
+bindsym $super+Shift+r restart
 # Exit i3 (logs you out of your X session).
-bindsym $mod+Shift+e exec --no-startup-id "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+bindsym $super+Shift+e exec --no-startup-id "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
 # Move workspaces between outputs.
-bindsym $mod+Control+h move workspace to output left
-bindsym $mod+Control+j move workspace to output down
-bindsym $mod+Control+k move workspace to output up
-bindsym $mod+Control+l move workspace to output right
+bindsym $super+Control+h move workspace to output left
+bindsym $super+Control+j move workspace to output down
+bindsym $super+Control+k move workspace to output up
+bindsym $super+Control+l move workspace to output right
 
 # Enable back and forth switching with a keybinding.
-bindsym $mod+Tab workspace back_and_forth
+bindsym $super+Tab workspace back_and_forth
 
 # Mouse bindings.
 # Disable mouse wheel switching between windows.
@@ -208,8 +208,8 @@ floating_maximum_size 1920 x 1080
 # is used in the bar {} block below.
 font pango:$titles_font
 
-# Use Mouse+$mod to drag floating windows to their wanted position.
-floating_modifier $mod
+# Use Mouse+$super to drag floating windows to their wanted position.
+floating_modifier $super
 
 assign [class="Anki"] $workspace5
 assign [class="firefox"] $workspace1
@@ -254,8 +254,8 @@ exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 # Tmux dropdown.
 set $dd_name "tmuxdd"
 
-bindsym $mod+grave exec --no-startup-id i3-tmuxdd $dd_name dropdown
-bindsym $mod+m exec --no-startup-id i3-tmuxdd $dd_name misc
+bindsym $super+grave exec --no-startup-id i3-tmuxdd $dd_name dropdown
+bindsym $super+m exec --no-startup-id i3-tmuxdd $dd_name misc
 
 # Terminal window with name $dd_name is created in i3-tmuxdd.
 for_window [instance=$dd_name] floating enable
