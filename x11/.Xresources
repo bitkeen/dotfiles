@@ -50,10 +50,6 @@ URxvt.keysym.M-S-Down: font-size:decglobal
 URxvt.keysym.M-0:      font-size:reset
 URxvt.keysym.M-grave:  font-size:show
 
-! url-select - move through urls in terminal using vim bindings
-URxvt.keysym.M-u:	perl:url-select:select_next
-URxvt.url-select.launcher: /usr/bin/xdg-open
-
 ! keyboard-select - move through text in terminal using vim bindings
 URxvt.keysym.M-Escape: perl:keyboard-select:activate
 
