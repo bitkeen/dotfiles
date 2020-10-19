@@ -16,7 +16,7 @@ packages:
   - lab
   - litecli
   - mycli
-  - otf-font-awesome-4
+  - ttf-font-awesome-4
   - paper-icon-theme
   - path-extractor # A unix filter which outputs the filepaths found in stdin
   - pgformatter-git # Correctly indent PostgreSQL queries
