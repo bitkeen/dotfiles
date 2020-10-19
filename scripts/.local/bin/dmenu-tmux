@@ -7,5 +7,5 @@ sessions="$(tmux ls | awk -F ':' '{print $1}')"
 choice=$(echo "$sessions" | dmenu-configured -p 'tmux attach -t ' "$@")
 
 if [ -n "$choice" ]; then
-    i3 "exec --no-startup-id urxvt -e bash -i -c 'tmux attach -t $choice'"
+    i3 "exec --no-startup-id $TERMINAL -e bash -i -c 'tmux attach -t $choice'"
 fi

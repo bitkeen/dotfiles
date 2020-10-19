@@ -95,7 +95,7 @@ super+shift+f
 super+shift+t
     i3-msg 'exec transmission-gtk'
 super+shift+o
-    i3-msg 'exec --no-startup-id urxvt -e ranger'
+    i3-msg "exec --no-startup-id $TERMINAL -e ranger"
 super+c
     caldd
 super+v

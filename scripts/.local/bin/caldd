@@ -5,5 +5,5 @@
 # 'tput civis' - hide the cursor.
 # 'cal -y -m' show calendar for current year with Monday as the first
 # day of the week.
-pgrep -f 'urxvt -name caldd' | xargs kill 2>/dev/null ||
-    urxvt -name 'caldd' -e sh -c 'tput civis; cal -y -m; while true; do :; done'
+pgrep -f "$TERMINAL -name caldd" | xargs kill 2>/dev/null ||
+    "$TERMINAL" -name 'caldd' -e sh -c 'tput civis; cal -y -m; while true; do :; done'

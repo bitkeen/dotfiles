@@ -12,7 +12,7 @@ session_name="$(tmux ls | \
                 \grep -o -P -m 1 '^(\d+)(?=: )')"
 
 if [ -n "$session_name" ]; then
-    i3 "exec --no-startup-id urxvt -e bash -i -c 'tmux attach -t $session_name'"
+    i3 "exec --no-startup-id $TERMINAL -e bash -i -c 'tmux attach -t $session_name'"
 else
-    i3 "exec --no-startup-id urxvt -e bash -i -c 'tmux'"
+    i3 "exec --no-startup-id $TERMINAL -e bash -i -c 'tmux'"
 fi

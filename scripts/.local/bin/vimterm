@@ -16,5 +16,5 @@ unset TMUX
 TERM_NAME="$1"
 ARGS="$2"
 
-pgrep -f "urxvt -name $TERM_NAME" | xargs kill 2>/dev/null ||
-    urxvt -name "$TERM_NAME" -e sh -c "vim '$ARGS'"
+pgrep -f "$TERMINAL -name $TERM_NAME" | xargs kill 2>/dev/null ||
+    "$TERMINAL" -name "$TERM_NAME" -e sh -c "vim '$ARGS'"

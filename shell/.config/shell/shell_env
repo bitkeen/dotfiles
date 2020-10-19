@@ -2,6 +2,7 @@
 ranger_config_file="$HOME/.config/ranger/rc.conf"
 
 export EDITOR=/usr/bin/vim
+export TERMINAL=/usr/bin/urxvt
 export FZF_DEFAULT_OPTS=" \
     --preview 'cat {}' \
     --preview-window='hidden' \
