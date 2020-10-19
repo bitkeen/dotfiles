@@ -66,6 +66,8 @@ alias vs='vim_session_venv ~/.config/venv_mapping'
 alias s='sudo '
 alias sudo='sudo '
 
+alias mk='make'
+
 # Create directory.
 # -p - no error if existing, make parent directories as needed.
 # -v - print a message for each created directory.
