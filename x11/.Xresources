@@ -2,12 +2,12 @@
 ! dmenu
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
-dmenu.font : Source Sans Pro:pixelsize=20
+dmenu.font: Source Sans Pro:pixelsize=20
 ! Only background is different from default.
-dmenu.background : #111111
-dmenu.foreground : #bbbbbb
-dmenu.selbackground : #005577
-dmenu.selforeground : #eeeeee
+dmenu.background: #111111
+dmenu.foreground: #bbbbbb
+dmenu.selbackground: #005577
+dmenu.selforeground: #eeeeee
 
 
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
