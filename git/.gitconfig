@@ -29,6 +29,7 @@
             git commit --fixup \"$1\"' -"
     cim = "!git commit --date=\"$(date -u '+%Y-%m-%dT%H:%M:%S%z')\" -m"
     cl = clone
+    cn = clean
     df = diff
     dfc = diff --check
     dfm = diff master
