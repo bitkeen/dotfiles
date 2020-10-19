@@ -14,7 +14,7 @@ dmenu.selforeground : #eeeeee
 ! URxvt
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
-URxvt.font: xft:SauceCodePro Nerd Font Mono:size=13
+URxvt.font: xft:Source Code Pro:size=13
 URxvt.scrollBar: false
 URxvt.iso14755: false
 URxvt.iso14755_52: false
