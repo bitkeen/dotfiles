@@ -238,6 +238,7 @@ for_window [instance="dragon-drag-and-drop"] sticky enable
 exec keepassxc
 exec firefox
 exec thunderbird
+exec telegram-desktop
 
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
