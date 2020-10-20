@@ -1,2 +1,4 @@
 #!/bin/sh
+# Dependends on rpw script.
+
 vimterm 'scratchterm' '-c cd ~/sync/wikis/scratchwiki | edit `date +\%Y-\%m-\%dT\%H-\%M-\%S`_`rpw 8`.md | let b:auto_save = 1'
