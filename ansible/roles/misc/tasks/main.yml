@@ -88,3 +88,4 @@
   loop:
     - gsettings set org.gtk.Settings.FileChooser show-hidden true
     - gsettings set org.gtk.Settings.FileChooser sort-directories-first true
+    - gsettings set org.gnome.desktop.interface gtk-key-theme "Emacs"
