@@ -2,12 +2,12 @@
 # Startup script for both bash and zsh.
 # External to ~/.config/shell in order to avoid recursion.
 
-for f in ~/.config/shell/*; do source "$f"; done
+for f in ~/.config/shell/*; do . "$f"; done
 
 _source_if_exists() {
     # Source a file if it exists.
     [ "$#" -ne 1 ] && return 1
-    [ -f "$1" ] && source "$1" || return 1
+    [ -f "$1" ] && . "$1" || return 1
 }
 
 [ -n "$ZSH_VERSION" ] && ext='zsh' || ext='bash'
