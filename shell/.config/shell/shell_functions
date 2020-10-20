@@ -147,3 +147,9 @@ clc() {
     # Copy last command.
     history -p '!!' | sed 1q | copy
 }
+
+rpc() {
+    rpw "$1" | copy
+    yank
+    echo
+}
