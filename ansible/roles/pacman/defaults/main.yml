@@ -79,11 +79,13 @@ packages:
   - syncthing # Open Source Continuous Replication / Cluster Synchronization Thing
   - syncthing-gtk # GTK3 based GUI and notification area icon for Syncthing
   - sysstat # A collection of performance monitoring tools (iostat,isag,mpstat,pidstat,sadf,sar)
+  - telegram-desktop
   - thunar # File Manager for the Xfce Desktop Environment
   - thunderbird
   - thunderbird-extension-enigmail
   - tidy # A tool to tidy HTML code
   - tmux
+  - ttf-opensans # Sans-serif typeface commissioned by Google, needed for telegram-desktop
   - tor
   - torsocks # Wrapper to safely torify applications
   - traceroute # Tracks the route taken by packets over an IP network
