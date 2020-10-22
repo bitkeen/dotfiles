@@ -80,6 +80,12 @@
     groups: docker
     append: yes
 
+- name: fix gtk keymaps
+  lineinfile:
+    path: /usr/share/themes/Emacs/gtk-3.0/gtk-keys.css
+    regexp: '^\s+bind "<ctrl>[fw]".*$'
+    state: absent
+
 - name: configure gtk
   become: yes
   become_user: '{{ user_name }}'
