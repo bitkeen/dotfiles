@@ -21,6 +21,8 @@ source ~/.config/shell_startup
 
 # Enable extended pattern matching features.
 shopt -s extglob
+# Make globs case-insensitive.
+shopt -s nocaseglob
 
 # Even though vi-mode is already set through readline configuration,
 # still need to set it here for fzf default bindings to work.

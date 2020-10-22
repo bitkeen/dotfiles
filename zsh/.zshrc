@@ -14,6 +14,8 @@ setopt AUTO_CD
 unsetopt FLOW_CONTROL
 # Command correction.
 setopt CORRECT
+# Make globs case-insensitive.
+unsetopt CASE_GLOB
 
 # Record command timestamps and runtime.
 setopt EXTENDED_HISTORY
