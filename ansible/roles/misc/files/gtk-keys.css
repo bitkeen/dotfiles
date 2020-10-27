@@ -1,0 +1,14 @@
+@binding-set custom-text-entry
+{
+  bind "<alt>b" { "move-cursor" (words, -1, 0) };
+  bind "<alt>f" { "move-cursor" (words, 1, 0) };
+  bind "<alt>d" { "delete-from-cursor" (word-ends, 1) };
+}
+
+entry {
+  -gtk-key-bindings: custom-text-entry;
+}
+
+textview {
+  -gtk-key-bindings: custom-text-entry;
+}

@@ -80,11 +80,10 @@
     groups: docker
     append: yes
 
-- name: fix gtk keymaps
-  lineinfile:
-    path: /usr/share/themes/Emacs/gtk-3.0/gtk-keys.css
-    regexp: '^\s+bind "<ctrl>[fw]".*$'
-    state: absent
+- name: install gtk keymaps
+  copy:
+    src: gtk-keys.css
+    dest: /usr/share/themes/Custom/gtk-3.0/
 
 - name: configure gtk
   become: yes
@@ -94,4 +93,4 @@
   loop:
     - gsettings set org.gtk.Settings.FileChooser show-hidden true
     - gsettings set org.gtk.Settings.FileChooser sort-directories-first true
-    - gsettings set org.gnome.desktop.interface gtk-key-theme "Emacs"
+    - gsettings set org.gnome.desktop.interface gtk-key-theme "Custom"
