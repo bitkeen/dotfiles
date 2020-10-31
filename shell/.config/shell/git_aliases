@@ -2,7 +2,7 @@
 # Aliases for Git.
 git_alias() {
     case "$1" in
-        rt)
+        rt|root)
             # Change working directory to the git root if the current
             # working directory is inside of a git repository.
             'git' status > /dev/null 2>&1 || return 1
