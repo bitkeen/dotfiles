@@ -14,6 +14,7 @@ packages:
   - blueman # Graphical bluetooth manager
   - bluez # Daemons for the bluetooth protocol stack
   - bluez-utils # Provides the bluetoothctl utility
+  - ccls # C/C++/ObjC language server
   - ctags # Universal ctags
   - docker
   - docker-compose
@@ -63,6 +64,8 @@ packages:
   - pacman-contrib # Contributed scripts and tools for pacman systems
   - picom # A compositor for X11, required for transparency
   - pulsemixer # CLI and curses mixer for pulseaudio
+  - python-jedi # Awesome autocompletion for python, a dependency for ipython and python-language-server
+  - python-language-server # An implementation of the Language Server Protocol for Python
   - python-pip
   - python-virtualenvwrapper
   - ranger
