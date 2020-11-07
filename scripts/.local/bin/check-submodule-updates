@@ -3,16 +3,18 @@
 # are on origin/master but not on the local master.
 #
 # The only argument is the path to the git repository.
+# Current directory will be used if the argument is not provided.
 #
 # Example:
 # check-submodule-updates ~/.dotfiles
 
-[ -z "$1" ] && echo 'Specify path to the repository.' && exit 1
-cd "$1" || exit 1
+[ -n "$1" ] && repo_path="$1" || repo_path='.'
+cd "$repo_path" || exit 1
 
 echo 'Fetching submodule repositories.'
 git submodule foreach 'git fetch' || exit 1
 
 echo 'Checking for updates.'
-git submodule foreach \
-    'echo "$name - $(git log --left-right --oneline master..origin/master | wc -l)" && printf "\n"'
+git submodule foreach --quiet \
+    'echo "$(git log --left-right --oneline master..origin/master | wc -l)" - $name' |
+    sort -n
