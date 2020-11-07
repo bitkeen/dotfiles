@@ -4,6 +4,11 @@ reload-threads 8
 feedlist-format "%n %11u %t"
 datetime-format "%d %b %Y"
 
+# Unbind 'mark-all-feeds-read'.
+unbind-key C
+# Unbind default 'macro-prefix'.
+unbind-key ,
+
 bind-key a toggle-article-read
 bind-key A mark-feed-read # Default.
 bind-key N toggle-article-read # Default.
@@ -20,13 +25,13 @@ bind-key l open
 bind-key h quit articlelist
 bind-key ^D pagedown
 bind-key ^U pageup
-
-# Unbind 'mark-all-feeds-read'
-unbind-key C
+bind-key "SPACE" macro-prefix
 
 browser firefox
-macro , open-in-browser
-macro v set browser "i3 exec mpv"; open-in-browser ; set browser firefox
+# Mark article as read and open it in browser.
+macro "SPACE" open; open-in-browser; quit
+macro v set browser "i3 exec mpv"; open-in-browser; set browser firefox
+macro a set browser "youtube-dl --config-location ~/.config/youtube-dl-audio.conf"; open-in-browser; set browser firefox
 
 color info yellow black bold
 color listfocus color232 yellow
