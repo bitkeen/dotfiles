@@ -284,7 +284,6 @@ if has('packages')
 
   if has('python3')
     packadd MatchTagAlways
-    packadd completor.vim
     packadd ultisnips
   endif
 
@@ -299,7 +298,6 @@ if has('packages')
   packadd! gundo.vim " Graph undo tree
   packadd! gv.vim " Git commit browser. Requires fugitive
   packadd! indentLine " Display vertical lines at each indentation level
-  packadd! jedi-vim " Python autocompletion
   packadd! lightline-ale
   packadd! lightline.vim " A light and configurable statusline/tabline
   packadd! linediff.vim " Diff two blocks of text
@@ -423,10 +421,6 @@ else
   let g:gitgutter_sign_column_always = 1
 endif
 " }}}
-
-" jedi-vim
-" Disable jedi completions as they are now handled by completor.
-let g:jedi#completions_enabled = 0
 
 " base16-vim {{{
 " Colorscheme local customization.
@@ -769,20 +763,6 @@ nnoremap <silent> <Leader>bl :<C-u>call gitblame#echo()<CR>
 
 " Gundo
 nnoremap <Leader>gu :GundoToggle<CR>
-
-" jedi-vim
-" <Leader>d is default. Leave it here for visibility.
-let g:jedi#goto_command = '<Leader>d'
-" <Leader>r is default. Leave it here for visibility.
-let g:jedi#rename_command = '<Leader>r'
-" Default is <Leader>g.
-let g:jedi#goto_assignments_command = '<Leader>ga'
-" Default is <Leader>s.
-let g:jedi#goto_stubs_command = '<Leader>gs'
-" Default is <Leader>n.
-let g:jedi#usages_command = '<Leader>gy'
-" Default is <C-space> which conflicts with Tmux prefix binding.
-let g:jedi#completions_command = '<C-n>'
 
 " QFEnter
 let g:qfenter_keymap = {}

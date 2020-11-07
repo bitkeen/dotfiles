@@ -28,9 +28,6 @@
 [submodule "vim-gitgutter"]
 	path = vim/.vim/pack/bundle/opt/vim-gitgutter
 	url = https://github.com/airblade/vim-gitgutter
-[submodule "jedi-vim"]
-	path = vim/.vim/pack/bundle/opt/jedi-vim
-	url = https://github.com/davidhalter/jedi-vim
 [submodule "vim-superman"]
 	path = vim/.vim/pack/bundle/opt/vim-superman
 	url = https://github.com/jez/vim-superman
@@ -193,9 +190,6 @@
 [submodule "vim-signature"]
 	path = vim/.vim/pack/bundle/opt/vim-signature
 	url = https://github.com/kshenoy/vim-signature
-[submodule "completor.vim"]
-	path = vim/.vim/pack/bundle/opt/completor.vim
-	url = https://github.com/maralla/completor.vim
 [submodule "winresizer"]
 	path = vim/.vim/pack/bundle/opt/winresizer
 	url = https://github.com/simeji/winresizer
