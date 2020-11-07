@@ -31,6 +31,7 @@ packages:
   - go-pie # Required for path-extractor (AUR), conflicts with go
   - gst-plugins-good # GStreamer open-source multimedia framework good plugins
   - gst-plugins-ugly # GStreamer open-source multimedia framework ugly plugins
+  - gucharmap # Gnome Unicode character map
   - guvcview # Webcam capturing interface
   - gvim # Vim in GVim package has support for system clipboard
   - i3-wm
@@ -41,7 +42,7 @@ packages:
   - libsecret # Needed for storing Git credentials
   - libxml2 # XML parsing library, version 2, contains xmllint but is usually installed as a dependency for other packages
   - light # A program to control backlight controllers
-  - lxappearance # Feature-rich GTK+ theme switcher of the LXDE Desktop
+  - lxappearance-gtk3 # Feature-rich GTK+ theme switcher of the LXDE Desktop
   - maim # Utility to take a screenshot
   - man-pages # Linux man pages
   - mediainfo # Supplies technical and tag information about a video or audio file (CLI interface), currently used for audio file previews in ranger
@@ -51,7 +52,7 @@ packages:
   - mpv
   - ncdu # NCurses Disk Usage
   - ncmpcpp
-  - neofetch
+  - neofetch # System information tool
   - network-manager-applet
   - networkmanager
   - networkmanager-openvpn
@@ -100,6 +101,7 @@ packages:
   - vint # Lint tool for Vim script Language
   - virtualbox
   - virtualbox-guest-iso # Guest Additions CD image
+  - w3m # Text-based Web browser as well as pager, used for html previews in ranger
   - wireshark-cli # Network traffic and protocol analyzer/sniffer - CLI tools and data files
   - whois # Intelligent WHOIS client
   - xclip
