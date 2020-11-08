@@ -1,5 +1,5 @@
 source ~/.bashrc
 
-if [[ -z $DISPLAY ]] && [[ $(tty) = /dev/tty1 ]]; then
+if [ -z "$DISPLAY" ] && [ "$(tty)" = /dev/tty1 ]; then
 	startx
 fi
