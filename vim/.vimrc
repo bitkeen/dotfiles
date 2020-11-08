@@ -841,13 +841,15 @@ endif
 let g:tmuxline_powerline_separators = 0
 
 " ALE
+let g:ale_completion_enabled = 1
+let g:ale_completion_delay = 0
 let g:ale_set_highlights = 0
 let g:ale_lint_on_text_changed = 'normal'
 let g:ale_echo_msg_format = '[%linter%] %code%: %s'
 " `yaml.ansible` - custom filetype set by ansible-vim plugin.
 " By default, ALE will only lint `ansible` filetype.
 let g:ale_linters = {
-\  'python': ['pydocstyle', 'pyflakes', 'pylint'],
+\  'python': ['pydocstyle', 'pyflakes', 'pylint', 'pyls'],
 \  'yaml.ansible': ['ansible-lint'],
 \}
 
@@ -919,6 +921,9 @@ nmap cq :Qfreplace<CR>
 " ALE
 nmap [e <Plug>(ale_previous)
 nmap ]e <Plug>(ale_next)
+nmap <Leader>d <Plug>(ale_go_to_definition)
+nmap <Leader>r <Plug>(ale_rename)
+nmap <Leader>h <Plug>(ale_hover)
 
 " fzf.vim
 let g:fzf_command_prefix = 'Fzf'
