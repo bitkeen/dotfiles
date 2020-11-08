@@ -25,6 +25,7 @@ packages:
   - slack-desktop
   - tor-browser
   - virtualbox-ext-oracle # VirtualBox Extension Pack
+  - vim-language-server
   - websocat # Command-line client for web sockets
   - xidlehook # xautolock rewrite in Rust, with a few extra features
   - xkb-switch # Program that allows to query and change the XKB layout state
