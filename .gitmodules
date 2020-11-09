@@ -303,7 +303,7 @@
 	url = https://github.com/ap/vim-css-color
 [submodule "vi-increment"]
 	path = zsh/.config/zsh/plugins/vi-increment
-	url = https://github.com/bitkeen/vi-increment
+	url = https://github.com/zsh-vi-more/vi-increment
 [submodule "zsh-syntax-highlighting"]
 	path = zsh/.config/zsh/plugins/zsh-syntax-highlighting
 	url = https://github.com/zsh-users/zsh-syntax-highlighting
