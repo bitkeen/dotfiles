@@ -23,6 +23,7 @@ bind-key G end
 bind-key g home
 bind-key l open
 bind-key h quit articlelist
+bind-key h quit article
 bind-key ^D pagedown
 bind-key ^U pageup
 bind-key "SPACE" macro-prefix
