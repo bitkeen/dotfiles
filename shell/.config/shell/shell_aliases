@@ -125,3 +125,5 @@ alias drdf='docker run -it --rm bitkeen/dotfiles'
 # Convert input to decimal byte values.
 # Ignore grep aliases.
 alias ascii="od -An -t dC | 'grep' -Po '\d.*(?=10)'"
+
+alias yp="pwd | tr -d '\n' | copy"
