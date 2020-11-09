@@ -1,4 +1,9 @@
 ---
+- name: configure keyboard for X11
+  copy:
+    src: 00-keyboard.conf
+    dest: /etc/X11/xorg.conf.d/
+
 - name: create directories in user_home
   file:
     path: '{{ item.value }}'
