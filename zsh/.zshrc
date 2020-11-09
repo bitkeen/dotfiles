@@ -12,8 +12,6 @@ compinit
 setopt AUTO_CD
 # Disable XON/XOFF flow control (Ctrl+S, Ctrl+Q).
 unsetopt FLOW_CONTROL
-# Command correction.
-setopt CORRECT
 # Make globs case-insensitive.
 unsetopt CASE_GLOB
 
