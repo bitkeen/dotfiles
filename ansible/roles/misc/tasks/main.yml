@@ -4,6 +4,10 @@
     src: 00-keyboard.conf
     dest: /etc/X11/xorg.conf.d/
 
+- name: configure keyboard for virtual console
+  command:
+    cmd: '{{ role_path }}/files/vconsole.sh'
+
 - name: create directories in user_home
   file:
     path: '{{ item.value }}'
