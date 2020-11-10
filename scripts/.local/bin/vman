@@ -1,0 +1,14 @@
+#!/bin/sh
+# Modified version of vman script taken from vim-superman plugin.
+
+if [ "$#" -eq 0 ]; then
+  echo "What manual page do you want?";
+  exit 1
+elif ! man -w "$@" > /dev/null 2>&1; then
+  # Check that manpage exists to prevent visual noise.
+  echo "No manual entry for $*"
+  exit 1
+fi
+
+# Man is open in a split, make it the only window instead.
+${EDITOR:-vim} -c "execute('Man $*') | only | setlocal readonly"
