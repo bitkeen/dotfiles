@@ -630,6 +630,8 @@ nnoremap <Leader><Leader> @@
 
 nnoremap [h :help<Space>
 nnoremap ]h :tab help<Space>
+nnoremap [k :Man<Space>
+nnoremap ]k :tab Man<Space>
 
 " Compare buffers in current tab.
 nnoremap [w :windo diffthis<CR>
