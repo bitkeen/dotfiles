@@ -41,6 +41,12 @@ bindkey -s '^G' ' fzg\n'
 bindkey -a '^F' clear-screen
 bindkey -a '^[[3~' delete-char
 
+# Escape globs when pasting urls.
+autoload -Uz bracketed-paste-magic
+zle -N bracketed-paste bracketed-paste-magic
+autoload -Uz url-quote-magic
+zle -N self-insert url-quote-magic
+
 autoload edit-command-line
 zle -N edit-command-line
 # Default mapping for v in normal mode is to start visual selection.
