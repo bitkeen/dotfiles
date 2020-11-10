@@ -28,9 +28,6 @@
 [submodule "vim-gitgutter"]
 	path = vim/.vim/pack/bundle/opt/vim-gitgutter
 	url = https://github.com/airblade/vim-gitgutter
-[submodule "vim-superman"]
-	path = vim/.vim/pack/bundle/opt/vim-superman
-	url = https://github.com/jez/vim-superman
 [submodule "vim-eunuch"]
 	path = vim/.vim/pack/bundle/opt/vim-eunuch
 	url = https://github.com/tpope/vim-eunuch

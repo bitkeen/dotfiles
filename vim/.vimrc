@@ -353,7 +353,6 @@ if has('packages')
   packadd! vim-slime
   packadd! vim-sneak
   packadd! vim-speeddating
-  packadd! vim-superman
   packadd! vim-surround
   packadd! vim-swap
   packadd! vim-sxhkdrc
