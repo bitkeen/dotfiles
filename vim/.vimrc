@@ -1,3 +1,5 @@
+scriptencoding utf-8
+
 " Main {{{
 
 " Get the defaults that most users want.
@@ -250,7 +252,7 @@ function! CloseQuickfixWindows()
   let l:current_tab = tabpagenr()
   tabdo windo lclose | cclose
   " Return to the most recent tab.
-  execute "tabnext" l:current_tab
+  execute 'tabnext' l:current_tab
 endfunction
 
 let g:formatter_mapping = {
@@ -890,7 +892,7 @@ vnoremap ]l :LinediffReset<CR>
 
 " targets.vim
 " Include angle brackets in the "b" mapping.
-autocmd User targets#mappings#user call targets#mappings#extend({
+autocmd plugins User targets#mappings#user call targets#mappings#extend({
 \  'b': {'pair': [
 \    {'o':'(', 'c':')'},
 \    {'o':'[', 'c':']'},
