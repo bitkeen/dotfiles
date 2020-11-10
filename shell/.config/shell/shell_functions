@@ -36,8 +36,11 @@ vm () {
     # `vman ls`, not `vman 'ls -p'`, and if you have `alias p='pacman'`,
     # you'd get `vman pacman` by running `vm p`, if there's no program
     # by name `p`.
-    if which "$1" >/dev/null 2>&1; then
-        vman "$(which "$1")"
+
+    # Use full path to which binary since in zsh which is a built-in that
+    # has slightly different behavior.
+    if /usr/bin/which "$1" >/dev/null 2>&1; then
+        vman "$(/usr/bin/which "$1")"
     elif command -v "$1" | grep '^alias' > /dev/null; then
         alias_val="$(command -v "$1" | grep -Po "(?<==').*(?=')")"
         vman "$alias_val"
