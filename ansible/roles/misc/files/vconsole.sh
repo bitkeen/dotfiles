@@ -2,9 +2,11 @@
 # Update keyboard layout in virtual console.
 set -e
 
-dest='/usr/local/share/kbd/keymaps/personal.map'
+dest_dir='/usr/local/share/kbd/keymaps'
+dest="${dest_dir}/personal.map"
 dest_gz="${dest}.gz"
 
+mkdir -p "${dest_dir}"
 cp /usr/share/kbd/keymaps/i386/qwerty/us.map.gz "${dest_gz}"
 gunzip -f "${dest_gz}"
 
