@@ -376,6 +376,9 @@ else
   " Enable Pathogen package manager.
   execute pathogen#infect('pack/bundle/opt/{}')
 endif
+
+" Distributed with Vim, contains :Man function. Not loaded by default.
+runtime ftplugin/man.vim
 " }}}
 
 " Plugin configuration {{{
