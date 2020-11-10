@@ -60,7 +60,7 @@ if has('autocmd')
     autocmd FileType json,terraform,vim,yaml* setlocal tabstop=2 shiftwidth=2 softtabstop=2
 
     " Open help windows in a vertical split by default.
-    autocmd FileType help wincmd L
+    autocmd FileType help,man wincmd L
     " Show line numbers in help windows.
     autocmd FileType help,man setlocal number
     autocmd FileType help,man setlocal relativenumber
