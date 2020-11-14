@@ -6,4 +6,4 @@ if exists('g:loaded_surround')
 endif
 
 " Utilize Vim's built-in man viewer instead of launching `man`.
-set keywordprg=:Man
+setlocal keywordprg=:Man
