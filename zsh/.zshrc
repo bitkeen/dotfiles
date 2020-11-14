@@ -22,6 +22,8 @@ setopt INC_APPEND_HISTORY
 # Do not display duplicates in search, even if the duplicates are not
 # contiguous. History already worked this way with fzf Ctrl-R.
 setopt HIST_FIND_NO_DUPS
+# Allow comments even in interactive shells.
+setopt INTERACTIVE_COMMENTS
 
 # Set vi mode.
 bindkey -v
