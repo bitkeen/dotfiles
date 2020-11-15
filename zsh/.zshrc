@@ -9,12 +9,14 @@ source ~/.config/shell_startup
 autoload -Uz compinit
 compinit
 
-setopt AUTO_CD
 # Disable XON/XOFF flow control (Ctrl+S, Ctrl+Q).
 unsetopt FLOW_CONTROL
 # Make globs case-insensitive.
 unsetopt CASE_GLOB
 
+setopt AUTO_CD
+# Make completion work with cursor in the middle of a word.
+setopt COMPLETE_IN_WORD
 # Record command timestamps and runtime.
 setopt EXTENDED_HISTORY
 # Append to history on each command, don't wait for shell exit.
