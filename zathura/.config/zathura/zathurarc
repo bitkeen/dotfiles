@@ -13,6 +13,9 @@ set selection-clipboard clipboard
 # Set scrolling via touchpad to be smooth.
 set smooth-scroll true
 
+set default-bg \#222
+set statusbar-bg \#222
+
 unmap -
 unmap =
 map <C-0> zoom reset
