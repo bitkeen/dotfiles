@@ -588,7 +588,7 @@ nnoremap <Leader>\ :vnew<CR>
 vnoremap <Leader>- <Esc>:new<CR>
 vnoremap <Leader>\ <Esc>:vnew<CR>
 " Similar to 'split-window -f' in tmux, split the whole page.
-" -1 is to accouunt for the command line.
+" -1 is to account for the command line.
 nnoremap <silent><Leader>_ :new<CR><C-w>J:exec 'resize ' . (&lines/2-1)<CR>
 " Need to escape '|'.
 nnoremap <silent><Leader>\| :vnew<CR><C-w>L:exec 'vertical resize ' . (&columns/2)<CR>
