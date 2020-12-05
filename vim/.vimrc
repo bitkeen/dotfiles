@@ -742,6 +742,9 @@ noremap zev :edit ~/.vimrc<CR>
 nnoremap <silent> <LocalLeader>f :call FormatFile(&filetype, "%")<CR>
 vnoremap <silent> <LocalLeader>f :call FormatFile(&filetype, "'<,'>")<CR>
 
+nnoremap <LocalLeader>uu :% !uniq<CR>
+vnoremap <LocalLeader>uu :'<,'> !uniq<CR>
+
 " }}}
 
 " Plugin mappings {{{
