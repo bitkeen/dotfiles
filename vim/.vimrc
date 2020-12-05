@@ -551,6 +551,10 @@ nnoremap <silent> <Leader>gJ :0tabmove<CR>
 nnoremap <silent> <Leader>gK :$tabmove<CR>
 nnoremap <silent> <Leader>gL :+tabmove<CR>
 
+" Delete matching lines.
+nnoremap <Leader>gd :g//d<Left><Left>
+vnoremap <Leader>gd :g//d<Left><Left>
+
 " The first part clears the last used search. It will not set the pattern to
 " an empty string, because that would match everywhere. The pattern is really
 " cleared, like when starting Vim.
