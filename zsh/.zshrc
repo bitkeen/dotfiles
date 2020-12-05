@@ -91,6 +91,10 @@ zle -N zle-keymap-select
 # Update cursor for each new prompt.
 precmd() { zle-keymap-select } 
 
+# Enable keyboard navigation of completions in menu
+# (not just tab/shift-tab but cursor keys as well):
+zstyle ':completion:*' menu select
+
 # Plugins
 zsh_plugins="$HOME/.config/zsh/plugins"
 # Increment and decrement numbers easily with Ctrl+a and Ctrl+x.
