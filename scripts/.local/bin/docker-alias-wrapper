@@ -49,5 +49,5 @@ case "$key" in
     *)
         cmd=$1;;
 esac
-shift
-docker $cmd "$@"
+[ -n "$cmd" ] && shift
+'docker' $cmd "$@"
