@@ -139,7 +139,7 @@ gfm() {
 }
 
 copyline() {
-    # Copy current command.
+    # Copy current command, bash-specific.
     # From https://stackoverflow.com/a/23710535.
     # Should be bound to a shortcut in bash, depends on `copy`
     # wrapper script.
