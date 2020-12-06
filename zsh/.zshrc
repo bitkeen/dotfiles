@@ -88,6 +88,15 @@ zle-keymap-select () {
 }
 zle -N zle-keymap-select
 
+# Copy current command to system clipboard.
+vi-copy-line() {
+    zle vi-yank-whole-line
+    printf %s "$CUTBUFFER" | copy
+}
+zle -N vi-copy-line
+bindkey -M vicmd 'Y' vi-copy-line
+bindkey -M viins '^]' vi-copy-line
+
 # Update cursor for each new prompt.
 precmd() { zle-keymap-select } 
 
