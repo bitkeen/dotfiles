@@ -95,6 +95,7 @@ vi-copy-line() {
 }
 zle -N vi-copy-line
 bindkey -M vicmd 'Y' vi-copy-line
+bindkey -M vicmd '^]' vi-copy-line
 bindkey -M viins '^]' vi-copy-line
 
 # Update cursor for each new prompt.
