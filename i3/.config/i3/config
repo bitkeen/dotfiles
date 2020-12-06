@@ -236,6 +236,7 @@ for_window [instance="dragon-drag-and-drop"] sticky enable
 
 # Startup applications {{{
 
+exec anki
 exec keepassxc
 exec firefox
 exec thunderbird
