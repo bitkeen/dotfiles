@@ -45,6 +45,16 @@ bindkey -s '^G' ' fzg\n'
 bindkey -a '^F' clear-screen
 bindkey -a '^[[3~' delete-char
 
+# Enable surround.vim functionality.
+autoload -Uz surround
+zle -N delete-surround surround
+zle -N add-surround surround
+zle -N change-surround surround
+bindkey -M vicmd cs change-surround
+bindkey -M vicmd ds delete-surround
+bindkey -M vicmd ys add-surround
+bindkey -M visual S add-surround
+
 # Escape globs when pasting urls.
 autoload -Uz bracketed-paste-magic
 zle -N bracketed-paste bracketed-paste-magic
