@@ -8,16 +8,16 @@ set $titles_font DejaVu Sans 12
 # Workspace names.
 # The first number will not be displayed. This is to make the last
 # workspace display 0, while not being sorted to the first position
-set $workspace1 "1: 1 "
-set $workspace2 "2: 2 "
-set $workspace3 "3: 3 "
-set $workspace4 "4: 4 "
-set $workspace5 "5: 5 "
-set $workspace6 "6: 6 "
-set $workspace7 "7: 7 "
-set $workspace8 "8: 8 "
-set $workspace9 "9: 9 "
-set $workspace10 "10: 0 "
+set $workspace1 "1: 1B "
+set $workspace2 "2: 2E "
+set $workspace3 "3: 3X "
+set $workspace4 "4: 4R "
+set $workspace5 "5: 5A "
+set $workspace6 "6: 6W "
+set $workspace7 "7: 7W "
+set $workspace8 "8: 8M "
+set $workspace9 "9: 9T "
+set $workspace10 "10: 0P "
 
 # Define colors.
 set $red    #900000
