@@ -1,6 +1,3 @@
-#!/bin/sh
-ranger_config_file="$HOME/.config/ranger/rc.conf"
-
 export EDITOR=/usr/bin/vim
 export TERMINAL=/usr/bin/urxvt
 export FZF_DEFAULT_OPTS=" \
@@ -25,7 +22,7 @@ export PATH="$PATH:$HOME/.local/bin.local"
 export PATH="$PATH:$HOME/.vim/pack/bundle/opt/vim-superman/bin"
 export PATH="$PATH:$(ruby -e 'puts Gem.user_dir')/bin"
 # Avoid loading default config file for ranger if a custom one exists.
-[ -f "$ranger_config_file" ] && export RANGER_LOAD_DEFAULT_RC=FALSE
+[ -f "$HOME/.config/ranger/rc.conf" ] && export RANGER_LOAD_DEFAULT_RC=FALSE
 export RIPGREP_CONFIG_PATH="$HOME/.config/rg/rgconfig"
 # Disable the default virtualenv prompt change.
 export VIRTUAL_ENV_DISABLE_PROMPT=1
@@ -33,3 +30,8 @@ export VIRTUAL_ENV_DISABLE_PROMPT=1
 # mitigate possible burn-in effects
 export XSECURELOCK_SHOW_DATETIME=1
 export XSECURELOCK_BURNIN_MITIGATION=20
+
+
+if [ -z "$DISPLAY" ] && [ "$(tty)" = /dev/tty1 ]; then
+	startx
+fi
