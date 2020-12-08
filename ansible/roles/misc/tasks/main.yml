@@ -94,12 +94,7 @@
     src: gtk-keys.css
     dest: /usr/share/themes/Custom/gtk-3.0/
 
-- name: configure gtk
-  become: yes
-  become_user: '{{ user_name }}'
-  command:
-    cmd: '{{ item }}'
-  loop:
-    - gsettings set org.gtk.Settings.FileChooser show-hidden true
-    - gsettings set org.gtk.Settings.FileChooser sort-directories-first true
-    - gsettings set org.gnome.desktop.interface gtk-key-theme "Custom"
+- name: set zsh as default shell for non-root user
+  user:
+    name: '{{ user_name }}'
+    shell: /bin/zsh
