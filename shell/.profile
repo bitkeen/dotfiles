@@ -20,7 +20,7 @@ export MTP_NO_PROBE="1"
 export PATH="$PATH:$HOME/.local/bin"
 export PATH="$PATH:$HOME/.local/bin.local"
 export PATH="$PATH:$HOME/.vim/pack/bundle/opt/vim-superman/bin"
-export PATH="$PATH:$(ruby -e 'puts Gem.user_dir')/bin"
+which ruby > /dev/null 2>&1 && export PATH="$PATH:$(ruby -e 'puts Gem.user_dir')/bin"
 # Avoid loading default config file for ranger if a custom one exists.
 [ -f "$HOME/.config/ranger/rc.conf" ] && export RANGER_LOAD_DEFAULT_RC=FALSE
 export RIPGREP_CONFIG_PATH="$HOME/.config/rg/rgconfig"
