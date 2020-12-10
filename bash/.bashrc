@@ -58,32 +58,30 @@ get_color() {
 bold="\[$(tput bold)\]"
 reset="\[$(tput sgr0)\]"
 
-# Working directory.
-ps1_left="\w"
-
-ps1_right=""
-ps1_right+="$(get_color 70)\$(ps1_vim)"
-ps1_right+="$(get_color 96)\$(ps1_ranger)"
-ps1_right+="$(get_color 66)\$(ps1_venv)"
-ps1_right+="$(get_color 75)\$(ps1_git)"
-
-# Modify the prompt when using SSH.
-if [ -n "$SSH_CLIENT" ]; then
-    ps1_u_at_h="\u@\h " # user@host
-    ps1_left="${ps1_u_at_h}${ps1_left}"
-    ps1_right+=" $(get_color 239)(ssh)"
+ps1=""
+ps1+="\w"                             # Current directory.
+ps1+="$(get_color 70)\$(ps1_vim)"     # Vim.
+ps1+="$(get_color 96)\$(ps1_ranger)"  # Ranger.
+ps1+="$(get_color 66)\$(ps1_venv)"    # Venv.
+ps1+="$(get_color 75)\$(ps1_git)"     # Git status.
+if [ -n "$SSH_CLIENT" ]; then         # SSH.
+    ps1="\u@\h ${ps1}"  # user@host
+    ps1+=" $(get_color 160)(ssh)"
 fi
 
-# Show the number of background jobs in the number is greater than 0.
+# Show the number of background jobs if the number is greater than 0.
 ps1_jobs='$([ \j -gt 0 ] && echo " [\j]")'
 # Use the same color as the `\w` part.
-ps1_right+="${reset}${bold}${ps1_jobs}"
+ps1+="${reset}${bold}${ps1_jobs}"
+
+# Add status of the previous command.
+ps1="\$(ps1_status) ${ps1}"
 
 # Add an arrow at the end.
 # Surrounding spaces are actually nbsps, used for searching the previous
 # command in tmux (see .tmux.conf).
-ps1_right+=" $(get_color 208)> "
+ps1+=" $(get_color 208)> "
 
-export PS1="${reset}${bold}\$(ps1_status) ${ps1_left}${ps1_right}${reset}"
+export PS1="${reset}${bold}${ps1}${reset}"
 
 # }}}
