@@ -80,10 +80,10 @@ ps1_jobs='$([ \j -gt 0 ] && echo " [\j]")'
 ps1_right+="${reset}${bold}${ps1_jobs}"
 
 # Add an arrow at the end.
-ps1_right+=" $(get_color 208)>"
+# Surrounding spaces are actually nbsps, used for searching the previous
+# command in tmux (see .tmux.conf).
+ps1_right+=" $(get_color 208)> "
 
-# Last space is actually an nbsp. It is used for searching the
-# previous command in tmux (see .tmux.conf).
-export PS1="${reset}${bold}\$(ps1_status) ${ps1_left}${ps1_right}${reset} "
+export PS1="${reset}${bold}\$(ps1_status) ${ps1_left}${ps1_right}${reset}"
 
 # }}}
