@@ -72,18 +72,31 @@ bindkey -M vicmd v edit-command-line
 # arithmetic expansion in prompts.
 setopt prompt_subst
 
-PROMPT="%(0?.+.-)"               # Status of last command.
-PROMPT+=" %~"                    # Current directory.
-PROMPT+="%F{70}\$(ps1_vim)%f"    # Vim.
-PROMPT+="%F{96}\$(ps1_ranger)%f" # Ranger.
-PROMPT+="%F{66}\$(ps1_venv)%f"   # Venv.
-PROMPT+="%F{75}\$(ps1_git)%f"    # Git status
-PROMPT+="%(1j. [%j].)"           # Background job count.
+PROMPT=""
+PROMPT+="%~"                      # Current directory.
+PROMPT+="%F{70}\$(ps1_vim)%f"     # Vim.
+PROMPT+="%F{96}\$(ps1_ranger)%f"  # Ranger.
+PROMPT+="%F{66}\$(ps1_venv)%f"    # Venv.
+PROMPT+="%F{75}\$(ps1_git)%f"     # Git status.
+
+if [ -n "$SSH_CLIENT" ]; then
+    PROMPT="%n@%M ${PROMPT}"  # user@host
+    PROMPT+=" %F{160}(ssh)%f"
+fi
+
+# Show the number of background jobs.
+PROMPT+="%(1j. [%j].)"
+
+# Add status of the previous command.
+PROMPT="%(0?.+.-) ${PROMPT}"
+
+# Add an arrow at the end.
 # Surrounding spaces are actually nbsps, used for searching the previous
 # command in tmux (see .tmux.conf).
-PROMPT+=" %F{green}>%f "         # Arrow.
+PROMPT+=" %F{green}>%f "
+
 # Make everything bold.
-PROMPT="%B$PROMPT%b"
+PROMPT="%B${PROMPT}%b"
 
 # Change cursor shape for different vi modes.
 zle-keymap-select () {
