@@ -40,11 +40,6 @@ alias l='lab'
 # Kill processes by name.
 alias ka='killall'
 
-alias docker='docker-alias-wrapper'
-alias d='docker'
-alias docker-compose='docker-compose-alias-wrapper'
-alias c='docker-compose'
-
 # Pacman.
 alias p='pacman'
 
@@ -99,10 +94,15 @@ alias yda='youtube-dl --config-location ~/.config/youtube-dl-audio.conf'
 # mode if the result is wider than the terminal width.
 alias mycli='mycli --auto-vertical-output'
 
-alias systemctl='systemctl-alias-wrapper'
-alias journalctl='journalctl-alias-wrapper'
+alias systemctl='alias-wrapper-systemctl'
+alias journalctl='alias-wrapper-journalctl'
 alias sctl='systemctl'
 alias jctl='journalctl'
+
+alias docker='alias-wrapper-docker'
+alias docker-compose='alias-wrapper-docker-compose'
+alias d='docker'
+alias c='docker-compose'
 
 # Tor start/stop.
 alias toron='sudo systemctl start tor.service'

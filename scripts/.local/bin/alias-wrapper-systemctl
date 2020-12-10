@@ -19,4 +19,4 @@ case "$key" in
 esac
 [ -n "$key" ] && shift
 
-systemctl $cmd "$@"
+'systemctl' $cmd "$@"

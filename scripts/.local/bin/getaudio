@@ -2,14 +2,14 @@
 # Extract audio from a video file using ffmpeg.
 
 if [ "$#" -lt 1 ]; then
-    echo 'You need to specify a video.'
-    return 1
+    echo 'Video not specified'
+    exit 1
 elif [ "$#" -gt 1 ]; then
-    echo 'Too many arguments.'
-    return 1
+    echo 'Too many arguments'
+    exit 1
 elif [ ! -f "$1" ]; then
-    echo 'File does not exist.'
-    return 1
+    echo 'File does not exist'
+    exit 1
 fi
 
 video_path="$1"
