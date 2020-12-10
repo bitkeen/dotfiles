@@ -42,7 +42,8 @@ m () {
     if /usr/bin/which "$1" >/dev/null 2>&1; then
         vman "$(/usr/bin/which "$1")"
     elif command -v "$1" | grep '^alias' > /dev/null; then
-        alias_val="$(command -v "$1" | grep -Po "(?<==').*(?=')")"
+        # Remove single quotes for zsh compatilibity and regexp simplicity.
+        alias_val="$(command -v "$1" | tr -d "'" | grep -Po "(?<==).*")"
         vman "$alias_val"
     else
         vman "$1"
