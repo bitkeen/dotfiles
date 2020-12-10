@@ -8,6 +8,8 @@ source ~/.config/shell_startup
 
 autoload -Uz compinit
 compinit
+# Show hidden files in completions.
+_comp_options+=(globdots)
 
 # Disable XON/XOFF flow control (Ctrl+S, Ctrl+Q).
 unsetopt FLOW_CONTROL
