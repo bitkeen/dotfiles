@@ -14,8 +14,10 @@ case "$key" in
     killall)
         cmd="kill $('docker' ps -q)";;
     krm)
-        'docker' ps -q | xargs docker kill
-        'docker' ps -aq | xargs docker rm
+        # The xargs arguments make sure that kill/rm won't
+        # be executed if there is no input.
+        'docker' ps -q | xargs -n 1 -I {} docker kill {}
+        'docker' ps -aq | xargs -n 1 -I {} docker rm {}
         exit;;
     lg)
         cmd="logs";;
