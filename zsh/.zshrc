@@ -129,6 +129,8 @@ precmd() { zle-keymap-select }
 # Enable keyboard navigation of completions in menu
 # (not just tab/shift-tab but cursor keys as well):
 zstyle ':completion:*' menu select
+# Case-insensitive (uppercase from lowercase) completion.
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 
 # Plugins
 zsh_plugins="$HOME/.config/zsh/plugins"
