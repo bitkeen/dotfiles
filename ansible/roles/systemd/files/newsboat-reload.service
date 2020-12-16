@@ -3,4 +3,6 @@ Description=Reload newsboat feeds
 
 [Service]
 User=user
-ExecStart=/usr/bin/newsboat -x reload
+# Reload will fail if an instance of newsboat is already running.
+# Ignore exit code with `|| true`.
+ExecStart=/bin/sh -c '/usr/bin/newsboat -x reload || true'
