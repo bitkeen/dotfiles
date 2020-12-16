@@ -37,11 +37,19 @@ export KEYTIMEOUT=1
 # Insert mode.
 bindkey '^[[3~' delete-char
 bindkey '^?' backward-delete-char
-bindkey '^A' beginning-of-line
-bindkey '^E' end-of-line
 bindkey '^F' clear-screen
 bindkey '^]' vi-yank-whole-line
 bindkey -s '^G' ' fzg\n'
+
+# Set up some emacs-like bindings in insert mode.
+# ^[ is Alt.
+bindkey '^a' beginning-of-line
+bindkey '^e' end-of-line
+bindkey '^[d' delete-word
+bindkey '^d' delete-char
+bindkey '^[b' backward-word
+bindkey '^b' backward-char
+bindkey '^[f' forward-word
 
 # Normal mode.
 bindkey -a '^F' clear-screen
