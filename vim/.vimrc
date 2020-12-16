@@ -350,7 +350,6 @@ if has('packages')
   packadd! vim-rhubarb " GitHub support for fugitive.
   packadd! vim-rsi " Readline style insertion
   packadd! vim-scriptease
-  packadd! vim-searchindex
   packadd! vim-signature " A plugin to toggle, display and navigate marks
   packadd! vim-signjump " Jump to signs just like other object motions
   packadd! vim-slime

@@ -58,9 +58,6 @@
 [submodule "vim-visual-star-search"]
 	path = vim/.vim/pack/bundle/opt/vim-visual-star-search
 	url = https://github.com/nelstrom/vim-visual-star-search
-[submodule "vim-searchindex"]
-	path = vim/.vim/pack/bundle/opt/vim-searchindex
-	url = https://github.com/google/vim-searchindex
 [submodule "vim-textobj-user"]
 	path = vim/.vim/pack/bundle/opt/vim-textobj-user
 	url = https://github.com/kana/vim-textobj-user
