@@ -80,7 +80,7 @@ PROMPT+="%F{66}\$(ps1_venv)%f"    # Venv.
 PROMPT+="%F{75}\$(ps1_git)%f"     # Git status.
 
 if [ -n "$SSH_CLIENT" ]; then
-    PROMPT="%n@%M ${PROMPT}"  # user@host
+    PROMPT="%F{250}%n@%M%f ${PROMPT}"  # user@host
     PROMPT+=" %F{160}(ssh)%f"
 fi
 
