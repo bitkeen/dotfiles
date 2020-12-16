@@ -295,25 +295,25 @@ if has('packages')
   packadd! ale " Asynchronous Lint Engine
   packadd! base16-vim " Themes
   packadd! CamelCaseMotion " CamelCase and snake_case movement mappings
-  packadd! committia.vim
-  packadd! conflict-marker.vim
-  packadd! fugitive-gitlab.vim
+  packadd! committia.vim " Improve `git commit` message editor
+  packadd! conflict-marker.vim " Highlight, jump and resolve conflict markers quickly in Vim
+  packadd! fugitive-gitlab.vim " GitLab support for fugitive
   packadd! fzf.vim
   packadd! git-blame.vim " See blame information in the bottom line
   packadd! gundo.vim " Graph undo tree
   packadd! gv.vim " Git commit browser. Requires fugitive
   packadd! indentLine " Display vertical lines at each indentation level
-  packadd! lightline-ale
+  packadd! lightline-ale " ALE indicator for lightline
   packadd! lightline.vim " A light and configurable statusline/tabline
   packadd! linediff.vim " Diff two blocks of text
   packadd! pydoc.vim
   packadd! python-syntax " Better python syntax highlighting
   packadd! QFEnter " Open a Quickfix item in a window you choose
-  packadd! quick-scope
+  packadd! quick-scope " Highlight characters to jump with f, F, t, and T
   packadd! quickpeek.vim " A preview popup on quickfix entries
-  packadd! requirements.txt.vim
+  packadd! requirements.txt.vim " Python requirements syntax
   packadd! splitjoin.vim " Switch between single-line and multiline forms of code
-  packadd! tabular
+  packadd! tabular " Text aligning
   packadd! tagbar " A class outline viewer using ctags
   packadd! targets.vim " Additional text objects
   packadd! textobj-word-column.vim
@@ -322,7 +322,7 @@ if has('packages')
   packadd! undoquit.vim
   packadd! vim-abolish
   packadd! vim-auto-save
-  packadd! vim-characterize
+  packadd! vim-characterize " Improve `ga` mapping
   packadd! vim-closer
   packadd! vim-commentary " Easy commenting
   packadd! vim-css-color
@@ -336,20 +336,20 @@ if has('packages')
   packadd! vim-gnupg
   packadd! vim-grepper " Use search tools in a vim split
   packadd! vim-gtfo
-  packadd! vim-highlightedyank
+  packadd! vim-highlightedyank " Highlight yanked text
   packadd! vim-indent-object
   packadd! vim-instant-markdown " Instant markdown previews
   packadd! Vim-Jinja2-Syntax
   packadd! vim-ledger
   packadd! vim-merginal " Interface for dealing with Git branches
   packadd! vim-obsession
-  packadd! vim-pug
+  packadd! vim-pug " Syntax highlighting for Pug templates
   packadd! vim-python-pep8-indent
   packadd! vim-qfreplace " Change lines from quickfix
   packadd! vim-qlist
   packadd! vim-ragtag
   packadd! vim-repeat
-  packadd! vim-rhubarb
+  packadd! vim-rhubarb " GitHub support for fugitive.
   packadd! vim-rsi " Readline style insertion
   packadd! vim-scriptease
   packadd! vim-searchindex
