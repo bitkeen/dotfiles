@@ -307,11 +307,9 @@ if has('packages')
   packadd! lightline.vim " A light and configurable statusline/tabline
   packadd! linediff.vim " Diff two blocks of text
   packadd! pydoc.vim
-  packadd! python-syntax " Better python syntax highlighting
   packadd! QFEnter " Open a Quickfix item in a window you choose
   packadd! quick-scope " Highlight characters to jump with f, F, t, and T
   packadd! quickpeek.vim " A preview popup on quickfix entries
-  packadd! requirements.txt.vim " Python requirements syntax
   packadd! splitjoin.vim " Switch between single-line and multiline forms of code
   packadd! tabular " Text aligning
   packadd! tagbar " A class outline viewer using ctags
@@ -339,11 +337,9 @@ if has('packages')
   packadd! vim-highlightedyank " Highlight yanked text
   packadd! vim-indent-object
   packadd! vim-instant-markdown " Instant markdown previews
-  packadd! Vim-Jinja2-Syntax
   packadd! vim-ledger
   packadd! vim-merginal " Interface for dealing with Git branches
   packadd! vim-obsession
-  packadd! vim-pug " Syntax highlighting for Pug templates
   packadd! vim-python-pep8-indent
   packadd! vim-qfreplace " Change lines from quickfix
   packadd! vim-qlist
@@ -360,8 +356,6 @@ if has('packages')
   packadd! vim-speeddating
   packadd! vim-surround
   packadd! vim-swap
-  packadd! vim-sxhkdrc
-  packadd! vim-syntax-extra
   packadd! vim-textobj-comment " Text objects for comments
   packadd! vim-textobj-conflict
   packadd! vim-textobj-entire
@@ -376,6 +370,14 @@ if has('packages')
   packadd! vimwiki " Personal wiki for Vim
   packadd! vZoom.vim " Quickly maximize & unmaximize the current window
   packadd! winresizer " Easy window resizing, similar to resize mode in i3wm
+
+  " Syntax
+  packadd! python-syntax " Better python syntax highlighting
+  packadd! requirements.txt.vim " Python requirements syntax
+  packadd! Vim-Jinja2-Syntax
+  packadd! vim-pug " Syntax highlighting for Pug templates
+  packadd! vim-sxhkdrc
+  packadd! vim-syntax-extra " For enhanced C syntax highlighting
 else
   " Enable Pathogen package manager.
   execute pathogen#infect('pack/bundle/opt/{}')
