@@ -11,6 +11,7 @@ packages:
   - autopep8 # A tool that automatically formats Python code to conform to the PEP 8 style guide
   - base-devel
   - bat # Cat clone with syntax highlighting and git integration
+  - bind # DNS server. Provides dig, host, nslookup and other tools.
   - blueman # Graphical bluetooth manager
   - bluez # Daemons for the bluetooth protocol stack
   - bluez-utils # Provides the bluetoothctl utility
