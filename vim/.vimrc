@@ -221,6 +221,8 @@ set shortmess+=I
 " Don't show the "ATTENTION" message when an existing swap file
 " is found.
 set shortmess+=A
+" Show search count message when searching, e.g. "[1/5]".
+set shortmess-=S
 
 " Command-line completion mode.
 " Complete the next full m
