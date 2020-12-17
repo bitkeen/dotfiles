@@ -633,9 +633,6 @@ vnoremap <silent> <LocalLeader>qo <Esc>:tabonly<CR>:only<CR>
 " Close current tab.
 nnoremap <silent> <LocalLeader>qt :tabclose<CR>
 vnoremap <silent> <LocalLeader>qt <Esc>:tabclose<CR>
-" Close quickfix windows.
-nnoremap <silent> <LocalLeader>qf :call CloseQuickfixWindows()<CR>
-vnoremap <silent> <LocalLeader>qf <Esc>:call CloseQuickfixWindows()<CR>
 
 " Repeat the previous @, can be used with a count.
 nnoremap <Leader><Leader> @@
