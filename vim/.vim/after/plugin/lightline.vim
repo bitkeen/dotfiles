@@ -28,8 +28,8 @@ if &runtimepath =~# 'bundle/opt/lightline.vim'
   \   'lineinfo': '%3l/%L',
   \   'spell': 'spell: %{&spell?&spelllang:""}',
   \   'session': '%{LightlineObsession()}',
-  \   'path_active': '%F%( %h%)%( %{LightlineIsNew()}%)',
-  \   'path_inactive': '%F%( %h%)%( %{LightlineIsNew()}%)%( %{LightlineIsModified()}%)'
+  \   'path_active': '%{LightlinePath(55)}%( %h%)%( %{LightlineIsNew()}%)',
+  \   'path_inactive': '%{LightlinePath(25)}%( %h%)%( %{LightlineIsNew()}%)%( %{LightlineIsModified()}%)'
   \ },
   \ 'tab_component_function': {
   \   'filename': 'lightline#tab#filename',
@@ -84,6 +84,21 @@ if &runtimepath =~# 'bundle/opt/lightline.vim'
   function! LightlineTabWinNr(tabnr) abort
     let l:tabwincount = tabpagewinnr(a:tabnr, '$')
     return l:tabwincount > 1 ? '[' . l:tabwincount . ']' : ''
+  endfunction
+
+  function! LightlinePath(threshold)
+    " Return path (full/relative/filename) based on whether difference
+    " between winwidth and path length is longer than threshold.
+
+    let l:path = expand('%:~') " Full path.
+
+    if (winwidth(0) - strlen(l:path)) < a:threshold
+      let l:path = expand('%:f')  " Relative path.
+      if (winwidth(0) - strlen(l:path)) < a:threshold
+        let l:path = expand('%:t')  " Filename.
+      endif
+    endif
+    return strlen(l:path) ? l:path : '[No Name]'
   endfunction
 
   function! LightlineIsNew()
