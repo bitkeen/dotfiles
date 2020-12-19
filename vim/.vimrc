@@ -255,7 +255,12 @@ set cursorlineopt=line
 
 function! CloseQuickfixWindows()
   let l:current_tab = tabpagenr()
-  tabdo windo lclose | cclose
+  try
+    tabdo windo lclose | cclose
+  catch /^Vim.*:E444:/
+    " Catch 'Cannot close last window'
+    quit
+  endtry
   " Return to the most recent tab.
   execute 'tabnext' l:current_tab
 endfunction
