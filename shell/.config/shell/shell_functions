@@ -96,8 +96,8 @@ ww() {
 
 fzg() {
     # Open a directory from special files containing a list of shortcuts.
-    cd "$(fzf-shortcuts ~/.config/shortcuts ~/.config/shortcuts.local)" ||
-        return 1
+    dir="$(fzf-shortcuts ~/.config/shortcuts ~/.config/shortcuts.local)"
+    [ -n "$dir" ] && cd "$dir" || return 1
 }
 
 vim_session_venv() {
