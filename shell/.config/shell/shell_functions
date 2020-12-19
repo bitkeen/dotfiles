@@ -65,6 +65,30 @@ u() {
     cd "$dir"
 }
 
+uf() {
+    # Go up the directory structure.
+    # Select a parent dir through fzf.
+    [ "$PWD" = '/' ] && echo "Can't go up from /" && return 1
+
+    dirs=''
+    append_dir() {
+        [ -n "${dirs}" ] &&
+            dirs="${dirs}\n${1}" ||
+            dirs="${1}"
+    }
+
+    tmp_path="$PWD"
+    while [ -n "${tmp_path}" ]; do
+        tmp_path="$(echo "${tmp_path}" | sed 's;/[^/]*$;;')"
+        [ -z "${tmp_path}" ] && break
+        append_dir "${tmp_path}"
+    done
+    append_dir '/'
+
+    dir="$(echo "$dirs" | fzf --height=40%)"
+    [ -n "$dir" ] && cd "$dir" || return
+}
+
 ww() {
     # Open index file of the $1 wiki (the first one if $1 is omitted).
     vim -c "execute \"normal $1\<Plug>VimwikiIndex\""
