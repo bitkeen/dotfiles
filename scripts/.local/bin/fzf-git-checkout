@@ -1,13 +1,18 @@
 #!/bin/sh
 # Checkout to a Git branch selected in fzf.
 
-branch="$(
-    'git' branch --all |
-        sed 's/\*//'| # Remove current branch symbol (*).
-        sed 's/remotes\/[^\/]*\///' | # Remove `remotes/<remote name>/`.
-        sed 's/^\s*//'| # Strip leading whitespace.
-        fzf --height=40% --reverse
-)"
+if ([ -n "$1" ] && 'git' branch --list | grep "^$1\$" > /dev/null) ||
+        ! command -v fzf > /dev/null; then
+    # Branch "$1" exists or fzf not found.
+    branch="$1"
+else
+    branch="$(
+        'git' branch --list |
+            sed '/^\*/d'| # Exclude current branch (starts with '*').
+            sed 's/^\s*//'| # Strip leading whitespace.
+            fzf --height=40% --reverse --query="$1"
+    )"
+fi
 
 if [ -n "$branch" ]; then
     'git' checkout "$branch"
