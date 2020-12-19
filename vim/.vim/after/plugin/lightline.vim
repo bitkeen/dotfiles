@@ -32,7 +32,7 @@ if &runtimepath =~# 'bundle/opt/lightline.vim'
   \   'path_inactive': '%{LightlinePath(25)}%( %h%)%( %{LightlineIsNew()}%)%( %{LightlineIsModified()}%)'
   \ },
   \ 'tab_component_function': {
-  \   'filename': 'lightline#tab#filename',
+  \   'filename': 'LightlineTabFilename',
   \   'modified': 'lightline#tab#modified',
   \   'readonly': 'lightline#tab#readonly',
   \   'tabnum': 'lightline#tab#tabnum',
@@ -86,9 +86,19 @@ if &runtimepath =~# 'bundle/opt/lightline.vim'
     return l:tabwincount > 1 ? '[' . l:tabwincount . ']' : ''
   endfunction
 
+  function! LightlineTabFilename(tabnr)
+    if gettabwinvar(a:tabnr, tabpagewinnr(a:tabnr), '&buftype') ==# 'quickfix'
+      return '[Quickfix]'
+    endif
+    return lightline#tab#filename(a:tabnr)
+  endfunction
+
   function! LightlinePath(threshold)
     " Return path (full/relative/filename) based on whether difference
     " between winwidth and path length is longer than threshold.
+    if &buftype ==# 'quickfix'
+      return '[Quickfix]'
+    endif
 
     let l:path = expand('%:~') " Full path.
 
@@ -102,6 +112,10 @@ if &runtimepath =~# 'bundle/opt/lightline.vim'
   endfunction
 
   function! LightlineIsNew()
+    if &ft ==# 'netrw' || &ft ==# 'tagbar'
+      return ''
+    endif
+
     let l:abspath = expand('%:F')
     return l:abspath ==# '' || filereadable(l:abspath) ? '' : '[New]'
   endfunction
