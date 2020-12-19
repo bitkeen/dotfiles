@@ -35,25 +35,27 @@ bindkey -v
 export KEYTIMEOUT=1
 
 # Insert mode.
-bindkey '^[[3~' delete-char
-bindkey '^?' backward-delete-char
-bindkey '^F' clear-screen
-bindkey '^]' vi-yank-whole-line
-bindkey -s '^G' ' fzg\n'
+bindkey -M viins '^[[3~' delete-char
+bindkey -M viins '^?' backward-delete-char
+bindkey -M viins '^F' clear-screen
+bindkey -M viins '^]' vi-yank-whole-line
+
+bindkey -M viins '^X^U' kill-whole-line
+bindkey -M viins -s '^G' '^X^U fzg\n'
 
 # Set up some emacs-like bindings in insert mode.
 # ^[ is Alt.
-bindkey '^a' beginning-of-line
-bindkey '^e' end-of-line
-bindkey '^[d' delete-word
-bindkey '^d' delete-char
-bindkey '^[b' backward-word
-bindkey '^b' backward-char
-bindkey '^[f' forward-word
+bindkey -M viins '^a' beginning-of-line
+bindkey -M viins '^e' end-of-line
+bindkey -M viins '^[d' delete-word
+bindkey -M viins '^d' delete-char
+bindkey -M viins '^[b' backward-word
+bindkey -M viins '^b' backward-char
+bindkey -M viins '^[f' forward-word
 
 # Normal mode.
-bindkey -a '^F' clear-screen
-bindkey -a '^[[3~' delete-char
+bindkey -M vicmd '^F' clear-screen
+bindkey -M vicmd '^[[3~' delete-char
 
 # Enable surround.vim functionality.
 autoload -Uz surround
