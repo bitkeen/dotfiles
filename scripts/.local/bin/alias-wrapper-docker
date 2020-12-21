@@ -49,7 +49,7 @@ case "$key" in
     rmall)
         cmd="rm $('docker' ps -aq)";;
     *)
-        cmd=$1;;
+        cmd="$key";;
 esac
 [ -n "$cmd" ] && shift
 'docker' $cmd "$@"

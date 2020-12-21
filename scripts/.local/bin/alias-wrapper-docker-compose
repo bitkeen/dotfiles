@@ -43,7 +43,7 @@ case "$key" in
             'docker-compose' logs -f "$2"
         exit;;
     *)
-        cmd=$1;;
+        cmd="$key";;
 esac
 [ -n "$cmd" ] && shift
 'docker-compose' $cmd "$@"
