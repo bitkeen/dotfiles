@@ -34,9 +34,6 @@ alias fn='find -L . -name'
 # Case-insensitive.
 alias fin='find -L . -iname'
 
-alias g='git'
-alias l='lab'
-
 # Kill processes by name.
 alias ka='killall'
 
@@ -93,6 +90,10 @@ alias yda='youtube-dl --config-location ~/.config/youtube-dl-audio.conf'
 # --auto-vertical-output - automatically switch to vertical output
 # mode if the result is wider than the terminal width.
 alias mycli='mycli --auto-vertical-output'
+
+alias g='git'
+alias lab='alias-wrapper-lab'
+alias l='lab'
 
 alias systemctl='alias-wrapper-systemctl'
 alias journalctl='alias-wrapper-journalctl'

@@ -1,0 +1,19 @@
+#!/bin/sh
+# Aliases for the lab utility (https://github.com/zaquestion/lab).
+key="$1"
+case "$key" in
+    mrc)
+        # -d - remove source branch from remote after merge
+        cmd="mr create -d";;
+    mrca)
+        # -a - set assignee
+        cmd="mr create -d -a";;
+    mrco)
+        cmd="mr checkout";;
+    mrls)
+        cmd="mr list";;
+    *)
+        cmd="$key";;
+esac
+[ -n "$cmd" ] && shift
+'lab' $cmd "$@"
