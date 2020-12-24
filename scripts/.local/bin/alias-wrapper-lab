@@ -3,11 +3,9 @@
 key="$1"
 case "$key" in
     mrc)
-        # -d - remove source branch from remote after merge
-        cmd="mr create -d";;
+        cmd="mr create --remove-source-branch";;
     mrca)
-        # -a - set assignee
-        cmd="mr create -d -a";;
+        cmd="mr create --remove-source-branch --assignee";;
     mrco)
         cmd="mr checkout";;
     mrls)
