@@ -41,7 +41,7 @@ if _source_if_exists "$git_completion_file"; then
     # Since there could be multiple aliases that contain "git" in them,
     # Need to search strictly for aliases of 'git'.
     # \047 is octal representation of a single quote.
-    git_alias=$(alias | awk '/\047git\047/ {print $2}' | cut -f 1 -d '=')
+    git_alias=$(alias | awk '/\047git_alias\047/ {print $2}' | cut -f 1 -d '=')
     if [ -n "$git_alias" ]; then
         complete -o default -o nospace -F _git "$git_alias"
     fi

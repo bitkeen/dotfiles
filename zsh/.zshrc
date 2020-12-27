@@ -10,6 +10,7 @@ autoload -Uz compinit
 compinit
 # Show hidden files in completions.
 _comp_options+=(globdots)
+compdef git_alias=git
 
 # Disable XON/XOFF flow control (Ctrl+S, Ctrl+Q).
 unsetopt FLOW_CONTROL
@@ -26,6 +27,8 @@ setopt INC_APPEND_HISTORY
 # Do not display duplicates in search, even if the duplicates are not
 # contiguous. History already worked this way with fzf Ctrl-R.
 setopt HIST_FIND_NO_DUPS
+# Don't write command to history if it starts with a space.
+setopt HIST_IGNORE_SPACE
 # Allow comments even in interactive shells.
 setopt INTERACTIVE_COMMENTS
 

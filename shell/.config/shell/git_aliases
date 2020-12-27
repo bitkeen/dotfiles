@@ -27,5 +27,3 @@ git_alias() {
             return;;
     esac
 }
-
-alias git='git_alias'
