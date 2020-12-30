@@ -1,8 +1,21 @@
 #!/bin/sh
 # A wrapper for the maim screenshot utility.
 
-image="$(xdg-user-dir PICTURES)screenshots/screenshot-$(date +%Y%m%dT%H%M%S).png"
+screenshots_dir="$(xdg-user-dir PICTURES)screenshots"
+
+if [ ! -d "$screenshots_dir" ]; then
+    notify-send \
+        --app-name='screenshot' \
+        'Error capturing screenshot' \
+        'Screenshots dir does not exist'
+    exit 1
+fi
+
+filepath="$screenshots_dir/screenshot-$(date +%Y%m%dT%H%M%S).png"
+
 maim "$@" |
-    tee "$image" |
+    tee "$filepath" |
     xclip -selection clipboard -t image/png &&
-    notify-send -i "$(readlink -f "$image")" "Screenshot captured"
+    notify-send \
+        --app-name='screenshot' \
+        -i "$(readlink -f "$image")" 'Screenshot captured'
