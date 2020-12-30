@@ -52,12 +52,12 @@ super+question
 
 # Print screen.
 Print
-    screenshot.sh -u
+    screenshot -u
 # Bindings similar to those on MacOS.
 super+control+4
-    screenshot.sh -u
+    screenshot -u
 super+control+5
-    screenshot.sh -u -s
+    screenshot -u -s
 
 # Volume controls.
 XF86AudioRaiseVolume 
