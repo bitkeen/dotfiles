@@ -18,4 +18,4 @@ maim "$@" |
     xclip -selection clipboard -t image/png &&
     notify-send \
         --app-name='screenshot' \
-        -i "$(readlink -f "$image")" 'Screenshot captured'
+        -i "$(readlink -f "$filepath")" 'Screenshot captured'
