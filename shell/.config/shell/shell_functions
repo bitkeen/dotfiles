@@ -146,9 +146,9 @@ wrap_ranger() {
     # Temporary workaround for tmux renaming problem.
     [ -z "$TMUX" ] || current_window_name="$(tmux display-message -p '#W')"
     # The ranger_cd version switches the directory in bash on exit,
-    # ranger-shell.sh allows to expand shell aliases inside the :shell
+    # ranger-shell allows to expand shell aliases inside the :shell
     # command.
-    SHELL=~/.local/bin/ranger-shell.sh ranger_cd
+    SHELL=~/.local/bin/ranger-shell ranger_cd
     [ -z "$current_window_name" ] || tmux rename-window "$current_window_name"
 }
 

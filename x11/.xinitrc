@@ -43,7 +43,7 @@ nm-applet &
 
 blueman-applet &
 
-idlelock.sh &
+idlelock &
 
 # Bind keys.
 sxhkd &

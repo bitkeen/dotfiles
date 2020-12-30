@@ -1,11 +1,11 @@
 #!/usr/bin/env bash
 # From https://github.com/ranger/ranger/wiki/Shell-aliases.
 
-# EXPL: simplify when ranger-shell.sh -c $SHELL
+# EXPL: simplify when ranger-shell -c $SHELL
 if [[ $# == 2 && $1 == -c && ($2 == $SHELL || $2 == '$SHELL') ]]
 then shift 2; fi
 
-# EXPL: overwrite when SHELL=ranger-shell.sh
+# EXPL: overwrite when SHELL=ranger-shell
 [[ -x /usr/bin/zsh ]] \
 && export SHELL='/usr/bin/env zsh' \
 || export SHELL='/usr/bin/env bash'

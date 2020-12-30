@@ -115,9 +115,9 @@ bindsym $super+i resize shrink height 10 px or 10 ppt
 bindsym $super+o resize grow width 10 px or 10 ppt
 
 # Start a terminal in a vertical split.
-bindsym $super+Return exec --no-startup-id "i3-msg 'split h; exec tmux_terminal.sh'"
+bindsym $super+Return exec --no-startup-id "i3-msg 'split h; exec tmux-terminal'"
 # Start a terminal in a horizontal split.
-bindsym $super+shift+Return exec --no-startup-id "i3-msg 'split v; exec tmux_terminal.sh'"
+bindsym $super+shift+Return exec --no-startup-id "i3-msg 'split v; exec tmux-terminal'"
 
 # Kill focused window.
 bindsym $super+shift+q kill

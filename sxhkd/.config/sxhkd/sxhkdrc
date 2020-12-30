@@ -21,11 +21,11 @@ super+n
 
 # Screen lock.
 super+shift+x
-    screen_lock.sh
+    screen-lock
 
 # Toggle screen brightness level.
 super+b
-    toggle_brightness.sh
+    toggle-brightness
 
 # Open a book.
 super+shift+b
