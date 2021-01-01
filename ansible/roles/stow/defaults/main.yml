@@ -4,6 +4,7 @@ potential_conflicts:
   - '{{ user_home }}/.bashrc'
   - '{{ user_home }}/.bash_logout'
   - '{{ user_home }}/.bash_profile'
+  - '{{ user_home }}/.profile'
   - '{{ user_home }}/.viminfo'
 
 # Directory to move conflicting files into.
