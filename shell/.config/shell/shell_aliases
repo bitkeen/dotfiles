@@ -37,17 +37,15 @@ alias fin='find -L . -iname'
 # Kill processes by name.
 alias ka='killall'
 
-# Pacman.
 alias p='pacman'
 
-# Open ranger.
+alias ranger='wrap_ranger'
 alias f='wrap_ranger'
 
 alias t='tmux'
 alias ta='tmux attach -t'
 alias tk='tmux kill-session -t'
 
-# Open (with) vim.
 alias v='vim'
 
 alias fzm='fzf-man vman'
