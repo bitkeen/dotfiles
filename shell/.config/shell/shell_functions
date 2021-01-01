@@ -22,7 +22,7 @@ ps1_status() {
     [ "$last_status" = '0' ] && echo '+' || echo '-'
 }
 
-m () {
+m() {
     # A wrapper around vman.
     # Order of precedence:
     # 1. If a program is found by $1, run vman for it.
