@@ -19,8 +19,15 @@ alias ll='ls -AlFh'
 # -r - copy directories recursively
 # -i - prompt before overwrite
 alias cp='cp -ir'
+
 # -i - prompt before overwrite
 alias mv='mv -i'
+
+# -p - no error if existing, make parent directories as needed.
+# -v - print a message for each created directory.
+alias mkd='mkdir -pv'
+
+alias tch='touch'
 
 # Highlight matches, ignore case distinctions.
 alias grep='grep --color=auto --ignore-case'
@@ -28,7 +35,6 @@ alias grep='grep --color=auto --ignore-case'
 # -I - ignore binary files
 alias gr='grep -n -I'
 
-# Find.
 # -L - follow symbolic links
 alias fn='find -L . -name'
 # Case-insensitive.
@@ -36,6 +42,13 @@ alias fin='find -L . -iname'
 
 # Kill processes by name.
 alias ka='killall'
+
+# The space at the end allows the next command word following the alias
+# to also be checked for alias expansion.
+alias s='sudo '
+alias sudo='sudo '
+
+alias mk='make'
 
 alias p='pacman'
 
@@ -46,24 +59,10 @@ alias t='tmux'
 alias ta='tmux attach -t'
 alias tk='tmux kill-session -t'
 
-alias v='vim'
-
 alias fzm='fzf-man vman'
+
+alias v='vim'
 alias vs='vim_session_venv ~/.config/venv_mapping'
-
-# The space at the end allows the next command word following the alias
-# to also be checked for alias expansion.
-alias s='sudo '
-alias sudo='sudo '
-
-alias mk='make'
-
-# Create directory.
-# -p - no error if existing, make parent directories as needed.
-# -v - print a message for each created directory.
-alias mkd='mkdir -pv'
-
-alias tch='touch'
 
 alias nb='newsboat'
 
