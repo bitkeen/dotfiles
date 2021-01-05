@@ -43,7 +43,7 @@ if echo "$choice_connection" | grep '^postgresql' > /dev/null; then
 
 elif echo "$choice_connection" | grep '^mysql' > /dev/null; then
     ! [ -x "$(command -v mycli)" ] && echo 'Could not find mycli' && exit 1
-    mycli_prompt="$choice_name \t \u@\h:\d \n > "
+    mycli_prompt="$choice_name \t \u@\h/\d \n > "
     [ -z "$TMUX" ] || tmux rename-window 'mycli'
     mycli --prompt "$mycli_prompt" "$choice_connection"
 
