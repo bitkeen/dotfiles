@@ -1,4 +1,4 @@
-#!/usr/bin/env sh
+#!/bin/sh
 # Tmux dropdown launch script.
 #
 # Arguments:

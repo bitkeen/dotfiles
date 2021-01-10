@@ -1,4 +1,4 @@
-#!/usr/bin/env sh
+#!/bin/sh
 # Open an existing tmux session in a new terminal window.
 # Pass arguments to dmenu.
 

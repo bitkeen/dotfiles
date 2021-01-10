@@ -1,4 +1,4 @@
-#!/usr/bin/env sh
+#!/bin/sh
 # Toggle screen brightness level from 0% to 70% using light.
 
 if [ "$(light)" = '0.00' ]; then

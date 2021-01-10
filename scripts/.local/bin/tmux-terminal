@@ -1,4 +1,4 @@
-#!/usr/bin/env sh
+#!/bin/sh
 # Attach to a tmux session with number as its name if it exists,
 # create a new session if it doesn't.
 
