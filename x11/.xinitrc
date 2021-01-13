@@ -49,7 +49,7 @@ idlelock &
 sxhkd &
 
 # Set key repeat rate.
-xset r rate 250 40 &
+xset r rate 250 50 &
 
 # Start the gnome-keyring-daemon.
 eval $(/usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh)
