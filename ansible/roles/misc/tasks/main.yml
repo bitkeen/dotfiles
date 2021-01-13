@@ -23,6 +23,13 @@
     state: link
   ignore_errors: yes
 
+- name: create a symlink to ansible.cfg
+  file:
+    src: '{{ dotfiles_home }}/ansible/ansible.cfg'
+    dest: '{{ user_home }}/.ansible.cfg'
+    state: link
+  ignore_errors: yes
+
 - name: create a symlink to the bootstrap script
   file:
     src: '{{ dotfiles_home }}/ansible/bootstrap'
