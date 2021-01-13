@@ -188,7 +188,7 @@
 	path = vim/.vim/pack/bundle/opt/winresizer
 	url = https://github.com/simeji/winresizer
 [submodule "requirements.txt.vim"]
-	path = vim/.vim/pack/bundle/opt/requirements.txt.vim
+	path = vim/.vim/pack/bundle/start/requirements.txt.vim
 	url = https://github.com/raimon49/requirements.txt.vim
 [submodule "vim-signjump"]
 	path = vim/.vim/pack/bundle/opt/vim-signjump

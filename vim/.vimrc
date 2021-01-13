@@ -379,7 +379,6 @@ if has('packages')
 
   " Syntax
   packadd! python-syntax " Better python syntax highlighting
-  packadd! requirements.txt.vim " Python requirements syntax
   packadd! Vim-Jinja2-Syntax
   packadd! vim-pug " Syntax highlighting for Pug templates
   packadd! vim-sxhkdrc
