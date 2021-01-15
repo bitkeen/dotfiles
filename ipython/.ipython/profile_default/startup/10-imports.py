@@ -7,7 +7,7 @@ imports = [
     'import sys',
     'import time',
     'import urllib.parse as up',
-    'from datetime import datetime, timedelta',
+    'from datetime import date, datetime, timedelta',
 ]
 
 for i in imports:
