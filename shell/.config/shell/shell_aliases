@@ -71,6 +71,8 @@ alias ipy='ipython'
 # Python virtualenvwrapper.
 alias wo='workon'
 alias deac='deactivate'
+alias mkvenv='mkvirtualenv'
+alias rmvenv='rmvirtualenv'
 
 alias bandcamp-dl='bandcamp-dl --base-dir="$(xdg-user-dir DOWNLOAD)"/bandcamp-dl'
 
