@@ -1,29 +1,37 @@
 #!/bin/sh
 # Aliases for Git.
+
 git_alias() {
+    # Check that we're in a Git repo.
+    'git' rev-parse --git-dir > /dev/null || return 1
+
     case "$1" in
         rt|root)
             # Change working directory to the git root if the current
             # working directory is inside of a git repository.
-            'git' status > /dev/null 2>&1 || return 1
-            cd "$(git rev-parse --show-toplevel)"
-            return;;
+            cd "$(git rev-parse --show-toplevel)" ||
+                return 1;;
         shr)
             # Run git stash and repeat the previous command.
-            'git' status > /dev/null 2>&1 || return 1
-            'git' stash
-            fc -s
-            return;;
+            'git' stash &&
+                fc -s ||
+                return 1;;
         shrp)
             # Run git stash, repeat the previous command and pop from
             # the stash.
-            'git' status > /dev/null 2>&1 || return 1
-            'git' stash
-            fc -s
-            'git' stash pop
-            return;;
+            'git' stash &&
+                fc -s &&
+                'git' stash pop ||
+                return 1;;
+        shup)
+            # Stash, rebase, push, pop.
+            'git' stash &&
+                'git' pull --rebase &&
+                'git' push &&
+                'git' stash pop ||
+                return 1;;
         *)
-            'git' "$@"
-            return;;
+            'git' "$@" ||
+                return 1;;
     esac
 }
