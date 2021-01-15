@@ -891,7 +891,7 @@ let g:signjump = {
 let g:winresizer_start_key = '<Leader>R'
 
 " UltiSnips
-nnoremap <LocalLeader>u :UltiSnipsEdit<CR>
+nnoremap <LocalLeader>us :UltiSnipsEdit<CR>
 
 " python-syntax
 let g:python_highlight_all = 1
