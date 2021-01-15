@@ -4,6 +4,8 @@ key="$1"
 case "$key" in
     mrc)
         cmd="mr create --remove-source-branch";;
+    mrct)
+        cmd="mr create origin test --remove-source-branch";;
     mrca)
         cmd="mr create --remove-source-branch --assignee";;
     mrco)
