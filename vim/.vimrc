@@ -734,6 +734,7 @@ nnoremap gsr :!./%<<CR>
 if exists('loaded_cfilter')
   " Using cfilter plugin to filter quickfix list
   nnoremap gsq :Cfilter<Space>
+  nnoremap gsQ :Cfilter!<Space>
 endif
 
 " Open a new tab with the results of a Vim command execution.
