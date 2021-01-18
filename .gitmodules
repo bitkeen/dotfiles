@@ -274,9 +274,6 @@
 [submodule "vim-swap"]
 	path = vim/.vim/pack/bundle/opt/vim-swap
 	url = https://github.com/machakann/vim-swap
-[submodule "tmux-fingers"]
-	path = tmux/.tmux/plugins/tmux-fingers
-	url = https://github.com/Morantron/tmux-fingers
 [submodule "traces.vim"]
 	path = vim/.vim/pack/bundle/opt/traces.vim
 	url = https://github.com/markonm/traces.vim
@@ -301,3 +298,6 @@
 [submodule "zsh-syntax-highlighting"]
 	path = zsh/.config/zsh/plugins/zsh-syntax-highlighting
 	url = https://github.com/zsh-users/zsh-syntax-highlighting
+[submodule "tmux-thumbs"]
+	path = tmux/.tmux/plugins/tmux-thumbs
+	url = https://github.com/fcsonline/tmux-thumbs
