@@ -32,7 +32,7 @@ URxvt.colorUL:		#4682B4
 URxvt.url-launcher:   /usr/bin/xdg-open
 URxvt.matcher.button: 1
 URxvt.matcher.rend.0: Uline Bold fg5
-URxvt.keysym.M-u:	  matcher:list
+URxvt.keysym.M-o:	  matcher:list
 URxvt.keysym.M-p:	  matcher:select
 
 ! font-size extension - change font size on the fly.
