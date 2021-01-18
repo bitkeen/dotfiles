@@ -11,6 +11,9 @@ case "$key" in
         exit;;
     im)
         cmd='images';;
+    imh)
+        'docker' images | head
+        exit;;
     killall)
         cmd="kill $('docker' ps -q)";;
     krm)
