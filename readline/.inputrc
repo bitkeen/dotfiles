@@ -34,7 +34,8 @@ $endif
 
 $if mode=vi
     # Space in the beginning is to avoid polluting the history.
-    Control-g: " fzg\n"
+    # Alt-g.
+    "\eg": " fzg\n"
 
     set keymap vi-insert
     Control-x: edit-and-execute-command
