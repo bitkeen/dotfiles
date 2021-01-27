@@ -63,6 +63,7 @@
     rbm = rebase master
     rs = reset
     rsp = reset --patch
+    rst = restore
     rmt = remote
     rml = remote -v
     sh = stash
