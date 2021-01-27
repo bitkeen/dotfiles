@@ -8,8 +8,8 @@
 # The following line in the input file:
 # .d ~/.dotfiles
 # Will mapped in the following way:
-# map <C-g>.d cd ~/.dotfiles
-# map <C-t>.d tab_new ~/.dotfiles
+# map <A-g>.d cd ~/.dotfiles
+# map <A-t>.d tab_new ~/.dotfiles
 
 if [ -z "$1" ]; then
     bookmarks="$HOME/.config/ranger/bookmark_maps.conf"
@@ -25,5 +25,5 @@ else
 fi
 
 # Remove blank line at the end of the file with the `sed` command.
-echo "$shortcuts" | awk '{print "map <C-g>"$1" cd "$2"\nmap <C-t>"$1" tab_new "$2"\nmap <C-x>"$1" shell mv %s "$2"\n"}' \
+echo "$shortcuts" | awk '{print "map <A-g>"$1" cd "$2"\nmap <A-t>"$1" tab_new "$2"\nmap <A-x>"$1" shell mv %s "$2"\n"}' \
     | sed '${/^$/d;}' > "$bookmarks"
