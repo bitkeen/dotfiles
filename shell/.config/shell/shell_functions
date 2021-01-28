@@ -4,23 +4,28 @@ ps1_venv() {
     [ -n "$VIRTUAL_ENV" ] && echo " (${VIRTUAL_ENV##*/})"
 }
 
+
 ps1_vim() {
     [ -n "$VIMRUNTIME" ] && echo ' (in vim)'
 }
 
+
 ps1_ranger() {
     [ -n "$RANGER_LEVEL" ] && echo ' (in ranger)'
 }
+
 
 ps1_git() {
     # Redirect stderr for cases when __git_ps1 wasn't sourced.
     __git_ps1 2>/dev/null
 }
 
+
 ps1_status() {
     last_status="$?"
     [ "$last_status" = '0' ] && echo '+' || echo '-'
 }
+
 
 m() {
     # A wrapper around vman.
@@ -50,6 +55,7 @@ m() {
     fi
 }
 
+
 u() {
     # Go up $1 directories.
     # If $1 is omitted or is not an integer, go up 1 directory.
@@ -64,6 +70,7 @@ u() {
     fi
     cd "$dir"
 }
+
 
 uf() {
     # Go up the directory structure.
@@ -89,16 +96,19 @@ uf() {
     [ -n "$dir" ] && cd "$dir" || return
 }
 
+
 ww() {
     # Open index file of the $1 wiki (the first one if $1 is omitted).
     vim -c "execute \"normal $1\<Plug>VimwikiIndex\""
 }
+
 
 fzg() {
     # Open a directory from special files containing a list of shortcuts.
     dir="$(fzf-shortcuts ~/.config/shortcuts ~/.config/shortcuts.local)"
     [ -n "$dir" ] && cd "$dir" || return 1
 }
+
 
 vim_session_venv() {
     # Get a directory to venv mapping from a file, activate venv
@@ -122,6 +132,7 @@ vim_session_venv() {
     vim -c 'WrappedObsession'
 }
 
+
 ranger_cd() {
     # Automatically change the directory in bash after closing ranger.
     # Source:
@@ -142,6 +153,7 @@ ranger_cd() {
     rm -f -- "$temp_file"
 }
 
+
 wrap_ranger() {
     # Temporary workaround for tmux renaming problem.
     [ -z "$TMUX" ] || current_window_name="$(tmux display-message -p '#W')"
@@ -152,16 +164,19 @@ wrap_ranger() {
     [ -z "$current_window_name" ] || tmux rename-window "$current_window_name"
 }
 
+
 fm() {
     # Go to a mounted partition's directory.
     choice="$(fzf-mounted)"
     [ -n "$choice" ] && ranger_cd "$choice"
 }
 
+
 gfm() {
     choice="$(fzf-mounted)"
     [ -n "$choice" ] && cd "$choice"
 }
+
 
 copyline() {
     # Copy current command, bash-specific.
@@ -171,10 +186,12 @@ copyline() {
     printf %s "$READLINE_LINE" | copy
 }
 
+
 clc() {
     # Copy last command.
     history -p '!!' | sed 1q | copy
 }
+
 
 rpc() {
     rpw "$1" | copy
