@@ -9,6 +9,8 @@ h ~
 .t ~/.tmux
 .v ~/.vim
 ab ~/audio/audiobooks
+am ~/audio/music
+ap ~/audio/podcasts
 bk ~/books
 dc ~/documents
 df ~/downloads/firefox
@@ -20,9 +22,7 @@ dpu ~/documents/projects/public
 dt ~/downloads/torrents
 dl ~/downloads
 dy ~/downloads/youtube-dl
-mc ~/audio/music
 pc ~/pictures
-pd ~/audio/podcasts
 sn ~/sync
 sm ~/sync/main
 sw ~/sync/wikis
