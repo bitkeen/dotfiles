@@ -5,6 +5,7 @@ user_home: '{{ "~" | expanduser }}'
 dotfiles_home: '{{ user_home }}/.dotfiles'
 dirs:
   dotfiles_local: '{{ user_home }}/.dotfiles.local'
+  dot_aws: '{{ user_home }}/.aws'
   dot_local_bin: '{{ user_home }}/.local/bin'
   dot_vim: '{{ user_home }}/.vim'
   dot_vim_ultisnips: '{{ user_home }}/.vim/ultisnips'
