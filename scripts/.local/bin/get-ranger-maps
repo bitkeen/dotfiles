@@ -11,14 +11,12 @@
 # map <A-g>.d cd ~/.dotfiles
 # map <A-t>.d tab_new ~/.dotfiles
 
-if [ -z "$1" ]; then
-    bookmarks="$HOME/.config/ranger/bookmark_maps.conf"
-else
-    bookmarks="$1"
-fi
+bookmarks="${1:-$HOME/.config/ranger/bookmark_maps.conf}"
 
 if [ -z "$2" ]; then
-    shortcuts="$HOME/.config/shortcuts"
+    shortcuts="$(cat \
+        $HOME/.config/shortcuts \
+        $HOME/.config/shortcuts.local 2>/dev/null)"
 else
     shift
     shortcuts=$(cat "$@" 2>/dev/null)
