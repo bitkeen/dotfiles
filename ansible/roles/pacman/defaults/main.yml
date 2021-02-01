@@ -111,6 +111,7 @@ packages:
   - whois # Intelligent WHOIS client
   - xclip
   - xcursor-vanilla-dmz # Vanilla DMZ cursor theme
+  - xdg-user-dirs # Manage user directories like ~/Pictures and ~/Music
   - xmlstarlet # Command line utilities for XML
   - xorg-server
   - xorg-xev # Print contents of X events
