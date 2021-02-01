@@ -105,3 +105,9 @@
   user:
     name: '{{ user_name }}'
     shell: /bin/zsh
+
+- name: update ranger maps
+  become: yes
+  become_user: '{{ user_name }}'
+  command:
+    cmd: get-ranger-maps
