@@ -359,7 +359,7 @@ if has('packages')
   packadd! vim-signjump " Jump to signs just like other object motions
   packadd! vim-slime
   packadd! vim-sneak
-  packadd! vim-speeddating
+  packadd! vim-speeddating " Increment or decrement dates, times, and more
   packadd! vim-surround
   packadd! vim-swap
   packadd! vim-textobj-comment " Text objects for comments
