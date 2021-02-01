@@ -74,6 +74,7 @@ packages:
   - reflector # A script to retrieve and filter the latest Pacman mirror list
   - ripgrep
   - ruby
+  - rust
   - seahorse # GNOME application for managing PGP keys
   - shellcheck # Shell script analysis tool
   - simplescreenrecorder
