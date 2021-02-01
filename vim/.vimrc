@@ -361,7 +361,7 @@ if has('packages')
   packadd! vim-sneak
   packadd! vim-speeddating " Increment or decrement dates, times, and more
   packadd! vim-surround
-  packadd! vim-swap
+  packadd! vim-swap " Swap arguments
   packadd! vim-textobj-comment " Text objects for comments
   packadd! vim-textobj-conflict
   packadd! vim-textobj-entire
