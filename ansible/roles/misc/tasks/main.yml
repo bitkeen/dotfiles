@@ -1,8 +1,11 @@
 ---
-- name: configure keyboard for X11
+- name: configure keyboard and touchpad for X11
   copy:
-    src: 00-keyboard.conf
+    src: '{{ item }}'
     dest: /etc/X11/xorg.conf.d/
+  loop:
+    - 00-keyboard.conf
+    - 10-touchpad.conf
 
 - name: configure keyboard for virtual console
   command:
