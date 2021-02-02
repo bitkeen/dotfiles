@@ -90,11 +90,14 @@
   command:
     cmd: vim -c 'helptags ALL' -c 'quit'
 
-- name: add user to docker group
+- name: add user to groups
   user:
     name: '{{ user_name }}'
-    groups: docker
+    groups: '{{ item }}'
     append: yes
+  loop:
+    - docker
+    - video
 
 - name: install gtk keymaps
   copy:
