@@ -73,6 +73,7 @@ packages:
   - redshift # Set color temperature of display according to time of day
   - reflector # A script to retrieve and filter the latest Pacman mirror list
   - ripgrep
+  - rsync # A fast and versatile file copying tool for remote and local files
   - ruby
   - rust
   - seahorse # GNOME application for managing PGP keys
