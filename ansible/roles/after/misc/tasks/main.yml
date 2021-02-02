@@ -3,4 +3,5 @@
   become: yes
   become_user: '{{ user_name }}'
   command:
-    cmd: get-ranger-maps
+    # Need to have $PATH set up, run a login shell.
+    cmd: sh -cl 'get-ranger-maps'
