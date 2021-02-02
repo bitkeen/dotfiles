@@ -51,6 +51,9 @@ sxhkd &
 # Set key repeat rate.
 xset r rate 250 50 &
 
+# Disable bell.
+xset -b
+
 # Start the gnome-keyring-daemon.
 eval $(/usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh)
 export SSH_AUTH_SOCK
