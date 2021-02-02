@@ -3,4 +3,5 @@
 
 lsblk -l |
     grep -P -o "/.+" |
+    grep -v '^/boot$' |
     fzf --header "Select mount point:" --height=40% --select-1 --no-info --reverse
