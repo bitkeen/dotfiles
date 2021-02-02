@@ -20,6 +20,7 @@
     enabled: yes
     state: started
   loop:
+    - { unit_name: docker }
     - { unit_name: newsboat-reload.timer }
     - { unit_name: pacman-update-files-database.timer }
     - { unit_name: paccache.timer } # Discard unused packages weekly.
