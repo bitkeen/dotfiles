@@ -116,4 +116,4 @@
   become: yes
   become_user: '{{ user_name }}'
   command:
-    cmd: get-ranger-maps
+    cmd: '{{ dotfiles_home }}/scripts/.local/bin/get-ranger-maps'
