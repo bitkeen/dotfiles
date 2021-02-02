@@ -1,0 +1,6 @@
+---
+- name: update ranger maps
+  become: yes
+  become_user: '{{ user_name }}'
+  command:
+    cmd: get-ranger-maps

@@ -18,3 +18,5 @@
     - { role: transmission, tags: transmission }
     - { role: virtualbox, tags: virtualbox }
     - { role: systemd, tags: systemd }
+    # Role for tasks meant to run in the end.
+    - { role: after, tags: after }
