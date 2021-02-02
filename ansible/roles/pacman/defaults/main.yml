@@ -46,6 +46,7 @@ packages:
   - light # A program to control backlight controllers
   - lxappearance-gtk3 # Feature-rich GTK+ theme switcher of the LXDE Desktop
   - maim # Utility to take a screenshot
+  - man-db # A utility for reading man pages
   - man-pages # Linux man pages
   - mediainfo # Supplies technical and tag information about a video or audio file (CLI interface), currently used for audio file previews in ranger
   - mlocate # Merging locate/updatedb implementation
