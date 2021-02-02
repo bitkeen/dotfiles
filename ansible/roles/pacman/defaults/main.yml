@@ -93,12 +93,13 @@ packages:
   - thunderbird-extension-enigmail
   - tidy # A tool to tidy HTML code
   - tmux
-  - ttf-opensans # Sans-serif typeface commissioned by Google, needed for telegram-desktop
   - tor
   - torsocks # Wrapper to safely torify applications
   - traceroute # Tracks the route taken by packets over an IP network
   - transmission-gtk
   - ttf-font-awesome # Iconic font
+  - ttf-dejavu
+  - ttf-opensans # Sans-serif typeface commissioned by Google, needed for telegram-desktop
   - udiskie
   - udisks2
   - ueberzug # Used in ranger for image previews.
