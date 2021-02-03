@@ -36,7 +36,7 @@ dunst &
 # Hide cursor when idle.
 unclutter &
 
-# Needed for Syncthing tray icon.
+# Syncthing GUI + tray, also starts syncthing daemon.
 XDG_CURRENT_DESKTOP='i3' syncthing-gtk --minimized &
 
 nm-applet &
