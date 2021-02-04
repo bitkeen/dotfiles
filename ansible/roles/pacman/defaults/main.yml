@@ -99,6 +99,7 @@ packages:
   - transmission-gtk
   - ttf-font-awesome # Iconic font
   - ttf-dejavu
+  - ttf-liberation # Font family which aims at metric compatibility with Arial, Times New Roman, and Courier New
   - ttf-opensans # Sans-serif typeface commissioned by Google, needed for telegram-desktop
   - udiskie
   - udisks2
