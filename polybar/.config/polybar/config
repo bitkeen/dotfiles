@@ -189,7 +189,7 @@ click-left = caldd &
 format-prefix = " "
 type = custom/script
 exec = curl --silent wttr.in/?0FTQ | sed -n 2p | grep -Po '[-]?\d+.* °C'
-interval = 5
+interval = 60
 click-left = weatherdd &
 
 
