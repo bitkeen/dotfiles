@@ -10,5 +10,11 @@ elif ! man -w "$@" > /dev/null 2>&1; then
   exit 1
 fi
 
+# If running in tmux, save the previous window name.
+[ -z "$TMUX" ] || current_window_name="$(tmux display-message -p '#W')"
+[ -z "$TMUX" ] || tmux rename-window "man $(echo "$*" | sed 's;.*/;;')"
+
 # Man is open in a split, make it the only window instead.
 ${EDITOR:-vim} -c "execute('Man $*') | only | setlocal readonly"
+
+[ -z "$current_window_name" ] || tmux rename-window "$current_window_name"
