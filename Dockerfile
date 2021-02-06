@@ -26,6 +26,7 @@ RUN /home/user/.dotfiles/ansible/bootstrap \
     aur \
     pkgbuilds \
     misc \
+    networkmanager \
     stow \
     firefox \
     transmission \
