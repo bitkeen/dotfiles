@@ -17,7 +17,7 @@ USER user
 
 WORKDIR /home/user
 
-# For now, only systemd role is omitted
+# For now, only systemd role is omitted.
 RUN /home/user/.dotfiles/ansible/bootstrap \
     pacman \
     python \
