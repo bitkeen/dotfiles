@@ -5,3 +5,7 @@
   command:
     # Need to have $PATH set up, run a login shell.
     cmd: sh -cl 'get-ranger-maps'
+
+- name: create the manual page index cache
+  command:
+    cmd: mandb -c
