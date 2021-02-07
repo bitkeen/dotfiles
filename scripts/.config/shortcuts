@@ -22,6 +22,7 @@ dpu ~/documents/projects/public
 dt ~/downloads/torrents
 dl ~/downloads
 dy ~/downloads/youtube-dl
+fm ~/media
 pc ~/pictures
 sn ~/sync
 sm ~/sync/main
