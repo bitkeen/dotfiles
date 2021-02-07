@@ -7,7 +7,7 @@
     - 00-keyboard.conf
     - 10-touchpad.conf
 
-- name: configure keyboard for virtual console
+- name: configure keyboard and font for virtual console
   command:
     cmd: '{{ role_path }}/files/vconsole.sh'
 

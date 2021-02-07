@@ -1,5 +1,6 @@
 #!/bin/sh
-# Update keyboard layout in virtual console.
+# Configure keyboard and font for virtual console
+
 set -e
 
 dest_dir='/usr/local/share/kbd/keymaps'
@@ -12,4 +13,6 @@ gunzip -f "${dest_gz}"
 
 # Make Caps-Lock a control.
 sed -i 's/^keycode  58 = Caps_Lock$/keycode  58 = Control/' "${dest}"
+
 echo "KEYMAP=${dest}" > /etc/vconsole.conf
+echo "FONT=ter-v24b" >> /etc/vconsole.conf
