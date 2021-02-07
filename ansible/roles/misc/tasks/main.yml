@@ -40,6 +40,13 @@
     state: link
   ignore_errors: yes
 
+- name: create ~/media symlink
+  file:
+    src: '/run/media/{{ user_name }}'
+    dest: '{{ user_home }}/media'
+    state: link
+  ignore_errors: yes
+
 # https://wiki.archlinux.org/index.php/GNOME/Keyring#PAM_method
 - name: configure PAM for GNOME Keyring
   lineinfile:
