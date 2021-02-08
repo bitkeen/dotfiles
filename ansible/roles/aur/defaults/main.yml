@@ -31,3 +31,4 @@ packages:
 
 work_packages:
   - slack-desktop
+  - terraform11
