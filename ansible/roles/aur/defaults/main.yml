@@ -21,7 +21,6 @@ packages:
   - pgformatter-git # Correctly indent PostgreSQL queries
   - polybar # A fast and easy-to-use status bar
   - scrcpy # Display and control an Android device
-  - slack-desktop
   - tor-browser
   - virtualbox-ext-oracle # VirtualBox Extension Pack
   - vim-language-server
@@ -29,3 +28,6 @@ packages:
   - xidlehook # xautolock rewrite in Rust, with a few extra features
   - xkb-switch # Program that allows to query and change the XKB layout state
   - yay # AUR helper
+
+work_packages:
+  - slack-desktop
