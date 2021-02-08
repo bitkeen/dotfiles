@@ -8,5 +8,6 @@
     "torrent-added-notification-enabled": true,
     "torrent-complete-notification-enabled": true,
     "watch-dir": "/home/user/downloads",
-    "watch-dir-enabled": false
+    "watch-dir-enabled": false,
+    "user-has-given-informed-consent": true
 }
