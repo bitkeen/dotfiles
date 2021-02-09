@@ -24,6 +24,7 @@ dl ~/downloads
 dy ~/downloads/youtube-dl
 fm ~/media
 pc ~/pictures
+sc ~/pictures/screenshots
 sn ~/sync
 sm ~/sync/main
 sw ~/sync/wikis
