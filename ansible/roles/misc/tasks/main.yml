@@ -19,33 +19,24 @@
     group: '{{ user_group }}'
   loop: '{{ dirs | dict2items }}'
 
-- name: create .dotfiles.local symlink
+- name: create symlinks
   file:
-    src: '{{ dirs.dotfiles_local }}'
-    dest: '{{ dotfiles_home }}/.dotfiles.local'
+    src: '{{ item.src }}'
+    dest: '{{ item.dest }}'
     state: link
-  ignore_errors: yes
-
-- name: create a symlink to ansible.cfg
-  file:
-    src: '{{ dotfiles_home }}/ansible/ansible.cfg'
-    dest: '{{ user_home }}/.ansible.cfg'
-    state: link
-  ignore_errors: yes
-
-- name: create a symlink to the bootstrap script
-  file:
-    src: '{{ dotfiles_home }}/ansible/bootstrap'
-    dest: '{{ dirs.dot_local_bin }}/bootstrap'
-    state: link
-  ignore_errors: yes
-
-- name: create ~/media symlink
-  file:
-    src: '/run/media/{{ user_name }}'
-    dest: '{{ user_home }}/media'
-    state: link
-  ignore_errors: yes
+  loop:
+    - {
+      src: '{{ dirs.dotfiles_local }}',
+      dest: '{{ dotfiles_home }}/.dotfiles.local'
+    }
+    - {
+      src: '{{ dotfiles_home }}/ansible/ansible.cfg',
+      dest: '{{ user_home }}/.ansible.cfg'
+    }
+    - {
+      src: '{{ dotfiles_home }}/ansible/bootstrap',
+      dest: '{{ dirs.dot_local_bin }}/bootstrap'
+    }
 
 # https://wiki.archlinux.org/index.php/GNOME/Keyring#PAM_method
 - name: configure PAM for GNOME Keyring
