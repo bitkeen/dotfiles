@@ -11,6 +11,7 @@ compinit
 # Show hidden files in completions.
 _comp_options+=(globdots)
 compdef git_alias=git
+compdef m=man
 
 # Disable XON/XOFF flow control (Ctrl+S, Ctrl+Q).
 unsetopt FLOW_CONTROL
