@@ -2,9 +2,6 @@
 # when closing a document.
 set continuous-hist-save true
 
-# Enable incremental search.
-#set incremental-search true
-
 # Copy selection to system clipboard.
 set selection-clipboard clipboard
 
