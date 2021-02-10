@@ -105,6 +105,11 @@
     src: gtk-keys.css
     dest: /usr/share/themes/Custom/gtk-3.0/
 
+- name: put docker config in place
+  copy:
+    src: daemon.json
+    dest: /etc/docker/
+
 - name: set zsh as default shell for non-root user
   user:
     name: '{{ user_name }}'
