@@ -23,6 +23,7 @@ case "$choice" in
         exit
         ;;
     "exit i3")
+        # Exit i3 (logs you out of your X session).
         i3-msg exit
         ;;
 esac
