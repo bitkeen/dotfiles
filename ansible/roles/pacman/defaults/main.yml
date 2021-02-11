@@ -65,6 +65,8 @@ packages:
   - openbsd-netcat # TCP/IP swiss army knife
   - pacman-contrib # Contributed scripts and tools for pacman systems
   - picom # A compositor for X11, required for transparency
+  - pulseaudio
+  - pulseaudio-alsa # For PulseAudio to manage ALSA.
   - pulsemixer # CLI and curses mixer for pulseaudio
   - python-jedi # Awesome autocompletion for python, a dependency for ipython and python-language-server
   - python-language-server # An implementation of the Language Server Protocol for Python
