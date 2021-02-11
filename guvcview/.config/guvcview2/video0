@@ -1,9 +1,9 @@
 #Guvcview 2.0.6 config file
 
 #video input width
-width=640
+width=1280
 #video input height
-height=480
+height=720
 #video input format
 v4l2_format=1196444237
 #video input capture method
