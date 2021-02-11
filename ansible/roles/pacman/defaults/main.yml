@@ -34,7 +34,7 @@ packages:
   - gst-plugins-good # GStreamer open-source multimedia framework good plugins
   - gst-plugins-ugly # GStreamer open-source multimedia framework ugly plugins
   - gucharmap # Gnome Unicode character map
-  - guvcview # Webcam capturing interface
+  - guvcview-qt # Webcam capturing interface
   - gvim # Vim in GVim package has support for system clipboard
   - i3-wm
   - imagemagick # An image viewing/manipulation program
