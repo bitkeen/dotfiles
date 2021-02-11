@@ -4,8 +4,8 @@
     src: '{{ item }}'
     dest: /etc/X11/xorg.conf.d/
   loop:
-    - 00-keyboard.conf
-    - 10-touchpad.conf
+    - xorg.conf.d/00-keyboard.conf
+    - xorg.conf.d/10-touchpad.conf
 
 - name: configure keyboard and font for virtual console
   command:
@@ -102,12 +102,12 @@
 
 - name: install gtk keymaps
   copy:
-    src: gtk-keys.css
+    src: gtk/gtk-keys.css
     dest: /usr/share/themes/Custom/gtk-3.0/
 
 - name: put docker config in place
   copy:
-    src: daemon.json
+    src: docker/daemon.json
     dest: /etc/docker/
 
 - name: set zsh as default shell for non-root user
