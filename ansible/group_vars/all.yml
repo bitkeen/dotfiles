@@ -24,4 +24,6 @@ dirs:
   firefox_extensions: '{{ user_home }}/.mozilla/firefox/main/extensions'
   pictures: '{{ user_home }}/pictures'
   pictures/screenshots: '{{ user_home }}/pictures/screenshots'
+  pictures/webcam: '{{ user_home }}/pictures/webcam'
+  videos/webcam: '{{ user_home }}/videos/webcam'
   sync: '{{ user_home }}/sync'
