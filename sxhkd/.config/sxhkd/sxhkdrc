@@ -74,9 +74,9 @@ button8
 
 # Sreen brightness controls.
 XF86MonBrightnessUp
-    light -A 5
+    light -A 10
 XF86MonBrightnessDown
-    light -U 5
+    light -U 10
 
 # Directly switch to a keyboard layout.
 super+ctrl+1
