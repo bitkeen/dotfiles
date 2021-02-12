@@ -9,9 +9,9 @@ v4l2_format=1196444237
 #video input capture method
 capture=mmap
 #audio api
-audio=port
+audio=pulse
 #gui api
-gui=gtk3
+gui=qt5
 #render api
 render=sdl
 #video codec [raw mjpg mpeg flv1 wmv1 mpg2 mp43 dx50 h264 vp80 theo]
