@@ -16,7 +16,7 @@ if [ "$(light)" = '0.00' ]; then
     [ -n "$(get_ws 'HDMI1' 'focused')" ] &&
         i3-msg "workspace $(get_ws 'eDP1' 'visible')"
 
-    light -S 70
+    light -S 60
 else
     [ -n "$(get_ws 'eDP1' 'focused')" ] &&
         i3-msg "workspace $(get_ws 'HDMI1' 'visible')"
