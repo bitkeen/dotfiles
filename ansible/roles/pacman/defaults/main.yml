@@ -22,6 +22,7 @@ packages:
   - dunst # A customizable and lightweight notification-daemon
   - etckeeper # Store /etc in a VCS repository
   - exfat-utils
+  - expac # pacman database extraction utility
   - fdupes # Identify or delete duplicate files residing within specified directories
   - feh # Image viewer, currently only used to set backgrounds with .fehbg script
   - firefox
