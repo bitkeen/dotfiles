@@ -2,6 +2,8 @@
 # Toggle screen brightness level from 0% to 70% using light.
 # Switch focus between displays on toggle.
 
+DESIRED_BRIGHTNESS='60'
+
 workspaces="$(i3-msg -t get_workspaces | jq '.[]')"
 
 get_ws(){
@@ -16,7 +18,7 @@ if [ "$(light)" = '0.00' ]; then
     [ -n "$(get_ws 'HDMI1' 'focused')" ] &&
         i3-msg "workspace $(get_ws 'eDP1' 'visible')"
 
-    light -S 60
+    light -S "$DESIRED_BRIGHTNESS"
 else
     [ -n "$(get_ws 'eDP1' 'focused')" ] &&
         i3-msg "workspace $(get_ws 'HDMI1' 'visible')"
