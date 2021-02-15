@@ -12,14 +12,16 @@ git_alias() {
                 return 1;;
         shr)
             # Run git stash and repeat the previous command.
+            [ -n "$ZSH_VERSION" ] && hist_command='r' || hist_command='fc -s'
             'git' stash &&
-                fc -s ||
+                $hist_command ||
                 return 1;;
         shrp)
             # Run git stash, repeat the previous command and pop from
             # the stash.
+            [ -n "$ZSH_VERSION" ] && hist_command='r' || hist_command='fc -s'
             'git' stash &&
-                fc -s &&
+                $hist_command &&
                 'git' stash pop ||
                 return 1;;
         shup)
