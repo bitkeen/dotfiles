@@ -1,0 +1,6 @@
+[Unit]
+Description=fetch dotfiles repo
+
+[Service]
+User=user
+ExecStart=/bin/sh -c "/home/user/.local/bin/git-fetch /home/user/.dotfiles"

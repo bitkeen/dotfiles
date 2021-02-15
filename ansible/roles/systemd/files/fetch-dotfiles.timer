@@ -1,0 +1,9 @@
+[Unit]
+Description=fetch dotfiles git repo
+
+[Timer]
+OnBootSec=1minute
+OnUnitActiveSec=1hour
+
+[Install]
+WantedBy=timers.target
