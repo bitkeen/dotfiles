@@ -122,6 +122,7 @@ packages:
   - xmlstarlet # Command line utilities for XML
   - xorg-server
   - xorg-xev # Print contents of X events
+  - xorg-xinput # Small commandline tool to configure devices
   - xorg-xprop # Property displayer for X
   - xsecurelock # X11 screen lock utility
   - yamllint # Linter for YAML files
