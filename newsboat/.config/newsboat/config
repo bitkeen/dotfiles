@@ -3,6 +3,8 @@ suppress-first-reload yes
 reload-threads 8
 feedlist-format "%n %11u %t"
 datetime-format "%d %b %Y"
+# Keep the configured number of lines above and below the selected item in lists.
+scrolloff 10
 
 # Unbind 'mark-all-feeds-read'.
 unbind-key C
