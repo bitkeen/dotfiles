@@ -224,6 +224,10 @@ set shortmess+=A
 " Show search count message when searching, e.g. "[1/5]".
 set shortmess-=S
 
+" Minimal number of screen lines to keep above and below the cursor
+" (default 0, set to 5 in defaults.vim).
+set scrolloff=10
+
 " Command-line completion mode.
 " Complete the next full m
 " atch, show wildmenu.
