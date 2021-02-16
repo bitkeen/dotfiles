@@ -129,10 +129,11 @@ bindsym $super+k focus up
 bindsym $super+l focus right
 
 # Move focused window.
-bindsym $super+shift+h move left
-bindsym $super+shift+j move down
-bindsym $super+shift+k move up
-bindsym $super+shift+l move right
+# Make floating containers move more than the default.
+bindsym $super+shift+h move left 25px
+bindsym $super+shift+j move down 25px
+bindsym $super+shift+k move up 25px
+bindsym $super+shift+l move right 25px
 
 # Split in horizontal orientation.
 bindsym $super+backslash split h
