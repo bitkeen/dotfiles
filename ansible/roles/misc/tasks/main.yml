@@ -37,6 +37,14 @@
       src: '{{ dotfiles_home }}/ansible/bootstrap',
       dest: '{{ dirs.dot_local_bin }}/bootstrap'
     }
+    - {
+      src: '{{ dirs.sync_zathura }}',
+      dest: '{{ user_home }}/.local/share/zathura'
+    }
+    - {
+      src: '{{ dirs.sync_books }}',
+      dest: '{{ user_home }}/main'
+    }
 
 # https://wiki.archlinux.org/index.php/GNOME/Keyring#PAM_method
 - name: configure PAM for GNOME Keyring

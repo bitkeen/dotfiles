@@ -27,3 +27,5 @@ dirs:
   pictures_webcam: '{{ user_home }}/pictures/webcam'
   videos_webcam: '{{ user_home }}/videos/webcam'
   sync: '{{ user_home }}/sync'
+  sync_books: '{{ user_home }}/sync/books'
+  sync_zathura: '{{ user_home }}/sync/zathura'
