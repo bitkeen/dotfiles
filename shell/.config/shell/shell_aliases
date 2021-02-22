@@ -36,9 +36,10 @@ alias grep='grep --color=auto --ignore-case'
 alias gr='grep -n -I'
 
 # -L - follow symbolic links
-alias fn='find -L . -name'
 # Case-insensitive.
-alias fin='find -L . -iname'
+alias fn='find -L . -iname'
+# Case-sensitive.
+alias fnc='find -L . -name'
 
 # Kill processes by name.
 alias ka='killall'
