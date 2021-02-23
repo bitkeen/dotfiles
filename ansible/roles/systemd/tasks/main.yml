@@ -29,6 +29,17 @@
     - { unit_name: systemd-timesyncd.service } # Sync time.
     - { unit_name: fetch-dotfiles.timer }
 
+- name: enable and start user services
+  become: yes
+  become_user: '{{ user_name }}'
+  systemd:
+    name: '{{ item.unit_name }}'
+    enabled: yes
+    state: started
+    scope: user
+  loop:
+    - { unit_name: mpd.service }
+
 - name: enable screen lock service
   systemd:
     name: lock@user

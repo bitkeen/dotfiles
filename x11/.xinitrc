@@ -24,9 +24,6 @@ xrdb .Xresources
 # Set previously used wallpaper.
 ~/.fehbg &
 
-# MPD daemon start (if no other user instance exists).
-pgrep mpd || mpd
-
 # A compositor for X11
 picom &
 
