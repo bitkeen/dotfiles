@@ -1,5 +1,5 @@
 [Unit]
-Description=Lock the screen on resume from sleep or suspend
+Description=Lock the screen before sleep or suspend
 Before=sleep.target
 Before=suspend.target
 
@@ -7,7 +7,7 @@ Before=suspend.target
 User=%i
 Type=simple
 Environment=DISPLAY=:0
-ExecStart=/usr/bin/bash /home/user/.dotfiles/scripts/.local/bin/screen_lock.sh
+ExecStart=/home/user/.local/bin/screen-lock
 
 [Install]
 WantedBy=sleep.target
