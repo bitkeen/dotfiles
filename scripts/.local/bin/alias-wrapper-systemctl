@@ -6,6 +6,16 @@ case "$key" in
         cmd="list-timers";;
     lu)
         cmd="list-units";;
+    lr)
+        cmd="list-units --state=running";;
+    lf)
+        cmd="list-units --state=failed";;
+    luu)
+        cmd="list-units --user";;
+    lur)
+        cmd="list-units --user --state=running";;
+    luf)
+        cmd="list-units --user --state=failed";;
     rs)
         cmd="restart";;
     sp)
