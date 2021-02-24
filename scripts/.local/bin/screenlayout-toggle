@@ -1,0 +1,12 @@
+#!/bin/sh
+# Toggle screenlayout based on whether an external display
+# is connected. To be executed from a udev rule.
+# See
+# https://bbs.archlinux.org/viewtopic.php?id=170294,
+# https://github.com/polybar/polybar/issues/173.
+
+if grep '^connected$' /sys/class/drm/card0-HDMI-A-1/status; then
+    ~/.local/bin/screenlayout-2
+else
+    ~/.local/bin/screenlayout-1
+fi

@@ -1,14 +1,15 @@
 #!/bin/sh
 # Use a screenlayout selected with dmenu.
 
-layout_dir="$HOME/.local/bin.local/screenlayout/"
+scripts_dir="$HOME/.local/bin/"
 
-options="$(find "$layout_dir" -type f)" 
+options="$(find "$scripts_dir" -name 'screenlayout-*')" 
 choice="$(
     echo "$options" |
     awk -F '/' '{print $NF}' |
     dmenu-configured -p 'Screen layout:'
 )"
+[ -z "$choice" ] && exit 1
 
 full_choice="$(echo "$options" | grep "${choice}\$")"
 exec "$full_choice"
