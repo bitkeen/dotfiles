@@ -119,6 +119,7 @@ label-connected = %essid%
 ramp-signal-0 = 
 ramp-signal-foreground = ${colors.foreground}
 
+
 [module/pulseaudio]
 type = internal/pulseaudio
 format-volume = <label-volume>
@@ -126,6 +127,7 @@ label-volume =  %percentage%%
 label-volume-foreground = ${root.foreground}
 label-muted =  muted
 label-muted-foreground = ${colors.foreground}
+click-right=pulsemixerdd &
 
 
 [module/battery]
