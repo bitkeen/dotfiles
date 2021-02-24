@@ -11,6 +11,7 @@
     - { unit_name: pacman-update-files-database.timer }
     - { unit_name: fetch-dotfiles.service }
     - { unit_name: fetch-dotfiles.timer }
+    - { unit_name: toggle-monitor.service }
 
 - name: reload units
   systemd:
@@ -44,3 +45,13 @@
   systemd:
     name: lock@user
     enabled: yes
+
+- name: copy udev rules
+  copy:
+    src: udev/50-monitor-hotplug.rules
+    dest: /etc/udev/rules.d/
+
+- name: restart systemd-udevd
+  systemd:
+    name: systemd-udevd
+    state: restarted

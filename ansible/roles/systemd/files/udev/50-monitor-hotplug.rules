@@ -1,0 +1,1 @@
+ACTION=="change", SUBSYSTEM=="drm", RUN+="/usr/bin/systemctl start toggle-monitor.service"
