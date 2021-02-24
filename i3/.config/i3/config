@@ -267,9 +267,9 @@ for_window [instance="caldd"] resize set 750 800
 for_window [instance="caldd"] border pixel 1
 for_window [instance="caldd"] move position center
 
-for_window [instance="weatherdd"] floating enable
-for_window [instance="weatherdd"] resize set 72ppt 80ppt
-for_window [instance="weatherdd"] border pixel 1
-for_window [instance="weatherdd"] move position center
+for_window [instance="weatherdd|pulsemixerdd"] floating enable
+for_window [instance="weatherdd|pulsemixerdd"] resize set 72ppt 80ppt
+for_window [instance="weatherdd|pulsemixerdd"] border pixel 1
+for_window [instance="weatherdd|pulsemixerdd"] move position center
 
 # }}}
