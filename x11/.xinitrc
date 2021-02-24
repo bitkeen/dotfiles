@@ -9,7 +9,7 @@ udiskie --smart-tray &
 # Load icc profile on display host:0.
 #/usr/bin/xcalib -d :0 ~/.config/icc-profiles/6500.icm
 
-redshift-gtk &> /dev/null || redshift &> /dev/null &
+redshift-gtk >/dev/null 2>&1 || redshift >/dev/null 2>&1 &
 
 # Start PulseAudio server.
 /usr/bin/start-pulseaidio-x11 &
