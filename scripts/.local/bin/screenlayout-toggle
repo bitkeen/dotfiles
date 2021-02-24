@@ -3,7 +3,7 @@
 # is connected. To be executed from a udev rule.
 # See
 # https://bbs.archlinux.org/viewtopic.php?id=170294,
-# https://www.jasonwryan.com/blog/2014/01/20/udev/
+# https://www.jasonwryan.com/blog/2014/01/20/udev/,
 # https://github.com/polybar/polybar/issues/173.
 
 if grep '^connected$' /sys/class/drm/card0-HDMI-A-1/status; then
