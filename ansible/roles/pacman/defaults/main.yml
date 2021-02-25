@@ -51,11 +51,11 @@ packages:
   - man-pages # Linux man pages
   - mediainfo # Supplies technical and tag information about a video or audio file (CLI interface), currently used for audio file previews in ranger
   - mlocate # Merging locate/updatedb implementation
-  - mpc
-  - mpd
-  - mpv
+  - mpc # Command line interface to MPD
+  - mpd # Music Player Daemon
+  - mpv # Media player
   - ncdu # NCurses Disk Usage
-  - ncmpcpp
+  - ncmpcpp # MPD TUI client
   - neofetch # System information tool
   - network-manager-applet
   - networkmanager
@@ -116,7 +116,7 @@ packages:
   - w3m # Text-based Web browser as well as pager, used for html previews in ranger
   - wireshark-cli # Network traffic and protocol analyzer/sniffer - CLI tools and data files
   - whois # Intelligent WHOIS client
-  - xclip
+  - xclip # Command line interface to the X11 clipboard
   - xcursor-vanilla-dmz # Vanilla DMZ cursor theme
   - xdg-user-dirs # Manage user directories like ~/Pictures and ~/Music
   - xmlstarlet # Command line utilities for XML
@@ -127,7 +127,7 @@ packages:
   - xsecurelock # X11 screen lock utility
   - yamllint # Linter for YAML files
   - youtube-dl
-  - zathura
+  - zathura # Document viewer
   - zathura-djvu
   - zathura-pdf-mupdf
   - zip # Compressor/archiver for creating and modifying zipfiles
