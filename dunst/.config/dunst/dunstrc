@@ -30,7 +30,7 @@
     # the top and down respectively.
     # The width can be negative.  In this case the actual width is the
     # screen width minus the width defined in within the geometry option.
-    geometry = "300x5-20+40"
+    geometry = "300x5-40+70"
 
     # Show how many messages are currently hidden (because of geometry).
     indicate_hidden = yes
@@ -330,12 +330,14 @@ separator_color = "#c5c8c6"
 
 [base16_low]
     msg_urgency = low
-    background = "#282a2e"
+    # background = "#282a2e"
+    background = "#0C0C0D"  # Firefox dark theme tab background color.
     foreground = "#969896"
 
 [base16_normal]
     msg_urgency = normal
-    background = "#373b41"
+    # background = "#373b41"
+    background = "#0C0C0D"  # Firefox dark theme tab background color.
     foreground = "#c5c8c6"
 
 [base16_critical]
