@@ -11,7 +11,6 @@
     - { unit_name: pacman-update-files-database.timer }
     - { unit_name: fetch-dotfiles.service }
     - { unit_name: fetch-dotfiles.timer }
-    - { unit_name: toggle-monitor.service }
 
 - name: reload units
   systemd:
@@ -30,20 +29,9 @@
     - { unit_name: systemd-timesyncd.service } # Sync time.
     - { unit_name: fetch-dotfiles.timer }
 
-- name: enable and start user services
-  become: yes
-  become_user: '{{ user_name }}'
-  systemd:
-    name: '{{ item.unit_name }}'
-    enabled: yes
-    state: started
-    scope: user
-  loop:
-    - { unit_name: mpd.service }
-
 - name: enable screen lock service
   systemd:
-    name: lock@user
+    name: 'lock@{{ user_name }}'
     enabled: yes
 
 - name: copy udev rules
@@ -55,3 +43,30 @@
   systemd:
     name: systemd-udevd
     state: restarted
+
+- name: install user unit files
+  become: yes
+  become_user: '{{ user_name }}'
+  copy:
+    src: '{{ item.unit_name }}'
+    dest: '{{ user_home }}/.config/systemd/user/{{ item.unit_name }}'
+  loop:
+    - { unit_name: monitor-hotplug@.service }
+
+- name: reload user units
+  become: yes
+  become_user: '{{ user_name }}'
+  systemd:
+    daemon_reload: yes
+    scope: user
+
+- name: enable and start user services
+  become: yes
+  become_user: '{{ user_name }}'
+  systemd:
+    name: '{{ item.unit_name }}'
+    enabled: yes
+    state: started
+    scope: user
+  loop:
+    - { unit_name: mpd.service }

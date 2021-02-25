@@ -3,7 +3,7 @@ Description=Monitor hotplug
 
 [Service]
 Type=simple
-User=user
+# See https://github.com/polybar/polybar/issues/173.
 KillMode=process
 RemainAfterExit=no
 Environment=DISPLAY=:0
