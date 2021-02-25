@@ -138,3 +138,4 @@ work_packages:
   - dbeaver
   - redis
   - terraform
+  - xournalpp # For signing PDFs
