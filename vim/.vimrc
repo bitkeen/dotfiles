@@ -79,6 +79,8 @@ if has('autocmd')
     " See https://github.com/posva/vim-vue#my-syntax-highlighting-stops-working-randomly.
     autocmd FileType vue syntax sync fromstart
 
+    " Autoupdate ranger maps on changes to shortcuts.
+    autocmd BufWritePost shortcuts,shortcuts.local silent !get-ranger-maps
     " Reload binds when sxhkdrc is updated.
     autocmd BufWritePost *sxhkdrc silent !pkill -USR1 sxhkd
     " Reload Xresources on update.
