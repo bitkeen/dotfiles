@@ -25,6 +25,7 @@
     ; Ignore the local timezone and commit with UTC.
     ci = "!git commit --date=\"$(date -u '+%Y-%m-%dT%H:%M:%S%z')\""
     cia = commit --amend
+    cian = commit --amend --no-edit
     ; Fixup HEAD if no argument is provided.
     cif = "!sh -c '[ -z \"$1\" ] \
             && git commit --fixup HEAD || \
