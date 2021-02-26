@@ -231,7 +231,7 @@
 	url = https://github.com/rhysd/vim-textobj-conflict
 [submodule "pydoc.vim"]
 	path = vim/.vim/pack/bundle/opt/pydoc.vim
-	url = https://github.com/bitkeen/pydoc.vim
+	url = https://github.com/fs111/pydoc.vim
 [submodule "Vim-Jinja2-Syntax"]
 	path = vim/.vim/pack/bundle/opt/Vim-Jinja2-Syntax
 	url = https://github.com/Glench/Vim-Jinja2-Syntax
