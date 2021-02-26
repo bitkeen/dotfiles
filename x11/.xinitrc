@@ -8,10 +8,6 @@ udiskie --smart-tray &
 
 redshift-gtk >/dev/null 2>&1 || redshift >/dev/null 2>&1 &
 
-# If an external screen is connected, duplicate the output
-# instead of putting the screen to the right of the main display.
-xrandr --output HDMI-2 --auto --pos 0x0
-
 # Load .Xresources.
 xrdb .Xresources
 
