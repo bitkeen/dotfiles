@@ -41,6 +41,12 @@ xset r rate 250 50 &
 # Disable bell.
 xset -b &
 
+# Disable touchpad on X1 Carbon.
+touchpad='SYNA8004:00 06CB:CD8B Touchpad'
+xinput list |
+    grep "$touchpad" >/dev/null &&
+    xinput --disable "$touchpad" &
+
 # Start the gnome-keyring-daemon.
 eval $(/usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh)
 export SSH_AUTH_SOCK
