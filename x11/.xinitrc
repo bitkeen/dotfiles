@@ -35,6 +35,9 @@ idlelock &
 # Bind keys.
 sxhkd &
 
+# Disable paste through middle mouse button.
+xmousepasteblock &
+
 # Set key repeat rate.
 xset r rate 250 50 &
 
