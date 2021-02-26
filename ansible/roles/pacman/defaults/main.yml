@@ -91,6 +91,7 @@ packages:
   - syncthing-gtk # GTK3 based GUI and notification area icon for Syncthing
   - sysstat # A collection of performance monitoring tools (iostat,isag,mpstat,pidstat,sadf,sar)
   - telegram-desktop
+  - terminus-font # Monospace bitmap font, used in vconsole
   - thunar # File Manager for the Xfce Desktop Environment
   - thunderbird
   - thunderbird-extension-enigmail
