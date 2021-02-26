@@ -760,6 +760,18 @@ vnoremap <silent> <LocalLeader>f :call FormatFile(&filetype, "'<,'>")<CR>
 nnoremap <LocalLeader>uu :% !uniq<CR>
 vnoremap <LocalLeader>uu :'<,'> !uniq<CR>
 
+" Disable pasting with middle mouse button, make it the same
+" as left button click. Scrolling functionality is kept intact.
+" Apply for single, double, triple, and quadruple middle clicks.
+noremap <MiddleMouse> <LeftMouse>
+inoremap <MiddleMouse> <LeftMouse>
+noremap <2-MiddleMouse> <LeftMouse>
+inoremap <2-MiddleMouse> <LeftMouse>
+noremap <3-MiddleMouse> <LeftMouse>
+inoremap <3-MiddleMouse> <LeftMouse>
+noremap <4-MiddleMouse> <LeftMouse>
+inoremap <4-MiddleMouse> <LeftMouse>
+
 " }}}
 
 " Plugin mappings {{{
