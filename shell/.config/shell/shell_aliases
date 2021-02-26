@@ -46,8 +46,9 @@ alias ka='killall'
 
 # The space at the end allows the next command word following the alias
 # to also be checked for alias expansion.
-alias s='sudo '
-alias sudo='sudo '
+# -v flag makes sudo reset password timeout.
+alias s='sudo -v; sudo '
+alias sudo='sudo -v; sudo '
 
 alias mk='make'
 
