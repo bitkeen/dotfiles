@@ -6,9 +6,6 @@ localectl --no-convert set-x11-keymap us,ru,ua pc105 "" grp:alt_shift_toggle,cap
 # Load udiskie in the background.
 udiskie --smart-tray &
 
-# Load icc profile on display host:0.
-#/usr/bin/xcalib -d :0 ~/.config/icc-profiles/6500.icm
-
 redshift-gtk >/dev/null 2>&1 || redshift >/dev/null 2>&1 &
 
 # If an external screen is connected, duplicate the output
