@@ -25,6 +25,7 @@ packages:
   - exfat-utils
   - expac # pacman database extraction utility
   - fdupes # Identify or delete duplicate files residing within specified directories
+  - ffmpegthumbnailer # Video thumbnainer for previews in ranger
   - feh # Image viewer, currently only used to set backgrounds with .fehbg script
   - firefox
   - fzf
