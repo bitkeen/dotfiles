@@ -1,14 +1,14 @@
 ---
 - name: import GPG keys to verify the signature on tor-browser
   become: yes
-  become_user: "{{ user_name }}"
+  become_user: '{{ user_name }}'
   command:
     cmd: gpg --auto-key-locate nodefault,wkd --locate-keys torbrowser@torproject.org
   when: "'tor-browser' in packages"
 
 - name: clone AUR pkgbuilds
   become: yes
-  become_user: "{{ user_name }}"
+  become_user: '{{ user_name }}'
   git:
     repo: 'https://aur.archlinux.org/{{ item }}.git'
     dest: '{{ aur_pkg_dir }}/{{ item }}'
@@ -17,7 +17,7 @@
 
 - name: make and install AUR packages
   become: yes
-  become_user: "{{ user_name }}"
+  become_user: '{{ user_name }}'
   command:
     cmd: makepkg -si --cleanbuild --clean --noconfirm --needed --rmdeps
     chdir: '{{ aur_pkg_dir }}/{{ item }}'
