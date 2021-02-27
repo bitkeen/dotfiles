@@ -7,7 +7,6 @@ services:
   - docker
 
 before_install:
-  - sudo apt-get -y install runc
   - pip install yamllint==1.24.2
 
 before_script:
