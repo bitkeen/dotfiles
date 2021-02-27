@@ -9,20 +9,20 @@
 
 # Time is in seconds if there is an 's' at the end, in hours if there
 # is an 'h' at the end, in minutes by default.
-if [ $(echo "$1" | grep 's$') ]; then
+if echo "$1" | grep -q 's$'; then
     # Clean up the argument.
     time_seconds=$(echo "$1" | sed -e 's/[A-Za-z]//')
-elif [ $(echo "$1" | grep 'h$') ]; then
+elif echo "$1" | grep -q 'h$'; then
     time_seconds=$(echo "$1" | sed -e 's/[A-Za-z]//')
-    let time_seconds=$time_seconds*3600
+    time_seconds="$time_seconds*3600"
 else
     time_seconds=$(echo "$1" | sed -e 's/[A-Za-z]//')
-    let time_seconds=$time_seconds*60
+    time_seconds="$time_seconds*60"
 fi
 
-date1=$((`date +%s` + $time_seconds)); 
-while [ "$date1" -ge `date +%s` ]; do 
-    echo -ne "$(date -u --date @$(($date1 - `date +%s`)) +%H:%M:%S)\r";
+date1=$(($(date +%s) + time_seconds)); 
+while [ "$date1" -ge "$(date +%s)" ]; do 
+    printf '%s\r' "$(date -u --date @$((date1 - $(date +%s))) +%H:%M:%S)";
     sleep 0.1
 done
 
@@ -31,5 +31,4 @@ pgrep -x dunst >/dev/null &&
     [ -n "$TIMER_SOUND" ] &&
     paplay "$TIMER_SOUND"
 
-# Print a new line.
-echo
+printf '\n'
