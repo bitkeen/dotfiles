@@ -16,4 +16,6 @@ case "$key" in
         cmd="$key";;
 esac
 [ -n "$cmd" ] && shift
+
+# shellcheck disable=SC2086
 'lab' $cmd "$@"

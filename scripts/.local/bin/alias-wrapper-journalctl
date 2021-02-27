@@ -11,11 +11,11 @@ case "$key" in
         invocation_id="$(systemctl show -p InvocationID --value "$2")"
         cmd="_SYSTEMD_INVOCATION_ID=$invocation_id"
         [ "$key" = 'lf' ] && cmd="$cmd --follow"
-        shift
-        ;;
+        shift;;
     *)
-        cmd="$key"
-        ;;
+        cmd="$key";;
 esac
 shift
-journalctl $cmd "$@"
+
+# shellcheck disable=SC2086
+'journalctl' $cmd "$@"

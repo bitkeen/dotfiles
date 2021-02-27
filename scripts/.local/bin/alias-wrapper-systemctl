@@ -29,4 +29,5 @@ case "$key" in
 esac
 [ -n "$key" ] && shift
 
+# shellcheck disable=SC2086
 'systemctl' $cmd "$@"
