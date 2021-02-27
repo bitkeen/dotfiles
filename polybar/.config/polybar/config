@@ -104,7 +104,7 @@ icon-play = 
 icon-pause = 
 icon-next = 
 
-label-song-maxlen = 40
+label-song-maxlen = 80
 label-song-ellipsis = true
 
 
