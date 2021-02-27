@@ -18,7 +18,11 @@
 - name: make and install AUR packages
   become: yes
   become_user: '{{ user_name }}'
+  environment:
+    # GO111MODULE is set to 'on' by default and it breaks
+    # path-extractor installation.
+    GO111MODULE: auto
   command:
-    cmd: makepkg -si --cleanbuild --clean --noconfirm --needed --rmdeps
+    cmd: makepkg --syncdeps --install --cleanbuild --clean --noconfirm --needed --rmdeps
     chdir: '{{ aur_pkg_dir }}/{{ item }}'
   loop: '{{ python_deps + packages + work_packages }}'
