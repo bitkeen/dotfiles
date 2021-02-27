@@ -259,6 +259,7 @@
 [submodule "vim-qfreplace"]
 	path = vim/.vim/pack/bundle/opt/vim-qfreplace
 	url = https://github.com/thinca/vim-qfreplace/
+	ignore = untracked
 [submodule "vim-sxhkdrc"]
 	path = vim/.vim/pack/bundle/opt/vim-sxhkdrc
 	url = https://github.com/baskerville/vim-sxhkdrc
