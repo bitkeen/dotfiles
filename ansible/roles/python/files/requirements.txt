@@ -1,6 +1,6 @@
 bandcamp-downloader==0.0.8.post12
 ipython-autotime==0.3.0 # Time everything in IPython. 
-iredis==1.8.0 # Terminal client for Redis with auto-completion and syntax highlighting.
+iredis==1.9.1 # Terminal client for Redis with auto-completion and syntax highlighting.
 isort # Also required by pylint.
 prompt_toolkit==3.0.10
 pygments-base16==1.0.3
