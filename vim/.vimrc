@@ -818,7 +818,7 @@ let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
 " is not useful since this information is already in lightline.
 noremap <C-g>ad :Git add %<CR>
 noremap <C-g>ed :Gedit<Space>
-noremap <C-g>bl :Gblame<CR>
+noremap <C-g>bl :Git blame<CR>
 noremap <C-g>br :Gbrowse<CR>
 noremap <C-g>ci :Gcommit %<CR>
 noremap <C-g>co :Git checkout<Space>
