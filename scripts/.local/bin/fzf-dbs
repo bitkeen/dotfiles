@@ -37,13 +37,18 @@ choice_connection="$(echo "$choice" | awk -F '=' '{$1=""; print substr($0, 2)}')
 
 if echo "$choice_connection" | grep '^postgresql' > /dev/null; then
     ! [ -x "$(command -v pgcli)" ] && echo 'Could not find pgcli' && exit 1
-    pgcli_prompt="$choice_name \u@\H/\d \n > "
+    # The spaces are Narrow No-Break Space (U+202F).
+    # Narrow ones are used because of these considerations:
+    # - pgcli/mycli underline the regular ones which does not look good visually
+    # - this allows to better distinguish shell prompts from DB CLI prompts
+    # - narrowness does not matter as the font is monospace
+    pgcli_prompt="$choice_name postgres \u@\H/\d \n > "
     [ -z "$TMUX" ] || tmux rename-window 'pgcli'
     pgcli --prompt "$pgcli_prompt" "$choice_connection"
 
 elif echo "$choice_connection" | grep '^mysql' > /dev/null; then
     ! [ -x "$(command -v mycli)" ] && echo 'Could not find mycli' && exit 1
-    mycli_prompt="$choice_name \t \u@\h/\d \n > "
+    mycli_prompt="$choice_name \t \u@\h/\d \n > "
     [ -z "$TMUX" ] || tmux rename-window 'mycli'
     mycli --prompt "$mycli_prompt" "$choice_connection"
 
