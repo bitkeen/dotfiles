@@ -25,8 +25,8 @@ packages:
   - exfat-utils
   - expac # pacman database extraction utility
   - fdupes # Identify or delete duplicate files residing within specified directories
-  - ffmpegthumbnailer # Video thumbnainer for previews in ranger
   - feh # Image viewer, currently only used to set backgrounds with .fehbg script
+  - ffmpegthumbnailer # Video thumbnainer for previews in ranger
   - firefox
   - fzf
   - gimp
@@ -103,8 +103,8 @@ packages:
   - torsocks # Wrapper to safely torify applications
   - traceroute # Tracks the route taken by packets over an IP network
   - transmission-gtk
-  - ttf-font-awesome # Iconic font
   - ttf-dejavu
+  - ttf-font-awesome # Iconic font
   - ttf-liberation # Font family which aims at metric compatibility with Arial, Times New Roman, and Courier New
   - ttf-opensans # Sans-serif typeface commissioned by Google, needed for telegram-desktop
   - udiskie
@@ -117,8 +117,8 @@ packages:
   - virtualbox
   - virtualbox-guest-iso # Guest Additions CD image
   - w3m # Text-based Web browser as well as pager, used for html previews in ranger
-  - wireshark-cli # Network traffic and protocol analyzer/sniffer - CLI tools and data files
   - whois # Intelligent WHOIS client
+  - wireshark-cli # Network traffic and protocol analyzer/sniffer - CLI tools and data files
   - xclip # Command line interface to the X11 clipboard
   - xcursor-vanilla-dmz # Vanilla DMZ cursor theme
   - xdg-user-dirs # Manage user directories like ~/Pictures and ~/Music
