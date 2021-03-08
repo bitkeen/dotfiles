@@ -6,6 +6,7 @@ playing="$(mpc status | sed -n 2p | grep '^\[playing\]')"
 
 clear_and_add() {
     mpc clear > /dev/null
+    mpc update
     mpc add /
 }
 
