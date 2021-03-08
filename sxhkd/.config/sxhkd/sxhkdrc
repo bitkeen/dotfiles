@@ -93,7 +93,7 @@ super+shift+a
 super+shift+f
     i3-msg 'exec firefox'
 super+shift+t
-    i3-msg 'exec transmission-gtk'
+    i3-msg 'exec qbittorrent'
 super+shift+o
     i3-msg "exec --no-startup-id $TERMINAL -e ranger"
 super+c

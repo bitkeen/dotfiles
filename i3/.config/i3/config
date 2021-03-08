@@ -213,10 +213,10 @@ assign [class="KeePassXC"] $workspace10
 assign [class="VirtualBox"] $workspace7
 
 # Floating.
-# Transmission.
-for_window [class="Transmission-gtk"] floating enable
-for_window [class="Transmission-gtk"] resize set $default_floating_size
-for_window [class="Transmission-gtk"] move position center
+# qBittorrent.
+for_window [class="qBittorrent"] floating enable
+for_window [class="qBittorrent"] resize set $default_floating_size
+for_window [class="qBittorrent"] move position center
 # Syncthing.
 for_window [class="Syncthing GTK"] floating enable
 for_window [class="Syncthing GTK"] resize set $default_floating_size

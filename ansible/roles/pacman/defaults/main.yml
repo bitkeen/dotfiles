@@ -75,6 +75,7 @@ packages:
   - python-language-server # An implementation of the Language Server Protocol for Python
   - python-pip
   - python-virtualenvwrapper
+  - qbittorrent
   - ranger
   - redshift # Set color temperature of display according to time of day
   - reflector # A script to retrieve and filter the latest Pacman mirror list
@@ -102,7 +103,6 @@ packages:
   - tor
   - torsocks # Wrapper to safely torify applications
   - traceroute # Tracks the route taken by packets over an IP network
-  - transmission-gtk
   - ttf-dejavu
   - ttf-font-awesome # Iconic font
   - ttf-liberation # Font family which aims at metric compatibility with Arial, Times New Roman, and Courier New

@@ -16,7 +16,6 @@
     - { role: networkmanager, tags: networkmanager }
     - { role: stow, tags: stow }
     - { role: firefox, tags: firefox }
-    - { role: transmission, tags: transmission }
     - { role: virtualbox, tags: virtualbox }
     - { role: systemd, tags: systemd }
     # Role for tasks meant to run in the end.

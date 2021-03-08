@@ -35,7 +35,6 @@ RUN /home/user/.dotfiles/ansible/bootstrap \
     networkmanager \
     stow \
     firefox \
-    transmission \
     virtualbox
 
 # Clear package cache.
