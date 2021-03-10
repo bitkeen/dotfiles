@@ -12,61 +12,92 @@
 #
 # Usage example:
 # fzf-dbs ~/.config/db_connections
-# Add 'mariadb' as initial part of the query:
-# fzf-dbs ~/.config/db_connections mariadb
-
+# Add 'mysql' as initial part of the query:
+# fzf-dbs ~/.config/db_connections mysql
 
 conn_file="$1"
-[ -z "$conn_file" ] && echo "Connections file wasn't specified." && exit 1
-[ ! -f "$conn_file" ] && echo "Connections file doesn't exist." && exit 1
 initial_query="$2"
 
-FZF_DEFAULT_OPTS="--query=$initial_query --reverse --height 40% $FZF_DEFAULT_OPTS"
+FZF_DEFAULT_OPTS="--query=$initial_query --reverse --height 60% $FZF_DEFAULT_OPTS"
 
-# Delete the comments and empty lines first.
-choice="$(sed -e "/^#/d" -e "s/ \?\#.*//" -e "/^\s*$/d" "$conn_file" \
-          | fzf)"
 
+get_connections_from_file() {
+    [ -z "$1" ] && echo "Connections file wasn't specified." && exit 1
+    [ ! -f "$1" ] && echo "Connections file doesn't exist." && exit 1
+    # Delete the comments and empty lines first, then sort.
+    sed -e "/^#/d" -e "s/ \?\#.*//" -e "/^\s*$/d" "$1" |
+        sort
+}
+
+
+check_for_duplicates() {
+    duplicated_conns="$(echo "$1" | awk -F '=' '{print $1}' | uniq -d)"
+    [ -n "$duplicated_conns" ] &&
+        printf "Got duplicated connections:\n%s" "$duplicated_conns" &&
+        exit 1
+}
+
+
+hide_passwords() {
+    echo "$1" | sed -E 's|://(.*):.*@|://\1:******@|'
+}
+
+
+connect() {
+    choice_name="$1"
+    choice_connection="$2"
+    if echo "$choice_connection" | grep '^postgresql' > /dev/null; then
+        ! [ -x "$(command -v pgcli)" ] && echo 'Could not find pgcli' && exit 1
+        # The spaces are Narrow No-Break Space (U+202F).
+        # Narrow ones are used because of these considerations:
+        # - pgcli/mycli underline the regular ones which does not look good visually
+        # - this allows to better distinguish shell prompts from DB CLI prompts
+        # - narrowness does not matter as the font is monospace
+        prompt="$choice_name postgres \u@\H/\d \n > "
+        [ -z "$TMUX" ] || tmux rename-window 'pgcli'
+        pgcli --prompt "$prompt" "$choice_connection"
+
+    elif echo "$choice_connection" | grep '^mysql' > /dev/null; then
+        ! [ -x "$(command -v mycli)" ] && echo 'Could not find mycli' && exit 1
+        prompt="$choice_name \t \u@\h/\d \n > "
+        [ -z "$TMUX" ] || tmux rename-window 'mycli'
+        mycli --prompt "$prompt" "$choice_connection"
+
+    elif echo "$choice_connection" | grep '^redis' > /dev/null; then
+        if [ -x "$(command -v iredis)" ]; then
+            [ -z "$TMUX" ] || tmux rename-window 'iredis'
+            iredis --url "$choice_connection"
+        elif [ -x "$(command -v redis-cli)" ]; then
+            [ -z "$TMUX" ] || tmux rename-window 'redis-cli'
+            redis-cli -u "$choice_connection"
+        else
+            echo 'Could not find iredis/redis-cli'
+            exit 1
+        fi
+
+    else
+        echo 'Wrong connection string format.' && exit 1
+
+    fi
+}
+
+
+connections="$(get_connections_from_file "$conn_file")"
+check_for_duplicates "$connections"
+choice="$(hide_passwords "$connections" | fzf)"
 [ -z "$choice" ] && exit 1
+
+choice_name="$(echo "$choice" | awk -F '=' '{print $1}')"
+# Get the chosen connection from the list where passwords aren't hidden.
+choice_connection="$(
+    echo "$connections" |
+        grep "^$choice_name" |
+        awk -F '=' '{$1=""; print substr($0, 2)}'
+)"
 
 # If running in tmux, save the previous window name.
 [ -z "$TMUX" ] || current_window_name="$(tmux display-message -p '#W')"
 
-choice_name="$(echo "$choice" | awk -F '=' '{print $1}')"
-choice_connection="$(echo "$choice" | awk -F '=' '{$1=""; print substr($0, 2)}')"
-
-if echo "$choice_connection" | grep '^postgresql' > /dev/null; then
-    ! [ -x "$(command -v pgcli)" ] && echo 'Could not find pgcli' && exit 1
-    # The spaces are Narrow No-Break Space (U+202F).
-    # Narrow ones are used because of these considerations:
-    # - pgcli/mycli underline the regular ones which does not look good visually
-    # - this allows to better distinguish shell prompts from DB CLI prompts
-    # - narrowness does not matter as the font is monospace
-    pgcli_prompt="$choice_name postgres \u@\H/\d \n > "
-    [ -z "$TMUX" ] || tmux rename-window 'pgcli'
-    pgcli --prompt "$pgcli_prompt" "$choice_connection"
-
-elif echo "$choice_connection" | grep '^mysql' > /dev/null; then
-    ! [ -x "$(command -v mycli)" ] && echo 'Could not find mycli' && exit 1
-    mycli_prompt="$choice_name \t \u@\h/\d \n > "
-    [ -z "$TMUX" ] || tmux rename-window 'mycli'
-    mycli --prompt "$mycli_prompt" "$choice_connection"
-
-elif echo "$choice_connection" | grep '^redis' > /dev/null; then
-    if [ -x "$(command -v iredis)" ]; then
-        [ -z "$TMUX" ] || tmux rename-window 'iredis'
-        iredis --url "$choice_connection"
-    elif [ -x "$(command -v redis-cli)" ]; then
-        [ -z "$TMUX" ] || tmux rename-window 'redis-cli'
-        redis-cli -u "$choice_connection"
-    else
-        echo 'Could not find iredis/redis-cli'
-        exit 1
-    fi
-
-else
-    echo 'Wrong connection string format.' && exit 1
-
-fi
+connect "$choice_name" "$choice_connection"
 
 [ -z "$current_window_name" ] || tmux rename-window "$current_window_name"
