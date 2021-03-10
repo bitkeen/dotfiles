@@ -47,11 +47,11 @@
     ; Compare with the previous branch.
     lglrp = log --left-right --oneline HEAD...@{-1} --format='%C(auto)%m%C(reset) %C(auto)%h%C(reset) %s %C(cyan)<%aN>%C(reset) %C(green)%ar%C(reset) (%ad)'
     lps = log -p -S
-    ; git-open has to be installed (https://github.com/paulirish/git-open).
     mg = merge
     mga = merge --abort
     mgc = merge --continue
     mgm = merge master
+    ; git-open has to be installed (https://github.com/paulirish/git-open).
     o = open
     pl = pull
     plrb = pull --rebase
