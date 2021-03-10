@@ -92,7 +92,7 @@ uf() {
     done
     append_dir '/'
 
-    dir="$(echo "$dirs" | fzf --height=40%)"
+    dir="$(echo "$dirs" | fzf --reverse --height=40%)"
     [ -n "$dir" ] && cd "$dir" || return
 }
 
