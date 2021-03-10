@@ -7,7 +7,7 @@
 # Usage example:
 # fzf-shortcuts ~/.config/shortcuts
 
-FZF_DEFAULT_OPTS="--reverse --height 40% $FZF_DEFAULT_OPTS"
+FZF_DEFAULT_OPTS="--reverse --height 60% $FZF_DEFAULT_OPTS"
 
 cat "$@" 2>/dev/null | # Concatenate input files.
     fzf |
