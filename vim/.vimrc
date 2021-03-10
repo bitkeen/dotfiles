@@ -743,6 +743,9 @@ if exists('loaded_cfilter')
   nnoremap gsQ :Cfilter!<Space>
 endif
 
+" Change `text` to `'text',` across all lines.
+nnoremap gqu :silent %s/^/'/ <bar> %s/$/',/ <bar> nohlsearch<CR>
+
 " Open a new tab with the results of a Vim command execution.
 nnoremap gsx :tabnew <Bar> put=execute('')<Left><Left>
 
