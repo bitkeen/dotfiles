@@ -1,3 +1,6 @@
+// Disable three-pane inspector.
+user_pref("devtools.inspector.three-pane-enabled", "false");
+
 // Don't show a dialog before entering Caret Browsing mode.
 user_pref("accessibility.warn_on_browsewithcaret", false);
 
