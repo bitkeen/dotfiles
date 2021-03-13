@@ -32,9 +32,6 @@ user_pref("devtools.webconsole.persistlog", "true");
 // Disable performance tab in developer tools.
 user_pref("devtools.performance.enabled", "false");
 
-// Vim keybindings in editor.
-// user_pref("devtools.editor.keymap", "vim");
-
 // Enable cryptomining and fingerprinting protection.
 user_pref("privacy.trackingprotection.cryptomining.enabled", "true");
 user_pref("privacy.trackingprotection.fingerprinting.enabled", "true");
@@ -79,3 +76,6 @@ user_pref("browser.cache.disk.capacity", "10485760")
 
 // Use last download dir.
 user_pref("browser.download.folderList", 2)
+
+// Dark theme for devtools.
+user_pref("devtools.theme", "dark")
