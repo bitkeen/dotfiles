@@ -70,3 +70,4 @@
     scope: user
   loop:
     - { unit_name: mpd.service }
+    - { unit_name: syncthing.service }
