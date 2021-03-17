@@ -97,7 +97,6 @@ packages:
   - terminus-font # Monospace bitmap font, used in vconsole
   - thunar # File Manager for the Xfce Desktop Environment
   - thunderbird
-  - thunderbird-extension-enigmail
   - tidy # A tool to tidy HTML code
   - tmux
   - tor
