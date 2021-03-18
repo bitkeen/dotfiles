@@ -63,24 +63,6 @@
       pattern: '^session'
     }
 
-- name: configure Syncthing
-  lineinfile:
-    path: '{{ user_home }}/.config/syncthing/config.xml'
-    line: '{{ item.line }}'
-    regexp: '{{ item.regexp }}'
-  loop:
-    - {
-      # Spaces are to keep the indentation level.
-      line: '        <defaultFolderPath>~/sync</defaultFolderPath>',
-      regexp: '<defaultFolderPath>.*</defaultFolderPath>'
-    }
-    - {
-    # Web GUI.
-      line: '        <address>127.0.0.1:8384</address>',
-      regexp: '<address>127.0.0.1:8080</address>'
-    }
-  ignore_errors: yes
-
 - name: configure pacman
   lineinfile:
     path: '/etc/pacman.conf'
