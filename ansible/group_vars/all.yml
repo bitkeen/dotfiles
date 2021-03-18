@@ -21,6 +21,7 @@ dirs:
   downloads: '{{ user_home }}/downloads'
   downloads_bandcamp_dl: '{{ user_home }}/downloads/bandcamp-dl'
   downloads_firefox: '{{ user_home }}/downloads/firefox'
+  downloads_torrents: '{{ user_home }}/downloads/torrents'
   firefox_profile: '{{ user_home }}/.mozilla/firefox/main'
   firefox_extensions: '{{ user_home }}/.mozilla/firefox/main/extensions'
   pictures: '{{ user_home }}/pictures'
