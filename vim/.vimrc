@@ -705,14 +705,6 @@ if has('autocmd')
     " Map F4 to compile XeTeX.
     autocmd FileType tex noremap <F4> :w<Enter>:!xelatex<Space>%<Enter><Enter>
   augroup END
-  " Quickfix window mappings.
-  augroup qfmaps
-    autocmd!
-    " Go to older error list.
-    autocmd FileType qf nnoremap <Leader>H :colder<CR>
-    " Go to newer error list.
-    autocmd FileType qf nnoremap <Leader>L :cnewer<CR>
-  augroup END
 endif
 
 " Replace search term under the cursor, dot repeats the change.
