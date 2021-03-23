@@ -863,7 +863,10 @@ noremap <silent> <Leader>m :MerginalToggle<CR>
 nmap <Leader>z <Plug>(vzoom)
 
 " vim-instant-markdown
-noremap <LocalLeader>i :InstantMarkdownPreview<CR>
+augroup markdownmaps
+  autocmd!
+  autocmd FileType markdown,vimwiki noremap <buffer> gsm :InstantMarkdownPreview<CR>
+augroup END
 
 if has('python3')
   " vim-isort
