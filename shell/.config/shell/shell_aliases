@@ -116,7 +116,6 @@ alias et='gio trash --empty'
 alias nb='newsboat'
 
 alias fzd='fzf-dbs ~/.config/db_connections.local'
-alias fzc='fzf-containers'
 
 alias timer='TIMER_SOUND="$HOME/.local/share/timer/sound-2.wav" timer'
 
