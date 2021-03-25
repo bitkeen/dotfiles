@@ -39,6 +39,7 @@ packages:
   - gucharmap # Gnome Unicode character map
   - guvcview-qt # Webcam capturing interface
   - gvim # Vim in GVim package has support for system clipboard
+  - hey # HTTP load generator
   - i3-wm
   - imagemagick # An image viewing/manipulation program
   - ipython
