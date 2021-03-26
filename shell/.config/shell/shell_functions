@@ -194,7 +194,5 @@ clc() {
 
 
 rpc() {
-    rpw "$1" | copy
-    yank
-    echo
+    rpw "$1" | copy -p
 }
