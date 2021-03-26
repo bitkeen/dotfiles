@@ -1,2 +1,16 @@
 #!/bin/sh
+# Wrapper around xclip.
+#
+# -p - print copied input
+
+if [ -n "$1" ]; then
+    if [ "$1" = '-p' ]; then
+        YANK=1        
+    else
+        echo "copy: invalid option -- '$1'"
+        exit 1
+    fi
+fi
+
 xclip -i -selection clipboard
+[ "$YANK" = 1 ] && yank
