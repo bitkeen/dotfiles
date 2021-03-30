@@ -28,6 +28,7 @@ packages:
   - feh # Image viewer, currently only used to set backgrounds with .fehbg script
   - ffmpegthumbnailer # Video thumbnainer for previews in ranger
   - firefox
+  - flake8 # The modular source code checker: pep8, pyflakes and co
   - fzf
   - gimp
   - git
