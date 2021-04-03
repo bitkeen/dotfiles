@@ -1,5 +1,7 @@
 ---
 packages:
+  - adobe-source-han-sans-otc-fonts
+  - adobe-source-han-serif-otc-fonts
   - adobe-source-sans-pro-fonts
   - adobe-source-serif-pro-fonts
   - android-tools # Required for scrcpy (from AUR)
