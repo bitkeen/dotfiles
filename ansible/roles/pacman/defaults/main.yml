@@ -73,6 +73,7 @@ packages:
   - pulseaudio
   - pulseaudio-alsa # For PulseAudio to manage ALSA.
   - pulsemixer # CLI and curses mixer for pulseaudio
+  - python-cssbeautifier # CSS unobfuscator and beautifier
   - python-jedi # Awesome autocompletion for python, a dependency for ipython and python-language-server
   - python-language-server # An implementation of the Language Server Protocol for Python
   - python-pip
