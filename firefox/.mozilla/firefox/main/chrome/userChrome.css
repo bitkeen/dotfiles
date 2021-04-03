@@ -1,3 +1,13 @@
 .tabbrowser-tab[fadein]:not([pinned]) {
     max-width: 300px !important;
 }
+
+/* Don't display window minimize/maximize/close buttons on the right. */
+.titlebar-buttonbox-container {
+    display: none;
+}
+
+/* Don't display spacer on the left of the tabs. */
+.titlebar-spacer[type="pre-tabs"] {
+    display: none
+}
