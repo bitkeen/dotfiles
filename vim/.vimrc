@@ -272,6 +272,7 @@ function! CloseQuickfixWindows()
 endfunction
 
 let g:formatter_mapping = {
+\ 'css': '!css-beautify',
 \ 'html': '!tidy -q -i --show-errors 0',
 \ 'json': '!python -m json.tool',
 \ 'python': '!autopep8 -',
