@@ -156,7 +156,7 @@ animation-charging-foreground = ${colors.foreground}
 
 [module/dmenu_power]
 type = custom/text
-content = 
+content = x
 click-left = dmenu-power
 
 
