@@ -11,3 +11,14 @@
 .titlebar-spacer[type="pre-tabs"] {
     display: none
 }
+
+.tabbrowser-tab:first-child {
+    counter-reset: nth-tab 0
+}
+
+.tab-content::before {
+    content: counter(nth-tab) " ";
+    counter-increment: nth-tab;
+    display: -moz-box;
+    padding-inline-end: 3px
+}
