@@ -19,6 +19,10 @@ if &runtimepath =~# 'bundle/opt/lightline.vim'
   \   'right': [ [ 'lineinfo' ],
   \              [ 'percent' ] ],
   \ },
+  \ 'tabline': {
+  \   'left': [ [ 'tabs' ] ],
+  \   'right': [ ],
+  \ },
   \ 'tab': {
   \   'active': [ 'tabnum', 'filename', 'modified', 'tabwinnr' ],
   \   'inactive': [ 'tabnum', 'filename', 'modified', 'tabwinnr' ],
