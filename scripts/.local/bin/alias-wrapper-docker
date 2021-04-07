@@ -30,8 +30,8 @@ case "$key" in
     krm)
         # The xargs arguments make sure that kill/rm won't
         # be executed if there is no input.
-        'docker' ps -q | xargs -I {} docker kill {}
-        'docker' ps -aq | xargs -I {} docker rm {}
+        'docker' ps -q | xargs -P8 -I {} docker kill {}
+        'docker' ps -aq | xargs -P8 -I {} docker rm {}
         exit;;
     lg)
         cmd="logs";;
