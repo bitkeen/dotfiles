@@ -13,4 +13,7 @@ if [ -n "$1" ]; then
 fi
 
 xclip -i -selection clipboard
-[ "$YANK" = 1 ] && yank
+
+if [ "$YANK" = 1 ]; then
+    yank
+fi
