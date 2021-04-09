@@ -27,35 +27,6 @@ ps1_status() {
 }
 
 
-m() {
-    # A wrapper around vman.
-    # Order of precedence:
-    # 1. If a program is found by $1, run vman for it.
-    # 2. If an alias is found by $1, run vman for it's value.
-    # 3. Run vman for $1.
-    #   
-    # Such an order is needed to get a smarter alias expansion than
-    # could be done with `alias vm='vman '`, since the actual programs
-    # should get precedence over aliases, not otherwise. 
-    # E.g. if you have `alias ls='ls -p'`, then `vm ls` should get you
-    # `vman ls`, not `vman 'ls -p'`, and if you have `alias p='pacman'`,
-    # you'd get `vman pacman` by running `vm p`, if there's no program
-    # by name `p`.
-
-    # Use full path to which binary since in zsh which is a built-in that
-    # has slightly different behavior.
-    if /usr/bin/which "$1" >/dev/null 2>&1; then
-        vman "$(/usr/bin/which "$1")"
-    elif command -v "$1" | grep '^alias' > /dev/null; then
-        # Remove single quotes for zsh compatilibity and regexp simplicity.
-        alias_val="$(command -v "$1" | tr -d "'" | grep -Po "(?<==).*")"
-        vman "$alias_val"
-    else
-        vman "$1"
-    fi
-}
-
-
 u() {
     # Go up $1 directories.
     # If $1 is omitted or is not an integer, go up 1 directory.

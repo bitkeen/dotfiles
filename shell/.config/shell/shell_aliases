@@ -61,8 +61,6 @@ alias t='tmux'
 alias ta='tmux attach -t'
 alias tk='tmux kill-session -t'
 
-alias fzm='fzf-man vman'
-
 alias v='vim'
 alias vs='vim_session_venv ~/.config/venv_mapping'
 

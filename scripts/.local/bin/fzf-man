@@ -1,9 +1,9 @@
 #!/bin/sh
 # Fuzzy-find and open a man page.
-# Can use a custom man reader which should be passed as the first and
-# only argument.
+# Can use a custom man reader which should be passed as MAN_READER env variable.
 
-[ -z "$1" ] && reader='man' || reader="$1"
+MAN_READER="${MAN_READER:-man}"
+
 page="$(apropos . | fzf --tac | awk '{print $1}')"
 [ -z "$page" ] && exit 1
-"$reader" "$page"
+"$MAN_READER" "$page"
