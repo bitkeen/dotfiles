@@ -701,10 +701,9 @@ if has('autocmd')
   " Compiling TeX.
   augroup texmaps
     autocmd!
-    " Map F3 to compile LaTeX. The last <Enter> skips the log.
-    autocmd FileType tex noremap <F3> :w<Enter>:!pdflatex<Space>%<Enter><Enter>
-    " Map F4 to compile XeTeX.
-    autocmd FileType tex noremap <F4> :w<Enter>:!xelatex<Space>%<Enter><Enter>
+    " The last <Enter> skips the log.
+    autocmd FileType tex noremap <buffer> gsm :w<Enter>:!xelatex<Space>%<Enter><Enter>
+    autocmd FileType tex noremap <buffer> gsM :w<Enter>:!pdflatex<Space>%<Enter><Enter>
   augroup END
 endif
 
