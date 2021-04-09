@@ -38,7 +38,6 @@ packages:
   - shell
   - sxhkd
   - sxiv
-  - syncthing-gtk
   - tmux
   - vim
   - x11

@@ -96,7 +96,6 @@ packages:
   - sxhkd
   - sxiv # Simple X Image Viewer
   - syncthing # Open Source Continuous Replication / Cluster Synchronization Thing
-  - syncthing-gtk # GTK3 based GUI and notification area icon for Syncthing
   - sysstat # A collection of performance monitoring tools (iostat,isag,mpstat,pidstat,sadf,sar)
   - telegram-desktop
   - terminus-font # Monospace bitmap font, used in vconsole

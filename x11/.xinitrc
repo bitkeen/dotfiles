@@ -23,10 +23,6 @@ dunst &
 # Hide cursor when idle.
 unclutter &
 
-# Syncthing GUI + tray, does not start Syncthing daemon, which gets started
-# as a systemd service.
-XDG_CURRENT_DESKTOP='i3' syncthing-gtk --minimized &
-
 nm-applet &
 
 blueman-applet &

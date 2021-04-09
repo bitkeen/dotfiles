@@ -217,11 +217,6 @@ assign [class="VirtualBox"] $workspace7
 for_window [class="qBittorrent"] floating enable
 for_window [class="qBittorrent"] resize set $default_floating_size
 for_window [class="qBittorrent"] move position center
-# Syncthing.
-for_window [class="Syncthing GTK"] floating enable
-for_window [class="Syncthing GTK"] resize set $default_floating_size
-for_window [class="Syncthing GTK"] move position center
-for_window [class="Syncthing GTK"] focus
 
 # Stack VirtualBox windows together.
 for_window [class="VirtualBox"] layout stacking
