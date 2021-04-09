@@ -27,3 +27,7 @@
 - name: create the manual page index cache
   command:
     cmd: mandb -c
+
+- name: run updatedb (mlocate) manually for the first time
+  command:
+    cmd: updatedb
