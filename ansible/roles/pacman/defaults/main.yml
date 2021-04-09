@@ -91,6 +91,7 @@ packages:
   - seahorse # GNOME application for managing PGP keys
   - shellcheck # Shell script analysis tool
   - simplescreenrecorder
+  - sof-firmware # Sound Open Firmware, needed for audio to work on X1 Carbon
   - solaar # Device manager for Logitech's Unifying receiver peripherals
   - stow
   - sxhkd
