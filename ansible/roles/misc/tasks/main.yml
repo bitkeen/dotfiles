@@ -45,6 +45,10 @@
       src: '{{ dirs.sync_books }}',
       dest: '{{ user_home }}/books'
     }
+    - {
+      src: '/run/media/user',
+      dest: '{{ user_home }}/media'
+    }
 
 # https://wiki.archlinux.org/index.php/GNOME/Keyring#PAM_method
 - name: configure PAM for GNOME Keyring
