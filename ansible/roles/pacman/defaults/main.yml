@@ -100,6 +100,8 @@ packages:
   - sysstat # A collection of performance monitoring tools (iostat,isag,mpstat,pidstat,sadf,sar)
   - telegram-desktop
   - terminus-font # Monospace bitmap font, used in vconsole
+  - texlive-bin
+  - texlive-latexextra
   - thunar # File Manager for the Xfce Desktop Environment
   - thunderbird
   - tidy # A tool to tidy HTML code
