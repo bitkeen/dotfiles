@@ -24,6 +24,7 @@
     src: '{{ item.src }}'
     dest: '{{ item.dest }}'
     state: link
+    force: '{% if "force" in item %} {{ item.force }} {% else %} no {% endif %}'
   loop:
     - {
       src: '{{ dirs.dotfiles_local }}',
@@ -47,7 +48,8 @@
     }
     - {
       src: '/run/media/user',
-      dest: '{{ user_home }}/media'
+      dest: '{{ user_home }}/media',
+      force: yes
     }
 
 # https://wiki.archlinux.org/index.php/GNOME/Keyring#PAM_method
