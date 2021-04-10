@@ -16,6 +16,7 @@
 
 # Use full path to which binary since in zsh which is a built-in that
 # has slightly different behavior.
+# shellcheck disable=SC2230
 if [ -z "$1" ]; then
     MAN_READER='vman' fzf-man
 elif /usr/bin/which "$1" >/dev/null 2>&1; then
