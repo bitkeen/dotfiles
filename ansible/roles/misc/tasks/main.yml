@@ -77,6 +77,11 @@
       line: 'IgnoreGroup = custom',
       regexp: '^#[ ]?IgnoreGroup ='
     }
+    - {
+      # Double quotes are important to keep the line break.
+      line: "# Automatically enable colors only when pacman’s output is on a tty.\nColor",
+      regexp: '^#[ ]?Color'
+    }
 
 - name: get submodules
   become: yes
