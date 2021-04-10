@@ -2,7 +2,10 @@
 # Use dmenu to mount drives using udisksctl.
 
 devices="$(
-    lsblk --list --paths --output NAME,TYPE,MOUNTPOINT | awk '$2~/^part$/' | awk '$3~/^$/{ print $1 }'
+    lsblk --list --paths --output NAME,TYPE,MOUNTPOINT |
+        grep -v '/dev/nvme0n1' |  # On an encrypted drive, not all the partitions will be shown as mounted.
+        awk '$2~/^part$/' |
+        awk '$3~/^$/{ print $1 }'
 )"
 [ -z "$devices" ] && notify-send 'Nothing to mount' && exit 1
 
