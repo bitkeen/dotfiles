@@ -7,9 +7,6 @@ set selection-clipboard clipboard
 
 #set scroll-step 80
 
-# Set scrolling via touchpad to be smooth.
-set smooth-scroll true
-
 set default-bg \#222
 set statusbar-bg \#222
 
