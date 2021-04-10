@@ -74,6 +74,7 @@
     path: '/etc/pacman.conf'
     line: '{{ item.line }}'
     regexp: '{{ item.regexp }}'
+    backrefs: yes  # To avoid adding lines to the end of the file in case a regexp does not match.
   loop:
     - {
       line: 'VerbosePkgLists',
