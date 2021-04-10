@@ -52,6 +52,8 @@ alias sudo='sudo -v; sudo '
 
 alias mk='make'
 
+alias o='xdg-open'
+
 alias p='pacman'
 
 alias ranger='wrap_ranger'
