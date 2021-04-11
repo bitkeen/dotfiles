@@ -126,3 +126,34 @@
   user:
     name: '{{ user_name }}'
     shell: /bin/zsh
+
+- name: configure qBittorrent
+  become: yes
+  become_user: '{{ user_name }}'
+  community.general.ini_file:
+    path: '{{ user_home }}/.config/qBittorrent/qBittorrent.conf'
+    section: '{{ item.section }}'
+    option: '{{ item.option }}'
+    value: '{{ item.value }}'
+    mode: 0644
+  loop:
+    - {
+      section: 'LegalNotice',
+      option: 'Accepted',
+      value: 'true'
+    }
+    - {
+      section: 'Preferences',
+      option: 'Downloads\SavePath',
+      value: '/home/user/downloads/torrents/'
+    }
+    - {
+      section: 'Preferences',
+      option: 'Advanced\TrayIconStyle',
+      value: '1'
+    }
+    - {
+      section: 'Preferences',
+      option: 'General\CloseToTrayNotified',
+      value: 'true'
+    }
