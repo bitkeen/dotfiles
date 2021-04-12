@@ -157,3 +157,7 @@ zsh_plugins="$HOME/.config/zsh/plugins"
 # Increment and decrement numbers easily with Ctrl+a and Ctrl+x.
 source "$zsh_plugins/vi-increment/vi-increment.zsh"
 source "$zsh_plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
+
+# Disable globs for the `=` calculator script
+# to be able to do `= 3*3` instead of `= '3*3'`.
+aliases[=]='noglob ='
