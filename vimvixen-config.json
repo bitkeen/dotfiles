@@ -40,5 +40,8 @@
   },
   "blacklist": [
     "meet.google.com"
-  ]
+  ],
+  "properties": {
+    "colorscheme": "dark"
+  }
 }
