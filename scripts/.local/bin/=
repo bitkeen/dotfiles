@@ -1,0 +1,8 @@
+#!/bin/zsh
+# Calculator.
+# From https://askubuntu.com/a/379282.
+
+IFS=' '
+calc="${*//p/+}"
+calc="${calc//x/*}"
+echo "$(($calc))"
