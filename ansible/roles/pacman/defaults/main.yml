@@ -20,6 +20,7 @@ packages:
   - bluez-utils # Provides the bluetoothctl utility
   - ccls # C/C++/ObjC language server
   - ctags # Universal ctags
+  - dnsmasq
   - docker
   - docker-compose
   - dunst # A customizable and lightweight notification-daemon
