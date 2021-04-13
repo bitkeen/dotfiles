@@ -43,6 +43,8 @@ bindkey -M viins '^[[3~' delete-char
 bindkey -M viins '^?' backward-delete-char
 bindkey -M viins '^F' clear-screen
 bindkey -M viins '^]' vi-yank-whole-line
+bindkey -M viins '^N' down-history
+bindkey -M viins '^P' up-history
 
 bindkey -M viins '^X^U' kill-whole-line
 bindkey -M viins -s '^[g' '^X^U fzg\n'
