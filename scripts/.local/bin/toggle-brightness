@@ -15,13 +15,13 @@ get_ws(){
 }
 
 if [ "$(light)" = '0.00' ]; then
-    [ -n "$(get_ws 'HDMI1' 'focused')" ] &&
-        i3-msg "workspace $(get_ws 'eDP1' 'visible')"
+    [ -n "$(get_ws 'HDMI-1' 'focused')" ] &&
+        i3-msg "workspace $(get_ws 'eDP-1' 'visible')"
 
     light -S "$DESIRED_BRIGHTNESS"
 else
-    [ -n "$(get_ws 'eDP1' 'focused')" ] &&
-        i3-msg "workspace $(get_ws 'HDMI1' 'visible')"
+    [ -n "$(get_ws 'eDP-1' 'focused')" ] &&
+        i3-msg "workspace $(get_ws 'HDMI-1' 'visible')"
 
     light -S 0
 fi
