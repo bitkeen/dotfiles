@@ -28,6 +28,6 @@
   command:
     cmd: mandb -c
 
-- name: run updatedb (mlocate) manually for the first time
+- name: run updatedb (mlocate)
   command:
     cmd: updatedb
