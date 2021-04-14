@@ -36,10 +36,6 @@ URxvt.keysym.M-o:	  matcher:list
 URxvt.keysym.M-p:	  matcher:select
 
 ! font-size extension - change font size on the fly.
-! Disable default bindings.
-URxvt.keysym.C-plus:   builtin-string:
-URxvt.keysym.C-minus:  builtin-string:
-URxvt.keysym.C-0:      builtin-string:
 ! Set custom bindings.
 URxvt.keysym.M-equal:  font-size:increase
 URxvt.keysym.M-minus:  font-size:decrease
@@ -49,6 +45,10 @@ URxvt.keysym.M-S-Up:   font-size:incglobal
 URxvt.keysym.M-S-Down: font-size:decglobal
 URxvt.keysym.M-0:      font-size:reset
 URxvt.keysym.M-grave:  font-size:show
+! Disable default bindings.
+URxvt.keysym.C-plus:   builtin-string:
+URxvt.keysym.C-minus:  builtin-string:
+URxvt.keysym.C-0:      builtin-string:
 
 ! keyboard-select - move through text in terminal using vim bindings
 URxvt.keysym.M-Escape: perl:keyboard-select:activate
