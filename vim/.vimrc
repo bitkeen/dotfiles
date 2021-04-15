@@ -767,6 +767,9 @@ inoremap <3-MiddleMouse> <LeftMouse>
 noremap <4-MiddleMouse> <LeftMouse>
 inoremap <4-MiddleMouse> <LeftMouse>
 
+" Use Shift+Tab to shift indent backwards in insert mode.
+inoremap <S-Tab> <C-d>
+
 " }}}
 
 " Plugin mappings {{{
