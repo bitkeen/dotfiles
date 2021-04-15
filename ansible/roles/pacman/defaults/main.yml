@@ -72,6 +72,7 @@ packages:
   - ntfs-3g
   - openbsd-netcat # TCP/IP swiss army knife
   - pacman-contrib # Contributed scripts and tools for pacman systems
+  - pcsclite # For CryptoPlugin
   - picom # A compositor for X11, required for transparency
   - pulseaudio
   - pulseaudio-alsa # For PulseAudio to manage ALSA.
