@@ -1,7 +1,7 @@
 [include]
     path = ~/.gitconfig.local
 [advice]
-	detachedHead = false
+    detachedHead = false
 [alias]
     a = add
     aa = add --all
@@ -117,10 +117,10 @@
 [push]
     default = current
 [rebase]
-	autosquash = true
+    autosquash = true
 [status]
     submodulesummary = 1
 [url "https://github.com/"]
     insteadOf = gh://
 [credential]
-	helper = /usr/lib/git-core/git-credential-libsecret
+    helper = /usr/lib/git-core/git-credential-libsecret
