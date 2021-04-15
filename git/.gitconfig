@@ -106,6 +106,8 @@
 [diff]
     tool = vimdiff
     colorMoved = zebra
+[init]
+    defaultBranch = master
 [interactive]
     ; --tabs=4 didn't work for some reason in both delta and less.
     diffFilter = "if command -v delta > /dev/null; then delta --theme=base16 --color-only; else less; fi"
