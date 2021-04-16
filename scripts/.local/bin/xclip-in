@@ -1,0 +1,4 @@
+#!/bin/sh
+# Copy with xclip.
+
+xclip -i -selection clipboard "$@"

@@ -138,7 +138,7 @@ zle -N zle-keymap-select
 # Copy current command to system clipboard.
 vi-copy-line() {
     zle vi-yank-whole-line
-    printf %s "$CUTBUFFER" | copy
+    printf %s "$CUTBUFFER" | xclip-in
 }
 zle -N vi-copy-line
 bindkey -M vicmd 'Y' vi-copy-line
