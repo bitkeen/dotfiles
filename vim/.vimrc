@@ -351,7 +351,6 @@ if has('packages')
   packadd! vim-highlightedyank " Highlight yanked text
   packadd! vim-indent-object
   packadd! vim-instant-markdown " Instant markdown previews
-  packadd! vim-ledger
   packadd! vim-merginal " Interface for dealing with Git branches
   packadd! vim-obsession
   packadd! vim-python-pep8-indent

@@ -37,9 +37,6 @@
 [submodule "git-blame.vim"]
 	path = vim/.vim/pack/bundle/opt/git-blame.vim
 	url = https://github.com/zivyangll/git-blame.vim
-[submodule "vim-ledger"]
-	path = vim/.vim/pack/bundle/opt/vim-ledger
-	url = https://github.com/ledger/vim-ledger.git
 [submodule "lightline.vim"]
 	path = vim/.vim/pack/bundle/opt/lightline.vim
 	url = https://github.com/itchyny/lightline.vim.git
