@@ -238,6 +238,7 @@ exec thunderbird
 exec telegram-desktop
 
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+exec_always --no-startup-id i3-brightness-daemon  # Custom script, exits on i3 reload.
 
 # }}}
 
