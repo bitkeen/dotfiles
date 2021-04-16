@@ -1,0 +1,13 @@
+#!/bin/sh
+# Listen on i3's workspace events, turn on laptop screen brightness
+# if a workspace the focus shifted to is on it.
+
+DESIRED_BRIGHTNESS='60'
+
+i3-msg -t subscribe -m '[ "workspace" ]' |
+    jq --raw-output --unbuffered 'select(.change == "focus").current.output' |
+    while read -r line; do 
+        if [ "$line" = 'eDP-1' ] && [ "$(light)" = '0.00' ]; then 
+            light -S "$DESIRED_BRIGHTNESS"
+        fi
+    done 
