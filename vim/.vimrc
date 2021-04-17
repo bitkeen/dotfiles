@@ -85,6 +85,8 @@ if has('autocmd')
     autocmd BufWritePost *sxhkdrc silent !pkill -USR1 sxhkd
     " Reload Xresources on update.
     autocmd BufWritePost *Xresources, silent !xrdb %
+    " Reload tmux on config update.
+    autocmd BufWritePost *.tmux.conf, silent !tmux source-file ~/.tmux.conf
     " Reload i3 config on update.
     autocmd BufWritePost */i3/config, silent !i3-msg restart
 
