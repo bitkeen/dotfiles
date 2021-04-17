@@ -61,7 +61,8 @@ wider_completion_menu = False
 # \R - The current time, in 24-hour military time (0-23)
 # \r - The current time, standard 12-hour time (1-12)
 # \s - Seconds of the current time
-prompt = '\d \n > '
+# Surrounding spaces are Narrow No-Break Space (U+202F).
+prompt = '\d \n > '
 prompt_continuation = '-> '
 
 # Skip intro info on startup and outro info on exit
