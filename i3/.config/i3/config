@@ -213,10 +213,12 @@ assign [class="KeePassXC"] $workspace10
 assign [class="VirtualBox"] $workspace7
 
 # Floating.
-# qBittorrent.
-for_window [class="qBittorrent"] floating enable
-for_window [class="qBittorrent"] resize set $default_floating_size
-for_window [class="qBittorrent"] move position center
+# qBittorrent
+# Title is specified so the rule won't be applied to popup windows
+# insie qBittorrent
+for_window [class="qBittorrent" title="qBittorrent"] floating enable
+for_window [class="qBittorrent" title="qBittorrent"] resize set $default_floating_size
+for_window [class="qBittorrent" title="qBittorrent"] move position center
 
 # Stack VirtualBox windows together.
 for_window [class="VirtualBox"] layout stacking
