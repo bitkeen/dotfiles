@@ -125,4 +125,4 @@ alias drdf='docker run -it --rm bitkeen/dotfiles'
 # Ignore grep aliases.
 alias ascii="od -An -t dC | 'grep' -Po '\d.*(?=10)'"
 
-alias yp="pwd | xclip-in -rmlastnl"
+alias yp='pwd | xclip-in -rmlastnl'
