@@ -35,10 +35,6 @@
       dest: '{{ user_home }}/.ansible.cfg'
     }
     - {
-      src: '{{ dotfiles_home }}/ansible/bootstrap',
-      dest: '{{ dirs.dot_local_bin }}/bootstrap'
-    }
-    - {
       src: '{{ dirs.sync_zathura }}',
       dest: '{{ user_home }}/.local/share/zathura'
     }
