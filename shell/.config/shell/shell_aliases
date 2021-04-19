@@ -126,3 +126,5 @@ alias drdf='docker run -it --rm bitkeen/dotfiles'
 alias ascii="od -An -t dC | 'grep' -Po '\d.*(?=10)'"
 
 alias yp='pwd | xclip-in -rmlastnl'
+
+alias bs='~/.dotfiles/ansible/bootstrap'
