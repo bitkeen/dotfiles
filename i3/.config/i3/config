@@ -60,16 +60,16 @@ client.background       $base00
 # Bindings {{{
 
 # Switch to workspace.
-bindsym $super+1 workspace $workspace1
-bindsym $super+2 workspace $workspace2
-bindsym $super+3 workspace $workspace3
-bindsym $super+4 workspace $workspace4
-bindsym $super+5 workspace $workspace5
-bindsym $super+6 workspace $workspace6
-bindsym $super+7 workspace $workspace7
-bindsym $super+8 workspace $workspace8
-bindsym $super+9 workspace $workspace9
-bindsym $super+0 workspace $workspace10
+bindsym $super+1 exec --no-startup-id i3-switch-workspace 'workspace $workspace1'
+bindsym $super+2 exec --no-startup-id i3-switch-workspace 'workspace $workspace2'
+bindsym $super+3 exec --no-startup-id i3-switch-workspace 'workspace $workspace3'
+bindsym $super+4 exec --no-startup-id i3-switch-workspace 'workspace $workspace4'
+bindsym $super+5 exec --no-startup-id i3-switch-workspace 'workspace $workspace5'
+bindsym $super+6 exec --no-startup-id i3-switch-workspace 'workspace $workspace6'
+bindsym $super+7 exec --no-startup-id i3-switch-workspace 'workspace $workspace7'
+bindsym $super+8 exec --no-startup-id i3-switch-workspace 'workspace $workspace8'
+bindsym $super+9 exec --no-startup-id i3-switch-workspace 'workspace $workspace9'
+bindsym $super+0 exec --no-startup-id i3-switch-workspace 'workspace $workspace10'
 
 # Move focused container to workspace.
 bindsym $super+shift+1 move container to workspace $workspace1
@@ -164,13 +164,13 @@ bindsym $super+shift+c reload
 bindsym $super+shift+r restart
 
 # Move workspaces between outputs.
-bindsym $super+ctrl+h move workspace to output left
-bindsym $super+ctrl+j move workspace to output down
-bindsym $super+ctrl+k move workspace to output up
-bindsym $super+ctrl+l move workspace to output right
+bindsym $super+ctrl+h exec --no-startup-id i3-switch-workspace 'move workspace to output left'
+bindsym $super+ctrl+j exec --no-startup-id i3-switch-workspace 'move workspace to output down'
+bindsym $super+ctrl+k exec --no-startup-id i3-switch-workspace 'move workspace to output up'
+bindsym $super+ctrl+l exec --no-startup-id i3-switch-workspace 'move workspace to output right'
 
 # Enable back and forth switching with a keybinding.
-bindsym $super+Tab workspace back_and_forth
+bindsym $super+Tab exec --no-startup-id i3-switch-workspace 'workspace back_and_forth'
 
 # Mouse bindings.
 # Disable mouse wheel switching between windows.
@@ -240,7 +240,6 @@ exec thunderbird
 exec telegram-desktop
 
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
-exec_always --no-startup-id i3-brightness-daemon  # Custom script, exits on i3 reload.
 
 # }}}
 
