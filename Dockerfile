@@ -35,7 +35,8 @@ RUN /home/user/.dotfiles/ansible/bootstrap \
     networkmanager \
     stow \
     firefox \
-    virtualbox
+    virtualbox \
+    after
 
 # Clear package cache.
 RUN sudo rm /var/cache/pacman/pkg/*
