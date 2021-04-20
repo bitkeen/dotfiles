@@ -238,6 +238,7 @@ exec keepassxc
 exec firefox
 exec thunderbird
 exec telegram-desktop
+exec qbittorrent
 
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
