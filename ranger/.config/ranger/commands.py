@@ -131,6 +131,28 @@ class fzf_select(Command):
                 self.fm.select_file(fzf_file)
 
 
+class fzf_alt_c(Command):
+    """
+    :fzf_cd
+
+    Same as Alt+C in shell.
+    """
+    def execute(self):
+        varname = 'FZF_ALT_C_COMMAND'
+        try:
+            command = f'{os.environ[varname]} | fzf --reverse'
+        except KeyError:
+            self.fm.notify(f'Error: {varname} variable is missing', bad=True)
+            return
+
+        fzf = self.fm.execute_command(
+            command, universal_newlines=True, stdout=subprocess.PIPE)
+        stdout, _ = fzf.communicate()
+        if fzf.returncode == 0:
+            choice = os.path.abspath(stdout.rstrip('\n'))
+            self.fm.cd(choice)
+
+
 class fzf_mounted(Command):
     """
     :fzf_mounted
