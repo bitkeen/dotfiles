@@ -31,3 +31,6 @@
 - name: run updatedb (mlocate)
   command:
     cmd: updatedb
+
+- name: compile tmux-thumbs
+  shell: 'cd {{ user_home }}/.tmux/plugins/tmux-thumbs && cargo build --release'
