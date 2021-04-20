@@ -149,3 +149,18 @@
       option: 'General\CloseToTrayNotified',
       value: 'true'
     }
+    - {
+      section: 'Preferences',
+      option: 'General\MinimizeToTray=true',
+      value: 'true'
+    }
+    - {
+      section: 'Preferences',
+      option: 'General\MinimizeToTrayNotified=true',
+      value: 'true'
+    }
+    - {
+      section: 'Preferences',
+      option: 'General\StartMinimized=true',
+      value: 'true'
+    }
