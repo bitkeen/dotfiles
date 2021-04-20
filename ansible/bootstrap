@@ -8,7 +8,8 @@
 # bootstrap local misc
 
 ! [ -x "$(which ansible 2> /dev/null)" ] &&
-    sudo pacman --noconfirm -S ansible
+    sudo pacman --noconfirm -S ansible &&
+    ln -sf "$HOME/.dotfiles/ansible/ansible.cfg" "$HOME/.ansible.cfg"
 
 export ANSIBLE_PYTHON_INTERPRETER=auto_silent
 
