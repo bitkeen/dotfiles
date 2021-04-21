@@ -299,3 +299,6 @@
 [submodule "tmux-thumbs"]
 	path = tmux/.tmux/plugins/tmux-thumbs
 	url = https://github.com/fcsonline/tmux-thumbs
+[submodule "zsh-autosuggestions"]
+	path = zsh/.config/zsh/plugins/zsh-autosuggestions
+	url = https://github.com/zsh-users/zsh-autosuggestions

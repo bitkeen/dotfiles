@@ -156,6 +156,9 @@ zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 
 # Plugins
 zsh_plugins="$HOME/.config/zsh/plugins"
+export ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=30
+export ZSH_AUTOSUGGEST_USE_ASYNC=1
+source "$zsh_plugins/zsh-autosuggestions/zsh-autosuggestions.zsh"
 # Increment and decrement numbers easily with Ctrl+a and Ctrl+x.
 source "$zsh_plugins/vi-increment/vi-increment.zsh"
 source "$zsh_plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
