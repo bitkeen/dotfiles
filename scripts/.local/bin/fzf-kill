@@ -1,0 +1,13 @@
+#!/bin/sh
+# Select a process with fzf and kill it.
+
+processes="$(ps -ef)"
+
+pid="$(
+echo "$processes" \
+    | fzf --multi --tac \
+    | awk '{print $2}'
+)"
+[ -z "$pid" ] && exit 1
+
+kill "$pid"
