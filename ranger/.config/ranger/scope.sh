@@ -136,7 +136,7 @@ handle_mime() {
             if [[ "$( stat --printf='%s' -- "${FILE_PATH}" )" -gt "${HIGHLIGHT_SIZE_MAX}" ]]; then
                 exit 2
             fi
-            env COLORTERM=8bit bat --color=always --style="plain" \
+            env COLORTERM=8bit bat --color=always --style='plain' \
                 -- "${FILE_PATH}" && exit 5
             exit 2;;
 
