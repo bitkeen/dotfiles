@@ -1,14 +1,14 @@
 export EDITOR=/usr/bin/vim
 export TERMINAL=/usr/bin/urxvt
 export FZF_DEFAULT_OPTS=" \
-    --preview 'cat {}' \
+    --preview 'fzf-preview {} | head -n 50' \
     --preview-window='hidden' \
     --bind='ctrl-t:toggle-preview' \
     --bind='alt-enter:print-query' \
     "
-export FZF_ALT_C_OPTS='--height 60%'
+export FZF_ALT_C_OPTS='--height 60% --preview-window="nohidden"'
 export FZF_CTRL_R_OPTS='--sort --reverse --height 60%'
-export FZF_CTRL_T_OPTS='--height 60%'
+export FZF_CTRL_T_OPTS='--height 60% --preview-window="nohidden"'
 # Default command ignores all dot-directories. This one only ignores `.git`.
 export FZF_ALT_C_COMMAND="command find -L . -mindepth 1 \\( -path '*/\\.git*' -o -fstype 'sysfs' -o -fstype 'devfs' -o -fstype 'devtmpfs' -o -fstype 'proc' \\) \
     -prune -o -type d -print 2> /dev/null | cut -b3-"

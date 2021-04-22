@@ -1,0 +1,36 @@
+#!/bin/sh
+# Preview script to be used in fzf.
+
+text() {
+    # Preview text files.
+    bat --color always --style='plain' --line-range ':50' "$1"
+}
+
+
+bin() {
+    # Preview binary files.
+    hexdump --canonical "$1" 
+}
+
+
+d() {
+    # Preview directories.
+    ls --color='always' -AlFh "$1"
+}
+
+
+f() {
+    # Preview files.
+    if file -bi "$1" | grep 'charset=binary$' >/dev/null; then
+        bin "$1"
+    else
+        text "$1"
+    fi
+}
+
+
+if [ -d "$1" ]; then
+    d "$1"
+else
+    f "$1"
+fi
