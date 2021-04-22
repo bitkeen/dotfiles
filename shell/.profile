@@ -6,7 +6,9 @@ export FZF_DEFAULT_OPTS=" \
     --bind='ctrl-t:toggle-preview' \
     --bind='alt-enter:print-query' \
     "
-export FZF_CTRL_R_OPTS='--sort --reverse'
+export FZF_ALT_C_OPTS='--height 60%'
+export FZF_CTRL_R_OPTS='--sort --reverse --height 60%'
+export FZF_CTRL_T_OPTS='--height 60%'
 # Default command ignores all dot-directories. This one only ignores `.git`.
 export FZF_ALT_C_COMMAND="command find -L . -mindepth 1 \\( -path '*/\\.git*' -o -fstype 'sysfs' -o -fstype 'devfs' -o -fstype 'devtmpfs' -o -fstype 'proc' \\) \
     -prune -o -type d -print 2> /dev/null | cut -b3-"
