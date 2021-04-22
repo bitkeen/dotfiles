@@ -137,20 +137,42 @@ class fzf_alt_c(Command):
 
     Same as Alt+C in shell.
     """
+
     def execute(self):
-        varname = 'FZF_ALT_C_COMMAND'
+        cmd_varname = 'FZF_ALT_C_COMMAND'
+        fzf_flags = (
+            '--reverse'
+            ' --preview-window="nohidden"'
+        )
+
         try:
-            command = f'{os.environ[varname]} | fzf --reverse'
+            prev_shell = os.environ['SHELL']
         except KeyError:
-            self.fm.notify(f'Error: {varname} variable is missing', bad=True)
+            self.fm.notify('Error: SHELL variable is missing', bad=True)
             return
 
-        fzf = self.fm.execute_command(
-            command, universal_newlines=True, stdout=subprocess.PIPE)
-        stdout, _ = fzf.communicate()
-        if fzf.returncode == 0:
-            choice = os.path.abspath(stdout.rstrip('\n'))
-            self.fm.cd(choice)
+        try:
+            command = f'{os.environ[cmd_varname]} | fzf {fzf_flags}'
+        except KeyError:
+            self.fm.notify(f'Error: {cmd_varname} variable is missing', bad=True)
+            return
+
+        def _execute():
+            fzf = self.fm.execute_command(
+                command, universal_newlines=True, stdout=subprocess.PIPE)
+            stdout, _ = fzf.communicate()
+            if fzf.returncode == 0:
+                choice = os.path.abspath(stdout.rstrip('\n'))
+                self.fm.cd(choice)
+
+        # Previews break when ranger is launched with the
+        # `ranger-shell` script, swapping `SHELL` variable is
+        # a workaround.
+        os.environ['SHELL'] = '/bin/sh'
+        try:
+            _execute()
+        finally:
+            os.environ['SHELL'] = prev_shell
 
 
 class fzf_mounted(Command):
