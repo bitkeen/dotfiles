@@ -10,3 +10,6 @@ nnoremap <buffer> <Leader>L :cnewer<CR>
 if &runtimepath =~ 'bundle/opt/quickpeek.vim'
   nnoremap <buffer> <silent> <LocalLeader>p :QuickpeekToggle<cr>
 endif
+
+" Remove file under cursor from quickfix list.
+nnoremap <buffer> gsf :Cfilter! ^<C-r><C-f><CR>
