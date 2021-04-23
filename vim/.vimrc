@@ -540,8 +540,12 @@ vnoremap gk k
 " the cursor to the end of the line, similar to C or D.
 nnoremap Y y$
 
+" Yank current file's name.
 nnoremap yp :let @+ = expand('%:t') \| echo 'Yanked "' . @+ . '"'<CR>
+" Yank current file's path.
 nnoremap yP :let @+ = expand('%:p') \| echo 'Yanked "' . @+ . '"'<CR>
+" Yank current file's directory name.
+nnoremap yd :let @+ = expand('%:p:h') \| echo 'Yanked "' . @+ . '"'<CR>
 
 " Write with sudo.
 " See https://stackoverflow.com/a/7078429.
