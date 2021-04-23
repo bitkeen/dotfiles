@@ -7,6 +7,12 @@
     - xorg.conf.d/00-keyboard.conf
     - xorg.conf.d/10-touchpad.conf
 
+- name: configure sudo
+  copy:
+    src: sudoers.d/01_general
+    dest: /etc/sudoers.d/
+    mode: 0440
+
 - name: configure keyboard and font for virtual console
   command:
     cmd: '{{ role_path }}/files/vconsole.sh'
