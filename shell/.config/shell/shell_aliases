@@ -12,7 +12,7 @@ alias rup='bind -f ~/.inputrc'
 # Restart i3.
 alias iup='i3-msg restart'
 
-alias ls='ls -p --color=auto'
+alias ls='ls -F --color=auto'
 # -h - with -l and -s, print sizes like 1K 234M 2G etc.
 alias ll='ls -AlFh'
 
