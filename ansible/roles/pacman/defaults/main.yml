@@ -56,6 +56,7 @@ packages:
   - maim # Utility to take a screenshot
   - man-db # A utility for reading man pages
   - man-pages # Linux man pages
+  - mariadb-clients # For mysqldump
   - mediainfo # Supplies technical and tag information about a video or audio file (CLI interface), currently used for audio file previews in ranger
   - mlocate # Merging locate/updatedb implementation
   - mpc # Command line interface to MPD
