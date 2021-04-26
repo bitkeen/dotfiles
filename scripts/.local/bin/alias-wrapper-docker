@@ -68,6 +68,8 @@ case "$key" in
         cmd='system';;
     rmall)
         cmd="rm $('docker' ps -aq)";;
+    v)
+        cmd='version';;
     *)
         cmd="$key";;
 esac
