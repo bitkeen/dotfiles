@@ -45,3 +45,8 @@ RUN /home/user/.dotfiles/ansible/bootstrap \
     go clean -cache && \
     rm -r /home/user/.cache/yarn && \
     rm -r /home/user/.cargo/registry
+
+# Add docker indicator to prompt.
+RUN echo '\nPROMPT="%F{blue}docker:%f ${PROMPT}"' >> .zshrc
+
+CMD ["/usr/bin/zsh", "-l"]
