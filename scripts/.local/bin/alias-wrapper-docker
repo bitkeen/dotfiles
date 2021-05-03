@@ -4,10 +4,9 @@ CHOOSE_SHELL='if [ -f /bin/bash ]; then bash -l; else sh -l; fi'
 FZF_DEFAULT_OPTS="--reverse --height 40% $FZF_DEFAULT_OPTS"
 
 
-get_container_names() {
-    # Print names of the running containers.
-    'docker' ps --format '{{.Names}}' |
-        fzf
+get_container_name() {
+    'docker' ps --format 'table{{.Names}}\t{{.Image}}\t{{.Status}}' |
+        fzf --header-lines=1 | awk '{ print $1 }'
 }
 
 
@@ -16,9 +15,9 @@ case "$key" in
     bd)
         cmd='build';;
     ex)
-        choice="${2:-$(get_container_names)}"
+        choice="${2:-$(get_container_name)}"
         [ -z "$choice" ] && exit 1
-        'docker' exec -u root -i -t "$choice" sh -c "$CHOOSE_SHELL"
+        'docker' exec -it "$choice" sh -c "$CHOOSE_SHELL"
         exit;;
     im)
         cmd='images';;
