@@ -5,7 +5,7 @@ processes="$(ps -ef)"
 
 pid="$(
 echo "$processes" \
-    | fzf --multi --tac \
+    | fzf --header-lines=1 --multi --tac \
     | awk '{print $2}'
 )"
 [ -z "$pid" ] && exit 1
