@@ -10,6 +10,14 @@ get_container_name() {
 }
 
 
+get_image_name() {
+    # Get image name:tag, or its ID if the image is not tagged.
+    'docker' images --format 'table{{.Repository}}\t{{.Tag}}\t{{.ID}}' |
+        fzf --header-lines=1 |
+        awk '{ if ($1 != "<none>" && $2 != "<none>") print $1":"$2; else print $3; }'
+}
+
+
 key="$1"
 case "$key" in
     bd)
@@ -57,11 +65,16 @@ case "$key" in
         [ "$#" -lt 2 ] && echo 'Specify container name.' && exit 1
         'docker' restart "$2" && 'docker' logs -f "$2"
         exit;;
-    rn|run)
-        cmd='run --rm';;
-    rnt)
+    rn)
         shift
-        'docker' run --rm -it "$@" sh -c "$CHOOSE_SHELL"
+        if [ -n "$1" ]; then
+            choice="$1"
+            shift
+        else
+            choice="$(get_image_name)"
+        fi
+        [ -z "$choice" ] && exit 1
+        'docker' run -it --rm "$choice" "$@"
         exit;;
     sys)
         cmd='system';;
