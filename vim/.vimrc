@@ -775,6 +775,10 @@ inoremap <4-MiddleMouse> <LeftMouse>
 " Use Shift+Tab to shift indent backwards in insert mode.
 inoremap <S-Tab> <C-d>
 
+" Paste from yank register.
+execute "set <M-v>=\ev"
+inoremap <M-v> <C-r>0
+
 " }}}
 
 " Plugin mappings {{{
