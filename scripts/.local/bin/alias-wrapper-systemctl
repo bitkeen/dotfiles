@@ -24,6 +24,11 @@ case "$key" in
         cmd="start";;
     st)
         cmd="status";;
+    stm)
+        # Continuously monitor status.
+        shift
+        watch --color SYSTEMD_COLORS=1 systemctl status "$@"
+        exit;;
     *)
         cmd="$key";;
 esac
