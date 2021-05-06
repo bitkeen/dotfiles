@@ -52,6 +52,7 @@
     dest: '{{ user_home }}/.config/systemd/user/{{ item.unit_name }}'
   loop:
     - { unit_name: monitor-hotplug@.service }
+    - { unit_name: battery-notification.service }
 
 - name: reload user units
   become: yes
@@ -71,3 +72,4 @@
   loop:
     - { unit_name: mpd.service }
     - { unit_name: syncthing.service }
+    - { unit_name: battery-notification.service }
