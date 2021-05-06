@@ -1,0 +1,30 @@
+#!/bin/sh
+# Notify on low battery.
+
+LOW_THRESHOLD=20
+VERY_LOW_THRESHOLD=10
+
+low_notified='false'
+very_low_notified='false'
+
+while : ; do
+    value="$(cat /sys/class/power_supply/BAT0/capacity)"
+
+    if [ "$value" -gt "$VERY_LOW_THRESHOLD" ]; then
+        # Reset notification values in case they were previously triggered.
+        very_low_notified='false'
+        if [ "$value" -gt "$LOW_THRESHOLD" ]; then
+            low_notified='false'
+        fi
+    elif [ "$value" -lt "$LOW_THRESHOLD" ] && 
+            [ "$low_notified" = 'false' ]; then
+        notify-send 'battery is low'
+        low_notified='true'
+    elif [ "$value" -lt "$VERY_LOW_THRESHOLD" ] &&
+            [ "$very_low_notified" = 'false' ]; then
+        notify-send --urgency critical 'battery is very low'
+        very_low_notified='true'
+    fi
+
+    sleep 60
+done
