@@ -970,6 +970,8 @@ nmap cq :Qfreplace<CR>
 " ALE
 nmap [e <Plug>(ale_previous)
 nmap ]e <Plug>(ale_next)
+nmap [E <Plug>(ale_previous_error)
+nmap ]E <Plug>(ale_next_error)
 nmap <Leader>d <Plug>(ale_go_to_definition)
 nmap <Leader>r <Plug>(ale_rename)
 nmap <Leader>h <Plug>(ale_hover)
