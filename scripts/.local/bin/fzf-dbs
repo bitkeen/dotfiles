@@ -91,7 +91,7 @@ choice_name="$(echo "$choice" | awk -F '=' '{print $1}')"
 # Get the chosen connection from the list where passwords aren't hidden.
 choice_connection="$(
     echo "$connections" |
-        grep "^$choice_name" |
+        grep "^$choice_name=" |
         awk -F '=' '{$1=""; print substr($0, 2)}'
 )"
 
