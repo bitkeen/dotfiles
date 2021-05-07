@@ -89,6 +89,8 @@ if has('autocmd')
     autocmd BufWritePost *.tmux.conf, silent !tmux source-file ~/.tmux.conf
     " Reload i3 config on update.
     autocmd BufWritePost */i3/config, silent !i3-msg restart
+    " Restart dunst on config update.
+    autocmd BufWritePost */dunst/dunstrc, silent !killall dunst; setsid --fork dunst
 
     autocmd BufWinEnter *.rules setlocal filetype=udevrules
   augroup END
