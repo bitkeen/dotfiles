@@ -342,5 +342,6 @@ separator_color = "#c5c8c6"
 
 [base16_critical]
     msg_urgency = critical
-    background = "#cc6666"
+    # background = "#cc6666"
+    background = "#c41d03"  # A darker red.
     foreground = "#e0e0e0"
