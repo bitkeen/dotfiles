@@ -3,4 +3,4 @@ timestamp=0
 if [ -n "$1" ]; then
     timestamp="$1"
 fi
-date -d @"$timestamp" --utc
+date -d @"$timestamp" --utc --iso-8601='seconds'
