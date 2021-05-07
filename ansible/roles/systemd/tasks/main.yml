@@ -13,6 +13,7 @@
     - { unit_name: docker-system-prune.timer }
     - { unit_name: fetch-dotfiles.service }
     - { unit_name: fetch-dotfiles.timer }
+    - { unit_name: docker-limit.slice }
 
 - name: reload units
   systemd:
@@ -31,6 +32,11 @@
     - { unit_name: systemd-timesyncd.service } # Sync time.
     - { unit_name: fetch-dotfiles.timer }
     - { unit_name: docker-system-prune.timer }
+
+- name: start docker resource limit slice
+  systemd:
+    name: docker-limit.slice
+    state: started
 
 - name: enable screen lock service
   systemd:

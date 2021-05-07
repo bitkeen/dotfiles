@@ -1,0 +1,9 @@
+[Unit]
+Description=Slice that limits docker resources
+Before=slices.target
+
+[Slice]
+CPUAccounting=true
+CPUQuota=400%
+MemoryAccounting=true
+MemoryMax=10G
