@@ -10,20 +10,29 @@ very_low_notified='false'
 while : ; do
     value="$(cat /sys/class/power_supply/BAT0/capacity)"
 
-    if [ "$value" -gt "$VERY_LOW_THRESHOLD" ]; then
-        # Reset notification values in case they were previously triggered.
-        very_low_notified='false'
+    if [ "$low_notified" = 'true' ]; then
+        # Reset notification value in case it was previously triggered.
         if [ "$value" -gt "$LOW_THRESHOLD" ]; then
             low_notified='false'
         fi
-    elif [ "$value" -lt "$LOW_THRESHOLD" ] && 
-            [ "$low_notified" = 'false' ]; then
-        notify-send 'battery is low'
-        low_notified='true'
-    elif [ "$value" -lt "$VERY_LOW_THRESHOLD" ] &&
-            [ "$very_low_notified" = 'false' ]; then
-        notify-send --urgency critical 'battery is very low'
-        very_low_notified='true'
+    elif [ "$low_notified" = 'false' ]; then
+        if [ "$value" -lt "$LOW_THRESHOLD" ]; then
+            notify-send 'battery is low'
+            low_notified='true'
+            echo 'Notified on low'
+        fi
+    fi
+
+    if [ "$very_low_notified" = 'true' ]; then
+        if [ "$value" -gt "$VERY_LOW_THRESHOLD" ]; then
+            very_low_notified='false'
+        fi
+    elif [ "$very_low_notified" = 'false' ]; then
+        if [ "$value" -lt "$VERY_LOW_THRESHOLD" ]; then
+            notify-send --urgency critical 'battery is very low'
+            very_low_notified='true'
+            echo 'Notified on very low'
+        fi
     fi
 
     sleep 60
