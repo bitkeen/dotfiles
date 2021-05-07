@@ -1,0 +1,9 @@
+[Unit]
+Description=Run docker system prune daily
+
+[Timer]
+OnBootSec=1hour
+OnUnitActiveSec=1day
+
+[Install]
+WantedBy=timers.target

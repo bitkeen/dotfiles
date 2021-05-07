@@ -9,6 +9,8 @@
     - { unit_name: newsboat-reload.timer }
     - { unit_name: pacman-update-files-database.service }
     - { unit_name: pacman-update-files-database.timer }
+    - { unit_name: docker-system-prune.service }
+    - { unit_name: docker-system-prune.timer }
     - { unit_name: fetch-dotfiles.service }
     - { unit_name: fetch-dotfiles.timer }
 
@@ -28,6 +30,7 @@
     - { unit_name: paccache.timer } # Discard unused packages weekly.
     - { unit_name: systemd-timesyncd.service } # Sync time.
     - { unit_name: fetch-dotfiles.timer }
+    - { unit_name: docker-system-prune.timer }
 
 - name: enable screen lock service
   systemd:
