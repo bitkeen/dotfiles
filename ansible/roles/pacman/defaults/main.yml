@@ -52,6 +52,7 @@ packages:
   - libsecret # Needed for storing Git credentials
   - libxml2 # XML parsing library, version 2, contains xmllint but is usually installed as a dependency for other packages
   - light # A program to control backlight controllers
+  - lsof # Lists open files for running Unix processes
   - lxappearance-gtk3 # Feature-rich GTK+ theme switcher of the LXDE Desktop
   - maim # Utility to take a screenshot
   - man-db # A utility for reading man pages
