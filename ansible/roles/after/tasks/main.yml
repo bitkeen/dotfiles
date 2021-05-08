@@ -75,7 +75,7 @@
       regexp: '<defaultFolderPath>.*</defaultFolderPath>'
     }
     - {
-    # Web GUI.
+      # Web GUI.
       line: '        <address>127.0.0.1:8384</address>',
       regexp: '<address>127.0.0.1:8080</address>'
     }
