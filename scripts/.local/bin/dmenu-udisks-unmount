@@ -16,4 +16,7 @@ choice="$(
 )"
 [ -z "$choice" ] && exit 1
 
-udisksctl unmount --block-device="$choice"
+udisksctl unmount --block-device="$choice" || 
+    notify-send -a 'dmenu-udisks-unmount' \
+        "Processes using ${choice}" \
+        "$(lsof "$choice" | sed '1d' | awk '{ print $2" "$1 }')"
