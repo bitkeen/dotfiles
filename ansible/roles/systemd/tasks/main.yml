@@ -9,19 +9,19 @@
 
 - name: install unit files
   copy:
-    src: '{{ item.unit_name }}'
-    dest: '/etc/systemd/system/{{ item.unit_name }}'
+    src: '{{ item }}'
+    dest: '/etc/systemd/system/{{ item }}'
   loop:
-    - { unit_name: lock@.service }
-    - { unit_name: newsboat-reload.service }
-    - { unit_name: newsboat-reload.timer }
-    - { unit_name: pacman-update-files-database.service }
-    - { unit_name: pacman-update-files-database.timer }
-    - { unit_name: docker-system-prune.service }
-    - { unit_name: docker-system-prune.timer }
-    - { unit_name: fetch-dotfiles.service }
-    - { unit_name: fetch-dotfiles.timer }
-    - { unit_name: docker-limit.slice }
+    - lock@.service
+    - newsboat-reload.service
+    - newsboat-reload.timer
+    - pacman-update-files-database.service
+    - pacman-update-files-database.timer
+    - docker-system-prune.service
+    - docker-system-prune.timer
+    - fetch-dotfiles.service
+    - fetch-dotfiles.timer
+    - docker-limit.slice
 
 - name: reload units
   systemd:
@@ -30,17 +30,17 @@
 
 - name: enable and start services
   systemd:
-    name: '{{ item.unit_name }}'
+    name: '{{ item }}'
     enabled: yes
     state: started
   loop:
-    - { unit_name: docker.service }
-    - { unit_name: newsboat-reload.timer }
-    - { unit_name: pacman-update-files-database.timer }
-    - { unit_name: paccache.timer } # Discard unused packages weekly.
-    - { unit_name: systemd-timesyncd.service } # Sync time.
-    - { unit_name: fetch-dotfiles.timer }
-    - { unit_name: docker-system-prune.timer }
+    - docker.service
+    - newsboat-reload.timer
+    - pacman-update-files-database.timer
+    - paccache.timer # Discard unused packages weekly.
+    - systemd-timesyncd.service # Sync time.
+    - fetch-dotfiles.timer
+    - docker-system-prune.timer
   when: not in_docker
 
 - name: start docker resource limit slice
@@ -70,11 +70,11 @@
   become: yes
   become_user: '{{ user_name }}'
   copy:
-    src: '{{ item.unit_name }}'
-    dest: '{{ user_home }}/.config/systemd/user/{{ item.unit_name }}'
+    src: '{{ item }}'
+    dest: '{{ user_home }}/.config/systemd/user/{{ item }}'
   loop:
-    - { unit_name: monitor-hotplug@.service }
-    - { unit_name: battery-notification.service }
+    - monitor-hotplug@.service
+    - battery-notification.service
 
 - name: reload user units
   become: yes
@@ -88,12 +88,12 @@
   become: yes
   become_user: '{{ user_name }}'
   systemd:
-    name: '{{ item.unit_name }}'
+    name: '{{ item }}'
     enabled: yes
     state: started
     scope: user
   loop:
-    - { unit_name: mpd.service }
-    - { unit_name: syncthing.service }
-    - { unit_name: battery-notification.service }
+    - mpd.service
+    - syncthing.service
+    - battery-notification.service
   when: not in_docker
