@@ -23,22 +23,9 @@ USER user
 
 WORKDIR /home/user
 
-# For now, only systemd role is omitted.
 # Clear package cache in the end to reduce image size
 # (same layer where installation happens).
-RUN /home/user/.dotfiles/ansible/bootstrap \
-    pacman \
-    python \
-    npm \
-    ruby \
-    aur \
-    pkgbuilds \
-    misc \
-    networkmanager \
-    stow \
-    firefox \
-    virtualbox \
-    after && \
+RUN /home/user/.dotfiles/ansible/bootstrap && \
     sudo rm /var/cache/pacman/pkg/* && \
     sudo rm -rf /home/user/.cache/ansible/aur && \
     sudo rm -rf /tmp/ansible*python && \
