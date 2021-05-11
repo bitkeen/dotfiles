@@ -1,4 +1,12 @@
 ---
+- name: gather facts
+  setup:
+    filter: ansible_interfaces
+
+- name: check if running in docker
+  set_fact:
+    in_docker: '{{ "docker0" not in ansible_facts.interfaces }}'
+
 - name: install unit files
   copy:
     src: '{{ item.unit_name }}'
@@ -18,6 +26,7 @@
 - name: reload units
   systemd:
     daemon_reload: yes
+  when: not in_docker
 
 - name: enable and start services
   systemd:
@@ -32,16 +41,19 @@
     - { unit_name: systemd-timesyncd.service } # Sync time.
     - { unit_name: fetch-dotfiles.timer }
     - { unit_name: docker-system-prune.timer }
+  when: not in_docker
 
 - name: start docker resource limit slice
   systemd:
     name: docker-limit.slice
     state: started
+  when: not in_docker
 
 - name: enable screen lock service
   systemd:
     name: 'lock@{{ user_name }}'
     enabled: yes
+  when: not in_docker
 
 - name: copy udev rules
   copy:
@@ -52,6 +64,7 @@
   systemd:
     name: systemd-udevd
     state: restarted
+  when: not in_docker
 
 - name: install user unit files
   become: yes
@@ -69,6 +82,7 @@
   systemd:
     daemon_reload: yes
     scope: user
+  when: not in_docker
 
 - name: enable and start user services
   become: yes
@@ -82,3 +96,4 @@
     - { unit_name: mpd.service }
     - { unit_name: syncthing.service }
     - { unit_name: battery-notification.service }
+  when: not in_docker
