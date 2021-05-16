@@ -193,3 +193,13 @@ class fzf_mounted(Command):
         if fzf.returncode == 0:
             fzf_dir = os.path.abspath(stdout.rstrip('\n'))
             method(path=fzf_dir)
+
+
+class error(Command):
+    """
+    :error <message>
+
+    Print an error message.
+    """
+    def execute(self):
+        self.fm.notify(' '.join(self.args[1:]), bad=True)
