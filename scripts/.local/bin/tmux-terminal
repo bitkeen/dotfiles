@@ -1,18 +1,25 @@
 #!/bin/sh
-# Attach to a tmux session with number as its name if it exists,
-# create a new session if it doesn't.
+# Either:
+# a) create/attach to a session passed in the first argument
+# b) attach to a tmux session with a number as its name if it exists,
+#    create a new session if it doesn't
 
-# \ before `grep` - bypass aliases.
-# -P - use for Perl-style regexps.
-# -v - invert the match.
-# -o - print only matched parts.
-# -m NUM - stop after NUM matching lines.
-session_name="$(tmux ls | \
-                \grep -v -P '\(attached\)$' | \
-                \grep -o -P -m 1 '^(\d+)(?=: )')"
+if [ -n "$1" ]; then
+    session_name="$1"
+else
+    # \ before `grep` - bypass aliases.
+    # -P - use for Perl-style regexps.
+    # -v - invert the match.
+    # -o - print only matched parts.
+    # -m NUM - stop after NUM matching lines.
+    session_name="$(tmux ls | \
+                    \grep -v -P '\(attached\)$' | \
+                    \grep -o -P -m 1 '^(\d+)(?=: )')"
+fi
 
 if [ -n "$session_name" ]; then
-    i3 "exec --no-startup-id $TERMINAL -e bash -i -c 'tmux attach -t $session_name'"
+    # -A - attach if session_name already exists
+    i3 "exec --no-startup-id $TERMINAL -e bash -i -c 'tmux new-session -A -s $session_name'"
 else
     i3 "exec --no-startup-id $TERMINAL -e bash -i -c 'tmux'"
 fi
