@@ -625,6 +625,32 @@ try:
 except ModuleNotFoundError as e:
     print(e)
 else:
+    import IPython
+    import prompt_toolkit
+    from prompt_toolkit.styles.style import Style
+    from prompt_toolkit.styles.pygments import pygments_token_to_classname
+
+    # See https://github.com/ipython/ipython/issues/11526.
+    def my_style_from_pygments_dict(pygments_dict):
+        """Monkey patch prompt toolkit style function to fix completion colors."""
+        pygments_style = []
+        for token, style in pygments_dict.items():
+            if isinstance(token, str):
+                pygments_style.append((token, style))
+            else:
+                pygments_style.append((pygments_token_to_classname(token), style))
+
+        return Style(pygments_style)
+
+    prompt_toolkit.styles.pygments.style_from_pygments_dict = my_style_from_pygments_dict
+    IPython.terminal.interactiveshell.style_from_pygments_dict = my_style_from_pygments_dict
+    theme.overrides.update({
+        'completion-menu': f'bg:{theme.base01} {theme.base05}',
+        'completion-menu.completion.current': f'bg:{theme.base05} {theme.base01}',
+        'completion-menu.completion': f'bg:{theme.base01} {theme.base05}',
+        'completion-menu.multi-column-meta': f'bg:{theme.base00} {theme.base05}',
+    })
+
     c.TerminalInteractiveShell.highlighting_style = theme.Base16Style
     c.TerminalInteractiveShell.highlighting_style_overrides = theme.overrides
 
