@@ -616,14 +616,12 @@ c.TerminalInteractiveShell.extra_open_editor_shortcuts = True
 # see https://github.com/memeplex/base16-prompt-toolkit/issues/4.
 
 # Get the name of the theme currently used in Vim.
-text = ''
-with open('{}/.vimrc_background'.format(os.getenv('HOME'))) as fin:
-    text = '\n'.join(fin.readlines())
-m = re.search('(?<=colorscheme )(.*)', text)
-colorscheme = m.group(0)
+with open(f'{os.environ["HOME"]}/.vimrc_background') as fin:
+    text = fin.read()
+colorscheme = re.search('(?<=colorscheme )(.*)', text).group(0)
 
 try:
-    theme = importlib.import_module('base16_prompt_toolkit.{}'.format(colorscheme))
+    theme = importlib.import_module(f'base16_prompt_toolkit.{colorscheme}')
 except ModuleNotFoundError as e:
     print(e)
 else:
