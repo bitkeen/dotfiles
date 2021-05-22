@@ -302,3 +302,6 @@
 [submodule "zsh-autosuggestions"]
 	path = zsh/.config/zsh/plugins/zsh-autosuggestions
 	url = https://github.com/zsh-users/zsh-autosuggestions
+[submodule "plantuml-syntax"]
+	path = vim/.vim/pack/bundle/start/plantuml-syntax
+	url = https://github.com/aklt/plantuml-syntax
