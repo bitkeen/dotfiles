@@ -859,10 +859,11 @@ xmap ih <Plug>(GitGutterTextObjectInnerVisual)
 xmap ah <Plug>(GitGutterTextObjectOuterVisual)
 
 " vim-eunuch
-nnoremap <Leader><C-r> :Rename<Space>
+nnoremap <Leader><C-x> :Chmod<Space>
 nnoremap <Leader><C-d> :Delete<CR>
 nnoremap <Leader><C-e> :SudoEdit<Space>
-nnoremap <Leader><C-m> :Chmod<Space>
+nmap <Leader><C-m> :Move<Space>%%
+nnoremap <Leader><C-r> :Rename<Space>
 nnoremap <Leader><C-w> :SudoWrite<CR>
 
 " vim-obsession
