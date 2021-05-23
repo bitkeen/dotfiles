@@ -4,7 +4,7 @@
 #
 # Exit code is 0 if search is successful, 1 otherwise.
 #
-# Set NOTIFY_FILE=0 in env if you don't want any notifications,
+# Set CHECK_PAGE_NOTIFY=0 in env if you don't want any notifications,
 # just the exit code.
 #
 # Dependencies:
@@ -19,16 +19,22 @@ url="$1"
 xpath="$2"
 description="$3"
 
-echo "Checking '$xpath' at '$url'"
+[ "$CHECK_PAGE_NOTIFY" != '0' ] &&
+    echo "Checking '$xpath' at '$url'"
 
 page="$(curl -L --silent --insecure "$url")"
-[ -z "$page" ] && echo "Error: couldn't get the page" && exit 1
+if [ -z "$page" ]; then
+    [ "$CHECK_PAGE_NOTIFY" != '0' ] &&
+        echo "Error: couldn't get the page" 
+    exit 2
+fi
 
 if echo "$page" | xp "$xpath" >/dev/null 2>&1; then
-    if [ "$NOTIFY_FILE" != '0' ]; then
+    [ "$CHECK_PAGE_NOTIFY" != '0' ] &&
         notify-file "Found elements at $url ($description)"
-    fi
     exit 0
 else
-    echo "Couldn't find $description"; exit 1
+    [ "$CHECK_PAGE_NOTIFY" != '0' ] &&
+        echo "Couldn't find $description"
+    exit 1
 fi
