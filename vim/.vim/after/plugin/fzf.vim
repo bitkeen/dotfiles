@@ -20,6 +20,10 @@ if &runtimepath =~# '/usr/bin/fzf' " Basic plugin.
 
   let g:fzf_layout = { 'down': '50%' }
 
+  " Hide fzf's statusline.
+  autocmd main FileType fzf set laststatus=0 noshowmode noruler
+        \| autocmd main BufLeave <buffer> set laststatus=2 showmode ruler
+
   if &runtimepath =~# 'bundle/opt/fzf.vim' " Plugin extension.
     " Add alt-enter binding to select query.
     command! -bar -bang FzfFiletypes call fzf#vim#filetypes({}, <bang>0)
