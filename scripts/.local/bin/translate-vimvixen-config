@@ -4,11 +4,14 @@ Translate vimvixen keymaps.
 
 Print original config with translated keymaps added.
 """
+import argparse
 import json
 import re
+import sqlite3
 from pathlib import Path
 
 INPUT_CONFIG_FILE = f'{Path.home()}/.dotfiles/vimvixen-config.json'
+STORAGE_SYNC_DB = f'{Path.home()}/.mozilla/firefox/main/storage-sync-v2.sqlite'
 KEYS_EN = "qwertyuiop[]asdfghjkl;'zxcvbnm,.QWERTYUIOP{}ASDFGHJKL:ZXCVBNM<>"
 KEYS_RU = "йцукенгшщзхъфывапролджэячсмитьбюЙЦУКЕНГШЩЗХЪФЫВАПРОЛДЖЯЧСМИТЬБЮ"
 KEYS_UA = "йцукенгшщзхїфівапролджєячсмитьбюЙЦУКЕНГШЩЗХЇФІВАПРОЛДЖЯЧСМИТЬБЮ"
@@ -16,14 +19,22 @@ CONTROL_KEYMAP_REGEX = re.compile(r'^<C-(.*)>$')
 SHIFT_KEYMAP_REGEX = re.compile(r'^<S-(.*)>$')
 
 
-def main():
+def get_args():
+    parser = argparse.ArgumentParser(description='Translate vimvixen keymaps')
+    parser.add_argument('-u', '--update-db', action='store_const',
+                        const=True, default=False,
+                        help='update the storage-sync DB with new values')
+    return parser.parse_args()
+
+
+def translate_keymaps():
     with open(INPUT_CONFIG_FILE) as fin:
-        input_json = json.loads(fin.read())
+        config_json = json.loads(fin.read())
 
     ru_table = str.maketrans(KEYS_EN, KEYS_RU)
     ua_table = str.maketrans(KEYS_EN, KEYS_UA)
 
-    keymaps_orig = input_json['keymaps']
+    keymaps_orig = config_json['keymaps']
     keymaps_new = {}
     for km in keymaps_orig:
         if match := CONTROL_KEYMAP_REGEX.match(km):
@@ -45,8 +56,35 @@ def main():
         keymaps_new[km_ua] = keymaps_orig[km]
 
     keymaps_new.update(keymaps_orig)
-    input_json['keymaps'] = keymaps_new
-    print(json.dumps(input_json, indent=4))
+    config_json['keymaps'] = keymaps_new
+    return config_json
+
+
+def update_db(config_json):
+    """Update config in the database."""
+    data = json.dumps({
+        'settings': {
+            'source': 'json',
+            'json': json.dumps(config_json, indent=2, ensure_ascii=False)
+        }
+    }, indent=2, ensure_ascii=False)
+    with sqlite3.connect(STORAGE_SYNC_DB) as con:
+        cur = con.cursor()
+        cur.execute('''
+        UPDATE
+            storage_sync_data
+        SET
+            data = :data
+        WHERE
+            ext_id = "vim-vixen@i-beam.org"
+        ''', {'data': data})
+
+
+def main():
+    args = get_args()
+    config_json = translate_keymaps()
+    if args.update_db:
+        update_db(config_json)
 
 
 if __name__ == '__main__':
