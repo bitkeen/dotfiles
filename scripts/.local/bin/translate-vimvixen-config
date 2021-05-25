@@ -11,18 +11,18 @@ import sqlite3
 from pathlib import Path
 
 INPUT_CONFIG_FILE = f'{Path.home()}/.dotfiles/vimvixen-config.json'
-STORAGE_SYNC_DB = f'{Path.home()}/.mozilla/firefox/main/storage-sync-v2.sqlite'
 KEYS_EN = "qwertyuiop[]asdfghjkl;'zxcvbnm,.QWERTYUIOP{}ASDFGHJKL:ZXCVBNM<>"
 KEYS_RU = "йцукенгшщзхъфывапролджэячсмитьбюЙЦУКЕНГШЩЗХЪФЫВАПРОЛДЖЯЧСМИТЬБЮ"
 KEYS_UA = "йцукенгшщзхїфівапролджєячсмитьбюЙЦУКЕНГШЩЗХЇФІВАПРОЛДЖЯЧСМИТЬБЮ"
 CONTROL_KEYMAP_REGEX = re.compile(r'^<C-(.*)>$')
 SHIFT_KEYMAP_REGEX = re.compile(r'^<S-(.*)>$')
 
+json_dumps = lambda x: json.dumps(x, indent=2, ensure_ascii=False)
+
 
 def get_args():
     parser = argparse.ArgumentParser(description='Translate vimvixen keymaps')
-    parser.add_argument('-u', '--update-db', action='store_const',
-                        const=True, default=False,
+    parser.add_argument('-u', '--update-db', type=str, required=False,
                         help='update the storage-sync DB with new values')
     return parser.parse_args()
 
@@ -60,15 +60,15 @@ def translate_keymaps():
     return config_json
 
 
-def update_db(config_json):
+def update_db(config_json, db_path):
     """Update config in the database."""
-    data = json.dumps({
+    data = json_dumps({
         'settings': {
             'source': 'json',
-            'json': json.dumps(config_json, indent=2, ensure_ascii=False)
+            'json': json_dumps(config_json)
         }
-    }, indent=2, ensure_ascii=False)
-    with sqlite3.connect(STORAGE_SYNC_DB) as con:
+    })
+    with sqlite3.connect(db_path) as con:
         cur = con.cursor()
         cur.execute('''
         UPDATE
@@ -83,8 +83,10 @@ def update_db(config_json):
 def main():
     args = get_args()
     config_json = translate_keymaps()
+    print(json_dumps(config_json))
     if args.update_db:
-        update_db(config_json)
+        update_db(config_json, db_path=args.update_db)
+        print('Updated the DB')
 
 
 if __name__ == '__main__':
