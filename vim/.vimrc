@@ -586,6 +586,7 @@ nnoremap <silent> <Leader>l :let @/ = ""<CR> :nohlsearch<CR><c-l>h
 
 " Reload .vimrc.
 nnoremap <LocalLeader>r :source $MYVIMRC<CR>
+nnoremap <silent> yr :redraw!<CR>
 
 " Save.
 nnoremap <Leader>u :update<CR>
