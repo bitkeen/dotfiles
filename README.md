@@ -23,9 +23,6 @@ You can also run specific roles by passing tags to `bootstrap`:
 ~/.dotfiles/ansible/bootstrap python firefox
 ```
 
-##### Vim Vixen
-Config for Vim Vixen Firefox addon requires manual copy-paste into settings in Firefox for now.
-
 ##### Branches
 - `arch` - currently the main branch, specific to Arch Linux
 - `master` - a point at which all the other branches start differing, it is not updated now as I mostly use Arch Linux
