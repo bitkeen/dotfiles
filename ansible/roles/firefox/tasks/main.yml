@@ -11,3 +11,15 @@
   get_url:
     url: 'https://github.com/akahuku/wasavi/blob/{{ wasavi_version }}/dist/wasavi.xpi?raw=true'
     dest: '{{ dirs.firefox_extensions }}/{{ extension_id.stdout }}.xpi'
+
+- name: check that the sync DB exists
+  stat:
+    path: '{{ sync_db_path }}'
+  register: sync_db
+
+- name: configure vim-vixen
+  become: yes
+  become_user: '{{ user_name }}'
+  command:
+    cmd: 'translate-vimvixen-config --update-db {{ sync_db_path }}'
+  when: sync_db.stat.exists

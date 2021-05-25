@@ -1,2 +1,3 @@
 ---
 wasavi_version: 'e88948587ac5f0da56ad36bf9a7a0b76e64eb67e'
+sync_db_path: '{{ dirs.firefox_profile }}/storage-sync-v2.sqlite'
