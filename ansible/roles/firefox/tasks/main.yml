@@ -1,5 +1,7 @@
 ---
 - name: get wasavi extension id
+  become: yes
+  become_user: '{{ user_name }}'
   shell:
     warn: false # Don't warn about using get_url isntead of curl.
     cmd: curl --silent https://raw.githubusercontent.com/akahuku/wasavi/{{ wasavi_version }}/dist/firefox.json | jq -r ".addons | keys[0]"
@@ -13,6 +15,8 @@
     dest: '{{ dirs.firefox_extensions }}/{{ extension_id.stdout }}.xpi'
 
 - name: check that the sync DB exists
+  become: yes
+  become_user: '{{ user_name }}'
   stat:
     path: '{{ sync_db_path }}'
   register: sync_db
