@@ -43,7 +43,7 @@ def convert(cookie_in, no_base64):
 
 def header_format(morsels):
     """Convert list of morsels to a header string."""
-    return '; '.join('{}={}'.format(m['name'], m['value']) for m in morsels)
+    return '; '.join(f'{m["name"]}={m["value"]}' for m in morsels)
 
 
 def main():
