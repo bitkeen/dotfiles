@@ -177,13 +177,6 @@ bindsym $super+Tab exec --no-startup-id i3-switch-workspace 'workspace back_and_
 bindsym button4 nop
 bindsym button5 nop
 
-# Ctrl-q closes window in Firefox, there is currently no way to disable
-# it in the browser config. The binding can also be used by other
-# programs, so disabling it system-wide might not be the best solution,
-# although I don't think I have a program that binds Ctrl-q to something
-# other than "quit".
-bindsym ctrl+q exec nop
-
 # }}}
 
 # Miscellaneous {{{

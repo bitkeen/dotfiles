@@ -108,3 +108,11 @@ super+e
 
 super+shift+s
     dmenu-screenlayout
+
+# Ctrl-q closes window in Firefox, there is currently no way to disable
+# it in the browser config. The binding can also be used by other
+# programs, so disabling it system-wide might not be the best solution,
+# although I don't think I have a program that binds Ctrl-q to something
+# other than "quit".
+ctrl+q
+    :
