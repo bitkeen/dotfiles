@@ -863,6 +863,7 @@ xmap ah <Plug>(GitGutterTextObjectOuterVisual)
 nnoremap <Leader><C-x> :Chmod<Space>
 nnoremap <Leader><C-d> :Delete<CR>
 nnoremap <Leader><C-e> :SudoEdit<Space>
+nnoremap <Leader><C-l> :Clocate!<Space>
 nmap <Leader><C-m> :Move<Space>%%
 nnoremap <Leader><C-r> :Rename<Space>
 nnoremap <Leader><C-w> :SudoWrite<CR>
