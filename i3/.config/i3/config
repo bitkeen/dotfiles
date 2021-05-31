@@ -87,16 +87,11 @@ bindsym $super+shift+0 move container to workspace $workspace10
 mode "resize" {
         # These bindings trigger as soon as you enter the resize mode.
 
-        # Pressing h will shrink the window’s width.
-        # Pressing l will grow the window’s width.
-        # Pressing k will shrink the window’s height.
-        # Pressing j will grow the window’s height.
         bindsym h resize shrink width 10 px or 10 ppt
         bindsym j resize grow height 10 px or 10 ppt
         bindsym k resize shrink height 10 px or 10 ppt
         bindsym l resize grow width 10 px or 10 ppt
 
-        # Same bindings, but for the arrow keys.
         bindsym Left resize shrink width 10 px or 10 ppt
         bindsym Down resize grow height 10 px or 10 ppt
         bindsym Up resize shrink height 10 px or 10 ppt
