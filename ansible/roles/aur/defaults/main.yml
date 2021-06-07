@@ -3,32 +3,32 @@ aur_pkg_dir: '{{ user_home }}/.cache/ansible/aur'
 
 python_deps:
   # AUR dependencies for some Python packages.
-  - python-pgspecial # Dependency for pgcli.
-  - python-cli_helpers # Dependency for litecli, mycli, pgcli.
+  - python-pgspecial  # Dependency for pgcli.
+  - python-cli_helpers  # Dependency for litecli, mycli, pgcli.
 
 packages:
-  - colorpicker # Click on a pixel on your screen and print its color value in RGB. Written for X11.
-  - dragon-drag-and-drop # Simple drag-and-drop source/sink for X
-  - git-delta-bin # A syntax-highlighting pager for git and diff output
-  - git-open # Open a repo website (GitHub, GitLab, Bitbucket) in your browser
-  - jiq # Json Incremental Digger that uses jq internally
+  - colorpicker  # Click on a pixel on your screen and print its color value in RGB. Written for X11.
+  - dragon-drag-and-drop  # Simple drag-and-drop source/sink for X
+  - git-delta-bin  # A syntax-highlighting pager for git and diff output
+  - git-open  # Open a repo website (GitHub, GitLab, Bitbucket) in your browser
+  - jiq  # Json Incremental Digger that uses jq internally
   - lab
   - litecli
   - mycli
   - ttf-font-awesome-4
   - paper-icon-theme
-  - path-extractor # A unix filter which outputs the filepaths found in stdin
-  - pgformatter-git # Correctly indent PostgreSQL queries
-  - polybar # A fast and easy-to-use status bar
-  - scrcpy # Display and control an Android device
-  - smenu # A powerful and versatile selection tool for interactive or scripting use
+  - path-extractor  # A unix filter which outputs the filepaths found in stdin
+  - pgformatter-git  # Correctly indent PostgreSQL queries
+  - polybar  # A fast and easy-to-use status bar
+  - scrcpy  # Display and control an Android device
+  - smenu  # A powerful and versatile selection tool for interactive or scripting use
   - tor-browser
-  - virtualbox-ext-oracle # VirtualBox Extension Pack
+  - virtualbox-ext-oracle  # VirtualBox Extension Pack
   - vim-language-server
-  - websocat # Command-line client for web sockets
-  - xidlehook # xautolock rewrite in Rust, with a few extra features
-  - xkb-switch # Program that allows to query and change the XKB layout state
-  - yay # AUR helper
+  - websocat  # Command-line client for web sockets
+  - xidlehook  # xautolock rewrite in Rust, with a few extra features
+  - xkb-switch  # Program that allows to query and change the XKB layout state
+  - yay  # AUR helper
 
 work_packages:
   - slack-desktop
