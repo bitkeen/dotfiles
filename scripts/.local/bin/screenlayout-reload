@@ -1,5 +1,5 @@
 #!/bin/sh
 # Reload some programs. To be run after switching display layout.
 
-~/.config/polybar/launch.sh
+~/.local/bin/launch-polybar
 ~/.fehbg
