@@ -30,7 +30,6 @@ RUN /home/user/.dotfiles/ansible/bootstrap && \
     sudo rm -rf /home/user/.cache/ansible/aur && \
     sudo rm -rf /tmp/ansible*python && \
     go clean -cache && \
-    rm -r /home/user/.cache/yarn && \
     rm -r /home/user/.cargo/registry
 
 # Add docker indicator to prompt.
