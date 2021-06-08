@@ -3,7 +3,10 @@
 # is connected. To be executed from a udev rule-controlled 
 # systemd service.
 
-if grep '^connected$' /sys/class/drm/card0-HDMI-A-1/status; then
+if grep '^connected$' /sys/class/drm/card0-DP-3/status ||
+       grep '^connected$' /sys/class/drm/card0-DP-4/status; then
+    ~/.local/bin/screenlayout-dock
+elif grep '^connected$' /sys/class/drm/card0-HDMI-A-1/status; then
     ~/.local/bin/screenlayout-2
 else
     ~/.local/bin/screenlayout-1
