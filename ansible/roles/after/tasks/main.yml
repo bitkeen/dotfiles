@@ -49,17 +49,17 @@
     }
     - {
       section: 'Preferences',
-      option: 'General\MinimizeToTray=true',
+      option: 'General\MinimizeToTray',
       value: 'true'
     }
     - {
       section: 'Preferences',
-      option: 'General\MinimizeToTrayNotified=true',
+      option: 'General\MinimizeToTrayNotified',
       value: 'true'
     }
     - {
       section: 'Preferences',
-      option: 'General\StartMinimized=true',
+      option: 'General\StartMinimized',
       value: 'true'
     }
 
