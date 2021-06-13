@@ -48,6 +48,7 @@ bindkey -M viins '^P' up-history
 
 bindkey -M viins '^X^U' kill-whole-line
 bindkey -M viins -s '^[g' '^X^U fzg\n'
+bindkey -M viins -s '^o' '^X^U fg\n'
 
 # Set up some emacs-like bindings in insert mode.
 # ^[ is Alt.
