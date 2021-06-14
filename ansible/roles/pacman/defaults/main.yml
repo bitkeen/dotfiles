@@ -128,6 +128,7 @@ packages:
   - vint  # Lint tool for Vim script Language
   - virtualbox
   - virtualbox-guest-iso  # Guest Additions CD image
+  - virtualbox-host-modules-arch
   - w3m  # Text-based Web browser as well as pager, used for html previews in ranger
   - whois  # Intelligent WHOIS client
   - wireshark-cli  # Network traffic and protocol analyzer/sniffer - CLI tools and data files
