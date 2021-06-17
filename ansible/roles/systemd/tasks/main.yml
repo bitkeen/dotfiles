@@ -17,8 +17,6 @@
     - newsboat-reload.timer
     - pacman-update-files-database.service
     - pacman-update-files-database.timer
-    - docker-system-prune.service
-    - docker-system-prune.timer
     - fetch-dotfiles.service
     - fetch-dotfiles.timer
     - docker-limit.slice
@@ -41,7 +39,6 @@
     - paccache.timer # Discard unused packages weekly.
     - systemd-timesyncd.service # Sync time.
     - fetch-dotfiles.timer
-    - docker-system-prune.timer
   when: not in_docker
 
 - name: start docker resource limit slice
