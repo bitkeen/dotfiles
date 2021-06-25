@@ -44,6 +44,11 @@
     }
     - {
       section: 'Preferences',
+      option: 'General\CloseToTray',
+      value: 'true'
+    }
+    - {
+      section: 'Preferences',
       option: 'General\CloseToTrayNotified',
       value: 'true'
     }
@@ -60,6 +65,11 @@
     - {
       section: 'Preferences',
       option: 'General\StartMinimized',
+      value: 'true'
+    }
+    - {
+      section: 'Preferences',
+      option: 'General\SystrayEnabled',
       value: 'true'
     }
 
