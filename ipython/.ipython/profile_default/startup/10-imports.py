@@ -1,4 +1,4 @@
-imports = [
+stdlib_imports = [
     'import math',
     'import os',
     'import pprint',
@@ -10,6 +10,19 @@ imports = [
     'from datetime import date, datetime, timedelta',
 ]
 
-for i in imports:
+external_imports = [
+    'import requests',
+]
+
+for i in stdlib_imports:
     exec(i)
     print(f'>>> {i}')
+
+print()  # Newline for visual separation.
+for i in external_imports:
+    try:
+        exec(i)
+    except Exception:
+        print(f'>>> {i!r} failed')
+    else:
+        print(f'>>> {i}')
