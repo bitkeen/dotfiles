@@ -14,7 +14,6 @@ packages:
   - jiq  # Json Incremental Digger that uses jq internally
   - lab
   - litecli
-  - mycli
   - ttf-font-awesome-4
   - paper-icon-theme
   - path-extractor  # A unix filter which outputs the filepaths found in stdin
