@@ -1,4 +1,5 @@
 stdlib_imports = [
+    'import json',
     'import math',
     'import os',
     'import pprint',
