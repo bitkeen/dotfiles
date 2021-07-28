@@ -35,8 +35,9 @@ setopt INTERACTIVE_COMMENTS
 
 # Set vi mode.
 bindkey -v
-# Reduce Esc key lag in vi mode to 10ms.
-export KEYTIMEOUT=1
+# Set Esc key lag in vi mode to 150ms.
+# https://github.com/zsh-users/zsh-autosuggestions/issues/254
+export KEYTIMEOUT=15
 
 # Insert mode.
 bindkey -M viins '^[[3~' delete-char
