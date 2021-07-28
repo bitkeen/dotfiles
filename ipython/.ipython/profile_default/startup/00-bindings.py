@@ -10,10 +10,11 @@ from prompt_toolkit.keys import Keys
 from prompt_toolkit.key_binding.bindings.named_commands import get_by_name
 from prompt_toolkit.filters import HasFocus, HasSelection
 
-ip = get_ipython()
-
-hist_db_file = f'{str(Path.home())}/.ipython/profile_default/history.sqlite'
-hist_select_query = """
+FZF_OPTIONS = ('--read0'
+              ' --preview "echo {} | bat --plain --color always -l python"'
+              ' --preview-window="nohidden"')
+HIST_DB_FILE = f'{str(Path.home())}/.ipython/profile_default/history.sqlite'
+HIST_SELECT_QUERY = """
 SELECT DISTINCT
     source_raw
 FROM
@@ -23,20 +24,22 @@ ORDER BY
     line DESC
 """
 
+ip = get_ipython()
+
 def fzf_history(event):
     """Get item from history with fzf.
 
     pyfzf from https://github.com/bitkeen/pyfzf is required.
     """
-    conn = sqlite3.connect(hist_db_file)
+    conn = sqlite3.connect(HIST_DB_FILE)
     cur = conn.cursor()
-    hist_rows = [r[0] for r in cur.execute(hist_select_query)]
+    hist_rows = [r[0] for r in cur.execute(HIST_SELECT_QUERY)]
 
     fzf = pyfzf.FzfPrompt()
     try:
         selection = '\n'.join(
             fzf.prompt(choices=hist_rows,
-                       fzf_options='--read0',
+                       fzf_options=FZF_OPTIONS,
                        delimiter='\0')
         )
         event.current_buffer.insert_text(selection)
