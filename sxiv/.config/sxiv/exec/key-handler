@@ -31,7 +31,7 @@ case "$1" in
         while read file;
         do
             gio trash "$file" &&
-                notify-send  -f "$file" "$file moved to trash."
+                notify-send -i "$file" "$file moved to trash."
         done ;;
 	'D')
         while read file;
