@@ -196,9 +196,6 @@
 [submodule "vim-pug"]
 	path = vim/.vim/pack/bundle/opt/vim-pug
 	url = https://github.com/digitaltoad/vim-pug
-[submodule "vim-isort"]
-	path = vim/.vim/pack/bundle/opt/vim-isort
-	url = https://github.com/fisadev/vim-isort
 [submodule "vim-syntax-extra"]
 	path = vim/.vim/pack/bundle/opt/vim-syntax-extra
 	url = https://github.com/justinmk/vim-syntax-extra

@@ -885,12 +885,6 @@ augroup markdownmaps
   autocmd FileType markdown,vimwiki noremap <buffer> gsm :InstantMarkdownPreview<CR>
 augroup END
 
-if has('python3')
-  " vim-isort
-  autocmd plugins FileType python packadd vim-isort
-  autocmd plugins FileType python let g:vim_isort_map = '<Leader>i'
-endif
-
 " Tmuxline
 let g:tmuxline_powerline_separators = 0
 
