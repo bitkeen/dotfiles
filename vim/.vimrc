@@ -787,9 +787,9 @@ inoremap <M-v> <C-r>0
 " Plugin mappings {{{
 
 " Netrw - file explorer {{{
-nnoremap <silent> <Leader>ft :Texplore<CR>
-nnoremap <silent> <Leader>fb :Sexplore<CR>
-nnoremap <silent> <Leader>fv :Vexplore!<CR>
+nnoremap <silent> <Leader>nt :Texplore<CR>
+nnoremap <silent> <Leader>nb :Sexplore<CR>
+nnoremap <silent> <Leader>nv :Vexplore!<CR>
 " }}}
 
 " vimwiki
