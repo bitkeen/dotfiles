@@ -894,6 +894,9 @@ let g:ale_completion_delay = 0
 let g:ale_set_highlights = 0
 let g:ale_lint_on_text_changed = 'normal'
 let g:ale_echo_msg_format = '[%linter%] %code%: %s'
+let g:ale_fixers = {
+\  'python': ['isort'],
+\}
 " `yaml.ansible` - custom filetype set by ansible-vim plugin.
 " By default, ALE will only lint `ansible` filetype.
 let g:ale_linters = {
