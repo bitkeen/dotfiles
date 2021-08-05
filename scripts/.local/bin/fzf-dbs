@@ -21,9 +21,13 @@ initial_query="$2"
 FZF_DEFAULT_OPTS="--query=$initial_query --reverse --height 60% $FZF_DEFAULT_OPTS"
 
 
-get_connections_from_file() {
+check_connections_file() {
     [ -z "$1" ] && echo "Connections file wasn't specified." && exit 1
     [ ! -f "$1" ] && echo "Connections file doesn't exist." && exit 1
+}
+
+
+get_connections_from_file() {
     # Delete the comments and empty lines first, then sort.
     sed -e "/^#/d" -e "s/ \?\#.*//" -e "/^\s*$/d" "$1" |
         sort
@@ -82,6 +86,7 @@ connect() {
 }
 
 
+check_connections_file "$conn_file"
 connections="$(get_connections_from_file "$conn_file")"
 check_for_duplicates "$connections"
 choice="$(hide_passwords "$connections" | fzf)"
