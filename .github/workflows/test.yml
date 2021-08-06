@@ -1,0 +1,40 @@
+name: test
+on: [push]
+jobs:
+  lint:
+    runs-on: ubuntu-20.04
+    steps:
+      - uses: actions/checkout@v2
+      - name: Set up Python 3.9
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.9
+      - name: Install linters
+        run: pip install isort==5.7.0 yamllint==1.24.2 
+      - name: Run shellcheck on all the scripts with sh shebang
+        run: |
+          find ./scripts/ -type f -print0 |
+              xargs -0 gawk '/^#!.*( |[/])sh/{printf "%s\0", FILENAME} {nextfile}' |
+              xargs -0 shellcheck
+      - name: Run isort
+        run: isort --check ./scripts/ ./ipython/
+      - name: Run yamllint
+        run: yamllint .
+  build:
+    needs: lint
+    runs-on: ubuntu-20.04
+    steps:
+      - uses: actions/checkout@v2
+      - name: Build image
+        env:
+          DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
+        run: docker build -t "$DOCKER_USERNAME"/dotfiles .
+      - name: Push image
+        env:
+          DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
+          DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
+        run: |
+          if [ "$GITHUB_REF" == "refs/heads/arch" ]; then
+              echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin;
+              docker push "$DOCKER_USERNAME"/dotfiles;
+          fi
