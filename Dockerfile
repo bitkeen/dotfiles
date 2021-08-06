@@ -6,32 +6,28 @@ RUN patched_glibc=glibc-linux4-2.33-4-x86_64.pkg.tar.zst && \
     curl --silent -LO "https://repo.archlinuxcn.org/x86_64/$patched_glibc" && \
     bsdtar -C / -xf "$patched_glibc"
 
-RUN pacman --noconfirm -Syyu
-
 # Install base-devel for `sudo`.
-RUN pacman --noconfirm -S base-devel git
+RUN pacman --noconfirm -Syyu base-devel git
 
-RUN useradd -m user
-RUN usermod -aG wheel user
+# Set up the user.
+RUN useradd -m user \
+    && usermod -aG wheel user \
+    && echo 'user ALL=(ALL:ALL) NOPASSWD: ALL' > /etc/sudoers
 
-RUN echo 'user ALL=(ALL:ALL) NOPASSWD: ALL' > /etc/sudoers
-
-ADD . /home/user/.dotfiles
+COPY . /home/user/.dotfiles
 RUN chown -R user:user /home/user
 
 USER user
-
 WORKDIR /home/user
-
-# Clear package cache in the end to reduce image size
+# Clear package cache at the end to reduce image size
 # (same layer where installation happens).
-RUN /home/user/.dotfiles/ansible/bootstrap && \
-    sudo rm /var/cache/pacman/pkg/* && \
-    sudo rm -rf /home/user/.cache/ansible/aur && \
-    sudo rm -rf /tmp/ansible*python && \
-    go clean -cache && \
-    rm -r /home/user/.cargo/registry && \
-    rm -r /home/user/.stack
+RUN .dotfiles/ansible/bootstrap \
+    && sudo rm /var/cache/pacman/pkg/* \
+    && sudo rm -rf .cache/ansible/aur \
+    && sudo rm -rf /tmp/ansible*python \
+    && go clean -cache \
+    && rm -r .cargo/registry \
+    && rm -r .stack
 
 # Add docker indicator to prompt.
 RUN echo -e '\nPROMPT="%F{blue}docker:%f ${PROMPT}"' >> .zshrc
