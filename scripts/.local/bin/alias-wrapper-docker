@@ -6,7 +6,7 @@ FZF_DEFAULT_OPTS="--reverse --height 40% $FZF_DEFAULT_OPTS"
 
 get_container_name() {
     'docker' ps --format 'table{{.Names}}\t{{.Image}}\t{{.Status}}' |
-        fzf --header-lines=1 | awk '{ print $1 }'
+        fzf --exit-0 --header-lines=1 | awk '{ print $1 }'
 }
 
 
@@ -45,7 +45,10 @@ case "$key" in
     lg)
         cmd="logs";;
     lgf)
-        cmd='logs -f';;
+        choice="${2:-$(get_container_name)}"
+        [ -z "$choice" ] && exit 1
+        'docker' logs -f "$choice"
+        exit;;
     lgft)
         # --tail="all" is default
         cmd='logs -f --tail=0';;
