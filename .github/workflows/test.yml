@@ -16,12 +16,9 @@ jobs:
           find ./scripts/ -type f -print0 |
               xargs -0 gawk '/^#!.*( |[/])sh/{printf "%s\0", FILENAME} {nextfile}' |
               xargs -0 shellcheck
-      - name: Run flake8
-        run: flake8 ./scripts/
-      - name: Run isort
-        run: isort --check ./scripts/ ./ipython/
-      - name: Run yamllint
-        run: yamllint .
+      - run: flake8 ./scripts/
+      - run: isort --check ./scripts/ ./ipython/
+      - run: yamllint .
 
   build:
     needs: lint
