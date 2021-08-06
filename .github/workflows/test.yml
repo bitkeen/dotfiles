@@ -10,16 +10,19 @@ jobs:
         with:
           python-version: 3.9
       - name: Install linters
-        run: pip install isort==5.7.0 yamllint==1.24.2 
+        run: pip install flake8==3.9.2 isort==5.7.0 yamllint==1.24.2 
       - name: Run shellcheck on all the scripts with sh shebang
         run: |
           find ./scripts/ -type f -print0 |
               xargs -0 gawk '/^#!.*( |[/])sh/{printf "%s\0", FILENAME} {nextfile}' |
               xargs -0 shellcheck
+      - name: Run flake8
+        run: flake8 ./scripts/
       - name: Run isort
         run: isort --check ./scripts/ ./ipython/
       - name: Run yamllint
         run: yamllint .
+
   build:
     needs: lint
     runs-on: ubuntu-20.04
