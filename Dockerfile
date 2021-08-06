@@ -30,7 +30,8 @@ RUN /home/user/.dotfiles/ansible/bootstrap && \
     sudo rm -rf /home/user/.cache/ansible/aur && \
     sudo rm -rf /tmp/ansible*python && \
     go clean -cache && \
-    rm -r /home/user/.cargo/registry
+    rm -r /home/user/.cargo/registry && \
+    rm -r /home/user/.stack
 
 # Add docker indicator to prompt.
 RUN echo -e '\nPROMPT="%F{blue}docker:%f ${PROMPT}"' >> .zshrc
