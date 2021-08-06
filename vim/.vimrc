@@ -901,7 +901,7 @@ let g:ale_fixers = {
 " `yaml.ansible` - custom filetype set by ansible-vim plugin.
 " By default, ALE will only lint `ansible` filetype.
 let g:ale_linters = {
-\  'python': ['pydocstyle', 'pyflakes', 'pylint', 'pylsp'],
+\  'python': ['flake8', 'pydocstyle', 'pylint', 'pylsp'],
 \  'yaml.ansible': ['ansible-lint'],
 \}
 
