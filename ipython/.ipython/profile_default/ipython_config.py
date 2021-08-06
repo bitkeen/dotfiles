@@ -627,8 +627,8 @@ except ModuleNotFoundError as e:
 else:
     import IPython
     import prompt_toolkit
-    from prompt_toolkit.styles.style import Style
     from prompt_toolkit.styles.pygments import pygments_token_to_classname
+    from prompt_toolkit.styles.style import Style
 
     # See https://github.com/ipython/ipython/issues/11526.
     def my_style_from_pygments_dict(pygments_dict):

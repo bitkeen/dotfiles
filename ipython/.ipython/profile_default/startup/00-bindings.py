@@ -6,9 +6,9 @@ import plumbum
 import pyfzf
 from IPython import get_ipython
 from prompt_toolkit.enums import DEFAULT_BUFFER
-from prompt_toolkit.keys import Keys
-from prompt_toolkit.key_binding.bindings.named_commands import get_by_name
 from prompt_toolkit.filters import HasFocus, HasSelection
+from prompt_toolkit.key_binding.bindings.named_commands import get_by_name
+from prompt_toolkit.keys import Keys
 
 FZF_OPTIONS = ('--read0'
               ' --preview "echo {} | bat --plain --color always -l python"'
