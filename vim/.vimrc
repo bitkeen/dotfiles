@@ -450,6 +450,7 @@ endif
 " Colorscheme local customization.
 function! s:base16_tomorrow_night_custom() abort
   call Base16hi('PMenuSel', g:base16_gui05, g:base16_gui01, g:base16_cterm05, g:base16_cterm01, 'reverse', '')
+  " Make comments italic.
   call Base16hi('Comment', g:base16_gui03, '', g:base16_cterm03, '', 'italic', '')
 endfunction
 
