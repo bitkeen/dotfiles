@@ -450,6 +450,8 @@ endif
 " Colorscheme local customization.
 function! s:base16_tomorrow_night_custom() abort
   call Base16hi('PMenuSel', g:base16_gui05, g:base16_gui01, g:base16_cterm05, g:base16_cterm01, 'reverse', '')
+  " Make current search match more visually distinct from other matches.
+  call Base16hi('IncSearch', g:base16_gui01, g:base16_gui0B, g:base16_cterm01, g:base16_cterm0B, 'none', '')
   " Make comments italic.
   call Base16hi('Comment', g:base16_gui03, '', g:base16_cterm03, '', 'italic', '')
 endfunction
