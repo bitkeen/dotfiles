@@ -302,3 +302,6 @@
 [submodule "plantuml-syntax"]
 	path = vim/.vim/pack/bundle/start/plantuml-syntax
 	url = https://github.com/aklt/plantuml-syntax
+[submodule "loupe"]
+	path = vim/.vim/pack/bundle/opt/loupe
+	url = https://github.com/wincent/loupe

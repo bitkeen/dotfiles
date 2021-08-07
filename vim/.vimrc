@@ -324,6 +324,7 @@ if has('packages')
   packadd! lightline-ale " ALE indicator for lightline
   packadd! lightline.vim " A light and configurable statusline/tabline
   packadd! linediff.vim " Diff two blocks of text
+  packadd! loupe " Enhanced in-file search
   packadd! pydoc.vim
   packadd! QFEnter " Open a Quickfix item in a window you choose
   packadd! quick-scope " Highlight characters to jump with f, F, t, and T
@@ -516,6 +517,9 @@ let g:quickpeek_window_settings = ['cursorline', 'number', 'relativenumber']
 " vim-sneak
 let g:sneak#label = 1
 
+" loupe
+let g:LoupeVeryMagic=0
+
 " }}}
 
 " Mappings {{{
@@ -582,10 +586,10 @@ vnoremap <Leader>gd :g//d<Left><Left>
 " The first part clears the last used search. It will not set the pattern to
 " an empty string, because that would match everywhere. The pattern is really
 " cleared, like when starting Vim.
-" The second part disables highlighting, redraws the screen (default
-" behavior for C-l) and moves one character to the left with 'h' (to keep
-" the cursor in place).
-nnoremap <silent> <Leader>l :let @/ = ""<CR> :nohlsearch<CR><c-l>h
+" The second part disables highlighting, the third redraws the screen.
+"
+" Commented out: now using loupe plugin.
+" nnoremap <silent> <Leader>l :let @/ = "" <bar> nohlsearch <bar> redraw<CR>
 
 " Reload .vimrc.
 nnoremap <LocalLeader>r :source $MYVIMRC<CR>
@@ -1008,6 +1012,12 @@ let g:surround_{char2nr('q')} = "\"\r\""
 " vim-fugitive
 " Formatting for Glog.
 let g:fugitive_summary_format = '%s <%aN> %ar (%ad)'
+
+" loupe
+" Default is <Leader>n.
+" Clear the search pattern first.
+" `h` at the end is needed to put cursor back in place.
+nmap <Leader>l :let @/ = ""<CR> <Plug>(LoupeClearHighlight)h
 
 " }}}
 
