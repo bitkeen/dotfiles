@@ -904,6 +904,11 @@ let g:ale_linters = {
 \  'python': ['flake8', 'pydocstyle', 'pylint', 'pylsp'],
 \  'yaml.ansible': ['ansible-lint'],
 \}
+let g:ale_python_pylsp_config = {
+\  'pylsp': {
+\    'configurationSources': ['flake8',],
+\  },
+\}
 
 " Signature
 " Highlight signs of marks based upon state indicated by vim-gitgutter.
