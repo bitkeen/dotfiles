@@ -6,5 +6,5 @@
 
 - name: put dnsmasq config in place
   copy:
-    src: 00-general.conf
+    src: dnsmasq/00-general.conf
     dest: /etc/NetworkManager/dnsmasq.d/
