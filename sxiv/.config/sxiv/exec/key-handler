@@ -11,6 +11,8 @@
 # where C/M/S indicate Ctrl/Meta(Alt)/Shift modifier states and KEY is the X
 # keysym as listed in /usr/include/X11/keysymdef.h without the "XK_" prefix.
 
+APP_NAME='sxiv'
+
 rotate() {
     degree="$1"
     tr '\n' '\0' | xargs -0 realpath | sort | uniq | while read file; do
@@ -30,15 +32,16 @@ case "$1" in
 	'd')
         while read file;
         do
-            gio trash "$file" &&
-                notify-send -i "$file" "$file moved to trash."
+            notify-send --app-name "$APP_NAME" -i "$(readlink -f "$file")" "Moving $file to trash" &&
+                gio trash "$file"
         done ;;
 	'D')
         while read file;
         do
             [ "$(printf "No\\nYes" |
                 dmenu-configured -p "Delete $file?")" = 'Yes' ] &&
-                rm "$file" && notify-send "$file deleted."
+                notify-send --app-name "$APP_NAME" -i "$(readlink -f "$file")" "Deleting $file" &&
+                rm "$file"
         done ;;
     'x')
         # Move image(s) to a subdirectory of XDG_PICTURES_DIR.
@@ -49,14 +52,14 @@ case "$1" in
                 dmenu-configured -l 20 -p 'Where to move?')"
             [ -z "$destdir" ] && exit 1
             mv "$file" "$destdir" &&
-                notify-send -i "$destdir/$file" "$file moved to $destdir." &
+                notify-send --app-name "$APP_NAME" -i "$destdir/$file" "$file moved to $destdir" &
         done ;;
     'y')
         # Copy image.
         while read file;
         do
             xclip -selection clipboard -target image/png "$file" &&
-                notify-send -i "$(readlink -f "$file")" "$file copied to clipboard" &
+                notify-send --app-name "$APP_NAME" -i "$(readlink -f "$file")" "$file copied to clipboard" &
         done ;;
     'Y')
         # Copy image name.
