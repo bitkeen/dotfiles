@@ -26,5 +26,6 @@ elif command -v "$1" | grep '^alias' > /dev/null; then
     alias_val="$(command -v "$1" | tr -d "'" | grep -Po "(?<==).*")"
     vman "$alias_val"
 else
-    vman "$1"
+    # $@ allows to specify a section, i.e. `m $section $name`.
+    vman "$@"
 fi

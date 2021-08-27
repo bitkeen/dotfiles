@@ -4,9 +4,8 @@
 if [ "$#" -eq 0 ]; then
   echo "What manual page do you want?";
   exit 1
-elif ! man -w "$@" > /dev/null 2>&1; then
+elif ! man -w "$@" > /dev/null; then
   # Check that manpage exists to prevent visual noise.
-  echo "No manual entry for $*"
   exit 1
 fi
 
@@ -14,7 +13,12 @@ fi
 [ -z "$TMUX" ] || current_window_name="$(tmux display-message -p '#W')"
 [ -z "$TMUX" ] || tmux rename-window "man $(echo "$*" | sed 's;.*/;;')"
 
+# Man pages are expected to be no more than 99,999 lines in length.
+VIM_LINENUMBER_INDENT=6
+# New MANWIDTH will account for additional indentation from line numbers in vim.
+MANWIDTH=$((COLUMNS - VIM_LINENUMBER_INDENT))
+
 # Man is open in a split, make it the only window instead.
-${EDITOR:-vim} -c "execute('Man $*') | only | setlocal readonly"
+MANWIDTH="$MANWIDTH" ${EDITOR:-vim} -c "execute('Man $*') | only | setlocal readonly"
 
 [ -z "$current_window_name" ] || tmux rename-window "$current_window_name"
