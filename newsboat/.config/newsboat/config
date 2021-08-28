@@ -29,6 +29,7 @@ bind-key h quit article
 bind-key ^D pagedown
 bind-key ^U pageup
 bind-key "SPACE" macro-prefix
+bind-key / goto-title
 
 browser firefox
 # Mark article as read and open it in browser.
