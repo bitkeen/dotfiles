@@ -1,0 +1,17 @@
+#!/bin/sh
+# Get timezone based on current IP.
+# If `-p` is passed, just print the detected timezone.
+# From https://wiki.archlinux.org/title/System_time#Update_timezone_every_time_NetworkManager_connects_to_a_network.
+# See also https://github.com/cdown/tzupdate.
+
+if [ "$#" -gt 1 ]; then
+    echo 'Too many arguments'
+    exit 1
+fi
+
+timezone="$(curl --silent http://ip-api.com/json/ | jq --raw-output .timezone)"
+echo "Detected timezone is ${timezone}"
+if [ "$1" != '-p' ]; then
+    echo "Updating system timezone"
+    timedatectl set-timezone "$timezone"
+fi
