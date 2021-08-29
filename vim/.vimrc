@@ -297,6 +297,9 @@ function! FormatFile(filetype, range_prefix)
   endif
 endfunction
 
+" Enable default folding in :Man.
+let g:ft_man_folding_enable = 1
+
 " }}}
 
 " Packages {{{
