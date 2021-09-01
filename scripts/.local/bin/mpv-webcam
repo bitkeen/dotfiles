@@ -1,0 +1,21 @@
+#!/bin/sh
+# Test webcam output using MPV.
+
+# Used to filter out devices that can't be used for capture.
+CAPTURE_INDICATOR='ID_V4L_CAPABILITIES=:capture:'
+PRODUCT_NAME_REGEXP='(?<=ID_V4L_PRODUCT=).*'
+
+select_device() {
+    for device in /dev/video*; do
+        info_output="$(udevadm info --query=property --name="$device")"
+        if ! echo "$info_output" | grep "$CAPTURE_INDICATOR" > /dev/null; then
+            continue
+        fi
+        full_name="$(echo "$info_output" | grep -Po "$PRODUCT_NAME_REGEXP")"
+        echo "$device - $full_name"
+    done | fzf
+}
+
+choice="$(select_device | awk '{print $1}')"
+[ -z "$choice" ] && exit 1
+mpv av://v4l2:"$choice" --profile=low-latency --untimed
