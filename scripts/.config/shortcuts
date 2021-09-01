@@ -23,6 +23,7 @@ dpu ~/documents/projects/public
 dt ~/downloads/torrents
 dl ~/downloads
 dy ~/downloads/youtube-dl
+da ~/downloads/youtube-dl/audio
 fm ~/media
 pc ~/pictures
 sc ~/pictures/screenshots
