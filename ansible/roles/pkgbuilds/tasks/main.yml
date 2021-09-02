@@ -9,6 +9,7 @@
 - name: get the directory names
   command: ls '{{ pkgbuilds_dir }}'
   register: package_dirs
+  changed_when: false
 
 - name: make and install packages
   become: yes
