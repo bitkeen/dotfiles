@@ -5,6 +5,7 @@
   git:
     repo: 'https://github.com/bitkeen/pkgbuilds.git'
     dest: '{{ pkgbuilds_dir }}'
+    version: master
 
 - name: get the directory names
   command: ls '{{ pkgbuilds_dir }}'
