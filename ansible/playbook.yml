@@ -13,6 +13,7 @@
     - { role: pkgbuilds, tags: pkgbuilds }
     # Other roles.
     - { role: misc, tags: misc }
+    - { role: anki, tags: anki }
     - { role: networkmanager, tags: networkmanager }
     - { role: stow, tags: stow }
     - { role: firefox, tags: firefox }

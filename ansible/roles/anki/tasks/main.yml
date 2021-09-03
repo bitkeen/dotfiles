@@ -1,0 +1,37 @@
+- name: create a temporary directory to clone addons into
+  become: yes
+  become_user: '{{ user_name }}'
+  tempfile:
+    state: directory
+    suffix: anki
+  register: anki_tempdir
+
+- name: clone syntax-highlighting repository
+  become: yes
+  become_user: '{{ user_name }}'
+  git:
+    repo: 'https://github.com/glutanimate/syntax-highlighting'
+    dest: '{{ anki_tempdir.path }}/syntax-highlighting'
+    version: d8287ae604e9fdc8e3f0cc2e0ced9857cf9cedf4
+
+# The src dir contains a lot of files and synchronize module is much
+# faster than copy here.
+- name: copy src dir
+  become: yes
+  become_user: '{{ user_name }}'
+  synchronize:
+    src: '{{ anki_tempdir.path }}/syntax-highlighting/src/syntax_highlighting'
+    dest: '{{ addons_dir }}'
+
+- name: create config file if it doesn't exist
+  become: yes
+  become_user: '{{ user_name }}'
+  copy:
+    content: '{}'
+    dest: '{{ addons_dir }}/syntax_highlighting/meta.json'
+
+- name: configure syntax-highlighting
+  become: yes
+  become_user: '{{ user_name }}'
+  shell:
+    cmd: jq --compact-output '.config.style="monokai"' '{{ addons_dir }}/syntax_highlighting/meta.json' | sponge '{{ addons_dir }}/syntax_highlighting/meta.json'

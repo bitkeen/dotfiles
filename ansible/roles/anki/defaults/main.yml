@@ -1,0 +1,2 @@
+---
+addons_dir: '{{ user_home }}/.local/share/Anki2/addons21'
