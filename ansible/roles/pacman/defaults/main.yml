@@ -60,7 +60,7 @@ packages:
   - man-pages  # Linux man pages
   - mediainfo  # Supplies technical and tag information about a video or audio file (CLI interface), currently used for audio file previews in ranger
   - mlocate  # Merging locate/updatedb implementation
-  - moreutils  # Provides ifne utility among others.
+  - moreutils  # Provides ifne and sponge utilities among others.
   - mpc  # Command line interface to MPD
   - mpd  # Music Player Daemon
   - mpv  # Media player
