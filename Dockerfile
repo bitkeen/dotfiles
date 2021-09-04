@@ -1,11 +1,5 @@
 FROM archlinux
 
-# WORKAROUND for glibc 2.33 and old Docker
-# https://github.com/qutebrowser/qutebrowser/commit/478e4de7bd1f26bebdcdc166d5369b2b5142c3e2
-RUN patched_glibc=glibc-linux4-2.33-4-x86_64.pkg.tar.zst && \
-    curl --silent -LO "https://repo.archlinuxcn.org/x86_64/$patched_glibc" && \
-    bsdtar -C / -xf "$patched_glibc"
-
 # Install base-devel for `sudo`.
 RUN pacman --noconfirm -Syyu base-devel git
 
