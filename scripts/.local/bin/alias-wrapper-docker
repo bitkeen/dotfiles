@@ -79,6 +79,12 @@ case "$key" in
         [ -z "$choice" ] && exit 1
         'docker' run -it --rm "$choice" "$@"
         exit;;
+    rns)
+        # Run with shell as entrypoint.
+        choice="${2:-$(get_image_name)}"
+        [ -z "$choice" ] && exit 1
+        'docker' run -it --rm --entrypoint /bin/sh "$choice" -c "$CHOOSE_SHELL"
+        exit;;
     sts)
         cmd='stats';;
     stn)
