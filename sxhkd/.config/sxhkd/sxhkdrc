@@ -77,6 +77,10 @@ XF86AudioPause
     mpc toggle
 XF86AudioPlay
     mpc toggle
+XF86AudioPrev
+    mpc-prev-wrapper
+XF86AudioNext
+	mpc next
 
 # Sreen brightness controls.
 XF86MonBrightnessUp
