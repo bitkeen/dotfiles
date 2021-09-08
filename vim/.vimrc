@@ -305,78 +305,78 @@ let g:ft_man_folding_enable = 1
 " Packages {{{
 if has('packages')
   " Default plugins in vim distribution.
-  packadd cfilter " Filter a quickfix or location list
-  packadd matchit " Extended matching with '%'
+  packadd cfilter  " Filter a quickfix or location list
+  packadd matchit  " Extended matching with '%'
 
   if has('python3')
     packadd MatchTagAlways
     packadd ultisnips
   endif
 
-  packadd! ale " Asynchronous Lint Engine
-  packadd! base16-vim " Themes
-  packadd! CamelCaseMotion " CamelCase and snake_case movement mappings
-  packadd! committia.vim " Improve `git commit` message editor
-  packadd! conflict-marker.vim " Highlight, jump and resolve conflict markers quickly in Vim
-  packadd! fugitive-gitlab.vim " GitLab support for fugitive
+  packadd! ale  " Asynchronous Lint Engine
+  packadd! base16-vim  " Themes
+  packadd! CamelCaseMotion  " CamelCase and snake_case movement mappings
+  packadd! committia.vim  " Improve `git commit` message editor
+  packadd! conflict-marker.vim  " Highlight, jump and resolve conflict markers quickly in Vim
+  packadd! fugitive-gitlab.vim  " GitLab support for fugitive
   packadd! fzf.vim
-  packadd! git-blame.vim " See blame information in the bottom line
-  packadd! gundo.vim " Graph undo tree
-  packadd! gv.vim " Git commit browser. Requires fugitive
-  packadd! indentLine " Display vertical lines at each indentation level
-  packadd! lightline-ale " ALE indicator for lightline
-  packadd! lightline.vim " A light and configurable statusline/tabline
-  packadd! linediff.vim " Diff two blocks of text
-  packadd! loupe " Enhanced in-file search
+  packadd! git-blame.vim  " See blame information in the bottom line
+  packadd! gundo.vim  " Graph undo tree
+  packadd! gv.vim  " Git commit browser. Requires fugitive
+  packadd! indentLine  " Display vertical lines at each indentation level
+  packadd! lightline-ale  " ALE indicator for lightline
+  packadd! lightline.vim  " A light and configurable statusline/tabline
+  packadd! linediff.vim  " Diff two blocks of text
+  packadd! loupe  " Enhanced in-file search
   packadd! pydoc.vim
-  packadd! QFEnter " Open a Quickfix item in a window you choose
-  packadd! quick-scope " Highlight characters to jump with f, F, t, and T
-  packadd! quickpeek.vim " A preview popup on quickfix entries
-  packadd! splitjoin.vim " Switch between single-line and multiline forms of code
-  packadd! tabular " Text aligning
-  packadd! tagbar " A class outline viewer using ctags
-  packadd! targets.vim " Additional text objects
+  packadd! QFEnter  " Open a Quickfix item in a window you choose
+  packadd! quick-scope  " Highlight characters to jump with f, F, t, and T
+  packadd! quickpeek.vim  " A preview popup on quickfix entries
+  packadd! splitjoin.vim  " Switch between single-line and multiline forms of code
+  packadd! tabular  " Text aligning
+  packadd! tagbar  " A class outline viewer using ctags
+  packadd! targets.vim  " Additional text objects
   packadd! textobj-word-column.vim
-  packadd! tmuxline.vim " Tmux status line generator
-  packadd! traces.vim " For :substitute previews
+  packadd! tmuxline.vim  " Tmux status line generator
+  packadd! traces.vim  " For :substitute previews
   packadd! undoquit.vim
   packadd! vim-abolish
   packadd! vim-auto-save
-  packadd! vim-characterize " Improve `ga` mapping
+  packadd! vim-characterize  " Improve `ga` mapping
   packadd! vim-closer
-  packadd! vim-commentary " Easy commenting
+  packadd! vim-commentary  " Easy commenting
   packadd! vim-css-color
   packadd! vim-easydir
   packadd! vim-endwise
   packadd! vim-eunuch
   packadd! vim-exchange
   packadd! vim-expand-region
-  packadd! vim-fugitive " Git wrapper
-  packadd! vim-gitgutter " Show a git diff in the sign column
+  packadd! vim-fugitive  " Git wrapper
+  packadd! vim-gitgutter  " Show a git diff in the sign column
   packadd! vim-gnupg
-  packadd! vim-grepper " Use search tools in a vim split
+  packadd! vim-grepper  " Use search tools in a vim split
   packadd! vim-gtfo
-  packadd! vim-highlightedyank " Highlight yanked text
+  packadd! vim-highlightedyank  " Highlight yanked text
   packadd! vim-indent-object
-  packadd! vim-instant-markdown " Instant markdown previews
-  packadd! vim-merginal " Interface for dealing with Git branches
+  packadd! vim-instant-markdown  " Instant markdown previews
+  packadd! vim-merginal  " Interface for dealing with Git branches
   packadd! vim-obsession
   packadd! vim-python-pep8-indent
-  packadd! vim-qfreplace " Change lines from quickfix
+  packadd! vim-qfreplace  " Change lines from quickfix
   packadd! vim-qlist
   packadd! vim-ragtag
   packadd! vim-repeat
-  packadd! vim-rhubarb " GitHub support for fugitive.
-  packadd! vim-rsi " Readline style insertion
+  packadd! vim-rhubarb  " GitHub support for fugitive.
+  packadd! vim-rsi  " Readline style insertion
   packadd! vim-scriptease
-  packadd! vim-signature " A plugin to toggle, display and navigate marks
-  packadd! vim-signjump " Jump to signs just like other object motions
+  packadd! vim-signature  " A plugin to toggle, display and navigate marks
+  packadd! vim-signjump  " Jump to signs just like other object motions
   packadd! vim-slime
   packadd! vim-sneak
-  packadd! vim-speeddating " Increment or decrement dates, times, and more
+  packadd! vim-speeddating  " Increment or decrement dates, times, and more
   packadd! vim-surround
-  packadd! vim-swap " Swap arguments
-  packadd! vim-textobj-comment " Text objects for comments
+  packadd! vim-swap  " Swap arguments
+  packadd! vim-textobj-comment  " Text objects for comments
   packadd! vim-textobj-conflict
   packadd! vim-textobj-entire
   packadd! vim-textobj-user
@@ -386,17 +386,17 @@ if has('packages')
   packadd! vim-vinegar
   packadd! vim-visual-star-search
   packadd! vim-vue
-  packadd! vim-xkbswitch " Automatically switch keyboard layout based on mode
-  packadd! vimwiki " Personal wiki for Vim
-  packadd! vZoom.vim " Quickly maximize & unmaximize the current window
-  packadd! winresizer " Easy window resizing, similar to resize mode in i3wm
+  packadd! vim-xkbswitch  " Automatically switch keyboard layout based on mode
+  packadd! vimwiki  " Personal wiki for Vim
+  packadd! vZoom.vim  " Quickly maximize & unmaximize the current window
+  packadd! winresizer  " Easy window resizing, similar to resize mode in i3wm
 
   " Syntax
-  packadd! python-syntax " Better python syntax highlighting
+  packadd! python-syntax  " Better python syntax highlighting
   packadd! Vim-Jinja2-Syntax
-  packadd! vim-pug " Syntax highlighting for Pug templates
+  packadd! vim-pug  " Syntax highlighting for Pug templates
   packadd! vim-sxhkdrc
-  packadd! vim-syntax-extra " For enhanced C syntax highlighting
+  packadd! vim-syntax-extra  " For enhanced C syntax highlighting
 else
   " Enable Pathogen package manager.
   execute pathogen#infect('pack/bundle/opt/{}')
