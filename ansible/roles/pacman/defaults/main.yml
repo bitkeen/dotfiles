@@ -98,6 +98,7 @@ packages:
   - sof-firmware  # Sound Open Firmware, needed for audio to work on X1 Carbon
   - solaar  # Device manager for Logitech's Unifying receiver peripherals
   - stow
+  - strace  # A diagnostic, debugging and instructional userspace tracer
   - sxhkd
   - sxiv  # Simple X Image Viewer
   - syncthing  # Open Source Continuous Replication / Cluster Synchronization Thing
