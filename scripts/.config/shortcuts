@@ -32,6 +32,7 @@ sm ~/sync/main
 sw ~/sync/wikis
 ph ~/sync/phone
 pa ~/sync/phone/Audio
+pd ~/sync/phone/Audio/Podcasts
 pp ~/sync/phone/DCIM
 vd ~/videos
 vt ~/videos/to-watch
