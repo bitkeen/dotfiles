@@ -27,8 +27,6 @@ nm-applet &
 
 blueman-applet &
 
-idlelock &
-
 # Bind keys.
 sxhkd &
 
