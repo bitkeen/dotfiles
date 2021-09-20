@@ -73,6 +73,7 @@
   loop:
     - monitor-hotplug@.service
     - battery-notification.service
+    - xidlehook.service
 
 - name: reload user units
   become: yes
@@ -94,4 +95,5 @@
     - mpd.service
     - syncthing.service
     - battery-notification.service
+    - xidlehook.service
   when: not in_docker
