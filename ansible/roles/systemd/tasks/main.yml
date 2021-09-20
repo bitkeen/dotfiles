@@ -36,8 +36,8 @@
     - docker.service
     - newsboat-reload.timer
     - pacman-update-files-database.timer
-    - paccache.timer # Discard unused packages weekly.
-    - systemd-timesyncd.service # Sync time.
+    - paccache.timer  # Discard unused packages weekly.
+    - systemd-timesyncd.service  # Sync time.
     - fetch-dotfiles.timer
   when: not in_docker
 
