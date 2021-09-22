@@ -36,7 +36,13 @@ case "$key" in
         cmd="kill $('docker' ps -q)";;
     k)
         cmd="kill";;
-    krm)
+    kr)
+        choice="${2:-$(get_container_name)}"
+        [ -z "$choice" ] && exit 1
+        'docker' kill "$choice"
+        'docker' rm "$choice"
+        exit;;
+    kra)
         # The xargs arguments make sure that kill/rm won't
         # be executed if there is no input.
         'docker' ps -q | xargs -P8 -I {} docker kill {}
