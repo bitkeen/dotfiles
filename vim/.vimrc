@@ -902,6 +902,8 @@ let g:tmuxline_powerline_separators = 0
 let g:ale_completion_enabled = 1
 let g:ale_completion_delay = 0
 let g:ale_set_highlights = 0
+" By default, borders are built with ASCII symbols.
+let g:ale_floating_window_border = ['│', '─', '╭', '╮', '╯', '╰']
 let g:ale_lint_on_text_changed = 'normal'
 let g:ale_echo_msg_format = '[%linter%] %code%: %s'
 let g:ale_floating_preview = 1
