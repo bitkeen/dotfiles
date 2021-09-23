@@ -110,6 +110,7 @@ packages:
   - thunar  # File Manager for the Xfce Desktop Environment
   - thunderbird
   - tidy  # A tool to tidy HTML code
+  - time  # Provides /usr/bin/time. By default, only shell's builtin is available.
   - tmux
   - tor
   - torsocks  # Wrapper to safely torify applications
