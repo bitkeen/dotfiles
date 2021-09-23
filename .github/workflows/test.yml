@@ -16,7 +16,13 @@ jobs:
           find ./scripts/ -type f -print0 |
               xargs -0 gawk '/^#!.*( |[/])sh/{printf "%s\0", FILENAME} {nextfile}' |
               xargs -0 shellcheck
-      - run: flake8 ./scripts/
+      - name: Run flake8 on the scripts directory
+        run: flake8 ./scripts/
+      - name: Run flake8 on all the scripts with python shebang  # By default, only *.py files are processed.
+        run: |
+          find ./scripts/ -type f -print0 |
+              xargs -0 gawk '/^#!.*( |[/])python3?$/{printf "%s\0", FILENAME} {nextfile}' |
+              xargs -0 flake8
       - run: isort --check ./scripts/ ./ipython/
       - run: yamllint .
 
