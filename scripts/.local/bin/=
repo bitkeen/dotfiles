@@ -2,6 +2,6 @@
 # Simple calculator.
 
 import sys
-from math import *
+from math import *  # noqa
 
 print(eval(' '.join(sys.argv[1:])))

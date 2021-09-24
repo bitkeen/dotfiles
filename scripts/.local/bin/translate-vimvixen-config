@@ -17,7 +17,9 @@ KEYS_UA = "йцукенгшщзхїфівапролджєячсмитьбюЙЦ�
 CONTROL_KEYMAP_REGEX = re.compile(r'^<C-(.*)>$')
 SHIFT_KEYMAP_REGEX = re.compile(r'^<S-(.*)>$')
 
-json_dumps = lambda x: json.dumps(x, indent=2, ensure_ascii=False)
+
+def json_dumps(data):
+    return json.dumps(data, indent=2, ensure_ascii=False)
 
 
 def get_args():
