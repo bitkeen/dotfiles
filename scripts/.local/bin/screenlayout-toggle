@@ -1,6 +1,6 @@
 #!/bin/sh
 # Toggle screenlayout based on whether an external display
-# is connected. To be executed from a udev rule-controlled 
+# is connected. To be executed from a udev rule-controlled
 # systemd service.
 
 if grep '^connected$' /sys/class/drm/card0-DP-3/status ||

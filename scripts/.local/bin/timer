@@ -20,13 +20,13 @@ else
     time_seconds="$time_seconds*60"
 fi
 
-date1=$(($(date +%s) + time_seconds)); 
-while [ "$date1" -ge "$(date +%s)" ]; do 
+date1=$(($(date +%s) + time_seconds));
+while [ "$date1" -ge "$(date +%s)" ]; do
     printf '%s\r' "$(date -u --date @$((date1 - $(date +%s))) +%H:%M:%S)";
     sleep 0.1
 done
 
-pgrep -x dunst >/dev/null && 
+pgrep -x dunst >/dev/null &&
     notify-send -a 'timer' 'Time is over' &&
     [ -n "$TIMER_SOUND" ] &&
     paplay "$TIMER_SOUND"

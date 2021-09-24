@@ -5,10 +5,10 @@
 # 1. If a program is found by $1, run vman for it.
 # 2. If an alias is found by $1, run vman for it's value.
 # 3. Run vman for $1.
-#   
+#
 # Such an order is needed to get a smarter alias expansion than
 # could be done with `alias vm='vman '`, since the actual programs
-# should get precedence over aliases, not otherwise. 
+# should get precedence over aliases, not otherwise.
 # E.g. if you have `alias ls='ls -p'`, then `vm ls` should get you
 # `vman ls`, not `vman 'ls -p'`, and if you have `alias p='pacman'`,
 # you'd get `vman pacman` by running `vm p`, if there's no program

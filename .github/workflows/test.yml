@@ -10,7 +10,7 @@ jobs:
         with:
           python-version: 3.9
       - name: Install linters
-        run: pip install flake8==3.9.2 isort==5.7.0 yamllint==1.24.2 
+        run: pip install flake8==3.9.2 isort==5.7.0 yamllint==1.24.2
       - name: Run shellcheck on all the scripts with sh shebang
         run: |
           find ./scripts/ -type f -print0 |

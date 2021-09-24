@@ -9,7 +9,7 @@ text() {
 
 bin() {
     # Preview binary files.
-    hexdump --canonical "$1" 
+    hexdump --canonical "$1"
 }
 
 

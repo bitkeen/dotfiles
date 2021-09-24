@@ -3,7 +3,7 @@
 
 scripts_dir="$HOME/.local/bin/"
 
-options="$(find "$scripts_dir" -name 'screenlayout-*')" 
+options="$(find "$scripts_dir" -name 'screenlayout-*')"
 choice="$(
     echo "$options" |
     awk -F '/' '{print $NF}' |

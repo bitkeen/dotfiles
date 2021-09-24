@@ -60,11 +60,11 @@ super+control+5
     screenshot -u -s
 
 # Volume controls.
-XF86AudioRaiseVolume 
+XF86AudioRaiseVolume
     pulse-volume increase
-XF86AudioLowerVolume 
+XF86AudioLowerVolume
     pulse-volume decrease
-XF86AudioMute 
+XF86AudioMute
     pulse-volume mute
 # Set thumb mouse buttons to raise and lower the volume.
 button9

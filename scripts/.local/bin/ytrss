@@ -1,6 +1,6 @@
 #!/bin/sh
 # Get a newsboat RSS feed of a YouTube channel.
-# 
+#
 # xp script is required.
 #
 # The first argument is a channel URL.

@@ -25,7 +25,7 @@ description="$3"
 page="$(curl -L --silent --insecure "$url")"
 if [ -z "$page" ]; then
     [ "$CHECK_PAGE_NOTIFY" != '0' ] &&
-        echo "Error: couldn't get the page" 
+        echo "Error: couldn't get the page"
     exit 2
 fi
 

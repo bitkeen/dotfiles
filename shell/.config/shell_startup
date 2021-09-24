@@ -42,7 +42,7 @@ set_up_base_16() {
 }
 
 if [ -n "$TMUX" ]; then
-    # Don't set up base16-shell when in a dropdown terminal. 
+    # Don't set up base16-shell when in a dropdown terminal.
     # This is to keep color overrides (for transparency) in .Xresources.
     tmux_s_name="$(tmux display-message -p '#S')"
     [ "$tmux_s_name" != 'dropdown' ] && [ "$tmux_s_name" != 'misc' ] && \

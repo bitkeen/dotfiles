@@ -20,9 +20,9 @@ hosts="$HOME/.dotfiles/ansible/hosts"
 [ -n "$1" ] &&
     tags_arg="$(printf " --tags %s" "$@")"
 
-[ -z "$tags_arg" ] || 
+[ -z "$tags_arg" ] ||
     [ "$(echo "$tags_arg" | grep -P ' local | local$')" ] &&
-    [ -f "$local_playbook" ] && 
+    [ -f "$local_playbook" ] &&
     playbooks="$playbooks $local_playbook"
 
 # Don't double quote for word-splitting of args.

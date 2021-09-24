@@ -120,7 +120,7 @@ PROMPT="%B${PROMPT}%b"
 zle-keymap-select () {
     if [ "$KEYMAP" = 'vicmd' ]; then
         cursor='\e[2 q'
-    elif 
+    elif
         [ "$KEYMAP" = 'main' ] ||
         [ "$KEYMAP" = 'viins' ] ||
         [ "$KEYMAP" = '' ]; then
@@ -148,7 +148,7 @@ bindkey -M vicmd '^]' vi-copy-line
 bindkey -M viins '^]' vi-copy-line
 
 # Update cursor for each new prompt.
-precmd() { zle-keymap-select } 
+precmd() { zle-keymap-select }
 
 # Enable keyboard navigation of completions in menu
 # (not just tab/shift-tab but cursor keys as well):
