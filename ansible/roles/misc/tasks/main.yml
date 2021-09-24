@@ -124,3 +124,10 @@
   user:
     name: '{{ user_name }}'
     shell: /bin/zsh
+
+- name: install pre-commit hook in .dotfiles
+  become: yes
+  become_user: '{{ user_name }}'
+  command:
+    chdir: '{{ dotfiles_home }}'
+    cmd: pre-commit install
