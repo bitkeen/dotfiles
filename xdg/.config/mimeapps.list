@@ -8,6 +8,7 @@ audio/ac3=mpv.desktop;
 image/gif=sxiv.desktop;
 image/jpeg=sxiv.desktop;
 image/png=sxiv.desktop;
+image/svg+xml=firefox.desktop;
 image/tiff=sxiv.desktop;
 image/vnd.djvu=org.pwmt.zathura.desktop
 text/html=firefox.desktop
