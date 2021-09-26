@@ -39,6 +39,7 @@ from prompt_toolkit.key_binding.vi_state import InputMode, ViState
 ## A list of dotted module names of IPython extensions to load.
 c.InteractiveShellApp.extensions = [
     'autotime',
+    'memory_profiler',
 ]
 
 ## dotted module name of an IPython extension to load.
