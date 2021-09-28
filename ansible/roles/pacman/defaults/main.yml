@@ -5,7 +5,6 @@ packages:
   - adobe-source-sans-pro-fonts
   - adobe-source-serif-pro-fonts
   - android-tools  # Required for scrcpy (from AUR)
-  - anki
   - ansible-lint
   - arandr  # Xrandr front-end
   - asp  # Arch Linux build source file management tool
