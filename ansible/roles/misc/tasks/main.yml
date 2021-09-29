@@ -130,4 +130,5 @@
   become_user: '{{ user_name }}'
   command:
     chdir: '{{ dotfiles_home }}'
-    cmd: pre-commit install
+    # User Python packages won't be available in $PATH at this point.
+    cmd: '{{ dirs.dot_local_bin }}/pre-commit install'
