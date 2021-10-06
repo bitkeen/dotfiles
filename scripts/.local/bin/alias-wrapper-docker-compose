@@ -1,13 +1,14 @@
 #!/bin/sh
-# Aliases for docker-compose.
+# Aliases for docker compose.
+
 key="$1"
 case "$key" in
     d)
         cmd='down';;
     du)
         shift
-        'docker-compose' down
-        'docker-compose' up --detach "$@" && 'docker-compose' logs -f
+        'docker' compose down
+        'docker' compose up --detach "$@" && 'docker' compose logs -f
         exit;;
     k)
         cmd='kill';;
@@ -26,21 +27,21 @@ case "$key" in
         cmd="restart";;
     rsl)
         [ "$#" -lt 2 ] && echo 'Specify container name.' && exit 1
-        'docker-compose' restart "$2" &&
-            'docker-compose' logs -f "$2"
+        'docker' compose restart "$2" &&
+            'docker' compose logs -f "$2"
         exit;;
     u)
-        shift && 'docker-compose' up --detach "$@" && 'docker-compose' logs -f
+        shift && 'docker' compose up --detach "$@" && 'docker' compose logs -f
         exit;;
     ur)
         # Restart a single service. Different from restart in the
-        # way that if a service in the docker-compose file has been
+        # way that if a service in the docker compose file has been
         # changed, it will be restarted with the new changes.
         cmd='up -d --no-deps --force-recreate';;
     url)
         [ "$#" -lt 2 ] && echo 'Specify container name.' && exit 1
-        'docker-compose' up -d --no-deps --force-recreate "$2" &&
-            'docker-compose' logs -f "$2"
+        'docker' compose up -d --no-deps --force-recreate "$2" &&
+            'docker' compose logs -f "$2"
         exit;;
     *)
         cmd="$key";;
@@ -48,4 +49,4 @@ esac
 [ -n "$cmd" ] && shift
 
 # shellcheck disable=SC2086
-'docker-compose' $cmd "$@"
+'docker' compose $cmd "$@"
