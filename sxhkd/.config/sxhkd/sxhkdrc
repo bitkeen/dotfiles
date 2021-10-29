@@ -119,6 +119,15 @@ super+e
 super+shift+s
     dmenu-screenlayout
 
+# Dunst
+# Previous default (ctrl+space) now conflicts with tmux prefix binding.
+ctrl+shift+space
+    dunstctl close
+ctrl+grave
+    dunstctl history-pop
+ctrl+shift+period
+    dunstctl context
+
 # Ctrl-q closes window in Firefox, there is currently no way to disable
 # it in the browser config. The binding can also be used by other
 # programs, so disabling it system-wide might not be the best solution,
