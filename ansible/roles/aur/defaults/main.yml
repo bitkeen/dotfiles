@@ -21,6 +21,7 @@ packages:
   - polybar  # A fast and easy-to-use status bar
   - scrcpy  # Display and control an Android device
   - smenu  # A powerful and versatile selection tool for interactive or scripting use
+  - tflint  # A linter for Terraform code
   - tor-browser
   - virtualbox-ext-oracle  # VirtualBox Extension Pack
   - vim-language-server
