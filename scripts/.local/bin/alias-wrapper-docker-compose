@@ -19,10 +19,10 @@ case "$key" in
         cmd='logs -f --tail=0';;
     pl)
         cmd='pull';;
-    rn)
-        cmd="run";;
+    rn|run)
+        cmd="run --service-ports";;
     rnd)
-        cmd="run --no-deps --name $2";;
+        cmd="run --service-ports --no-deps --name $2";;
     rs)
         cmd="restart";;
     rsl)
