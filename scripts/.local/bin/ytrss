@@ -6,20 +6,22 @@
 # The first argument is a channel URL.
 # The rest of the arguments are optional feed tags for newsboat.
 
-[ -z "$1" ] && echo 'URL not provided' && exit 1
-channel_url="$1"
-[ -n "$2" ] && shift && tags=" $*"
+[ -z "${1}" ] && echo 'URL not provided' && exit 1
+channel_url="${1}"
+[ -n "${2}" ] && shift && tags=" $*"
 
-page_html="$(curl -s "$channel_url")"
+page_html="$(curl -s "${channel_url}")"
 
-title="$tags \"~$(
-    echo "$page_html" |
-    xp '//title' |
-    sed 's/ - YouTube$//'
-) (YouTube)\""
+title="${tags} \"~$(
+    echo "${page_html}" |
+    grep -Po '(?<=<title>)(.*)(?= - YouTube<\/title>)' |  # Select.
+    sed 's/$/ (YouTube)/' |  # Append.
+    python -c 'import html; import sys; print(html.unescape(sys.stdin.read()))' |  # Unescape html entities.
+    sed 's/"/\\"/g'  # Escape double quotes.
+)\""
 
 channel_id="$(
-    echo "$page_html" |
+    echo "${page_html}" |
     xp '//meta[@itemprop="channelId"]/@content'
 )"
 
