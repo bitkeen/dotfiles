@@ -142,8 +142,13 @@ vi-copy-line() {
     zle vi-yank-whole-line
     printf %s "$CUTBUFFER" | xclip-in
 }
+vi-copy-eol() {
+    zle vi-yank-eol
+    printf %s "$CUTBUFFER" | xclip-in
+}
 zle -N vi-copy-line
-bindkey -M vicmd 'Y' vi-copy-line
+zle -N vi-copy-eol
+bindkey -M vicmd 'Y' vi-copy-eol
 bindkey -M vicmd '^]' vi-copy-line
 bindkey -M viins '^]' vi-copy-line
 
