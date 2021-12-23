@@ -325,8 +325,8 @@
 #def_key "r"
 #  toggle_repeat
 #
-#def_key "z"
-#  toggle_random
+def_key "U"
+  toggle_random
 #
 #def_key "y"
 #  save_tag_changes
@@ -481,8 +481,8 @@ def_key "y"
 #def_key "E"
 #  jump_to_tag_editor
 #
-#def_key "U"
-#  toggle_playing_song_centering
+def_key "z"
+  toggle_playing_song_centering
 #
 #def_key "P"
 #  toggle_display_mode
