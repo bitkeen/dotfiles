@@ -53,10 +53,10 @@
     mgm = merge master
     ; git-open has to be installed (https://github.com/paulirish/git-open).
     o = open
+    ph = push
+    phf = push --force-with-lease
     pl = pull
     plrb = pull --rebase
-    ps = push
-    psf = push --force-with-lease
     rb = rebase
     rba = rebase --abort
     rbi = rebase --interactive
