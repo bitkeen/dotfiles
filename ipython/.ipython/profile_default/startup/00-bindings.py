@@ -29,7 +29,7 @@ ip = get_ipython()
 def fzf_history(event):
     """Get item from history with fzf.
 
-    pyfzf from https://github.com/bitkeen/pyfzf is required.
+    pyfzf is required.
     """
     conn = sqlite3.connect(HIST_DB_FILE)
     cur = conn.cursor()
