@@ -1,0 +1,83 @@
+#!/usr/bin/env python3
+"""Sort Firefox bookmarks in a specific folder by URL."""
+import sqlite3
+import sys
+
+import click
+import plumbum
+import pyfzf
+
+
+SELECT_FOLDERS_SQL = '''
+SELECT
+    folder.id,
+    folder.title AS 'name',
+    parent.title AS 'parent'
+FROM
+    moz_bookmarks folder
+    JOIN moz_bookmarks parent ON folder.parent = parent.id
+WHERE
+    parent.guid != 'root________'
+    AND folder.type = 2
+'''
+
+SELECT_BOOKMARKS_SQL = '''
+SELECT
+    b.id,
+    p.url
+FROM
+    moz_bookmarks b
+    LEFT JOIN moz_places p ON b.fk = p.id
+WHERE
+    b.parent = :folder_id
+    AND b.type = 1
+'''
+
+UPDATE_POSITION_SQL = '''
+UPDATE
+    moz_bookmarks
+SET
+    position = :position
+WHERE
+    id = :id
+'''
+
+
+@click.command()
+@click.argument('firefox-profile-path')
+def main(firefox_profile_path):
+    places_db = f'{firefox_profile_path}/places.sqlite'
+    fzf = pyfzf.FzfPrompt()
+
+    with sqlite3.connect(places_db) as connection:
+        connection.row_factory = sqlite3.Row
+        cursor = connection.cursor()
+        cursor.execute(SELECT_FOLDERS_SQL)
+        folders = cursor.fetchall()
+        folders = [f'{f["id"]}: {f["parent"]}/{f["name"]}' for f in folders]
+
+        try:
+            choice = fzf.prompt(
+                choices=folders,
+            )[0]
+        except plumbum.commands.processes.ProcessExecutionError:
+            sys.exit(1)
+
+        do_sort = input(f'Chosen {choice}, continue with sorting? (y/N) ')
+        if do_sort.lower() != 'y':
+            sys.exit(1)
+
+        folder_id = choice.split(':')[0]
+        cursor.execute(SELECT_BOOKMARKS_SQL, {'folder_id': folder_id})
+        bms = sorted(cursor.fetchall(), key=lambda row: row['url'])
+
+        for i, bm in enumerate(bms):
+            cursor.execute(
+                UPDATE_POSITION_SQL,
+                {'id': bm['id'], 'position': i}
+            )
+        print('Finished sorting')
+
+
+if __name__ == '__main__':
+    main()
