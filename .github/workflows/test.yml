@@ -11,6 +11,8 @@ jobs:
           python-version: 3.9
       - name: Install linters
         run: pip install pre-commit==2.16.0 flake8==3.9.2
+      - run: pre-commit install
+      - run: pre-commit run --all-files
       - name: Run shellcheck on all the scripts with sh shebang
         run: |
           find ./scripts/ -type f -print0 |
@@ -23,8 +25,6 @@ jobs:
           find ./scripts/ -type f -print0 |
               xargs -0 gawk '/^#!.*( |[/])python3?$/{printf "%s\0", FILENAME} {nextfile}' |
               xargs -0 flake8
-      - run: pre-commit install
-      - run: pre-commit run --all-files
 
   build:
     needs: lint
