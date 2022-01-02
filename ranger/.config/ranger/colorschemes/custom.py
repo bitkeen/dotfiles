@@ -1,6 +1,7 @@
 from ranger.colorschemes.default import Default
 from ranger.gui.color import black, bold, white
 
+
 class Scheme(Default):
 
     def use(self, context):
