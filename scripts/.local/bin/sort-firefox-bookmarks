@@ -7,7 +7,6 @@ import click
 import plumbum
 import pyfzf
 
-
 SELECT_FOLDERS_SQL = '''
 SELECT
     folder.id,
