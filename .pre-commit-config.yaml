@@ -12,3 +12,8 @@ repos:
   hooks:
     - id: isort
       args: ["--check"]
+
+- repo: https://github.com/adrienverge/yamllint.git
+  rev: v1.24.2
+  hooks:
+    - id: yamllint

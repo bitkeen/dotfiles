@@ -10,7 +10,7 @@ jobs:
         with:
           python-version: 3.9
       - name: Install linters
-        run: pip install pre-commit 2.15.0 flake8==3.9.2 yamllint==1.24.2
+        run: pip install pre-commit==2.16.0 flake8==3.9.2
       - name: Run shellcheck on all the scripts with sh shebang
         run: |
           find ./scripts/ -type f -print0 |
@@ -25,7 +25,6 @@ jobs:
               xargs -0 flake8
       - run: pre-commit install
       - run: pre-commit run --all-files
-      - run: yamllint .
 
   build:
     needs: lint
