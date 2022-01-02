@@ -10,7 +10,7 @@ jobs:
         with:
           python-version: 3.9
       - name: Install linters
-        run: pip install flake8==3.9.2 isort==5.7.0 yamllint==1.24.2
+        run: pip install pre-commit 2.15.0 flake8==3.9.2 yamllint==1.24.2
       - name: Run shellcheck on all the scripts with sh shebang
         run: |
           find ./scripts/ -type f -print0 |
@@ -23,7 +23,8 @@ jobs:
           find ./scripts/ -type f -print0 |
               xargs -0 gawk '/^#!.*( |[/])python3?$/{printf "%s\0", FILENAME} {nextfile}' |
               xargs -0 flake8
-      - run: isort --check ./scripts/ ./ipython/
+      - run: pre-commit install
+      - run: pre-commit run --all-files
       - run: yamllint .
 
   build:
