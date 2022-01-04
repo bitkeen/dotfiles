@@ -69,6 +69,7 @@ packages:
   - networkmanager
   - networkmanager-openvpn
   - newsboat
+  - nfs-utils  # Support programs for Network File Systems.
   - npm  # A package manager for javascript
   - ntfs-3g
   - openbsd-netcat  # TCP/IP swiss army knife
