@@ -12,7 +12,7 @@
     brd = branch -D
     brm = branch -m
     ; Copy name of the current branch.
-    bc = "!git rev-parse --abbrev-ref HEAD | xclip-in -rmlastnl"
+    bc = "!git rev-parse --abbrev-ref HEAD | xclip-in -rmlastnl && xclip-out"
     bs = bisect
     co = checkout
     cob = checkout -b
