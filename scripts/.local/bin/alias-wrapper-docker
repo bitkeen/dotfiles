@@ -60,6 +60,8 @@ case "$key" in
         cmd='logs -f --tail=0';;
     pl)
         cmd='pull';;
+    ph)
+        cmd='push';;
     ps)
         cmd='ps --format table{{.ID}}\t{{.Image}}\t{{.Names}}\t{{.Status}}';;
     psa)
