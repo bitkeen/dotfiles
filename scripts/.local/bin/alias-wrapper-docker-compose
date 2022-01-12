@@ -7,8 +7,8 @@ case "$key" in
         cmd='down';;
     du)
         shift
-        'docker-compose' down
-        'docker-compose' up --detach "$@" && 'docker-compose' logs -f
+        'docker-compose' down &&
+            'docker-compose' up --detach "$@" && 'docker-compose' logs -f
         exit;;
     k)
         cmd='kill';;
