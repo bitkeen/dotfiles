@@ -10,6 +10,9 @@ autoload -Uz compinit
 compinit
 # Show hidden files in completions.
 _comp_options+=(globdots)
+compdef alias-wrapper-docker=docker
+compdef alias-wrapper-journalctl=journalctl
+compdef alias-wrapper-systemctl=systemctl
 compdef git_alias=git
 compdef m=man
 
