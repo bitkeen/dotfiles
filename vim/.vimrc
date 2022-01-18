@@ -847,6 +847,8 @@ noremap <C-g>co :Git checkout<Space>
 " Show log for current file.
 noremap <C-g>lg :0Glog<CR>
 noremap <C-g>mv :GMove <C-R>=expand('%:p:h') . '/'<CR>
+noremap <silent> <C-g>pl :Dispatch git pull<CR>
+noremap <silent> <C-g>ph :Dispatch git push<CR>
 noremap <C-g>rm :GDelete!<CR>
 noremap <C-g>st :Gstatus<CR>
 noremap <C-g>sh :Git stash<CR>
