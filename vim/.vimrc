@@ -346,6 +346,7 @@ if has('packages')
   packadd! vim-closer
   packadd! vim-commentary  " Easy commenting
   packadd! vim-css-color
+  packadd! vim-dispatch  " Asynchronous build and test dispatcher
   packadd! vim-easydir
   packadd! vim-endwise
   packadd! vim-eunuch

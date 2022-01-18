@@ -305,3 +305,6 @@
 [submodule "loupe"]
 	path = vim/.vim/pack/bundle/opt/loupe
 	url = https://github.com/wincent/loupe
+[submodule "vim-dispatch"]
+	path = vim/.vim/pack/bundle/opt/vim-dispatch
+	url = https://github.com/tpope/vim-dispatch
