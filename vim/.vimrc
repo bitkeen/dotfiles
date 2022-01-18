@@ -695,6 +695,7 @@ nnoremap <Leader>p :put<CR>
 nnoremap <Leader>P :put!<CR>
 
 nnoremap <Leader>o :copen<CR>
+nnoremap <Leader>c :cclose<CR>
 
 " Default mappings for [f and ]f are the same as "gf" and are deprecated.
 " Show current filetype.
