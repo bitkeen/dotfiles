@@ -42,6 +42,15 @@ bindkey -v
 # https://github.com/zsh-users/zsh-autosuggestions/issues/254
 export KEYTIMEOUT=15
 
+# Original source: https://vinipsmaker.wordpress.com/2014/02/23/my-zsh-config/
+# bash prints ^C when you're typing a command and Ctrl-C to cancel, so it
+# is easy to see it wasn't executed. By default, ZSH doesn't print the ^C.
+# Trap SIGINT to make it print the ^C.
+TRAPINT() {
+  print -n -u2 '^C'
+  return $((128+$1))
+}
+
 # Insert mode.
 bindkey -M viins '^[[3~' delete-char
 bindkey -M viins '^?' backward-delete-char
