@@ -33,6 +33,10 @@ setopt INC_APPEND_HISTORY
 setopt HIST_FIND_NO_DUPS
 # Don't write command to history if it starts with a space.
 setopt HIST_IGNORE_SPACE
+# Remove superfluous blanks from each command line being added to the history list.
+setopt HIST_REDUCE_BLANKS
+# Do not enter command lines into the history list if they are duplicates of the previous event.
+setopt HIST_IGNORE_DUPS
 # Allow comments even in interactive shells.
 setopt INTERACTIVE_COMMENTS
 
