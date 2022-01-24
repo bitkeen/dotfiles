@@ -69,6 +69,8 @@
     rst = restore
     rmt = remote
     rml = remote -v
+    rv = revert
+    rva = revert --abort
     sh = stash
     shm = stash push -m
     shps = stash push
