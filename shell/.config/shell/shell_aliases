@@ -138,3 +138,6 @@ alias bs='~/.dotfiles/ansible/bootstrap'
 # Clipboard.
 alias xi='xclip-in'
 alias xo='xclip-out'
+
+alias units='units-temperature-mod'
+alias u='units'
