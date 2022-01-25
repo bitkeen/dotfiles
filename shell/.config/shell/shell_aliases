@@ -12,9 +12,12 @@ alias rup='bind -f ~/.inputrc'
 # Restart i3.
 alias iup='i3-msg restart'
 
-alias ls='ls -F --color=auto'
-# -h - with -l and -s, print sizes like 1K 234M 2G etc.
-alias ll='ls -AlFh'
+# LC_COLLATE=C - do not ignore `.` in sorting
+# --almost-all - do not ignore entries starting with `.`, do not list implied `.` and `..`
+# --classify - append indicator (one of */=>@|) to entries
+# --human-readable - print sizes like 1K 234M 2G etc.
+alias ls='LC_COLLATE=C ls --almost-all --classify --color=auto --group-directories-first'
+alias ll='ls -l --human-readable'  # Extend previous alias.
 
 # -r - copy directories recursively
 # -i - prompt before overwrite
