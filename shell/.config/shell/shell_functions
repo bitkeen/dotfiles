@@ -27,7 +27,7 @@ ps1_status() {
 }
 
 
-u() {
+up() {
     # Go up $1 directories.
     # If $1 is omitted or is not an integer, go up 1 directory.
     dir=''
