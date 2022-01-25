@@ -1,0 +1,24 @@
+#!/bin/sh
+# Wrapper around the units program that makes simple Celsius/Fahrenheit
+# conversions easier to type (while breaking some more rarely-used units).
+#
+# Example: `100f c` will be transformed into `tempF(100) C`.
+
+transform() {
+    # Examples:
+    # 100C -> tempC(100)
+    # 36.6c -> tempC(36.6)
+    # 100F -> tempF(100)
+    # C -> tempC
+    echo "$1" |
+        sed -E 's#^([0-9.]+)([cCfF])$#temp\u\2(\1)#' |
+        sed -E 's#^([cCfF])$#temp\u\1#'
+}
+
+# Transform the arguments.
+# shellcheck disable=SC3057
+[ -n "$1" ] && set -- "$(transform "$1")" "${@:2}"
+# shellcheck disable=SC3057
+[ -n "$2" ] && set -- "$1" "$(transform "$2")" "${@:3}"
+
+units --verbose "$@"
