@@ -13,6 +13,8 @@
     br = branch
     brd = branch -D
     brm = branch -m
+    ; Track remote branch origin/<current branch name>.
+    bru = "!git branch --set-upstream-to=origin/\"$(git rev-parse --abbrev-ref HEAD)\""
     bs = bisect
     co = checkout
     cob = checkout -b
