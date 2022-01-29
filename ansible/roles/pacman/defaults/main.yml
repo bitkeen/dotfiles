@@ -155,7 +155,6 @@ packages:
 
 work_packages:
   - aws-cli  # Universal Command Line Interface for Amazon Web Services
-  - dbeaver
   - mariadb-clients  # For mysqldump
   - plantuml  # Component that allows to quickly write uml diagrams
   - redis
