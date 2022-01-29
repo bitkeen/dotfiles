@@ -225,7 +225,8 @@ exec keepassxc
 exec firefox
 exec thunderbird
 exec telegram-desktop
-exec qbittorrent
+# Start on a specific workspace, but do not bind to it.
+exec --no-startup-id i3-msg 'workspace $workspace7; exec qbittorrent'
 
 exec_always --no-startup-id launch-polybar
 
