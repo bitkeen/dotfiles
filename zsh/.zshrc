@@ -179,7 +179,20 @@ zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 
 # Plugins
 zsh_plugins="$HOME/.config/zsh/plugins"
+
 source "$zsh_plugins/fzf-tab/fzf-tab.plugin.zsh"
+# Disable sort when completing `git checkout`.
+zstyle ':completion:*:git-checkout:*' sort false
+# Set descriptions format to enable group support.
+zstyle ':completion:*:descriptions' format '[%d]'
+# Prefix for entries in groups default is '·'.
+zstyle ':fzf-tab:*' prefix ''
+# Preview directory's content with ls when completing cd.
+ls_alias="$(alias ls | cut -d '=' -f2- | sed "s/'//g")"
+zstyle ':fzf-tab:complete:cd:*' fzf-preview "$ls_alias --color=always \$realpath"
+# Switch group using `,` and `.`.
+zstyle ':fzf-tab:*' switch-group ',' '.'
+
 export ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=30
 export ZSH_AUTOSUGGEST_USE_ASYNC=1
 source "$zsh_plugins/zsh-autosuggestions/zsh-autosuggestions.zsh"
