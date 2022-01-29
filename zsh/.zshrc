@@ -179,6 +179,7 @@ zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 
 # Plugins
 zsh_plugins="$HOME/.config/zsh/plugins"
+source "$zsh_plugins/fzf-tab/fzf-tab.plugin.zsh"
 export ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=30
 export ZSH_AUTOSUGGEST_USE_ASYNC=1
 source "$zsh_plugins/zsh-autosuggestions/zsh-autosuggestions.zsh"
