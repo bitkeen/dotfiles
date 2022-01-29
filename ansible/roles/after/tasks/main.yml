@@ -40,7 +40,7 @@
     - {
       section: 'Preferences',
       option: 'Advanced\TrayIconStyle',
-      value: '1'
+      value: 'MonoDark'
     }
     - {
       section: 'Preferences',
