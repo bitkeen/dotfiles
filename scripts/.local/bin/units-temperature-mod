@@ -15,10 +15,8 @@ transform() {
         sed -E 's#^([cCfF])$#temp\u\1#'
 }
 
-# Transform the arguments.
-# shellcheck disable=SC3057
-[ -n "$1" ] && set -- "$(transform "$1")" "${@:2}"
-# shellcheck disable=SC3057
-[ -n "$2" ] && set -- "$1" "$(transform "$2")" "${@:3}"
+# Transform the arguments (units doesn't allow more than 2).
+[ -n "$1" ] && set -- "$@" "$(transform "$1")" && shift
+[ -n "$2" ] && set -- "$@" "$(transform "$1")" && shift
 
 units --verbose "$@"
