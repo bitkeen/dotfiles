@@ -8,6 +8,8 @@
     version: master
 
 - name: get the directory names
+  become: yes
+  become_user: '{{ user_name }}'
   command: ls '{{ pkgbuilds_dir }}'
   register: package_dirs
   changed_when: false
