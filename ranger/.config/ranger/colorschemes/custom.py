@@ -3,6 +3,7 @@ from ranger.gui.color import black, bold, white
 
 
 class Scheme(Default):
+    """Custom titlebar tab colors."""
 
     def use(self, context):
         fg, bg, attr = Default.use(self, context)
