@@ -55,8 +55,8 @@
     mgm = merge master
     ; git-open has to be installed (https://github.com/paulirish/git-open).
     o = open
-    ph = push
-    phf = push --force-with-lease
+    ph = push --set-upstream
+    phf = push --force-with-lease --set-upstream
     pl = pull
     plrb = pull --rebase
     rb = rebase
