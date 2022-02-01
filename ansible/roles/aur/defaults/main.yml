@@ -1,11 +1,6 @@
 ---
 aur_pkg_dir: '{{ user_home }}/.cache/ansible/aur'
 
-python_deps:
-  # AUR dependencies for some Python packages.
-  - python-pgspecial  # Dependency for pgcli.
-  - python-cli_helpers  # Dependency for litecli, mycli, pgcli.
-
 packages:
   - colorpicker  # Click on a pixel on your screen and print its color value in RGB. Written for X11.
   - dragon-drag-and-drop  # Simple drag-and-drop source/sink for X

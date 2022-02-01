@@ -1,4 +1,7 @@
 ---
 pkgbuilds_dir: '{{ user_home }}/documents/projects/public/pkgbuilds'
+dependencies:
+  - python-pgspecial  # Dependency for pgcli.
+  - python-cli_helpers  # Dependency for litecli, mycli, pgcli.
 conflicts:
   - rxvt-unicode-256xresources

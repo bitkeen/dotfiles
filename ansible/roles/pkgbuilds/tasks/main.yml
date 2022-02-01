@@ -14,14 +14,21 @@
   register: package_dirs
   changed_when: false
 
+- name: make and install dependency packages
+  become: yes
+  become_user: '{{ user_name }}'
+  command:
+    cmd: yes | makepkg -si --cleanbuild --needed --rmdeps
+    chdir: '{{ pkgbuilds_dir }}/{{ item }}'
+  loop: '{{ dependencies }}'
+
 - name: make and install packages
   become: yes
   become_user: '{{ user_name }}'
   command:
     cmd: makepkg -si --cleanbuild --noconfirm --needed --rmdeps
     chdir: '{{ pkgbuilds_dir }}/{{ item }}'
-  # Install packages that cause conflicts in a separate task.
-  loop: '{{ package_dirs.stdout_lines | difference(conflicts) }}'
+  loop: '{{ package_dirs.stdout_lines | difference(conflicts) | difference(dependencies)}}'
 
 - name: make and install packages that cause conflicts
   become: yes

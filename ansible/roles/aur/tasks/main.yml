@@ -13,7 +13,7 @@
     repo: 'https://aur.archlinux.org/{{ item }}.git'
     dest: '{{ aur_pkg_dir }}/{{ item }}'
     force: yes # Discard local modifications.
-  loop: '{{ python_deps + packages + work_packages }}'
+  loop: '{{ packages + work_packages }}'
 
 - name: make and install AUR packages
   become: yes
@@ -25,4 +25,4 @@
   command:
     cmd: makepkg --syncdeps --install --cleanbuild --clean --noconfirm --needed --rmdeps
     chdir: '{{ aur_pkg_dir }}/{{ item }}'
-  loop: '{{ python_deps + packages + work_packages }}'
+  loop: '{{ packages + work_packages }}'
