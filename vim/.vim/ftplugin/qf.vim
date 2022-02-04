@@ -7,7 +7,7 @@ nnoremap <buffer> <Leader>H :colder<CR>
 " Go to newer error list.
 nnoremap <buffer> <Leader>L :cnewer<CR>
 
-if &runtimepath =~ 'bundle/opt/quickpeek.vim'
+if &runtimepath =~# 'bundle/opt/quickpeek.vim'
   nnoremap <buffer> <silent> <LocalLeader>p :QuickpeekToggle<cr>
 endif
 
