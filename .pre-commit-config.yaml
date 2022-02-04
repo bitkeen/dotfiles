@@ -17,3 +17,10 @@ repos:
   rev: v1.24.2
   hooks:
     - id: yamllint
+
+- repo: https://github.com/Vimjas/vint
+  rev: 471e70bfff02edab460bc238c2e6d8aa46197d60
+  hooks:
+    - id: vint
+      # Pathogen is a third-party script.
+      exclude: vim/.vim/autoload/pathogen.vim
