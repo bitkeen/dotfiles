@@ -22,5 +22,5 @@ repos:
   rev: 471e70bfff02edab460bc238c2e6d8aa46197d60
   hooks:
     - id: vint
-      # Pathogen is a third-party script.
-      exclude: vim/.vim/autoload/pathogen.vim
+      # Pathogen and abp syntax are third-party.
+      exclude: vim/.vim/autoload/pathogen.vim|vim/.vim/syntax/abp.vim
