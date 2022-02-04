@@ -1,5 +1,5 @@
 aqt==2.1.49  # Anki (not available in Arch official repos anymore).
-bandcamp-downloader==0.0.8.post12
+bandcamp-downloader==0.0.12
 flynt==0.65
 ipython-autotime==0.3.0  # Time everything in IPython.
 iredis==1.9.1  # Terminal client for Redis with auto-completion and syntax highlighting.
