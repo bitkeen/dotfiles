@@ -20,6 +20,7 @@ dpc ~/documents/projects/clones
 dpf ~/documents/projects/forks
 dpr ~/documents/projects/private
 dpu ~/documents/projects/public
+pkg ~/documents/projects/public/pkgbuilds
 dt ~/downloads/torrents
 dl ~/downloads
 dy ~/downloads/youtube-dl
