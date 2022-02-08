@@ -8,7 +8,6 @@ packages:
   - ansible-lint
   - arandr  # Xrandr front-end
   - asp  # Arch Linux build source file management tool
-  # - atool  # A script for managing file archives of various types
   - autopep8  # A tool that automatically formats Python code to conform to the PEP 8 style guide
   - base-devel
   - bash-language-server  # Bash LSP
