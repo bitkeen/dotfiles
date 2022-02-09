@@ -1,12 +1,11 @@
 aqt==2.1.49  # Anki (not available in Arch official repos anymore).
 bandcamp-downloader==0.0.12
 flynt==0.65  # Convert a python project's %-formatted strings to f-strings.
-git+https://github.com/nucleic/kiwi.git@9c46f893ae3ac6f239d1a7bfccb8bf316ff02293
 ipython-autotime==0.3.0  # Time everything in IPython.
 iredis==1.9.1  # Terminal client for Redis with auto-completion and syntax highlighting.
 isort==5.7.0  # Also required by pylint.
 line-profiler==3.4.0  # Line-by-line profiler.
-matplotlib==3.5.1  # For plotting memory-profiler's graphs among other things.
+# matplotlib==3.5.1  # For plotting memory-profiler's graphs among other things.
 memory-profiler==0.60.0  # A module for monitoring memory usage of a Python program.
 pre-commit==2.15.0
 prompt_toolkit==3.0.18
