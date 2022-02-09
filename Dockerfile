@@ -1,4 +1,4 @@
-FROM archlinux
+FROM archlinux:latest
 
 # Install base-devel for `sudo`.
 RUN pacman --noconfirm -Syyu base-devel git
