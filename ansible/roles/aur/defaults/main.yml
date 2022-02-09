@@ -2,6 +2,4 @@
 aur_pkg_dir: '{{ user_home }}/.cache/ansible/aur'
 
 packages:
-  - jiq  # Json Incremental Digger that uses jq internally
-  - pgformatter-git  # Correctly indent PostgreSQL queries
   - tor-browser
