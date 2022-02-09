@@ -6,7 +6,7 @@ iredis==1.9.1  # Terminal client for Redis with auto-completion and syntax highl
 isort==5.7.0  # Also required by pylint.
 line-profiler==3.4.0  # Line-by-line profiler.
 matplotlib==3.5.1  # For plotting memory-profiler's graphs among other things.
-memory-profiler==0.58.0  # A module for monitoring memory usage of a Python program.
+memory-profiler==0.60.0  # A module for monitoring memory usage of a Python program.
 pre-commit==2.15.0
 prompt_toolkit==3.0.18
 py-spy==0.3.9  # Sampling profiler for Python programs.
