@@ -10,7 +10,7 @@
 - name: get the directory names
   become: yes
   become_user: '{{ user_name }}'
-  command: ls -d */ '{{ pkgbuilds_dir }}'
+  shell: "cd {{ pkgbuilds_dir }} && ls -d */ | sed 's#/$##'"
   register: package_dirs
   changed_when: false
 
