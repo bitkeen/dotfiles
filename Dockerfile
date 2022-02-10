@@ -8,8 +8,7 @@ RUN useradd -m user \
     && usermod -aG wheel user \
     && echo 'user ALL=(ALL:ALL) NOPASSWD: ALL' > /etc/sudoers
 
-COPY . /home/user/.dotfiles
-RUN chown -R user:user /home/user
+COPY --chown=user . /home/user/.dotfiles
 
 USER user
 WORKDIR /home/user
