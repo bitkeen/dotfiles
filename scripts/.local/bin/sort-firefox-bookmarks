@@ -16,20 +16,20 @@ FROM
     moz_bookmarks folder
     JOIN moz_bookmarks parent ON folder.parent = parent.id
 WHERE
-    parent.guid != 'root________'
+    folder.guid != 'root________'
     AND folder.type = 2
 '''
 
 SELECT_BOOKMARKS_SQL = '''
 SELECT
     b.id,
-    p.url
+    p.url,
+    b.type
 FROM
     moz_bookmarks b
     LEFT JOIN moz_places p ON b.fk = p.id
 WHERE
     b.parent = :folder_id
-    AND b.type = 1
 '''
 
 UPDATE_POSITION_SQL = '''
@@ -68,7 +68,8 @@ def main(firefox_profile_path):
 
         folder_id = choice.split(':')[0]
         cursor.execute(SELECT_BOOKMARKS_SQL, {'folder_id': folder_id})
-        bms = sorted(cursor.fetchall(), key=lambda row: row['url'])
+        bms = sorted(cursor.fetchall(),
+                     key=lambda row: (-row['type'], row['url']))
 
         for i, bm in enumerate(bms):
             cursor.execute(
