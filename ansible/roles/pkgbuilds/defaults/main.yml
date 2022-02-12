@@ -5,3 +5,6 @@ dependencies:
   - python-cli_helpers  # Dependency for litecli, mycli, pgcli.
 conflicts:
   - rxvt-unicode-256xresources
+ignore:
+  - pgformatter
+  - hadolint

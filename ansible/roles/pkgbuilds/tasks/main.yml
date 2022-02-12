@@ -28,7 +28,7 @@
   command:
     cmd: makepkg -si --cleanbuild --noconfirm --needed --rmdeps
     chdir: '{{ pkgbuilds_dir }}/{{ item }}'
-  loop: '{{ package_dirs.stdout_lines | difference(conflicts) | difference(dependencies)}}'
+  loop: '{{ package_dirs.stdout_lines | difference(conflicts) | difference(dependencies) | difference(ignore) }}'
 
 - name: make and install packages that cause conflicts
   become: yes
