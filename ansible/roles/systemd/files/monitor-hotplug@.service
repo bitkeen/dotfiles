@@ -11,4 +11,4 @@ Environment=XAUTHORITY=/home/user/.Xauthority
 ExecStart=/home/user/.local/bin/screenlayout-toggle
 
 [Install]
-WantedBy=multi-user.target
+WantedBy=default.target

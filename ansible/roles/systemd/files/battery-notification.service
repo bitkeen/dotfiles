@@ -6,4 +6,4 @@ Type=simple
 ExecStart=/bin/sh -c "${HOME}/.local/bin/battery-notification"
 
 [Install]
-WantedBy=multi-user.target
+WantedBy=default.target
