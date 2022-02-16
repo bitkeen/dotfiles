@@ -82,3 +82,6 @@ user_pref("browser.download.folderList", 2)
 
 // Dark theme for devtools.
 user_pref("devtools.theme", "dark")
+
+// Never display bookmarks toolbar.
+user_pref("browser.toolbars.bookmarks.visibility", "never");
