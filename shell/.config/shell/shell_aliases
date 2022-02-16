@@ -74,7 +74,6 @@ alias nb='newsboat'
 alias py='python'
 alias ipy='ipython'
 # Python virtualenvwrapper.
-alias wo='workon'
 alias deac='deactivate'
 alias mktenv='mktmpenv'
 alias mkvenv='mkvirtualenv'

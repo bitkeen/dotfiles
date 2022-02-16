@@ -176,3 +176,11 @@ clc() {
 rpc() {
     rpw "$1" | xclip-in -f
 }
+
+
+wo() {
+    # virtualenvwrapper's workon with fzf selection if no argument is supplied.
+    [ -z "$1" ] && set -- "$(workon | fzf)"
+    [ -z "$1" ] && return 1
+    workon "$@"
+}
