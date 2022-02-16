@@ -7,6 +7,7 @@ potential_conflicts:
   - '{{ user_home }}/.profile'
   - '{{ user_home }}/.viminfo'
   - '{{ dirs.dot_config }}/mimeapps.list'
+  - '{{ dirs.dot_config }}/user-dirs.dirs'
 
 # Directory to move conflicting files into.
 conflicts_dir: '{{ user_home }}/stow-conflicts'
