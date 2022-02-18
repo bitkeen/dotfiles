@@ -49,11 +49,11 @@ if has('autocmd')
 
     " Colorcolumns.
     autocmd FileType * setlocal colorcolumn=0
-    autocmd FileType c setlocal colorcolumn=81
-    autocmd FileType lua setlocal colorcolumn=81
-    autocmd FileType python setlocal colorcolumn=81
-    autocmd FileType vim setlocal colorcolumn=81
-    autocmd FileType sh setlocal colorcolumn=81
+    autocmd FileType c setlocal colorcolumn=80
+    autocmd FileType lua setlocal colorcolumn=80
+    autocmd FileType python setlocal colorcolumn=80
+    autocmd FileType vim setlocal colorcolumn=80
+    autocmd FileType sh setlocal colorcolumn=80
 
     " Tab widths.
     autocmd FileType * setlocal tabstop=4 shiftwidth=4 softtabstop=4 expandtab
