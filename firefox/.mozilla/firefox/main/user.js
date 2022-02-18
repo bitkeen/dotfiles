@@ -85,3 +85,9 @@ user_pref("devtools.theme", "dark")
 
 // Never display bookmarks toolbar.
 user_pref("browser.toolbars.bookmarks.visibility", "never");
+
+// Disable search suggestions.
+user_pref("browser.search.suggest.enabled", false);
+
+// Scale up developer tools.
+user_pref("devtools.toolbox.zoomValue", "1.3");
