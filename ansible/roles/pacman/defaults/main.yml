@@ -1,4 +1,8 @@
 ---
+# Some packages have multiple dependencies to choose from.
+dependencies:
+  - wireplumber
+
 packages:
   - adobe-source-han-sans-otc-fonts
   - adobe-source-han-serif-otc-fonts
@@ -77,9 +81,9 @@ packages:
   - pcsclite  # For CryptoPlugin
   - perf  # Linux kernel performance auditing tool.
   - picom  # A compositor for X11, required for transparency
-  - pulseaudio
-  - pulseaudio-alsa  # For PulseAudio to manage ALSA.
-  - pulseaudio-bluetooth  # Bluetooth support for PulseAudio
+  - pipewire
+  - pipewire-pulse
+  - pipewire-alsa  # For PipeWire to manage ALSA
   - pulsemixer  # CLI and curses mixer for pulseaudio
   - python-cssbeautifier  # CSS unobfuscator and beautifier
   - python-jedi  # Awesome autocompletion for python, a dependency for ipython and python-language-server

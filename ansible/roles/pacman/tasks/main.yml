@@ -3,6 +3,11 @@
   command:
     cmd: pacman -Sy
 
+- name: install dependencies
+  pacman:
+    name: '{{ item }}'
+  loop: '{{ dependencies }}'
+
 - name: install pacman packages
   pacman:
     name: '{{ item }}'
