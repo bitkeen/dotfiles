@@ -44,6 +44,7 @@ packages:
   - hey  # HTTP load generator
   - i3-wm
   - imagemagick  # An image viewing/manipulation program
+  - intel-ucode  # Microcode update files for Intel CPUs
   - ipython
   - jq  # Command-line JSON processor
   - keepassxc
