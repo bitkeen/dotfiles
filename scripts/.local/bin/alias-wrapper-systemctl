@@ -4,30 +4,44 @@ key="$1"
 case "$key" in
     lt)
         cmd="list-timers";;
+    ult)
+        cmd="list-timers --user";;
     lu)
         cmd="list-units";;
     lr)
         cmd="list-units --state=running";;
     lf)
         cmd="list-units --state=failed";;
-    luu)
+    ulu)
         cmd="list-units --user";;
-    lur)
+    ulr)
         cmd="list-units --user --state=running";;
-    luf)
+    ulf)
         cmd="list-units --user --state=failed";;
     rs)
         cmd="restart";;
+    urs)
+        cmd="restart --user";;
     sp)
         cmd="stop";;
+    usp)
+        cmd="stop --user";;
     sr)
         cmd="start";;
+    usr)
+        cmd="start --user";;
     st)
         cmd="status";;
+    ust)
+        cmd="status --user";;
     stm)
         # Continuously monitor status.
         shift
         watch --color SYSTEMD_COLORS=1 systemctl status "$@"
+        exit;;
+    ustm)
+        shift
+        watch --color SYSTEMD_COLORS=1 systemctl status --user "$@"
         exit;;
     *)
         cmd="$key";;
