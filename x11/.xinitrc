@@ -39,11 +39,18 @@ xset r rate 250 50 &
 # Disable bell.
 xset -b &
 
-# Disable touchpad on X1 Carbon.
-touchpad='SYNA8004:00 06CB:CD8B Touchpad'
-xinput list |
-    grep "$touchpad" >/dev/null &&
-    xinput --disable "$touchpad" &
+# Disable touchpad on X1 Carbon/T14.
+if [ -f /sys/devices/virtual/dmi/id/product_version ]; then
+    model="$(< /sys/devices/virtual/dmi/id/product_version)"
+    if [ "$model" = 'ThinkPad T14 Gen 2i' ]; then
+        touchpad='SynPS/2 Synaptics TouchPad'
+    else
+        touchpad='SYNA8004:00 06CB:CD8B Touchpad'
+    fi
+    xinput list |
+        grep "$touchpad" >/dev/null &&
+        xinput --disable "$touchpad" &
+fi
 
 # Start the gnome-keyring-daemon.
 eval $(/usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh)
