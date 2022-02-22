@@ -39,6 +39,7 @@
     - paccache.timer  # Discard unused packages weekly.
     - systemd-timesyncd.service  # Sync time.
     - fetch-dotfiles.timer
+    - tlp.service
   when: not in_docker
 
 - name: start docker resource limit slice
