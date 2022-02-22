@@ -3,7 +3,8 @@
 # it doesn't already exist, kill it otherwise.
 
 # 'tput civis' - hide the cursor.
-# 'cal -y -m' show calendar for current year with Monday as the first
-# day of the week.
+# 'cal --year --monday' show calendar for current year with
+# Monday as the first day of the week.
+cmd='tput civis; cal --year --monday; while true; do :; done'
 pgrep -f "$TERMINAL -name caldd" | xargs kill 2>/dev/null ||
-    "$TERMINAL" -name 'caldd' -e sh -c 'tput civis; cal -y -m; while true; do :; done'
+    "$TERMINAL" -name 'caldd' -e sh -c "$cmd"
