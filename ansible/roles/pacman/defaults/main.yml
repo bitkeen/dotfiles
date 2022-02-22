@@ -84,6 +84,7 @@ packages:
   - pipewire
   - pipewire-pulse
   - pipewire-alsa  # For PipeWire to manage ALSA
+  - powertop  # A tool to diagnose issues with power consumption and power management.
   - pulsemixer  # CLI and curses mixer for pulseaudio
   - python-cssbeautifier  # CSS unobfuscator and beautifier
   - python-jedi  # Awesome autocompletion for python, a dependency for ipython and python-language-server
@@ -117,6 +118,7 @@ packages:
   - thunderbird
   - tidy  # A tool to tidy HTML code
   - time  # Provides /usr/bin/time. By default, only shell's builtin is available.
+  - tlp  # Linux Advanced Power Management.
   - tmux
   - tor
   - torsocks  # Wrapper to safely torify applications
