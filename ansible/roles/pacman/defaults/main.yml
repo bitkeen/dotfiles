@@ -161,6 +161,7 @@ packages:
 
 work_packages:
   - aws-cli  # Universal Command Line Interface for Amazon Web Services
+  - chromium  # For Google Chat app.
   - mariadb-clients  # For mysqldump
   - plantuml  # Component that allows to quickly write uml diagrams
   - redis
