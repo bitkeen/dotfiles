@@ -141,3 +141,7 @@ alias xo='xclip-out'
 
 alias units='units-temperature-mod'
 alias u='units'
+
+alias cal='cal --monday'
+
+alias qr='qrencode -o- -t UTF8'
