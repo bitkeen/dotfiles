@@ -1,6 +1,8 @@
 #!/usr/bin/env python3
 # Get secondary monitor name.
 # https://askubuntu.com/a/639501
+#
+# TODO: remove this script after testing `get-secondary-display-fast`.
 import sys
 
 # isort: off
