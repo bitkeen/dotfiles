@@ -846,7 +846,7 @@ noremap <C-g>ci :Gcommit %<CR>
 noremap <C-g>co :Git checkout<Space>
 " Show log for current file.
 noremap <C-g>lg :0Glog<CR>
-noremap <C-g>mv :GMove <C-R>=expand('%:p:h') . '/'<CR>
+noremap <C-g>mv :GMove <C-r>=expand('%:p')<CR>
 noremap <silent> <C-g>pl :Dispatch git pull<CR>
 noremap <silent> <C-g>ph :Dispatch git push<CR>
 noremap <C-g>rm :GDelete!<CR>
@@ -879,7 +879,7 @@ nnoremap <Leader><C-d> :Delete<CR>
 nnoremap <Leader><C-e> :SudoEdit<Space>
 nnoremap <Leader><C-l> :Clocate!<Space>
 nmap <Leader><C-m> :Move<Space>%%
-nnoremap <Leader><C-r> :Rename<Space>
+nnoremap <Leader><C-r> :Rename <C-r>=expand('%:t')<CR>
 nnoremap <Leader><C-w> :SudoWrite<CR>
 
 " vim-obsession
