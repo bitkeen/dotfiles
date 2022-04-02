@@ -1,0 +1,2 @@
+#!/bin/sh
+hsetroot -solid '#330000' -full
