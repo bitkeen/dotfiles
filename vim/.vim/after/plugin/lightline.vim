@@ -105,14 +105,21 @@ if &runtimepath =~# 'bundle/opt/lightline.vim'
     endif
 
     let l:path = expand('%:~') " Full path.
-
-    if (winwidth(0) - strlen(l:path)) < a:threshold
-      let l:path = expand('%:f')  " Relative path.
+    if strlen(l:path)
       if (winwidth(0) - strlen(l:path)) < a:threshold
-        let l:path = expand('%:t')  " Filename.
+        let l:path = expand('%:f')  " Relative path.
+        if (winwidth(0) - strlen(l:path)) < a:threshold
+          let l:path = expand('%:t')  " Filename.
+        endif
+      endif
+    else
+      let l:path = expand('%:p:h') . '/' . '[No Name]'
+      if (winwidth(0) - strlen(l:path)) < a:threshold
+          let l:path = '[No Name]'
       endif
     endif
-    return strlen(l:path) ? l:path : '[No Name]'
+
+    return l:path
   endfunction
 
   function! LightlineIsNew()
