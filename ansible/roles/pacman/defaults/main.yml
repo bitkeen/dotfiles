@@ -30,7 +30,6 @@ packages:
   - exfat-utils
   - expac  # pacman database extraction utility
   - fdupes  # Identify or delete duplicate files residing within specified directories
-  - feh  # Image viewer, currently only used to set backgrounds with .fehbg script
   - ffmpegthumbnailer  # Video thumbnainer for previews in ranger
   - firefox
   - flake8  # The modular source code checker: pep8, pyflakes and co
@@ -46,6 +45,7 @@ packages:
   - gucharmap  # Gnome Unicode character map
   - gvim  # Vim in GVim package has support for system clipboard
   - hey  # HTTP load generator
+  - hsetroot  # Tool to set wallpapers.
   - i3-wm
   - imagemagick  # An image viewing/manipulation program
   - intel-ucode  # Microcode update files for Intel CPUs

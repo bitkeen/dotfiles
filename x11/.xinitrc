@@ -12,7 +12,7 @@ redshift-gtk >/dev/null 2>&1 || redshift >/dev/null 2>&1 &
 xrdb .Xresources
 
 # Set previously used wallpaper.
-~/.fehbg &
+~/.wallpaper &
 
 # A compositor for X11
 picom &
