@@ -184,3 +184,9 @@ wo() {
     [ -z "$1" ] && return 1
     workon "$@"
 }
+
+
+woc() {
+    # Activate the venv corresponding to current dir name.
+    workon "$(basename "$(pwd)")"
+}
