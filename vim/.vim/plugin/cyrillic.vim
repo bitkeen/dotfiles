@@ -1,7 +1,21 @@
 scriptencoding utf-8
 " Warn when using Cyrillic in normal mode.
 
-nnoremap а :echoerr 'Using Cyrillic'<CR>
+highlight default link Warning Search
+
+function! WarnOnCyrillic()
+call popup_create(
+\  'Using Cyrillic',
+\  {
+\     'close': 'click',
+\     'time': 1000,
+\     'highlight': 'Warning',
+\     'padding': []
+\  }
+\)
+endfunction
+
+nnoremap <silent> а :call WarnOnCyrillic()<CR>
 nmap б а
 nmap в а
 nmap г а
