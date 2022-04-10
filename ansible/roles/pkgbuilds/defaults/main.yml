@@ -9,3 +9,4 @@ ignore:
   - pgformatter
   - hadolint
   - simpleswitcher
+  - scrcpy
