@@ -311,3 +311,6 @@
 [submodule "fzf-tab"]
 	path = zsh/.config/zsh/plugins/fzf-tab
 	url = https://github.com/Aloxaf/fzf-tab
+[submodule "deleft.vim"]
+	path = vim/.vim/pack/bundle/opt/deleft.vim
+	url = https://github.com/AndrewRadev/deleft.vim
