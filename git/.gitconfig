@@ -133,3 +133,5 @@
     insteadOf = gh://
 [credential]
     helper = /usr/lib/git-core/git-credential-libsecret
+[submodule]
+    fetchJobs = 8
