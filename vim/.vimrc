@@ -875,7 +875,7 @@ xmap ah <Plug>(GitGutterTextObjectOuterVisual)
 
 " vim-eunuch
 nnoremap <Leader><C-x> :Chmod<Space>
-nnoremap <Leader><C-d> :Delete<CR>
+nnoremap <Leader><C-d> :Delete!<CR>
 nnoremap <Leader><C-e> :SudoEdit<Space>
 nnoremap <Leader><C-l> :Clocate!<Space>
 nmap <Leader><C-m> :Move<Space>%%
