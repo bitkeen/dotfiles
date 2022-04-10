@@ -3,7 +3,7 @@ scriptencoding utf-8
 
 highlight default link Warning Search
 
-function! WarnOnCyrillic()
+function! s:WarnOnCyrillic()
 call popup_create(
 \  'Using Cyrillic',
 \  {
@@ -15,7 +15,7 @@ call popup_create(
 \)
 endfunction
 
-nnoremap <silent> а :call WarnOnCyrillic()<CR>
+nnoremap <silent> а :call <SID>WarnOnCyrillic()<CR>
 nmap б а
 nmap в а
 nmap г а
@@ -52,7 +52,7 @@ nmap є а
 nmap і а
 nmap ї а
 
-vnoremap <silent> а :call WarnOnCyrillic()<CR>
+vnoremap <silent> а :call <SID>WarnOnCyrillic()<CR>
 vmap б а
 vmap в а
 vmap г а
