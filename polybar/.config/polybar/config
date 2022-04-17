@@ -34,7 +34,7 @@ module-margin-right = 2
 
 font-0 = DejaVu Sans:size=13;3
 font-1 = FontAwesome:size=8;2
-font-2 = Font Awesome 5 Brands Regular:size=11;5
+font-2 = Font Awesome 6 Brands Regular:size=11;3
 
 modules-left = i3
 modules-right = docker mpd pulseaudio vpn wlan xkeyboard filesystem battery date dmenu_power
