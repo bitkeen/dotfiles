@@ -111,10 +111,6 @@ alias docker-compose='alias-wrapper-docker-compose'
 alias d='docker'
 alias c='docker-compose'
 
-# Tor start/stop.
-alias toron='sudo systemctl start tor.service'
-alias toroff='sudo systemctl stop tor.service'
-
 # Empty trash.
 alias et='gio trash --empty'
 
