@@ -1,0 +1,9 @@
+#!/bin/sh
+# Set wallpaper, center the file on the background.
+if [ -z "${1}" ]; then
+    echo 'Missing image path'
+    exit 1
+fi
+
+hsetroot -solid '#330000' -center "${1}" &&
+    echo "hsetroot -solid '#330000' -center ${1}" > ~/.wallpaper

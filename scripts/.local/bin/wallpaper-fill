@@ -1,0 +1,9 @@
+#!/bin/sh
+# Set wallpaper, zoom the image until it fits, preserve aspect ratio.
+if [ -z "${1}" ]; then
+    echo 'Missing image path'
+    exit 1
+fi
+
+hsetroot -cover "${1}" &&
+    echo "hsetroot -cover ${1}" > ~/.wallpaper

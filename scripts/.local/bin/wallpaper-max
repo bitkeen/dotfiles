@@ -1,0 +1,10 @@
+#!/bin/sh
+# Set wallpaper, scale the image to the maximum size that fits the
+# screen with borders on one side.
+if [ -z "${1}" ]; then
+    echo 'Missing image path'
+    exit 1
+fi
+
+hsetroot -solid '#330000' -full "${1}" &&
+    echo "hsetroot -solid '#330000' -full ${1}" > ~/.wallpaper

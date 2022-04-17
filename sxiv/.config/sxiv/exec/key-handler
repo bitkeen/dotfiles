@@ -75,9 +75,9 @@ case "$1" in
     'slash')
         rotate 180 ;;
     'C-c')
-        tr '\n' '\0' | xargs -0 hsetroot -solid '#330000' -center & ;;
+        tr '\n' '\0' | xargs -0 wallpaper-center & ;;
     'C-f')
-        tr '\n' '\0' | xargs -0 hsetroot -cover & ;;
+        tr '\n' '\0' | xargs -0 wallpaper-fill & ;;
     'C-m')
-        tr '\n' '\0' | xargs -0 hsetroot -solid '#330000' -full & ;;
+        tr '\n' '\0' | xargs -0 wallpaper-max & ;;
 esac
