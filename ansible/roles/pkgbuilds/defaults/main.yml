@@ -7,6 +7,5 @@ conflicts:
   - rxvt-unicode-256xresources
 ignore:
   - pgformatter
-  - hadolint
   - simpleswitcher
   - scrcpy
