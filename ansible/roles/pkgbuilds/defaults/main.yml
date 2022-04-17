@@ -6,6 +6,7 @@ dependencies:
 conflicts:
   - rxvt-unicode-256xresources
 ignore:
+  - lab  # Not used at this point.
   - pgformatter
   - simpleswitcher
   - scrcpy
