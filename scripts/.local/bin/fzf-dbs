@@ -18,7 +18,7 @@
 conn_file="$1"
 initial_query="$2"
 
-FZF_DEFAULT_OPTS="--query=$initial_query --reverse --height 60% $FZF_DEFAULT_OPTS"
+FZF_DEFAULT_OPTS="--query=$initial_query --cycle --reverse --height 60% $FZF_DEFAULT_OPTS"
 
 
 check_connections_file() {
