@@ -5,5 +5,6 @@ if [ -z "${1}" ]; then
     exit 1
 fi
 
-hsetroot -cover "${1}" &&
-    echo "hsetroot -cover ${1}" > ~/.wallpaper
+image_path="$(readlink --canonicalize "${1}")"
+hsetroot -cover "${image_path}" &&
+    echo "hsetroot -cover ${image_path}" > ~/.wallpaper
