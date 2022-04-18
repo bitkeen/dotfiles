@@ -37,3 +37,10 @@
     cmd: yes | makepkg -si --cleanbuild --needed --rmdeps
     chdir: '{{ pkgbuilds_dir }}/{{ item }}'
   loop: '{{ conflicts }}'
+
+- name: clean up build products
+  become: yes
+  become_user: '{{ user_name }}'
+  shell:
+    cmd: git clean -dfx
+    chdir: '{{ pkgbuilds_dir }}'
