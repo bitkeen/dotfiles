@@ -1,5 +1,7 @@
 #!/bin/sh
 # Dependends on rpw script.
 
+[ ! -d ~/sync/wikis/scratchwiki ] && mkdir ~/sync/wikis/scratchwiki
+
 # shellcheck disable=SC2016
 vimterm 'scratchterm' '-c cd ~/sync/wikis/scratchwiki | edit `date +\%Y-\%m-\%dT\%H-\%M-\%S`_`rpw 8`.md'
