@@ -11,6 +11,7 @@ packages:
   - android-tools  # Required for scrcpy (from AUR)
   - ansible-lint
   - arandr  # Xrandr front-end
+  - aria2  # Download utility, used as external downloader to speed up youtube-dl.
   - asp  # Arch Linux build source file management tool
   - autopep8  # A tool that automatically formats Python code to conform to the PEP 8 style guide
   - base-devel
