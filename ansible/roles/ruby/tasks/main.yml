@@ -1,8 +1,0 @@
----
-- name: install gem packages
-  become: yes
-  become_user: '{{ user_name }}'
-  command:
-    cmd: 'gem install {{ item }}'
-  loop:
-    - sqlint # Simple SQL linter supporting ANSI and PostgreSQL syntaxes.
