@@ -6,13 +6,13 @@ import plumbum
 import pyfzf
 from IPython import get_ipython
 from prompt_toolkit.enums import DEFAULT_BUFFER
-from prompt_toolkit.filters import HasFocus, HasSelection
+from prompt_toolkit.filters import has_focus, has_selection
 from prompt_toolkit.key_binding.bindings.named_commands import get_by_name
 from prompt_toolkit.keys import Keys
 
 FZF_OPTIONS = ('--read0'
-              ' --preview "echo {} | bat --plain --color always -l python"'
-              ' --preview-window="nohidden"')
+               ' --preview "echo {} | bat --plain --color always -l python"'
+               ' --preview-window="nohidden"')
 HIST_DB_FILE = f'{str(Path.home())}/.ipython/profile_default/history.sqlite'
 HIST_SELECT_QUERY = """
 SELECT DISTINCT
@@ -53,30 +53,30 @@ if getattr(ip, 'pt_app', None):
     registry.add(
         Keys.ControlF,
         filter=(
-            HasFocus(DEFAULT_BUFFER)
-            & ~HasSelection()
+            has_focus(DEFAULT_BUFFER)
+            & ~has_selection
         )
-    )(get_by_name("clear-screen"))
+    )(get_by_name('clear-screen'))
 
     # Add c-a and c-e to vi mode.
     registry.add(
         Keys.ControlA,
         filter=(
-            HasFocus(DEFAULT_BUFFER)
-            & ~HasSelection()
+            has_focus(DEFAULT_BUFFER)
+            & ~has_selection
         )
-    )(get_by_name("beginning-of-line"))
+    )(get_by_name('beginning-of-line'))
 
     registry.add(
         Keys.ControlE,
         filter=(
-            HasFocus(DEFAULT_BUFFER)
-            & ~HasSelection()
+            has_focus(DEFAULT_BUFFER)
+            & ~has_selection
         )
-    )(get_by_name("end-of-line"))
+    )(get_by_name('end-of-line'))
 
     # Use fzf for history.
     registry.add(
         Keys.ControlR,
-        filter=HasFocus(DEFAULT_BUFFER)
+        filter=has_focus(DEFAULT_BUFFER)
     )(fzf_history)
