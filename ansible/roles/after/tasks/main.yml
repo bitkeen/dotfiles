@@ -73,6 +73,22 @@
       value: 'true'
     }
 
+- name: configure keepassxc
+  become: yes
+  become_user: '{{ user_name }}'
+  community.general.ini_file:
+    path: '{{ user_home }}/.config/keepassxc/keepassxc.ini'
+    section: '{{ item.section }}'
+    option: '{{ item.option }}'
+    value: '{{ item.value }}'
+    mode: 0644
+  loop:
+    - {
+      section: 'GUI',
+      option: 'ApplicationTheme',
+      value: 'dark'
+    }
+
 - name: configure Syncthing
   lineinfile:
     path: '{{ user_home }}/.config/syncthing/config.xml'
