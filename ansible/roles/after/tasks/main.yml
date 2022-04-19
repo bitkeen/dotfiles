@@ -96,3 +96,6 @@
     dest: /etc/ssh/sshd_config
     regexp: 'PasswordAuthentication yes'
     line: 'PasswordAuthentication no'
+
+- name: add a shorter alias for localhost
+  shell: 'grep "127\.0\.0\.1 lh" /etc/hosts || echo "127.0.0.1 lh" >> /etc/hosts'
