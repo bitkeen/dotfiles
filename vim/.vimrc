@@ -1030,7 +1030,7 @@ let g:fugitive_summary_format = '%s <%aN> %ar (%ad)'
 " Default is <Leader>n.
 " Clear the search pattern first.
 " `h` at the end is needed to put cursor back in place.
-nmap <Leader>l :let @/ = ""<CR> <Plug>(LoupeClearHighlight)h
+nmap <silent> <Leader>l :let @/ = ""<CR> <Plug>(LoupeClearHighlight)h
 
 " }}}
 
