@@ -8,6 +8,7 @@ conflicts:
   - rxvt-unicode-256xresources
 ignore:
   - lab  # Not used at this point.
+  - atool  # Now present in official repos.
   - pgformatter
   - simpleswitcher
   - scrcpy
