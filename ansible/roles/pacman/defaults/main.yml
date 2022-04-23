@@ -90,9 +90,11 @@ packages:
   - powertop  # A tool to diagnose issues with power consumption and power management.
   - pulsemixer  # CLI and curses mixer for pulseaudio
   - python-cssbeautifier  # CSS unobfuscator and beautifier
+  - python-isort
   - python-jedi  # Awesome autocompletion for python, a dependency for ipython and python-language-server
   - python-lxml  # To run lxml-based code without a virtualenv.
   - python-pip
+  - python-pylint
   - python-virtualenvwrapper
   - qbittorrent
   - ranger
