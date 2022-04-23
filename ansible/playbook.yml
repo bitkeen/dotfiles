@@ -7,7 +7,6 @@
     # Install various packages.
     - { role: pacman, tags: pacman }
     - { role: python, tags: python }
-    - { role: npm, tags: npm }
     - { role: aur, tags: aur }
     - { role: pkgbuilds, tags: pkgbuilds }
     # Other roles.

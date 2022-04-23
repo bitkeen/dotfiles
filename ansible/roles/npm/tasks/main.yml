@@ -1,7 +1,0 @@
----
-- name: install npm packages
-  npm:
-    name: "{{ item.package_name }}"
-    global: yes
-  loop:
-    - { package_name: instant-markdown-d }
