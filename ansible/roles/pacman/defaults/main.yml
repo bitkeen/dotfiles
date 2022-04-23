@@ -82,6 +82,7 @@ packages:
   - pacman-contrib  # Contributed scripts and tools for pacman systems
   - pcsclite  # For CryptoPlugin
   - perf  # Linux kernel performance auditing tool.
+  - pgcli  # A command line interface for PostgreSQL with auto-completion and syntax highlighting.
   - picom  # A compositor for X11, required for transparency
   - pipewire
   - pipewire-pulse
