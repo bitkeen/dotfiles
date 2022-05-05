@@ -11,5 +11,4 @@ ignore:
   - atool  # Now present in official repos.
   - pgcli  # Now present in official repos.
   - pgformatter
-  - simpleswitcher
   - scrcpy
