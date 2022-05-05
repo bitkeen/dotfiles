@@ -845,16 +845,16 @@ let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
 noremap <C-g>ad :Git add %<CR>
 noremap <C-g>ed :Gedit<Space>
 noremap <C-g>bl :Git blame<CR>
-noremap <C-g>br :Gbrowse<CR>
-noremap <C-g>ci :Gcommit %<CR>
+noremap <C-g>br :GBrowse<CR>
+noremap <C-g>ci :Git commit %<CR>
 noremap <C-g>co :Git checkout<Space>
 " Show log for current file.
-noremap <C-g>lg :0Glog<CR>
+noremap <C-g>lg :0Gclog!<CR>
 noremap <C-g>mv :GMove <C-r>=expand('%:p')<CR>
 noremap <silent> <C-g>pl :Dispatch git pull<CR>
 noremap <silent> <C-g>ph :Dispatch git push<CR>
 noremap <C-g>rm :GDelete!<CR>
-noremap <C-g>st :Gstatus<CR>
+noremap <C-g>st :Git<CR>
 noremap <C-g>sh :Git stash<CR>
 noremap <silent> <C-g>rs :silent Git reset %<CR>
 
