@@ -1,0 +1,9 @@
+#!/bin/sh
+simpleswitcher \
+    -now \
+    -bw 0 \
+    -font 'Source Code Pro:size=13' \
+    -bg '#111111' \
+    -fg '#dfdfdf' \
+    -hlbg '#dfdfdf' \
+    -hlfg '#111111'

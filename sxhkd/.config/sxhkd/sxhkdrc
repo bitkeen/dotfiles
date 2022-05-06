@@ -17,7 +17,7 @@ super+shift+z
 
 # Switch active window.
 super+n
-    simpleswitcher -now
+    simpleswitcher-configured
 
 # Screen lock.
 super+shift+x
