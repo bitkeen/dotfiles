@@ -5,9 +5,9 @@
 dmenu.font: Source Sans Pro:pixelsize=20
 ! Only background is different from default.
 dmenu.background: #111111
-dmenu.foreground: #bbbbbb
-dmenu.selbackground: #005577
-dmenu.selforeground: #eeeeee
+dmenu.foreground: #dfdfdf
+dmenu.selbackground: #dfdfdf
+dmenu.selforeground: #111111
 
 
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
