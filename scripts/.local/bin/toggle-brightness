@@ -5,7 +5,7 @@
 DESIRED_BRIGHTNESS='60'
 
 workspaces="$(i3-msg -t get_workspaces | jq '.[]')"
-secondary="$(get-secondary-display-fast)"
+secondary="$(get-secondary-display)"
 
 get_ws(){
     # Get an i3 workspace.

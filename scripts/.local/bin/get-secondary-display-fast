@@ -1,8 +1,0 @@
-#!/bin/sh
-# Get secondary display name.
-MAIN_DISPLAY='eDP-1'
-
-grep '^connected$' /sys/class/drm/card0-*/status \
-    | grep -Po '(?<=/sys/class/drm/card0-).*(?=/status)' \
-    | grep -v "${MAIN_DISPLAY}" \
-    | sed 's/-A//'  # Transform HDMI-A-1 case.

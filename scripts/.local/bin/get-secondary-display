@@ -1,18 +1,16 @@
-#!/usr/bin/env python3
-# Get secondary monitor name.
-# https://askubuntu.com/a/639501
-#
-# TODO: remove this script after testing `get-secondary-display-fast`.
-import sys
+#!/bin/sh
+# Get secondary display name.
+MAIN_DISPLAY='eDP-1'
 
-# isort: off
-import gi
-gi.require_version("Gdk", "3.0")
-from gi.repository import Gdk  # noqa, pylint: disable=wrong-import-position
-# isort: on
+xrandr --query \
+    | grep -Po '^.*(?= connected )' \
+    | grep -v "${MAIN_DISPLAY}"
 
-gdkdsp = Gdk.Display.get_default()
-try:
-    print(gdkdsp.get_monitor(1).get_model())
-except AttributeError:
-    sys.exit(1)
+# shellcheck disable=SC2181
+if [ "$?" != 0 ]; then
+    # Delete header with sed.
+    xrandr --listactivemonitors \
+        | sed '1d' \
+        | grep -v "${MAIN_DISPLAY}" \
+        | awk '{print $NF}'
+fi
