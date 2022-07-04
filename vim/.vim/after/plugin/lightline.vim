@@ -43,7 +43,7 @@ if &runtimepath =~# 'bundle/opt/lightline.vim'
   \   'tabwinnr': 'LightlineTabWinNr',
   \ },
   \ 'component_function': {
-  \   'gitbranch': 'fugitive#head',
+  \   'gitbranch': 'fugitive#Head',
   \   'keyboard_layout': 'LightlineXkbSwitch',
   \ },
   \ 'component_expand': {
