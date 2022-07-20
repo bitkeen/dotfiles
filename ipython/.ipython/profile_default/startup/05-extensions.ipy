@@ -1,0 +1,13 @@
+try:
+    %load_ext autoreload
+    %autoreload 2
+except ModuleNotFoundError as e:
+    print(e)
+try:
+    %load_ext autotime
+except ModuleNotFoundError as e:
+    print(e)
+try:
+    %load_ext memory_profiler
+except ModuleNotFoundError as e:
+    print(e)

@@ -34,14 +34,10 @@ from prompt_toolkit.key_binding.vi_state import InputMode, ViState
 #c.InteractiveShellApp.exec_files = []
 
 ## A list of dotted module names of IPython extensions to load.
-c.InteractiveShellApp.extensions = [
-    'autotime',
-    'autoreload',
-    'memory_profiler',
-]
+# c.InteractiveShellApp.extensions = []
 
 ## lines of code to run at IPython startup.
-c.InteractiveShellApp.exec_lines = ['%autoreload 2']
+# c.InteractiveShellApp.exec_lines = []
 
 ## dotted module name of an IPython extension to load.
 #c.InteractiveShellApp.extra_extension = ''

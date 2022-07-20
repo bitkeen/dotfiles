@@ -17,6 +17,7 @@ ipython/.ipython/profile_default/*
 !ipython/.ipython/profile_default/startup
 ipython/.ipython/profile_default/startup/*
 !ipython/.ipython/profile_default/startup/*.py
+!ipython/.ipython/profile_default/startup/*.ipy
 
 ranger/.config/ranger/bookmark_maps.conf
 
