@@ -386,7 +386,6 @@ if has('packages')
   packadd! vim-textobj-entire
   packadd! vim-textobj-user
   packadd! vim-textobj-xmlattr
-  packadd! vim-tmux-focus-events
   packadd! vim-tmux-navigator
   packadd! vim-vinegar
   packadd! vim-visual-star-search
