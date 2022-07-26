@@ -45,7 +45,9 @@ case "$key" in
     kra)
         # The xargs arguments make sure that kill/rm won't
         # be executed if there is no input.
+        echo 'Killing containers'
         'docker' ps -q | xargs -P8 -I {} docker kill {}
+        echo 'Removing containers'
         'docker' ps -aq | xargs -P8 -I {} docker rm {}
         exit;;
     lg)
