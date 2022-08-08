@@ -58,6 +58,7 @@ def main(firefox_profile_path):
         try:
             choice = fzf.prompt(
                 choices=folders,
+                fzf_options='--cycle',
             )[0]
         except plumbum.commands.processes.ProcessExecutionError:
             sys.exit(1)
