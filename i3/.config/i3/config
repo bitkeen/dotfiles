@@ -197,7 +197,6 @@ assign [class="firefox"] $workspace1
 assign [class="Thunderbird"] $workspace9
 assign [class="TelegramDesktop"] $workspace8
 assign [class="KeePassXC"] $workspace10
-assign [class="VirtualBox"] $workspace7
 
 # Floating.
 # qBittorrent
