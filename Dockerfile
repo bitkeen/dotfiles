@@ -15,6 +15,7 @@ WORKDIR /home/user
 # Clear package cache at the end to reduce image size
 # (same layer where installation happens).
 # rm -f flag is important to ignore nonexistent directories.
+# hadolint ignore=DL3004
 RUN .dotfiles/ansible/bootstrap \
     && sudo rm /var/cache/pacman/pkg/* \
     && sudo rm -rf .cache/ansible/aur \
