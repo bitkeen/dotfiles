@@ -1,7 +1,7 @@
 FROM archlinux:latest
 
 # Install base-devel for `sudo`.
-RUN pacman --noconfirm -Syyu base-devel git
+RUN pacman --noconfirm -Syyu base-devel
 
 # Set up the user.
 RUN useradd -m user \
