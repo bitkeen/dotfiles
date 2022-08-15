@@ -167,11 +167,11 @@ packages:
   - zsh
 
 work_packages:
-  - aws-cli  # Universal Command Line Interface for Amazon Web Services
   - chromium  # For Google Chat app.
   - kubectl  # A command line tool for communicating with a Kubernetes API server.
-  - mariadb-clients  # For mysqldump
   - plantuml  # Component that allows to quickly write uml diagrams
   - redis
   - terraform
-  - xournalpp  # For signing PDFs
+  # - aws-cli  # Universal Command Line Interface for Amazon Web Services
+  # - mariadb-clients  # For mysqldump
+  # - xournalpp  # For signing PDFs
