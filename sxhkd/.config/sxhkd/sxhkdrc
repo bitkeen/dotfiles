@@ -74,9 +74,9 @@ button8
 
 # Bluetooth headset buttons.
 XF86AudioPause
-    mpc toggle
+    mpc pause
 XF86AudioPlay
-    mpc toggle
+    mpc play
 XF86AudioPrev
     mpc-prev-wrapper
 XF86AudioNext
