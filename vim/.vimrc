@@ -752,11 +752,9 @@ nnoremap gsc :make %:r<CR>
 " Run the compiled binary.
 nnoremap gsr :!./%<<CR>
 
-if exists('loaded_cfilter')
-  " Using cfilter plugin to filter quickfix list
-  nnoremap gsq :Cfilter<Space>
-  nnoremap gsQ :Cfilter!<Space>
-endif
+" Using cfilter plugin to filter quickfix list
+nnoremap gsq :Cfilter<Space>
+nnoremap gsQ :Cfilter!<Space>
 
 " Change `text` to `'text',` across all lines (last one without comma).
 nnoremap gqu :silent %s/^/'/ <bar> %s/$/',/ <bar> $s/,$// <bar> nohlsearch<CR>
