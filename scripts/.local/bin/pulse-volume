@@ -15,7 +15,7 @@ fi
 key="$1"
 case $key in
     increase)
-        if pactl list sinks | grep 'Mute: yes'; then
+        if pactl get-sink-mute @DEFAULT_SINK@ | grep 'Mute: yes'; then
             # If a sink is muted, just unmute it.
             pactl set-sink-mute @DEFAULT_SINK@ 0
         else
