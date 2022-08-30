@@ -1,9 +1,9 @@
 #!/bin/sh
 
 # Terminate already running bar instances.
-killall -q polybar &
+killall --quiet --exact --signal SIGKILL polybar
 
-if [ "$(pgrep -cf launch-polybar)" -gt 1 ]; then
+if [ "$(pgrep --count --full launch-polybar)" -gt 1 ]; then
     echo 'Another launch-polybar instance is running, will not proceed'
     exit 1
 fi
