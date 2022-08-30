@@ -1,0 +1,28 @@
+#!/bin/sh
+# Turn Bluetooth on and connect to a device.
+
+set -ex
+
+rfkill unblock bluetooth
+
+bluetoothctl -- power on
+
+# Format:
+# Device <mac address> <device name>
+devices="$(bluetoothctl -- devices)"
+
+if echo "${devices}" | grep 'No default controller available'; then
+    exit 1
+fi
+
+chosen_device_name="$(echo "${devices}" \
+    | awk '{ $1=$2=""; sub(/^\s+/, "");  print $0 }' \
+    | dmenu-configured -p 'Connect Bluetooth to:')"
+
+chosen_mac_address="$(echo "${devices}" \
+    | grep "${chosen_device_name}" \
+    | awk '{ print $2 }')"
+
+notify-send -a 'bluetooth' "Connecting to ${chosen_device_name}"
+
+bluetoothctl -- connect "${chosen_mac_address}"

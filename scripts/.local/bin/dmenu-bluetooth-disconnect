@@ -1,0 +1,28 @@
+#!/bin/sh
+# Disconnect from a Bluetooth device and turn Bluetooth off.
+
+set -ex
+
+# Format:
+# Device <mac address> <device name>
+devices="$(bluetoothctl -- devices Connected)"
+
+if echo "${devices}" | grep 'No default controller available'; then
+    exit 1
+fi
+
+chosen_device_name="$(echo "${devices}" \
+    | awk '{ $1=$2=""; sub(/^\s+/, "");  print $0 }' \
+    | dmenu-configured -p 'Disconnect Bluetooth from:')"
+
+chosen_mac_address="$(echo "${devices}" \
+    | grep "${chosen_device_name}" \
+    | awk '{ print $2 }')"
+
+notify-send -a 'bluetooth' "Disconnecting from ${chosen_device_name}"
+
+bluetoothctl -- disconnect "${chosen_mac_address}"
+
+bluetoothctl -- power off
+
+rfkill block bluetooth
