@@ -27,9 +27,13 @@ super+shift+x
 super+b
     toggle-brightness
 
-# Open a book.
+# Connect to a Bluetooth device.
 super+shift+b
-    dmenu-books
+    dmenu-bluetooth-connect
+
+# Disconnect from a Bluetooth device.
+super+shift+n
+    dmenu-bluetooth-disconnect
 
 # Mount/unmount menus.
 super+shift+m
