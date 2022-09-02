@@ -72,7 +72,7 @@ alias vs='vim_session_venv ~/.config/venv_mapping'
 alias nb='newsboat'
 
 alias py='python'
-alias ipy='ipython'
+alias ipy='python -m IPython'
 # Python virtualenvwrapper.
 alias deac='deactivate'
 alias mktenv='mktmpenv'
