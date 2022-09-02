@@ -8,10 +8,10 @@ RUN useradd -m user \
     && usermod -aG wheel user \
     && echo 'user ALL=(ALL:ALL) NOPASSWD: ALL' > /etc/sudoers
 
-COPY --chown=user . /home/user/.dotfiles
-
 USER user
 WORKDIR /home/user
+
+COPY --chown=user . /home/user/.dotfiles
 # Clear package cache at the end to reduce image size
 # (same layer where installation happens).
 # rm -f flag is important to ignore nonexistent directories.
