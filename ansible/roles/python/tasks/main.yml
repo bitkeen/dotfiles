@@ -13,6 +13,21 @@
     extra_args: --user
     requirements: '{{ role_path }}/files/requirements.txt'
 
+- name: install dev Python packages from PyPI
+  become: yes
+  become_user: '{{ user_name }}'
+  pip:
+    extra_args: --user
+    requirements: '{{ role_path }}/files/dev_requirements.txt'
+
+- name: put dev requirements file in virtualenvwrapper config dir
+  become: yes
+  become_user: '{{ user_name }}'
+  file:
+    src: '{{ role_path }}/files/dev_requirements.txt'
+    dest: '{{ dirs.dot_virtualenvs }}/dev_requirements.txt'
+    state: link
+
 - name: create a temporary directory to clone packages into
   become: yes
   become_user: '{{ user_name }}'
