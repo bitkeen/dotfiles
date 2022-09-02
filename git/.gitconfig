@@ -11,8 +11,8 @@
     ; Copy name of the current branch.
     bc = "!git rev-parse --abbrev-ref HEAD | xclip-in -rmlastnl && xclip-out"
     br = branch
-    brd = branch -D
-    brm = branch -m
+    brd = branch --delete --force
+    brm = branch --move
     ; Track remote branch origin/<current branch name>.
     bru = "!git branch --set-upstream-to=origin/\"$(git rev-parse --abbrev-ref HEAD)\""
     bs = bisect
@@ -20,7 +20,7 @@
     cob = checkout -b
     cof = "!fzf-git-checkout"
     com = checkout master
-    cop = checkout -p
+    cop = checkout --patch
     chp = cherry-pick
     chpa = cherry-pick --abort
     chpc = cherry-pick --continue
@@ -73,13 +73,13 @@
     rsp = reset --patch
     rst = restore
     rmt = remote
-    rml = remote -v
+    rml = remote --verbose
     rv = revert
     rva = revert --abort
     sh = stash
-    shm = stash push -m
+    shm = stash push --message
     shps = stash push
-    shpp = stash push -p
+    shpp = stash push --patch
     ; Run 'git stash drop' if no argument is provided,
     ; otherwise run 'git stash drop stash@{$1}'.
     shd = "!sh -c '[ -z \"$1\" ] \
@@ -97,8 +97,8 @@
     smu = submodule update --init --recursive
     spl = "!git stash && git pull && git stash pop"
     st = status
-    ; -s - short format, -b - show branch info in short format
-    ss = status -sb
+    ; --short - short format, --branch - show branch info in short format
+    ss = status --short --branch
     sw = show
 [core]
     editor = vim
