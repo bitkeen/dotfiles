@@ -78,7 +78,7 @@
     rva = revert --abort
     sh = stash
     shm = stash push --message
-    shps = stash push
+    shph = stash push
     shpp = stash push --patch
     ; Run 'git stash drop' if no argument is provided,
     ; otherwise run 'git stash drop stash@{$1}'.
