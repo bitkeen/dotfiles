@@ -17,14 +17,6 @@
   command:
     cmd: '{{ role_path }}/files/vconsole.sh'
 
-- name: create directories in user_home
-  file:
-    path: '{{ item.value }}'
-    state: directory
-    owner: '{{ user_name }}'
-    group: '{{ user_group }}'
-  loop: '{{ dirs | dict2items }}'
-
 - name: create symlinks
   file:
     src: '{{ item.src }}'

@@ -4,6 +4,8 @@
   become: yes
   gather_facts: no
   roles:
+    # Role for tasks meant to run first.
+    - { role: before, tags: before }
     # Install various packages.
     - { role: pacman, tags: pacman }
     - { role: python, tags: python }
