@@ -41,6 +41,7 @@ packages:
   - sxiv
   - tmux
   - vim
+  - virtualenvwrapper
   - x11
   - xdg
   - youtube-dl
