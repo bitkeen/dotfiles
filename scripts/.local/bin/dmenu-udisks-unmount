@@ -7,7 +7,7 @@ devices="$(
     lsblk --list --paths --output NAME,MOUNTPOINT |
     awk '$2~/^\/run\/media\//{ printf "%s (%s)\n",$1,$2 }'
 )"
-[ -z "$devices" ] && notify-send 'Nothing to unmount' && exit 1
+[ -z "$devices" ] && notify-send -a 'udisks' 'Nothing to unmount' && exit 1
 
 choice="$(
     echo "$devices" |

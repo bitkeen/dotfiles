@@ -7,7 +7,7 @@ devices="$(
         awk '$2~/^part$/' |
         awk '$3~/^$/{ print $1 }'
 )"
-[ -z "$devices" ] && notify-send 'Nothing to mount' && exit 1
+[ -z "$devices" ] && notify-send -a 'udisks' 'Nothing to mount' && exit 1
 
 choice="$(
     echo "$devices" |
