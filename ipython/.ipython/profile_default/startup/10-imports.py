@@ -3,13 +3,13 @@ stdlib_imports = [
     'import json',
     'import math',
     'import os',
-    'import pprint',
     'import random',
     'import re',
     'import sys',
     'import time',
     'import urllib.parse as up',
     'from datetime import date, datetime, timedelta',
+    'from pprint import pprint',
 ]
 
 external_imports = [
