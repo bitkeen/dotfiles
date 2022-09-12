@@ -46,8 +46,8 @@ if &runtimepath =~# '/usr/bin/fzf' " Basic plugin.
     \}
 
     " File opener.
-    nnoremap <Leader>t :FzfFiles<CR>
-    nnoremap <Leader>T :FzfHomeFiles<CR>
+    nnoremap <silent> <Leader>t :FzfFiles<CR>
+    nnoremap <silent> <Leader>T :FzfHomeFiles<CR>
 
     " Change filetype with fzf.
     nnoremap ]f :FzfFiletypes<CR>
