@@ -194,7 +194,7 @@ floating_modifier $super
 
 assign [class="Anki"] $workspace5
 assign [class="firefox"] $workspace1
-assign [class="Thunderbird"] $workspace9
+assign [class="thunderbird"] $workspace9
 assign [class="TelegramDesktop"] $workspace8
 assign [class="KeePassXC"] $workspace10
 
