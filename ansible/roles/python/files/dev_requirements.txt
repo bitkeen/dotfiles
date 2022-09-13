@@ -1,4 +1,4 @@
-ipython==8.4.0
+ipython>=7.34.0,<=8.4.0  # To work with Python 3.7 as well as newer versions.
 ipython-autotime==0.3.0  # Time everything in IPython.
 memory-profiler==0.60.0  # A module for monitoring memory usage of a Python program.
 pdbpp==0.10.3
