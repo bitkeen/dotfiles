@@ -7,6 +7,11 @@
 # - dunst
 # - pulseaudio
 
+if [ -z "$1" ]; then
+    echo 'Time not specified'
+    exit 1
+fi
+
 # Time is in seconds if there is an 's' at the end, in hours if there
 # is an 'h' at the end, in minutes by default.
 if echo "$1" | grep -q 's$'; then
