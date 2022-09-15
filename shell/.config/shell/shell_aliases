@@ -111,6 +111,8 @@ alias docker-compose='alias-wrapper-docker-compose'
 alias d='docker'
 alias c='docker-compose'
 
+alias pip='alias-wrapper-pip'
+
 # Empty trash.
 alias et='gio trash --empty'
 

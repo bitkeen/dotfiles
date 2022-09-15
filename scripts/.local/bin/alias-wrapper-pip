@@ -1,0 +1,18 @@
+#!/bin/sh
+# Aliases for pip.
+
+key="$1"
+case "$key" in
+    in)
+        cmd='install';;
+    ir)
+        cmd='install -r requirements.txt';;
+    un)
+        cmd='uninstall';;
+    *)
+        cmd="$key";;
+esac
+[ -n "$cmd" ] && shift
+
+# shellcheck disable=SC2086
+'pip' $cmd "$@"
