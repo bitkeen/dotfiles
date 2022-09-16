@@ -312,7 +312,7 @@ if has('packages')
   packadd matchit  " Extended matching with '%'
 
   if has('python3')
-    packadd MatchTagAlways
+    packadd MatchTagAlways " Always highlight enclosing XML/HTML tags.
     packadd ultisnips
   endif
 
@@ -386,21 +386,21 @@ if has('packages')
   packadd! vim-textobj-entire
   packadd! vim-textobj-user
   packadd! vim-textobj-xmlattr
-  packadd! vim-tmux-navigator
-  packadd! vim-vinegar
+  packadd! vim-tmux-navigator  " Navigate seamlessly between vim and tmux splits.
+  packadd! vim-vinegar  " Imrpoved Netrw interaction.
   packadd! vim-visual-star-search
-  packadd! vim-vue
   packadd! vim-xkbswitch  " Automatically switch keyboard layout based on mode
   packadd! vimwiki  " Personal wiki for Vim
   packadd! vZoom.vim  " Quickly maximize & unmaximize the current window
   packadd! winresizer  " Easy window resizing, similar to resize mode in i3wm
 
   " Syntax
-  packadd! python-syntax  " Better python syntax highlighting
+  packadd! python-syntax  " Better python syntax highlighting.
   packadd! Vim-Jinja2-Syntax
-  packadd! vim-pug  " Syntax highlighting for Pug templates
+  packadd! vim-pug  " Syntax highlighting for Pug templates.
   packadd! vim-sxhkdrc
-  packadd! vim-syntax-extra  " For enhanced C syntax highlighting
+  packadd! vim-syntax-extra  " For enhanced C syntax highlighting.
+  packadd! vim-vue  " Syntax highlighting for Vue components.
 else
   " Enable Pathogen package manager.
   execute pathogen#infect('pack/bundle/opt/{}')
