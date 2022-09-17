@@ -88,3 +88,6 @@ user_pref("browser.search.suggest.enabled", false);
 
 // Scale up developer tools.
 user_pref("devtools.toolbox.zoomValue", "1.3");
+
+// Block audio and video autoplay.
+user_pref("media.autoplay.default", 5);
