@@ -1,10 +1,16 @@
 #!/bin/sh
 # Single laptop screen.
 
-secondary="$(get-secondary-display)"
+primary_display='eDP-1'
 
-xrandr \
-    --output eDP-1 --primary --mode 1920x1080 --pos 0x0 --rotate normal \
-    --output "$secondary" --off
+secondary_displays="$(\
+    xrandr --query |
+        grep -P 'connected|disconnected' |
+        grep -v "${primary_display}" |
+        awk '{print $1}'
+)"
+
+xrandr --output "${primary_display}" --primary --mode 1920x1080 --pos 0x0 --rotate normal
+echo "${secondary_displays}" | xargs -I {} xrandr --output {} --off
 
 screenlayout-reload
