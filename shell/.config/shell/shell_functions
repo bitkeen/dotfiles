@@ -190,3 +190,47 @@ woc() {
     # Activate the venv corresponding to current dir name.
     workon "$(basename "$(pwd)")"
 }
+
+
+m() {
+    # NB: this must be a function, not a script, for unaliasing logic to work.
+    # A wrapper around vman.
+    # Order of precedence:
+    # 0. If no argument is passed, run fzf-man.
+    # 1. If a program is found by $1, run vman for it.
+    # 2. If an alias is found by $1, run vman for it's value.
+    # 3. Run vman for $@ if first argument is numeric (a section number).
+    # 4. Return an error.
+    #
+    # Such an order is needed to get a smarter alias expansion than
+    # could be done with `alias vm='vman '`, since the actual programs
+    # should get precedence over aliases, not otherwise.
+    # E.g. if you have `alias ls='ls -p'`, then `vm ls` should get you
+    # `vman ls`, not `vman 'ls -p'`, and if you have `alias p='pacman'`,
+    # you'd get `vman pacman` by running `vm p`, if there's no program
+    # by name `p`.
+
+    # Use full path to which binary since in zsh which is a built-in that
+    # has slightly different behavior.
+    # shellcheck disable=SC2230
+    if [ -z "$1" ]; then
+        MAN_READER='vman' fzf-man
+
+    elif /usr/bin/which "$1" >/dev/null 2>&1; then
+        vman "$(/usr/bin/which "$1")"
+
+    elif command -v "$1" | grep '^alias' > /dev/null; then
+        # Remove single quotes for zsh compatilibity and regexp simplicity.
+        alias_val="$(command -v "$1" | tr -d "'" | grep -Po "(?<==).*")"
+        vman "$alias_val"
+
+
+    elif echo "$1" | grep -P "^\d+$"; then
+        # $@ allows to specify a section, i.e. `m $section $name`.
+        vman "$@"
+
+    else
+        echo "No manual section for $*"
+        return 1
+    fi
+}
