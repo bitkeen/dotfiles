@@ -282,6 +282,7 @@ let g:formatter_mapping = {
 \ 'css': '!css-beautify',
 \ 'html': '!tidy -q -i --show-errors 0',
 \ 'json': '!python -m json.tool',
+\ 'json_to_python': '!python -c "import json; print(json.loads(input()))" | black --skip-string-normalization --quiet -',
 \ 'python': '!autopep8 -',
 \ 'sql': '!pg_format',
 \ 'xml': '!tidy -q -i --show-errors 0 -xml',
