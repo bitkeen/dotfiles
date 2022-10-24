@@ -526,7 +526,7 @@ let g:quickpeek_window_settings = ['cursorline', 'number', 'relativenumber']
 let g:sneak#label = 1
 
 " loupe
-let g:LoupeVeryMagic=0
+let g:LoupeVeryMagic = 0
 
 " }}}
 
