@@ -528,6 +528,9 @@ let g:sneak#label = 1
 " loupe
 let g:LoupeVeryMagic = 0
 
+" Tagbar
+let g:tagbar_sort = 0  " Sort according to order in file, not by name.
+
 " }}}
 
 " Mappings {{{
