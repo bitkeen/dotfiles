@@ -2,22 +2,25 @@
 import sqlite3
 from pathlib import Path
 
-try:
-    import plumbum
-except ModuleNotFoundError as e:
-    print(e)
-try:
-    import pyfzf
-except ModuleNotFoundError as e:
-    print(e)
-
 from IPython import get_ipython
-from prompt_toolkit.application.current import get_app
 from prompt_toolkit.enums import DEFAULT_BUFFER
 from prompt_toolkit.filters import has_focus, has_selection, has_suggestion
-from prompt_toolkit.filters.base import Condition
 from prompt_toolkit.key_binding.bindings.named_commands import get_by_name
 from prompt_toolkit.keys import Keys
+
+FAIL = '\033[91m'
+ENDC = '\033[0m'
+
+def try_import(module):
+    try:
+        globals()[module] = __import__(module)
+    except ModuleNotFoundError as e:
+        print(f'{FAIL}{e}{ENDC}')
+
+
+try_import('plumbum')
+try_import('pyfzf')
+try_import('pyperclip')
 
 FZF_OPTIONS = ('--read0'
                ' --preview "echo {} | bat --plain --color always -l python"'
@@ -52,6 +55,13 @@ def fzf_history(event):
         )
         event.current_buffer.insert_text(selection)
     except (IndexError, plumbum.commands.processes.ProcessExecutionError):
+        pass
+
+
+def copyline(event):
+    try:
+        pyperclip.copy(event.current_buffer.text)
+    except NameError:
         pass
 
 
@@ -93,3 +103,9 @@ if 'plumbum' in locals() and 'pyfzf' in locals():
             Keys.ControlR,
             filter=has_focus(DEFAULT_BUFFER)
         )(fzf_history)
+
+        # Copy current buffer.
+        registry.add(
+            Keys.ControlSquareClose,
+            filter=has_focus(DEFAULT_BUFFER)
+        )(copyline)
