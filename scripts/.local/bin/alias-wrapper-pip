@@ -7,6 +7,10 @@ case "$key" in
         cmd='install';;
     ir)
         cmd='install -r requirements.txt';;
+    iu)
+        cmd='install --upgrade';;
+    sw)
+        cmd='show';;
     un)
         cmd='uninstall';;
     *)
