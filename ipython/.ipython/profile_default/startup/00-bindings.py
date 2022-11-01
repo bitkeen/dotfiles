@@ -14,7 +14,7 @@ except ModuleNotFoundError as e:
 from IPython import get_ipython
 from prompt_toolkit.application.current import get_app
 from prompt_toolkit.enums import DEFAULT_BUFFER
-from prompt_toolkit.filters import has_focus, has_selection
+from prompt_toolkit.filters import has_focus, has_selection, has_suggestion
 from prompt_toolkit.filters.base import Condition
 from prompt_toolkit.key_binding.bindings.named_commands import get_by_name
 from prompt_toolkit.keys import Keys
@@ -32,13 +32,6 @@ ORDER BY
     session DESC,
     line DESC
 """
-
-
-@Condition
-def has_suggestion() -> bool:
-    """Enable when the current buffer has a suggestion."""
-    buffer = get_app().current_buffer
-    return buffer.suggestion is not None and buffer.suggestion.text != ''
 
 
 def fzf_history(event):
