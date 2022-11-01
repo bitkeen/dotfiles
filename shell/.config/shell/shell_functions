@@ -225,7 +225,7 @@ m() {
         vman "$alias_val"
 
 
-    elif echo "$1" | grep -P "^\d+$"; then
+    elif echo "$1" | grep -P "^\d+$" > /dev/null; then
         # $@ allows to specify a section, i.e. `m $section $name`.
         vman "$@"
 
