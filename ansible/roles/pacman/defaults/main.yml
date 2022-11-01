@@ -147,6 +147,7 @@ packages:
   - virtualbox
   - virtualbox-guest-iso  # Guest Additions CD image
   - w3m  # Text-based Web browser as well as pager, used for html previews in ranger
+  - websocat  # Command-line client for web sockets, like netcat/curl/socat for ws://
   - whois  # Intelligent WHOIS client
   - wireshark-cli  # Network traffic and protocol analyzer/sniffer - CLI tools and data files
   - xclip  # Command line interface to the X11 clipboard

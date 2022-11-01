@@ -12,3 +12,4 @@ ignore:
   - pgcli  # Now present in official repos.
   - pgformatter
   - scrcpy
+  - websocat  # Now present in official repos.
