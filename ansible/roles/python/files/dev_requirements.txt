@@ -2,5 +2,7 @@ ipython>=7.34.0,<=8.4.0  # To work with Python 3.7 as well as newer versions.
 ipython-autotime==0.3.0  # Time everything in IPython.
 memory-profiler==0.60.0  # A module for monitoring memory usage of a Python program.
 pdbpp==0.10.3
+pipdeptree==2.3.3  # Command line utility to show dependency tree of packages.
 plumbum==1.7.2
 pyfzf==0.2.2
+pyperclip==1.8.2  # A cross-platform clipboard module for Python.
