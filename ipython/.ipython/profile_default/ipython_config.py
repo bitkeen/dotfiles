@@ -224,22 +224,6 @@
 ## Automatically call the pdb debugger after every exception.
 #c.InteractiveShell.pdb = False
 
-## Deprecated since IPython 4.0 and ignored since 5.0, set
-#  TerminalInteractiveShell.prompts object directly.
-#c.InteractiveShell.prompt_in1 = 'In [\\#]: '
-
-## Deprecated since IPython 4.0 and ignored since 5.0, set
-#  TerminalInteractiveShell.prompts object directly.
-#c.InteractiveShell.prompt_in2 = '   .\\D.: '
-
-## Deprecated since IPython 4.0 and ignored since 5.0, set
-#  TerminalInteractiveShell.prompts object directly.
-#c.InteractiveShell.prompt_out = 'Out[\\#]: '
-
-## Deprecated since IPython 4.0 and ignored since 5.0, set
-#  TerminalInteractiveShell.prompts object directly.
-#c.InteractiveShell.prompts_pad_left = True
-
 ##
 #c.InteractiveShell.quiet = False
 
