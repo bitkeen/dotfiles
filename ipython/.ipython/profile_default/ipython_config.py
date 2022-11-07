@@ -1,3 +1,7 @@
+import sys
+
+from IPython.core import release
+
 #------------------------------------------------------------------------------
 # InteractiveShellApp(Configurable) configuration
 #------------------------------------------------------------------------------
@@ -163,7 +167,7 @@
 #c.InteractiveShell.automagic = True
 
 ## The part of the banner to be printed before the profile
-#c.InteractiveShell.banner1 = "Python 3.7.0 (default, Jul 15 2018, 10:44:58) \nType 'copyright', 'credits' or 'license' for more information\nIPython 6.5.0 -- An enhanced Interactive Python. Type '?' for help.\n"
+c.InteractiveShell.banner1 = 'Python {}\nIPython {}\n'.format(sys.version.split('\n')[0], release.version)
 
 ## The part of the banner to be printed after the profile
 #c.InteractiveShell.banner2 = ''
