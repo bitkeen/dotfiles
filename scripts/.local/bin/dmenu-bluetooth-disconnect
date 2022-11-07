@@ -23,6 +23,6 @@ notify-send -a 'bluetooth' "Disconnecting from ${chosen_device_name}"
 
 bluetoothctl -- disconnect "${chosen_mac_address}"
 
+notify-send -a 'bluetooth' 'Turning Bluetooth off'
 bluetoothctl -- power off
-
 rfkill block bluetooth

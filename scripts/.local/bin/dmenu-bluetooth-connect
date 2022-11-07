@@ -3,8 +3,8 @@
 
 set -ex
 
+notify-send -a 'bluetooth' 'Turning Bluetooth on'
 rfkill unblock bluetooth
-
 bluetoothctl -- power on
 
 # Format:
