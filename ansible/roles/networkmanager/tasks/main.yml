@@ -1,10 +1,18 @@
 ---
 - name: put NetworkManager dns config in place
   copy:
-    src: dns.conf
-    dest: /etc/NetworkManager/conf.d/
-
-- name: put dnsmasq config in place
-  copy:
-    src: dnsmasq/00-general.conf
-    dest: /etc/NetworkManager/dnsmasq.d/
+    src: '{{ item.src }}'
+    dest: '{{ item.dest }}'
+  loop:
+    - {
+      src: dns.conf,
+      dest: /etc/NetworkManager/conf.d/
+    }
+    - {
+      src: mac.conf,
+      dest: /etc/NetworkManager/conf.d/
+    }
+    - {
+      src: dnsmasq/00-general.conf,
+      dest: /etc/NetworkManager/dnsmasq.d/
+    }
