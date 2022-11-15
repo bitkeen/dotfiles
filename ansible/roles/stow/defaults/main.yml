@@ -8,6 +8,7 @@ potential_conflicts:
   - '{{ user_home }}/.viminfo'
   - '{{ dirs.dot_config }}/mimeapps.list'
   - '{{ dirs.dot_config }}/user-dirs.dirs'
+  - '{{ dirs.dot_virtualenvs }}/postmkvirtualenv'
 
 # Directory to move conflicting files into.
 conflicts_dir: '{{ user_home }}/stow-conflicts'
