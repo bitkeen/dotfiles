@@ -81,15 +81,15 @@ alias rmvenv='rmvirtualenv'
 
 alias bandcamp-dl='bandcamp-dl --base-dir="$(xdg-user-dir DOWNLOAD)"/bandcamp-dl'
 
-alias yd='youtube-dl'
+alias yd='yt-dlp --config-location ~/.config/youtube-dl.conf'
 # Download playlists using a separate config.
 # The config specifies different directory structure.
-alias ydp='youtube-dl --config-location ~/.config/youtube-dl-playlist.conf'
+alias ydp='yt-dlp --config-location ~/.config/youtube-dl-playlist.conf'
 # There are options to download subtitles in the main config file,
 # the subtitles are not needed for audio-only downloads, and can't
 # be merged into an audio file, so a separate config file for audio
 # is needed, without the subtitle options.
-alias yda='youtube-dl --config-location ~/.config/youtube-dl-audio.conf'
+alias yda='yt-dlp --config-location ~/.config/youtube-dl-audio.conf'
 
 # --auto-vertical-output - automatically switch to vertical output
 # mode if the result is wider than the terminal width.

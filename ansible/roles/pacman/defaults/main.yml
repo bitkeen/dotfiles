@@ -161,7 +161,7 @@ packages:
   - xorg-xprop  # Property displayer for X
   - xsecurelock  # X11 screen lock utility
   - yamllint  # Linter for YAML files
-  - youtube-dl
+  - yt-dlp  # A youtube-dl fork with additional features and fixes.
   - zathura  # Document viewer
   - zathura-djvu
   - zathura-pdf-mupdf
