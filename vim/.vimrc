@@ -284,6 +284,7 @@ let g:formatter_mapping = {
 \ 'json': '!python -m json.tool',
 \ 'json_to_python': '!python -c "import json; print(json.loads(input()))" | black --skip-string-normalization --quiet -',
 \ 'python': '!autopep8 -',
+\ 'python_black': '!black --skip-string-normalization --quiet -',
 \ 'sql': '!pg_format',
 \ 'xml': '!tidy -q -i --show-errors 0 -xml',
 \}
