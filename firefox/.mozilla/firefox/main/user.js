@@ -91,3 +91,6 @@ user_pref("devtools.toolbox.zoomValue", "1.3");
 
 // Block audio and video autoplay.
 user_pref("media.autoplay.default", 5);
+
+// Firefox devtools will truncate larger responses. Default is 1048576.
+user_pref("devtools.netmonitor.responseBodyLimit", 16777216);
