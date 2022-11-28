@@ -4,6 +4,7 @@ current_date="$(date --iso-8601)"
 output_log="$(mktemp "/tmp/timed-output-${current_date}.XXXXXX.log")"
 
 echo "Writing '$*' output to ${output_log}"
+# shellcheck disable=SC2016
 "$@" 2>&1 \
     | stdbuf --output=L awk '{ print strftime("[%Y-%m-%d %H:%M:%S]"), $0 }' \
     | tee "${output_log}"
