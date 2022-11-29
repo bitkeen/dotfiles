@@ -7,7 +7,10 @@ set -ex
 # Device <mac address> <device name>
 devices="$(bluetoothctl -- devices Connected)"
 
-if echo "${devices}" | grep 'No default controller available'; then
+if echo "${devices}" | grep 'No default controller available' || [ -z "${devices}" ]; then
+    notify-send -a 'bluetooth' 'Nothing to disconnect from'
+    bluetoothctl -- power off
+    rfkill block bluetooth
     exit 1
 fi
 
