@@ -10,7 +10,7 @@ if &runtimepath =~# '/usr/bin/fzf' " Basic plugin.
     call fzf#run({
     \ 'sink': function('s:get_type_formatter'),
     \ 'source': keys(g:formatter_mapping),
-    \ 'options': '+m --prompt="Pretty format> "',
+    \ 'options': '+m --cycle --prompt="Pretty format> "',
     \ 'down': '50%',
     \})
   endfunction
