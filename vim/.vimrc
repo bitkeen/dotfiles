@@ -309,7 +309,7 @@ let g:ft_man_folding_enable = 1
 
 " Packages {{{
 if has('packages')
-  " Default plugins in vim distribution.
+  " Default plugins in vim distribution:
   packadd cfilter  " Filter a quickfix or location list
   packadd matchit  " Extended matching with '%'
 
