@@ -3,7 +3,6 @@
   become: yes
   become_user: '{{ user_name }}'
   shell:
-    warn: false # Don't warn about using get_url isntead of curl.
     cmd: curl --silent https://raw.githubusercontent.com/akahuku/wasavi/{{ wasavi_version }}/dist/firefox.json | jq -r ".addons | keys[0]"
   register: extension_id
   changed_when: false
