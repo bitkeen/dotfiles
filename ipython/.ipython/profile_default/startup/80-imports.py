@@ -9,7 +9,7 @@ stdlib_imports = [
     'import time',
     'import urllib.parse as up',
     'from datetime import date, datetime, timedelta',
-    'from pprint import pprint',
+    'from pprint import pprint; pp = pprint',
 ]
 
 external_imports = [
