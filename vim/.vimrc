@@ -94,8 +94,8 @@ if has('autocmd')
 
     autocmd BufWinEnter *.rules setlocal filetype=udevrules
 
-    autocmd BufWinEnter */sync/wikis/scratchwiki/* :let b:auto_save = 1
-    autocmd BufWinEnter */sync/wikis/scratchwiki/* :let g:auto_save_silent = 1
+    autocmd BufWinEnter */sync/wikis/* :let b:auto_save = 1
+    autocmd BufWinEnter */sync/wikis/* :let g:auto_save_silent = 1
   augroup END
 
   augroup folding
