@@ -46,6 +46,8 @@ alias fnc='find -L . -name'
 
 # Kill processes by name.
 alias ka='killall'
+# Kill first background process.
+alias kbg='kill %1'
 
 # The space at the end allows the next command word following the alias
 # to also be checked for alias expansion.
