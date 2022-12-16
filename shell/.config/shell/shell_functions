@@ -219,6 +219,9 @@ m() {
     elif /usr/bin/which "$1" >/dev/null 2>&1; then
         vman "$(/usr/bin/which "$1")"
 
+    elif apropos --exact "$1" >/dev/null 2>&1; then
+        vman "$1"
+
     elif command -v "$1" | grep '^alias' > /dev/null; then
         # Remove single quotes for zsh compatilibity and regexp simplicity.
         alias_val="$(command -v "$1" | tr -d "'" | grep -Po "(?<==).*")"
