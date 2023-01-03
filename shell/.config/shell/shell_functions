@@ -219,6 +219,10 @@ m() {
     elif /usr/bin/which "$1" >/dev/null 2>&1; then
         vman "$(/usr/bin/which "$1")"
 
+    elif echo "$1" | grep -P "^\d+$" > /dev/null; then
+        # $@ allows to specify a section, i.e. `m $section $name`.
+        vman "$@"
+
     elif apropos --exact "$1" >/dev/null 2>&1; then
         vman "$1"
 
@@ -226,11 +230,6 @@ m() {
         # Remove single quotes for zsh compatilibity and regexp simplicity.
         alias_val="$(command -v "$1" | tr -d "'" | grep -Po "(?<==).*")"
         vman "$alias_val"
-
-
-    elif echo "$1" | grep -P "^\d+$" > /dev/null; then
-        # $@ allows to specify a section, i.e. `m $section $name`.
-        vman "$@"
 
     else
         echo "No manual section for $*"
