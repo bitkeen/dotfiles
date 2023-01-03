@@ -72,6 +72,11 @@
       option: 'General\SystrayEnabled',
       value: 'true'
     }
+    - {
+      section: 'Preferences',
+      option: 'AddNewTorrentDialog\RememberLastSavePath',
+      value: 'false'
+    }
 
 - name: configure keepassxc
   become: yes
