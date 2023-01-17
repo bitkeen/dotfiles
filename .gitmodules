@@ -311,3 +311,6 @@
 [submodule "deleft.vim"]
 	path = vim/.vim/pack/bundle/opt/deleft.vim
 	url = https://github.com/AndrewRadev/deleft.vim
+[submodule "tmux-fzf-snippets"]
+	path = tmux/.tmux/plugins/tmux-fzf-snippets
+	url = https://github.com/bitkeen/tmux-fzf-snippets
