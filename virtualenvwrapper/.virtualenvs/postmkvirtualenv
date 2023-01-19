@@ -1,3 +1,4 @@
 #!/bin/sh
 set -x
-pip install -r "${WORKON_HOME}/dev_requirements.txt"
+[ -z "${SKIP_DEFAULT_REQUIREMENTS}" ] \
+    && pip install -r "${WORKON_HOME}/dev_requirements.txt"
