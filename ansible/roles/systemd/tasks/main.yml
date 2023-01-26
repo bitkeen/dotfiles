@@ -13,6 +13,8 @@
     dest: '/etc/systemd/system/{{ item }}'
   loop:
     - lock@.service
+    - mpc-reload.service
+    - mpc-reload.timer
     - newsboat-reload.service
     - newsboat-reload.timer
     - pacman-update-files-database.service
@@ -34,6 +36,7 @@
   loop:
     - bluetooth.service
     - docker.service
+    - mpc-reload.timer
     - newsboat-reload.timer
     - pacman-update-files-database.timer
     - paccache.timer  # Discard unused packages weekly.

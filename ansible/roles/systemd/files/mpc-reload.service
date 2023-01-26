@@ -1,0 +1,6 @@
+[Unit]
+Description=Reload mpc database
+
+[Service]
+User=user
+ExecStart=/bin/sh -c "/home/user/.local/bin/mpc-reload"

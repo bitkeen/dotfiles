@@ -1,0 +1,8 @@
+[Unit]
+Description=Reload mpc database
+
+[Timer]
+OnBootSec=1minute
+
+[Install]
+WantedBy=timers.target
