@@ -1,0 +1,5 @@
+[Desktop Entry]
+Name=Anki
+Exec=QTWEBENGINE_CHROMIUM_FLAGS="--no-sandbox" /home/user/.local/bin/anki %F
+Type=Application
+Terminal=false
