@@ -29,8 +29,4 @@ dirs:
   firefox_extensions: '{{ user_home }}/.mozilla/firefox/main/extensions'
   pictures: '{{ user_home }}/pictures'
   pictures_screenshots: '{{ user_home }}/pictures/screenshots'
-  pictures_webcam: '{{ user_home }}/pictures/webcam'
-  videos_webcam: '{{ user_home }}/videos/webcam'
   sync: '{{ user_home }}/sync'
-  sync_books: '{{ user_home }}/sync/books'
-  sync_zathura: '{{ user_home }}/sync/zathura'

@@ -29,14 +29,6 @@
       dest: '{{ dotfiles_home }}/.dotfiles.local'
     }
     - {
-      src: '{{ dirs.sync_zathura }}',
-      dest: '{{ user_home }}/.local/share/zathura'
-    }
-    - {
-      src: '{{ dirs.sync_books }}',
-      dest: '{{ user_home }}/books'
-    }
-    - {
       src: '/run/media/user',
       dest: '{{ user_home }}/media',
       force: yes
