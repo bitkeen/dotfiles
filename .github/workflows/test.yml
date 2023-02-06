@@ -2,15 +2,15 @@ name: test
 on: [push]
 jobs:
   lint:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
     steps:
       - uses: actions/checkout@v2
-      - name: Set up Python 3.9
+      - name: Set up Python 3.10.9
         uses: actions/setup-python@v2
         with:
-          python-version: 3.9
+          python-version: 3.10.9
       - name: Install linters
-        run: pip install pre-commit==2.16.0 flake8==3.9.2
+        run: pip install pre-commit==3.0.4 flake8==6.0.0
       - run: pre-commit install
       - run: pre-commit run --all-files
       - name: Run shellcheck on all the scripts with sh shebang
@@ -28,7 +28,7 @@ jobs:
 
   build:
     needs: lint
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
     steps:
       - uses: actions/checkout@v2
       - name: Build image
