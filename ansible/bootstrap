@@ -12,6 +12,7 @@
     ln -sf "$HOME/.dotfiles/ansible/ansible.cfg" "$HOME/.ansible.cfg"
 
 export ANSIBLE_PYTHON_INTERPRETER=auto_silent
+export GOPATH="$HOME/.local/share/go"
 
 playbooks="$HOME/.dotfiles/ansible/playbook.yml"
 local_playbook="$HOME/.dotfiles.local/ansible/playbook.yml"
