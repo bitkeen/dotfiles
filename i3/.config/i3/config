@@ -222,7 +222,6 @@ for_window [instance="dragon-drag-and-drop"] sticky enable
 exec keepassxc
 exec firefox
 exec thunderbird
-exec telegram-desktop
 # Start on a specific workspace, but do not bind to it.
 exec --no-startup-id i3-msg 'workspace $workspace7; exec qbittorrent'
 
