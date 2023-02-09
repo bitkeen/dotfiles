@@ -114,8 +114,8 @@ if &runtimepath =~# 'bundle/opt/lightline.vim'
       endif
     else
       " Can't print home directory as tilde for a new buffer with Vim's
-      " `expand`. Use a shell command instead.
-      let l:path = system('pwd | sed "s#$HOME#~#" | tr -d "\n"') . '/' . '[No Name]'
+      " `expand`. Use substitute instead.
+      let l:path = substitute(execute('pwd'), '\n'. $HOME, '~', '') . '/' . '[No Name]'
       if (winwidth(0) - strlen(l:path)) < a:threshold
           let l:path = '[No Name]'
       endif
