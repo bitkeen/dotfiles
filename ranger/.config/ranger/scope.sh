@@ -120,8 +120,34 @@ handle_image() {
 
         # Video
         video/*)
-            # Thumbnail
-            ffmpegthumbnailer -i "${FILE_PATH}" -o "${IMAGE_CACHE_PATH}" -s 0 && exit 6
+            # Video thumbnails with duration.
+
+            add_duration() {
+                # Read thumbnail file from stdin, add video duration caption.
+                # $1 - duration
+                # $2 - output file
+                convert \
+                    -font 'Helvetica-Bold'  \
+                    -fill white \
+                    -stroke black \
+                    -pointsize 56 \
+                    -undercolor black \
+                    -draw "text 10,50 '${1}'" \
+                    - \
+                    "${2}"
+            }
+
+            duration="$(ffprobe -show_format "${FILE_PATH}" 2>&1 \
+                | grep -Po '(?<=Duration: )\d{2}:\d{2}:\d{2}')"
+
+
+            # `-q` - quality, default is 8.
+            # `-s` - size
+            # `-o -` - output to stdout
+            ffmpegthumbnailer -q 10 -s 1080 -c jpg -i "${FILE_PATH}" -o - \
+                | add_duration "${duration}" "${IMAGE_CACHE_PATH}" \
+                && exit 6
+
             exit 1;;
         # PDF
         application/pdf)
