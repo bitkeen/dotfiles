@@ -94,3 +94,6 @@ user_pref("media.autoplay.default", 5);
 
 // Firefox devtools will truncate larger responses. Default is 1048576.
 user_pref("devtools.netmonitor.responseBodyLimit", 16777216);
+
+// Disable prompts to enable DRM.
+user_pref("browser.eme.ui.enabled", false);
