@@ -116,7 +116,7 @@ ranger_cd() {
     # To undo the effect of this function, you can type "cd -" to return to the
     # original directory.
     temp_file="$(mktemp -t "ranger_cd.XXXXXXXXXX")"
-    'ranger' --choosedir="$temp_file" -- "${@:-$PWD}"
+    'ranger' --choosedir="$temp_file" "${@}"
     chosen_dir="$(cat -- "$temp_file")"
     if [ -f "$temp_file" ] && [ "$chosen_dir" != "$PWD" ]; then
         cd -- "$chosen_dir"
@@ -132,7 +132,7 @@ wrap_ranger() {
     # The ranger_cd version switches the directory in bash on exit,
     # ranger-shell allows to expand shell aliases inside the :shell
     # command.
-    SHELL=~/.local/bin/ranger-shell ranger_cd
+    SHELL=~/.local/bin/ranger-shell ranger_cd "${@}"
     [ -z "$current_window_name" ] || tmux rename-window "$current_window_name"
 }
 
