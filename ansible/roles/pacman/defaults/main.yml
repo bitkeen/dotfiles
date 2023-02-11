@@ -100,7 +100,6 @@ packages:
   - python-pylint
   - python-virtualenvwrapper
   - qbittorrent
-  - ranger
   - redshift  # Set color temperature of display according to time of day
   - reflector  # A script to retrieve and filter the latest Pacman mirror list
   - ripgrep
