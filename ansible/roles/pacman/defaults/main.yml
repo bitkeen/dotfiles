@@ -170,9 +170,9 @@ packages:
 work_packages:
   - chromium  # For Google Chat app.
   - kubectl  # A command line tool for communicating with a Kubernetes API server.
-  - plantuml  # Component that allows to quickly write uml diagrams
   - redis
   - terraform
+  # - plantuml  # Component that allows to quickly write uml diagrams
   # - aws-cli  # Universal Command Line Interface for Amazon Web Services
   # - mariadb-clients  # For mysqldump
   # - xournalpp  # For signing PDFs
