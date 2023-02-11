@@ -1,0 +1,30 @@
+#!/bin/sh
+# Generate a video thumbnail with duration.
+
+video_file="${1}"
+thumbnail_file="${2}"
+
+add_duration() {
+    # Read thumbnail file from stdin, add video duration caption.
+    # $1 - duration
+    # $2 - output file
+    convert \
+        -font 'Helvetica-Bold'  \
+        -fill white \
+        -stroke black \
+        -pointsize 56 \
+        -undercolor black \
+        -draw "text 10,50 '${1}'" \
+        - \
+        "${2}"
+}
+
+duration="$(ffprobe -show_format "${video_file}" 2>&1 \
+    | grep -Po '(?<=Duration: )\d{2}:\d{2}:\d{2}')"
+
+
+# `-q` - quality, default is 8.
+# `-s` - size
+# `-o -` - output to stdout
+ffmpegthumbnailer -w -q 10 -s 1080 -c jpg -i "${video_file}" -o - \
+    | add_duration "${duration}" "${thumbnail_file}"
