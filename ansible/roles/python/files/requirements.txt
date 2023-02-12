@@ -4,7 +4,7 @@ flynt==0.65  # Convert a python project's %-formatted strings to f-strings.
 iredis==1.9.1  # Terminal client for Redis with auto-completion and syntax highlighting.
 line-profiler==3.4.0  # Line-by-line profiler.
 matplotlib==3.5.3  # For plotting memory-profiler's graphs among other things.
-pre-commit==2.15.0
+pre-commit==3.0.4
 prompt_toolkit==3.0.30
 py-spy==0.3.9  # Sampling profiler for Python programs.
 pydocstyle==5.1.1
