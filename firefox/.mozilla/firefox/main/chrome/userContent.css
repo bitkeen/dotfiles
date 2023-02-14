@@ -5,3 +5,9 @@
         background-color: #1d1f21;
     }
 }
+
+/* Fix white bar from vim-vixen at the bottom of some pages.
+ * https://github.com/ueokande/vim-vixen/issues/1424#issuecomment-1169733896 */
+.vimvixen-console-frame {
+    color-scheme: light !important;
+}
