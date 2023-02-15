@@ -170,6 +170,7 @@ packages:
 work_packages:
   - chromium  # For Google Chat app.
   - kubectl  # A command line tool for communicating with a Kubernetes API server.
+  - python-gdal  # Python bindings for GDAL.
   - redis
   - terraform
   # - plantuml  # Component that allows to quickly write uml diagrams
