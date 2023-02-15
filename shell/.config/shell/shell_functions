@@ -85,6 +85,7 @@ vim_session_venv() {
     # Get a directory to venv mapping from a file, activate venv
     # before launching vim with the session of the directory.
     # Do not change venv if already in a venv.
+    # If venv mapping file does not exist, workon current project's name.
     #
     # File example:
     # /home/user/directory1 venv1
@@ -97,6 +98,9 @@ vim_session_venv() {
         if [ -n "$venv_mapping_file" ] && [ -f "$venv_mapping_file" ]; then
             venv_name="$(grep "$(pwd)" "$venv_mapping_file" | awk '{ print $2 }')"
             [ -n "$venv_name" ] && workon "$venv_name"
+        else
+            # Don't print errors if venv is not found.
+            woc 2>/dev/null
         fi
     fi
 
