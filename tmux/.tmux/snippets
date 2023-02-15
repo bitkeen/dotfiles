@@ -1,1 +1,2 @@
 apt update && apt install -y curl jq
+apt update && apt install -y socat
