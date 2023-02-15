@@ -13,7 +13,9 @@
     name: '{{ item }}'
   loop: '{{ packages }}'
 
+# Only run when WORK_MACHINE env var is set.
 - name: install work-related pacman packages
   pacman:
     name: '{{ item }}'
   loop: '{{ work_packages }}'
+  when: lookup("ansible.builtin.env", "WORK_MACHINE")
