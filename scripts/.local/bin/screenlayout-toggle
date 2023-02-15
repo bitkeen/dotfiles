@@ -3,6 +3,11 @@
 # is connected. To be executed from a udev rule-controlled
 # systemd service.
 
+if [ "$(pgrep --count --full screenlayout-toggle)" -gt 1 ]; then
+    echo 'Another screenlayout-toggle instance is running, will not proceed'
+    exit 1
+fi
+
 if grep '^connected$' /sys/class/drm/card0-DP-3/status ||
        grep '^connected$' /sys/class/drm/card0-DP-4/status; then
     ~/.local/bin/screenlayout-dock
