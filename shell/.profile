@@ -37,6 +37,8 @@ export XSECURELOCK_BURNIN_MITIGATION=20
 export QT_AUTO_SCREEN_SCALE_FACTOR=0
 export QT_FONT_DPI=120
 
+[ -f "$HOME/.profile.local" ] && source "$HOME/.profile.local"
+
 if [ -z "$DISPLAY" ] && [ "$(tty)" = /dev/tty1 ]; then
 	startx
 fi
