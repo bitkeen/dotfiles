@@ -289,14 +289,23 @@ let g:formatter_mapping = {
 \ 'xml': '!tidy -q -i --show-errors 0 -xml',
 \}
 
+function! PrettyFormat(filetype, range_prefix)
+  if a:filetype ==# '' && exists('*FzfPrettyFormat')
+    call FzfPrettyFormat(a:range_prefix)
+  else
+    call FormatFile(a:filetype, a:range_prefix)
+  endif
+endfunction
+
 function! FormatFile(filetype, range_prefix)
   " Get and execute a formatter from g:formatter_mapping based on
   " filetype argument for the specified range.
   let l:formatter = get(g:formatter_mapping, a:filetype)
+
   if a:filetype ==# ''
     echo 'Filetype not specified'
   elseif l:formatter !=# '0'
-    execute a:range_prefix . get(g:formatter_mapping, a:filetype)
+    execute a:range_prefix . l:formatter
   else
     echo 'No formatter for ' . a:filetype
   endif
@@ -775,8 +784,8 @@ noremap zer :edit ~/.config/ranger/rc.conf<CR>
 noremap zet :edit ~/.tmux.conf<CR>
 noremap zev :edit ~/.vimrc<CR>
 
-nnoremap <silent> <LocalLeader>f :call FormatFile(&filetype, "%")<CR>
-vnoremap <silent> <LocalLeader>f :call FormatFile(&filetype, "'<,'>")<CR>
+nnoremap <silent> <LocalLeader>f :call PrettyFormat(&filetype, "%")<CR>
+vnoremap <silent> <LocalLeader>f :call PrettyFormat(&filetype, "'<,'>")<CR>
 
 nnoremap <LocalLeader>uu :% !uniq<CR>
 vnoremap <LocalLeader>uu :'<,'> !uniq<CR>
