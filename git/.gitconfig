@@ -51,6 +51,8 @@
     lglrm = log --left-right --oneline HEAD...master --format='%C(auto)%m%C(reset) %C(auto)%h%C(reset) %s %C(cyan)<%aN>%C(reset) %C(green)%ar%C(reset) (%ad)'
     ; Compare with the previous branch.
     lglrp = log --left-right --oneline HEAD...@{-1} --format='%C(auto)%m%C(reset) %C(auto)%h%C(reset) %s %C(cyan)<%aN>%C(reset) %C(green)%ar%C(reset) (%ad)'
+    ; Compare with tracked remote branch.
+    lglru = log --left-right --oneline HEAD...HEAD@{upstream} --format='%C(auto)%m%C(reset) %C(auto)%h%C(reset) %s %C(cyan)<%aN>%C(reset) %C(green)%ar%C(reset) (%ad)'
     lps = log -p -S
     mg = merge
     mga = merge --abort
