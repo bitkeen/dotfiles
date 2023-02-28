@@ -1,6 +1,7 @@
 stdlib_imports = [
     'import dis',
     'import json',
+    'import html',
     'import math',
     'import os',
     'import random',
