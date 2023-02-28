@@ -33,9 +33,6 @@ PV_IMAGE_ENABLED="${5}"  # 'True' if image previews are enabled, 'False' otherwi
 FILE_EXTENSION="${FILE_PATH##*.}"
 FILE_EXTENSION_LOWER=$(echo ${FILE_EXTENSION} | tr '[:upper:]' '[:lower:]')
 
-# Settings
-HIGHLIGHT_SIZE_MAX=262143  # 256KiB
-
 
 handle_extension() {
     case "${FILE_EXTENSION_LOWER}" in
@@ -141,10 +138,7 @@ handle_mime() {
         # Text
         text/* | */xml | */json)
             # Syntax highlight
-            if [[ "$( stat --printf='%s' -- "${FILE_PATH}" )" -gt "${HIGHLIGHT_SIZE_MAX}" ]]; then
-                exit 2
-            fi
-            env COLORTERM=8bit bat --color=always --style='plain' \
+            env COLORTERM=8bit bat --color=always --style='plain' --line-range ':100' \
                 -- "${FILE_PATH}" && exit 5
             exit 2;;
 
