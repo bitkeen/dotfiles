@@ -132,14 +132,23 @@ handle_image() {
     esac
 }
 
+
+bat_highlight() {
+    COLORTERM=8bit bat --color=always --style=plain --line-range=':100' "$@" \
+        -- "${FILE_PATH}" && exit 5
+}
+
+
 handle_mime() {
     local mimetype="${1}"
     case "${mimetype}" in
         # Text
         text/* | */xml | */json)
-            # Syntax highlight
-            env COLORTERM=8bit bat --color=always --style='plain' --line-range ':100' \
-                -- "${FILE_PATH}" && exit 5
+            bat_highlight
+            exit 2;;
+        */x-ndjson)
+            # Explicitly set JSON highlighting for JSONL, bat doesn't support it yet.
+            bat_highlight --language=json
             exit 2;;
 
         # Image
