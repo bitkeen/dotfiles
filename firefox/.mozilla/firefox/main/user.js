@@ -97,3 +97,6 @@ user_pref("devtools.netmonitor.responseBodyLimit", 16777216);
 
 // Disable prompts to enable DRM.
 user_pref("browser.eme.ui.enabled", false);
+
+// The default is 7.
+user_pref("browser.bookmarks.editDialog.maxRecentFolders", 16)
