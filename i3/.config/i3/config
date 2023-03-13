@@ -12,9 +12,9 @@ set $workspace1 "1: 1B "
 set $workspace2 "2: 2E "
 set $workspace3 "3: 3X "
 set $workspace4 "4: 4R "
-set $workspace5 "5: 5A "
+set $workspace5 "5: 5W "
 set $workspace6 "6: 6W "
-set $workspace7 "7: 7W "
+set $workspace7 "7: 7A "
 set $workspace8 "8: 8M "
 set $workspace9 "9: 9T "
 set $workspace10 "10: 0P "
@@ -192,7 +192,7 @@ font pango:$titles_font
 # Use Mouse+$super to drag floating windows to their wanted position.
 floating_modifier $super
 
-assign [class="Anki"] $workspace5
+assign [class="Anki"] $workspace7
 assign [class="firefox"] $workspace1
 assign [class="thunderbird"] $workspace9
 assign [class="TelegramDesktop"] $workspace8
