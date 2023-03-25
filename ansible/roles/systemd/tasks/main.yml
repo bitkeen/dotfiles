@@ -13,6 +13,7 @@
     dest: '/etc/systemd/system/{{ item }}'
   loop:
     - lock@.service
+    - turn-off-bluetooth@.service
     - mpc-reload.service
     - mpc-reload.timer
     - newsboat-reload.service
@@ -54,6 +55,12 @@
 - name: enable screen lock service
   systemd:
     name: 'lock@{{ user_name }}'
+    enabled: yes
+  when: not in_docker
+
+- name: enable turn-off-bluetooth service
+  systemd:
+    name: 'turn-off-bluetooth@{{ user_name }}'
     enabled: yes
   when: not in_docker
 

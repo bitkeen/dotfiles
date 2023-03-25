@@ -1,0 +1,13 @@
+[Unit]
+Description=Turn off bluetooth before sleep or suspend
+Before=sleep.target
+Before=suspend.target
+
+[Service]
+User=%i
+Type=simple
+ExecStart=/usr/bin/bluetoothctl -- power off
+
+[Install]
+WantedBy=sleep.target
+WantedBy=suspend.target
