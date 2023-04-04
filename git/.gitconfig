@@ -107,7 +107,7 @@
     whitespace = true
     ; Use delta if available, use less otherwise.
     ; --tabs=4 sets tab width to 4 (default is 8).
-    pager = "if command -v delta > /dev/null; then delta --tabs=4 --theme=base16 --color-only; else less --tabs=4; fi"
+    pager = "if command -v delta > /dev/null; then delta --tabs=4 --color-only; else less --tabs=4; fi"
 [commit]
     verbose = true
 [color "status"]
@@ -119,7 +119,7 @@
     defaultBranch = master
 [interactive]
     ; --tabs=4 didn't work for some reason in both delta and less.
-    diffFilter = "if command -v delta > /dev/null; then delta --theme=base16 --color-only; else less; fi"
+    diffFilter = "if command -v delta > /dev/null; then delta --color-only; else less; fi"
 [log]
     date = format-local:%F %T
 [pull]
@@ -137,3 +137,5 @@
     helper = /usr/lib/git-core/git-credential-libsecret
 [submodule]
     fetchJobs = 8
+[delta]
+    theme = base16
