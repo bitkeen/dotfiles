@@ -1,0 +1,19 @@
+#!/usr/bin/env python3
+# Convert TSV to JSON. Either from stdin or from a file.
+import csv
+import fileinput
+import json
+import sys
+
+if __name__ == '__main__':
+    csv.field_size_limit(sys.maxsize)
+
+    fin = fileinput.input()
+
+    print(
+        json.dumps(
+            list(csv.DictReader(fileinput.input(), delimiter='\t')),
+            indent=2,
+            sort_keys=True
+        )
+    )
