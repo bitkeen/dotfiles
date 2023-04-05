@@ -82,6 +82,7 @@ packages:
   - ntfs-3g
   - openbsd-netcat  # TCP/IP swiss army knife
   - pacman-contrib  # Contributed scripts and tools for pacman systems
+  - pavucontrol  # PulseAudio Volume Control.
   - pcsclite  # For CryptoPlugin
   - perf  # Linux kernel performance auditing tool.
   - perl-image-exiftool  # Reader and rewriter of EXIF informations that supports raw files.
