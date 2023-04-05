@@ -153,7 +153,11 @@ if &runtimepath =~# 'bundle/opt/lightline.vim'
     endif
 
     let l:keyboard_layout = libcall(g:XkbSwitchLib, 'Xkb_Switch_getXkbLayout', '')
-    let l:keyboard_layout = split(l:keyboard_layout, '\.')[-1]
+    try
+      let l:keyboard_layout = split(l:keyboard_layout, '\.')[-1]
+    catch /E684/  " List index out of range.
+      return ''
+    endtry
     let short_codes = get(g:, 'short_codes', {'us': 'US', 'ru': 'RU', 'ua': 'UA'})
 
     if has_key(short_codes, l:keyboard_layout)
