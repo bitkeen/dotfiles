@@ -145,3 +145,6 @@ alias u='units'
 alias cal='cal --monday'
 
 alias qr='qrencode -o- -t UTF8'
+
+# Convert JSON to JSONL.
+alias jsonl='jq --compact-output ".[]"'
