@@ -211,8 +211,7 @@ for_window [class="VirtualBox"] layout stacking
 # Focus on a window after it has been opened.
 for_window [class="VirtualBox"] focus
 
-# For some reason there is a window title box for dragon, disable it.
-for_window [instance="dragon-drag-and-drop"] border pixel 1
+for_window [instance="dragon-drag-and-drop"] border normal
 for_window [instance="dragon-drag-and-drop"] sticky enable
 
 # }}}
