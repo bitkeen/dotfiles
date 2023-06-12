@@ -35,7 +35,7 @@ browser firefox
 # Mark article as read and open it in browser.
 macro "SPACE" open; open-in-browser; quit
 macro v set browser "i3 exec mpv"; open-in-browser; set browser firefox
-macro a open; set browser "youtube-dl --config-location ~/.config/youtube-dl-audio.conf"; open-in-browser; set browser firefox; quit
+macro a open; set browser "yt-dlp --config-location ~/.config/youtube-dl-audio.conf"; open-in-browser; set browser firefox; quit
 
 color info yellow black bold
 color listfocus color232 yellow
