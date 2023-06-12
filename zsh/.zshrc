@@ -40,6 +40,8 @@ setopt HIST_REDUCE_BLANKS
 setopt HIST_IGNORE_DUPS
 # Allow comments even in interactive shells.
 setopt INTERACTIVE_COMMENTS
+# Do not require a leading `.' in a filename to be matched explicitly.
+setopt GLOB_DOTS
 
 # Set vi mode.
 bindkey -v
