@@ -110,7 +110,7 @@ packages:
   - rust
   - seahorse  # GNOME application for managing PGP keys
   - shellcheck  # Shell script analysis tool
-  - simplescreenrecorder
+  # - simplescreenrecorder
   - sof-firmware  # Sound Open Firmware, needed for audio to work on X1 Carbon
   - solaar  # Device manager for Logitech's Unifying receiver peripherals
   - stow
@@ -140,7 +140,7 @@ packages:
   - udisks2
   - ueberzug  # Used in ranger for image previews.
   - unclutter  # A small program for hiding the mouse cursor
-  - units  # Convert between different units
+  # - units  # Convert between different units
   - unzip  # For extracting and viewing files in .zip archives
   - urxvt-perls
   - vint  # Lint tool for Vim script Language
