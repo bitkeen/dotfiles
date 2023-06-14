@@ -59,6 +59,10 @@
     backrefs: yes  # To avoid adding lines to the end of the file in case a regexp does not match.
   loop:
     - {
+      line: 'ParallelDownloads = 16',
+      regexp: '^ParallelDownloads = 5'
+    }
+    - {
       line: 'VerbosePkgLists',
       regexp: '^#[ ]?VerbosePkgLists$'
     }
