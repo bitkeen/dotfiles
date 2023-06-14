@@ -1,11 +1,4 @@
 ---
-- name: upgrade pip
-  become: yes
-  become_user: '{{ user_name }}'
-  pip:
-    extra_args: --user
-    name: pip==22.0.2  # Version in Arch repos is 20.3.4, which is from Jan 2021.
-
 - name: install Python packages from PyPI
   become: yes
   become_user: '{{ user_name }}'
