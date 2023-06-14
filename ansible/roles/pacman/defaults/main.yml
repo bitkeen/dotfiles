@@ -81,6 +81,7 @@ packages:
   - npm  # A package manager for javascript
   - ntfs-3g
   - openbsd-netcat  # TCP/IP swiss army knife
+  - openscad  # The programmers solid 3D CAD modeller.
   - pacman-contrib  # Contributed scripts and tools for pacman systems
   - pavucontrol  # PulseAudio Volume Control.
   - pcsclite  # For CryptoPlugin
