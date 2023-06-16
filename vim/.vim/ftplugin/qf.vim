@@ -12,4 +12,4 @@ if &runtimepath =~# 'bundle/opt/quickpeek.vim'
 endif
 
 " Remove file under cursor from quickfix list.
-nnoremap <buffer> gsf :Cfilter! ^<C-r><C-f><CR>
+nnoremap <buffer> gsf 0:Cfilter! ^<C-r><C-f><CR>
