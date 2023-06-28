@@ -3,9 +3,12 @@
 
 set -ex
 
-notify-send -a 'bluetooth' 'Turning Bluetooth on'
-rfkill unblock bluetooth
-bluetoothctl -- power on
+if  rfkill list bluetooth | grep 'blocked: yes' \
+        || ! bluetoothctl show | grep 'Powered: yes' ; then
+    notify-send -a 'bluetooth' 'Turning Bluetooth on'
+    rfkill unblock bluetooth
+    bluetoothctl -- power on
+fi
 
 # Format:
 # Device <mac address> <device name>
