@@ -3,14 +3,14 @@
   become: yes
   become_user: '{{ user_name }}'
   pip:
-    extra_args: --user
+    extra_args: '--user --break-system-packages'
     requirements: '{{ role_path }}/files/requirements.txt'
 
 - name: install dev Python packages from PyPI
   become: yes
   become_user: '{{ user_name }}'
   pip:
-    extra_args: --user
+    extra_args: '--user --break-system-packages'
     requirements: '{{ role_path }}/files/dev_requirements.txt'
 
 - name: put dev requirements file in virtualenvwrapper config dir
@@ -42,5 +42,5 @@
   become_user: '{{ user_name }}'
   command:
     chdir: '{{ python_tempdir.path }}/{{ item }}'
-    cmd: pip install .
+    cmd: 'pip install --user --break-system-packages .'
   loop: '{{ personal_package_forks }}'
