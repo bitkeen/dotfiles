@@ -19,7 +19,17 @@ case $key in
             # If a sink is muted, just unmute it.
             pactl set-sink-mute @DEFAULT_SINK@ 0
         else
-            pactl set-sink-volume @DEFAULT_SINK@ +5%
+            current_volume="$(
+                pactl get-sink-volume @DEFAULT_SINK@ \
+                    | grep -Po '(?<= / )\d+(?=% / )' \
+                    | head -n1
+            )"
+            if [ "${current_volume}" -gt 195 ]; then
+                # Don't allow volume larger than 200%.
+                pactl set-sink-volume @DEFAULT_SINK@ 200%
+            else
+                pactl set-sink-volume @DEFAULT_SINK@ +5%
+            fi
         fi
         ;;
     decrease)
