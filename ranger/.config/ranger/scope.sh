@@ -130,6 +130,22 @@ handle_image() {
                      -- "${FILE_PATH}" "${IMAGE_CACHE_PATH%.*}" \
                 && exit 6 || exit 1;;
     esac
+
+    ## 3D models
+    ## OpenSCAD only supports png image output, and ${IMAGE_CACHE_PATH}
+    ## is hardcoded as jpeg. So we make a tempfile.png and just
+    ## move/rename it to jpg. This works because image libraries are
+    ## smart enough to handle it.
+    case "${FILE_EXTENSION_LOWER}" in
+        3mf|stl)
+            TMPPNG="$(mktemp -t XXXXXX.png)"
+            openscad --colorscheme='Tomorrow Night' \
+                --imgsize='1000,1000' \
+                -o "${TMPPNG}" <(echo "import(\"${FILE_PATH}\");") \
+                    && mv "${TMPPNG}" "${IMAGE_CACHE_PATH}" \
+                    && exit 6
+            ;;
+    esac
 }
 
 
