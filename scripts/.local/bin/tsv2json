@@ -8,8 +8,6 @@ import sys
 if __name__ == '__main__':
     csv.field_size_limit(sys.maxsize)
 
-    fin = fileinput.input()
-
     print(
         json.dumps(
             list(csv.DictReader(fileinput.input(), delimiter='\t')),
