@@ -221,8 +221,7 @@ for_window [instance="dragon-drag-and-drop"] sticky enable
 exec keepassxc
 exec firefox
 exec thunderbird
-# Start on a specific workspace, but do not bind to it.
-exec --no-startup-id i3-msg 'workspace $workspace7; exec qbittorrent'
+exec --no-startup-id i3-msg 'workspace $workspace6; exec sh -c "[ -z \"${WORK_MACHINE}\" ] && qbittorrent"'
 
 exec_always --no-startup-id launch-polybar
 
