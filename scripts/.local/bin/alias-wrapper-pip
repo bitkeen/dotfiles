@@ -6,7 +6,13 @@ case "$key" in
     in)
         cmd='install';;
     ir)
-        cmd='install -r requirements.txt';;
+        if [ -z "$2" ]; then
+            cmd='install -r requirements.txt'
+        else
+            cmd="install -r ${2}"
+            shift
+        fi
+        ;;
     iu)
         cmd='install --upgrade';;
     sw)
