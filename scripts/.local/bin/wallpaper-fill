@@ -6,5 +6,6 @@ if [ -z "${1}" ]; then
 fi
 
 image_path="$(readlink --canonicalize "${1}")"
-hsetroot -cover "${image_path}" &&
-    echo "hsetroot -cover ${image_path}" > ~/.wallpaper
+hsetroot -cover "${image_path}" \
+    && printf "#!/bin/sh\nhsetroot -cover %s" "${image_path}" > ~/.wallpaper \
+    && chmod +x ~/.wallpaper
