@@ -13,7 +13,6 @@ _comp_options+=(globdots)
 compdef alias-wrapper-docker=docker
 compdef alias-wrapper-journalctl=journalctl
 compdef alias-wrapper-systemctl=systemctl
-compdef alias-wrapper-pip=pip
 compdef git_alias=git
 compdef m=man
 
