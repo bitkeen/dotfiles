@@ -122,7 +122,7 @@
     cmd: '{{ dirs.dot_local_bin }}/pre-commit install'
 
 - name: set wallpaper
-  shell:
-    cmd: ln -sf '{{ role_path }}/files/default-wallpaper' '{{ user_home }}/.wallpaper'
-    # Command will not be run if the file already exists.
-    creates: '{{ user_home }}/.wallpaper'
+  copy:
+    src: '{{ role_path }}/files/default-wallpaper'
+    dest: '{{ user_home }}/.wallpaper'
+    force: false
