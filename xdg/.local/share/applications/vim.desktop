@@ -1,4 +1,4 @@
 [Desktop Entry]
 Name=Vim
-Exec=/usr/bin/urxvt -e /usr/bin/vim -f %F
+Exec=/usr/bin/st -e zsh -i -c "/usr/bin/vim -f %F"
 Type=Application

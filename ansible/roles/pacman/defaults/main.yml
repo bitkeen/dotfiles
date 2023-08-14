@@ -142,7 +142,6 @@ packages:
   - unclutter  # A small program for hiding the mouse cursor
   - unrar  # The RAR uncompression program.
   - unzip  # For extracting and viewing files in .zip archives
-  - urxvt-perls
   - vint  # Lint tool for Vim script Language
   - virtualbox-host-modules-arch
   - virtualbox

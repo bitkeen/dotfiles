@@ -22,7 +22,7 @@ launch_new_terminal() {
     num_clients="$(get_num_clients "$session_name")"
 
     tmux_cmd="tmux new-session -A -s $session_name"
-    i3 "exec --no-startup-id $TERMINAL -name $dd_name -e $tmux_cmd"
+    i3 "exec --no-startup-id $TERMINAL -n $dd_name -e $tmux_cmd"
 
     new_num_clients="$(get_num_clients "$session_name")"
     # Wait until the session is ready.
@@ -33,7 +33,7 @@ launch_new_terminal() {
     done
 }
 
-existing_dd="$(pgrep -fa "$TERMINAL -name $dd_name")"
+existing_dd="$(pgrep -fa "$TERMINAL -n $dd_name")"
 if [ -n "$existing_dd" ]; then
     # Tmux dropdown is already running.
     attached_session="$(echo "$existing_dd" | awk '{ print $NF }')"

@@ -50,9 +50,6 @@ URxvt.keysym.C-plus:   builtin-string:
 URxvt.keysym.C-minus:  builtin-string:
 URxvt.keysym.C-0:      builtin-string:
 
-! keyboard-select - move through text in terminal using vim bindings
-URxvt.keysym.M-Escape: perl:keyboard-select:activate
-
 
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 ! Colors

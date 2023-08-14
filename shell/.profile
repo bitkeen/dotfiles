@@ -1,5 +1,5 @@
 export EDITOR=/usr/bin/vim
-export TERMINAL=/usr/bin/urxvt
+export TERMINAL=/usr/bin/st
 export FZF_DEFAULT_OPTS=" \
     --preview 'fzf-preview {} | head -n 50' \
     --preview-window='hidden' \
