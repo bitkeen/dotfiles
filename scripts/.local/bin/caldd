@@ -6,5 +6,5 @@
 # 'cal --year --monday' show calendar for current year with
 # Monday as the first day of the week.
 cmd='tput civis; cal --year --monday; while true; do :; done'
-pgrep -f "$TERMINAL -name caldd" | xargs kill 2>/dev/null ||
-    "$TERMINAL" -name 'caldd' -e sh -c "$cmd"
+pgrep -f "$TERMINAL -n caldd" | xargs kill 2>/dev/null ||
+    "$TERMINAL" -n 'caldd' -e zsh -i -c "$cmd"

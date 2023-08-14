@@ -17,4 +17,4 @@ TERM_NAME="$1"
 ARGS="$2"
 
 pgrep -f "$TERMINAL -name $TERM_NAME" | xargs kill 2>/dev/null ||
-    "$TERMINAL" -name "$TERM_NAME" -e sh -c "vim '$ARGS'"
+    "$TERMINAL" -n "$TERM_NAME" -e zsh -i -c "vim '$ARGS'"

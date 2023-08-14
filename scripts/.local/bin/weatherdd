@@ -5,5 +5,5 @@
 # Requires `weather` script.
 
 # 'tput civis' - hide the cursor.
-pgrep -f "$TERMINAL -name weatherdd" | xargs kill 2>/dev/null ||
-    "$TERMINAL" -name 'weatherdd' -e sh -c 'tput civis; weather; while true; do :; done'
+pgrep -f "$TERMINAL -n weatherdd" | xargs kill 2>/dev/null ||
+    "$TERMINAL" -n 'weatherdd' -e zsh -i -c 'tput civis; weather; while true; do :; done'

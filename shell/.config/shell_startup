@@ -13,7 +13,7 @@ _source_if_exists() {
 [ -n "$ZSH_VERSION" ] && ext='zsh' || ext='bash'
 fzf_bindings_file="/usr/share/fzf/key-bindings.$ext"
 fzf_completion_file="/usr/share/fzf/completion.$ext"
-base16_shell_dir="$HOME/.config/base16-shell/"
+base16_shell_dir="$HOME/.config/base16-shell"
 venv_wrapper_file='/usr/bin/virtualenvwrapper_lazy.sh'
 # Provides __git_ps1() to show current Git branch in shell prompt.
 git_prompt_file='/usr/share/git/completion/git-prompt.sh'
@@ -38,15 +38,15 @@ fi
 set_up_base_16() {
     [ -n "$PS1" ] && \
         [ -s "$base16_shell_dir/profile_helper.sh" ] && \
-            eval "$("$base16_shell_dir/profile_helper.sh")"
+            source "$base16_shell_dir/profile_helper.sh"
+    source "$base16_shell_dir/scripts/base16-tomorrow-night.sh"
 }
 
 if [ -n "$TMUX" ]; then
     # Don't set up base16-shell when in a dropdown terminal.
     # This is to keep color overrides (for transparency) in .Xresources.
     tmux_s_name="$(tmux display-message -p '#S')"
-    [ "$tmux_s_name" != 'dropdown' ] && [ "$tmux_s_name" != 'misc' ] && \
-        set_up_base_16
+    set_up_base_16
 else
     set_up_base_16
 fi

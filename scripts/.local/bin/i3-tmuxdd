@@ -22,7 +22,7 @@ launch_new_terminal() {
     num_clients="$(get_num_clients "$session_name")"
 
     tmux_cmd="tmux new-session -A -s $session_name"
-    i3 "exec --no-startup-id $TERMINAL -n $dd_name -e $tmux_cmd"
+    i3 "exec --no-startup-id $TERMINAL -n $dd_name -e zsh -i -c $tmux_cmd"
 
     new_num_clients="$(get_num_clients "$session_name")"
     # Wait until the session is ready.
