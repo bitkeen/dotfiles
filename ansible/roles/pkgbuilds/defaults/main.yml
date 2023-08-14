@@ -3,7 +3,6 @@ pkgbuilds_dir: '{{ user_home }}/documents/projects/public/pkgbuilds'
 dependencies:
   - ruby-pg-query  # Dependency for sqlint.
 conflicts: []
-  # - rxvt-unicode-256xresources
 ignore:
   - rxvt-unicode-256xresources
   - python-pgspecial  # Dependency for pgcli, now present in official repos.

@@ -109,6 +109,7 @@ packages:
   - rsync  # A fast and versatile file copying tool for remote and local files
   - ruby
   - rust
+  - rxvt-unicode  # Terminal emulator, installed as backup for st.
   - seahorse  # GNOME application for managing PGP keys
   - shellcheck  # Shell script analysis tool
   - sof-firmware  # Sound Open Firmware, needed for audio to work on X1 Carbon
