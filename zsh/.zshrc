@@ -145,13 +145,6 @@ zle-keymap-select () {
         [ "$KEYMAP" = '' ]; then
             cursor='\e[5 q'
     fi
-    # The second condition would have been enough, but
-    # the first one is likely a tiny bit faster.
-    # Unlike the first one the second one would be set
-    # over SSH even if not attached to TMUX on the remote host.
-    if [ -n "$TMUX" ] || [ "$TERM" = 'tmux-256color' ]; then
-        cursor="\ePtmux;\e$cursor\e\\"
-    fi
     echo -ne "$cursor"
 }
 zle -N zle-keymap-select

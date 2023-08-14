@@ -19,19 +19,14 @@ if exists('$TMUX')
   let &t_BD = "\<Esc>[?2004l"
   let &t_PS = "\<Esc>[200~"
   let &t_PE = "\<Esc>[201~"
-
-  " Wrap escape sequences for tmux.
-  let &t_SI = "\ePtmux;\e\e[5 q\e\\"
-  let &t_EI = "\ePtmux;\e\e[2 q\e\\"
-  let &t_SR = "\ePtmux;\e\e[3 q\e\\"
-else
-  " Blinking bar cursor in insert mode.
-  let &t_SI = "\e[5 q"
-  " Steady block cursor in normal mode.
-  let &t_EI = "\e[2 q"
-  " Blinking underscore cursor in replace mode.
-  let &t_SR = "\e[3 q"
 endif
+
+" Blinking bar cursor in insert mode.
+let &t_SI = "\e[5 q"
+" Steady block cursor in normal mode.
+let &t_EI = "\e[2 q"
+" Blinking underscore cursor in replace mode.
+let &t_SR = "\e[3 q"
 
 " Maintain indent of current line.
 set autoindent
