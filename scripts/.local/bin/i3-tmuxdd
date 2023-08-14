@@ -8,40 +8,30 @@
 [ -z "$1" ] && exit 1
 [ -z "$2" ] && exit 1
 
-dd_name="$1"
-session_name="$2"
-
-get_num_clients() {
-    # Get number of clients attached to a specific session.
-    tmux list-clients -t "$1" | wc -l
-}
+DD_NAME="$1"
+SESSION_NAME="$2"
+TMUX_CMD="tmux new-session -A -s ${SESSION_NAME}"
+ZSH_CMD="zsh -i -c '${TMUX_CMD}'"
 
 launch_new_terminal() {
     # Tmux dropdown is not running.
-    # Get number of clients for specified session for later comparison.
-    num_clients="$(get_num_clients "$session_name")"
+    i3 "exec ${TERMINAL} -n ${DD_NAME} -e ${ZSH_CMD}"
 
-    tmux_cmd="tmux new-session -A -s $session_name"
-    i3 "exec --no-startup-id $TERMINAL -n $dd_name -e zsh -i -c $tmux_cmd"
-
-    new_num_clients="$(get_num_clients "$session_name")"
-    # Wait until the session is ready.
-    while [ "$new_num_clients" -eq "$num_clients" ]
-    do
-        sleep .01 # 10 ms
-        new_num_clients="$(get_num_clients "$session_name")"
+    # Wait until terminal is up.
+    while pgrep -fa --runstates 'R' "${TERMINAL} -n ${DD_NAME}"; do
+        sleep .05
     done
 }
 
-existing_dd="$(pgrep -fa "$TERMINAL -n $dd_name")"
-if [ -n "$existing_dd" ]; then
+existing_dd="$(pgrep -fa "${TERMINAL} -n ${DD_NAME}")"
+if [ -n "${existing_dd}" ]; then
     # Tmux dropdown is already running.
-    attached_session="$(echo "$existing_dd" | awk '{ print $NF }')"
-    if [ "$attached_session" != "$session_name" ]; then
+    attached_session="$(echo "${existing_dd}" | awk '{ print $NF }')"
+    if [ "${attached_session}" != "${SESSION_NAME}" ]; then
         # Attached session is different from the one passed in
         # arguments. Kill the terminal and launch a new one.
-        existing_dd_pid="$(echo "$existing_dd" | awk '{ print $1 }')"
-        kill "$existing_dd_pid"
+        existing_dd_pid="$(echo "${existing_dd}" | awk '{ print $1 }')"
+        kill "${existing_dd_pid}"
         launch_new_terminal
     fi
 else
@@ -50,4 +40,4 @@ else
 fi
 
 # Show dropdown window.
-i3 "[instance=\"$dd_name\"] scratchpad show; [instance=\"$dd_name\"] move position center"
+i3 "[instance=\"${DD_NAME}\"] scratchpad show; [instance=\"${DD_NAME}\"] move position center"
