@@ -269,6 +269,7 @@ c.InteractiveShell.banner1 = 'Python {}\nIPython {}\n'.format(sys.version.split(
 
 ## Shortcut style to use at the prompt. 'vi' or 'emacs'.
 c.TerminalInteractiveShell.editing_mode = 'vi'
+c.TerminalInteractiveShell.emacs_bindings_in_vi_insert_mode = False
 
 ## The time in milliseconds that is waited for a mapped key
 #         sequence to complete.
