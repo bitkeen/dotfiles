@@ -100,3 +100,6 @@ user_pref("browser.eme.ui.enabled", false);
 
 // The default is 7.
 user_pref("browser.bookmarks.editDialog.maxRecentFolders", 16)
+
+// Disable Firefox View.
+user_pref("browser.tabs.firefox-view", false)
