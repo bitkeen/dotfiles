@@ -22,7 +22,7 @@ title="${tags} \"~$(
 
 channel_id="$(
     echo "${page_html}" |
-    xp '//meta[@itemprop="channelId"]/@content'
+    grep -Po '(?<=channelId":").{24}'
 )"
 
 echo "https://www.youtube.com/feeds/videos.xml?channel_id=${channel_id}${title}"
