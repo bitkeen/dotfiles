@@ -114,6 +114,7 @@ packages:
   - shellcheck  # Shell script analysis tool
   - sof-firmware  # Sound Open Firmware, needed for audio to work on X1 Carbon
   - solaar  # Device manager for Logitech's Unifying receiver peripherals
+  - sqlfluff  # A dialect-flexible and configurable SQL linter.
   - stow
   - strace  # A diagnostic, debugging and instructional userspace tracer
   - sxhkd

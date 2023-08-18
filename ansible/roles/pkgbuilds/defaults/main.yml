@@ -1,7 +1,6 @@
 ---
 pkgbuilds_dir: '{{ user_home }}/documents/projects/public/pkgbuilds'
-dependencies:
-  - ruby-pg-query  # Dependency for sqlint.
+dependencies: []
 conflicts: []
 ignore:
   - rxvt-unicode-256xresources
