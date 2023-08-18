@@ -12,6 +12,10 @@ if [ -z "$1" ]; then
     exit 1
 fi
 
+stty -echo  # Disable keyboard echo.
+tput civis  # Hide cursor.
+trap 'tput cnorm; echo; exit 1' INT  # Bring cursor back on interrupts.
+
 # Time is in seconds if there is an 's' at the end, in hours if there
 # is an 'h' at the end, in minutes by default.
 if echo "$1" | grep -q 's$'; then
@@ -37,3 +41,4 @@ pgrep -x dunst >/dev/null &&
     paplay "$TIMER_SOUND"
 
 printf '\n'
+tput cnorm  # Bring cursor back.
