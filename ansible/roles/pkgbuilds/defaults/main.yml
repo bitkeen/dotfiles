@@ -4,11 +4,7 @@ dependencies: []
 conflicts: []
 ignore:
   - rxvt-unicode-256xresources
-  - python-pgspecial  # Dependency for pgcli, now present in official repos.
-  - python-cli_helpers  # Dependency for litecli, mycli, pgcli, now present in official repos.
   - lab  # Not used at this point.
-  - atool  # Now present in official repos.
   - pgcli  # Now present in official repos.
   - pgformatter
   - scrcpy
-  - websocat  # Now present in official repos.
