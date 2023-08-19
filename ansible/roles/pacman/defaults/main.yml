@@ -50,7 +50,9 @@ packages:
   - hsetroot  # Tool to set wallpapers.
   - i3-wm
   - imagemagick  # An image viewing/manipulation program
+  - inetutils  # A collection of common network programs.
   - intel-ucode  # Microcode update files for Intel CPUs
+  - iperf  # A tool to measure maximum TCP bandwidth.
   - ipython
   - jq  # Command-line JSON processor
   - keepassxc
