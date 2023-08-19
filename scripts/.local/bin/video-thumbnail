@@ -26,5 +26,6 @@ duration="$(ffprobe -show_format "${video_file}" 2>&1 \
 # `-q` - quality, default is 8.
 # `-s` - size
 # `-o -` - output to stdout
-ffmpegthumbnailer -w -q 10 -s 1080 -c jpg -i "${video_file}" -o - \
+# `-m` - prefer embedded image metadata over video content
+ffmpegthumbnailer -m -w -q 10 -s 1080 -c jpg -i "${video_file}" -o - \
     | add_duration "${duration}" "${thumbnail_file}"
