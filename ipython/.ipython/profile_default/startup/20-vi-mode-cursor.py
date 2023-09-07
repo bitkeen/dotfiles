@@ -1,7 +1,6 @@
 # From https://github.com/prompt-toolkit/python-prompt-toolkit/issues/192,
 # adapted for Tmux.
 
-import os
 import sys
 
 from prompt_toolkit.application.current import get_app
