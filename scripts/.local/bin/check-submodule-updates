@@ -17,5 +17,5 @@ git submodule foreach 'git fetch' || exit 1
 echo 'Checking for updates.'
 # shellcheck disable=SC2016
 git submodule foreach --quiet \
-    'echo "$((git log --left-right --oneline master..origin/master || git log --left-right --oneline main..origin/main) 2>/dev/null | wc -l)" - $name' |
+    'echo "$((git log --left-right --oneline HEAD..origin/master || git log --left-right --oneline HEAD..origin/main) 2>/dev/null | wc -l)" - $name' |
     sort -n
