@@ -18,8 +18,8 @@ if &runtimepath =~# 'bundle/opt/vim-grepper'
   let g:grepper.simple_prompt = 1
 
   nnoremap <Leader>gr :Grepper<CR>
-  " Switch between searching tools.
-  let g:grepper.prompt_mapping_tool = '<Leader>gr'
+  " Switch between tools.
+  let g:grepper.prompt_mapping_tool = '<C-g>'
   " Take any motion and start searching for the selected query right away.
   nmap gs <Plug>(GrepperOperator)
   xmap gs <Plug>(GrepperOperator)
