@@ -3,6 +3,8 @@
 
 key="$1"
 case "$key" in
+    fr)
+        cmd='freeze';;
     in)
         cmd='install';;
     ir)
@@ -15,6 +17,8 @@ case "$key" in
         ;;
     iu)
         cmd='install --upgrade';;
+    ls)
+        cmd='list';;
     sw)
         cmd='show';;
     un)
