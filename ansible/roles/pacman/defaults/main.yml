@@ -94,6 +94,7 @@ packages:
   - pipewire
   - pipewire-pulse
   - pipewire-alsa  # For PipeWire to manage ALSA
+  - polybar  # A fast and easy-to-use status bar.
   - powertop  # A tool to diagnose issues with power consumption and power management.
   - pulsemixer  # CLI and curses mixer for pulseaudio
   - python-black  # Uncompromising Python code formatter

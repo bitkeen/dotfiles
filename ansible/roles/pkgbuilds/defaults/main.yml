@@ -7,4 +7,5 @@ ignore:
   - lab  # Not used at this point.
   - pgcli  # Now present in official repos.
   - pgformatter
+  - polybar # Now present in official repos.
   - scrcpy
