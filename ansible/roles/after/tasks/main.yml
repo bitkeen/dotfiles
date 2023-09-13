@@ -1,4 +1,12 @@
 ---
+- name: gather facts
+  setup:
+    filter: ansible_interfaces
+
+- name: check if running in docker
+  set_fact:
+    in_docker: '{{ "docker0" not in ansible_facts.interfaces }}'
+
 - name: update ranger maps
   become: yes
   become_user: '{{ user_name }}'
@@ -120,3 +128,4 @@
 
 - name: add a shorter alias for localhost
   shell: 'grep "127\.0\.0\.1 lh" /etc/hosts || echo "127.0.0.1 lh" >> /etc/hosts'
+  when: not in_docker
