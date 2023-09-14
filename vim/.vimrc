@@ -938,9 +938,6 @@ let g:ale_python_pylsp_config = {
 \    'configurationSources': ['flake8',],
 \  },
 \}
-" Default values from an older version.
-let g:ale_sign_error = '>>'
-let g:ale_sign_warning = '--'
 
 " Signature
 " Highlight signs of marks based upon state indicated by vim-gitgutter.
