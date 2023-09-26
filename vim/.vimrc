@@ -671,12 +671,12 @@ vnoremap <silent> <LocalLeader>qq <Esc>:tabnew<CR>:tabonly!<CR>
 " Close all buffers.
 nnoremap <silent> <LocalLeader>qa :qall!<CR>
 vnoremap <silent> <LocalLeader>qa :qall!<CR>
+" Leave only current tab.
+nnoremap <silent> <LocalLeader>qt :tabonly<CR>
+vnoremap <silent> <LocalLeader>qt <Esc>:tabonly<CR>
 " Leave only current tab and current window.
 nnoremap <silent> <LocalLeader>qo :tabonly<CR>:only<CR>
 vnoremap <silent> <LocalLeader>qo <Esc>:tabonly<CR>:only<CR>
-" Close current tab.
-nnoremap <silent> <LocalLeader>qt :tabclose<CR>
-vnoremap <silent> <LocalLeader>qt <Esc>:tabclose<CR>
 
 " Repeat the previous @, can be used with a count.
 nnoremap <Leader><Leader> @@
