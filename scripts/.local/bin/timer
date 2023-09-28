@@ -12,6 +12,14 @@ if [ -z "$1" ]; then
     exit 1
 fi
 
+tmux_get_current_window_name() {
+    [ -n "${TMUX}" ] && tmux display-message -p '#W'
+}
+
+tmux_rename_window() {
+    [ -n "${TMUX}" ] && tmux rename-window "$@"
+}
+
 stty -echo  # Disable keyboard echo.
 tput civis  # Hide cursor.
 trap 'tput cnorm; echo; exit 1' INT  # Bring cursor back on interrupts.
@@ -29,6 +37,9 @@ else
     time_seconds="$time_seconds*60"
 fi
 
+current_window_name="$(tmux_get_current_window_name)"
+tmux_rename_window 'timer'
+
 date1=$(($(date +%s) + time_seconds));
 while [ "$date1" -ge "$(date +%s)" ]; do
     printf '%s\r' "$(date -u --date @$((date1 - $(date +%s))) +%H:%M:%S)";
@@ -42,3 +53,5 @@ pgrep -x dunst >/dev/null &&
 
 printf '\n'
 tput cnorm  # Bring cursor back.
+
+tmux_rename_window "${current_window_name}"
