@@ -307,6 +307,10 @@ function! FormatFile(filetype, range_prefix)
   endif
 endfunction
 
+function! IsEmptyNoNameBuffer()
+  return ! strlen(@%) && line('$') == 1 && getline(1) ==# ''
+endfunction
+
 " Enable default folding in :Man.
 let g:ft_man_folding_enable = 1
 
@@ -618,7 +622,7 @@ nnoremap <Leader>u :update<CR>
 " Save and quit.
 nnoremap <Leader>x :x<CR>
 " Quit without saving.
-nnoremap <Leader>q :q<CR>
+nnoremap <expr> <Leader>q IsEmptyNoNameBuffer() ? ':q!<CR>' : ':q<CR>'
 vnoremap <Leader>q <Esc>:q<CR>
 
 " Expand the directory of the current file in command line.
