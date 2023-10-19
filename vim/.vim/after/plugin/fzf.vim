@@ -5,6 +5,15 @@ if &runtimepath =~# '/usr/bin/fzf' " Basic plugin.
 
     function! s:get_type_formatter(filetype) closure
       call FormatFile(a:filetype, range_prefix_arg)
+
+      " 1. Current filetype is empty.
+      " 2. Whole buffer line range is used.
+      " 3. Filetype is known.
+      if &filetype ==# ''
+            \ && range_prefix_arg ==# '%'
+            \ && index(getcompletion('', 'filetype'), a:filetype) >= 0
+        let &filetype = a:filetype
+      endif
     endfunction
 
     call fzf#run({
