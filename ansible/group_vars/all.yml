@@ -27,6 +27,7 @@ dirs:
   downloads_torrents: '{{ user_home }}/downloads/torrents'
   firefox_profile: '{{ user_home }}/.mozilla/firefox/main'
   firefox_extensions: '{{ user_home }}/.mozilla/firefox/main/extensions'
+  thunderbird_profile: '{{ user_home }}/.thunderbird/main'
   pictures: '{{ user_home }}/pictures'
   pictures_screenshots: '{{ user_home }}/pictures/screenshots'
   sync: '{{ user_home }}/sync'

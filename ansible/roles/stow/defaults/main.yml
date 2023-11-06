@@ -40,6 +40,7 @@ packages:
   - shell
   - sxhkd
   - sxiv
+  - thunderbird
   - tmux
   - vim
   - virtualenvwrapper
