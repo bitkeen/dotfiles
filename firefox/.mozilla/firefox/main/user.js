@@ -72,13 +72,13 @@ user_pref("network.IDN_show_punycode", true);
 user_pref("browser.bookmarks.editDialog.showForNewBookmarks", true);
 
 // Set max cache capacity to 10GiB (the default is 1GiB).
-user_pref("browser.cache.disk.capacity", "10485760")
+user_pref("browser.cache.disk.capacity", "10485760");
 
 // Use last download dir.
-user_pref("browser.download.folderList", 2)
+user_pref("browser.download.folderList", 2);
 
 // Dark theme for devtools.
-user_pref("devtools.theme", "dark")
+user_pref("devtools.theme", "dark");
 
 // Never display bookmarks toolbar.
 user_pref("browser.toolbars.bookmarks.visibility", "never");
@@ -99,7 +99,7 @@ user_pref("devtools.netmonitor.responseBodyLimit", 16777216);
 user_pref("browser.eme.ui.enabled", false);
 
 // The default is 7.
-user_pref("browser.bookmarks.editDialog.maxRecentFolders", 16)
+user_pref("browser.bookmarks.editDialog.maxRecentFolders", 16);
 
 // Disable Firefox View.
-user_pref("browser.tabs.firefox-view", false)
+user_pref("browser.tabs.firefox-view", false);
