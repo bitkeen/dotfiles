@@ -103,3 +103,7 @@ user_pref("browser.bookmarks.editDialog.maxRecentFolders", 16);
 
 // Disable Firefox View.
 user_pref("browser.tabs.firefox-view", false);
+
+// Prioritize bookmarks in address bar.
+user_pref("places.frecency.bookmarkVisitBonus", 10000);
+user_pref("places.frecency.unvisitedBookmarkBonus", 10000);
