@@ -8,7 +8,6 @@ packages:
   - adobe-source-han-serif-otc-fonts
   - adobe-source-sans-pro-fonts
   - adobe-source-serif-pro-fonts
-  - android-tools  # Required for scrcpy (from AUR)
   - ansible-lint
   - arandr  # Xrandr front-end
   - aria2  # Download utility, used as external downloader to speed up youtube-dl.
@@ -90,6 +89,7 @@ packages:
   - perf  # Linux kernel performance auditing tool.
   - perl-image-exiftool  # Reader and rewriter of EXIF informations that supports raw files.
   - pgcli  # A command line interface for PostgreSQL with auto-completion and syntax highlighting.
+  - pgformatter  # A PostgreSQL SQL syntax beautifier.
   - picom  # A compositor for X11, required for transparency
   - pipewire
   - pipewire-pulse
