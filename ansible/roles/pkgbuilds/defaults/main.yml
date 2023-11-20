@@ -1,11 +1,35 @@
 ---
 pkgbuilds_dir: '{{ user_home }}/documents/projects/public/pkgbuilds'
+packages:
+  - colorpicker
+  - dmenu
+  - dragon-drag-and-drop
+  - git-delta-bin
+  - git-open
+  - hadolint-bin
+  - htop-vim
+  - instant-markdown-d
+  - jiq-bin
+  - litecli
+  - mycli
+  - paper-icon-theme
+  - path-extractor
+  - ranger
+  - ruby-pg-query
+  - ruby-sqlint
+  - simplescreenrecorder
+  - simpleswitcher
+  - st
+  - sxiv
+  - tflint
+  - ttf-font-awesome-4
+  - units
+  - urxvt-font-size
+  - vim-language-server
+  - virtualbox-ext-oracle
+  - xidlehook
+  - xkb-switch
+  - xmousepasteblock
+  - yay
 dependencies: []
 conflicts: []
-ignore:
-  - rxvt-unicode-256xresources
-  - lab  # Not used at this point.
-  - pgcli  # Now present in official repos.
-  - pgformatter
-  - polybar # Now present in official repos.
-  - scrcpy

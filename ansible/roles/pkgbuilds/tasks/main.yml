@@ -7,13 +7,6 @@
     dest: '{{ pkgbuilds_dir }}'
     version: master
 
-- name: get the directory names
-  become: yes
-  become_user: '{{ user_name }}'
-  shell: "cd {{ pkgbuilds_dir }} && ls -d */ | sed 's#/$##'"
-  register: package_dirs
-  changed_when: false
-
 - name: make and install dependency packages
   become: yes
   become_user: '{{ user_name }}'
@@ -28,7 +21,7 @@
   command:
     cmd: makepkg -si --cleanbuild --noconfirm --needed --rmdeps
     chdir: '{{ pkgbuilds_dir }}/{{ item }}'
-  loop: '{{ package_dirs.stdout_lines | difference(conflicts) | difference(dependencies) | difference(ignore) }}'
+  loop: '{{ packages | difference(conflicts) | difference(dependencies) }}'
 
 - name: make and install packages that cause conflicts
   become: yes
