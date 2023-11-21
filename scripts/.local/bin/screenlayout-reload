@@ -1,5 +1,0 @@
-#!/bin/sh
-# Reload some programs. To be run after switching display layout.
-
-launch-polybar
-~/.wallpaper

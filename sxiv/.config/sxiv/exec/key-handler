@@ -58,15 +58,15 @@ case "$1" in
         # Copy image.
         while read file;
         do
-            xclip -selection clipboard -target image/png "$file" &&
+            clipcopy --type image/png < "$file" &&
                 notify-send --app-name "$APP_NAME" -i "$(readlink -f "$file")" "$file copied to clipboard" &
         done ;;
     'Y')
         # Copy image name.
         while read file;
         do
-            echo -n "$file" | xclip -selection clipboard &&
-            notify-send "'$file' copied to clipboard" &
+            echo -n "$file" | clipcopy &&
+                notify-send "'$file' copied to clipboard" &
         done ;;
     'comma')
         rotate 270 ;;

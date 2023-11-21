@@ -15,6 +15,7 @@ unset TMUX
 
 TERM_NAME="$1"
 ARGS="$2"
+cmd="vim '${ARGS}'"
 
-pgrep -f "$TERMINAL -name $TERM_NAME" | xargs kill 2>/dev/null ||
-    "$TERMINAL" -n "$TERM_NAME" -e zsh -i -c "vim '$ARGS'"
+pgrep -f "${TERMINAL} --app-id ${TERM_NAME}" | xargs kill 2>/dev/null ||
+    "${TERMINAL}" --app-id "${TERM_NAME}" -e zsh -i -c "${cmd}"

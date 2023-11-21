@@ -1,2 +1,2 @@
 #!/bin/sh
-hsetroot -solid '#330000' -full
+swaymsg 'output * background #330000 solid_color'

@@ -4,19 +4,23 @@
 APP_NAME='screenshot'
 SCREENSHOTS_DIR="$(xdg-user-dir PICTURES)screenshots"
 
-if [ ! -d "$SCREENSHOTS_DIR" ]; then
+if [ ! -d "${SCREENSHOTS_DIR}" ]; then
     notify-send \
-        --app-name="$APP_NAME" \
+        --app-name="${APP_NAME}" \
         'Error capturing screenshot' \
         'Screenshots dir does not exist'
     exit 1
 fi
 
-filepath="$SCREENSHOTS_DIR/screenshot-$(date +%Y-%m-%dT%H%M%S).png"
+filepath="${SCREENSHOTS_DIR}/screenshot-$(date +%Y-%m-%dT%H%M%S).png"
 
-maim "$@" |
-    tee "$filepath" |
-    xclip -selection clipboard -t image/png &&
-    notify-send \
-        --app-name="$APP_NAME" \
-        -i "$(readlink -f "$filepath")" 'Screenshot captured'
+do_screenshot() {
+    grim "$@" - \
+        | tee "${filepath}" \
+        | clipcopy
+}
+
+do_screenshot "$@" \
+    && notify-send \
+        --app-name="${APP_NAME}" \
+        -i "$(readlink -f "${filepath}")" 'Screenshot captured'

@@ -2,15 +2,6 @@
 # Get secondary display name.
 MAIN_DISPLAY='eDP-1'
 
-xrandr --query \
-    | grep -Po '^.*(?= connected )' \
+swaymsg -t get_outputs \
+    | jq --raw-output '.[].name' \
     | grep -v "${MAIN_DISPLAY}"
-
-# shellcheck disable=SC2181
-if [ "$?" != 0 ]; then
-    # Delete header with sed.
-    xrandr --listactivemonitors \
-        | sed '1d' \
-        | grep -v "${MAIN_DISPLAY}" \
-        | awk '{print $NF}'
-fi

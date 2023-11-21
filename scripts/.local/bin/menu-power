@@ -2,28 +2,44 @@
 # Use menu to reboot, shutdown, suspend, etc.
 # Pass arguments to menu.
 
-commands="lock\nreboot\nshutdown\nsuspend\nexit i3\ncancel"
+cmd_lock='	lock'
+cmd_reboot='	reboot'
+cmd_shutdown='	shutdown'
+cmd_suspend='	suspend'
+cmd_exit_wm='	exit wm'
+cmd_cancel='	cancel'
 
-choice=$(printf "%b" "$commands" | menu-generic "$@")
+commands="${cmd_cancel}\n${cmd_lock}\n${cmd_reboot}\n${cmd_shutdown}\n${cmd_suspend}\n${cmd_exit_wm}"
+
+choice="$(printf "%b" "$commands" \
+    | menu-generic \
+        --wrap \
+        --center \
+        --fixed-height \
+        --width-factor 0.12 \
+        --list 6 \
+        --border 30 \
+        --border-radius 10 \
+        "$@"
+)"
 
 case "$choice" in
-    "lock")
+    "${cmd_lock}")
         screen-lock
         ;;
-    "reboot")
+    "${cmd_reboot}")
         reboot
         ;;
-    "shutdown")
+    "${cmd_shutdown}")
         poweroff
         ;;
-    "suspend")
+    "${cmd_suspend}")
         systemctl suspend
         ;;
-    "cancel")
-        exit
+    "${cmd_exit_wm}")
+        swaymsg exit
         ;;
-    "exit i3")
-        # Exit i3 (logs you out of your X session).
-        i3-msg exit
+    "${cmd_cancel}")
+        exit
         ;;
 esac

@@ -2,9 +2,12 @@
 # Open a terminal window with cal command output and nothing else if
 # it doesn't already exist, kill it otherwise.
 
+dd_name='caldd'
+
 # 'tput civis' - hide the cursor.
 # 'cal --year --monday' show calendar for current year with
 # Monday as the first day of the week.
 cmd='tput civis; cal --year --monday; while true; do :; done'
-pgrep -f "$TERMINAL -n caldd" | xargs kill 2>/dev/null ||
-    "$TERMINAL" -n 'caldd' -e zsh -i -c "$cmd"
+
+pgrep -f "${TERMINAL} --app-id ${dd_name}" | xargs kill 2>/dev/null ||
+    "${TERMINAL}" --app-id "${dd_name}" -e zsh -i -c "${cmd}"

@@ -2,12 +2,22 @@
 # Run a screen locking program, but first stop audio playback,
 # and switch the keyboard layout to English.
 
-# Switch keyboard layout to US so that it's easier to enter
-# the password to unlock the screen.
-[ "$(command -v xkb-switch)" ] && xkb-switch -s us
-
 # Pause mpd through mpc if it exists.
 [ "$(command -v mpc)" ] && mpc pause
 
 # Lock the screen.
-xsecurelock
+swaylock \
+    --indicator-radius 100 \
+    --line-uses-ring \
+    --show-keyboard-layout \
+    --bs-hl-color '#aa3333' \
+    --color '#000000' \
+    --inside-clear-color '#f2f2f2' \
+    --inside-ver-color '#f2f2f2' \
+    --inside-wrong-color '#aa3333' \
+    --key-hl-color '#303030' \
+    --ring-clear-color '#444444' \
+    --ring-color '#f2f2f2' \
+    --ring-ver-color '#444444' \
+    --ring-wrong-color '#444444' \
+    --separator-color '#f2f2f2'

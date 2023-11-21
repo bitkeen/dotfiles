@@ -1,0 +1,63 @@
+// vim: ft=javascript
+{
+    "layer": "bottom",
+    "modules-left": ["sway/workspaces", "sway/mode"],
+    "modules-center": ["sway/window"],
+    "modules-right": [
+        "custom/docker",
+        "pulseaudio",
+        "disk",
+        "sway/language",
+        "clock",
+        "battery",
+        "tray",
+        "custom/power"
+    ],
+    "sway/window": {
+        "max-length": 32
+    },
+    "sway/workspaces": {
+        "format": "{name}",
+        "disable-scroll": true
+    },
+    "sway/language": {
+        "on-click": "swaymsg 'input type:keyboard xkb_switch_layout next'"
+    },
+    "pulseaudio": {
+        "format": "{icon} {volume}%",
+        "format-muted": " muted",
+        "format-icons": {"default": ["", ""]},
+        "on-click": "pulse-volume mute",
+        "on-click-right": "pavucontrol"
+    },
+    "disk": {
+        "interval": 5,
+        "format": "/ {free}",
+        "path": "/"
+    },
+    "battery": {
+        "format": "{icon} {capacity}%",
+        "full-at": 95,
+        "states": {"warning": 20, "critical": 10, "not-full": 99, "full": 100},
+        "format-icons": ["", "", "", "", ""],
+        "format-plugged": " {capacity}%",
+        "format-plugged-full": ""
+    },
+    "clock": {
+        "format": "{:%a, %b %d %H:%M}",
+        "on-click": "gnome-clocks"
+    },
+    "custom/docker": {
+        "format": " {}",
+        "tooltip": false,
+        "interval": 5,
+        "exec": "'docker' ps -q | wc -l",
+        // Only show if there are running containers.
+        "exec-if": "[ \"$('docker' ps -q | wc -l)\" != '0' ]",
+    },
+    "custom/power": {
+        "format": "",
+        "tooltip": false,
+        "on-click": "menu-power"
+    },
+}

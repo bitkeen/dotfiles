@@ -76,14 +76,8 @@ if has('autocmd')
 
     " Autoupdate ranger maps on changes to shortcuts.
     autocmd BufWritePost shortcuts,shortcuts.local silent !get-ranger-maps
-    " Reload binds when sxhkdrc is updated.
-    autocmd BufWritePost *sxhkdrc silent !pkill -USR1 sxhkd
-    " Reload Xresources on update.
-    autocmd BufWritePost *Xresources, silent !xrdb %
     " Reload tmux on config update.
     autocmd BufWritePost *.tmux.conf, silent !tmux source-file ~/.tmux.conf
-    " Reload i3 config on update.
-    autocmd BufWritePost */i3/config, silent !i3-msg restart
     " Restart dunst on config update.
     autocmd BufWritePost */dunst/dunstrc, silent !killall dunst; setsid --fork dunst
 
@@ -99,7 +93,7 @@ if has('autocmd')
     autocmd FileType yaml setlocal foldmethod=indent
     autocmd FileType html,xml setlocal foldmethod=indent
     autocmd FileType json setlocal foldmethod=indent
-    autocmd BufWinEnter .vimrc,.bash*,.tmux.conf,*/i3/config setlocal foldmethod=marker
+    autocmd BufWinEnter .vimrc,.bash*,.tmux.conf,*/sway/config setlocal foldmethod=marker
   augroup END
 endif
 
@@ -402,16 +396,15 @@ if has('packages')
   packadd! vim-tmux-navigator  " Navigate seamlessly between vim and tmux splits.
   packadd! vim-vinegar  " Imrpoved Netrw interaction.
   packadd! vim-visual-star-search
-  packadd! vim-xkbswitch  " Automatically switch keyboard layout based on mode
+  packadd! vim-wayland-clipboard
   packadd! vimwiki  " Personal wiki for Vim
   packadd! vZoom.vim  " Quickly maximize & unmaximize the current window
-  packadd! winresizer  " Easy window resizing, similar to resize mode in i3wm
+  packadd! winresizer  " Easy window resizing, similar to resize mode in i3wm/sway.
 
   " Syntax
   packadd! python-syntax  " Better python syntax highlighting.
   packadd! Vim-Jinja2-Syntax
   packadd! vim-pug  " Syntax highlighting for Pug templates.
-  packadd! vim-sxhkdrc
   packadd! vim-syntax-extra  " For enhanced C syntax highlighting.
   packadd! vim-vue  " Syntax highlighting for Vue components.
 else
@@ -448,9 +441,6 @@ let g:vimwiki_ext2syntax = {'.md': 'markdown', '.markdown': 'markdown', '.mdown'
 let g:vimwiki_hl_headers = 1
 let g:vimwiki_url_maxsave = 0
 " }}}
-
-" vim-xkbswitch
-let g:XkbSwitchEnabled = 1
 
 " vim-commentary {{{
 autocmd plugins FileType abp setlocal commentstring=!%s
@@ -571,14 +561,14 @@ vnoremap gk k
 
 " By default Y is synonym for yy. Remap it to yank from
 " the cursor to the end of the line, similar to C or D.
-nnoremap Y y$
+nmap Y y$
 
 " Yank current file's name.
-nnoremap yp :let @+ = expand('%:t') \| echo 'Yanked "' . @+ . '"'<CR>
+nnoremap yp :let @+ = expand('%:t') \| WaylandYank + \| echo 'Yanked "' . @+ . '"'<CR>
 " Yank current file's path.
-nnoremap yP :let @+ = expand('%:p') \| echo 'Yanked "' . @+ . '"'<CR>
+nnoremap yP :let @+ = expand('%:p') \| WaylandYank + \| echo 'Yanked "' . @+ . '"'<CR>
 " Yank current file's directory name.
-nnoremap yd :let @+ = expand('%:p:h') \| echo 'Yanked "' . @+ . '"'<CR>
+nnoremap yd :let @+ = expand('%:p:h') \| WaylandYank + \| echo 'Yanked "' . @+ . '"'<CR>
 
 " Write with sudo.
 " See https://stackoverflow.com/a/7078429.
@@ -710,9 +700,9 @@ noremap <Leader>8 8gt
 noremap <silent> <Leader>9 :tablast<CR>
 
 " Put the text after current line.
-nnoremap <Leader>p :put<CR>
+nmap <Leader>p o<Esc>"+p
 " Put the text before current line.
-nnoremap <Leader>P :put!<CR>
+nmap <Leader>P O<Esc>"+p
 
 nnoremap <Leader>o :copen<CR>
 nnoremap <Leader>c :cclose<CR>
@@ -782,10 +772,10 @@ nnoremap gsx :tabnew <Bar> put=execute('')<Left><Left>
 noremap zea :edit ~/.dotfiles/ansible/playbook.yml<CR>
 noremap zeb :edit ~/.bashrc<CR>
 noremap zef :edit ~/.dotfiles/firefox/.mozilla/firefox/main/user.js<CR>
-noremap zei :edit ~/.config/i3/config<CR>
 noremap zer :edit ~/.config/ranger/rc.conf<CR>
 noremap zet :edit ~/.tmux.conf<CR>
 noremap zev :edit ~/.vimrc<CR>
+noremap zew :edit ~/.config/sway/config<CR>
 
 nnoremap <silent> <LocalLeader>f :call PrettyFormat(&filetype, "%")<CR>
 vnoremap <silent> <LocalLeader>f :call PrettyFormat(&filetype, "'<,'>")<CR>

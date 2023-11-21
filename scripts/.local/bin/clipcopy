@@ -1,0 +1,3 @@
+#!/bin/sh
+# Generic clipboard copy wrapper.
+wl-copy "${@}"

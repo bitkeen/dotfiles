@@ -1,0 +1,3 @@
+#!/bin/sh
+# Generic clipboard paste wrapper.
+wl-paste "${@}"

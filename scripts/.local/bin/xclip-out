@@ -1,4 +1,0 @@
-#!/bin/sh
-# Paste with xclip.
-
-xclip -o -selection clipboard "$@"

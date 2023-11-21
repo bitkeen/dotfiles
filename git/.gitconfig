@@ -9,7 +9,7 @@
     ap = add --patch
     bl = blame
     ; Copy name of the current branch.
-    bc = "!git rev-parse --abbrev-ref HEAD | xclip-in -rmlastnl && xclip-out"
+    bc = "!git rev-parse --abbrev-ref HEAD | clipcopy --trim-newline && clippaste"
     br = branch
     brd = branch --delete --force
     brm = branch --move

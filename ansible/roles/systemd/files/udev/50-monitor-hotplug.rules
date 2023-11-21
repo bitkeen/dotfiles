@@ -1,7 +1,0 @@
-# See
-# https://bbs.archlinux.org/viewtopic.php?id=170294,
-# https://www.jasonwryan.com/blog/2014/01/20/udev/,
-# https://superuser.com/a/1401322.
-# The service has to be run as a user service, otherwise polybar
-# can't connect to PulseAudio, even when `User=` is set in the service.
-ACTION=="change", SUBSYSTEM=="drm", ENV{HOTPLUG}=="1", ENV{SYSTEMD_USER_WANTS}+="monitor-hotplug@$env{SEQNUM}.service", TAG+="systemd"

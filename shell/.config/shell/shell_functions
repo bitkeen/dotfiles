@@ -157,9 +157,9 @@ gfm() {
 copyline() {
     # Copy current command, bash-specific.
     # From https://stackoverflow.com/a/23710535.
-    # Should be bound to a shortcut in bash, depends on `xclip-in`
+    # Should be bound to a shortcut in bash, depends on `clipcopy`
     # wrapper script.
-    printf %s "$READLINE_LINE" | xclip-in
+    printf %s "$READLINE_LINE" | clipcopy
 }
 
 
@@ -168,17 +168,18 @@ clc() {
     if [ -n "$ZSH_VERSION" ]; then
         history |
             awk 'END{for (i=2; i<NF; i++) printf $i " "; print $NF}' |
-            xclip-in -rmlastnl
+            clipcopy --trim-newline
     else
         history -p '!!' |
             awk 'END{print}' |
-            xclip-in -rmlastnl
+            clipcopy --trim-newline
     fi
 }
 
 
 rpc() {
-    rpw "$1" | xclip-in -f
+    rpw "$1" | clipcopy
+    clippaste
 }
 
 

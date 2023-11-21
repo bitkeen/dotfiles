@@ -13,9 +13,6 @@
 [submodule "vim-commentary"]
 	path = vim/.vim/pack/bundle/opt/vim-commentary
 	url = https://github.com/tpope/vim-commentary.git
-[submodule "vim-xkbswitch"]
-	path = vim/.vim/pack/bundle/opt/vim-xkbswitch
-	url = https://github.com/lyokha/vim-xkbswitch.git
 [submodule "vim-speeddating"]
 	path = vim/.vim/pack/bundle/opt/vim-speeddating
 	url = https://github.com/tpope/vim-speeddating.git
@@ -248,9 +245,6 @@
 	path = vim/.vim/pack/bundle/opt/vim-qfreplace
 	url = https://github.com/thinca/vim-qfreplace/
 	ignore = untracked
-[submodule "vim-sxhkdrc"]
-	path = vim/.vim/pack/bundle/opt/vim-sxhkdrc
-	url = https://github.com/baskerville/vim-sxhkdrc
 [submodule "tmux-path-extractor"]
 	path = tmux/.tmux/plugins/tmux-path-extractor
 	url = https://github.com/bitkeen/tmux-path-extractor
@@ -311,3 +305,6 @@
 [submodule "tmux-fzf-snippets"]
 	path = tmux/.tmux/plugins/tmux-fzf-snippets
 	url = https://github.com/bitkeen/tmux-fzf-snippets
+[submodule "vim-wayland-clipboard"]
+	path = vim/.vim/pack/bundle/opt/vim-wayland-clipboard
+	url = https://github.com/bitkeen/vim-wayland-clipboard

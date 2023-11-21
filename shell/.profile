@@ -1,5 +1,4 @@
 export EDITOR=/usr/bin/vim
-export TERMINAL=/usr/bin/st
 export FZF_DEFAULT_OPTS=" \
     --preview 'fzf-preview {} | head -n 50' \
     --preview-window='hidden' \
@@ -28,17 +27,17 @@ which ruby > /dev/null 2>&1 && export PATH="$PATH:$(ruby -e 'puts Gem.user_dir')
 export RIPGREP_CONFIG_PATH="$HOME/.config/rg/rgconfig"
 # Disable the default virtualenv prompt change.
 export VIRTUAL_ENV_DISABLE_PROMPT=1
-# The number of pixels the prompt of auth_x11 may be moved at startup to
-# mitigate possible burn-in effects
-export XSECURELOCK_SHOW_DATETIME=1
-export XSECURELOCK_BURNIN_MITIGATION=20
-
-# Scale Qt applications.
-export QT_AUTO_SCREEN_SCALE_FACTOR=0
-export QT_FONT_DPI=120
 
 [ -f "$HOME/.profile.local" ] && source "$HOME/.profile.local"
 
-if [ -z "$DISPLAY" ] && [ "$(tty)" = /dev/tty1 ]; then
-	startx
+if [ -z "${WAYLAND_DISPLAY}" ] && [ "${XDG_VTNR}" -eq 1 ]; then
+    export TERMINAL=/usr/bin/foot
+
+    # Scale Qt applications.
+    export QT_AUTO_SCREEN_SCALE_FACTOR=0
+    export QT_FONT_DPI=120
+
+    export MOZ_ENABLE_WAYLAND=1
+
+    exec sway
 fi

@@ -1,0 +1,22 @@
+#!/bin/sh
+# See https://github.com/swaywm/sway/wiki/GTK-3-settings-on-Wayland
+GNOME_SCHEMA="org.gnome.desktop.interface"
+CONFIG="${HOME}/.config/gtk-3.0/settings.ini"
+
+if [ ! -f "${CONFIG}" ]; then exit 1; fi
+
+get_setting() {
+    grep "${1}" "${CONFIG}" | sed 's/.*\s*=\s*//'
+}
+
+gtk_theme="$(get_setting 'gtk-theme-name')"
+gtk_key_theme="$(get_setting 'gtk-key-theme-name')"
+icon_theme="$(get_setting 'gtk-icon-theme-name')"
+cursor_theme="$(get_setting 'gtk-cursor-theme-name')"
+font_name="$(get_setting 'gtk-font-name')"
+
+gsettings set "${GNOME_SCHEMA}" gtk-theme "${gtk_theme}"
+gsettings set "${GNOME_SCHEMA}" gtk-key-theme "${gtk_key_theme}"
+gsettings set "${GNOME_SCHEMA}" icon-theme "${icon_theme}"
+gsettings set "${GNOME_SCHEMA}" cursor-theme "${cursor_theme}"
+gsettings set "${GNOME_SCHEMA}" font-name "${font_name}"

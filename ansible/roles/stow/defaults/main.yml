@@ -16,12 +16,12 @@ conflicts_dir: '{{ user_home }}/stow-conflicts'
 packages:
   - aws
   - bash
-  - picom
   - dunst
   - firefox
+  - foot
+  - gammastep
   - git
   - gtk-3.0
-  - i3
   - ipython
   - litecli
   - mpd
@@ -30,21 +30,19 @@ packages:
   - ncmpcpp
   - newsboat
   - pgcli
-  - polybar
   - pylint
   - ranger
   - readline
-  - redshift
   - rg
   - scripts
   - shell
-  - sxhkd
+  - sway
   - sxiv
   - thunderbird
   - tmux
   - vim
   - virtualenvwrapper
-  - x11
+  - waybar
   - xdg
   - youtube-dl
   - zathura

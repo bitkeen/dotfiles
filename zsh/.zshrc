@@ -152,11 +152,11 @@ zle -N zle-keymap-select
 # Copy current command to system clipboard.
 vi-copy-line() {
     zle vi-yank-whole-line
-    printf %s "$CUTBUFFER" | xclip-in
+    printf %s "$CUTBUFFER" | clipcopy
 }
 vi-copy-eol() {
     zle vi-yank-eol
-    printf %s "$CUTBUFFER" | xclip-in
+    printf %s "$CUTBUFFER" | clipcopy
 }
 zle -N vi-copy-line
 zle -N vi-copy-eol

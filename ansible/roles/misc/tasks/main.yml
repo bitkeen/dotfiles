@@ -1,12 +1,4 @@
 ---
-- name: configure keyboard and touchpad for X11
-  copy:
-    src: '{{ item }}'
-    dest: /etc/X11/xorg.conf.d/
-  loop:
-    - xorg.conf.d/00-keyboard.conf
-    - xorg.conf.d/10-touchpad.conf
-
 - name: configure sudo
   copy:
     src: sudoers.d/01_general
@@ -103,6 +95,11 @@
     src: gtk/gtk-keys.css
     dest: /usr/share/themes/Custom/gtk-3.0/
 
+- name: install icons theme
+  copy:
+    src: icons/index.theme
+    dest: '{{ user_home }}/.icons/default/'
+
 - name: put docker config in place
   copy:
     src: docker/daemon.json
@@ -122,7 +119,10 @@
     cmd: '{{ dirs.dot_local_bin }}/pre-commit install'
 
 - name: set wallpaper
+  become: yes
+  become_user: '{{ user_name }}'
   copy:
     src: '{{ role_path }}/files/default-wallpaper'
     dest: '{{ user_home }}/.wallpaper'
     force: false
+    mode: preserve

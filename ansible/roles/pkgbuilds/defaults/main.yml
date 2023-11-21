@@ -2,34 +2,25 @@
 pkgbuilds_dir: '{{ user_home }}/documents/projects/public/pkgbuilds'
 packages:
   - asp  # Arch Linux build source file management tool.
-  - colorpicker
-  - dmenu
   - dragon-drag-and-drop
   - git-delta-bin
   - git-open
   - hadolint-bin
   - htop-vim
+  - hyprpicker
   - instant-markdown-d
   - jiq-bin
   - litecli
   - mycli
-  - paper-icon-theme
   - path-extractor
   - ranger
-  - simplescreenrecorder
-  - simpleswitcher
-  - st
   - sxiv
   - tflint
   - ttf-font-awesome-4
   - ueberzugpp  # Drop-in replacement for ueberzug.
   - units
-  - urxvt-font-size
   - vim-language-server
   - virtualbox-ext-oracle
-  - xidlehook
-  - xkb-switch
-  - xmousepasteblock
   - yay
 dependencies:
   - turbo-base64  # Dependency for ueberzugpp.

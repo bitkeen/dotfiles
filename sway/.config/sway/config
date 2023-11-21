@@ -1,0 +1,32 @@
+# Workspace names.
+# The first number will not be displayed. This is to make the last
+# workspace display 0, while not being sorted to the first position
+set $workspace1 "1: 1B "
+set $workspace2 "2: 2E "
+set $workspace3 "3: 3X "
+set $workspace4 "4: 4R "
+set $workspace5 "5: 5W "
+set $workspace6 "6: 6W "
+set $workspace7 "7: 7A "
+set $workspace8 "8: 8M "
+set $workspace9 "9: 9T "
+set $workspace10 "10: 0P "
+
+default_border pixel 2
+
+hide_edge_borders smart
+workspace_auto_back_and_forth no
+# Needed to focus Firefox when a link is opened from another program.
+focus_on_window_activation focus
+
+floating_maximum_size 1920 x 1080
+
+# Font for window titles. Will also be used by the bar unless a different font
+# is used in the bar {} block below.
+font pango:DejaVu Sans 12
+
+bar {
+    swaybar_command waybar
+}
+
+include ~/.config/sway/config.d/*

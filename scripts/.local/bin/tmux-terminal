@@ -19,7 +19,7 @@ fi
 
 if [ -n "${session_name}" ]; then
     # -A - attach if session_name already exists
-    i3 "exec --no-startup-id ${TERMINAL} -e zsh -i -c 'tmux new-session -A -s ${session_name}'"
+    swaymsg "exec --no-startup-id ${TERMINAL} -e zsh -i -c 'tmux new-session -A -s ${session_name}'"
 else
-    i3 "exec --no-startup-id ${TERMINAL} -e zsh -i -c 'tmux'"
+    swaymsg "exec --no-startup-id ${TERMINAL} -e zsh -i -c 'tmux'"
 fi

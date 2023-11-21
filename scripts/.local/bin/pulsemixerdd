@@ -2,5 +2,9 @@
 # Open a terminal window with pulsemixer if it doesn't already exist,
 # kill it otherwise.
 
-pgrep -f "$TERMINAL -n pulsemixerdd" | xargs kill 2>/dev/null ||
-    "$TERMINAL" -n 'pulsemixerdd' -e zsh -i -c 'pulsemixer'
+dd_name='pulsemixerdd'
+
+cmd='pulsemixer'
+
+pgrep -f "${TERMINAL} --app-id ${dd_name}" | xargs kill 2>/dev/null ||
+    "${TERMINAL}" --app-id "${dd_name}" -e zsh -i -c "${cmd}"

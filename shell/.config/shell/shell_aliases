@@ -1,6 +1,4 @@
 #!/bin/sh
-# Reload .Xresources.
-alias xup='xrdb ~/.Xresources'
 # Reload .bashrc.
 alias bup='[ -z "$ZSH_VERSION" ] && . ~/.bashrc || echo "Not in bash"'
 # Reload .zshrc.
@@ -9,8 +7,8 @@ alias zup='[ -n "$ZSH_VERSION" ] && exec zsh || echo "Not in zsh"'
 alias tup='tmux source-file ~/.tmux.conf'
 # Reload Readline's .inputrc.
 alias rup='bind -f ~/.inputrc'
-# Restart i3.
-alias iup='i3-msg restart'
+# Reload sway config.
+alias wup='swaymsg reload'
 
 # LC_COLLATE=C - do not ignore `.` in sorting
 # --almost-all - do not ignore entries starting with `.`, do not list implied `.` and `..`
@@ -134,13 +132,13 @@ alias drdf='docker run -it --rm bitkeen/dotfiles'
 # Ignore grep aliases.
 alias ascii="od -An -t dC | 'grep' -Po '\d.*(?=10)'"
 
-alias yp='pwd | xclip-in -rmlastnl'
+alias yp='pwd | clipcopy --trim-newline'
 
 alias bs='~/.dotfiles/ansible/bootstrap'
 
 # Clipboard.
-alias xi='xclip-in'
-alias xo='xclip-out'
+alias ci='clipcopy'
+alias co='clippaste'
 
 alias units='units-temperature-mod'
 alias u='units'

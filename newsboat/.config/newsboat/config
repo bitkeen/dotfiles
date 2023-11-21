@@ -34,7 +34,7 @@ bind-key / goto-title
 browser firefox
 # Mark article as read and open it in browser.
 macro "SPACE" open; open-in-browser; quit
-macro v set browser "i3 exec mpv"; open-in-browser; set browser firefox
+macro v set browser "swaymsg exec mpv"; open-in-browser; set browser firefox
 macro a open; set browser "yt-dlp --config-location ~/.config/youtube-dl-audio.conf"; open-in-browser; set browser firefox; quit
 
 color info yellow black bold

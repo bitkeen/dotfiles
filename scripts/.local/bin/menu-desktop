@@ -1,2 +1,2 @@
 #!/bin/sh
-i3-dmenu-desktop --dmenu='menu-generic'
+j4-dmenu-desktop --dmenu='menu-generic'

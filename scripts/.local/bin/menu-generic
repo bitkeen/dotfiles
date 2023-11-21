@@ -1,3 +1,15 @@
 #!/bin/sh
-# -i - match items case insensitively.
-dmenu -i "$@"
+# Generic menu wrapper.
+# --cw - cursor width
+# --hp - horizontal padding
+bemenu \
+    --ignorecase \
+    --prompt '' \
+    --cw 2 \
+    --hp 16 \
+    --fn 'Source Sans Pro 17' \
+    --hb '#dfdfdf' --hf '#111111' \
+    --nb '#111111' --nf '#dfdfdf' \
+    --tb '#dfdfdf' --tf '#111111' \
+    --bdr '#111111' \
+    "$@"

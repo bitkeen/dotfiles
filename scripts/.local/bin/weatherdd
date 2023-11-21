@@ -4,6 +4,10 @@
 # it doesn't already exist, kill it otherwise.
 # Requires `weather` script.
 
+dd_name='weatherdd'
+
 # 'tput civis' - hide the cursor.
-pgrep -f "$TERMINAL -n weatherdd" | xargs kill 2>/dev/null ||
-    "$TERMINAL" -n 'weatherdd' -e zsh -i -c 'tput civis; weather; while true; do :; done'
+cmd='tput civis; weather; while true; do :; done'
+
+pgrep -f "${TERMINAL} --app-id ${dd_name}" | xargs kill 2>/dev/null ||
+    "${TERMINAL}" --app-id "${dd_name}" -e zsh -i -c "${cmd}"

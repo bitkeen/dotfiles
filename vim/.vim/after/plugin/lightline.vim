@@ -44,7 +44,6 @@ if &runtimepath =~# 'bundle/opt/lightline.vim'
   \ },
   \ 'component_function': {
   \   'gitbranch': 'fugitive#Head',
-  \   'keyboard_layout': 'LightlineXkbSwitch',
   \ },
   \ 'component_expand': {
   \   'ismodified': 'LightlineIsModified',
@@ -143,27 +142,6 @@ if &runtimepath =~# 'bundle/opt/lightline.vim'
 
   function! LightlineVenv()
     return $VIRTUAL_ENV != '' ? trim(system('basename $VIRTUAL_ENV')) : ''
-  endfunction
-
-  " Get keyboard layout using vim-xkbswitch.
-  " Borrowed from airline.
-  function! LightlineXkbSwitch()
-    if !exists('g:XkbSwitchLib')
-      return
-    endif
-
-    let l:keyboard_layout = libcall(g:XkbSwitchLib, 'Xkb_Switch_getXkbLayout', '')
-    try
-      let l:keyboard_layout = split(l:keyboard_layout, '\.')[-1]
-    catch /E684/  " List index out of range.
-      return ''
-    endtry
-    let short_codes = get(g:, 'short_codes', {'us': 'US', 'ru': 'RU', 'ua': 'UA'})
-
-    if has_key(short_codes, l:keyboard_layout)
-      let l:keyboard_layout = short_codes[l:keyboard_layout]
-    endif
-    return l:keyboard_layout
   endfunction
 
   function! LightlineObsession()
