@@ -143,7 +143,6 @@ packages:
   - ttf-opensans  # Sans-serif typeface commissioned by Google, needed for telegram-desktop
   - udiskie
   - udisks2
-  - ueberzug  # Used in ranger for image previews.
   - unclutter  # A small program for hiding the mouse cursor
   - unrar  # The RAR uncompression program.
   - unzip  # For extracting and viewing files in .zip archives

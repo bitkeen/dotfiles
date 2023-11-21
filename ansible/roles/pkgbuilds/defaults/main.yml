@@ -23,6 +23,7 @@ packages:
   - sxiv
   - tflint
   - ttf-font-awesome-4
+  - ueberzugpp  # Drop-in replacement for ueberzug.
   - units
   - urxvt-font-size
   - vim-language-server
@@ -31,5 +32,6 @@ packages:
   - xkb-switch
   - xmousepasteblock
   - yay
-dependencies: []
+dependencies:
+  - turbo-base64  # Dependency for ueberzugpp.
 conflicts: []
