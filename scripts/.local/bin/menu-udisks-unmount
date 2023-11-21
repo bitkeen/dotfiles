@@ -1,5 +1,5 @@
 #!/bin/sh
-# Use dmenu to unmount drives using udisksctl.
+# Use menu to unmount drives using udisksctl.
 # Only the drives that are mounted in the default udisks directory
 # (`/run/media`) will be available in the menu.
 
@@ -11,12 +11,12 @@ devices="$(
 
 choice="$(
     echo "$devices" |
-    dmenu-vertical -p 'Unmount:' |
+    menu-vertical -p 'Unmount:' |
     awk '{ print $1 }'
 )"
 [ -z "$choice" ] && exit 1
 
 udisksctl unmount --block-device="$choice" ||
-    notify-send -a 'dmenu-udisks-unmount' \
+    notify-send -a 'menu-udisks-unmount' \
         "Processes using ${choice}" \
         "$(lsof "$choice" | sed '1d' | awk '{ print $2" "$1 }')"

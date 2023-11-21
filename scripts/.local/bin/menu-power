@@ -1,10 +1,10 @@
 #!/bin/sh
-# Use dmenu to reboot, shutdown, suspend, etc.
-# Pass arguments to dmenu.
+# Use menu to reboot, shutdown, suspend, etc.
+# Pass arguments to menu.
 
 commands="lock\nreboot\nshutdown\nsuspend\nexit i3\ncancel"
 
-choice=$(printf "%b" "$commands" | dmenu-configured "$@")
+choice=$(printf "%b" "$commands" | menu-generic "$@")
 
 case "$choice" in
     "lock")

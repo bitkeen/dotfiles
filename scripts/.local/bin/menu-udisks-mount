@@ -1,5 +1,5 @@
 #!/bin/sh
-# Use dmenu to mount drives using udisksctl.
+# Use menu to mount drives using udisksctl.
 
 devices="$(
     lsblk --list --paths --output NAME,TYPE,MOUNTPOINT |
@@ -11,7 +11,7 @@ devices="$(
 
 choice="$(
     echo "$devices" |
-    dmenu-vertical -p 'Mount:'
+    menu-vertical -p 'Mount:'
 )"
 [ -z "$choice" ] && exit 1
 

@@ -1,0 +1,3 @@
+#!/bin/sh
+# -i - match items case insensitively.
+dmenu -i "$@"

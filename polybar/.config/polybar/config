@@ -37,7 +37,7 @@ font-1 = FontAwesome:size=8;2
 font-2 = Font Awesome 6 Brands Regular:size=11;3
 
 modules-left = i3
-modules-right = docker mpd pulseaudio vpn wlan xkeyboard filesystem battery date dmenu_power
+modules-right = docker mpd pulseaudio vpn wlan xkeyboard filesystem battery date menu_power
 
 tray-position = right
 tray-padding = 2
@@ -154,10 +154,10 @@ animation-charging-0 = 
 animation-charging-foreground = ${colors.foreground}
 
 
-[module/dmenu_power]
+[module/menu_power]
 type = custom/text
 content = x
-click-left = dmenu-power
+click-left = menu-power
 
 
 [module/docker]

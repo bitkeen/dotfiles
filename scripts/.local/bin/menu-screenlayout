@@ -1,5 +1,5 @@
 #!/bin/sh
-# Use a screenlayout selected with dmenu.
+# Use a screenlayout selected with menu.
 
 scripts_dir="$HOME/.local/bin/"
 
@@ -7,7 +7,7 @@ options="$(find "$scripts_dir" -name 'screenlayout-*' | sort)"
 choice="$(
     echo "$options" |
     awk -F '/' '{print $NF}' |
-    dmenu-configured -p 'Screen layout:'
+    menu-generic -p 'Screen layout:'
 )"
 [ -z "$choice" ] && exit 1
 

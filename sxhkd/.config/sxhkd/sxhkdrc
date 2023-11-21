@@ -1,19 +1,18 @@
 # Select a program to run.
 super+shift+d
-    dmenu_run
+    menu-run
 
 # Select a program shipping a .desktop file.
-# Run with 'sh -c' to find dmenu-configured in $PATH.
 super+d
-    i3-dmenu-desktop --dmenu='sh -c dmenu-configured'
+    menu-desktop
 
 # Tmux session selection menu.
 super+t
-    dmenu-tmux
+    menu-tmux
 
 # Power menu.
 super+shift+z
-    dmenu-power
+    menu-power
 
 # Switch active window.
 super+n
@@ -29,17 +28,17 @@ super+b
 
 # Connect to a Bluetooth device.
 super+shift+b
-    dmenu-bluetooth-connect
+    menu-bluetooth-connect
 
 # Disconnect from a Bluetooth device.
 super+shift+n
-    dmenu-bluetooth-disconnect
+    menu-bluetooth-disconnect
 
 # Mount/unmount menus.
 super+shift+m
-    dmenu-udisks-mount
+    menu-udisks-mount
 super+shift+u
-    dmenu-udisks-unmount
+    menu-udisks-unmount
 
 # Media player controls.
 # Mod+/
@@ -52,7 +51,7 @@ super+period
 super+comma
 	mpc-prev-wrapper
 super+question
-    dmenu-mpd
+    menu-mpd
 
 # Print screen.
 Print
@@ -121,7 +120,7 @@ super+e
     scratchterm
 
 super+shift+s
-    dmenu-screenlayout
+    menu-screenlayout
 
 # Dunst
 # Previous default (ctrl+space) now conflicts with tmux prefix binding.

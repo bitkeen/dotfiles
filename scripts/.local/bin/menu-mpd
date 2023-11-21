@@ -1,5 +1,5 @@
 #!/bin/sh
-# Pass current mpd playlist to dmenu and play selected song.
+# Pass current mpd playlist to menu and play selected song.
 
 # `mpc play` takes a song's playlist postion.
 # To add leading zeroes, use nl instead of %position% in mpc format.
@@ -7,6 +7,6 @@
 mpc playlist -f "%artist% – %title% (%album%)" |  # Dashes are en dash.
     nl -n 'rz' -w 4 -s '  ' |
     sed -E 's/\(\)$//' |
-    dmenu-vertical |
+    menu-vertical |
     grep -Po '^\d+(?=  )' |
     xargs -I {} mpc play {}

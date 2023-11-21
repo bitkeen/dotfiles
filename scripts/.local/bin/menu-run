@@ -1,0 +1,19 @@
+#!/bin/sh
+# Modified copy of dmenu_path and dmenu_run scripts that ship with dmenu.
+
+menu_path() {
+    cachedir="${XDG_CACHE_HOME:-"$HOME/.cache"}"
+    cache="$cachedir/menu_run"
+
+    [ ! -e "$cachedir" ] && mkdir -p "$cachedir"
+
+    IFS=:
+    # shellcheck disable=SC2086
+    if stest -dqr -n "$cache" $PATH; then
+            stest -flx $PATH | sort -u | tee "$cache"
+    else
+            cat "$cache"
+    fi
+}
+
+menu_path | menu-generic "$@" | ${SHELL:-"/bin/sh"} &

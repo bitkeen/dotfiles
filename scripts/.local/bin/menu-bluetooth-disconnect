@@ -16,7 +16,7 @@ fi
 
 chosen_device_name="$(echo "${devices}" \
     | awk '{ $1=$2=""; sub(/^\s+/, "");  print $0 }' \
-    | dmenu-configured -p 'Disconnect Bluetooth from:')"
+    | menu-generic -p 'Disconnect Bluetooth from:')"
 
 chosen_mac_address="$(echo "${devices}" \
     | grep "${chosen_device_name}" \

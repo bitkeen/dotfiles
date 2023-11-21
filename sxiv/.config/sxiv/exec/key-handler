@@ -39,7 +39,7 @@ case "$1" in
         while read file;
         do
             [ "$(printf "No\\nYes" |
-                dmenu-configured -p "Delete $file?")" = 'Yes' ] &&
+                menu-generic -p "Delete $file?")" = 'Yes' ] &&
                 notify-send --app-name "$APP_NAME" -i "$(readlink -f "$file")" "Deleting $file" &&
                 rm "$file"
         done ;;
@@ -49,7 +49,7 @@ case "$1" in
         do
             [ -z "$destdir" ] &&
                 destdir="$(find "$(xdg-user-dir PICTURES)" -type d -exec ls -d {} \; |
-                dmenu-configured -l 20 -p 'Where to move?')"
+                menu-generic -l 20 -p 'Where to move?')"
             [ -z "$destdir" ] && exit 1
             mv "$file" "$destdir" &&
                 notify-send --app-name "$APP_NAME" -i "$destdir/$file" "$file moved to $destdir" &

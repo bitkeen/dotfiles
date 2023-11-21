@@ -1,10 +1,10 @@
 #!/bin/sh
 # Open an existing tmux session in a new terminal window.
-# Pass arguments to dmenu.
+# Pass arguments to menu.
 # Depends on tmux-terminal script.
 
 sessions="$(tmux ls | awk -F ':' '{print $1}')"
 
-choice=$(echo "$sessions" | dmenu-configured -p 'tmux attach -t ' "$@")
+choice=$(echo "$sessions" | menu-generic -p 'tmux attach -t ' "$@")
 
 [ -n "$choice" ] && tmux-terminal "$choice"
