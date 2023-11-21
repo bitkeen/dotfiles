@@ -104,8 +104,11 @@ packages:
   - python-lxml  # To run lxml-based code without a virtualenv.
   - python-pip
   - python-pylint
+  - python-pyqt6  # Dependency for Anki.
+  - python-pyqt6-webengine  # Dependency for Anki.
   - python-virtualenvwrapper
   - qbittorrent
+  - qt6-webchannel  # Dependency for Anki.
   - redshift  # Set color temperature of display according to time of day
   - reflector  # A script to retrieve and filter the latest Pacman mirror list
   - ripgrep
