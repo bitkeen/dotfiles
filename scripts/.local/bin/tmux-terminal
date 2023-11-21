@@ -4,8 +4,8 @@
 # b) attach to a tmux session with a number as its name if it exists,
 #    create a new session if it doesn't
 
-if [ -n "$1" ]; then
-    session_name="$1"
+if [ -n "${1}" ]; then
+    session_name="${1}"
 else
     # \ before `grep` - bypass aliases.
     # -P - use for Perl-style regexps.
@@ -17,9 +17,9 @@ else
                     \grep -o -P -m 1 '^(\d+)(?=: )')"
 fi
 
-if [ -n "$session_name" ]; then
+if [ -n "${session_name}" ]; then
     # -A - attach if session_name already exists
-    i3 "exec --no-startup-id $TERMINAL -e zsh -i -c 'tmux new-session -A -s $session_name'"
+    i3 "exec --no-startup-id ${TERMINAL} -e zsh -i -c 'tmux new-session -A -s ${session_name}'"
 else
-    i3 "exec --no-startup-id $TERMINAL -e zsh -i -c 'tmux'"
+    i3 "exec --no-startup-id ${TERMINAL} -e zsh -i -c 'tmux'"
 fi
