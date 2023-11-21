@@ -17,12 +17,12 @@ get_ws(){
 
 if [ "$(light)" = '0.00' ]; then
     [ -n "$(get_ws "$secondary" 'focused')" ] &&
-        i3-msg "workspace $(get_ws 'eDP-1' 'visible')"
+        i3-msg "workspace \"$(get_ws 'eDP-1' 'visible')\""
 
     light -S "$DESIRED_BRIGHTNESS"
 else
     [ -n "$(get_ws 'eDP-1' 'focused')" ] &&
-        i3-msg "workspace $(get_ws "$secondary" 'visible')"
+        i3-msg "workspace \"$(get_ws "$secondary" 'visible')\""
 
     light -S 0
 fi
