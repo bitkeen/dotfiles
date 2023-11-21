@@ -2,4 +2,4 @@
 aur_pkg_dir: '{{ user_home }}/.cache/ansible/aur'
 
 packages:
-  - tor-browser
+  - tor-browser-bin

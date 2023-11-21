@@ -4,7 +4,7 @@
   become_user: '{{ user_name }}'
   command:
     cmd: gpg --auto-key-locate nodefault,wkd --locate-keys torbrowser@torproject.org
-  when: "'tor-browser' in packages"
+  when: "'tor-browser-bin' in packages"
 
 - name: clone AUR pkgbuilds
   become: yes
