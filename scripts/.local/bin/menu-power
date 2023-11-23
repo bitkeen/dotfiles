@@ -8,7 +8,7 @@ choice=$(printf "%b" "$commands" | menu-generic "$@")
 
 case "$choice" in
     "lock")
-        screen_lock.sh
+        screen-lock
         ;;
     "reboot")
         reboot
