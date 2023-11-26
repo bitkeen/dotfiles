@@ -16,8 +16,6 @@ packages:
   - paper-icon-theme
   - path-extractor
   - ranger
-  - ruby-pg-query
-  - ruby-sqlint
   - simplescreenrecorder
   - simpleswitcher
   - st
