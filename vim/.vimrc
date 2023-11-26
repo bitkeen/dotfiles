@@ -246,7 +246,7 @@ set wildoptions=pum
 
 " Vim before 8.1.1365 is vulnerable to arbitrary code execution via modelines
 " by opening a specially crafted text file.
-if !has('patch-8.1-1366')
+if !has('patch-8.1.1366')
   set nomodeline
 else
   " Disallow options that are an epxression to be set in the modeline.
