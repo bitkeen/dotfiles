@@ -1,6 +1,7 @@
 ---
 pkgbuilds_dir: '{{ user_home }}/documents/projects/public/pkgbuilds'
 packages:
+  - asp  # Arch Linux build source file management tool.
   - colorpicker
   - dmenu
   - dragon-drag-and-drop
