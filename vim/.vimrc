@@ -336,7 +336,6 @@ if has('packages')
   packadd! committia.vim  " Improve `git commit` message editor
   packadd! conflict-marker.vim  " Highlight, jump and resolve conflict markers quickly in Vim
   packadd! deleft.vim  " Delete outer and shift inner blocks of code.
-  packadd! fugitive-gitlab.vim  " GitLab support for fugitive
   packadd! fzf.vim
   packadd! git-blame.vim  " See blame information in the bottom line
   packadd! gundo.vim  " Graph undo tree

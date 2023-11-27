@@ -103,9 +103,6 @@
 [submodule "vim-rhubarb"]
 	path = vim/.vim/pack/bundle/opt/vim-rhubarb
 	url = https://github.com/tpope/vim-rhubarb
-[submodule "fugitive-gitlab.vim"]
-	path = vim/.vim/pack/bundle/opt/fugitive-gitlab.vim
-	url = https://github.com/shumphrey/fugitive-gitlab.vim
 [submodule "vim-textobj-xmlattr"]
 	path = vim/.vim/pack/bundle/opt/vim-textobj-xmlattr
 	url = https://github.com/whatyouhide/vim-textobj-xmlattr
