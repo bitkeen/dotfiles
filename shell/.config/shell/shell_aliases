@@ -44,7 +44,8 @@ alias fn='find -L . -iname'
 # Case-sensitive.
 alias fnc='find -L . -name'
 
-alias kill='kill --verbose'
+# Full path specified to avoid conflict with shell builtin.
+alias kill='/bin/kill --verbose'
 # Kill processes by name.
 alias ka='killall'
 # Kill first background process.
