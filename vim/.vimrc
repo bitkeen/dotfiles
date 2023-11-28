@@ -564,11 +564,11 @@ vnoremap gk k
 nmap Y y$
 
 " Yank current file's name.
-nnoremap yp :let @+ = expand('%:t') \| WaylandYank + \| echo 'Yanked "' . @+ . '"'<CR>
+nnoremap yp :let @+ = expand('%:t') \| call system('clipcopy', @+) \| echo 'Yanked "' . @+ . '"'<CR>
 " Yank current file's path.
-nnoremap yP :let @+ = expand('%:p') \| WaylandYank + \| echo 'Yanked "' . @+ . '"'<CR>
+nnoremap yP :let @+ = expand('%:p') \| call system('clipcopy', @+) \| echo 'Yanked "' . @+ . '"'<CR>
 " Yank current file's directory name.
-nnoremap yd :let @+ = expand('%:p:h') \| WaylandYank + \| echo 'Yanked "' . @+ . '"'<CR>
+nnoremap yd :let @+ = expand('%:p:h') \| call system('clipcopy', @+) \| echo 'Yanked "' . @+ . '"'<CR>
 
 " Write with sudo.
 " See https://stackoverflow.com/a/7078429.
