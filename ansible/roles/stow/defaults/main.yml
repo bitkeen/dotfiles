@@ -16,6 +16,7 @@ conflicts_dir: '{{ user_home }}/stow-conflicts'
 packages:
   - aws
   - bash
+  - chromium
   - dunst
   - firefox
   - foot
