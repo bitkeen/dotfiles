@@ -130,7 +130,6 @@ packages:
   - swaybg  # Wallpaper tool for Wayland compositors.
   - swayidle  # Idle management daemon for Wayland.
   - swaylock
-  - sxiv  # Simple X Image Viewer
   - syncthing  # Open Source Continuous Replication / Cluster Synchronization Thing
   - sysstat  # A collection of performance monitoring tools (iostat,isag,mpstat,pidstat,sadf,sar)
   - telegram-desktop
