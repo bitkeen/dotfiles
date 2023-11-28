@@ -3,7 +3,6 @@ pkgbuilds_dir: '{{ user_home }}/documents/projects/public/pkgbuilds'
 packages:
   - asp  # Arch Linux build source file management tool.
   - dragon-drag-and-drop
-  - git-delta-bin
   - git-open
   - hadolint-bin
   - htop-vim

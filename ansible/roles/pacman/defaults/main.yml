@@ -40,6 +40,7 @@ packages:
   - gammastep  # Adjust the color temperature of your screen according to your surroundings.
   - gimp
   - git
+  - git-delta
   - gnome-clocks  # Clocks applications for GNOME.
   - gnome-keyring  # Stores passwords and encryption keys
   - gnome-themes-extra  # Contains Adwaita theme
