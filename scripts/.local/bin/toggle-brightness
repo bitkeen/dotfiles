@@ -2,6 +2,7 @@
 # Toggle screen brightness level from 0% to 70% using light.
 # Switch focus between displays on toggle.
 
+MAIN_DISPLAY='eDP-1'
 DESIRED_BRIGHTNESS='60'
 
 workspaces="$(swaymsg -t get_workspaces | jq '.[]')"
@@ -11,18 +12,18 @@ get_ws(){
     # Get a sway workspace.
     # Query by display ($1) and state - visible, focused, etc. ($2).
     # shellcheck disable=SC2140
-    echo "$workspaces" |
-        jq --raw-output "select(.output == "\""$1"\"" and .$2 == true).name"
+    echo "${workspaces}" |
+        jq --raw-output "select(.output == "\""${1}"\"" and .${2} == true).name"
 }
 
 if [ "$(light)" = '0.00' ]; then
-    [ -n "$(get_ws "$secondary" 'focused')" ] &&
-        swaymsg "workspace \"$(get_ws 'eDP-1' 'visible')\""
+    [ -n "$(get_ws "${secondary}" 'focused')" ] &&
+        swaymsg "workspace \"$(get_ws "${MAIN_DISPLAY}" 'visible')\""
 
-    light -S "$DESIRED_BRIGHTNESS"
+    light -S "${DESIRED_BRIGHTNESS}"
 else
-    [ -n "$(get_ws 'eDP-1' 'focused')" ] &&
-        swaymsg "workspace \"$(get_ws "$secondary" 'visible')\""
+    [ -n "$(get_ws "${MAIN_DISPLAY}" 'focused')" ] &&
+        swaymsg "workspace \"$(get_ws "${secondary}" 'visible')\""
 
     light -S 0
 fi
