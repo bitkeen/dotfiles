@@ -12,13 +12,29 @@ SESSION_NAME="$1"
 TMUX_CMD="tmux new-session -A -s ${SESSION_NAME}"
 ZSH_CMD="zsh -i -c '${TMUX_CMD}'"
 
+log_msg() {
+    echo '[tmux-dropdown]' "$@"
+}
+
+is_in_scratchpad() {
+    name_in_scratchpad="$(\
+        swaymsg -t get_tree \
+            | jq --raw-output '.. | select(.name? == "__i3_scratch").floating_nodes[].name'\
+    )"
+    log_msg "Name in scratchpad: \"${name_in_scratchpad}\", desired name: \"${1}\""
+    [ "${name_in_scratchpad}" = "${1}" ] && return 0 || return 1
+}
 
 launch_new_terminal() {
+    log_msg "Launching new terminal with command \"${ZSH_CMD}\""
     # Tmux dropdown is not running.
-    swaymsg "exec ${TERMINAL} --app-id ${DD_NAME} -e ${ZSH_CMD}"
+    swaymsg "exec ${TERMINAL} --app-id ${DD_NAME} ${ZSH_CMD}"
 
     # Wait until terminal is up.
-    while pgrep -fa --runstates 'R' "${TERMINAL} --app-id ${DD_NAME}"; do
+    while pgrep -fa --runstates 'R' "${TERMINAL} --app-id ${DD_NAME}" > /dev/null; do
+        sleep .05
+    done
+    while ! is_in_scratchpad ${SESSION_NAME}; do
         sleep .05
     done
 }
@@ -28,7 +44,9 @@ existing_dd="$(pgrep -fa "${TERMINAL} --app-id ${DD_NAME}")"
 if [ -n "${existing_dd}" ]; then
     # Tmux dropdown is already running.
     attached_session="$(echo "${existing_dd}" | awk '{ print $NF }')"
+    log_msg "Attached session is \"${attached_session}\""
     if [ "${attached_session}" != "${SESSION_NAME}" ]; then
+        log_msg "Killing existing terminal for session \"${attached_session}\""
         # Attached session is different from the one passed in
         # arguments. Kill the terminal and launch a new one.
         existing_dd_pid="$(echo "${existing_dd}" | awk '{ print $1 }')"
@@ -41,4 +59,5 @@ else
 fi
 
 # Show dropdown window.
+log_msg "Showing \"${DD_NAME}\" from scratchpad"
 swaymsg "[app_id=\"${DD_NAME}\"] scratchpad show; [app_id=\"${DD_NAME}\"] move position center"
