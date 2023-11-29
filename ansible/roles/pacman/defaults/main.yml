@@ -41,6 +41,7 @@ packages:
   - gimp
   - git
   - git-delta
+  - gnome-calculator
   - gnome-clocks  # Clocks applications for GNOME.
   - gnome-keyring  # Stores passwords and encryption keys
   - gnome-themes-extra  # Contains Adwaita theme
@@ -73,6 +74,7 @@ packages:
   - mpc  # Command line interface to MPD
   - mpd  # Music Player Daemon
   - mpv  # Media player
+  - nautilus  # Default file manager for GNOME.
   - ncdu  # NCurses Disk Usage
   - ncmpcpp  # MPD TUI client
   - neofetch  # System information tool
@@ -120,7 +122,8 @@ packages:
   - rust
   - seahorse  # GNOME application for managing PGP keys
   - shellcheck  # Shell script analysis tool
-  - slurp # Select a region in a Wayland compositor.
+  - slurp  # Select a region in a Wayland compositor.
+  - snapshot  # Take pictures and videos.
   - sof-firmware  # Sound Open Firmware, needed for audio to work on X1 Carbon
   - solaar  # Device manager for Logitech's Unifying receiver peripherals
   - sqlfluff  # A dialect-flexible and configurable SQL linter.
@@ -136,7 +139,6 @@ packages:
   - terminus-font  # Monospace bitmap font, used in vconsole
   - texlive-bin
   - texlive-latexextra
-  - thunar  # File Manager for the Xfce Desktop Environment
   - thunderbird
   - tidy  # A tool to tidy HTML code
   - time  # Provides /usr/bin/time. By default, only shell's builtin is available.
