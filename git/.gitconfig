@@ -71,6 +71,7 @@
     rbc = rebase --continue
     rbs = rebase --skip
     rbm = rebase master
+    rl = reflog --date=relative
     rs = reset
     rsp = reset --patch
     rst = restore
