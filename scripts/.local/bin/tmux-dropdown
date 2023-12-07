@@ -34,7 +34,7 @@ launch_new_terminal() {
     while pgrep -fa --runstates 'R' "${TERMINAL} --app-id ${DD_NAME}" > /dev/null; do
         sleep .05
     done
-    while ! is_in_scratchpad ${SESSION_NAME}; do
+    while ! is_in_scratchpad "${SESSION_NAME}"; do
         sleep .05
     done
 }
