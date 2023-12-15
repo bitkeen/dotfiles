@@ -6,6 +6,6 @@ if [ -z "${1}" ]; then
 fi
 
 image_path="$(readlink --canonicalize "${1}")"
-swaymsg "output * background ${image_path} center #330000" \
-    && printf "#!/bin/sh\nswaymsg \"output * background %s center #330000\"" "${image_path}" > ~/.wallpaper \
+swaymsg "output * background '${image_path}' center #330000" \
+    && printf "#!/bin/sh\nswaymsg \"output * background '%s' center #330000\"" "${image_path}" > ~/.wallpaper \
     && chmod +x ~/.wallpaper
