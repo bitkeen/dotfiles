@@ -25,6 +25,7 @@ packages:
   - ctags  # Universal ctags
   - dnsmasq
   - docker
+  - docker-buildx  # Docker CLI plugin for extended build capabilities with BuildKit.
   - docker-compose
   - dunst  # A customizable and lightweight notification-daemon
   - etckeeper  # Store /etc in a VCS repository
