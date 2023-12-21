@@ -5,12 +5,12 @@ jobs:
     runs-on: ubuntu-22.04
     steps:
       - uses: actions/checkout@v4
-      - name: Set up Python 3.10.9
-        uses: actions/setup-python@v2
+      - name: Set up Python 3.11.6
+        uses: actions/setup-python@v5
         with:
-          python-version: 3.10.9
+          python-version: 3.11.6
       - name: Install linters
-        run: pip install pre-commit==3.0.4 flake8==6.0.0
+        run: pip install pre-commit==3.3.2 flake8==6.1.0
       - run: pre-commit install
       - run: pre-commit run --all-files
       - name: Run shellcheck on all the scripts with sh shebang
