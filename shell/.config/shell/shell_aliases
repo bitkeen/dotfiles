@@ -51,8 +51,8 @@ alias kbg='kill %1'
 # to also be checked for alias expansion.
 alias xargs='xargs '
 # -v flag makes sudo reset password timeout.
-alias s='sudo -v; sudo '
-alias sudo='sudo -v; sudo '
+alias s='sudo -v && sudo '
+alias sudo='sudo -v && sudo '
 
 alias mk='make'
 
