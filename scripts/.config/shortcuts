@@ -4,6 +4,7 @@ h ~
 .b ~/.vim/pack/bundle/opt
 .c ~/.config
 .d ~/.dotfiles
+.e ~/.virtualenvs
 .h ~/.cache
 .l ~/.local
 .s ~/.local/bin
