@@ -1,0 +1,12 @@
+{
+  "diagnostic.enable": false,
+  "diagnostic.virtualText": false,
+  "suggest.noselect": true,
+  "languageserver": {
+    "python": {
+      "command": "pylsp",
+      "trace.server": "verbose",
+      "filetypes": ["python"]
+    }
+  }
+}

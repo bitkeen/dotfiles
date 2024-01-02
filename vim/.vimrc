@@ -325,6 +325,7 @@ if has('packages')
   endif
 
   packadd! ale  " Asynchronous Lint Engine
+  packadd! coc.nvim
   packadd! base16-vim  " Themes
   packadd! CamelCaseMotion  " CamelCase and snake_case movement mappings
   packadd! committia.vim  " Improve `git commit` message editor
@@ -911,7 +912,7 @@ augroup END
 let g:tmuxline_powerline_separators = 0
 
 " ALE
-let g:ale_completion_enabled = 1
+let g:ale_completion_enabled = 0
 let g:ale_completion_delay = 0
 let g:ale_set_highlights = 0
 " By default, borders are built with ASCII symbols.

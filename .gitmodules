@@ -308,3 +308,6 @@
 [submodule "vim-wayland-clipboard"]
 	path = vim/.vim/pack/bundle/opt/vim-wayland-clipboard
 	url = https://github.com/jasonccox/vim-wayland-clipboard
+[submodule "coc.nvim"]
+	path = vim/.vim/pack/bundle/opt/coc.nvim
+	url = https://github.com/neoclide/coc.nvim
