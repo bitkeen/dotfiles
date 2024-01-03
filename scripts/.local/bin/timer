@@ -48,11 +48,13 @@ else
     time_seconds="$time_seconds*60"
 fi
 
+printf '%s\n\n' "Timer \"$1\" started at:	$(date '+%Y-%m-%d %H:%M:%S')"
 date1=$(($(date +%s) + time_seconds));
 while [ "$date1" -ge "$(date +%s)" ]; do
     printf '%s\r' "$(date -u --date @$((date1 - $(date +%s))) +%H:%M:%S)";
     sleep 0.1
 done
+printf '\n\n%s' "Timer \"$1\" ended at:	$(date '+%Y-%m-%d %H:%M:%S')"
 
 pgrep -x dunst >/dev/null &&
     notify-send -a 'timer' 'Time is over' &&
