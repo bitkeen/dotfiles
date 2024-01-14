@@ -5,6 +5,9 @@
 # Pause mpd through mpc if it exists.
 [ "$(command -v mpc)" ] && mpc pause
 
+# Toggle brightness on the main screen if it's at 0, to make the lock visible.
+[ "$(light)" = '0.00' ] && toggle-brightness
+
 # Lock the screen.
 swaylock \
     --indicator-radius 100 \
