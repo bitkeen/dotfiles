@@ -35,6 +35,9 @@ user_pref("devtools.webconsole.persistlog", true);
 // Disable performance tab in developer tools.
 user_pref("devtools.performance.enabled", false);
 
+// Set columns for network tab.
+user_pref("devtools.netmonitor.visibleColumns", "[\"status\",\"method\",\"url\",\"transferred\",\"contentSize\",\"duration\"]");
+
 // Enable cryptomining and fingerprinting protection.
 user_pref("privacy.trackingprotection.cryptomining.enabled", true);
 user_pref("privacy.trackingprotection.fingerprinting.enabled", true);
