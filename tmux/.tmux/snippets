@@ -1,4 +1,5 @@
 apt update && apt install -y curl jq
+apt update && apt install -y htop
 apt update && apt install -y redis
 apt update && apt install -y socat
 env | grep -i 
