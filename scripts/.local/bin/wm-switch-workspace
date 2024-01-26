@@ -19,7 +19,7 @@ swaymsg -t subscribe '[ "workspace" ]' |
     jq --raw-output --unbuffered 'select(.change == "focus").current.output' |
     while read -r line; do
         if [ "$line" = 'eDP-1' ] && [ "$(light)" = '0.00' ]; then
-            light -S "$DESIRED_BRIGHTNESS"
+            brightnessctl --class=backlight set "${DESIRED_BRIGHTNESS}%"
         fi
     done &
 

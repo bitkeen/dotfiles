@@ -16,14 +16,14 @@ get_ws(){
         jq --raw-output "select(.output == "\""${1}"\"" and .${2} == true).name"
 }
 
-if [ "$(light)" = '0.00' ]; then
+if [ "$(brightnessctl --class=backlight get)" = '0' ]; then
     [ -n "$(get_ws "${secondary}" 'focused')" ] &&
         swaymsg "workspace \"$(get_ws "${MAIN_DISPLAY}" 'visible')\""
 
-    light -S "${DESIRED_BRIGHTNESS}"
+    brightnessctl --class=backlight set "${DESIRED_BRIGHTNESS}%"
 else
     [ -n "$(get_ws "${MAIN_DISPLAY}" 'focused')" ] &&
         swaymsg "workspace \"$(get_ws "${secondary}" 'visible')\""
 
-    light -S 0
+    brightnessctl --class=backlight set '0%'
 fi
