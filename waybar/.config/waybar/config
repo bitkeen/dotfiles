@@ -27,7 +27,7 @@
         "format": "{icon} {volume}%",
         "format-muted": " muted",
         "format-icons": {"default": ["", ""]},
-        "on-click": "pulse-volume mute",
+        "on-click": "volume-control mute",
         "on-click-right": "pavucontrol"
     },
     "disk": {
