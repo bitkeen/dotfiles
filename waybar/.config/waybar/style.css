@@ -63,3 +63,8 @@
     padding-left: 12px;
     padding-right: 12px;
 }
+
+#pulseaudio.input:not(.source-muted) {
+    background-color: #f53c3c;
+    color: #f8f8f8;
+}

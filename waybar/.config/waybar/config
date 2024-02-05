@@ -5,7 +5,8 @@
     "modules-center": ["sway/window"],
     "modules-right": [
         "custom/docker",
-        "pulseaudio",
+        "pulseaudio#input",
+        "pulseaudio#output",
         "disk",
         "sway/language",
         "clock",
@@ -23,7 +24,14 @@
     "sway/language": {
         "on-click": "swaymsg 'input type:keyboard xkb_switch_layout next'"
     },
-    "pulseaudio": {
+    "pulseaudio#input": {
+        "format": "{format_source}",
+        "tooltip": false,
+        "format-source": "",
+        "format-source-muted": "",
+        "on-click": "volume-control micmute",
+    },
+    "pulseaudio#output": {
         "format": "{icon} {volume}%",
         "format-muted": " muted",
         "format-icons": {"default": ["", ""]},
