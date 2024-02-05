@@ -1,8 +1,8 @@
 // vim: ft=javascript
 {
     "layer": "bottom",
-    "modules-left": ["sway/workspaces", "sway/mode"],
-    "modules-center": ["sway/window"],
+    "modules-left": ["sway/workspaces", "sway/mode", "sway/window"],
+    "modules-center": [],
     "modules-right": [
         "custom/docker",
         "pulseaudio#input",
@@ -15,7 +15,7 @@
         "custom/power"
     ],
     "sway/window": {
-        "max-length": 32
+        "max-length": 50
     },
     "sway/workspaces": {
         "format": "{name}",

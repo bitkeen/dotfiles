@@ -24,6 +24,10 @@
     background: #cccccc;
 }
 
+#window {
+    margin-left: 50px;
+}
+
 #mode {
     color: #f8f8f8;
     background: #fa7904;
