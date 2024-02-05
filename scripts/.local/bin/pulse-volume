@@ -4,7 +4,7 @@
 
 print_error() {
   echo "The script can only accept one argument and it should be one of the"\
-       "following: increase, decrease, mute." >&2
+       "following: increase, decrease, mute, micmute." >&2
 }
 
 if [ "$#" -ne 1 ]; then
@@ -37,6 +37,9 @@ case $key in
         ;;
     mute)
         pactl set-sink-mute @DEFAULT_SINK@ toggle
+        ;;
+    micmute)
+        pactl set-source-mute @DEFAULT_SOURCE@ toggle
         ;;
     *)
         print_error
