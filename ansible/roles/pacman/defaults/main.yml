@@ -47,6 +47,7 @@ packages:
   - gnome-clocks  # Clocks applications for GNOME.
   - gnome-keyring  # Stores passwords and encryption keys
   - gnome-themes-extra  # Contains Adwaita theme
+  - gnome-sound-recorder  # A utility to make simple audio recording from your GNOME desktop.
   - go-pie  # Required for path-extractor (AUR), conflicts with go
   - grim  # Screenshot utility for Wayland.
   - gst-plugins-good  # GStreamer open-source multimedia framework good plugins
