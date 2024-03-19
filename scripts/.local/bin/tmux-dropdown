@@ -60,4 +60,4 @@ fi
 
 # Show dropdown window.
 log_msg "Showing \"${DD_NAME}\" from scratchpad"
-swaymsg "[app_id=\"${DD_NAME}\"] scratchpad show; [app_id=\"${DD_NAME}\"] move position center; resize set 95ppt 90ppt"
+swaymsg "[app_id=\"${DD_NAME}\"] scratchpad show; [app_id=\"${DD_NAME}\"] move position center; [app_id=\"${DD_NAME}\"] resize set 95ppt 90ppt"
