@@ -110,3 +110,6 @@ user_pref("browser.tabs.firefox-view", false);
 // Prioritize bookmarks in address bar.
 user_pref("places.frecency.bookmarkVisitBonus", 10000);
 user_pref("places.frecency.unvisitedBookmarkBonus", 10000);
+
+// -1.0 is the default, make it explicit.
+user_pref("layout.css.devPixelsPerPx", "-1.0");
